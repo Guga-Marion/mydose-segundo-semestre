@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyDose · Segundo Semestre — Sistema Operacional do Negócio (Q3/Q4)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f5f4fa;--surface:#fff;--surface2:#fbfaff;--ink:#16121f;--muted:#5c5772;--dim:#928da6;
+  --line:rgba(22,18,31,.10);--line2:rgba(22,18,31,.06);
+  --m1:#a855f7;--m2:#ec4899;--m3:#f59e0b;--mental:#7c3aed;--mentalL:#ede9fe;--phys:#16a34a;--physL:#dcfce7;--clin:#2563eb;--clinL:#dbeafe;
+  --ok:#16a34a;--warn:#d97706;--bad:#e11d48;--f:'Outfit',sans-serif;--mono:'Space Grotesk',sans-serif;
+  --sh:0 1px 2px rgba(22,18,31,.04),0 10px 30px rgba(22,18,31,.07);--shL:0 1px 2px rgba(22,18,31,.03),0 4px 12px rgba(22,18,31,.04)}
+  *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(55vw 55vw at 85% -10%,rgba(168,85,247,.1),transparent 60%),radial-gradient(50vw 50vw at -10% 15%,rgba(37,99,235,.07),transparent 60%),radial-gradient(50vw 50vw at 100% 100%,rgba(22,163,74,.06),transparent 60%),var(--bg)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo .orb{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 29% 24%,rgba(255,255,255,.6) 0%,rgba(255,255,255,0) 26%),radial-gradient(circle at 76% 80%,#ffae52 0%,#fb9942 14%,rgba(251,153,66,0) 52%),radial-gradient(circle at 37% 33%,#ecc6fc 0%,#d98fe6 20%,#d666bf 44%,#d65cae 62%,#ce5fa2 100%);box-shadow:0 4px 16px rgba(206,92,170,.45),inset -3px -4px 10px rgba(140,40,115,.32),inset 2px 3px 8px rgba(255,255,255,.32)}
+  .logo .wm{display:flex;flex-direction:column;line-height:.92}
+  .logo .nm{font-weight:700;font-size:25px;letter-spacing:-.03em;color:var(--ink)}
+  .logo .sl{font-weight:600;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-top:4px}
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(245,244,250,.82);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;height:66px}
+  .hero{padding:80px 0 30px}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:12.5px;padding:7px 14px;border:1px solid var(--line);border-radius:100px;color:var(--m1);background:var(--surface);box-shadow:var(--shL)}
+  .hero h1{font-size:clamp(38px,6.4vw,76px);margin:22px 0 16px;font-weight:800;letter-spacing:-.04em;line-height:1.02}
+  .grad{background:linear-gradient(100deg,var(--m1),var(--m2) 55%,var(--m3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{font-size:clamp(17px,2.1vw,21px);color:var(--muted);max-width:760px}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:42px}
+  .kpi{background:var(--surface);border:1px solid var(--line2);border-radius:16px;padding:20px;box-shadow:var(--sh)}
+  .kpi .n{font-weight:800;font-size:clamp(22px,3vw,32px);letter-spacing:-.03em;background:linear-gradient(120deg,var(--m1),var(--clin));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kpi .l{font-size:12.5px;color:var(--muted);margin-top:3px}
+  @media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  section{padding:44px 0}
+  .eyebrow{font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--m1);margin-bottom:14px}
+  h2{font-family:var(--f);font-size:clamp(24px,3.4vw,34px);letter-spacing:-.03em;margin-bottom:10px}
+  .docs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px}
+  @media(max-width:900px){.docs{grid-template-columns:1fr 1fr}}@media(max-width:620px){.docs{grid-template-columns:1fr}}
+  .doc{display:block;background:var(--surface);border:1px solid var(--line2);border-radius:20px;padding:26px;box-shadow:var(--sh);transition:.2s;position:relative;overflow:hidden}
+  .doc:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(22,18,31,.12)}
+  .doc::before{content:"";position:absolute;left:0;top:0;right:0;height:4px}
+  .doc .nº{font-family:var(--mono);font-size:12px;color:var(--dim);font-weight:600}
+  .doc h3{font-size:21px;margin:10px 0 8px;letter-spacing:-.02em}
+  .doc p{font-size:13.8px;color:var(--muted);min-height:58px}
+  .doc .go{margin-top:14px;font-weight:600;font-size:13px;color:var(--m1);display:inline-flex;align-items:center;gap:6px}
+  .doc .ic{font-size:26px}
+  .d1::before{background:linear-gradient(90deg,var(--m1),var(--m2))}.d2::before{background:linear-gradient(90deg,var(--clin),#3b82f6)}
+  .d3::before{background:linear-gradient(90deg,var(--m2),var(--m3))}.d4::before{background:linear-gradient(90deg,var(--phys),#15803d)}
+  .d5::before{background:linear-gradient(90deg,var(--mental),var(--m1))}.d6::before{background:linear-gradient(90deg,var(--m3),#ea580c)}
+  .kbox{background:linear-gradient(120deg,var(--mentalL),rgba(255,255,255,.6));border:1px solid rgba(124,58,237,.2);border-radius:16px;padding:20px 22px;font-size:14.5px;color:var(--muted);margin-top:26px}.kbox b{color:var(--ink)}
+  footer{padding:44px 0;border-top:1px solid var(--line);color:var(--dim);font-size:13px;margin-top:30px}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:16px;font-size:13px;color:var(--muted)}
+  .flow .b{background:var(--surface);border:1px solid var(--line);border-radius:100px;padding:6px 13px;font-weight:600;color:var(--ink)}
+  .flow .ar{color:var(--m1);font-weight:700}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><div class="logo"><span class="orb"></span><span class="wm"><span class="nm">MyDose</span><span class="sl">Take back control</span></span></div></div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">● Sistema Operacional do Negócio · 2º Semestre · Q3 + Q4 2026</span>
+    <h1>Um semestre.<br>Uma meta. <span class="grad">Seis planos.</span></h1>
+    <p class="lead">Tudo que a MyDose precisa para faturar <b>R$ 3M</b> com <b>EBITDA ≥ 20%</b> no segundo semestre — estratégia, growth, comunicação, preço, operação e o plano de negócios — num só lugar, com uma só mensagem. Documentos vivos: revisamos e atualizamos os resultados aqui.</p>
+    <div class="kpis">
+      <div class="kpi"><div class="n">R$ 3,26M</div><div class="l">ACV líquido · Q3+Q4</div></div>
+      <div class="kpi"><div class="n">≥ 20%</div><div class="l">EBITDA alvo</div></div>
+      <div class="kpi"><div class="n">229</div><div class="l">contas · ~290 profissionais</div></div>
+      <div class="kpi"><div class="n">~R$ 181k</div><div class="l">receita por colaborador</div></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Os 6 documentos</div>
+    <h2>Da tese ao caixa — nesta ordem.</h2>
+    <p class="lead">Cada documento tem um dono e um escopo. Sem informação repetida: a estratégia define o porquê, o growth traz a demanda, a comunicação dá a voz, o preço captura valor, a operação entrega e o plano de negócios fecha a conta.</p>
+
+    <div class="docs">
+      <a class="doc d1" href="planejamento-estrategico.html">
+        <div class="ic">🧭</div><div class="nº">01 · Planejamento Estratégico</div>
+        <h3>A tese & os 4 Fits</h3>
+        <p>De software a Autopilot de Saúde. Os 4 Fits (Balfour), a arquitetura das 3 marcas e a visão de R$3M → R$100M.</p>
+        <span class="go">Abrir →</span>
+      </a>
+      <a class="doc d2" href="plano-de-growth.html">
+        <div class="ic">🚀</div><div class="nº">02 · Plano de Growth</div>
+        <h3>Demanda & funil (Q3/Q4)</h3>
+        <p>ICPs, metas de venda por marca/plano/prazo, canais (Ads·Eventos·Orgânico), funil de 7 fases e investimento por etapa.</p>
+        <span class="go">Abrir →</span>
+      </a>
+      <a class="doc d3" href="comunicacao.html">
+        <div class="ic">🎙️</div><div class="nº">03 · Plano de Comunicação</div>
+        <h3>A mensagem & o conteúdo</h3>
+        <p>Golden Circle, StoryBrand, Primal Branding, UVP, tom de voz, social selling e o webinário ao vivo das quartas.</p>
+        <span class="go">Abrir →</span>
+      </a>
+      <a class="doc d4" href="precificacao.html">
+        <div class="ic">💰</div><div class="nº">04 · Precificação</div>
+        <h3>Modelo, oferta & negociação</h3>
+        <p>As 2 tabelas (trimestral/semestral/anual), a oferta irrecusável e o playbook comercial: walkaway, brindes e discurso.</p>
+        <span class="go">Abrir →</span>
+      </a>
+      <a class="doc d5" href="plano-operacional.html">
+        <div class="ic">⚙️</div><div class="nº">05 · Plano Operacional</div>
+        <h3>Time, organograma & entrega</h3>
+        <p>As 3 áreas, o time real, KPIs por área, cadência de reuniões e a capacidade de entrega que sustenta a venda.</p>
+        <span class="go">Abrir →</span>
+      </a>
+      <a class="doc d6" href="plano-de-negocios.html">
+        <div class="ic">📊</div><div class="nº">06 · Plano de Negócios</div>
+        <h3>Business Model Canvas & P&L</h3>
+        <p>O canvas completo, P&L do semestre, EBITDA ≥ 20%, receita por colaborador e onde investir cada real.</p>
+        <span class="go">Abrir →</span>
+      </a>
+    </div>
+
+    <div class="kbox">
+      <b>Como ler na ordem:</b>
+      <div class="flow">
+        <span class="b">🧭 Estratégia</span><span class="ar">→</span>
+        <span class="b">🚀 Growth</span><span class="ar">→</span>
+        <span class="b">🎙️ Comunicação</span><span class="ar">→</span>
+        <span class="b">💰 Preço</span><span class="ar">→</span>
+        <span class="b">⚙️ Operação</span><span class="ar">→</span>
+        <span class="b">📊 Negócio</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo" style="margin-bottom:10px"><span class="orb"></span><span class="wm"><span class="nm">MyDose</span><span class="sl">Segundo Semestre</span></span></div>
+    Pacote de planejamento do 2º semestre · 6 documentos vivos · identidade unificada · meta R$ 3M / EBITDA ≥ 20%. Uso interno — atualizar resultados conforme avançamos.
+  </div>
+</footer>
+
+</body>
+</html>

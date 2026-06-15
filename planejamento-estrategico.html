@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyDose · 01 Planejamento Estratégico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f5f4fa;--surface:#fff;--surface2:#fbfaff;--ink:#16121f;--muted:#5c5772;--dim:#928da6;--line:rgba(22,18,31,.10);--line2:rgba(22,18,31,.06);--m1:#a855f7;--m2:#ec4899;--m3:#f59e0b;--mental:#7c3aed;--mentalL:#ede9fe;--phys:#16a34a;--physL:#dcfce7;--clin:#2563eb;--clinL:#dbeafe;--ok:#16a34a;--warn:#d97706;--bad:#e11d48;--f:'Outfit',sans-serif;--mono:'Space Grotesk',sans-serif;--sh:0 1px 2px rgba(22,18,31,.04),0 8px 24px rgba(22,18,31,.06);--shL:0 1px 2px rgba(22,18,31,.03),0 4px 12px rgba(22,18,31,.04)}
+  *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(50vw 50vw at 88% -8%,rgba(168,85,247,.08),transparent 60%),radial-gradient(45vw 45vw at -8% 20%,rgba(37,99,235,.06),transparent 60%),radial-gradient(45vw 45vw at 100% 100%,rgba(22,163,74,.05),transparent 60%),var(--bg)}
+  a{color:inherit;text-decoration:none}.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  section{padding:64px 0;position:relative}
+  h1,h2,h3,h4{font-family:var(--f);letter-spacing:-.025em;line-height:1.1;font-weight:700}
+  h2{font-size:clamp(26px,4vw,40px);margin-bottom:12px}
+  .eyebrow{font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--m1);margin-bottom:12px}
+  .lead{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:820px}.muted{color:var(--muted)}.dim{color:var(--dim)}.note{font-size:12.5px;color:var(--dim);margin-top:12px}.mt{margin-top:24px}.mt2{margin-top:42px}
+  .logo{display:flex;align-items:center;gap:11px}
+  .logo .orb{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 29% 24%,rgba(255,255,255,.6) 0%,rgba(255,255,255,0) 26%),radial-gradient(circle at 76% 80%,#ffae52 0%,#fb9942 14%,rgba(251,153,66,0) 52%),radial-gradient(circle at 37% 33%,#ecc6fc 0%,#d98fe6 20%,#d666bf 44%,#d65cae 62%,#ce5fa2 100%);box-shadow:0 3px 14px rgba(206,92,170,.42),inset -3px -4px 9px rgba(140,40,115,.32),inset 2px 3px 7px rgba(255,255,255,.32)}
+  .logo .wm{display:flex;flex-direction:column;line-height:.92}.logo .nm{font-weight:700;font-size:21px;letter-spacing:-.03em;color:var(--ink)}.logo .sl{font-weight:600;font-size:7.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-top:3px}
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(245,244,250,.82);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:8px;height:62px}nav .logo{margin-right:auto}
+  .navlinks{display:flex;gap:2px;flex-wrap:wrap}.navlinks a{font-weight:500;font-size:12.5px;color:var(--muted);padding:7px 10px;border-radius:9px;transition:.2s}
+  .navlinks a:hover{color:var(--ink);background:var(--surface);box-shadow:var(--shL)}.navlinks a.on{color:var(--m1);font-weight:700;background:var(--surface);box-shadow:var(--shL)}
+  @media(max-width:1020px){.navlinks{display:none}}
+  .hero{padding:60px 0 36px}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:12.5px;padding:7px 14px;border:1px solid var(--line);border-radius:100px;color:var(--m1);background:var(--surface);box-shadow:var(--shL)}
+  .hero h1{font-size:clamp(32px,5.4vw,60px);margin:22px 0 14px;font-weight:800;letter-spacing:-.035em}
+  .grad{background:linear-gradient(100deg,var(--m1),var(--m2) 55%,var(--m3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .grid{display:grid;gap:16px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:900px){.g4{grid-template-columns:1fr 1fr}}@media(max-width:760px){.g2,.g3{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--line2);border-radius:16px;padding:22px;box-shadow:var(--sh)}.card h3{font-size:17px;margin-bottom:8px}.card p{color:var(--muted);font-size:14px}
+  .tag{display:inline-block;font-weight:600;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border-radius:7px;margin-bottom:10px}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line2);border-radius:18px;overflow:hidden;box-shadow:var(--sh)}
+  .split>div{padding:26px}.split .l{background:rgba(225,29,72,.04);border-right:1px solid var(--line2)}.split .r{background:rgba(22,163,74,.05)}
+  .split h3{font-size:16px;margin-bottom:12px}.split ul{list-style:none}.split li{padding:7px 0 7px 24px;position:relative;font-size:14px;color:var(--muted);border-bottom:1px dashed var(--line2)}
+  .split .l li::before{content:"✕";position:absolute;left:0;color:var(--bad)}.split .r li::before{content:"✓";position:absolute;left:0;color:var(--ok)}
+  @media(max-width:720px){.split{grid-template-columns:1fr}.split .l{border-right:none;border-bottom:1px solid var(--line2)}}
+  .bcard{border-radius:18px;padding:22px;border:1px solid var(--line2);box-shadow:var(--sh);background:var(--surface)}
+  .bcard .vorb{width:44px;height:44px;border-radius:50%;margin-bottom:12px}
+  .b-mst{border-top:3px solid var(--m2)}.b-mst .vorb{background:conic-gradient(from 210deg,var(--m1),var(--m2),var(--m3),var(--m1))}
+  .b-m{border-top:3px solid var(--mental)}.b-m .vorb{background:radial-gradient(circle at 35% 30%,#c4b5fd,#7c3aed)}
+  .b-p{border-top:3px solid var(--phys)}.b-p .vorb{background:radial-gradient(circle at 35% 30%,#86efac,#16a34a)}
+  .b-c{border-top:3px solid var(--clin)}.b-c .vorb{background:radial-gradient(circle at 35% 30%,#93c5fd,#2563eb)}
+  .bcard h3{font-size:18px;margin-bottom:3px}.bcard .r{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+  .b-mst .r{color:var(--m2)}.b-m .r{color:var(--mental)}.b-p .r{color:var(--phys)}.b-c .r{color:var(--clin)}
+  .bcard p{font-size:13px;color:var(--muted)}
+  .spectrum{position:relative;height:64px;border-radius:14px;background:linear-gradient(90deg,#dcfce7,#fef3c7 50%,#dbeafe);border:1px solid var(--line2);margin-top:18px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shL)}
+  .spectrum .danger{position:absolute;left:50%;top:-10px;transform:translateX(-50%);background:var(--bad);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;white-space:nowrap}
+  .spectrum .ends{position:absolute;width:100%;display:flex;justify-content:space-between;padding:0 16px;font-size:11.5px;font-weight:600;color:var(--ink)}
+  .kbox{background:linear-gradient(120deg,var(--mentalL),rgba(255,255,255,.6));border:1px solid rgba(124,58,237,.2);border-radius:14px;padding:18px 20px;font-size:14px;color:var(--muted)}.kbox b{color:var(--ink)}
+  .divline{height:1px;background:var(--line2)}.pill{display:inline-block;font-weight:500;font-size:11.5px;padding:5px 12px;border-radius:100px;border:1px solid var(--line);color:var(--muted);margin:3px 4px 3px 0;background:var(--surface)}
+  footer{padding:44px 0;border-top:1px solid var(--line);color:var(--dim);font-size:13px}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="index.html" class="logo"><span class="orb"></span><span class="wm"><span class="nm">MyDose</span><span class="sl">Take back control</span></span></a>
+  <div class="navlinks">
+    <a class="on" href="planejamento-estrategico.html">Estratégia</a>
+    <a href="plano-de-growth.html">Growth</a>
+    <a href="comunicacao.html">Comunicação</a>
+    <a href="precificacao.html">Precificação</a>
+    <a href="plano-operacional.html">Operacional</a>
+    <a href="plano-de-negocios.html">Negócios</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="badge">● 01 · Planejamento Estratégico</span>
+  <h1>De software a<br><span class="grad">Autopilot de Saúde.</span></h1>
+  <p class="lead">A tese que rege o segundo semestre: a MyDose para de vender uma ferramenta e passa a entregar um resultado. Este documento define o <b>porquê</b> e o <b>onde jogamos</b> — a tese, os 4 Fits e a arquitetura de marca. Os números e a execução vivem nos planos de Growth, Operacional e de Negócios.</p>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">A virada de modelo</div>
+    <h2>Por que mudamos de categoria.</h2>
+    <p class="lead">Software a R$10k/ano é um <b>copilot</b>: o profissional retém toda a responsabilidade de executar — compra, não sabe usar, se perde, cancela. A fronteira (tese da Sequoia, <i>services as the new software</i>) é o <b>autopilot</b>: entregar o trabalho pronto e capturar o orçamento de serviços, 10–100× maior. A IA é o que dá margem para entregar serviço com time enxuto.</p>
+    <div class="split mt2">
+      <div class="l"><h3>❌ Onde a MyDose travava</h3><ul>
+        <li>Vendia ferramenta para uma dor que é de execução</li>
+        <li>Genérica: "software para saúde" não tem preço-âncora</li>
+        <li>Onboarding disfarçado de consultoria → cliente se perde</li>
+        <li>ARPU médio na "zona de perigo" do espectro</li>
+      </ul></div>
+      <div class="r"><h3>✓ Para onde vamos</h3><ul>
+        <li>Entrega o resultado: paciente aderente + nova receita</li>
+        <li>3 marcas afiadas por nicho, com preço-âncora próprio</li>
+        <li>Done-for-you real (conteúdo, tráfego, produtos) via IA</li>
+        <li>Caminho claro de R$3M → R$100M pela alavanca de ARPU</li>
+      </ul></div>
+    </div>
+    <h3 style="font-size:18px;margin:30px 0 12px">Uma plataforma, dois motores de valor</h3>
+    <div class="grid g2">
+      <div class="card" style="border-color:rgba(22,163,74,.25)"><span class="tag" style="background:var(--physL);color:var(--phys)">Motor Saúde</span><h3>O paciente melhora</h3><p>Adesão e acompanhamento via comunidade + IA. Resultado: menos churn do paciente — a prova de valor que sustenta o ticket.</p></div>
+      <div class="card" style="border-color:rgba(236,72,153,.25)"><span class="tag" style="background:rgba(236,72,153,.12);color:var(--m2)">Motor Negócio</span><h3>O profissional fatura mais</h3><p>Produtos digitais, checkout, conteúdo e tráfego. Resultado: uma segunda fonte de receita recorrente passando pela plataforma.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Framework Brian Balfour · Reforge</div>
+    <h2>Os 4 Fits — as conexões que destravam escala.</h2>
+    <p class="lead">Empresas travam entre R$1M e R$10M não por uma caixa fraca, mas por uma <b>conexão</b> quebrada entre duas. Nosso semestre é desenhado para acertar as quatro de uma vez.</p>
+    <div class="grid g2 mt2">
+      <div class="card"><span class="tag" style="background:rgba(168,85,247,.12);color:var(--m1)">Fit 1 · Mercado ↔ Produto</span><h3>Mercado primeiro</h3><p><b>Categoria:</b> plataforma de empreendedorismo em saúde. <b>Dor:</b> "vivo de consulta, escravo do WhatsApp, sem 2ª receita e sem tempo". <b>Aha:</b> 1ª venda no Mydose + protocolos rodando em 30 dias. <b>Stickiness:</b> receita e dados passam pela plataforma.</p></div>
+      <div class="card"><span class="tag" style="background:var(--clinL);color:var(--clin)">Fit 2 · Produto ↔ Canal</span><h3>O produto puxa o canal</h3><p><b>Viralidade:</b> o paciente recebe acompanhamento "powered by MyDose". <b>Conteúdo/eventos:</b> cada produto publicado gera prova social. <b>Inside sales:</b> o ticket de Clinics banca demo + done-for-you. (detalhe no Plano de Growth)</p></div>
+      <div class="card"><span class="tag" style="background:var(--physL);color:var(--phys)">Fit 3 · Canal ↔ Modelo</span><h3>Fora da zona de perigo</h3><p>Erro antigo: ARPU médio + venda genérica = meio do espectro. Correção: <b>dois movimentos</b> — canal barato (orgânico/PLG) → plano self-serve; canal caro (eventos/SLG) → done-for-you.</p>
+        <div class="spectrum"><div class="ends"><span>↙ baixo ARPU · baixo CAC</span><span>alto ARPU · alto CAC ↘</span></div><div class="danger">⚠ zona de perigo (onde estávamos)</div></div>
+      </div>
+      <div class="card"><span class="tag" style="background:rgba(245,158,11,.14);color:var(--warn)">Fit 4 · Modelo ↔ Mercado</span><h3>A matemática do R$3M</h3><p><span class="num">ARPU × clientes × % captura ≥ meta.</span> Duas alavancas: cobrar mais ou alcançar mais. Nosso mercado <b>paga por serviço</b> → a alavanca é o <b>ARPU</b>. Ele sobe de ~R$10k para ~R$14,2k; ~229 contas + upsell fecham R$3,26M sem exército de clientes.</p></div>
+    </div>
+    <div class="kbox mt2">🎯 <b>A leitura estratégica:</b> a diferença entre teto de R$5M e o caminho de R$100M não é vender mais barato para mais gente — é <b>subir o ARPU</b> entregando serviço com margem de software. É isso que os 4 Fits, juntos, destravam.</div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Arquitetura de marca · 3 + 1</div>
+    <h2>Uma plataforma, três narrativas.</h2>
+    <p class="lead">A marca-mãe sustenta a infraestrutura; as três frentes afiam a mensagem por mercado. <b>Não são três produtos — são três funis sobre o mesmo motor.</b> A segmentação detalhada de clientes vive no Plano de Growth; a mensagem de cada marca, no Plano de Comunicação.</p>
+    <div class="grid g4 mt2">
+      <div class="bcard b-mst"><div class="vorb"></div><h3>MyDose</h3><div class="r">Master · a plataforma</div><p>O sistema operacional, o checkout, a IA, os créditos. "Take back control."</p></div>
+      <div class="bcard b-p"><div class="vorb"></div><h3>Physical</h3><div class="r">Saúde física</div><p>Nutri, nutrólogo, endócrino, esporte, integrativa, personal, fisio. Motor de volume.</p></div>
+      <div class="bcard b-m"><div class="vorb"></div><h3>Mental</h3><div class="r">Saúde mental</div><p>Psicólogos, psiquiatras, terapeutas. Adesão emocional e recorrência.</p></div>
+      <div class="bcard b-c"><div class="vorb"></div><h3>Clinics</h3><div class="r">Clínicas · ticket alto</div><p>Clínicas multiprofissionais. Lança em agosto, com preço e entrega próprios.</p></div>
+    </div>
+    <p class="note">Regra de ouro: as 3 frentes são <b>roupagem de mercado</b> (mensagem, casos, landing) sobre <b>um único produto</b>. Physical é volume; Mental é recorrência; Clinics é ticket.</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Onde cada coisa mora</div>
+    <h2>O mapa do pacote.</h2>
+    <p class="lead">Este documento é a bússola. A execução está distribuída sem sobreposição:</p>
+    <div class="grid g3 mt2">
+      <div class="card"><h3>🚀 Plano de Growth</h3><p>ICPs e quantos vender, canais, funil, CAC e investimento em mídia. <a href="plano-de-growth.html" style="color:var(--clin);font-weight:600">Abrir →</a></p></div>
+      <div class="card"><h3>🎙️ Comunicação</h3><p>A mensagem, o tom, o conteúdo e o webinário. <a href="comunicacao.html" style="color:var(--clin);font-weight:600">Abrir →</a></p></div>
+      <div class="card"><h3>💰 Precificação</h3><p>Tabelas, oferta e o discurso comercial. <a href="precificacao.html" style="color:var(--clin);font-weight:600">Abrir →</a></p></div>
+      <div class="card"><h3>⚙️ Operacional</h3><p>Time, organograma, KPIs e capacidade de entrega. <a href="plano-operacional.html" style="color:var(--clin);font-weight:600">Abrir →</a></p></div>
+      <div class="card"><h3>📊 Negócios</h3><p>Canvas, P&L, EBITDA e receita por colaborador. <a href="plano-de-negocios.html" style="color:var(--clin);font-weight:600">Abrir →</a></p></div>
+      <div class="card" style="background:var(--surface2)"><h3>🧭 Você está aqui</h3><p>Tese, 4 Fits e marca — o porquê de tudo.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="logo" style="margin-bottom:10px"><span class="orb"></span><span class="wm"><span class="nm">MyDose</span><span class="sl">Planejamento Estratégico</span></span></div>
+  01 de 06 · Tese, 4 Fits e arquitetura de marca · <a href="index.html" style="color:var(--clin)">voltar ao hub</a>
+</div></footer>
+</body>
+</html>

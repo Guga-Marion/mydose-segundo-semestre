@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyDose · 04 Precificação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f5f4fa;--surface:#fff;--surface2:#fbfaff;--ink:#16121f;--muted:#5c5772;--dim:#928da6;--line:rgba(22,18,31,.10);--line2:rgba(22,18,31,.06);--m1:#a855f7;--m2:#ec4899;--m3:#f59e0b;--mental:#7c3aed;--mentalL:#ede9fe;--phys:#16a34a;--physL:#dcfce7;--clin:#2563eb;--clinL:#dbeafe;--ok:#16a34a;--warn:#d97706;--bad:#e11d48;--f:'Outfit',sans-serif;--mono:'Space Grotesk',sans-serif;--sh:0 1px 2px rgba(22,18,31,.04),0 8px 24px rgba(22,18,31,.06);--shL:0 1px 2px rgba(22,18,31,.03),0 4px 12px rgba(22,18,31,.04)}
+  *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(50vw 50vw at 88% -8%,rgba(22,163,74,.07),transparent 60%),radial-gradient(45vw 45vw at -8% 20%,rgba(168,85,247,.06),transparent 60%),radial-gradient(45vw 45vw at 100% 100%,rgba(245,158,11,.05),transparent 60%),var(--bg)}
+  a{color:inherit;text-decoration:none}.wrap{max-width:1140px;margin:0 auto;padding:0 24px}section{padding:62px 0;position:relative}
+  h1,h2,h3,h4{font-family:var(--f);letter-spacing:-.025em;line-height:1.1;font-weight:700}h2{font-size:clamp(26px,4vw,40px);margin-bottom:12px}
+  .eyebrow{font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--phys);margin-bottom:12px}
+  .lead{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:820px}.muted{color:var(--muted)}.dim{color:var(--dim)}.note{font-size:12.5px;color:var(--dim);margin-top:12px}.mt{margin-top:24px}.mt2{margin-top:42px}
+  .logo{display:flex;align-items:center;gap:11px}.logo .orb{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 29% 24%,rgba(255,255,255,.6) 0%,rgba(255,255,255,0) 26%),radial-gradient(circle at 76% 80%,#ffae52 0%,#fb9942 14%,rgba(251,153,66,0) 52%),radial-gradient(circle at 37% 33%,#ecc6fc 0%,#d98fe6 20%,#d666bf 44%,#d65cae 62%,#ce5fa2 100%);box-shadow:0 3px 14px rgba(206,92,170,.42),inset -3px -4px 9px rgba(140,40,115,.32),inset 2px 3px 7px rgba(255,255,255,.32)}
+  .logo .wm{display:flex;flex-direction:column;line-height:.92}.logo .nm{font-weight:700;font-size:21px;letter-spacing:-.03em;color:var(--ink)}.logo .sl{font-weight:600;font-size:7.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-top:3px}
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(245,244,250,.82);border-bottom:1px solid var(--line)}nav .wrap{display:flex;align-items:center;gap:8px;height:62px}nav .logo{margin-right:auto}
+  .navlinks{display:flex;gap:2px;flex-wrap:wrap}.navlinks a{font-weight:500;font-size:12.5px;color:var(--muted);padding:7px 10px;border-radius:9px;transition:.2s}.navlinks a:hover{color:var(--ink);background:var(--surface);box-shadow:var(--shL)}.navlinks a.on{color:var(--phys);font-weight:700;background:var(--surface);box-shadow:var(--shL)}
+  @media(max-width:1020px){.navlinks{display:none}}
+  .hero{padding:58px 0 34px}.badge{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:12.5px;padding:7px 14px;border:1px solid var(--line);border-radius:100px;color:var(--phys);background:var(--surface);box-shadow:var(--shL)}
+  .hero h1{font-size:clamp(32px,5.2vw,58px);margin:20px 0 14px;font-weight:800;letter-spacing:-.035em}.grad{background:linear-gradient(100deg,var(--phys),var(--clin) 55%,var(--m1));-webkit-background-clip:text;background-clip:text;color:transparent}.gradgold{background:linear-gradient(100deg,var(--m2),var(--m3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .grid{display:grid;gap:16px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}@media(max-width:760px){.g2,.g3{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--line2);border-radius:16px;padding:20px;box-shadow:var(--sh)}.card h3{font-size:16px;margin-bottom:7px}.card p{color:var(--muted);font-size:13.8px}
+  .tag{display:inline-block;font-weight:600;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border-radius:7px;margin-bottom:9px}
+  .tbl{width:100%;border-collapse:collapse;font-size:13px;border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:var(--surface);box-shadow:var(--sh)}.tbl th,.tbl td{padding:10px 11px;text-align:left;border-bottom:1px solid var(--line2)}.tbl th{font-weight:600;font-size:10.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);background:var(--surface2)}.tbl td{color:var(--muted)}.tbl td strong{color:var(--ink)}.tbl tr:last-child td{border-bottom:none}.tbl .total td{background:linear-gradient(90deg,rgba(168,85,247,.08),rgba(37,99,235,.06));color:var(--ink);font-weight:700}.tbl td.c,.tbl th.c{text-align:center}.tbl td.r,.tbl th.r{text-align:right}.tbl .lab{color:var(--ink);font-weight:600}.tbl .hl{background:rgba(245,158,11,.07)}.scroll{overflow-x:auto;border-radius:14px}.num{font-variant-numeric:tabular-nums;font-family:var(--mono)}.y{color:var(--ok);font-weight:600}.vc{color:var(--clin);font-weight:600}
+  .toggle{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:100px;padding:5px;box-shadow:var(--shL);gap:4px}.toggle span{font-weight:600;font-size:13px;padding:8px 18px;border-radius:100px;color:var(--muted)}.toggle span.on{color:#fff}.toggle span.ind{background:linear-gradient(100deg,var(--mental),var(--phys))}.toggle span.cli{background:var(--clin)}
+  .secthead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:28px 0 8px}.secthead h3{font-size:17px}.secthead .pin{font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px}.pin-ind{background:var(--mentalL);color:var(--mental)}.pin-cli{background:var(--clinL);color:var(--clin)}
+  .offer{border:1.5px solid rgba(245,158,11,.4);border-radius:22px;padding:32px;background:linear-gradient(150deg,rgba(245,158,11,.08),rgba(236,72,153,.05));box-shadow:var(--sh);margin-top:22px}.offer h3{font-weight:800;font-size:clamp(21px,3vw,30px);line-height:1.14;margin-bottom:8px}
+  .stack{margin-top:20px}.stackrow{display:grid;grid-template-columns:1fr auto;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line2);align-items:baseline}.stackrow .it{font-size:14px}.stackrow .it b{color:var(--ink)}.stackrow .vl{font-family:var(--mono);font-size:13.5px;color:var(--dim);white-space:nowrap;text-decoration:line-through}
+  .stacktot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;flex-wrap:wrap;gap:14px}.stacktot .l{font-size:13.5px;color:var(--muted)}.stacktot .crossed{font-weight:700;font-size:20px;color:var(--dim);text-decoration:line-through}.stacktot .real{font-weight:800;font-size:clamp(26px,5vw,40px)}
+  .gtee{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}@media(max-width:760px){.gtee{grid-template-columns:1fr}}.gcard{background:var(--surface);border:1px solid var(--line2);border-radius:14px;padding:16px;box-shadow:var(--shL)}.gcard .ic{font-size:20px}.gcard h4{font-size:14px;margin:6px 0 4px}.gcard p{font-size:12.8px;color:var(--muted)}
+  .steps{display:flex;flex-direction:column;gap:10px;margin-top:18px}.step{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;background:var(--surface);border:1px solid var(--line2);border-radius:12px;padding:14px 16px;box-shadow:var(--shL)}.step .sn{font-weight:800;font-size:16px;color:var(--phys);text-align:center}.step h4{font-size:14.5px;margin-bottom:3px}.step p{font-size:13px;color:var(--muted)}
+  .script{background:var(--surface);border-left:3px solid var(--clin);border-radius:0 12px 12px 0;padding:13px 16px;margin-bottom:10px;box-shadow:var(--shL);font-size:14px;color:var(--ink)}.script small{display:block;color:var(--dim);font-size:11.5px;margin-top:4px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+  .kbox{background:linear-gradient(120deg,var(--physL),rgba(255,255,255,.6));border:1px solid rgba(22,163,74,.2);border-radius:14px;padding:18px 20px;font-size:14px;color:var(--muted)}.kbox b{color:var(--ink)}
+  .warn{background:linear-gradient(120deg,#fef3c7,rgba(255,255,255,.6));border:1px solid rgba(217,119,6,.22);border-radius:14px;padding:18px 20px;font-size:14px;color:var(--muted)}.warn b{color:var(--ink)}
+  .pill{display:inline-block;font-weight:500;font-size:11.5px;padding:5px 12px;border-radius:100px;border:1px solid var(--line);color:var(--muted);margin:3px 4px 3px 0;background:var(--surface)}
+  .divline{height:1px;background:var(--line2)}footer{padding:44px 0;border-top:1px solid var(--line);color:var(--dim);font-size:13px}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="index.html" class="logo"><span class="orb"></span><span class="wm"><span class="nm">MyDose</span><span class="sl">Take back control</span></span></a>
+  <div class="navlinks">
+    <a href="planejamento-estrategico.html">Estratégia</a>
+    <a href="plano-de-growth.html">Growth</a>
+    <a href="comunicacao.html">Comunicação</a>
+    <a class="on" href="precificacao.html">Precificação</a>
+    <a href="plano-operacional.html">Operacional</a>
+    <a href="plano-de-negocios.html">Negócios</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="badge">● 04 · Precificação · modelo, oferta & negociação</span>
+  <h1>O preço captura o valor.<br><span class="grad">A negociação fecha.</span></h1>
+  <p class="lead">As tabelas (trimestral/semestral/anual, sem plano mensal), os entregáveis por plano, a oferta irrecusável e — novo — o <b>playbook de negociação</b> para o time comercial: walkaway, brindes e discurso. Mídia <b>fora do preço</b>. As metas de venda estão no <a href="plano-de-growth.html" style="color:var(--clin);font-weight:600">Plano de Growth</a>.</p>
+</div></header>
+
+<section><div class="wrap">
+  <div class="eyebrow">1 · Tabela de preços</div>
+  <h2>Duas tabelas, uma chavinha.</h2>
+  <p class="lead">No site, um seletor: <b>sou profissional</b> (Mental/Physical) ou <b>sou clínica</b> (Clinics). <b>Não existe plano mensal</b> — o menor compromisso é trimestral; quanto mais longo, maior o desconto. Mídia é verba que o cliente investe e a gente gere.</p>
+  <div class="mt2"><span class="toggle"><span class="on ind">Sou profissional</span><span class="cli">Sou clínica</span></span></div>
+  <div class="secthead"><h3>Tabela A — Profissional individual</h3><span class="pin pin-ind">Mental + Physical</span></div>
+  <div class="scroll">
+    <table class="tbl"><thead><tr><th>Plano</th><th class="r">Trimestral</th><th class="r">Semestral <small>(/mês · −15%)</small></th><th class="r">Anual <small>(/mês · −25%)</small></th><th class="c">+ Mídia (você investe)</th></tr></thead><tbody>
+      <tr><td class="lab">Software <small class="dim">· você faz</small></td><td class="r num">R$ 397</td><td class="r num">R$ 337</td><td class="r num">R$ 298</td><td class="c">—</td></tr>
+      <tr><td class="lab">Start <small class="dim">· 1º resultado</small></td><td class="r num">R$ 797</td><td class="r num">R$ 677</td><td class="r num">R$ 598</td><td class="c">—</td></tr>
+      <tr><td class="lab">Co-pilot <small class="dim">· te guia</small></td><td class="r num">R$ 1.490</td><td class="r num">R$ 1.267</td><td class="r num">R$ 1.118</td><td class="c">—</td></tr>
+      <tr class="hl"><td class="lab">Autopilot <small class="dim">· faz e roda</small></td><td class="r num">R$ 2.990</td><td class="r num">R$ 2.542</td><td class="r num">R$ 2.243</td><td class="c y">+ R$ 1.500</td></tr>
+      <tr><td class="lab">Partner <small class="dim">· cresce junto</small></td><td class="r num">R$ 7.900</td><td class="r num">R$ 6.715</td><td class="r num">R$ 5.925</td><td class="c y">+ R$ 5.000</td></tr>
+    </tbody></table>
+  </div>
+  <div class="secthead"><h3>Tabela B — Clínica (multiprofissional)</h3><span class="pin pin-cli">Clinics · a partir de agosto</span></div>
+  <div class="scroll">
+    <table class="tbl"><thead><tr><th>Plano</th><th class="r">Trimestral</th><th class="r">Semestral <small>(−15%)</small></th><th class="r">Anual <small>(−25%)</small></th><th class="c">Prof.</th><th class="c">+ Mídia</th></tr></thead><tbody>
+      <tr><td class="lab">Clinics Start</td><td class="r num">R$ 1.990</td><td class="r num">R$ 1.692</td><td class="r num">R$ 1.493</td><td class="c">até 3</td><td class="c">—</td></tr>
+      <tr class="hl"><td class="lab">Clinics Growth</td><td class="r num">R$ 4.990</td><td class="r num">R$ 4.242</td><td class="r num">R$ 3.743</td><td class="c">até 6</td><td class="c vc">+ R$ 2.500</td></tr>
+      <tr><td class="lab">Clinics Performance</td><td class="r num">R$ 9.900</td><td class="r num">R$ 8.415</td><td class="r num">R$ 7.425</td><td class="c">até 12</td><td class="c vc">+ R$ 5.000</td></tr>
+    </tbody></table>
+  </div>
+  <p class="note">Profissional/seat extra: <b>R$ 99/mês</b>. Ex.: Autopilot anual = R$ 2.243/mês de serviço + R$ 1.500 de mídia = ~R$ 3.740/mês total, sabendo exatamente quanto vai pra anúncio.</p>
+</div></section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section><div class="wrap">
+  <div class="eyebrow">2 · Entregáveis & créditos</div>
+  <h2>O que cada plano inclui.</h2>
+  <div class="secthead"><h3>Profissional individual</h3><span class="pin pin-ind">com IA fazendo o peso</span></div>
+  <div class="scroll">
+    <table class="tbl"><thead><tr><th>Entrega / mês</th><th class="c">Software</th><th class="c">Start</th><th class="c">Co-pilot</th><th class="c">Autopilot</th><th class="c">Partner</th></tr></thead><tbody>
+      <tr><td class="lab">Plataforma IA + Academy</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td></tr>
+      <tr><td class="lab">Posts criados com IA</td><td class="c">—</td><td class="c">6</td><td class="c">12</td><td class="c">20</td><td class="c">36</td></tr>
+      <tr><td class="lab">Vídeos / Reels editados</td><td class="c">—</td><td class="c">3</td><td class="c">6</td><td class="c">10</td><td class="c">18</td></tr>
+      <tr><td class="lab">Ebooks / lead magnets</td><td class="c">—</td><td class="c">1</td><td class="c">1/mês</td><td class="c">2/mês</td><td class="c">4/mês</td></tr>
+      <tr><td class="lab">Gestão de tráfego</td><td class="c">—</td><td class="c">—</td><td class="c">setup</td><td class="c y">rodado</td><td class="c y">agressivo</td></tr>
+      <tr><td class="lab">📲 WhatsApp / mês</td><td class="c">500</td><td class="c">1.500</td><td class="c">4.000</td><td class="c">10.000</td><td class="c">25.000</td></tr>
+      <tr><td class="lab">✉️ E-mails / mês</td><td class="c">2.000</td><td class="c">5.000</td><td class="c">15.000</td><td class="c">40.000</td><td class="c">100.000</td></tr>
+      <tr><td class="lab">🤖 Créditos de IA / mês</td><td class="c">100</td><td class="c">400</td><td class="c">1.000</td><td class="c">3.000</td><td class="c">8.000</td></tr>
+      <tr class="total"><td>Suporte humano</td><td class="c">comunidade</td><td class="c">e-mail</td><td class="c">prioritário</td><td class="c">gerente</td><td class="c">gestor dedicado</td></tr>
+    </tbody></table>
+  </div>
+  <div class="secthead"><h3>Upsells & avulsos</h3></div>
+  <div class="scroll">
+    <table class="tbl"><thead><tr><th>Extra</th><th>Preço de tabela</th><th class="c">Margem</th></tr></thead><tbody>
+      <tr><td class="lab">📲 WhatsApp a mais</td><td>R$ 90 / 1.000 msgs</td><td class="c y">alta</td></tr>
+      <tr><td class="lab">✉️ E-mails a mais</td><td>R$ 40 / 5.000</td><td class="c y">muito alta</td></tr>
+      <tr><td class="lab">🤖 Créditos de IA</td><td>R$ 60 / 500 ações</td><td class="c y">alta</td></tr>
+      <tr><td class="lab">📘 Ebook adicional</td><td>R$ 1.500</td><td class="c y">~70%</td></tr>
+      <tr><td class="lab">🎬 Edição de vídeo</td><td>R$ 120 / vídeo (6 = R$ 590)</td><td class="c y">~65%</td></tr>
+      <tr><td class="lab">📈 Rodar mais anúncio</td><td>fee 15% (mín. R$ 150) + verba</td><td class="c y">~80%</td></tr>
+      <tr><td class="lab">👥 Seat (Clinics)</td><td>R$ 99 / profissional</td><td class="c y">alta</td></tr>
+    </tbody></table>
+  </div>
+  <p class="note">Clinics tem entregáveis ampliados (multiprofissional) — detalhe operacional no <a href="plano-operacional.html" style="color:var(--clin);font-weight:600">Plano Operacional</a>.</p>
+</div></section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section><div class="wrap">
+  <div class="eyebrow">3 · A oferta irrecusável</div>
+  <h2>"Eu seria idiota de não fazer isso."</h2>
+  <p class="lead">Exemplo ancorado no <b>Autopilot</b>: empilhar valor real até o preço parecer pequeno — e tirar 100% do risco.</p>
+  <div class="offer">
+    <h3>Em 30 dias: sua 1ª venda no Mydose + pacientes usando seus protocolos.<br><span class="gradgold">Ou a gente trabalha de graça até acontecer.</span></h3>
+    <div class="stack">
+      <div class="stackrow"><div class="it"><b>Plataforma IA Mydose + Academy</b> (1 ano)</div><div class="vl">R$ 5.964</div></div>
+      <div class="stackrow"><div class="it"><b>Gestão de tráfego profissional</b> — rodada por nós</div><div class="vl">R$ 30.000/ano</div></div>
+      <div class="stackrow"><div class="it"><b>20 posts + 10 vídeos editados / mês</b></div><div class="vl">R$ 42.000/ano</div></div>
+      <div class="stackrow"><div class="it"><b>2 ebooks/mês + funis de venda</b></div><div class="vl">R$ 36.000/ano</div></div>
+      <div class="stackrow"><div class="it"><b>Onboarding 21 dias dedicado</b> — garante os 2 aha</div><div class="vl">R$ 2.000</div></div>
+      <div class="stackrow"><div class="it"><b>Relatório mensal + plano de crescimento</b></div><div class="vl">R$ 11.880/ano</div></div>
+    </div>
+    <div class="stacktot"><div><div class="l">Valor real entregue / ano</div><div class="crossed">+ de R$ 127.000</div></div><div style="text-align:right"><div class="l">Seu investimento</div><div class="real gradgold">R$ 2.990<span style="font-size:15px;color:var(--muted)">/mês</span></div><div class="note" style="margin-top:2px">+ R$ 1.500/mês de mídia (vira suas campanhas)</div></div></div>
+    <div class="gtee">
+      <div class="gcard"><div class="ic">🛡️</div><h4>Garantia de 30 dias</h4><p>Não curtiu? Devolvemos 100%.</p></div>
+      <div class="gcard"><div class="ic">🎯</div><h4>Garantia de aha</h4><p>Sem 1ª venda + protocolos em 30 dias (cumprindo sua parte)? Trabalhamos de graça até acontecer.</p></div>
+      <div class="gcard"><div class="ic">🔒</div><h4>Trava de preço</h4><p>Preço de hoje congelado pelo contrato.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section><div class="wrap">
+  <div class="eyebrow">4 · Playbook de negociação</div>
+  <h2>Como o comercial conduz e fecha.</h2>
+  <p class="lead">Regras claras para o closer não improvisar. A premissa: <b>nunca derrubamos preço primeiro — adicionamos valor.</b> O preço só cede em troca de prazo maior (semestral/anual) ou compromisso.</p>
+
+  <div class="secthead"><h3>Walkaway — o piso de cada negócio</h3></div>
+  <div class="scroll">
+    <table class="tbl"><thead><tr><th>Plano</th><th class="r">Preço de tabela</th><th class="r">Piso (walkaway)</th><th>Como chegar ao piso</th></tr></thead><tbody>
+      <tr><td class="lab">Start</td><td class="r num">R$ 797</td><td class="r num">R$ 598</td><td>Só no anual à vista (−25%). Abaixo disso, anda.</td></tr>
+      <tr><td class="lab">Co-pilot</td><td class="r num">R$ 1.490</td><td class="r num">R$ 1.118</td><td>Anual à vista. Nunca dar serviço grátis.</td></tr>
+      <tr><td class="lab">Autopilot</td><td class="r num">R$ 2.990</td><td class="r num">R$ 2.243</td><td>Anual à vista. Mídia (R$1.500) é sempre do cliente, nunca incluída no fee.</td></tr>
+      <tr><td class="lab">Partner</td><td class="r num">R$ 7.900</td><td class="r num">R$ 5.925</td><td>Anual à vista + caso âncora/depoimento.</td></tr>
+      <tr><td class="lab">Clinics Growth</td><td class="r num">R$ 4.990</td><td class="r num">R$ 3.743</td><td>Anual à vista. Seats extras a R$ 99 (nunca de graça).</td></tr>
+    </tbody></table>
+  </div>
+  <div class="warn mt2">🚧 <b>Regra do walkaway:</b> abaixo do piso, o closer <b>encerra com elegância</b> ("faz mais sentido a gente esperar o momento certo") e devolve pro nutrir. Desconto extra só com aprovação do CGO. <b>Quem tem medo de andar, vira refém do desconto.</b></div>
+
+  <div class="secthead"><h3>Escada de concessões — nesta ordem, nunca pulando</h3></div>
+  <div class="steps">
+    <div class="step"><div class="sn">1</div><div><h4>Reforçar valor (não toca no preço)</h4><p>Recapitula a promessa e a garantia. 70% das objeções de preço morrem aqui.</p></div></div>
+    <div class="step"><div class="sn">2</div><div><h4>Oferecer prazo maior</h4><p>"Consigo um preço melhor no semestral/anual." O desconto vem em troca de compromisso e caixa adiantado.</p></div></div>
+    <div class="step"><div class="sn">3</div><div><h4>Dar brinde (alto valor percebido, baixo custo)</h4><p>Em vez de cortar preço, adiciona um bônus da lista abaixo.</p></div></div>
+    <div class="step"><div class="sn">4</div><div><h4>Só então, ir ao piso</h4><p>Em troca de fechamento na call + anual à vista. Nunca o piso "de graça".</p></div></div>
+  </div>
+
+  <div class="secthead"><h3>Brindes que podemos dar (e quanto custam pra nós)</h3></div>
+  <div class="grid g3">
+    <div class="card"><span class="tag" style="background:var(--physL);color:var(--phys)">Custo ~zero</span><h3>Trava de preço vitalícia</h3><p>Congela o preço atual pra sempre. Valor percebido alto, custo marginal zero.</p></div>
+    <div class="card"><span class="tag" style="background:var(--physL);color:var(--phys)">Custo baixo (IA)</span><h3>1 ebook ou +1 mês de créditos</h3><p>Produzido por IA. Brinde clássico antes de tocar no preço.</p></div>
+    <div class="card"><span class="tag" style="background:var(--physL);color:var(--phys)">Custo baixo</span><h3>Onboarding VIP / setup acelerado</h3><p>Prioridade na fila de ativação. Acelera o aha — bom pra reter.</p></div>
+    <div class="card"><span class="tag" style="background:rgba(245,158,11,.15);color:var(--warn)">Custo médio</span><h3>30 dias de upgrade de plano</h3><p>Experimenta o tier acima — vira upsell natural depois.</p></div>
+    <div class="card"><span class="tag" style="background:rgba(245,158,11,.15);color:var(--warn)">Custo médio</span><h3>Sessão de estratégia com gestor</h3><p>1 leitura de dados ao vivo. Reservar para Clinics/Partner.</p></div>
+    <div class="card"><span class="tag" style="background:rgba(225,29,72,.12);color:var(--bad)">Evitar</span><h3>Desconto puro no fee</h3><p>Último recurso, só via prazo. Corrói margem e ancora o cliente em preço.</p></div>
+  </div>
+
+  <div class="secthead"><h3>Discurso comercial — o roteiro da call</h3></div>
+  <div class="script">"Antes de falar de preço, deixa eu entender: hoje, onde você mais perde — em trazer paciente, em reter, ou no tempo que o operacional come?"<small>1 · Diagnóstico (descobre a dor dominante)</small></div>
+  <div class="script">"Pelo que você me contou, o plano que faz sentido é o [X]. Ele resolve exatamente [a dor], e a meta é você ter [aha] em 30 dias."<small>2 · Prescrição (recomenda UM plano, não um cardápio)</small></div>
+  <div class="script">"Olha tudo que entra: [stack de valor]. Isso valeria mais de R$ 127 mil por ano. Seu investimento é R$ 2.990/mês — e ainda com garantia: não rodou, a gente trabalha de graça."<small>3 · Ancoragem + oferta + garantia</small></div>
+  <div class="script">"Faz sentido? / Tem algo que te impede de começar hoje?"<small>4 · Fechamento por compromisso (pergunta que assume o avanço)</small></div>
+  <div class="script">"Entendo o preço. Deixa eu te mostrar: no anual, fica R$ 2.243 — e eu ainda travo esse valor e libero o onboarding VIP, só se fecharmos hoje."<small>5 · Objeção de preço → escada (valor → prazo → brinde)</small></div>
+  <div class="script">"Sem problema. Faz mais sentido a gente conversar quando for o momento certo pra você — te mantenho no nosso conteúdo até lá."<small>6 · Walkaway (quando passa do piso — encerra sem queimar a relação)</small></div>
+</div></section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section><div class="wrap">
+  <div class="eyebrow">5 · A margem que ninguém vê</div>
+  <h2>Por que a conta fecha.</h2>
+  <div class="scroll mt2">
+    <table class="tbl"><thead><tr><th>Plano</th><th class="r">Serviço/mês</th><th class="r">Mídia (separada)</th><th class="r">Margem s/ serviço*</th></tr></thead><tbody>
+      <tr><td><strong>Software</strong></td><td class="r num">R$ 397</td><td class="r num">—</td><td class="r num y">~85%</td></tr>
+      <tr><td><strong>Start</strong></td><td class="r num">R$ 797</td><td class="r num">—</td><td class="r num y">~78%</td></tr>
+      <tr><td><strong>Co-pilot</strong></td><td class="r num">R$ 1.490</td><td class="r num">—</td><td class="r num y">~72%</td></tr>
+      <tr><td><strong>Autopilot</strong></td><td class="r num">R$ 2.990</td><td class="r num">+ R$ 1.500</td><td class="r num y">~68%</td></tr>
+      <tr class="total"><td><strong>Partner / Clinics</strong></td><td class="r num">R$ 7.900+</td><td class="r num">+ R$ 5.000</td><td class="r num y">~62%</td></tr>
+    </tbody></table>
+  </div>
+  <div class="kbox mt2">📌 Agência tradicional roda a 20–30%. Com a mídia <b>fora do preço</b> e a IA fazendo o trabalho pesado, o serviço entrega <b>60–85%</b>. É isso que protege o EBITDA — detalhado no <a href="plano-de-negocios.html" style="color:var(--clin);font-weight:600">Plano de Negócios</a>. *Estimativas a validar com COGS real.</div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="logo" style="margin-bottom:10px"><span class="orb"></span><span class="wm"><span class="nm">MyDose</span><span class="sl">Precificação</span></span></div>
+  04 de 06 · Tabelas, oferta e negociação · <a href="index.html" style="color:var(--clin)">voltar ao hub</a>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyDose · 02 Plano de Growth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f5f4fa;--surface:#fff;--surface2:#fbfaff;--ink:#16121f;--muted:#5c5772;--dim:#928da6;--line:rgba(22,18,31,.10);--line2:rgba(22,18,31,.06);--m1:#a855f7;--m2:#ec4899;--m3:#f59e0b;--mental:#7c3aed;--mentalL:#ede9fe;--phys:#16a34a;--physL:#dcfce7;--clin:#2563eb;--clinL:#dbeafe;--ok:#16a34a;--warn:#d97706;--bad:#e11d48;--f:'Outfit',sans-serif;--mono:'Space Grotesk',sans-serif;--sh:0 1px 2px rgba(22,18,31,.04),0 8px 24px rgba(22,18,31,.06);--shL:0 1px 2px rgba(22,18,31,.03),0 4px 12px rgba(22,18,31,.04)}
+  *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(50vw 50vw at 88% -8%,rgba(37,99,235,.08),transparent 60%),radial-gradient(45vw 45vw at -8% 20%,rgba(168,85,247,.06),transparent 60%),radial-gradient(45vw 45vw at 100% 100%,rgba(22,163,74,.05),transparent 60%),var(--bg)}
+  a{color:inherit;text-decoration:none}.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  section{padding:62px 0;position:relative}h1,h2,h3,h4{font-family:var(--f);letter-spacing:-.025em;line-height:1.1;font-weight:700}h2{font-size:clamp(26px,4vw,40px);margin-bottom:12px}
+  .eyebrow{font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--clin);margin-bottom:12px}
+  .lead{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:830px}.muted{color:var(--muted)}.dim{color:var(--dim)}.note{font-size:12.5px;color:var(--dim);margin-top:12px}.mt{margin-top:24px}.mt2{margin-top:42px}
+  .logo{display:flex;align-items:center;gap:11px}.logo .orb{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 29% 24%,rgba(255,255,255,.6) 0%,rgba(255,255,255,0) 26%),radial-gradient(circle at 76% 80%,#ffae52 0%,#fb9942 14%,rgba(251,153,66,0) 52%),radial-gradient(circle at 37% 33%,#ecc6fc 0%,#d98fe6 20%,#d666bf 44%,#d65cae 62%,#ce5fa2 100%);box-shadow:0 3px 14px rgba(206,92,170,.42),inset -3px -4px 9px rgba(140,40,115,.32),inset 2px 3px 7px rgba(255,255,255,.32)}
+  .logo .wm{display:flex;flex-direction:column;line-height:.92}.logo .nm{font-weight:700;font-size:21px;letter-spacing:-.03em;color:var(--ink)}.logo .sl{font-weight:600;font-size:7.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-top:3px}
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(245,244,250,.82);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:8px;height:62px}nav .logo{margin-right:auto}
+  .navlinks{display:flex;gap:2px;flex-wrap:wrap}.navlinks a{font-weight:500;font-size:12.5px;color:var(--muted);padding:7px 10px;border-radius:9px;transition:.2s}.navlinks a:hover{color:var(--ink);background:var(--surface);box-shadow:var(--shL)}.navlinks a.on{color:var(--clin);font-weight:700;background:var(--surface);box-shadow:var(--shL)}
+  @media(max-width:1020px){.navlinks{display:none}}
+  .hero{padding:58px 0 34px}.badge{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:12.5px;padding:7px 14px;border:1px solid var(--line);border-radius:100px;color:var(--clin);background:var(--surface);box-shadow:var(--shL)}
+  .hero h1{font-size:clamp(32px,5.2vw,58px);margin:20px 0 14px;font-weight:800;letter-spacing:-.035em}.grad{background:linear-gradient(100deg,var(--clin),var(--mental) 55%,var(--phys));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}.kpi{background:var(--surface);border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:var(--sh)}.kpi .n{font-weight:800;font-size:clamp(20px,2.6vw,28px);letter-spacing:-.03em;color:var(--clin)}.kpi .l{font-size:12px;color:var(--muted);margin-top:3px}
+  @media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  .grid{display:grid;gap:16px}.g3{grid-template-columns:repeat(3,1fr)}@media(max-width:760px){.g3{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--line2);border-radius:16px;padding:20px;box-shadow:var(--sh)}.card h3{font-size:16px;margin-bottom:7px}.card p{color:var(--muted);font-size:13.8px}
+  .tag{display:inline-block;font-weight:600;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border-radius:7px;margin-bottom:9px}
+  .tbl{width:100%;border-collapse:collapse;font-size:13px;border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:var(--surface);box-shadow:var(--sh)}
+  .tbl th,.tbl td{padding:10px 11px;text-align:left;border-bottom:1px solid var(--line2)}.tbl th{font-weight:600;font-size:10.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);background:var(--surface2)}
+  .tbl td{color:var(--muted)}.tbl td strong{color:var(--ink)}.tbl tr:last-child td{border-bottom:none}.tbl .total td{background:linear-gradient(90deg,rgba(168,85,247,.08),rgba(37,99,235,.06));color:var(--ink);font-weight:700}.tbl .sub td{background:rgba(37,99,235,.06);color:var(--ink);font-weight:600}
+  .tbl td.c,.tbl th.c{text-align:center}.tbl td.r,.tbl th.r{text-align:right}.tbl .lab{color:var(--ink);font-weight:600}
+  .scroll{overflow-x:auto;border-radius:14px}.num{font-variant-numeric:tabular-nums;font-family:var(--mono)}.vp{color:var(--phys);font-weight:600}.vm{color:var(--mental);font-weight:600}.vc{color:var(--clin);font-weight:600}.y{color:var(--ok);font-weight:600}
+  .chan{border-radius:16px;padding:22px;border:1px solid var(--line2);box-shadow:var(--sh);background:var(--surface)}.chan .ct{font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}.chan .big{font-weight:800;font-size:28px;letter-spacing:-.03em}.chan .row{display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid var(--line2);color:var(--muted)}.chan .row b{color:var(--ink)}
+  .funnel{display:flex;flex-direction:column;gap:8px;margin-top:20px}.fstage{display:grid;grid-template-columns:38px 1fr auto;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line2);border-radius:12px;padding:13px 16px;box-shadow:var(--shL);position:relative;overflow:hidden}.fstage::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--m1),var(--clin))}
+  .fnum{font-weight:800;font-size:19px;color:var(--m1);text-align:center}.fbody h4{font-size:14.5px;margin-bottom:2px}.fbody .ass{font-size:12.5px;color:var(--muted)}.fmet{text-align:right;font-family:var(--mono);font-size:12.5px;color:var(--ink);white-space:nowrap}.fmet small{color:var(--dim);display:block;font-size:11px;font-weight:400}
+  @media(max-width:620px){.fstage{grid-template-columns:32px 1fr}.fmet{grid-column:1/-1;text-align:left}}
+  .bar{display:flex;border-radius:10px;overflow:hidden;height:40px;border:1px solid var(--line2);font-weight:600;font-size:12.5px;box-shadow:var(--shL);margin-top:14px}.bar .seg{display:flex;align-items:center;justify-content:center;color:#fff;padding:0 6px;text-align:center}
+  .kbox{background:linear-gradient(120deg,var(--clinL),rgba(255,255,255,.6));border:1px solid rgba(37,99,235,.2);border-radius:14px;padding:18px 20px;font-size:14px;color:var(--muted)}.kbox b{color:var(--ink)}
+  .secthead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:28px 0 8px}.secthead h3{font-size:17px}.secthead .pin{font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:100px}.pin-ind{background:var(--mentalL);color:var(--mental)}.pin-cli{background:var(--clinL);color:var(--clin)}
+  .divline{height:1px;background:var(--line2)}footer{padding:44px 0;border-top:1px solid var(--line);color:var(--dim);font-size:13px}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="index.html" class="logo"><span class="orb"></span><span class="wm"><span class="nm">MyDose</span><span class="sl">Take back control</span></span></a>
+  <div class="navlinks">
+    <a href="planejamento-estrategico.html">Estratégia</a>
+    <a class="on" href="plano-de-growth.html">Growth</a>
+    <a href="comunicacao.html">Comunicação</a>
+    <a href="precificacao.html">Precificação</a>
+    <a href="plano-operacional.html">Operacional</a>
+    <a href="plano-de-negocios.html">Negócios</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="badge">● 02 · Plano de Growth · Q3 + Q4</span>
+  <h1>De atenção a <span class="grad">receita recorrente.</span></h1>
+  <p class="lead">Quanto vender, de quem, por qual canal e com quanto investir. Ads compram atenção · Eventos aceleram confiança · Educação cria decisão · Vendas capturam valor · CS multiplica. Aqui mora a <b>demanda</b>; os preços vivem em Precificação, a entrega em Operacional.</p>
+  <div class="kpis">
+    <div class="kpi"><div class="n">R$ 3,26M</div><div class="l">ACV líquido</div></div>
+    <div class="kpi"><div class="n">229</div><div class="l">contas · ~290 profissionais</div></div>
+    <div class="kpi"><div class="n">R$ 200k</div><div class="l">mídia de aquisição</div></div>
+    <div class="kpi"><div class="n">~16×</div><div class="l">ROAS de mídia</div></div>
+  </div>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">1 · ICPs — com quem falamos</div>
+    <h2>Os três mercados.</h2>
+    <p class="lead">A arquitetura de marca está no Planejamento Estratégico. Aqui está <b>quem</b> e <b>quanto</b> de cada um. <b>Physical</b> é o motor de volume (com os médicos); <b>Mental</b> traz recorrência; <b>Clinics</b> entra em agosto com o maior ticket.</p>
+    <div class="grid g3 mt2">
+      <div class="card" style="border-top:3px solid var(--phys)"><span class="tag" style="background:var(--physL);color:var(--phys)">Physical · 122 contas</span><h3>Saúde física</h3><p>Nutricionistas, <b>nutrólogos, endócrino, médicos do esporte e integrativa</b>, personal, fisio. ACV R$ 1,51M.</p></div>
+      <div class="card" style="border-top:3px solid var(--mental)"><span class="tag" style="background:var(--mentalL);color:var(--mental)">Mental · 90 contas</span><h3>Saúde mental</h3><p>Psicólogos, psiquiatras, terapeutas. No-show e adesão emocional. ACV R$ 981k.</p></div>
+      <div class="card" style="border-top:3px solid var(--clin)"><span class="tag" style="background:var(--clinL);color:var(--clin)">Clinics · 17 contas</span><h3>Clínicas · ago→</h3><p>Multiprofissionais. Ticket ~4× maior. ACV R$ 776k.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">2 · Metas de venda</div>
+    <h2>Quem exatamente vendemos.</h2>
+    <div class="secthead"><h3>Detalhe — profissão × plano × versão</h3><span class="pin pin-ind">individual</span></div>
+    <div class="scroll">
+      <table class="tbl">
+        <thead><tr><th>Profissional</th><th class="c">Versão</th><th class="c">Software</th><th class="c">Start</th><th class="c">Co-pilot</th><th class="c">Autopilot</th><th class="c">Partner</th><th class="c">Total</th></tr></thead>
+        <tbody>
+          <tr><td class="lab">Nutricionistas</td><td class="c vp">Physical</td><td class="c">14</td><td class="c">24</td><td class="c">9</td><td class="c">2</td><td class="c">1</td><td class="c"><strong>50</strong></td></tr>
+          <tr><td class="lab">Médicos <small class="dim">(nutrólogo, endócrino, esporte, integrativa)</small></td><td class="c vp">Physical</td><td class="c">8</td><td class="c">16</td><td class="c">9</td><td class="c">4</td><td class="c">1</td><td class="c"><strong>38</strong></td></tr>
+          <tr><td class="lab">Personal / Ed. Física</td><td class="c vp">Physical</td><td class="c">9</td><td class="c">10</td><td class="c">3</td><td class="c">0</td><td class="c">0</td><td class="c"><strong>22</strong></td></tr>
+          <tr><td class="lab">Fisioterapeutas</td><td class="c vp">Physical</td><td class="c">5</td><td class="c">6</td><td class="c">1</td><td class="c">0</td><td class="c">0</td><td class="c"><strong>12</strong></td></tr>
+          <tr><td class="lab">Psicólogos</td><td class="c vm">Mental</td><td class="c">21</td><td class="c">30</td><td class="c">8</td><td class="c">2</td><td class="c">1</td><td class="c"><strong>62</strong></td></tr>
+          <tr><td class="lab">Psiquiatras</td><td class="c vm">Mental</td><td class="c">5</td><td class="c">8</td><td class="c">2</td><td class="c">1</td><td class="c">0</td><td class="c"><strong>16</strong></td></tr>
+          <tr><td class="lab">Terapeutas</td><td class="c vm">Mental</td><td class="c">4</td><td class="c">6</td><td class="c">2</td><td class="c">0</td><td class="c">0</td><td class="c"><strong>12</strong></td></tr>
+          <tr class="total"><td><strong>Total individual</strong></td><td class="c">—</td><td class="c"><strong>66</strong></td><td class="c"><strong>100</strong></td><td class="c"><strong>34</strong></td><td class="c"><strong>9</strong></td><td class="c"><strong>3</strong></td><td class="c"><strong>212</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="secthead"><h3>Clínicas — por plano</h3><span class="pin pin-cli">a partir de agosto · R$ 776k</span></div>
+    <div class="scroll">
+      <table class="tbl"><thead><tr><th>Plano</th><th class="c">Contas</th><th class="r">ACV líq./conta</th><th class="r">ACV total</th></tr></thead><tbody>
+        <tr><td class="lab">Clinics Start</td><td class="c">10</td><td class="r num">R$ 23.880</td><td class="r num">R$ 239k</td></tr>
+        <tr><td class="lab">Clinics Growth</td><td class="c">5</td><td class="r num">R$ 59.880</td><td class="r num">R$ 299k</td></tr>
+        <tr><td class="lab">Clinics Performance</td><td class="c">2</td><td class="r num">R$ 118.800</td><td class="r num">R$ 238k</td></tr>
+        <tr class="total"><td><strong>Total Clinics</strong></td><td class="c"><strong>17</strong></td><td class="r">méd. R$ 45,6k</td><td class="r num"><strong>R$ 776k</strong></td></tr>
+      </tbody></table>
+    </div>
+    <div class="secthead"><h3>Projeção por prazo de contrato</h3><span class="pin pin-ind">trimestral · semestral · anual</span></div>
+    <div class="scroll">
+      <table class="tbl"><thead><tr><th>Prazo</th><th class="c">Desconto</th><th class="c">Individual</th><th class="c">Clínica</th><th class="c">Total</th><th class="c">%</th></tr></thead><tbody>
+        <tr><td class="lab">Anual</td><td class="c">−25%</td><td class="c">95</td><td class="c">9</td><td class="c"><strong>104</strong></td><td class="c">45%</td></tr>
+        <tr><td class="lab">Semestral</td><td class="c">−15%</td><td class="c">74</td><td class="c">6</td><td class="c"><strong>80</strong></td><td class="c">35%</td></tr>
+        <tr><td class="lab">Trimestral</td><td class="c">—</td><td class="c">43</td><td class="c">2</td><td class="c"><strong>45</strong></td><td class="c">20%</td></tr>
+        <tr class="total"><td><strong>Total</strong></td><td class="c">—</td><td class="c"><strong>212</strong></td><td class="c"><strong>17</strong></td><td class="c"><strong>229</strong></td><td class="c"><strong>100%</strong></td></tr>
+      </tbody></table>
+    </div>
+    <p class="note">Meta comercial: empurrar <b>anual</b> (caixa adiantado + maior LTV + menor churn). ~80% das contas em compromisso ≥ 6 meses. Os preços de cada plano e prazo estão em <a href="precificacao.html" style="color:var(--clin);font-weight:600">Precificação</a>.</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">3 · Mix de canais</div>
+    <h2>Ads + Eventos + Orgânico.</h2>
+    <div class="grid g3 mt2">
+      <div class="chan"><div class="ct" style="color:var(--clin)">📊 Ads — volume</div><div class="big vc">124</div><div class="dim" style="font-size:12px;margin-bottom:8px">contas · 54%</div>
+        <div class="row"><span>Receita</span><b>R$ 1,55M</b></div><div class="row"><span>Investimento</span><b>R$ 140k</b></div><div class="row"><span>CPA</span><b>R$ 1.129</b></div><div class="row" style="border:none"><span>ROAS</span><b>~11×</b></div></div>
+      <div class="chan"><div class="ct" style="color:var(--m2)">🎤 Eventos — qualidade</div><div class="big" style="color:var(--m2)">37</div><div class="dim" style="font-size:12px;margin-bottom:8px">contas · 16%</div>
+        <div class="row"><span>Receita</span><b>R$ 950k</b></div><div class="row"><span>Investimento</span><b>R$ 60k</b></div><div class="row"><span>CPA</span><b>R$ 1.622</b></div><div class="row" style="border:none"><span>ROAS</span><b>~16×</b></div></div>
+      <div class="chan"><div class="ct" style="color:var(--phys)">🌱 Orgânico — margem</div><div class="big vp">68</div><div class="dim" style="font-size:12px;margin-bottom:8px">contas · 30%</div>
+        <div class="row"><span>Receita</span><b>R$ 760k</b></div><div class="row"><span>Investimento</span><b>R$ 0</b></div><div class="row"><span>CPA</span><b>~0</b></div><div class="row" style="border:none"><span>Fontes</span><b>conteúdo·indicação</b></div></div>
+    </div>
+    <div class="kbox mt2">🔥 Eventos são o canal preferencial de <b>Clinics</b> (confiança, ticket alto). Ads sustentam o pipeline individual. Orgânico sustenta a margem. ROAS médio de mídia ~16×.</div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">4 · O funil · Conscientização → Expansão</div>
+    <h2>7 fases. Do estranho ao fã.</h2>
+    <div class="funnel">
+      <div class="fstage"><div class="fnum">01</div><div class="fbody"><h4>Conscientização</h4><div class="ass">Ads · eventos · conteúdo · indicação</div></div><div class="fmet">~7.000 leads<small>CPL ~R$ 29</small></div></div>
+      <div class="fstage"><div class="fnum">02</div><div class="fbody"><h4>Educação</h4><div class="ass">VSL · webinário (quartas) · ACP · Scalable Health Canvas · Calculadora</div></div><div class="fmet">~2.000 MQL<small>~R$ 100/MQL</small></div></div>
+      <div class="fstage"><div class="fnum">03</div><div class="fbody"><h4>Seleção</h4><div class="ass">Form com score · qualificação SDR</div></div><div class="fmet">~730 SQL<small>~R$ 274/SQL</small></div></div>
+      <div class="fstage"><div class="fnum">04</div><div class="fbody"><h4>Compromisso</h4><div class="ass">Call consultiva · close 30–35%</div></div><div class="fmet">~500 reuniões → 229 vendas<small>~37/mês no pico</small></div></div>
+      <div class="fstage"><div class="fnum">05</div><div class="fbody"><h4>Integração</h4><div class="ass">Onboarding 21 dias · os 2 aha moments</div></div><div class="fmet">229 ativações<small>1ª venda + protocolos</small></div></div>
+      <div class="fstage"><div class="fnum">06</div><div class="fbody"><h4>Adoção</h4><div class="ass">Uso recorrente · gamificação · relatório</div></div><div class="fmet">churn &lt; 2%<small>NRR ≥ 110%</small></div></div>
+      <div class="fstage"><div class="fnum">07</div><div class="fbody"><h4>Expansão</h4><div class="ass">Upsell · avulsos · seats · créditos</div></div><div class="fmet">+8–12%<small>sem novo CAC</small></div></div>
+    </div>
+    <p class="note">A mensagem e os criativos de cada fase estão em <a href="comunicacao.html" style="color:var(--clin);font-weight:600">Comunicação</a>. A capacidade de entrega (fases 5–7) está em <a href="plano-operacional.html" style="color:var(--clin);font-weight:600">Operacional</a>.</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">5 · Investimento & quando se paga por quê</div>
+    <h2>Onde entra os R$ 200k de mídia.</h2>
+    <div class="bar"><div class="seg" style="width:55%;background:linear-gradient(100deg,#a855f7,#7c3aed)">Consideração · 55% · R$ 110k</div><div class="seg" style="width:35%;background:linear-gradient(100deg,#2563eb,#1d4ed8)">Educação · 35% · R$ 70k</div><div class="seg" style="width:10%;background:linear-gradient(100deg,#16a34a,#15803d)">Seleção · 10% · R$ 20k</div></div>
+    <div class="scroll mt2">
+      <table class="tbl"><thead><tr><th>Etapa</th><th>O que é</th><th class="r">Volume H2</th><th class="r">Custo unitário</th><th>Quem paga</th></tr></thead><tbody>
+        <tr><td class="lab">Interação / Lead</td><td>clique, baixou lead magnet</td><td class="r num">~7.000</td><td class="r num">R$ 29 (CPL)</td><td>nós (mídia)</td></tr>
+        <tr><td class="lab">MQL</td><td>engajou na educação</td><td class="r num">~2.000</td><td class="r num">~R$ 100</td><td>nós (mídia)</td></tr>
+        <tr><td class="lab">SQL</td><td>qualificado pelo SDR</td><td class="r num">~730</td><td class="r num">~R$ 274</td><td>nós (mídia + folha)</td></tr>
+        <tr><td class="lab">Reunião realizada</td><td>call consultiva acontece</td><td class="r num">~500</td><td class="r num">~R$ 400</td><td>nós (mídia + folha)</td></tr>
+        <tr><td class="lab">Venda (CPA)</td><td>contrato assinado</td><td class="r num">229</td><td class="r num">R$ 873 blend.</td><td>só folha de vendas</td></tr>
+        <tr class="total"><td>Pós-venda · uso</td><td>WhatsApp/IA/e-mail acima da cota</td><td class="r">—</td><td class="r">avulsos</td><td><strong>o CLIENTE paga</strong></td></tr>
+      </tbody></table>
+    </div>
+    <p class="note">CAC blended ~R$ 873 (mídia) / ~R$ 3k (com folha) vs ACV médio R$ 14,2k → <b>LTV/CAC &gt; 4×</b>. A mídia que rodamos para clientes é verba deles (separada). Regra viva: CPL subiu → corta Consideração, reforça Educação; show rate caiu → reforça Seleção.</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">6 · Cronograma mensal</div>
+    <h2>O build até R$ 3,26M — Clinics entra em agosto.</h2>
+    <div class="scroll mt2">
+      <table class="tbl"><thead><tr><th>Mês</th><th class="r">Mídia</th><th class="r">Leads</th><th class="r">Vendas ind.</th><th class="r">Vendas Clinics</th><th class="r">ACV líq./mês</th><th class="r">Acumulado</th></tr></thead><tbody>
+        <tr><td class="lab">Jul</td><td class="r num">R$ 24k</td><td class="r num">840</td><td class="r num">22</td><td class="r num">0</td><td class="r num">R$ 258k</td><td class="r num">R$ 258k</td></tr>
+        <tr><td class="lab">Ago</td><td class="r num">R$ 30k</td><td class="r num">1.050</td><td class="r num">32</td><td class="r num">2</td><td class="r num">R$ 466k</td><td class="r num">R$ 724k</td></tr>
+        <tr><td class="lab">Set</td><td class="r num">R$ 34k</td><td class="r num">1.190</td><td class="r num">38</td><td class="r num">3</td><td class="r num">R$ 583k</td><td class="r num">R$ 1,31M</td></tr>
+        <tr><td class="lab">Out</td><td class="r num">R$ 38k</td><td class="r num">1.330</td><td class="r num">42</td><td class="r num">4</td><td class="r num">R$ 675k</td><td class="r num">R$ 1,98M</td></tr>
+        <tr><td class="lab">Nov</td><td class="r num">R$ 40k</td><td class="r num">1.400</td><td class="r num">40</td><td class="r num">4</td><td class="r num">R$ 652k</td><td class="r num">R$ 2,63M</td></tr>
+        <tr class="total"><td><strong>Dez</strong></td><td class="r num"><strong>R$ 34k</strong></td><td class="r num"><strong>1.190</strong></td><td class="r num"><strong>38</strong></td><td class="r num"><strong>4</strong></td><td class="r num"><strong>R$ 629k</strong></td><td class="r num"><strong>R$ 3,26M</strong></td></tr>
+      </tbody></table>
+    </div>
+    <p class="note">O ramp do time comercial e a capacidade de entrega estão no <a href="plano-operacional.html" style="color:var(--clin);font-weight:600">Plano Operacional</a>; o P&L e o retorno do investimento, no <a href="plano-de-negocios.html" style="color:var(--clin);font-weight:600">Plano de Negócios</a>.</p>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="logo" style="margin-bottom:10px"><span class="orb"></span><span class="wm"><span class="nm">MyDose</span><span class="sl">Plano de Growth</span></span></div>
+  02 de 06 · ICPs, metas, canais, funil e investimento · <a href="index.html" style="color:var(--clin)">voltar ao hub</a>
+</div></footer>
+</body>
+</html>
