@@ -23,21 +23,22 @@
   .hero{padding:58px 0 34px}.badge{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:12.5px;padding:7px 14px;border:1px solid var(--line);border-radius:100px;color:var(--warn);background:var(--surface);box-shadow:var(--shL)}
   .hero h1{font-size:clamp(32px,5.2vw,58px);margin:20px 0 14px;font-weight:800;letter-spacing:-.035em}.grad{background:linear-gradient(100deg,var(--m3),var(--m2) 55%,var(--m1));-webkit-background-clip:text;background-clip:text;color:transparent}
   .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}.kpi{background:var(--surface);border:1px solid var(--line2);border-radius:16px;padding:18px;box-shadow:var(--sh)}.kpi .n{font-weight:800;font-size:clamp(20px,2.6vw,30px);letter-spacing:-.03em;background:linear-gradient(120deg,var(--m3),var(--m2));-webkit-background-clip:text;background-clip:text;color:transparent}.kpi .l{font-size:12px;color:var(--muted);margin-top:3px}@media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}}
-  .grid{display:grid;gap:16px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}@media(max-width:760px){.g2,.g3{grid-template-columns:1fr}}
+  .grid{display:grid;gap:16px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}@media(max-width:900px){.g4{grid-template-columns:1fr 1fr}}@media(max-width:760px){.g2,.g3{grid-template-columns:1fr}}
   .card{background:var(--surface);border:1px solid var(--line2);border-radius:16px;padding:20px;box-shadow:var(--sh)}.card h3{font-size:16px;margin-bottom:7px}.card p{color:var(--muted);font-size:13.8px}
-  /* canvas */
-  .canvas{display:grid;grid-template-columns:repeat(5,1fr);grid-auto-rows:minmax(120px,auto);gap:10px;margin-top:18px}
-  .cv{background:var(--surface);border:1px solid var(--line2);border-radius:12px;padding:13px;box-shadow:var(--shL)}
-  .cv h4{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--m1);margin-bottom:6px}.cv ul{list-style:none}.cv li{font-size:11.8px;color:var(--muted);padding:2px 0 2px 12px;position:relative}.cv li::before{content:"·";position:absolute;left:2px;color:var(--m2);font-weight:700}
-  .cv.kp{grid-row:span 2}.cv.ka{}.cv.vp{grid-row:span 2;background:linear-gradient(160deg,rgba(168,85,247,.08),var(--surface));border-color:rgba(168,85,247,.25)}.cv.cr{}.cv.cs{grid-row:span 2}
-  .cv.cost{grid-column:span 3}.cv.rev{grid-column:span 2;background:linear-gradient(160deg,rgba(22,163,74,.08),var(--surface));border-color:rgba(22,163,74,.25)}
+  .tag{display:inline-block;font-weight:600;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border-radius:7px;margin-bottom:9px}
+  .canvas{display:grid;grid-template-columns:repeat(5,1fr);grid-auto-rows:minmax(110px,auto);gap:10px;margin-top:18px}
+  .cv{background:var(--surface);border:1px solid var(--line2);border-radius:12px;padding:13px;box-shadow:var(--shL)}.cv h4{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--m1);margin-bottom:6px}.cv ul{list-style:none}.cv li{font-size:11.8px;color:var(--muted);padding:2px 0 2px 12px;position:relative}.cv li::before{content:"·";position:absolute;left:2px;color:var(--m2);font-weight:700}
+  .cv.kp{grid-row:span 2}.cv.vp{grid-row:span 2;background:linear-gradient(160deg,rgba(168,85,247,.08),var(--surface));border-color:rgba(168,85,247,.25)}.cv.cs{grid-row:span 2}.cv.cost{grid-column:span 3}.cv.rev{grid-column:span 2;background:linear-gradient(160deg,rgba(22,163,74,.08),var(--surface));border-color:rgba(22,163,74,.25)}
   @media(max-width:900px){.canvas{grid-template-columns:1fr 1fr}.cv,.cv.kp,.cv.vp,.cv.cs,.cv.cost,.cv.rev{grid-row:auto;grid-column:auto}}
   .tbl{width:100%;border-collapse:collapse;font-size:13px;border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:var(--surface);box-shadow:var(--sh)}.tbl th,.tbl td{padding:10px 11px;text-align:left;border-bottom:1px solid var(--line2)}.tbl th{font-weight:600;font-size:10.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);background:var(--surface2)}.tbl td{color:var(--muted)}.tbl td strong{color:var(--ink)}.tbl tr:last-child td{border-bottom:none}.tbl .total td{background:linear-gradient(90deg,rgba(245,158,11,.12),rgba(236,72,153,.08));color:var(--ink);font-weight:700}.tbl .pos td{background:rgba(22,163,74,.08);color:var(--ink);font-weight:700}.tbl td.c,.tbl th.c{text-align:center}.tbl td.r,.tbl th.r{text-align:right}.tbl .lab{color:var(--ink);font-weight:600}.tbl .rd2{color:var(--bad)}.scroll{overflow-x:auto;border-radius:14px}.num{font-variant-numeric:tabular-nums;font-family:var(--mono)}.y{color:var(--ok);font-weight:600}
   .alloc{display:flex;border-radius:12px;overflow:hidden;height:46px;border:1px solid var(--line2);font-weight:600;font-size:12px;box-shadow:var(--shL);margin-top:14px}.alloc .seg{display:flex;align-items:center;justify-content:center;color:#fff;padding:0 6px;text-align:center}
   .capt{display:flex;border-radius:12px;overflow:hidden;height:40px;border:1px solid var(--line2);font-weight:600;font-size:11.5px;box-shadow:var(--shL);margin-top:12px}.capt .s{display:flex;align-items:center;justify-content:center;color:#fff;padding:0 4px;text-align:center}
   .adv{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.adv .a{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 13px;font-size:12.5px}.adv .a b{color:var(--ink)}.adv .a small{color:var(--dim);display:block;font-size:10.5px}
+  .scn{border-radius:16px;padding:20px;border:1px solid var(--line2);box-shadow:var(--sh);background:var(--surface)}.scn.meta{border-top:3px solid var(--phys)}.scn.sup{border-top:3px solid var(--m3)}.scn.opt{border-top:3px solid var(--dim);opacity:.85}
+  .scn h3{font-size:17px;margin-bottom:4px}.scn .big{font-weight:800;font-size:30px;letter-spacing:-.03em;margin:6px 0}.scn p{font-size:13px;color:var(--muted)}
   .kbox{background:linear-gradient(120deg,#fef3c7,rgba(255,255,255,.6));border:1px solid rgba(217,119,6,.22);border-radius:14px;padding:18px 20px;font-size:14px;color:var(--muted)}.kbox b{color:var(--ink)}
   .warn{background:linear-gradient(120deg,rgba(225,29,72,.07),rgba(255,255,255,.6));border:1px solid rgba(225,29,72,.22);border-radius:14px;padding:18px 20px;font-size:14px;color:var(--muted)}.warn b{color:var(--ink)}
+  .green{background:linear-gradient(120deg,var(--physL),rgba(255,255,255,.6));border:1px solid rgba(22,163,74,.2);border-radius:14px;padding:18px 20px;font-size:14px;color:var(--muted)}.green b{color:var(--ink)}
   .divline{height:1px;background:var(--line2)}.secthead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:26px 0 8px}.secthead h3{font-size:17px}footer{padding:44px 0;border-top:1px solid var(--line);color:var(--dim);font-size:13px}
 </style>
 </head>
@@ -55,108 +56,177 @@
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <span class="badge">● 06 · Plano de Negócios · Q3 + Q4</span>
-  <h1>A conta que fecha o<br><span class="grad">semestre.</span></h1>
-  <p class="lead">O modelo de negócio inteiro num lugar: o Business Model Canvas, o P&L, o caminho para <b>EBITDA ≥ 20%</b>, a receita por colaborador e onde investir cada real. É aqui que estratégia, growth, preço e operação viram número.</p>
+  <span class="badge">● 06 · Plano de Negócios · dados reais Abr/26</span>
+  <h1>Crescer com lucro,<br><span class="grad">não queimando caixa.</span></h1>
+  <p class="lead">Onde estamos de verdade, o que as projeções realmente dizem e como chegamos à <b>meta de R$ 2M</b> (super meta R$ 3M) no segundo semestre mantendo <b>EBITDA de 20%</b>. Tudo ancorado nos números reais desde o lançamento do SaaS de Hábitos (jun/25).</p>
   <div class="kpis">
-    <div class="kpi"><div class="n">R$ 3,26M</div><div class="l">receita (run-rate ARR)</div></div>
-    <div class="kpi"><div class="n">20%</div><div class="l">EBITDA alvo (~R$ 650k)</div></div>
-    <div class="kpi"><div class="n">~R$ 181k</div><div class="l">receita por colaborador</div></div>
-    <div class="kpi"><div class="n">&gt; 4×</div><div class="l">LTV / CAC</div></div>
+    <div class="kpi"><div class="n">R$ 1,58M</div><div class="l">ARR atual (Abr/26) · real</div></div>
+    <div class="kpi"><div class="n">R$ 2,0M</div><div class="l">meta de TCV · H2 (super: R$ 3M)</div></div>
+    <div class="kpi"><div class="n">20%</div><div class="l">EBITDA alvo no run-rate de saída</div></div>
+    <div class="kpi"><div class="n">3,9×</div><div class="l">LTV / CAC (real)</div></div>
   </div>
 </div></header>
 
 <section><div class="wrap">
-  <div class="eyebrow">1 · Business Model Canvas</div>
+  <div class="eyebrow">1 · Onde estamos — tração real</div>
+  <h2>10 meses de SaaS, product-market fit validado.</h2>
+  <p class="lead">Desde o lançamento (última semana de jun/25) até abr/26: <b>R$ 1,30M de TCV acumulado</b>, 216 clientes vendidos, ARR de R$ 1,58M. A base está provada — o jogo agora é <b>escalar a aquisição e estancar o churn</b>.</p>
+  <div class="scroll mt2">
+    <table class="tbl"><thead><tr><th>Métrica (Abr/26)</th><th class="r">Real</th><th>Leitura</th></tr></thead><tbody>
+      <tr><td class="lab">TCV acumulado (10m)</td><td class="r num">R$ 1.303.504</td><td>Média R$ 130k/mês; melhor mês Mar/26 (R$ 201k).</td></tr>
+      <tr><td class="lab">MRR</td><td class="r num">R$ 131.538</td><td>+10,1% vs Mar. Base recorrente sólida.</td></tr>
+      <tr><td class="lab">ARR (run-rate)</td><td class="r num">R$ 1.578.456</td><td>Ponto de partida do H2.</td></tr>
+      <tr><td class="lab">Clientes ativos</td><td class="r num">145 / 216</td><td>Retenção logo de 67,1% em 10 meses.</td></tr>
+      <tr><td class="lab">ARPU (ticket médio anual)</td><td class="r num">R$ 10.255</td><td>Sobe para ~R$ 13,3k com a nova tabela.</td></tr>
+      <tr><td class="lab">CAC</td><td class="r num">R$ 1.188</td><td>Excelente — espaço para investir mais em aquisição.</td></tr>
+      <tr><td class="lab">LTV</td><td class="r num">R$ 4.632</td><td>Limitado pelo churn — eis a alavanca.</td></tr>
+      <tr><td class="lab">LTV / CAC</td><td class="r num y">3,9×</td><td>Saudável (&gt;3). Sobe rápido se o churn cair.</td></tr>
+      <tr class="total"><td><strong>Churn mensal médio</strong></td><td class="r num"><strong>3,29%</strong></td><td><strong>O ponto crítico: ~33% da base ao ano.</strong></td></tr>
+    </tbody></table>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section><div class="wrap">
+  <div class="eyebrow">2 · Verificação das projeções (visão CFO + growth)</div>
+  <h2>As projeções estavam otimistas. Aqui vai o realista.</h2>
+  <p class="lead">A projeção interna (19,7% MoM → R$ 6,6M de ARR em dez/26; 60% QoQ) extrapola a média recente <b>ignorando três coisas</b>: o arrasto do churn, a dificuldade de manter % alto com a base maior, e a capacidade de entrega. Recalibramos.</p>
+  <div class="grid g3 mt2">
+    <div class="scn opt"><h3>Otimista (interno)</h3><div class="big" style="color:var(--dim)">R$ 6,6M</div><p>ARR dez/26 · 19,7% MoM · 60% QoQ. <b>Teto</b> — assume churn ~0 e execução perfeita.</p></div>
+    <div class="scn meta"><h3>Meta (realista) ✓</h3><div class="big" style="color:var(--phys)">~R$ 3,0M</div><p>ARR de saída dez/26 · ~9–10% MoM líquido · <b>R$ 2,0M de TCV no H2</b>. É o plano.</p></div>
+    <div class="scn sup"><h3>Super meta</h3><div class="big" style="color:var(--m3)">~R$ 4,0M</div><p>ARR de saída · <b>R$ 3,0M de TCV no H2</b> + churn reduzido a 2,5%. Stretch ambicioso.</p></div>
+  </div>
+  <div class="warn mt2">🩸 <b>O diagnóstico do CFO:</b> com churn de 3,29%/mês você perde ~1/3 da base por ano — está enchendo um balde furado. <b>Reduzir o churn de 3,3% → 2,5% tem mais impacto no ARR do que +20% de aquisição</b>, porque destrava o LTV (hoje R$ 4.632), e um LTV maior permite gastar mais em CAC e crescer mais rápido. <b>A retenção é a alavanca nº 1 do semestre.</b></div>
+</div></section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section><div class="wrap">
+  <div class="eyebrow">3 · A meta do semestre</div>
+  <h2>R$ 2M de TCV (super meta R$ 3M).</h2>
+  <p class="lead">Contra o H1/26 (~R$ 1,42M de TCV), a meta de <b>R$ 2,0M</b> no H2 é +41% — ambiciosa e crível com a nova tabela (ticket maior) + Clinics. A super meta de R$ 3,0M é o teto de execução. O detalhamento por plano/ICP está no <a href="plano-de-growth.html" style="color:var(--clin);font-weight:600">Plano de Growth</a>.</p>
+  <div class="scroll mt2">
+    <table class="tbl"><thead><tr><th>Mês</th><th class="r">TCV meta (R$2M)</th><th class="r">Acumulado</th><th class="r">MRR (run-rate)</th><th class="r">ARR de saída</th></tr></thead><tbody>
+      <tr><td class="lab">Jun/26 (base)</td><td class="r num">—</td><td class="r num">—</td><td class="r num">R$ 165k</td><td class="r num">R$ 2,0M</td></tr>
+      <tr><td class="lab">Jul</td><td class="r num">R$ 240k</td><td class="r num">R$ 240k</td><td class="r num">R$ 188k</td><td class="r num">R$ 2,3M</td></tr>
+      <tr><td class="lab">Ago</td><td class="r num">R$ 290k</td><td class="r num">R$ 530k</td><td class="r num">R$ 210k</td><td class="r num">R$ 2,5M</td></tr>
+      <tr><td class="lab">Set</td><td class="r num">R$ 330k</td><td class="r num">R$ 860k</td><td class="r num">R$ 232k</td><td class="r num">R$ 2,8M</td></tr>
+      <tr><td class="lab">Out</td><td class="r num">R$ 360k</td><td class="r num">R$ 1,22M</td><td class="r num">R$ 253k</td><td class="r num">R$ 3,0M</td></tr>
+      <tr><td class="lab">Nov</td><td class="r num">R$ 380k</td><td class="r num">R$ 1,60M</td><td class="r num">R$ 273k</td><td class="r num">R$ 3,3M</td></tr>
+      <tr class="pos"><td><strong>Dez</strong></td><td class="r num"><strong>R$ 400k</strong></td><td class="r num"><strong>R$ 2,00M</strong></td><td class="r num"><strong>R$ 293k</strong></td><td class="r num"><strong>~R$ 3,0M*</strong></td></tr>
+    </tbody></table>
+  </div>
+  <p class="note">*ARR de saída líquido do churn. ~149 contas no H2 a um ticket médio de ~R$ 13,3k. Premissa: churn caindo de 3,3% → 2,5% ao longo do semestre. Crescimento de MRR ~9–10%/mês líquido (vs 19,7% da projeção otimista).</p>
+</div></section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section><div class="wrap">
+  <div class="eyebrow">4 · Business Model Canvas</div>
   <h2>O modelo numa tela.</h2>
   <div class="canvas">
-    <div class="cv kp"><h4>Parcerias-chave</h4><ul><li>Advisors (Pipeline, VGT, Equity Fund, Ticket, Arena Hub)</li><li>Creators parceiros da saúde</li><li>Eventos médicos (Arnold, congressos)</li><li>Google for Startups · Hospital Einstein</li></ul></div>
-    <div class="cv ka"><h4>Atividades-chave</h4><ul><li>Produto + IA (Tech)</li><li>Aquisição (Growth)</li><li>Entrega de conteúdo/tráfego</li><li>CS e retenção (CI)</li><li>Validação científica (Dr. Arthur)</li></ul></div>
-    <div class="cv vp"><h4>Proposta de valor</h4><ul><li><b>+Adesão · +Receita · −Tempo</b></li><li>O SO de IA da saúde: comunidade + automação + receitas</li><li>1 plataforma no lugar de 9 apps</li><li>Done-for-you com margem de SaaS</li><li>Promessa: +R$10k em 30 dias</li></ul></div>
-    <div class="cv cr"><h4>Relacionamento</h4><ul><li>Comunidade + IA 24/7</li><li>Customer Success</li><li>Gestor dedicado (Partner/Clinics)</li><li>Mydose Academy</li></ul></div>
-    <div class="cv cs"><h4>Segmentos de clientes</h4><ul><li>Physical (nutri, médicos, personal, fisio)</li><li>Mental (psicólogos, psiquiatras, terapeutas)</li><li>Clinics (clínicas multipro)</li><li>~290 profissionais no H2</li></ul></div>
-    <div class="cv ka"><h4>Recursos-chave</h4><ul><li>Plataforma + IA proprietária</li><li>Time (3 áreas)</li><li>Marca + ciência (Dr. Arthur)</li><li>Dados de adesão/comportamento</li></ul></div>
-    <div class="cv cr"><h4>Canais</h4><ul><li>Ads · Eventos · Orgânico</li><li>Webinário semanal</li><li>Inside sales + PLG</li></ul></div>
-    <div class="cv cost"><h4>Estrutura de custos</h4><ul><li><b>Equipe (~48%)</b> · Marketing/aquisição (~15%) · Ferramentas + infra + IA (~14%) · Fornecedores/entrega (~4%)</li><li>Mídia dos clientes é pass-through (verba deles)</li></ul></div>
-    <div class="cv rev"><h4>Fontes de receita</h4><ul><li>Assinatura (trimestral/semestral/anual)</li><li>Done-for-you + avulsos + créditos</li><li>Seats (Clinics) · fee de gestão de mídia</li></ul></div>
+    <div class="cv kp"><h4>Parcerias-chave</h4><ul><li>Advisors (Pipeline, VGT, Equity Fund, Ticket, Arena Hub)</li><li>Creators parceiros da saúde</li><li>Eventos médicos</li><li>Google for Startups · Einstein</li></ul></div>
+    <div class="cv"><h4>Atividades-chave</h4><ul><li>Produto + IA (Tech)</li><li>Aquisição (Growth)</li><li>Entrega de conteúdo/tráfego</li><li>Retenção (CI) — prioridade</li><li>Validação científica</li></ul></div>
+    <div class="cv vp"><h4>Proposta de valor</h4><ul><li><b>+Adesão · +Receita · −Tempo</b></li><li>SO de IA da saúde</li><li>1 plataforma no lugar de 9 apps</li><li>Done-for-you com margem de SaaS</li><li>+R$10k em 30 dias</li></ul></div>
+    <div class="cv"><h4>Relacionamento</h4><ul><li>Comunidade + IA 24/7</li><li>Customer Success</li><li>Gestor (Partner/Clinics)</li><li>Academy</li></ul></div>
+    <div class="cv cs"><h4>Segmentos</h4><ul><li>Physical (nutri, médicos, personal, fisio)</li><li>Mental (psi)</li><li>Clinics (clínicas)</li><li>~174 profissionais no H2</li></ul></div>
+    <div class="cv"><h4>Recursos-chave</h4><ul><li>Plataforma + IA própria</li><li>Time (3 áreas)</li><li>Marca + ciência (Dr. Arthur)</li><li>Dados de adesão</li></ul></div>
+    <div class="cv"><h4>Canais</h4><ul><li>Ads · Eventos · Orgânico</li><li>Webinário semanal</li><li>Inside sales + PLG</li></ul></div>
+    <div class="cv cost"><h4>Estrutura de custos</h4><ul><li><b>Equipe (~48%)</b> · Marketing (~14%) · Ferramentas + IA (~13%) · Fornecedores (~5%)</li><li>Mídia dos clientes é pass-through</li></ul></div>
+    <div class="cv rev"><h4>Fontes de receita</h4><ul><li>Assinatura (trimestral/semestral/anual)</li><li>Done-for-you + avulsos + créditos</li><li>Seats (Clinics) · fee de mídia</li></ul></div>
   </div>
-  <p class="note">Detalhe de segmentos e canais no <a href="plano-de-growth.html" style="color:var(--clin);font-weight:600">Growth</a>; da proposta de valor no <a href="comunicacao.html" style="color:var(--clin);font-weight:600">Comunicação</a>; dos recursos/atividades no <a href="plano-operacional.html" style="color:var(--clin);font-weight:600">Operacional</a>.</p>
 </div></section>
 
 <div class="wrap"><div class="divline"></div></div>
 
 <section><div class="wrap">
-  <div class="eyebrow">2 · P&L · run-rate de saída (anualizado)</div>
-  <h2>Como chegamos a 20% de EBITDA.</h2>
-  <p class="lead">O semestre é de investimento: a margem cresce ao longo do ramp e a empresa <b>sai do H2 num run-rate de R$ 3,26M com EBITDA de 20%</b>. A disciplina que sustenta isso: mídia fora do preço + entrega alavancada por IA (margem de serviço 60–85%).</p>
+  <div class="eyebrow">5 · P&L · run-rate de saída (Dez/26)</div>
+  <h2>EBITDA de 20% — com lucro.</h2>
+  <p class="lead">No run-rate de saída de ~R$ 3,0M de ARR, a estrutura entrega <b>20% de EBITDA</b>. O semestre é de investimento à frente da receita, então a margem cresce ao longo do ramp.</p>
   <div class="scroll mt2">
     <table class="tbl"><thead><tr><th>Linha</th><th class="r">R$ / ano</th><th class="r">% receita</th></tr></thead><tbody>
-      <tr><td class="lab y">Receita (ARR líquido de serviço)</td><td class="r num y">3.260.000</td><td class="r">100%</td></tr>
-      <tr><td class="lab rd2">(–) Equipe (folha + comissões)</td><td class="r num">1.550.000</td><td class="r">48%</td></tr>
-      <tr><td class="lab rd2">(–) Marketing / aquisição própria</td><td class="r num">490.000</td><td class="r">15%</td></tr>
-      <tr><td class="lab rd2">(–) Ferramentas + infra + IA</td><td class="r num">450.000</td><td class="r">14%</td></tr>
-      <tr><td class="lab rd2">(–) Fornecedores / entrega terceirizada</td><td class="r num">120.000</td><td class="r">4%</td></tr>
-      <tr class="total"><td><strong>Custo total</strong></td><td class="r num"><strong>2.610.000</strong></td><td class="r"><strong>80%</strong></td></tr>
-      <tr class="pos"><td><strong>EBITDA</strong></td><td class="r num"><strong>650.000</strong></td><td class="r"><strong>20%</strong></td></tr>
+      <tr><td class="lab y">Receita (ARR de saída)</td><td class="r num y">3.000.000</td><td class="r">100%</td></tr>
+      <tr><td class="lab rd2">(–) Equipe (folha + comissões)</td><td class="r num">1.440.000</td><td class="r">48%</td></tr>
+      <tr><td class="lab rd2">(–) Marketing / aquisição própria</td><td class="r num">420.000</td><td class="r">14%</td></tr>
+      <tr><td class="lab rd2">(–) Ferramentas + infra + IA</td><td class="r num">390.000</td><td class="r">13%</td></tr>
+      <tr><td class="lab rd2">(–) Fornecedores / entrega</td><td class="r num">150.000</td><td class="r">5%</td></tr>
+      <tr class="total"><td><strong>Custo total</strong></td><td class="r num"><strong>2.400.000</strong></td><td class="r"><strong>80%</strong></td></tr>
+      <tr class="pos"><td><strong>EBITDA</strong></td><td class="r num"><strong>600.000</strong></td><td class="r"><strong>20%</strong></td></tr>
     </tbody></table>
   </div>
-  <div class="warn mt2">⚠️ <b>Leitura honesta:</b> os 20% são o <b>run-rate de saída</b>, não a média do semestre. Durante o ramp (Jul→Set) investimos à frente da receita (contratações de entrega, mídia), então o EBITDA do início do H2 é menor — e fecha em 20% conforme a base de clientes amadurece. A mídia dos clientes (~R$600k/ano) <b>não</b> entra como receita nem custo: é verba deles que passa pela conta.</div>
+  <div class="green mt2">📌 <b>Por que fecha:</b> CAC real de R$ 1.188 (baixíssimo) + mídia dos clientes fora do preço + entrega alavancada por IA (margem de serviço 60–85%). A disciplina: não inflar folha além da capacidade de receita. <b>Receita por colaborador ~R$ 176k</b> (R$3M ÷ 17).</div>
 </div></section>
 
 <div class="wrap"><div class="divline"></div></div>
 
 <section><div class="wrap">
-  <div class="eyebrow">3 · Onde investir cada real</div>
-  <h2>Alocação dos R$ 2,61M de custo.</h2>
+  <div class="eyebrow">6 · A alavanca nº 1 — retenção</div>
+  <h2>Estancar o balde furado.</h2>
+  <p class="lead">Com 3,29%/mês, o churn é o maior inimigo do plano. Reduzi-lo é mais barato e mais potente que escalar aquisição. Onde atacar:</p>
+  <div class="grid g3 mt2">
+    <div class="card"><span class="tag" style="background:var(--clinL);color:var(--clin)">CI · Nicholas</span><h3>Aha em 14 dias</h3><p>Onboarding que entrega a 1ª venda + protocolos rodando rápido. Quem atinge o aha não churna.</p></div>
+    <div class="card"><span class="tag" style="background:var(--physL);color:var(--phys)">Produto</span><h3>Hábito diário (D.O.S.E.)</h3><p>Gamificação que faz o profissional abrir o app toda manhã. Uso = retenção.</p></div>
+    <div class="card"><span class="tag" style="background:var(--mentalL);color:var(--mental)">Modelo</span><h3>Anual à vista</h3><p>45% das vendas em anual trava o cliente por 12 meses e reduz o churn mensal efetivo.</p></div>
+    <div class="card"><span class="tag" style="background:rgba(245,158,11,.15);color:var(--warn)">Expansão</span><h3>NRR ≥ 110%</h3><p>Avulsos + seats (8–12% da receita) compensam o churn e elevam o LTV.</p></div>
+    <div class="card"><span class="tag" style="background:rgba(245,158,11,.15);color:var(--warn)">Meta</span><h3>Churn 3,3% → 2,5%</h3><p>Cada ponto de churo a menos eleva o LTV e o LTV/CAC — destravando mais investimento em aquisição.</p></div>
+    <div class="card" style="background:var(--surface2)"><h3>O efeito composto</h3><p>Churn 2,5% + ARPU R$13,3k → LTV salta de R$ 4.632 para ~R$ 8k+. LTV/CAC vai de 3,9× para ~6×.</p></div>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="divline"></div></div>
+
+<section><div class="wrap">
+  <div class="eyebrow">7 · Onde investir cada real</div>
+  <h2>Alocação dos R$ 2,4M de custo.</h2>
   <div class="alloc">
-    <div class="seg" style="width:59%;background:linear-gradient(100deg,#7c3aed,#a855f7)">Equipe · 59%</div>
-    <div class="seg" style="width:19%;background:linear-gradient(100deg,#2563eb,#3b82f6)">Marketing · 19%</div>
-    <div class="seg" style="width:17%;background:linear-gradient(100deg,#16a34a,#15803d)">Ferramentas/IA · 17%</div>
-    <div class="seg" style="width:5%;background:linear-gradient(100deg,#f59e0b,#ea580c)">Fornec.</div>
+    <div class="seg" style="width:60%;background:linear-gradient(100deg,#7c3aed,#a855f7)">Equipe · 60%</div>
+    <div class="seg" style="width:17.5%;background:linear-gradient(100deg,#2563eb,#3b82f6)">Marketing · 17%</div>
+    <div class="seg" style="width:16%;background:linear-gradient(100deg,#16a34a,#15803d)">Ferramentas/IA · 16%</div>
+    <div class="seg" style="width:6.5%;background:linear-gradient(100deg,#f59e0b,#ea580c)">Fornec.</div>
   </div>
-  <div class="grid g2 mt2">
-    <div class="card"><h3>👥 Equipe — R$ 1,55M</h3><p>Time atual (14) + 5–6 contratações de entrega faseadas (ver Operacional). Maior alavanca de margem: produtividade por pessoa via IA.</p></div>
-    <div class="card"><h3>📣 Marketing — R$ 490k</h3><p>Aquisição própria (R$200k mídia no H2 + criativos, eventos, webinário, ferramentas de funil). ROAS ~16×.</p></div>
-    <div class="card"><h3>🛠️ Ferramentas + IA — R$ 450k</h3><p>Infra de IA/cloud, tokens, WhatsApp API, edição de vídeo, CRM, plataforma de webinário. É o que substitui mão de obra — investir aqui derruba o custo de entrega.</p></div>
-    <div class="card"><h3>🤝 Fornecedores — R$ 120k</h3><p>Entrega terceirizada de pico (edição, tráfego), contadores, jurídico. Variável conforme demanda.</p></div>
+  <div class="grid g4 mt2">
+    <div class="card"><h3>👥 Equipe · R$ 1,44M</h3><p>Time atual (14) + contratações de entrega faseadas (ver Operacional). A maior alavanca de margem é produtividade via IA.</p></div>
+    <div class="card"><h3>📣 Marketing · R$ 420k</h3><p>~R$ 180k de mídia no H2 (CAC R$ 1.188) + criativos, eventos, webinário. ROAS alto comprovado.</p></div>
+    <div class="card"><h3>🛠️ Ferramentas + IA · R$ 390k</h3><p>Infra de IA/cloud, tokens, WhatsApp API, edição, CRM. Investir aqui derruba o custo de entrega.</p></div>
+    <div class="card"><h3>🤝 Fornecedores · R$ 150k</h3><p>Entrega terceirizada de pico, contábil, jurídico. Variável conforme demanda.</p></div>
   </div>
 </div></section>
 
 <div class="wrap"><div class="divline"></div></div>
 
 <section><div class="wrap">
-  <div class="eyebrow">4 · Métricas que importam</div>
-  <h2>O painel financeiro.</h2>
+  <div class="eyebrow">8 · Painel de métricas</div>
+  <h2>Real hoje → meta de saída.</h2>
   <div class="scroll mt2">
-    <table class="tbl"><thead><tr><th>Métrica</th><th class="r">Meta H2</th><th>Por quê</th></tr></thead><tbody>
-      <tr><td class="lab">Receita (ARR de saída)</td><td class="r num">R$ 3,26M</td><td>A meta do semestre.</td></tr>
-      <tr><td class="lab">EBITDA</td><td class="r num y">≥ 20%</td><td>Rentabilidade — não crescer queimando.</td></tr>
-      <tr><td class="lab">Receita por colaborador</td><td class="r num">~R$ 181k</td><td>R$3,26M ÷ 18. Eficiência via IA.</td></tr>
-      <tr><td class="lab">Margem de contribuição (serviço)</td><td class="r num">~70%</td><td>Mídia fora + IA na entrega.</td></tr>
-      <tr><td class="lab">CAC blended</td><td class="r num">~R$ 3k</td><td>Mídia + folha de vendas.</td></tr>
-      <tr><td class="lab">LTV / CAC</td><td class="r num y">&gt; 4×</td><td>Saúde da aquisição.</td></tr>
-      <tr><td class="lab">CAC payback</td><td class="r num">&lt; 12 meses</td><td>Velocidade de retorno.</td></tr>
-      <tr><td class="lab">NRR</td><td class="r num y">≥ 110%</td><td>Expansão &gt; churn (upsell/avulsos).</td></tr>
-      <tr><td class="lab">Churn</td><td class="r num">&lt; 5%</td><td>Retenção (CI).</td></tr>
-      <tr><td class="lab">Runway</td><td class="r num">≥ 12 meses</td><td>Fôlego de caixa (CEO).</td></tr>
+    <table class="tbl"><thead><tr><th>Métrica</th><th class="r">Real (Abr/26)</th><th class="r">Meta (Dez/26)</th></tr></thead><tbody>
+      <tr><td class="lab">ARR</td><td class="r num">R$ 1,58M</td><td class="r num y">~R$ 3,0M</td></tr>
+      <tr><td class="lab">TCV no semestre</td><td class="r num">—</td><td class="r num y">R$ 2,0M (super R$ 3M)</td></tr>
+      <tr><td class="lab">EBITDA</td><td class="r num">—</td><td class="r num y">20%</td></tr>
+      <tr><td class="lab">ARPU (ticket)</td><td class="r num">R$ 10.255</td><td class="r num">~R$ 13.300</td></tr>
+      <tr><td class="lab">CAC</td><td class="r num">R$ 1.188</td><td class="r num">≤ R$ 1.500</td></tr>
+      <tr><td class="lab">LTV / CAC</td><td class="r num">3,9×</td><td class="r num y">≥ 5×</td></tr>
+      <tr><td class="lab">Churn mensal</td><td class="r num">3,29%</td><td class="r num y">≤ 2,5%</td></tr>
+      <tr><td class="lab">NRR</td><td class="r num">~67% (logo)</td><td class="r num y">≥ 110% (receita)</td></tr>
+      <tr><td class="lab">Receita / colaborador</td><td class="r num">~R$ 99k</td><td class="r num y">~R$ 176k</td></tr>
     </tbody></table>
   </div>
+  <p class="note">Atualizar este painel no 1º dia de cada mês com o número real (mesma cadência do Investor Update).</p>
 </div></section>
 
 <div class="wrap"><div class="divline"></div></div>
 
 <section><div class="wrap">
-  <div class="eyebrow">5 · Cap table & conselho</div>
+  <div class="eyebrow">9 · Cap table & conselho</div>
   <h2>Quem está na sociedade.</h2>
   <div class="capt">
     <div class="s" style="width:80%;background:linear-gradient(100deg,#7c3aed,#a855f7)">Founders · 80%</div>
-    <div class="s" style="width:6%;background:#2563eb">C-Levels 6%</div>
+    <div class="s" style="width:6%;background:#2563eb">C-Lvl 6%</div>
     <div class="s" style="width:6%;background:#16a34a">SAFEs 6%</div>
-    <div class="s" style="width:3.5%;background:#f59e0b">Adv.</div>
+    <div class="s" style="width:3.5%;background:#f59e0b">Adv</div>
     <div class="s" style="width:4.5%;background:#ec4899">SOP</div>
   </div>
-  <p class="note">Cap table — atualizado em agosto/2025. Founders 80% · C-Levels & Heads 6% · SAFEs 6% · Advisors 3,5% · Pool de Opções (SOP) 4,5%.</p>
-  <div class="secthead"><h3>Conselho & investidores</h3></div>
+  <p class="note">Atualizado ago/2025 · Founders 80% · C-Levels & Heads 6% · SAFEs 6% · Advisors 3,5% · Pool de Opções 4,5%.</p>
   <div class="adv">
     <div class="a"><b>Pyr Marcondes</b><small>Pipeline Capital</small></div>
     <div class="a"><b>Lucio Santana</b><small>VGT USA</small></div>
@@ -164,25 +234,13 @@
     <div class="a"><b>Daniel Krutman</b><small>Ticket Sports</small></div>
     <div class="a"><b>Fernando Patara</b><small>Arena Hub</small></div>
   </div>
-  <p class="note">Lastro acadêmico e de mercado do time: Stanford · Harvard · MBA FGV · RD Station · Amazon · Calendly · TEDx · Google for Startups · Hospital Albert Einstein.</p>
-</div></section>
-
-<div class="wrap"><div class="divline"></div></div>
-
-<section><div class="wrap">
-  <div class="eyebrow">6 · A tese de valor em uma página</div>
-  <h2>Por que isso vira uma empresa rentável.</h2>
-  <div class="grid g3 mt2">
-    <div class="card"><h3>📈 Receita de qualidade</h3><p>Recorrente, anual/semestral à vista (caixa adiantado), com expansão via avulsos e seats (NRR ≥ 110%).</p></div>
-    <div class="card"><h3>💎 Margem de SaaS</h3><p>Vende como agência (ticket alto), entrega com IA (custo baixo). Serviço a 60–85% — o que sustenta o EBITDA de 20%.</p></div>
-    <div class="card"><h3>⚡ Eficiência de capital</h3><p>R$0→R$1M em 9 meses bootstrap. Receita por colaborador ~R$181k e subindo com automação.</p></div>
-  </div>
-  <div class="kbox mt2">✅ <b>Síntese do negócio:</b> R$ 3,26M de receita · EBITDA 20% (~R$ 650k) · ~290 profissionais atendidos por ~18 pessoas · LTV/CAC &gt; 4× · mídia do cliente fora da conta. Crescimento <b>rentável</b> — não crescer queimando. Atualizar este P&L com os números reais ao fim de cada mês.</div>
+  <p class="note">Lastro do time: Stanford · Harvard · MBA FGV · RD Station · Amazon · Calendly · TEDx · Google for Startups · Hospital Albert Einstein.</p>
+  <div class="kbox mt2">✅ <b>Síntese:</b> partimos de R$ 1,58M de ARR real e PMF validado. Meta H2: <b>R$ 2,0M de TCV</b> (super R$ 3M) → ARR de saída ~R$ 3,0M com <b>EBITDA 20%</b>. A alavanca decisiva não é só vender mais — é <b>reter</b> (churn 3,3% → 2,5%). Crescer com lucro. Atualizar mensalmente.</div>
 </div></section>
 
 <footer><div class="wrap">
   <div class="logo" style="margin-bottom:10px"><span class="orb"></span><span class="wm"><span class="nm">MyDose</span><span class="sl">Plano de Negócios</span></span></div>
-  06 de 06 · Canvas, P&L, EBITDA e cap table · <a href="index.html" style="color:var(--clin)">voltar ao hub</a>
+  06 de 06 · Dados reais, projeções, canvas, P&L e EBITDA · <a href="index.html" style="color:var(--clin)">voltar ao hub</a>
 </div></footer>
 </body>
 </html>
