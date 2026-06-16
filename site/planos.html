@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyDose — Planos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f4f3f8;--surface:#fff;--surface2:#fbfaff;--ink:#16121f;--slate:#5c5772;--mist:#928da6;--night:#0c0a14;--line:rgba(22,18,31,.09);--line2:rgba(22,18,31,.05);--wline:rgba(255,255,255,.12);--violet:#a855f7;--magenta:#ec4899;--amber:#f59e0b;--mind:#7c3aed;--mindL:#ede9fe;--body:#16a34a;--bodyL:#dcfce7;--clinic:#2563eb;--clinicL:#dbeafe;--ok:#16a34a;--f:'Outfit',sans-serif;--mono:'Space Grotesk',sans-serif;--eo:cubic-bezier(.23,1,.32,1);--e1:0 1px 2px rgba(22,18,31,.04),0 6px 18px rgba(22,18,31,.06);--e2:0 2px 6px rgba(22,18,31,.05),0 20px 50px rgba(22,18,31,.09);--orb:radial-gradient(circle at 29% 24%,rgba(255,255,255,.62) 0%,rgba(255,255,255,0) 26%),radial-gradient(circle at 76% 80%,#ffae52 0%,#fb9942 14%,rgba(251,153,66,0) 52%),radial-gradient(circle at 37% 33%,#ecc6fc 0%,#d98fe6 20%,#d666bf 44%,#d65cae 62%,#ce5fa2 100%)}
+  *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:var(--f);letter-spacing:-.04em;font-weight:800;line-height:1.05}
+  .grad{background:linear-gradient(100deg,var(--violet),var(--magenta) 52%,var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .orb{border-radius:50%;background:var(--orb);box-shadow:0 3px 14px rgba(206,92,170,.42),inset -3px -4px 9px rgba(140,40,115,.32),inset 2px 3px 7px rgba(255,255,255,.34)}
+  .eyebrow{display:inline-block;font-weight:600;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;padding:7px 14px;border-radius:100px;margin-bottom:18px;color:var(--violet);background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.16)}
+  .lead{font-size:clamp(16px,2vw,19px);color:var(--slate)}.dim{color:var(--mist)}.mono{font-family:var(--mono)}.note{font-size:12.5px;color:var(--mist);margin-top:14px}
+  nav{position:sticky;top:0;z-index:60;background:rgba(244,243,248,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:12px;height:64px}
+  nav .lk{display:flex;align-items:center;gap:10px;margin-right:auto}.nav .orb,nav .orb{width:24px;height:24px}nav .nm{font-weight:800;font-size:17px;letter-spacing:-.04em}
+  nav a.b{font-weight:600;font-size:13px;color:#fff;background:linear-gradient(100deg,var(--violet),var(--magenta));padding:10px 18px;border-radius:100px}
+  nav .back{font-size:13.5px;color:var(--slate)}
+  .hero{background:radial-gradient(110vw 70vh at 50% -30%,#231a36,var(--night));color:#fff;text-align:center;padding:80px 0 70px}
+  .hero h1{font-size:clamp(34px,5.6vw,60px);letter-spacing:-.05em}
+  .hero p{color:rgba(255,255,255,.72);max-width:620px;margin:16px auto 0}
+  .toggle{display:inline-flex;background:rgba(255,255,255,.08);border:1px solid var(--wline);border-radius:100px;padding:5px;gap:4px;margin-top:26px}
+  .toggle button{font-family:var(--f);font-weight:600;font-size:13.5px;padding:9px 20px;border-radius:100px;border:none;background:transparent;color:rgba(255,255,255,.7);cursor:pointer;transition:.25s var(--eo)}
+  .toggle button.on{background:#fff;color:var(--ink)}
+  section{padding:64px 0}
+  .plans{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:stretch}
+  @media(max-width:1080px){.plans{grid-template-columns:repeat(3,1fr)}}@media(max-width:720px){.plans{grid-template-columns:1fr}}
+  .plan{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:22px;padding:22px 18px;background:var(--surface);box-shadow:var(--e1);position:relative;overflow:hidden}
+  .plan.feat{border-color:rgba(236,72,153,.45);box-shadow:0 0 0 1px rgba(236,72,153,.25),var(--e2)}
+  .plan .rib{position:absolute;top:0;left:0;right:0;height:4px}.feat .rib{background:linear-gradient(90deg,var(--violet),var(--magenta))}
+  .plan .pn{font-weight:800;font-size:19px}.plan .pt{font-size:11.5px;color:var(--mist);min-height:30px;margin:2px 0 12px}
+  .plan .price{font-family:var(--mono);font-weight:700;font-size:26px}.plan .price small{font-size:12px;color:var(--mist);font-weight:500}
+  .plan .media{font-size:11.5px;color:var(--body);font-weight:600;margin-top:4px;min-height:18px}
+  .plan ul{list-style:none;margin:14px 0;flex:1}.plan li{font-size:12.8px;color:var(--slate);padding:5px 0 5px 20px;position:relative;border-bottom:1px dashed var(--line2)}.plan li::before{content:"✓";position:absolute;left:0;color:var(--ok)}
+  .plan .cta{text-align:center;font-weight:600;font-size:13.5px;padding:11px;border-radius:100px;margin-top:6px}
+  .plan .cta.p{background:linear-gradient(100deg,var(--violet),var(--magenta));color:#fff}.plan .cta.s{background:var(--surface2);border:1px solid var(--line);color:var(--ink)}
+  .clinics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}@media(max-width:760px){.clinics{grid-template-columns:1fr}}
+  .secthead{text-align:center;max-width:680px;margin:0 auto 30px}.secthead h2{font-size:clamp(26px,4vw,42px);margin-bottom:10px}
+  .pin{display:inline-block;font-size:11.5px;font-weight:600;padding:4px 11px;border-radius:100px;margin-bottom:14px}.pin-i{background:var(--mindL);color:var(--mind)}.pin-c{background:var(--clinicL);color:var(--clinic)}
+  .offer{background:linear-gradient(150deg,#1b1430,var(--night));color:#fff;border-radius:28px;padding:clamp(30px,5vw,52px);text-align:center;box-shadow:var(--e2);position:relative;overflow:hidden}
+  .offer::before{content:"";position:absolute;inset:0;background:radial-gradient(40vw 30vw at 50% 0,rgba(236,72,153,.25),transparent 60%)}
+  .offer h2{font-size:clamp(26px,4vw,42px);position:relative;z-index:1}.offer p{color:rgba(255,255,255,.72);position:relative;z-index:1;max-width:600px;margin:14px auto 0}
+  .gtee{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px;position:relative;z-index:1}@media(max-width:720px){.gtee{grid-template-columns:1fr}}
+  .gc{background:rgba(255,255,255,.06);border:1px solid var(--wline);border-radius:16px;padding:18px}.gc h4{font-size:14px;margin:6px 0 4px}.gc p{font-size:12.5px;margin:0}
+  .brandnav{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+  .brandnav a{font-weight:600;font-size:13px;padding:9px 16px;border-radius:100px;border:1px solid var(--line);background:var(--surface)}
+  footer{background:#15111f;color:rgba(255,255,255,.6);padding:40px 0;font-size:13px;text-align:center}footer a{color:#fff}
+  .hide{display:none}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="lk" href="index.html"><span class="orb"></span><span class="nm">MyDose</span></a>
+  <a class="back" href="index.html">← Voltar ao site</a>
+  <a class="b" href="#planos">Começar agora</a>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#e9c9ff;background:rgba(168,85,247,.14);border-color:rgba(168,85,247,.28)">Planos · sem plano mensal</span>
+    <h1>Escolha como vamos<br><span class="grad">fazer você crescer.</span></h1>
+    <p>Do "faça você mesmo" ao "a gente faz e roda por você". Mídia fora do preço — você sabe exatamente quanto vai pra anúncio.</p>
+    <div class="brandnav">
+      <a href="#physical">🟢 Physical</a><a href="#mental">🟣 Mental</a><a href="#clinics">🔵 Clinics</a>
+    </div>
+    <div class="toggle">
+      <button class="on" onclick="setTerm('tri',this)">Trimestral</button>
+      <button onclick="setTerm('sem',this)">Semestral −15%</button>
+      <button onclick="setTerm('anu',this)">Anual −25%</button>
+    </div>
+  </div>
+</header>
+
+<!-- INDIVIDUAL -->
+<section id="planos">
+  <div class="wrap">
+    <div class="secthead"><span class="pin pin-i" id="physical">Physical · Mental</span><span class="pin pin-i" id="mental" style="margin-left:6px">profissional individual</span><h2>Para o profissional</h2><p class="lead">Médicos, nutricionistas, psicólogos e terapeutas. Comece simples e suba conforme o resultado chega.</p></div>
+    <div class="plans">
+      <div class="plan"><span class="rib" style="background:var(--mist)"></span><div class="pn">Software</div><div class="pt">Você faz</div><div class="price">R$ <span data-tri="397" data-sem="337" data-anu="298">397</span><small>/mês</small></div><div class="media"></div><ul><li>Plataforma IA + Academy</li><li>Comunidade + checkout</li><li>Acompanhamento de paciente</li><li>500 WhatsApp/mês</li></ul><div class="cta s">Começar</div></div>
+      <div class="plan"><span class="rib" style="background:var(--mind)"></span><div class="pn">Start</div><div class="pt">Seu 1º resultado</div><div class="price">R$ <span data-tri="797" data-sem="677" data-anu="598">797</span><small>/mês</small></div><div class="media"></div><ul><li>Tudo do Software +</li><li>Ativação dos 2 aha moments</li><li>6 posts + 3 vídeos/mês</li><li>1 ebook de ativação</li></ul><div class="cta s">Começar</div></div>
+      <div class="plan feat"><span class="rib"></span><div class="pn">Autopilot</div><div class="pt">A gente faz e roda · popular</div><div class="price">R$ <span data-tri="2.990" data-sem="2.542" data-anu="2.243">2.990</span><small>/mês</small></div><div class="media">+ R$ 1.500 de mídia</div><ul><li>Tráfego gerido por nós</li><li>20 posts + 10 vídeos/mês</li><li>2 ebooks/mês + funis</li><li>Relatório + plano</li></ul><div class="cta p">Quero esse</div></div>
+      <div class="plan"><span class="rib" style="background:var(--clinic)"></span><div class="pn">Co-pilot</div><div class="pt">A gente te guia</div><div class="price">R$ <span data-tri="1.490" data-sem="1.267" data-anu="1.118">1.490</span><small>/mês</small></div><div class="media"></div><ul><li>Tudo do Start +</li><li>12 posts + 6 vídeos/mês</li><li>Setup de mídia</li><li>Relatório mensal (IA)</li></ul><div class="cta s">Começar</div></div>
+      <div class="plan"><span class="rib" style="background:linear-gradient(90deg,var(--magenta),var(--amber))"></span><div class="pn">Partner</div><div class="pt">Cresce junto</div><div class="price">R$ <span data-tri="7.900" data-sem="6.715" data-anu="5.925">7.900</span><small>/mês</small></div><div class="media">+ R$ 5.000 de mídia</div><ul><li>Tudo do Autopilot +</li><li>Gestor dedicado</li><li>36 posts + 18 vídeos/mês</li><li>Fábrica de produtos</li></ul><div class="cta s">Falar com a gente</div></div>
+    </div>
+    <p class="note" style="text-align:center">Ex.: Autopilot anual = R$ 2.243/mês de serviço + R$ 1.500 de mídia = ~R$ 3.740/mês total. Sem fidelidade-armadilha; garantia de 30 dias.</p>
+  </div>
+</section>
+
+<!-- CLINICS -->
+<section id="clinics" style="padding-top:0">
+  <div class="wrap">
+    <div class="secthead"><span class="pin pin-c">Clinics · a partir de agosto</span><h2>Para a clínica</h2><p class="lead">Multiprofissional, com seats e gestão por profissional. Vendido com diagnóstico.</p></div>
+    <div class="clinics">
+      <div class="plan"><span class="rib" style="background:var(--clinic)"></span><div class="pn">Clinics Start</div><div class="pt">até 3 profissionais</div><div class="price">R$ <span data-tri="1.990" data-sem="1.692" data-anu="1.493">1.990</span><small>/mês</small></div><div class="media"></div><ul><li>Plataforma multiprofissional</li><li>12 posts + 6 vídeos/mês</li><li>Gestão por profissional</li></ul><div class="cta s">Agendar diagnóstico</div></div>
+      <div class="plan feat"><span class="rib"></span><div class="pn">Clinics Growth</div><div class="pt">até 6 profissionais · popular</div><div class="price">R$ <span data-tri="4.990" data-sem="4.242" data-anu="3.743">4.990</span><small>/mês</small></div><div class="media">+ R$ 2.500 de mídia</div><ul><li>Tudo do Start +</li><li>30 posts + 15 vídeos/mês</li><li>Tráfego gerido + gestor</li></ul><div class="cta p">Agendar diagnóstico</div></div>
+      <div class="plan"><span class="rib" style="background:linear-gradient(90deg,var(--magenta),var(--amber))"></span><div class="pn">Clinics Performance</div><div class="pt">até 12 profissionais</div><div class="price">R$ <span data-tri="9.900" data-sem="8.415" data-anu="7.425">9.900</span><small>/mês</small></div><div class="media">+ R$ 5.000 de mídia</div><ul><li>Tudo do Growth +</li><li>60 posts + 30 vídeos/mês</li><li>Gestor + estrategista</li></ul><div class="cta s">Agendar diagnóstico</div></div>
+    </div>
+    <p class="note" style="text-align:center">Profissional/seat extra: R$ 99/mês.</p>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section style="padding-top:0"><div class="wrap">
+  <div class="offer">
+    <h2>30 dias de garantia. Risco zero.</h2>
+    <p>Em 30 dias você faz sua 1ª venda no Mydose e tem pacientes usando seus protocolos — ou a gente trabalha de graça até acontecer.</p>
+    <div class="gtee">
+      <div class="gc"><div style="font-size:20px">🛡️</div><h4>Devolução em 30 dias</h4><p>Não curtiu? 100% de volta.</p></div>
+      <div class="gc"><div style="font-size:20px">🎯</div><h4>Garantia de resultado</h4><p>Sem aha em 30 dias? Trabalhamos de graça até acontecer.</p></div>
+      <div class="gc"><div style="font-size:20px">🔒</div><h4>Trava de preço</h4><p>Seu preço de hoje, congelado.</p></div>
+    </div>
+    <a class="b" style="display:inline-block;margin-top:26px;position:relative;z-index:1;padding:13px 26px;font-size:15px" href="onboarding.html">Ver como começar →</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><div style="font-weight:800;color:#fff;font-size:17px;margin-bottom:8px">MyDose</div>Take back control · <a href="index.html">site</a> · <a href="onboarding.html">onboarding</a> · <a href="../brand-book.html">brand book</a></div></footer>
+
+<script>
+  function setTerm(t,btn){
+    document.querySelectorAll('.toggle button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
+    document.querySelectorAll('[data-tri]').forEach(s=>{s.textContent=s.dataset[t];});
+  }
+</script>
+</body>
+</html>
