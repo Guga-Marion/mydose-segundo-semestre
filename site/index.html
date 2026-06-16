@@ -4,284 +4,242 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MyDose — O sistema operacional de IA da saúde</title>
-<meta name="description" content="Comunidades gamificadas + IA para médicos, psicólogos e nutricionistas escalarem receita e adesão. +Adesão · +Receita · −Tempo.">
+<meta name="description" content="Comunidades gamificadas + IA para médicos, nutricionistas e psicólogos escalarem receita e adesão. Sua comunidade é um prédio: monetize a jornada inteira do paciente.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f4f3f8;--surface:#fff;--surface2:#fbfaff;--ink:#16121f;--slate:#5c5772;--mist:#928da6;
-    --night:#0c0a14;--night2:#15111f;
+    --bg:#f4f3f8;--surface:#fff;--ink:#16121f;--slate:#5c5772;--mist:#928da6;
+    --night:#0a0812;--night2:#120e1c;
     --line:rgba(22,18,31,.09);--line2:rgba(22,18,31,.05);--wline:rgba(255,255,255,.12);
     --violet:#a855f7;--magenta:#ec4899;--amber:#f59e0b;
     --mind:#7c3aed;--mindL:#ede9fe;--body:#16a34a;--bodyL:#dcfce7;--clinic:#2563eb;--clinicL:#dbeafe;
-    --ok:#16a34a;--bad:#e11d48;
     --f:'Outfit',sans-serif;--mono:'Space Grotesk',sans-serif;
     --eo:cubic-bezier(.23,1,.32,1);--eio:cubic-bezier(.77,0,.175,1);
     --e1:0 1px 2px rgba(22,18,31,.04),0 6px 18px rgba(22,18,31,.06);
-    --e2:0 2px 6px rgba(22,18,31,.05),0 20px 50px rgba(22,18,31,.09);
+    --e2:0 2px 6px rgba(22,18,31,.05),0 24px 60px rgba(22,18,31,.10);
     --orb:radial-gradient(circle at 29% 24%,rgba(255,255,255,.62) 0%,rgba(255,255,255,0) 26%),radial-gradient(circle at 76% 80%,#ffae52 0%,#fb9942 14%,rgba(251,153,66,0) 52%),radial-gradient(circle at 37% 33%,#ecc6fc 0%,#d98fe6 20%,#d666bf 44%,#d65cae 62%,#ce5fa2 100%);
   }
   *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  a{color:inherit;text-decoration:none}img{max-width:100%}
+  a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
   .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
-  section{position:relative}
   h1,h2,h3,h4{font-family:var(--f);letter-spacing:-.04em;line-height:1.02;font-weight:800}
-  .eyebrow{display:inline-block;font-weight:600;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;padding:7px 14px;border-radius:100px;margin-bottom:20px}
-  .ey-light{color:var(--violet);background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.16)}
-  .ey-dark{color:#e9c9ff;background:rgba(168,85,247,.14);border:1px solid rgba(168,85,247,.28)}
-  .lead{font-size:clamp(16px,2vw,20px);color:var(--slate);line-height:1.55}
-  .dim{color:var(--mist)}.mono{font-family:var(--mono)}
   .grad{background:linear-gradient(100deg,var(--violet),var(--magenta) 52%,var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
   .orb{border-radius:50%;background:var(--orb);box-shadow:0 3px 14px rgba(206,92,170,.42),inset -3px -4px 9px rgba(140,40,115,.32),inset 2px 3px 7px rgba(255,255,255,.34)}
-  .reveal{opacity:0;transform:translateY(28px);filter:blur(6px);transition:opacity .8s var(--eo),transform .8s var(--eo),filter .8s var(--eo)}
+  .eyebrow{display:inline-block;font-weight:600;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;padding:7px 14px;border-radius:100px;margin-bottom:20px}
+  .ey-l{color:var(--violet);background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.16)}
+  .ey-d{color:#e9c9ff;background:rgba(168,85,247,.14);border:1px solid rgba(168,85,247,.3)}
+  .lead{font-size:clamp(16px,2vw,20px);line-height:1.55}
+  .dim{color:var(--mist)}.mono{font-family:var(--mono)}
+  .reveal{opacity:0;transform:translateY(30px);filter:blur(8px);transition:opacity .9s var(--eo),transform .9s var(--eo),filter .9s var(--eo)}
   .reveal.in{opacity:1;transform:none;filter:none}
-  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;filter:none;transition:none}.heroOrb{animation:none!important}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;filter:none;transition:none}.heroOrb,.b1,.b2,.b3{animation:none!important}.frame img{transform:none!important}}
   /* buttons */
-  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f);font-weight:600;font-size:15px;padding:9px 9px 9px 22px;border-radius:100px;border:none;cursor:pointer;transition:transform .14s var(--eo),box-shadow .2s var(--eo)}
-  .btn:active{transform:scale(.97)}
-  .btn .ico{width:32px;height:32px;border-radius:100px;display:flex;align-items:center;justify-content:center;transition:transform .2s var(--eo)}
-  .btn:hover .ico{transform:translate(3px,-1px)}
-  .btn-p{background:linear-gradient(100deg,var(--violet),var(--magenta));color:#fff;box-shadow:0 10px 26px rgba(168,85,247,.4)}.btn-p .ico{background:rgba(255,255,255,.2)}
-  .btn-g{background:rgba(255,255,255,.08);color:#fff;border:1px solid var(--wline);padding:13px 22px}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f);font-weight:600;font-size:15px;padding:9px 9px 9px 22px;border-radius:100px;border:none;cursor:pointer;transition:transform .14s var(--eo),box-shadow .25s var(--eo)}
+  .btn:active{transform:scale(.97)}.btn .ico{width:32px;height:32px;border-radius:100px;display:flex;align-items:center;justify-content:center;transition:transform .2s var(--eo)}.btn:hover .ico{transform:translate(3px,-1px)}
+  .btn-p{background:linear-gradient(100deg,var(--violet),var(--magenta));color:#fff;box-shadow:0 12px 30px rgba(168,85,247,.42)}.btn-p .ico{background:rgba(255,255,255,.2)}
+  .btn-g{background:rgba(255,255,255,.07);color:#fff;border:1px solid var(--wline);padding:13px 22px}
   .btn-d{background:var(--surface);color:var(--ink);border:1px solid var(--line);padding:13px 22px}
   /* NAV */
   nav{position:fixed;top:16px;left:0;right:0;z-index:80;display:flex;justify-content:center;pointer-events:none;padding:0 16px}
   .navpill{pointer-events:auto;width:100%;max-width:1120px;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.7);backdrop-filter:blur(20px) saturate(1.5);border:1px solid rgba(255,255,255,.7);box-shadow:var(--e2);border-radius:100px;padding:9px 9px 9px 18px}
-  .navpill .lk{display:flex;align-items:center;gap:10px;margin-right:auto}
-  .navpill .orb{width:24px;height:24px}.navpill .nm{font-weight:800;font-size:17px;letter-spacing:-.04em}
+  .navpill .lk{display:flex;align-items:center;gap:10px;margin-right:auto}.navpill .orb{width:24px;height:24px}.navpill .nm{font-weight:800;font-size:17px;letter-spacing:-.04em}
   .navpill .sec{display:flex;gap:2px}.navpill .sec a{font-weight:500;font-size:13px;color:var(--slate);padding:8px 12px;border-radius:100px;transition:.2s var(--eo)}.navpill .sec a:hover{background:rgba(22,18,31,.05);color:var(--ink)}
   .navpill .cta{font-weight:600;font-size:13.5px;color:#fff;background:linear-gradient(100deg,var(--violet),var(--magenta));padding:10px 18px;border-radius:100px;box-shadow:0 6px 16px rgba(168,85,247,.35)}
   .burger{display:none;width:42px;height:42px;border-radius:100px;border:1px solid var(--line);background:var(--surface);align-items:center;justify-content:center;font-size:18px;cursor:pointer}
-  @media(max-width:940px){.navpill .sec{display:none}.navpill .cta{display:none}.burger{display:flex}}
-  /* HERO (dark) */
-  .hero{background:radial-gradient(120vw 90vh at 50% -20%,#231a36 0%,var(--night) 60%);color:#fff;padding:160px 0 110px;text-align:center;overflow:hidden;position:relative}
-  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(40vw 40vw at 78% 18%,rgba(236,72,153,.22),transparent 60%),radial-gradient(38vw 38vw at 18% 70%,rgba(37,99,235,.18),transparent 60%);pointer-events:none}
-  .heroOrb{width:120px;height:120px;border-radius:50%;background:var(--orb);margin:0 auto 30px;box-shadow:0 0 90px 10px rgba(236,72,153,.5),0 30px 80px rgba(0,0,0,.5),inset -7px -9px 24px rgba(140,40,115,.4),inset 6px 8px 18px rgba(255,255,255,.4);animation:float 7s var(--eio) infinite;position:relative;z-index:1}
+  @media(max-width:980px){.navpill .sec,.navpill .cta{display:none}.burger{display:flex}}
+  .mmenu{position:fixed;inset:0;z-index:90;background:rgba(10,8,18,.97);backdrop-filter:blur(20px);display:none;flex-direction:column;align-items:center;justify-content:center;gap:20px}.mmenu.open{display:flex}.mmenu a{color:#fff;font-size:24px;font-weight:700}.mmenu .close{position:absolute;top:24px;right:26px;font-size:30px;color:#fff}
+  /* sections */
+  .dark{background:var(--night);color:#fff;position:relative;overflow:hidden}
+  .dark::before{content:"";position:absolute;inset:0;background:radial-gradient(46vw 46vw at 82% 10%,rgba(236,72,153,.16),transparent 60%),radial-gradient(42vw 42vw at 12% 86%,rgba(37,99,235,.14),transparent 60%);pointer-events:none}
+  .sec{padding:clamp(72px,11vw,128px) 0;position:relative;z-index:1}
+  .sec h2{font-size:clamp(30px,5vw,54px);margin-bottom:16px}
+  .center{text-align:center}.mx{max-width:780px;margin:0 auto}
+  /* hero */
+  .hero{background:radial-gradient(120vw 95vh at 50% -25%,#241935 0%,var(--night) 62%);color:#fff;padding:168px 0 96px;text-align:center;overflow:hidden;position:relative}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(40vw 40vw at 76% 16%,rgba(236,72,153,.25),transparent 60%),radial-gradient(40vw 40vw at 20% 72%,rgba(37,99,235,.2),transparent 60%);pointer-events:none}
+  .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;pointer-events:none}
+  .b1{width:300px;height:300px;background:#a855f7;top:-60px;left:-40px;animation:drift 16s var(--eio) infinite}
+  .b2{width:260px;height:260px;background:#ec4899;bottom:-40px;right:0;animation:drift 20s var(--eio) infinite reverse}
+  @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,30px)}}
+  .heroOrb{width:118px;height:118px;border-radius:50%;background:var(--orb);margin:0 auto 30px;box-shadow:0 0 100px 12px rgba(236,72,153,.55),0 30px 80px rgba(0,0,0,.55),inset -7px -9px 24px rgba(140,40,115,.4),inset 6px 8px 18px rgba(255,255,255,.4);animation:float 7s var(--eio) infinite;position:relative;z-index:2}
   @keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-18px) rotate(3deg)}}
-  .hero h1{font-size:clamp(40px,7.2vw,82px);font-weight:800;letter-spacing:-.05em;line-height:.96;position:relative;z-index:1}
-  .hero .sub{font-size:clamp(16px,2.1vw,21px);color:rgba(255,255,255,.72);max-width:680px;margin:22px auto 0;position:relative;z-index:1}
-  .hero .c>div{position:relative;z-index:1}
-  .herocta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px;position:relative;z-index:1}
-  .proof{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:30px;color:rgba(255,255,255,.6);font-size:13.5px;position:relative;z-index:1}
-  .avs{display:flex}.avs span{width:26px;height:26px;border-radius:50%;border:2px solid var(--night);margin-left:-8px}
-  /* generic section */
-  .sec{padding:96px 0}
-  .sec h2{font-size:clamp(30px,4.6vw,50px);margin-bottom:14px}
-  .center{text-align:center}.mx{max-width:760px;margin-left:auto;margin-right:auto}
-  /* MATH (dark) */
-  .math{background:var(--night);color:#fff;padding:96px 0;text-align:center}
-  .mathrow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:40px 0 18px}
-  @media(max-width:760px){.mathrow{grid-template-columns:1fr}}
-  .mstat{background:rgba(255,255,255,.04);border:1px solid var(--wline);border-radius:22px;padding:30px 20px}
-  .mstat .n{font-family:var(--mono);font-weight:700;font-size:clamp(30px,5vw,44px);letter-spacing:-.02em}
-  .mstat .l{color:rgba(255,255,255,.6);font-size:13.5px;margin-top:6px}
-  /* cards grid */
-  .grid{display:grid;gap:18px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
-  @media(max-width:860px){.g3,.g4{grid-template-columns:1fr 1fr}}@media(max-width:560px){.g3,.g4{grid-template-columns:1fr}}
-  .shell{background:rgba(22,18,31,.03);border:1px solid var(--line);border-radius:28px;padding:7px;box-shadow:var(--e1)}
-  .core{background:var(--surface);border-radius:22px;padding:26px;height:100%;box-shadow:inset 0 1px 1px rgba(255,255,255,.6)}
-  .core .ic{font-size:26px}.core h3{font-size:19px;margin:12px 0 7px}.core p{color:var(--slate);font-size:14.5px}
-  .tagm{display:inline-block;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:5px 11px;border-radius:100px;margin-bottom:10px}
-  /* value props */
-  .vp{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:760px){.vp{grid-template-columns:1fr}}
-  .vpc{border-radius:24px;padding:28px;color:#fff;position:relative;overflow:hidden;box-shadow:var(--e2);min-height:200px;display:flex;flex-direction:column;justify-content:flex-end}
-  .vpc .big{font-weight:800;font-size:30px;letter-spacing:-.03em}.vpc p{font-size:14px;opacity:.92;margin-top:6px}
-  .vpc .tg{position:absolute;top:22px;left:24px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
-  /* brand selector */
-  .brands{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}@media(max-width:820px){.brands{grid-template-columns:1fr}}
+  .hero h1{font-size:clamp(42px,7.4vw,86px);letter-spacing:-.05em;line-height:.94;position:relative;z-index:2}
+  .hero .sub{font-size:clamp(16px,2.1vw,21px);color:rgba(255,255,255,.74);max-width:680px;margin:22px auto 0;position:relative;z-index:2}
+  .herocta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px;position:relative;z-index:2}
+  .profs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:34px;position:relative;z-index:2}
+  .profs span{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.8);padding:8px 15px;border-radius:100px;background:rgba(255,255,255,.06);border:1px solid var(--wline)}
+  .proof{margin-top:26px;color:rgba(255,255,255,.55);font-size:13px;position:relative;z-index:2}
+  /* split with image */
+  .split{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,5vw,60px);align-items:center}
+  .split.rev{grid-template-columns:1.1fr 1fr}.split.rev .txt{order:2}
+  @media(max-width:900px){.split,.split.rev{grid-template-columns:1fr}.split.rev .txt{order:0}}
+  .frame{position:relative;border-radius:24px;padding:8px;background:rgba(255,255,255,.06);border:1px solid var(--wline);box-shadow:var(--e2);overflow:hidden}
+  .light .frame{background:rgba(22,18,31,.04);border:1px solid var(--line)}
+  .frame::after{content:"";position:absolute;inset:0;border-radius:24px;box-shadow:inset 0 1px 1px rgba(255,255,255,.25);pointer-events:none}
+  .frame img{border-radius:17px;width:100%;will-change:transform}
+  .frame.glow{box-shadow:0 0 0 1px var(--wline),0 30px 80px rgba(168,85,247,.25),0 24px 60px rgba(0,0,0,.4)}
+  .badge2{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;font-weight:600;padding:7px 13px;border-radius:100px;background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.28);color:var(--violet);margin-bottom:14px}
+  .dark .badge2{color:#e9c9ff;background:rgba(168,85,247,.16);border-color:rgba(168,85,247,.34)}
+  .txt p{font-size:clamp(15px,1.8vw,18px);color:var(--slate);margin-top:8px}.dark .txt p{color:rgba(255,255,255,.72)}
+  .txt h2{margin-bottom:8px}
+  .keys{list-style:none;margin-top:20px}.keys li{display:flex;gap:11px;align-items:flex-start;padding:7px 0;font-size:15px;color:var(--slate)}.dark .keys li{color:rgba(255,255,255,.78)}
+  .keys li b{color:var(--ink)}.dark .keys li b{color:#fff}.keys .ck{color:var(--violet);font-weight:800;flex-shrink:0}
+  /* math counters */
+  .mathrow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}@media(max-width:560px){.mathrow{grid-template-columns:1fr}}
+  .mstat{background:rgba(255,255,255,.05);border:1px solid var(--wline);border-radius:18px;padding:20px}
+  .mstat .n{font-family:var(--mono);font-weight:700;font-size:clamp(26px,4vw,38px);letter-spacing:-.02em}.mstat .l{color:rgba(255,255,255,.6);font-size:12.5px;margin-top:4px}
+  /* brands */
+  .brands{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}@media(max-width:820px){.brands{grid-template-columns:1fr}}
   .bcard{display:block;border-radius:26px;padding:30px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--e1);transition:transform .4s var(--eo),box-shadow .4s var(--eo);position:relative;overflow:hidden}
   .bcard:hover{transform:translateY(-6px);box-shadow:var(--e2)}
-  .bcard .bo{width:60px;height:60px;border-radius:50%;margin-bottom:18px;box-shadow:var(--e1),inset -4px -5px 12px rgba(0,0,0,.16),inset 3px 4px 10px rgba(255,255,255,.3)}
+  .bcard .bo{width:58px;height:58px;border-radius:50%;margin-bottom:18px;box-shadow:var(--e1),inset -4px -5px 12px rgba(0,0,0,.16),inset 3px 4px 10px rgba(255,255,255,.3)}
   .b-body .bo{background:radial-gradient(circle at 30% 26%,rgba(255,255,255,.55),transparent 30%),radial-gradient(circle at 40% 36%,#bbf7d0,#22c55e 56%,#15803d)}
   .b-mind .bo{background:radial-gradient(circle at 30% 26%,rgba(255,255,255,.55),transparent 30%),radial-gradient(circle at 40% 36%,#c4b5fd,#8b5cf6 56%,#5b21b6)}
   .b-clinic .bo{background:radial-gradient(circle at 30% 26%,rgba(255,255,255,.55),transparent 30%),radial-gradient(circle at 40% 36%,#bfdbfe,#3b82f6 56%,#1d4ed8)}
-  .bcard h3{font-size:23px;margin-bottom:4px}.bcard .who{font-size:13px;font-weight:600;letter-spacing:.02em;margin-bottom:14px}
-  .b-body .who{color:var(--body)}.b-mind .who{color:var(--mind)}.b-clinic .who{color:var(--clinic)}
-  .bcard p{font-size:14px;color:var(--slate)}.bcard .go{margin-top:18px;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:7px}
-  .b-body .go{color:var(--body)}.b-mind .go{color:var(--mind)}.b-clinic .go{color:var(--clinic)}
+  .bcard h3{font-size:23px;margin-bottom:4px}.bcard .who{font-size:13px;font-weight:600;margin-bottom:14px}.b-body .who{color:var(--body)}.b-mind .who{color:var(--mind)}.b-clinic .who{color:var(--clinic)}
+  .bcard p{font-size:14px;color:var(--slate)}.bcard .go{margin-top:18px;font-weight:600;font-size:14px;display:inline-flex;gap:7px}.b-body .go{color:var(--body)}.b-mind .go{color:var(--mind)}.b-clinic .go{color:var(--clinic)}
   .bcard .top{position:absolute;top:0;left:0;right:0;height:4px}.b-body .top{background:linear-gradient(90deg,#22c55e,#15803d)}.b-mind .top{background:linear-gradient(90deg,#8b5cf6,#5b21b6)}.b-clinic .top{background:linear-gradient(90deg,#3b82f6,#1d4ed8)}
-  /* building */
-  .building-wrap{background:var(--night);color:#fff;padding:96px 0;overflow:hidden}
-  .bgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}@media(max-width:880px){.bgrid{grid-template-columns:1fr;gap:32px}}
-  .tower{display:flex;flex-direction:column;gap:8px;max-width:380px;margin:0 auto}
-  .tfloat{width:78px;height:78px;border-radius:50%;background:var(--orb);margin:0 auto 4px;box-shadow:0 0 50px rgba(236,72,153,.45)}
-  .floor{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.05);border:1px solid var(--wline);border-radius:16px;padding:14px 18px;transition:transform .3s var(--eo),background .3s}
-  .floor:hover{transform:translateX(6px);background:rgba(255,255,255,.09)}
-  .floor .fi{font-size:20px;width:30px;text-align:center}.floor .ft{font-weight:600;font-size:15px}.floor .fd{font-size:12px;color:rgba(255,255,255,.55)}
-  .floor .pr{margin-left:auto;font-family:var(--mono);font-size:12px;color:#9ef0c0}
-  .base{text-align:center;font-size:12px;color:rgba(255,255,255,.5);margin-top:6px;border-top:1px dashed var(--wline);padding-top:10px}
-  /* funnel */
-  .funnel{display:flex;flex-direction:column;gap:10px;margin-top:26px}
-  .fstep{display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:15px 18px;box-shadow:var(--e1);position:relative;overflow:hidden}
-  .fstep::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--violet),var(--magenta))}
-  .fstep .nn{font-family:var(--mono);font-weight:700;font-size:18px;color:var(--violet);text-align:center}
-  .fstep h4{font-size:15.5px;margin-bottom:2px}.fstep p{font-size:13px;color:var(--slate)}
-  /* results / earn */
-  .earn{background:linear-gradient(150deg,#1b1430,#0c0a14);color:#fff;border-radius:30px;padding:clamp(30px,5vw,56px);text-align:center;box-shadow:var(--e2);position:relative;overflow:hidden}
-  .earn::before{content:"";position:absolute;inset:0;background:radial-gradient(40vw 30vw at 50% 0,rgba(236,72,153,.25),transparent 60%)}
-  .earn .big{font-family:var(--mono);font-weight:700;font-size:clamp(40px,8vw,82px);letter-spacing:-.03em;position:relative;z-index:1}
-  .earn p{color:rgba(255,255,255,.7);position:relative;z-index:1}
-  .ladder{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px;position:relative;z-index:1}
-  .ladder span{font-size:12.5px;font-weight:600;padding:8px 14px;border-radius:100px;background:rgba(255,255,255,.08);border:1px solid var(--wline)}
-  /* steps */
-  .steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:760px){.steps3{grid-template-columns:1fr}}
-  /* CTA */
-  .cta-final{background:radial-gradient(100vw 70vh at 50% 120%,#2a1d45,var(--night));color:#fff;padding:110px 0;text-align:center}
-  .cta-final h2{font-size:clamp(32px,5.4vw,60px)}
-  /* footer */
+  /* cta */
+  .ctaf{background:radial-gradient(100vw 70vh at 50% 120%,#2a1d45,var(--night));text-align:center}
   footer{background:var(--night2);color:rgba(255,255,255,.6);padding:50px 0;font-size:13.5px}
-  .fcols{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;align-items:flex-start}
-  .fcols .nm{font-weight:800;font-size:18px;color:#fff;display:flex;align-items:center;gap:10px}
-  footer a{color:rgba(255,255,255,.6)}footer a:hover{color:#fff}
-  /* mobile menu */
-  .mmenu{position:fixed;inset:0;z-index:90;background:rgba(12,10,20,.96);backdrop-filter:blur(20px);display:none;flex-direction:column;align-items:center;justify-content:center;gap:18px}
-  .mmenu.open{display:flex}
-  .mmenu a{color:#fff;font-size:24px;font-weight:700}.mmenu .close{position:absolute;top:24px;right:24px;font-size:28px;color:#fff}
+  .fcols{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between}.fcols .nm{font-weight:800;font-size:18px;color:#fff;display:flex;align-items:center;gap:10px}footer a{color:rgba(255,255,255,.6)}footer a:hover{color:#fff}footer .col div{margin-bottom:6px}footer .h{color:#fff;font-weight:600;margin-bottom:10px}
 </style>
 </head>
 <body>
 
 <nav><div class="navpill">
   <a class="lk" href="#top"><span class="orb"></span><span class="nm">MyDose</span></a>
-  <div class="sec">
-    <a href="#solucao">Solução</a><a href="#marcas">Para quem</a><a href="#predio">A comunidade</a><a href="#resultados">Resultados</a><a href="planos.html">Planos</a>
-  </div>
+  <div class="sec"><a href="#tese">A tese</a><a href="#solucao">O método</a><a href="#predio">A comunidade</a><a href="#marcas">Para quem</a><a href="planos.html">Planos</a></div>
   <a class="cta" href="#cta">Começar agora</a>
   <button class="burger" onclick="document.getElementById('mm').classList.add('open')">☰</button>
 </div></nav>
-<div class="mmenu" id="mm">
-  <span class="close" onclick="document.getElementById('mm').classList.remove('open')">✕</span>
-  <a href="#solucao" onclick="cl()">Solução</a><a href="#marcas" onclick="cl()">Para quem</a><a href="#predio" onclick="cl()">A comunidade</a><a href="#resultados" onclick="cl()">Resultados</a><a href="planos.html">Planos</a><a href="#cta" onclick="cl()" style="color:var(--magenta)">Começar agora</a>
-</div>
+<div class="mmenu" id="mm"><span class="close" onclick="cl()">✕</span><a href="#tese" onclick="cl()">A tese</a><a href="#solucao" onclick="cl()">O método</a><a href="#predio" onclick="cl()">A comunidade</a><a href="#marcas" onclick="cl()">Para quem</a><a href="planos.html">Planos</a><a href="#cta" onclick="cl()" style="color:var(--magenta)">Começar agora</a></div>
 
 <!-- HERO -->
-<header class="hero" id="top"><div class="wrap c">
-  <div class="heroOrb"></div>
-  <span class="eyebrow ey-dark">● O sistema operacional de IA da saúde</span>
-  <h1>Você não vende consulta.<br>Vende <span class="grad">transformação.</span></h1>
-  <p class="sub">Comunidades gamificadas + IA para <b style="color:#fff">médicos, psicólogos e nutricionistas</b> escalarem impacto, receita e tempo — sem virar uma fábrica de consultas.</p>
-  <div class="herocta">
-    <a class="btn btn-p" href="#cta">Quero começar <span class="ico">→</span></a>
-    <a class="btn btn-g" href="#marcas">Encontrar meu produto</a>
+<header class="hero" id="top">
+  <span class="blob b1"></span><span class="blob b2"></span>
+  <div class="wrap">
+    <div class="heroOrb"></div>
+    <span class="eyebrow ey-d">● O sistema operacional de IA da saúde</span>
+    <h1>Você não vende consulta.<br>Vende <span class="grad">transformação.</span></h1>
+    <p class="sub">Comunidades gamificadas + IA para o profissional de saúde escalar impacto, receita e tempo — sem virar uma fábrica de consultas.</p>
+    <div class="herocta">
+      <a class="btn btn-p" href="#cta">Quero começar <span class="ico">→</span></a>
+      <a class="btn btn-g" href="#marcas">Encontrar meu produto</a>
+    </div>
+    <div class="profs"><span>🩺 Médicos</span><span>🥗 Nutricionistas</span><span>🧠 Psicólogos</span><span>💪 Personal & Fisio</span><span>🏥 Clínicas</span></div>
+    <div class="proof">+1.000 profissionais de saúde já usam · R$ 1,58M em receita recorrente</div>
   </div>
-  <div class="proof"><span class="avs"><span style="background:#a855f7"></span><span style="background:#22c55e"></span><span style="background:#2563eb"></span><span style="background:#ec4899"></span></span> +1.000 profissionais de saúde já usam</div>
-</div></header>
+</header>
 
-<!-- MATH -->
-<section class="math"><div class="wrap">
-  <span class="eyebrow ey-dark reveal">A conta não fecha</span>
-  <h2 class="reveal" style="font-size:clamp(28px,4.6vw,46px);max-width:820px;margin:0 auto">São 9 milhões de profissionais para 8 bilhões de pessoas.</h2>
-  <div class="mathrow">
-    <div class="mstat reveal"><div class="n" data-count="9000000" data-suffix="M" data-div="1000000">0</div><div class="l">profissionais de saúde</div></div>
-    <div class="mstat reveal"><div class="n" data-count="8000000000" data-suffix="bi" data-div="1000000000">0</div><div class="l">pessoas no mundo</div></div>
-    <div class="mstat reveal"><div class="n" data-count="900" data-suffix="" data-div="1">0</div><div class="l">pacientes por profissional</div></div>
+<!-- TESE / 900 -->
+<section class="dark" id="tese"><div class="wrap sec"><div class="split">
+  <div class="txt reveal">
+    <div class="badge2">01 · A tese</div>
+    <h2 style="color:#fff">Nascemos para cuidar melhor.<br><span class="grad">Descobrimos que precisava ser de mais gente.</span></h2>
+    <p>Existem 9 milhões de profissionais de saúde para 8,1 bilhões de pessoas. A conta é de <b style="color:#fff">1 para 900</b>. E 900 pessoas <b style="color:#fff">não cabem</b> numa agenda de consultas.</p>
+    <div class="mathrow">
+      <div class="mstat"><div class="n" data-count="9" data-suffix="M">0</div><div class="l">profissionais de saúde</div></div>
+      <div class="mstat"><div class="n">1:<span data-count="900">0</span></div><div class="l">por profissional</div></div>
+      <div class="mstat"><div class="n" data-count="8.1" data-suffix="bi" data-dec="1">0</div><div class="l">pessoas no mundo</div></div>
+    </div>
+    <p style="margin-top:18px">A saúde precisa acontecer <b style="color:#fff">entre</b> as consultas — com comunidade, produtos e IA.</p>
   </div>
-  <p class="lead reveal" style="color:rgba(255,255,255,.72);max-width:680px;margin:14px auto 0">Cuidar de 900 pessoas <b style="color:#fff">não cabe</b> numa agenda de consultas. A saúde precisa acontecer <b style="color:#fff">entre</b> as consultas — com produtos, comunidade e IA.</p>
+  <div class="reveal"><div class="frame glow" data-parallax="14"><img src="assets/tese.png" alt="A tese MyDose: 9M profissionais para 8,1B pessoas, 1:900" loading="lazy"></div></div>
+</div></div></section>
+
+<!-- SUBSTITUA / problema -->
+<section class="light"><div class="wrap sec"><div class="split rev">
+  <div class="txt reveal">
+    <div class="badge2">02 · O problema</div>
+    <h2>Você vive com <span class="grad">+10 ferramentas soltas.</span></h2>
+    <p>App de hábitos, agendamento, prontuário, e-mail, formulários, área de membros, protocolos, CRM, comunidade… nenhuma conversa entre si. Caro, confuso — e o paciente sente.</p>
+    <ul class="keys">
+      <li><span class="ck">→</span><span>Uma só plataforma no lugar de 10. <b>A partir de R$ 470/mês.</b></span></li>
+      <li><span class="ck">→</span><span>Economia de <b>~R$ 2.540/mês</b> em assinaturas.</span></li>
+      <li><span class="ck">→</span><span>Mais adesão, mais escala, menos tempo perdido.</span></li>
+    </ul>
+  </div>
+  <div class="reveal"><div class="frame" data-parallax="14"><img src="assets/substitua.png" alt="Substitua +10 ferramentas pela MyDose" loading="lazy"></div></div>
+</div></div></section>
+
+<!-- ESCALA -->
+<section class="dark" id="solucao"><div class="wrap sec"><div class="split">
+  <div class="txt reveal">
+    <div class="badge2">03 · Expandir ≠ escalar</div>
+    <h2 style="color:#fff">Pare de <span class="grad">expandir.</span> Comece a escalar.</h2>
+    <p>Expandir é trabalhar mais horas pela mesma margem — a "boca de jacaré" onde o custo come a receita. Escalar é a receita subir <b style="color:#fff">sem</b> a sua hora subir junto: com produtos sobre a comunidade.</p>
+    <ul class="keys">
+      <li><span class="ck">✓</span><span>Agenda & link, eventos & desafios, protocolos, comunidade</span></li>
+      <li><span class="ck">✓</span><span>Receita recorrente que não depende da sua agenda</span></li>
+    </ul>
+  </div>
+  <div class="reveal"><div class="frame glow" data-parallax="14"><img src="assets/escala.png" alt="Expandir vs Escalar — boca de jacaré" loading="lazy"></div></div>
+</div></div></section>
+
+<!-- ACP / método -->
+<section class="light"><div class="wrap sec">
+  <div class="center mx reveal" style="margin-bottom:34px"><span class="eyebrow ey-l">04 · O método</span><h2>Audiência → Comunidade → Produtos</h2><p class="lead dim">O caminho que tira a conversão de 2–5% (audiência fria) para 15–25% (comunidade ativa).</p></div>
+  <div class="reveal"><div class="frame" data-parallax="10" style="max-width:1000px;margin:0 auto;background:rgba(22,18,31,.04);border:1px solid var(--line)"><img src="assets/acp.png" alt="Audience to Community to Products — ACP da Saúde" loading="lazy"></div></div>
 </div></section>
 
-<!-- PROBLEM -->
-<section class="sec" id="problema"><div class="wrap">
-  <div class="center mx reveal"><span class="eyebrow ey-light">O problema</span><h2>Três inimigos travam o seu crescimento.</h2><p class="lead">Você tem autoridade clínica — mas vende o próprio tempo. E o tempo tem teto.</p></div>
-  <div class="grid g3" style="margin-top:38px">
-    <div class="shell reveal"><div class="core"><div class="ic">📉</div><span class="tagm" style="background:var(--bodyL);color:var(--body)">Adesão</span><h3>O paciente some</h3><p>Depois da 2ª consulta ele desaparece — e leva o seu faturamento e o resultado clínico junto.</p></div></div>
-    <div class="shell reveal"><div class="core"><div class="ic">⛓️</div><span class="tagm" style="background:var(--clinicL);color:var(--clinic)">Escala</span><h3>A agenda é o teto</h3><p>Mais receita só com mais horas. Você corre na esteira: fatura, mas não cresce.</p></div></div>
-    <div class="shell reveal"><div class="core"><div class="ic">⏳</div><span class="tagm" style="background:var(--mindL);color:var(--mind)">Tempo</span><h3>Refém do WhatsApp</h3><p>9 apps soltos, respondendo de graça a noite inteira. Sem tempo pra vida — nem pra crescer.</p></div></div>
+<!-- PREDIO -->
+<section class="dark" id="predio"><div class="wrap sec"><div class="split rev">
+  <div class="txt reveal">
+    <div class="badge2">05 · A comunidade é um prédio</div>
+    <h2 style="color:#fff">Cada andar é um <span class="grad">produto de saúde.</span></h2>
+    <p>Dentro da sua comunidade você empilha uma esteira inteira — e monetiza a jornada toda do paciente, não só a consulta.</p>
+    <ul class="keys">
+      <li><span class="ck">🏆</span><span>Desafios, eventos, biblioteca, comunidade, acadêmico</span></li>
+      <li><span class="ck">💸</span><span><b>1.090+ pessoas</b> gerando <b style="color:#fff">R$ 50.000+/mês</b></span></li>
+    </ul>
+    <a class="btn btn-p" href="planos.html" style="margin-top:24px">Ver a esteira completa <span class="ico">→</span></a>
   </div>
-</div></section>
+  <div class="reveal"><div class="frame glow" data-parallax="16"><img src="assets/predio.png" alt="Sua comunidade é um prédio — esteira de produtos" loading="lazy"></div></div>
+</div></div></section>
 
-<!-- SOLUTION -->
-<section class="building-wrap" id="solucao"><div class="wrap">
-  <div class="center mx reveal"><span class="eyebrow ey-dark">A solução</span><h2 style="color:#fff;font-size:clamp(30px,4.6vw,50px)">Uma plataforma. Três motores de valor.</h2><p class="lead" style="color:rgba(255,255,255,.7)">A MyDose substitui os 9 apps por um só sistema: comunidade gamificada + IA que trabalha por você 24/7.</p></div>
-  <div class="vp" style="margin-top:38px">
-    <div class="vpc reveal" style="background:linear-gradient(150deg,#16a34a,#0f5132)"><span class="tg">Pro paciente</span><div class="big">+ Adesão</div><p>Comunidade e IA puxam o paciente de volta e mantêm o tratamento vivo entre as consultas.</p></div>
-    <div class="vpc reveal" style="background:linear-gradient(150deg,#2563eb,#1e3a8a)"><span class="tg">Pro negócio</span><div class="big">+ Receita</div><p>Múltiplas fontes de renda e mais pacientes chegando — sem abrir um horário novo.</p></div>
-    <div class="vpc reveal" style="background:linear-gradient(150deg,#a855f7,#6b21a8)"><span class="tg">Pra vida</span><div class="big">− Tempo</div><p>A IA assume o operacional. Menos WhatsApp, mais família — e mais lucro.</p></div>
-  </div>
-</div></section>
-
-<!-- BRANDS -->
-<section class="sec" id="marcas"><div class="wrap">
-  <div class="center mx reveal"><span class="eyebrow ey-light">Para quem</span><h2>Qual é você?</h2><p class="lead">Mesma plataforma, recheio sob medida pra cada profissão. Escolha e veja a solução perfeita pra sua dor.</p></div>
+<!-- ACOMPANHAMENTO / para quem -->
+<section class="light" id="marcas"><div class="wrap sec">
+  <div class="center mx reveal" style="margin-bottom:34px"><span class="eyebrow ey-l">06 · Para quem</span><h2>Programas que você vende ao seu paciente.</h2><p class="lead dim">Médico, nutricionista, personal, psicólogo — cada especialidade monta seus programas de acompanhamento, com a duração e a cadência certas.</p></div>
+  <div class="reveal"><div class="frame" data-parallax="10" style="max-width:1000px;margin:0 auto;background:rgba(22,18,31,.04);border:1px solid var(--line)"><img src="assets/acompanhamento.png" alt="Programas de Acompanhamento por especialidade" loading="lazy"></div></div>
   <div class="brands">
-    <a class="bcard b-body reveal" href="planos.html#physical"><span class="top"></span><div class="bo"></div><h3>Physical</h3><div class="who">Nutri · nutrólogo · endócrino · esporte · personal · fisio</div><p>Acabe com a recompra baixa. Venda programas e protocolos que fazem o paciente (e a receita) voltar todo mês.</p><span class="go">Ver meu produto →</span></a>
-    <a class="bcard b-mind reveal" href="planos.html#mental"><span class="top"></span><div class="bo"></div><h3>Mental</h3><div class="who">Psicólogos · psiquiatras · terapeutas</div><p>Reduza o no-show e a evasão. Cuidado que continua entre as sessões — e te paga entre elas também.</p><span class="go">Ver meu produto →</span></a>
-    <a class="bcard b-clinic reveal" href="planos.html#clinics"><span class="top"></span><div class="bo"></div><h3>Clinics</h3><div class="who">Clínicas multiprofissionais</div><p>Veja quanto cada profissional fatura e escale a clínica inteira com IA, comunidade e gestão num lugar só.</p><span class="go">Ver meu produto →</span></a>
+    <a class="bcard b-body reveal" href="planos.html#physical"><span class="top"></span><div class="bo"></div><h3>Physical</h3><div class="who">Nutri · médicos · personal · fisio</div><p>Acabe com a recompra baixa. Programas e protocolos que fazem o paciente (e a receita) voltar todo mês.</p><span class="go">Ver meu produto →</span></a>
+    <a class="bcard b-mind reveal" href="planos.html#mental"><span class="top"></span><div class="bo"></div><h3>Mental</h3><div class="who">Psicólogos · psiquiatras · terapeutas</div><p>Reduza o no-show. Cuidado que continua entre as sessões — e te paga entre elas também.</p><span class="go">Ver meu produto →</span></a>
+    <a class="bcard b-clinic reveal" href="planos.html#clinics"><span class="top"></span><div class="bo"></div><h3>Clinics</h3><div class="who">Clínicas multiprofissionais</div><p>Veja quanto cada profissional fatura e escale a clínica inteira com IA e comunidade.</p><span class="go">Ver meu produto →</span></a>
   </div>
 </div></section>
 
-<!-- BUILDING / esteira -->
-<section class="building-wrap" id="predio"><div class="wrap">
-  <div class="bgrid">
-    <div class="reveal">
-      <span class="eyebrow ey-dark">A comunidade é um prédio</span>
-      <h2 style="color:#fff;font-size:clamp(28px,4.4vw,46px)">Cada andar é um produto de saúde.</h2>
-      <p class="lead" style="color:rgba(255,255,255,.7);margin-top:12px">Dentro da sua comunidade MyDose você empilha uma esteira inteira de produtos — e monetiza toda a jornada do paciente, não só a consulta.</p>
-      <div class="ladder" style="justify-content:flex-start;margin-top:22px"><span>Planos de acompanhamento</span><span>Consultas</span><span>Cursos</span><span>Ebooks</span><span>Eventos</span><span>Protocolos</span><span>Desafios</span></div>
-      <a class="btn btn-p" href="planos.html" style="margin-top:26px">Ver a esteira completa <span class="ico">→</span></a>
+<!-- CALCULADORA -->
+<section class="dark" id="resultados"><div class="wrap sec"><div class="split">
+  <div class="txt reveal">
+    <div class="badge2">07 · Resultado tangível</div>
+    <h2 style="color:#fff">Quanto você deixa <span class="grad">na mesa</span> hoje?</h2>
+    <p>Transformar consultas avulsas em programas de assinatura muda o jogo. No exemplo: de R$ 24.000 para R$ 56.580/mês.</p>
+    <div class="mathrow" style="grid-template-columns:1fr">
+      <div class="mstat"><div class="n grad" style="font-size:clamp(34px,6vw,56px)">+R$ 32.580<span style="font-size:.4em;color:rgba(255,255,255,.5)">/mês</span></div><div class="l">com a MyDose vs. só consultas</div></div>
     </div>
-    <div class="reveal">
-      <div class="tower">
-        <div class="tfloat"></div>
-        <div class="floor"><span class="fi">🏆</span><div><div class="ft">Desafios & gamificação</div><div class="fd">engajamento diário (D.O.S.E.)</div></div><span class="pr">recorrência</span></div>
-        <div class="floor"><span class="fi">🎤</span><div><div class="ft">Eventos & lançamentos</div><div class="fd">alto ticket, ao vivo</div></div><span class="pr">R$$$</span></div>
-        <div class="floor"><span class="fi">🎓</span><div><div class="ft">Cursos & ebooks</div><div class="fd">conhecimento que escala</div></div><span class="pr">passivo</span></div>
-        <div class="floor"><span class="fi">🧬</span><div><div class="ft">Protocolos</div><div class="fd">resultado clínico guiado</div></div><span class="pr">adesão</span></div>
-        <div class="floor"><span class="fi">🔁</span><div><div class="ft">Planos de acompanhamento</div><div class="fd">receita recorrente entre consultas</div></div><span class="pr">MRR</span></div>
-        <div class="floor"><span class="fi">🩺</span><div><div class="ft">Consultas</div><div class="fd">o que você já faz hoje</div></div><span class="pr">base</span></div>
-        <div class="base">🤝 Tudo sobre a sua comunidade · pagamentos e IA integrados</div>
-      </div>
-    </div>
+    <a class="btn btn-p" href="planos.html" style="margin-top:22px">Calcular o meu potencial <span class="ico">→</span></a>
   </div>
-</div></section>
-
-<!-- FUNNEL / journey -->
-<section class="sec" id="jornada"><div class="wrap">
-  <div class="center mx reveal"><span class="eyebrow ey-light">A jornada</span><h2>Do scroll do paciente à recorrência.</h2><p class="lead">A MyDose acompanha o paciente na jornada inteira — e converte atenção em receita.</p></div>
-  <div class="funnel" style="max-width:780px;margin:34px auto 0">
-    <div class="fstep reveal"><div class="nn">1</div><div><h4>Ele te descobre</h4><p>Navegando nas redes, é impactado pelo seu conteúdo e por uma isca irresistível.</p></div></div>
-    <div class="fstep reveal"><div class="nn">2</div><div><h4>Entra na sua comunidade</h4><p>A isca leva ele pra dentro — onde a experiência gamificada e a IA o engajam.</p></div></div>
-    <div class="fstep reveal"><div class="nn">3</div><div><h4>Gera resultado</h4><p>Protocolos, desafios e acompanhamento criam adesão e resultado real.</p></div></div>
-    <div class="fstep reveal"><div class="nn">4</div><div><h4>Compra a esteira</h4><p>Vira fã e percorre seus produtos: planos, cursos, eventos. Você monetiza a jornada toda.</p></div></div>
-  </div>
-</div></section>
-
-<!-- RESULTS / earn -->
-<section class="sec" id="resultados"><div class="wrap">
-  <div class="earn reveal">
-    <span class="eyebrow ey-dark">Resultado tangível</span>
-    <div class="big grad">+R$ 10.000<span style="font-size:.4em;color:rgba(255,255,255,.55)">/mês</span></div>
-    <p class="lead" style="max-width:620px;margin:10px auto 0">É o que você pode adicionar ao seu faturamento em 30 dias — <b style="color:#fff">sem abrir um novo horário na agenda</b>, com ~2h por semana, vendendo produtos sobre a sua comunidade.</p>
-    <div class="ladder"><span>1 ebook = R$ 47 × 200</span><span>1 protocolo = R$ 197/mês</span><span>1 desafio = R$ 97</span><span>1 evento = R$ 497</span><span>plano anual recorrente</span></div>
-  </div>
-</div></section>
-
-<!-- HOW -->
-<section class="sec" id="como" style="padding-top:0"><div class="wrap">
-  <div class="center mx reveal"><span class="eyebrow ey-light">Como funciona</span><h2>Resultado em 14 dias.</h2></div>
-  <div class="steps3" style="margin-top:38px">
-    <div class="shell reveal"><div class="core"><span class="tagm" style="background:var(--mindL);color:var(--mind)">Passo 1</span><h3>Diagnóstico</h3><p>Em 1 reunião desenhamos sua esteira de produtos e a estratégia da sua comunidade.</p></div></div>
-    <div class="shell reveal"><div class="core"><span class="tagm" style="background:var(--bodyL);color:var(--body)">Passo 2</span><h3>Ativação guiada</h3><p>Onboarding de 14 dias: comunidade no ar, IA treinada no seu protocolo, 1º produto vendendo.</p></div></div>
-    <div class="shell reveal"><div class="core"><span class="tagm" style="background:var(--clinicL);color:var(--clinic)">Passo 3</span><h3>Cresce no automático</h3><p>A IA cuida do operacional; você acompanha receita e adesão num painel só.</p></div></div>
-  </div>
-  <div class="center" style="margin-top:30px"><a class="btn btn-p" href="onboarding.html" style="display:inline-flex">Ver o onboarding <span class="ico">→</span></a></div>
-</div></section>
+  <div class="reveal"><div class="frame glow" data-parallax="16"><img src="assets/calculadora.png" alt="Calculadora de Receita Recorrente — +R$ 32.580/mês" loading="lazy"></div></div>
+</div></div></section>
 
 <!-- CTA -->
-<section class="cta-final" id="cta"><div class="wrap c">
-  <div class="heroOrb" style="width:90px;height:90px;margin-bottom:24px"></div>
-  <span class="eyebrow ey-dark reveal">Take back control</span>
-  <h2 class="reveal">Retome o controle da sua<br><span class="grad">agenda, receita e impacto.</span></h2>
-  <p class="lead reveal" style="color:rgba(255,255,255,.72);max-width:600px;margin:16px auto 0">Garantia: em 30 dias você faz sua 1ª venda e tem pacientes usando seus protocolos — ou a gente trabalha de graça até acontecer.</p>
-  <div class="herocta reveal"><a class="btn btn-p" href="planos.html">Ver planos <span class="ico">→</span></a><a class="btn btn-g" href="onboarding.html">Como começar</a></div>
+<section class="dark ctaf" id="cta"><div class="wrap sec center">
+  <div class="heroOrb" style="width:92px;height:92px;margin-bottom:24px"></div>
+  <span class="eyebrow ey-d reveal">Take back control</span>
+  <h2 class="reveal" style="color:#fff">Retome o controle da sua<br><span class="grad">agenda, receita e impacto.</span></h2>
+  <p class="lead reveal" style="color:rgba(255,255,255,.74);max-width:600px;margin:16px auto 0">Garantia: em 30 dias você faz sua 1ª venda e tem pacientes usando seus protocolos — ou a gente trabalha de graça até acontecer.</p>
+  <div class="herocta reveal" style="justify-content:center"><a class="btn btn-p" href="planos.html">Ver planos <span class="ico">→</span></a><a class="btn btn-g" href="onboarding.html">Como começar</a></div>
 </div></section>
 
 <footer><div class="wrap">
   <div class="fcols">
     <div style="max-width:300px"><div class="nm"><span class="orb" style="width:28px;height:28px"></span>MyDose</div><p style="margin-top:12px">O sistema operacional de IA da saúde. +Adesão · +Receita · −Tempo.</p></div>
-    <div><div style="color:#fff;font-weight:600;margin-bottom:10px">Produto</div><a href="planos.html">Planos</a><br><a href="onboarding.html">Onboarding</a><br><a href="#marcas">Para quem</a></div>
-    <div><div style="color:#fff;font-weight:600;margin-bottom:10px">Marcas</div><a href="planos.html#physical">Physical</a><br><a href="planos.html#mental">Mental</a><br><a href="planos.html#clinics">Clinics</a></div>
-    <div><div style="color:#fff;font-weight:600;margin-bottom:10px">Empresa</div><a href="../index.html">Planejamento</a><br><a href="../brand-book.html">Brand book</a></div>
+    <div class="col"><div class="h">Produto</div><div><a href="planos.html">Planos</a></div><div><a href="onboarding.html">Onboarding</a></div><div><a href="#marcas">Para quem</a></div></div>
+    <div class="col"><div class="h">Marcas</div><div><a href="planos.html#physical">Physical</a></div><div><a href="planos.html#mental">Mental</a></div><div><a href="planos.html#clinics">Clinics</a></div></div>
+    <div class="col"><div class="h">Empresa</div><div><a href="../index.html">Planejamento</a></div><div><a href="../brand-book.html">Brand book</a></div></div>
   </div>
   <div style="margin-top:34px;border-top:1px solid var(--wline);padding-top:18px">© MyDose · Take back control · +1.000 profissionais de saúde</div>
 </div></footer>
@@ -292,12 +250,18 @@
     var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
     var els=document.querySelectorAll('.reveal');
     if(reduce){els.forEach(e=>e.classList.add('in'));}
-    else{var io=new IntersectionObserver((en)=>{en.forEach((e,i)=>{if(e.isIntersecting){var el=e.target;setTimeout(()=>el.classList.add('in'),(el.dataset.s?+el.dataset.s:0));io.unobserve(el);}})},{threshold:.12,rootMargin:'-30px'});els.forEach(e=>io.observe(e));}
+    else{var io=new IntersectionObserver((en)=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.14,rootMargin:'-40px'});els.forEach(e=>io.observe(e));}
     // count-up
-    var counted=new IntersectionObserver((en)=>{en.forEach(e=>{if(e.isIntersecting){var el=e.target;counted.unobserve(el);var target=+el.dataset.count,div=+el.dataset.div,suf=el.dataset.suffix,start=null,dur=1400;
-      function step(t){if(!start)start=t;var p=Math.min((t-start)/dur,1);var ease=1-Math.pow(1-p,3);var val=target*ease/div;el.textContent=(div>1?val.toFixed(val<10?1:0):Math.floor(val).toLocaleString('pt-BR'))+suf;if(p<1)requestAnimationFrame(step);else el.textContent=(div>1?(target/div):target).toLocaleString('pt-BR')+suf;}
-      requestAnimationFrame(step);}})},{threshold:.5});
-    document.querySelectorAll('[data-count]').forEach(e=>counted.observe(e));
+    var cio=new IntersectionObserver((en)=>{en.forEach(e=>{if(e.isIntersecting){var el=e.target;cio.unobserve(el);var t=+el.dataset.count,dec=+(el.dataset.dec||0),suf=el.dataset.suffix||'',s=null,dur=1500;
+      function st(n){if(!s)s=n;var p=Math.min((n-s)/dur,1);var ease=1-Math.pow(1-p,3);var v=t*ease;el.textContent=(dec?v.toFixed(dec):Math.floor(v).toLocaleString('pt-BR'))+suf;if(p<1)requestAnimationFrame(st);else el.textContent=(dec?t.toFixed(dec):t.toLocaleString('pt-BR'))+suf;}
+      requestAnimationFrame(st);}})},{threshold:.5});
+    document.querySelectorAll('[data-count]').forEach(e=>cio.observe(e));
+    // subtle parallax on image frames (GPU transform only, rAF-throttled)
+    if(!reduce){
+      var frames=[].slice.call(document.querySelectorAll('[data-parallax]'));var tick=false;
+      function upd(){tick=false;var vh=innerHeight;frames.forEach(f=>{var r=f.getBoundingClientRect();var c=r.top+r.height/2;var off=((vh/2-c)/vh)*(+f.dataset.parallax);var img=f.querySelector('img');if(img)img.style.transform='translateY('+off+'px) scale(1.04)';});}
+      addEventListener('scroll',function(){if(!tick){requestAnimationFrame(upd);tick=true;}},{passive:true});upd();
+    }
   })();
 </script>
 </body>
