@@ -127,10 +127,10 @@ nav .nbtn{font-weight:600;font-size:14px;background:var(--grad);color:#fff;paddi
 .vert:hover{transform:translateY(-8px)}
 .vert img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .7s var(--eo)}
 .vert:hover img{transform:scale(1.06)}
-.vert::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 30%,rgba(6,6,14,.92))}
-.vert .tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
-.vert.v1 .tag{color:var(--mint)}.vert.v2 .tag{color:var(--violet)}.vert.v3 .tag{color:var(--sky)}
-.vert h3{font-size:25px;font-weight:700}.vert p{font-size:14px;color:var(--tx2);margin-top:8px}.vert .go{margin-top:16px;font-weight:600;font-size:14px;display:inline-flex;gap:7px}
+.vert::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,6,14,.05) 0%,rgba(6,6,14,.5) 52%,rgba(6,6,14,.96))}
+.vert .tag{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.vert.v1 .tag{color:#5eead4}.vert.v2 .tag{color:#c4b5fd}.vert.v3 .tag{color:#93c5fd}
+.vert h3{font-size:25px;font-weight:700;color:#fff!important}.vert p{font-size:14px;color:rgba(255,255,255,.82)!important;margin-top:8px}.vert .go{margin-top:16px;font-weight:600;font-size:14px;display:inline-flex;gap:7px;color:#fff!important}
 /* pricing */
 .toggle{display:inline-flex;background:var(--glass);border:1px solid var(--line);border-radius:14px;padding:6px;gap:5px;margin:26px auto 0}
 .toggle button{font-family:var(--f);font-weight:600;font-size:14px;padding:11px 22px;border-radius:10px;border:none;background:transparent;color:var(--tx2);cursor:pointer;transition:.3s var(--eo)}
@@ -147,7 +147,13 @@ nav .nbtn{font-weight:600;font-size:14px;background:var(--grad);color:#fff;paddi
 .plan .media{font-size:11.5px;color:var(--mint);font-weight:600;margin-top:5px;min-height:17px}
 .plan ul{list-style:none;margin:16px 0;flex:1}.plan li{font-size:12.8px;color:var(--tx2);padding:6px 0 6px 22px;position:relative;border-bottom:1px solid var(--line2)}.plan li::before{content:"";position:absolute;left:0;top:11px;width:12px;height:7px;border-left:2px solid var(--mint);border-bottom:2px solid var(--mint);transform:rotate(-45deg)}
 .plan .sel{text-align:center;font-weight:600;font-size:14px;padding:13px;border-radius:12px;margin-top:8px;cursor:pointer}.plan .sel.p{background:var(--grad);color:#fff}.plan .sel.s{background:var(--glass2);color:var(--tx)}
-.pricenote{text-align:center;font-size:13px;color:var(--tx3);margin-top:22px}.pricenote a{color:var(--pink);font-weight:600}
+.planlab{display:flex;align-items:center;gap:16px;margin-top:40px}.planlab span{font-weight:700;font-size:15px;letter-spacing:-.02em;white-space:nowrap}.planlab i{flex:1;height:1px;background:var(--line)}
+.plans.clin{grid-template-columns:repeat(3,1fr);max-width:880px;margin-left:auto;margin-right:auto}@media(max-width:680px){.plans.clin{grid-template-columns:1fr}}
+.plan .econ{font-size:11.5px;font-weight:700;color:var(--pink);min-height:16px;margin-top:7px;opacity:0;transform:translateY(-2px);transition:opacity .3s var(--eo),transform .3s var(--eo)}
+.plan .econ.on{opacity:1;transform:none}
+.trustbar{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 14px;margin-top:34px}
+.trustbar span{font-size:12.5px;font-weight:600;color:var(--tx2);background:var(--glass);border:1px solid var(--line);padding:9px 15px;border-radius:100px}
+.pricenote{text-align:center;font-size:13px;color:var(--tx3);margin-top:22px;max-width:680px;margin-left:auto;margin-right:auto}.pricenote a{color:var(--pink);font-weight:600}.pricenote b{color:var(--tx)}
 /* live band */
 .live{position:relative;border-radius:30px;overflow:hidden;border:1px solid var(--line);padding:clamp(40px,6vw,72px);margin-top:10px}
 .live img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
@@ -172,14 +178,14 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--tx3);fon
   --bg:#edecf6;--bg2:#f7f6fc;--glass:rgba(20,18,40,.038);--glass2:rgba(20,18,40,.07);
   --tx:#16121f;--tx2:#56516c;--tx3:#918ca6;
   --line:rgba(22,18,31,.10);--line2:rgba(22,18,31,.06);
-  --violet:#7c3aed;--pink:#db2777;--amber:#d97706;--mint:#0d9488;--sky:#2563eb;
+  --violet:#7c3aed;--pink:#db2777;--amber:#d97706;--mint:#c026d3;--sky:#9333ea;
 }
 body{background:var(--bg)}
-.bgaura{background:
-  radial-gradient(50vw 50vw at 12% 8%,rgba(124,58,237,.16),transparent 60%),
-  radial-gradient(46vw 46vw at 88% 16%,rgba(219,39,119,.12),transparent 60%),
-  radial-gradient(52vw 52vw at 70% 90%,rgba(13,148,136,.12),transparent 62%),
-  radial-gradient(42vw 42vw at 22% 96%,rgba(37,99,235,.10),transparent 60%),var(--bg)}
+.bgaura{animation:none;background:
+  radial-gradient(54vw 54vw at 14% 6%,rgba(124,58,237,.20),transparent 60%),
+  radial-gradient(50vw 50vw at 88% 14%,rgba(236,72,153,.18),transparent 60%),
+  radial-gradient(56vw 56vw at 72% 92%,rgba(251,146,60,.14),transparent 62%),
+  radial-gradient(46vw 46vw at 24% 98%,rgba(192,38,211,.13),transparent 60%),var(--bg)}
 .grain{opacity:.025;mix-blend-mode:multiply}
 nav.solid{background:rgba(237,236,246,.82);border-bottom-color:var(--line)}
 .mm{background:rgba(237,236,246,.98)}
@@ -204,15 +210,23 @@ nav.solid{background:rgba(237,236,246,.82);border-bottom-color:var(--line)}
 .toggle{background:#fff;border:1px solid var(--line);box-shadow:0 8px 22px -14px rgba(22,18,31,.2)}
 .toggle button.on{background:#16121f;color:#fff}.toggle .save{color:var(--mint)}
 .pricenote a{color:var(--pink)}
-.cur{border-color:var(--mint)}.cur.big{background:rgba(13,148,136,.12)}
+.trustbar span{background:#fff;border-color:var(--line);box-shadow:0 6px 16px -12px rgba(22,18,31,.2)}
+.plan .econ{color:#be185d}
+.cur{border-color:var(--mint)}.cur.big{background:rgba(192,38,211,.1)}
 footer{border-top-color:var(--line)}
 /* ============================ PRÉDIO (esteira) ============================ */
 .predio{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
 @media(max-width:920px){.predio{grid-template-columns:1fr;gap:40px}}
 .bldg{position:relative;width:100%;max-width:440px;margin:0 auto;filter:drop-shadow(0 46px 60px rgba(124,58,237,.28))}
-.bldg .sun{position:absolute;top:-38px;right:16px;width:56px;height:56px;border-radius:50%;background:var(--aura);box-shadow:0 0 56px rgba(207,95,192,.55);z-index:1}
-.bldg .roof{position:relative;height:24px;margin:0 30px;background:#241b3a;clip-path:polygon(12% 0,88% 0,100% 100%,0 100%)}
-.bldg .roof .sign{position:absolute;top:11px;left:50%;transform:translateX(-50%);background:#241b3a;color:#fff;font-weight:700;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:8px 17px;border-radius:9px;white-space:nowrap;z-index:3;box-shadow:0 8px 18px rgba(0,0,0,.3)}
+.bldg .roof{position:relative;height:38px;margin:0 14px;background:linear-gradient(180deg,#2c2347,#1b1430);border:1px solid var(--line);border-bottom:none;border-radius:13px 13px 0 0;display:flex;align-items:center;justify-content:center;z-index:2}
+.bldg .roof .sign{background:rgba(255,255,255,.1);color:#fff;font-weight:700;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:8px;white-space:nowrap}
+.bldg .roof .pad{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:19px;height:19px;border:1.5px solid rgba(255,255,255,.45);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:rgba(255,255,255,.7)}
+.bldg .sun{position:absolute;top:-44px;left:50%;transform:translateX(-50%);width:52px;height:52px;border-radius:50%;background:var(--aura);box-shadow:0 0 60px rgba(207,95,192,.6);z-index:1}
+.bldg .sun::after{content:"";position:absolute;left:50%;top:-12px;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:#ff5fa8;box-shadow:0 0 12px #ff5fa8;animation:beacon 1.3s infinite}
+@keyframes beacon{50%{opacity:.25}}
+.bldg .heli{position:absolute;top:-84px;left:50%;font-size:28px;z-index:3;filter:drop-shadow(0 8px 9px rgba(0,0,0,.28));animation:heli 6s ease-in-out infinite}
+@keyframes heli{0%,100%{transform:translate(-96px,2px) rotate(-4deg)}50%{transform:translate(72px,-8px) rotate(4deg)}}
+@media(prefers-reduced-motion:reduce){.bldg .heli{animation:none;transform:translate(60px,0)}.bldg .sun::after{animation:none}}
 .bldg .floor{position:relative;display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:13px;height:74px;padding:0 18px;background:linear-gradient(180deg,#fff,#f7f4fd);border-left:1px solid var(--line);border-right:1px solid var(--line);border-top:1px solid rgba(124,58,237,.1);opacity:0;transform:translateY(22px);transition:opacity .6s var(--eo),transform .7s var(--eq)}
 .bldg .floor:first-of-type{margin-top:14px}
 .in .bldg .floor{opacity:1;transform:none}
@@ -357,8 +371,9 @@ footer{border-top-color:var(--line)}
     </div>
   </div>
   <div class="rv-s"><div class="bldg" id="bldg">
+    <span class="heli">🚁</span>
     <span class="sun"></span>
-    <div class="roof"><span class="sign">🏛️ Sua comunidade</span></div>
+    <div class="roof"><span class="pad">H</span><span class="sign">Sua comunidade</span></div>
     <div class="floor" style="transition-delay:.4s"><div class="lab"><span class="fi">🏆</span><div><div class="ft">Desafios & gamificação</div><div class="pp">500 pessoas</div></div></div><div class="win"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="rev">R$ 3k</div></div>
     <div class="floor" style="transition-delay:.3s"><div class="lab"><span class="fi">🎤</span><div><div class="ft">Eventos & lançamentos</div><div class="pp">300 pessoas</div></div></div><div class="win"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="rev">R$ 10k</div></div>
     <div class="floor" style="transition-delay:.2s"><div class="lab"><span class="fi">🎓</span><div><div class="ft">Cursos & biblioteca</div><div class="pp">150 pessoas</div></div></div><div class="win"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="rev">R$ 9k</div></div>
@@ -383,14 +398,30 @@ footer{border-top-color:var(--line)}
   <div class="center mx rv"><span class="kick">Planos · sem plano mensal</span><h2>Comece simples. <span class="amber">Escale quando quiser.</span></h2><p class="ld" style="margin-left:auto;margin-right:auto">Do "faça você mesmo" ao "a gente faz e roda por você". A mídia fica fora do preço — você sabe exatamente quanto vai pra anúncio.</p>
     <div class="toggle" id="toggle"><button data-k="tri" class="on">Trimestral</button><button data-k="sem">Semestral <span class="save">−15%</span></button><button data-k="anu">Anual <span class="save">−25%</span></button></div>
   </div>
+  <div class="planlab rv"><span>👤 Profissional individual</span><i></i></div>
   <div class="plans rv">
-    <div class="plan"><div class="pn">Software</div><div class="pd">Você faz</div><div class="pr">R$ <span data-tri="397" data-sem="337" data-anu="298">397</span><small>/mês</small></div><div class="media"></div><ul><li>Plataforma IA + Academy</li><li>Comunidade + checkout</li><li>Acompanhamento do paciente</li><li>500 WhatsApp/mês</li></ul><span class="sel s">Começar</span></div>
-    <div class="plan"><div class="pn">Start</div><div class="pd">Seu 1º resultado</div><div class="pr">R$ <span data-tri="797" data-sem="677" data-anu="598">797</span><small>/mês</small></div><div class="media"></div><ul><li>Tudo do Software +</li><li>Ativação dos 2 aha moments</li><li>6 posts + 3 vídeos/mês</li><li>1 ebook de ativação</li></ul><span class="sel s">Começar</span></div>
-    <div class="plan feat"><span class="badge">Mais popular</span><div class="pn">Autopilot</div><div class="pd">A gente faz e roda</div><div class="pr">R$ <span data-tri="2.990" data-sem="2.542" data-anu="2.243">2.990</span><small>/mês</small></div><div class="media">+ R$ 1.500 de mídia</div><ul><li>Tráfego gerido por nós</li><li>20 posts + 10 vídeos/mês</li><li>2 ebooks/mês + funis</li><li>Relatório + plano</li></ul><span class="sel p">Quero esse</span></div>
-    <div class="plan"><div class="pn">Co-pilot</div><div class="pd">A gente te guia</div><div class="pr">R$ <span data-tri="1.490" data-sem="1.267" data-anu="1.118">1.490</span><small>/mês</small></div><div class="media"></div><ul><li>Tudo do Start +</li><li>12 posts + 6 vídeos/mês</li><li>Setup de mídia</li><li>Relatório mensal (IA)</li></ul><span class="sel s">Começar</span></div>
-    <div class="plan"><div class="pn">Partner</div><div class="pd">Cresce junto</div><div class="pr">R$ <span data-tri="7.900" data-sem="6.715" data-anu="5.925">7.900</span><small>/mês</small></div><div class="media">+ R$ 5.000 de mídia</div><ul><li>Tudo do Autopilot +</li><li>Gestor dedicado</li><li>36 posts + 18 vídeos/mês</li><li>Fábrica de produtos</li></ul><span class="sel s">Falar com o time</span></div>
+    <div class="plan"><div class="pn">Software</div><div class="pd">Você faz</div><div class="pr">R$ <span data-tri="397" data-sem="337" data-anu="298">397</span><small>/mês</small></div><div class="media"></div><div class="econ"></div><ul><li>Plataforma IA + Academy</li><li>Comunidade + checkout</li><li>Acompanhamento do paciente</li><li>500 WhatsApp/mês</li></ul><span class="sel s">Começar</span></div>
+    <div class="plan"><div class="pn">Start</div><div class="pd">Seu 1º resultado</div><div class="pr">R$ <span data-tri="797" data-sem="677" data-anu="598">797</span><small>/mês</small></div><div class="media"></div><div class="econ"></div><ul><li>Tudo do Software +</li><li>Ativação dos 2 aha moments</li><li>6 posts + 3 vídeos/mês</li><li>1 ebook de ativação</li></ul><span class="sel s">Começar</span></div>
+    <div class="plan"><div class="pn">Co-pilot</div><div class="pd">A gente te guia</div><div class="pr">R$ <span data-tri="1.490" data-sem="1.267" data-anu="1.118">1.490</span><small>/mês</small></div><div class="media"></div><div class="econ"></div><ul><li>Tudo do Start +</li><li>12 posts + 6 vídeos/mês</li><li>Setup de mídia</li><li>Relatório mensal (IA)</li></ul><span class="sel s">Começar</span></div>
+    <div class="plan feat"><span class="badge">⭐ Mais escolhido</span><div class="pn">Autopilot</div><div class="pd">A gente faz e roda</div><div class="pr">R$ <span data-tri="2.990" data-sem="2.542" data-anu="2.243">2.990</span><small>/mês</small></div><div class="media">+ R$ 1.500 de mídia</div><div class="econ"></div><ul><li>Tráfego gerido por nós</li><li>20 posts + 10 vídeos/mês</li><li>2 ebooks/mês + funis</li><li>Relatório + plano</li></ul><span class="sel p">Quero esse →</span></div>
+    <div class="plan"><div class="pn">Partner</div><div class="pd">Cresce junto</div><div class="pr">R$ <span data-tri="7.900" data-sem="6.715" data-anu="5.925">7.900</span><small>/mês</small></div><div class="media">+ R$ 5.000 de mídia</div><div class="econ"></div><ul><li>Tudo do Autopilot +</li><li>Gestor dedicado</li><li>36 posts + 18 vídeos/mês</li><li>Fábrica de produtos</li></ul><span class="sel s">Falar com o time</span></div>
   </div>
-  <p class="pricenote">É uma clínica? Temos planos multiprofissionais (a partir de R$ 1.990/mês). <a href="clinic.html">Ver Clinics →</a> · Garantia de 30 dias · sem fidelidade-armadilha.</p>
+
+  <div class="planlab rv" style="margin-top:46px"><span>🏥 Clínicas & equipes</span><i></i></div>
+  <div class="plans clin rv">
+    <div class="plan"><div class="pn">Clinics Start</div><div class="pd">Tire a clínica do papel</div><div class="pr">R$ <span data-tri="1.990" data-sem="1.692" data-anu="1.493">1.990</span><small>/mês</small></div><div class="media"></div><div class="econ"></div><ul><li>Até 5 profissionais</li><li>Plataforma + IA + comunidade</li><li>Agenda e checkout unificados</li><li>Onboarding da equipe</li></ul><span class="sel s">Ver Clinics</span></div>
+    <div class="plan feat"><span class="badge">⭐ Melhor custo/cadeira</span><div class="pn">Clinics Growth</div><div class="pd">A clínica que escala</div><div class="pr">R$ <span data-tri="4.990" data-sem="4.242" data-anu="3.743">4.990</span><small>/mês</small></div><div class="media">+ R$ 2.500 de mídia</div><div class="econ"></div><ul><li>Até 15 profissionais</li><li>Tráfego + conteúdo gerido</li><li>Funis por especialidade</li><li>Relatórios por profissional</li></ul><span class="sel p">Quero esse →</span></div>
+    <div class="plan"><div class="pn">Clinics Performance</div><div class="pd">Operação de alta performance</div><div class="pr">R$ <span data-tri="9.900" data-sem="8.415" data-anu="7.425">9.900</span><small>/mês</small></div><div class="media">+ R$ 5.000 de mídia</div><div class="econ"></div><ul><li>Profissionais ilimitados</li><li>Gestor dedicado + squad</li><li>Fábrica de produtos da clínica</li><li>BI e metas por unidade</li></ul><span class="sel s">Falar com o time</span></div>
+  </div>
+
+  <div class="trustbar rv">
+    <span>🛡️ Garantia incondicional de 30 dias</span>
+    <span>🔓 Sem fidelidade-armadilha</span>
+    <span>⚡ No ar em 7 dias</span>
+    <span>📊 Mídia transparente, fora do preço</span>
+    <span>➕ Cadeira extra R$ 99/mês</span>
+  </div>
+  <p class="pricenote">Os exemplos de programa que <b>você cobra do paciente</b> (Início, Essencial, Premium) são receita sua — não custo de plataforma. <a href="precificacao.html">Ver precificação completa →</a></p>
 </div></section>
 
 <!-- LIVE -->
@@ -444,8 +475,19 @@ footer{border-top-color:var(--line)}
     if(!mob&&!reduce){var rc=null,rf=false;g.addEventListener('pointermove',function(ev){rc=rc||g.getBoundingClientRect();var mx=ev.clientX-rc.left,my=ev.clientY-rc.top,cw=rc.width/cols;if(rf)return;rf=true;requestAnimationFrame(function(){rf=false;for(var i=0;i<d.length;i++){var o=d[i];if(o.me)continue;var dx=(o.c+.5)*cw-mx,dy=(o.r+.5)*cw-my,dd=Math.sqrt(dx*dx+dy*dy),k=dd<100?1-dd/100:0;o.el.style.transform=k?'scale('+(1+k*1.7)+')':'';o.el.style.background=k>.2?'#34d8c4':'';}});});
       g.addEventListener('pointerleave',function(){d.forEach(function(o){if(!o.me){o.el.style.transform='';o.el.style.background='';}})});}
   })();
-  // pricing toggle
-  document.querySelectorAll('#toggle button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#toggle button').forEach(x=>x.classList.remove('on'));this.classList.add('on');var k=this.dataset.k;document.querySelectorAll('[data-tri]').forEach(s=>s.textContent=s.dataset[k]);};});
+  // pricing toggle + economia dinâmica
+  function num(v){return parseInt(String(v).replace(/\./g,''),10);}
+  function applyTerm(k){
+    document.querySelectorAll('[data-tri]').forEach(function(s){s.textContent=s.dataset[k];});
+    document.querySelectorAll('.plan').forEach(function(p){
+      var pr=p.querySelector('[data-tri]'),ec=p.querySelector('.econ');if(!pr||!ec)return;
+      if(k==='tri'){ec.classList.remove('on');ec.textContent='';return;}
+      var save=(num(pr.dataset.tri)-num(pr.dataset[k]))*12;
+      ec.textContent='💸 Você economiza R$ '+save.toLocaleString('pt-BR')+'/ano';
+      ec.classList.add('on');
+    });
+  }
+  document.querySelectorAll('#toggle button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#toggle button').forEach(x=>x.classList.remove('on'));this.classList.add('on');applyTerm(this.dataset.k);};});
   // custom cursor
   (function(){var c=document.getElementById('cur');if(!c||matchMedia('(pointer:coarse)').matches||innerWidth<980)return;var x=innerWidth/2,y=innerHeight/2,cx=x,cy=y,a=false;
     addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;if(!a){a=true;c.classList.add('on')}},{passive:true});
@@ -459,13 +501,14 @@ footer{border-top-color:var(--line)}
   // ===== living background: particle network — perf-optimized (cap dpr, fewer nodes, 30fps, pause offscreen) =====
   (function(){var cv=document.getElementById('bgcanvas');if(!cv||reduce)return;var ctx=cv.getContext('2d',{alpha:true}),w,h,dpr=Math.min(devicePixelRatio||1,1.4),pts=[],n,run=true,last=0,gap=1000/30,max,max2;
     function size(){w=cv.width=Math.floor(innerWidth*dpr);h=cv.height=Math.floor(innerHeight*dpr);cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';n=innerWidth<700?22:innerWidth<1200?40:58;max=Math.min(innerWidth*.16,170)*dpr;max2=max*max;pts=[];for(var i=0;i<n;i++)pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.16*dpr,vy:(Math.random()-.5)*.16*dpr});}
-    var cols=['124,58,237','219,39,119','13,148,136','37,99,235'];
+    var cols=['124,58,237','219,39,119','236,72,153','251,146,60'];
     function draw(t){requestAnimationFrame(draw);if(!run)return;if(t-last<gap)return;last=t;ctx.clearRect(0,0,w,h);
       for(var i=0;i<n;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;}
       for(var i=0;i<n;i++){var p=pts[i];for(var j=i+1;j<n;j++){var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d2=dx*dx+dy*dy;if(d2<max2){var a=.16*(1-Math.sqrt(d2)/max);ctx.strokeStyle='rgba('+cols[i&3]+','+a+')';ctx.lineWidth=1*dpr;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}}
         ctx.fillStyle='rgba('+cols[i&3]+',.55)';ctx.beginPath();ctx.arc(p.x,p.y,1.7*dpr,0,6.28);ctx.fill();}}
     size();requestAnimationFrame(draw);addEventListener('resize',size);
-    document.addEventListener('visibilitychange',function(){run=!document.hidden;});})();
+    document.addEventListener('visibilitychange',function(){run=!document.hidden;});
+    var stmr;addEventListener('scroll',function(){run=false;clearTimeout(stmr);stmr=setTimeout(function(){run=!document.hidden;},140);},{passive:true});})();
 </script>
 </body>
 </html>
