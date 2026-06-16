@@ -87,28 +87,32 @@ nav .nbtn{font-weight:600;font-size:14px;background:var(--grad);color:#fff;paddi
 .hero h1 em{font-style:normal;color:var(--mint)}
 .hero .sub{font-size:clamp(17px,1.5vw,21px);color:var(--tx2);max-width:540px;margin:26px 0 0;line-height:1.5}
 .hcta{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
-.hstats{display:flex;gap:30px;margin-top:42px;flex-wrap:wrap}
-.hstat .n{font-family:var(--mono);font-weight:700;font-size:26px}.hstat .l{font-size:12.5px;color:var(--tx3);margin-top:2px}
+.hstats{display:flex;gap:0;margin-top:38px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px}
+.hstat{padding-right:26px;margin-right:26px;border-right:1px solid var(--line)}
+.hstat:last-child{padding-right:0;margin-right:0;border-right:none}
+.hstat .n{font-family:var(--mono);font-weight:700;font-size:clamp(30px,4.2vw,42px);letter-spacing:-.02em;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hstat .l{font-size:12.5px;color:var(--tx2);margin-top:7px;max-width:130px;line-height:1.3}
+@media(max-width:560px){.hstat{padding-right:16px;margin-right:16px}.hstat .l{font-size:11.5px}}
 /* hero visual: photo + app + orb */
 .hvis{position:relative;height:clamp(440px,56vw,600px)}
 .hvis .photo{position:absolute;inset:0;border-radius:30px;overflow:hidden;border:1px solid var(--line);box-shadow:0 50px 100px -30px rgba(0,0,0,.8)}
-.hvis .photo img{width:100%;height:100%;object-fit:cover}
-.hvis .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(6,6,14,.55))}
-.hvis .phone{position:absolute;right:-6%;bottom:-4%;width:38%;border-radius:26px;box-shadow:0 40px 80px -24px rgba(0,0,0,.85),0 0 0 1px var(--line);z-index:3}
-.hvis .orb{position:absolute;left:-7%;top:8%;width:92px;height:92px;box-shadow:0 0 70px rgba(207,95,192,.6);z-index:3;animation:float 7s var(--eo) infinite}
+.hvis .photo img{width:100%;height:100%;object-fit:cover;object-position:56% 24%}
+.hvis .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(6,6,14,.45))}
+.hvis .phone{position:absolute;left:-7%;bottom:-5%;width:32%;border-radius:24px;box-shadow:0 40px 80px -24px rgba(0,0,0,.85),0 0 0 1px var(--line);z-index:3}
+.hvis .orb{position:absolute;right:-4%;top:3%;width:84px;height:84px;box-shadow:0 0 70px rgba(207,95,192,.6);z-index:3;animation:float 7s var(--eo) infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
-.hvis .chip{position:absolute;background:rgba(11,10,22,.78);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:11px 15px;font-size:12.5px;font-weight:600;z-index:4;box-shadow:0 14px 30px -10px rgba(0,0,0,.6)}
-.hvis .c1{left:-4%;bottom:18%}.hvis .c1 b{color:var(--mint)}
-.hvis .c2{right:4%;top:6%}.hvis .c2 b{color:var(--pink)}
-@media(max-width:740px){.hvis .photo img{object-position:50% 16%}}
+.hvis .chip{position:absolute;background:rgba(11,10,22,.78);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:11px 15px;font-size:12.5px;font-weight:600;color:#fff;z-index:4;box-shadow:0 14px 30px -10px rgba(0,0,0,.6)}
+.hvis .c1{right:3%;bottom:13%}.hvis .c1 b{color:#5eead4}
+.hvis .c2{left:-3%;top:10%}.hvis .c2 b{color:var(--pink)}
+@media(max-width:740px){.hvis .photo img{object-position:56% 20%}}
 @media(max-width:560px){
-  .hvis{height:clamp(390px,86vw,500px)}
-  .hvis .photo img{object-position:50% 14%}
-  .hvis .phone{width:33%;right:1%;bottom:1%}
-  .hvis .orb{width:58px;height:58px;left:-1%;top:2%}
-  .hvis .chip{font-size:10.5px;padding:8px 11px}
-  .hvis .c1{left:2%;bottom:13%}
-  .hvis .c2{right:2%;top:4%}
+  .hvis{height:clamp(380px,82vw,480px)}
+  .hvis .photo img{object-position:56% 18%}
+  .hvis .phone{width:30%;left:-2%;bottom:1%;right:auto}
+  .hvis .orb{width:54px;height:54px;right:-1%;top:2%;left:auto}
+  .hvis .chip{font-size:10px;padding:7px 10px}
+  .hvis .c1{right:2%;bottom:11%}
+  .hvis .c2{left:0;top:5%}
 }
 /* section base */
 .sec{padding:clamp(56px,8vw,104px) 0}
@@ -152,7 +156,8 @@ nav .nbtn{font-weight:600;font-size:14px;background:var(--grad);color:#fff;paddi
 .bknote{margin-top:24px;font-size:14px;color:var(--tx2);line-height:1.6}.bknote b{color:var(--tx)}
 /* product features */
 .feat{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-@media(max-width:920px){.feat{grid-template-columns:1fr;gap:40px}.feat.rev .a{order:2}}
+.feat.rev .a{order:2}.feat.rev .device{order:1}
+@media(max-width:920px){.feat,.feat.rev{grid-template-columns:1fr;gap:40px}.feat .a,.feat.rev .a{order:1}.feat .device,.feat.rev .device{order:2}}
 .feat .device{position:relative;display:flex;justify-content:center}
 .feat .device img{width:74%;max-width:320px;border-radius:30px;box-shadow:0 50px 90px -28px rgba(0,0,0,.8),0 0 0 1px var(--line)}
 .feat .device .glow{position:absolute;inset:6% 18%;background:var(--aura);filter:blur(60px);opacity:.45;z-index:-1}
@@ -193,19 +198,20 @@ nav .nbtn{font-weight:600;font-size:14px;background:var(--grad);color:#fff;paddi
 @media(max-width:1180px){.plans{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.plans{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}}
 .plan{position:relative;display:flex;flex-direction:column;border-radius:18px;border:1px solid var(--line);background:#fff;padding:18px 16px;box-shadow:0 14px 34px -26px rgba(22,18,31,.25);transition:transform .4s var(--eo),box-shadow .4s var(--eo),border-color .3s}
 .plan:hover{transform:translateY(-6px);box-shadow:0 30px 60px -32px rgba(124,58,237,.32);border-color:rgba(124,58,237,.3)}
-.plan.feat{border-color:transparent;box-shadow:0 34px 70px -30px rgba(219,39,119,.4)}
-.plans{padding-top:9px}
+.plan.feat{border-color:transparent;box-shadow:0 26px 56px -34px rgba(219,39,119,.34)}
+.plans{padding-top:10px}
 .plan.feat::before{content:"";position:absolute;inset:0;border-radius:18px;padding:1.6px;background:var(--grad);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-.plan .badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:9.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;background:var(--grad);color:#fff;padding:5px 12px;border-radius:100px;white-space:nowrap;box-shadow:0 8px 20px -6px rgba(219,39,119,.6)}
+.plan .badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:9px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;background:var(--grad);color:#fff;padding:4px 11px;border-radius:100px;white-space:nowrap;box-shadow:0 8px 20px -6px rgba(219,39,119,.55)}
 .plan .pn{font-weight:800;font-size:18px;letter-spacing:-.03em}
-.plan .who{font-size:11.5px;color:var(--tx2);margin-top:3px;line-height:1.28;min-height:28px}
+.plan .who{font-size:11px;color:var(--tx2);margin-top:3px;line-height:1.25;min-height:0}
 .plan .fat{display:inline-block;font-size:10px;font-weight:600;color:var(--violet);background:rgba(124,58,237,.08);border-radius:6px;padding:3px 8px;margin-top:8px}
-.plan .pr{font-family:var(--mono);font-weight:700;font-size:26px;letter-spacing:-.02em;margin-top:11px}.plan .pr small{font-size:11px;color:var(--tx3);font-weight:500}
-.plan .media{font-size:10.5px;color:var(--tx3);font-weight:600;margin-top:2px;min-height:13px}
-.plan .econ{font-size:11px;font-weight:700;color:#be185d;min-height:14px;margin-top:4px;opacity:0;transition:opacity .3s var(--eo)}
+.plan .pr{font-family:var(--mono);font-weight:700;font-size:25px;letter-spacing:-.02em;margin-top:10px}.plan .pr small{font-size:11px;color:var(--tx3);font-weight:500}
+.plan .media{font-size:10.5px;color:var(--tx3);font-weight:600;margin-top:2px}
+.plan .media:empty{display:none}
+.plan .econ{font-size:11px;font-weight:700;color:#be185d;min-height:0;margin-top:4px;opacity:0;transition:opacity .3s var(--eo)}
 .plan .econ.on{opacity:1}
-.plan ul{list-style:none;margin:11px 0 13px;flex:1;display:flex;flex-direction:column;gap:6px;padding-top:11px;border-top:1px solid var(--line)}
-.plan li{font-size:11.8px;line-height:1.3;color:var(--tx2);padding-left:19px;position:relative}
+.plan ul{list-style:none;margin:10px 0 12px;flex:1;display:flex;flex-direction:column;gap:6px;padding-top:10px;border-top:1px solid var(--line)}
+.plan li{font-size:11.6px;line-height:1.28;color:var(--tx2);padding-left:18px;position:relative}
 .plan li::before{content:"";position:absolute;left:2px;top:4px;width:10px;height:6px;border-left:2px solid var(--violet);border-bottom:2px solid var(--violet);transform:rotate(-45deg)}
 .plan li b{color:var(--tx);font-weight:700}
 .plan .sel{text-align:center;font-weight:700;font-size:13.5px;padding:11px;border-radius:11px;margin-top:auto;cursor:pointer;transition:transform .3s var(--eo),box-shadow .3s}
@@ -485,11 +491,11 @@ body.dark .bknote b,body.dark .vstack .a b{color:var(--tx)}
 <!-- HERO -->
 <header class="hero" id="top">
   <div class="floats">
-    <span class="fl l drift" style="top:11%;right:4%;--d:9s;--r:6deg">🤖</span>
-    <span class="fl bob" style="top:63%;left:1.5%;--d:7s;--r:-12deg">🧬</span>
-    <span class="fl s drift hm" style="top:17%;left:39%;--d:6.5s">✨</span>
-    <span class="fl bob hm" style="bottom:11%;left:23%;--d:8s;--r:14deg">💊</span>
-    <span class="fl s sway" style="bottom:24%;right:1%;--d:10s">💬</span>
+    <span class="fl l drift" style="top:8%;right:3%;--d:9s;--r:6deg">🤖</span>
+    <span class="fl s bob hm" style="top:30%;right:-1%;--d:7s;--r:-10deg">🧬</span>
+    <span class="fl s drift hm" style="top:11%;left:45%;--d:6.5s">✨</span>
+    <span class="fl bob hm" style="bottom:22%;right:7%;--d:8s;--r:12deg">💊</span>
+    <span class="fl s sway" style="bottom:36%;right:0%;--d:10s">💬</span>
   </div>
   <div class="wrap"><div class="herogrid">
   <div>
@@ -497,13 +503,13 @@ body.dark .bknote b,body.dark .vstack .a b{color:var(--tx)}
     <h1>Você cuida das pessoas.<br>A gente cuida do <em>resto.</em></h1>
     <p class="sub">A plataforma que transforma profissionais de saúde em referências: comunidade gamificada + IA que geram <b style="color:var(--tx)">adesão, receita recorrente e tempo de volta</b> — sem virar uma fábrica de consultas.</p>
     <div class="hcta">
-      <a class="btn btn-p" href="#cta">Quero começar <span class="ar">→</span></a>
+      <a class="btn btn-grad" href="#planos">Quero começar agora <span class="ar">→</span></a>
       <a class="btn btn-ghost" href="#produto">Ver o produto</a>
     </div>
     <div class="hstats">
-      <div class="hstat"><div class="n" data-count="1000" data-suffix="+">0</div><div class="l">profissionais usando</div></div>
+      <div class="hstat"><div class="n" data-count="1000" data-suffix="+">0</div><div class="l">profissionais de saúde</div></div>
       <div class="hstat"><div class="n">3×</div><div class="l">mais adesão do paciente</div></div>
-      <div class="hstat"><div class="n">+R$10k</div><div class="l">em 30 dias, sem nova agenda</div></div>
+      <div class="hstat"><div class="n" data-count="130000" data-suffix="+">0</div><div class="l">pacientes ativos</div></div>
     </div>
   </div>
   <div class="hvis rv-s">
@@ -725,6 +731,37 @@ body.dark .bknote b,body.dark .vstack .a b{color:var(--tx)}
   </div></div>
 </div></div></section>
 
+<!-- SUBSTITUI FERRAMENTAS -->
+<section class="sec" id="ferramentas" style="padding-bottom:0">
+  <div class="floats">
+    <span class="fl drift" style="top:10%;right:4%;--d:9s;--r:8deg">🧰</span>
+    <span class="fl s bob hm" style="bottom:18%;left:3%;--d:7s">⚙️</span>
+  </div>
+  <div class="wrap">
+  <div class="center mx rv"><span class="kick">Uma só, no lugar de muitas</span><h2>Hoje, isso seriam <span class="pink">+ de 10 ferramentas.</span></h2><p class="ld" style="margin-left:auto;margin-right:auto">Cada uma com mensalidade, login e fatura própria — e horas suas só pra fazer tudo conversar.</p></div>
+  <div class="toolsub rv">
+    <div>
+      <h3>Na MyDose, é <em>tudo num lugar só</em>.<br>E a gente ainda faz por você.</h3>
+      <p class="p">Você troca a colcha de retalhos de apps por uma plataforma única — <b style="color:#fff">e ainda ganha conteúdo, tráfego e IA rodando o crescimento</b>.</p>
+      <div class="chips"><b>📱 App + comunidade</b><b>🤖 IA 24/7</b><b>📅 Agenda</b><b>🗂️ Prontuário</b><b>📊 CRM</b><b>💳 Checkout</b><b>🎓 Área de membros</b><b>⚙️ Automação</b><b>📨 Disparos</b><b>📈 Tráfego</b></div>
+    </div>
+    <div class="calc">
+      <div class="tlist">
+        <div class="ti"><span class="nm">📱 App de hábitos + comunidade</span><span class="pz">R$ 497</span></div>
+        <div class="ti"><span class="nm">🤖 Assistente de IA</span><span class="pz">R$ 397</span></div>
+        <div class="ti"><span class="nm">🗂️ Prontuário eletrônico</span><span class="pz">R$ 299</span></div>
+        <div class="ti"><span class="nm">📊 CRM de vendas</span><span class="pz">R$ 400</span></div>
+        <div class="ti"><span class="nm">🎓 Área de membros + checkout</span><span class="pz">R$ 800</span></div>
+        <div class="ti"><span class="nm">📈 Gestão de anúncios</span><span class="pz">R$ 590</span></div>
+        <div class="ti"><span class="nm">📨 Disparos + agenda + formulários</span><span class="pz">R$ 907</span></div>
+        <div class="sum"><span>+ de 10 ferramentas, separadas</span><span class="strike">R$ 3.890/mês</span></div>
+      </div>
+      <div class="my"><span class="k">Com a MyDose, a partir de</span><span class="v">R$ 397</span></div>
+      <div class="win">Você economiza <b>R$ 3.493/mês</b> — e ganha as suas horas de volta.</div>
+    </div>
+  </div>
+</div></section>
+
 <!-- CALCULADORA -->
 <section class="sec" id="calc">
   <div class="floats">
@@ -790,28 +827,6 @@ body.dark .bknote b,body.dark .vstack .a b{color:var(--tx)}
     <div class="ptabs" id="ptabs"><button data-p="prof" class="on">👤 Profissional</button><button data-p="clin">🏥 Clínica</button></div>
     <div class="toggle" id="toggle"><button data-k="tri" class="on">Trimestral</button><button data-k="sem">Semestral <span class="save">−15%</span></button><button data-k="anu">Anual <span class="save">−25%</span></button></div>
     <div class="locknote">🔒 <b>Trava de preço:</b> o valor que você fechar hoje fica congelado pelo contrato inteiro.</div>
-  </div>
-
-  <div class="toolsub rv">
-    <div>
-      <h3>Hoje, isso seriam <em>+ de 10 ferramentas soltas</em>.<br>Na MyDose, é uma só.</h3>
-      <p class="p">Cada uma com mensalidade, login e fatura própria — e horas suas só pra fazer tudo conversar. A MyDose junta tudo num lugar só <b style="color:#fff">e ainda entrega o crescimento por você</b>.</p>
-      <div class="chips"><b>📱 App + comunidade</b><b>🤖 IA 24/7</b><b>📅 Agenda</b><b>🗂️ Prontuário</b><b>📊 CRM</b><b>💳 Checkout</b><b>🎓 Área de membros</b><b>⚙️ Automação</b><b>📨 Disparos</b><b>📈 Tráfego</b></div>
-    </div>
-    <div class="calc">
-      <div class="tlist">
-        <div class="ti"><span class="nm">📱 App de hábitos + comunidade</span><span class="pz">R$ 497</span></div>
-        <div class="ti"><span class="nm">🤖 Assistente de IA</span><span class="pz">R$ 397</span></div>
-        <div class="ti"><span class="nm">🗂️ Prontuário eletrônico</span><span class="pz">R$ 299</span></div>
-        <div class="ti"><span class="nm">📊 CRM de vendas</span><span class="pz">R$ 400</span></div>
-        <div class="ti"><span class="nm">🎓 Área de membros + checkout</span><span class="pz">R$ 800</span></div>
-        <div class="ti"><span class="nm">📈 Gestão de anúncios</span><span class="pz">R$ 590</span></div>
-        <div class="ti"><span class="nm">📨 Disparos + agenda + formulários</span><span class="pz">R$ 907</span></div>
-        <div class="sum"><span>+ de 10 ferramentas, separadas</span><span class="strike">R$ 3.890/mês</span></div>
-      </div>
-      <div class="my"><span class="k">Com a MyDose, a partir de</span><span class="v">R$ 397</span></div>
-      <div class="win">Você economiza <b>R$ 3.493/mês</b> — e ganha as suas horas de volta.</div>
-    </div>
   </div>
 
   <!-- ====== PANE PROFISSIONAL ====== -->
