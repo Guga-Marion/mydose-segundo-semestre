@@ -1,142 +1,232 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyDose Clinics — para clínicas multiprofissionais</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyDose Clinics — para clínicas e equipes multiprofissionais</title>
+<meta name="description" content="Plataforma multiprofissional + IA + funis por especialidade: escale a clínica inteira com mais adesão, retenção e receita recorrente.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#0a0812;--ink2:#120e1c;--panel:#181321;--panel2:#1f1830;--tx:#f4f1fa;--tx2:#b3adc6;--tx3:#7d7791;--line:rgba(255,255,255,.10);--line2:rgba(255,255,255,.06);--ac:#5aa9ff;--ac2:#1d4ed8;--f:'Outfit',sans-serif;--mono:'Space Grotesk',sans-serif;--eo:cubic-bezier(.16,1,.3,1);--aura:radial-gradient(circle at 30% 26%,rgba(255,255,255,.6),transparent 24%),radial-gradient(circle at 40% 36%,#bfdbfe,#3b82f6 56%,#1d4ed8)}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--ink);color:var(--tx);font-family:var(--f);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
-  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
-  h1,h2,h3{font-family:var(--f);letter-spacing:-.045em;line-height:1.02;font-weight:800;text-wrap:balance}
-  .ac{color:var(--ac)}
-  .orb{width:24px;height:24px;border-radius:50%;background:var(--aura)}
-  body::before{content:"";position:fixed;inset:-25%;z-index:0;pointer-events:none;background:radial-gradient(38vw 38vw at 16% 22%,rgba(90,169,255,.14),transparent 60%),radial-gradient(34vw 34vw at 84% 64%,rgba(90,169,255,.09),transparent 60%);animation:bg 26s ease-in-out infinite alternate;will-change:transform}
-  @keyframes bg{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-2.5%,2.5%,0) scale(1.06)}}
-  nav,section{position:relative;z-index:1}
-  nav{position:sticky;top:0;height:62px;display:flex;align-items:center;background:rgba(10,8,18,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line2);z-index:50}
-  nav .wrap{display:flex;align-items:center;gap:12px;width:100%}
-  nav .lk{display:flex;align-items:center;gap:9px;margin-right:auto;font-weight:700;font-size:17px;letter-spacing:-.04em}
-  nav .back{font-size:13.5px;color:var(--tx2)}nav .b{font-weight:600;font-size:13px;color:#04122e;background:var(--ac);padding:10px 16px;border-radius:11px}
-  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;padding:14px 24px;border-radius:14px;border:none;cursor:pointer;background:var(--ac);color:#04122e;transition:transform .4s var(--eo),box-shadow .4s}
-  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px -10px rgba(90,169,255,.6)}
-  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding:70px 0 80px}
-  @media(max-width:900px){.hero{grid-template-columns:1fr;gap:36px;padding:48px 0 60px}}
-  .pill{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:var(--ac);padding:7px 14px;border:1px solid rgba(90,169,255,.3);border-radius:100px;margin-bottom:22px}
-  .hero h1{font-size:clamp(38px,5.6vw,68px);font-weight:800;letter-spacing:-.05em}
-  .hero p{font-size:clamp(16px,1.6vw,19px);color:var(--tx2);max-width:500px;margin:22px 0 0}
-  .hcta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-  .heroimg{border-radius:26px;overflow:hidden;box-shadow:0 40px 80px -24px rgba(0,0,0,.7),0 0 0 1px var(--line);position:relative}
-  .heroimg img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2.4}
-  .heroimg .tagimg{position:absolute;left:18px;bottom:18px;background:rgba(10,8,18,.7);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-size:13px}
-  .heroimg .tagimg b{color:var(--ac)}
-  section{padding:70px 0}
-  .kick{font-size:13px;font-weight:600;color:var(--ac);margin-bottom:12px}
-  h2{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.04em}
-  .ld{font-size:17px;color:var(--tx2);max-width:620px;margin-top:14px}
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}@media(max-width:760px){.grid3{grid-template-columns:1fr}}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px}
-  .card .e{font-size:26px}.card h3{font-size:18px;margin:12px 0 7px}.card p{font-size:14px;color:var(--tx2)}
-  .sell{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-  .sell span{font-size:13.5px;font-weight:600;padding:11px 18px;border-radius:100px;background:var(--panel);border:1px solid var(--line)}
-  .results{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px;text-align:center}@media(max-width:600px){.results{grid-template-columns:1fr}}
-  .results .v{font-family:var(--mono);font-weight:700;font-size:clamp(28px,4vw,40px);color:var(--ac)}.results .l{font-size:13px;color:var(--tx3);margin-top:4px}
-  .leadwrap{background:linear-gradient(165deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:28px;padding:clamp(28px,4vw,46px);display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
-  @media(max-width:860px){.leadwrap{grid-template-columns:1fr;gap:30px}}
-  .form{display:flex;flex-direction:column;gap:14px}
-  .form label{font-size:12.5px;font-weight:600;color:var(--tx2);margin-bottom:-6px}
-  .form input,.form select{font-family:var(--f);font-size:15px;color:var(--tx);background:var(--ink2);border:1px solid var(--line);border-radius:13px;padding:14px 15px;outline:none;transition:border-color .25s,box-shadow .25s}
-  .form input:focus,.form select:focus{border-color:var(--ac);box-shadow:0 0 0 4px rgba(90,169,255,.16)}
-  .form button{margin-top:6px;background:var(--ac);color:#04122e;font-weight:700;font-size:15px;padding:15px;border:none;border-radius:13px;cursor:pointer;transition:transform .3s var(--eo)}
-  .form button:active{transform:scale(.98)}
-  .success{display:none;text-align:center;padding:30px}.success.on{display:block}
-  .success .o{width:64px;height:64px;border-radius:50%;background:var(--aura);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:28px}
-  .success h3{font-size:22px}.success p{color:var(--tx2);margin-top:8px}
-  .video{margin-top:30px;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#000;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 30px 70px -24px rgba(0,0,0,.7)}
-  .video iframe{width:100%;height:100%;border:0}
-  .vplay{display:inline-flex;align-items:center;gap:10px;font-weight:700;color:#fff;background:rgba(255,255,255,.1);border:1px solid var(--line);padding:14px 26px;border-radius:100px;cursor:pointer;backdrop-filter:blur(6px)}
-  .vplay:hover{background:rgba(255,255,255,.16)}
-  .mocks{display:flex;gap:16px;overflow-x:auto;padding:26px 2px 10px;scroll-snap-type:x mandatory}
-  .mocks::-webkit-scrollbar{height:6px}.mocks::-webkit-scrollbar-thumb{background:var(--panel2);border-radius:100px}
-  .mocks img{flex:0 0 auto;width:200px;border-radius:24px;box-shadow:0 26px 54px -18px rgba(0,0,0,.7),0 0 0 1px var(--line);scroll-snap-align:center;transition:transform .4s var(--eo)}.mocks img:hover{transform:translateY(-6px)}
-  footer{background:var(--ink2);padding:40px 0;color:var(--tx3);font-size:13px;text-align:center}footer a{color:var(--tx)}
+:root{
+  --bg:#ffffff;--tx:#13111c;--tx2:#56516c;--tx3:#8f8aa4;--line:rgba(22,18,31,.09);--line2:rgba(22,18,31,.05);
+  --ac:#2563eb;--ac2:#3b82f6;--acsoft:rgba(37,99,235,.10);
+  --grad:linear-gradient(100deg,#2563eb,#3b82f6 55%,#22d3ee);
+  --f:'Outfit',sans-serif;--mono:'Space Grotesk',sans-serif;--eo:cubic-bezier(.16,1,.3,1);
+  --aura:radial-gradient(circle at 32% 28%,rgba(255,255,255,.65),transparent 26%),radial-gradient(circle at 74% 78%,#bfdbfe,#3b82f6 40%,transparent 60%),radial-gradient(circle at 42% 40%,#a5f3fc,#2563eb 55%,#1d4ed8);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{background:var(--bg);color:var(--tx);font-family:var(--f);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+h1,h2,h3{letter-spacing:-.045em;line-height:1.02;font-weight:800;text-wrap:balance}
+.bgaura{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(40vw 40vw at 98% -10%,rgba(59,130,246,.12),transparent 62%),radial-gradient(34vw 34vw at -8% 16%,rgba(37,99,235,.10),transparent 60%),radial-gradient(40vw 40vw at 82% 110%,rgba(34,211,238,.09),transparent 62%),#fff}
+.orb{border-radius:50%;background:var(--aura);box-shadow:inset -3px -4px 10px rgba(15,40,90,.4),inset 2px 3px 8px rgba(255,255,255,.5)}
+.floats{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+section>.wrap,header>.wrap{position:relative;z-index:1}
+.fl{position:absolute;font-size:46px;line-height:1;filter:drop-shadow(0 16px 20px rgba(37,99,235,.22)) drop-shadow(0 5px 8px rgba(0,0,0,.14));opacity:.96;will-change:transform}
+.fl.s{font-size:34px}.fl.l{font-size:62px}
+@keyframes flbob{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-20px) rotate(var(--r,0deg))}}
+@keyframes fldrift{0%,100%{transform:translate(0,0) rotate(var(--r,0deg))}50%{transform:translate(18px,-16px) rotate(calc(var(--r,0deg) + 7deg))}}
+.fl.bob{animation:flbob var(--d,7s) ease-in-out infinite}.fl.drift{animation:fldrift var(--d,9s) ease-in-out infinite}
+@media(max-width:760px){.fl{font-size:32px}.fl.l{font-size:42px}.fl.s{font-size:26px}.fl.hm{display:none}}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .9s var(--eo),transform .9s var(--eo)}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.rv{opacity:1;transform:none}}
+nav{position:sticky;top:0;height:66px;display:flex;align-items:center;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line2);z-index:50}
+nav .wrap{display:flex;align-items:center;gap:14px;width:100%}
+nav .lk{display:flex;align-items:center;gap:10px;margin-right:auto;font-weight:800;font-size:18px;letter-spacing:-.04em}
+nav .lk .orb{width:24px;height:24px}.nbadge{font-size:11px;font-weight:700;color:var(--ac);background:var(--acsoft);padding:4px 9px;border-radius:7px;letter-spacing:.02em}
+nav .back{font-size:13.5px;color:var(--tx2)}nav .back:hover{color:var(--tx)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;padding:14px 24px;border-radius:14px;cursor:pointer;border:none;transition:transform .4s var(--eo),box-shadow .4s var(--eo)}
+.btn-ac{background:var(--grad);color:#fff;box-shadow:0 16px 38px -12px rgba(37,99,235,.55)}.btn-ac:hover{box-shadow:0 22px 48px -12px rgba(37,99,235,.7);transform:translateY(-1px)}
+.btn-gh{background:#fff;border:1px solid var(--line);color:var(--tx)}.btn-gh:hover{box-shadow:0 10px 26px -12px rgba(22,18,31,.18)}
+.btn .ar{transition:transform .4s var(--eo)}.btn:hover .ar{transform:translateX(4px)}
+nav .nbtn{font-size:13.5px;font-weight:700;background:var(--grad);color:#fff;padding:10px 18px;border-radius:11px}
+@media(max-width:680px){nav .back{display:none}}
+.hero{position:relative;padding:48px 0 64px;overflow:hidden}
+.herogrid{display:grid;grid-template-columns:1.02fr .98fr;gap:50px;align-items:center}
+@media(max-width:940px){.herogrid{grid-template-columns:1fr;gap:38px}}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;color:var(--ac);background:var(--acsoft);border:1px solid rgba(37,99,235,.2);padding:8px 15px;border-radius:100px;margin-bottom:22px}
+.hero h1{font-size:clamp(34px,5.2vw,60px);font-weight:800;letter-spacing:-.05em;line-height:.98}
+.hero h1 em{font-style:normal;color:var(--ac)}
+.hero .sub{font-size:clamp(16px,1.5vw,20px);color:var(--tx2);max-width:520px;margin:22px 0 0}
+.htags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.htags span{font-size:12.5px;font-weight:600;color:var(--tx);background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 14px;box-shadow:0 6px 16px -12px rgba(22,18,31,.2)}
+.hstats{display:flex;margin-top:32px;border-top:1px solid var(--line);padding-top:22px}
+.hstat{padding-right:24px;margin-right:24px;border-right:1px solid var(--line)}.hstat:last-child{border:none;margin:0;padding:0}
+.hstat .n{font-family:var(--mono);font-weight:700;font-size:clamp(24px,3.2vw,32px);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.hstat .l{font-size:12px;color:var(--tx2);margin-top:6px;max-width:120px;line-height:1.3}
+.lead{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:0 40px 90px -40px rgba(37,99,235,.4)}
+.lead .lt{font-weight:800;font-size:21px;letter-spacing:-.03em}.lead .ls{font-size:13px;color:var(--tx2);margin-top:6px}
+.form{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.form label{font-size:12px;font-weight:600;color:var(--tx2);margin-bottom:-6px}
+.form input,.form select{font-family:var(--f);font-size:15px;color:var(--tx);background:#faf9fc;border:1px solid var(--line);border-radius:12px;padding:13px 14px;outline:none;transition:border-color .2s,box-shadow .2s}
+.form input:focus,.form select:focus{border-color:var(--ac);box-shadow:0 0 0 4px var(--acsoft)}
+.form button{margin-top:6px;width:100%;justify-content:center}
+.fnote{font-size:11.5px;color:var(--tx3);text-align:center;margin-top:12px}
+.success{display:none;text-align:center;padding:22px 6px}.success.on{display:block}
+.success .o{width:64px;height:64px;border-radius:50%;background:var(--aura);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:28px}
+.success h3{font-size:22px}.success p{color:var(--tx2);margin-top:8px;font-size:14px}
+section{position:relative}.sec{padding:clamp(56px,8vw,96px) 0}
+.kick{display:inline-block;font-size:12.5px;font-weight:700;color:var(--ac);margin-bottom:14px}
+h2{font-size:clamp(28px,4.4vw,48px);font-weight:800;letter-spacing:-.045em}
+.ld{font-size:clamp(15px,1.4vw,18px);color:var(--tx2);max-width:620px;margin-top:16px}
+.center{text-align:center}.mx{max-width:720px;margin-left:auto;margin-right:auto}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:42px}@media(max-width:820px){.g3{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 16px 40px -30px rgba(22,18,31,.3)}
+.card .e{font-size:26px}.card h3{font-size:18px;margin:12px 0 8px;letter-spacing:-.02em}.card p{font-size:14px;color:var(--tx2)}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:42px}
+@media(max-width:860px){.feat{grid-template-columns:1fr;gap:32px}}
+.feat.rev .a{order:2}.feat.rev .dev{order:1}
+@media(max-width:860px){.feat .a,.feat.rev .a{order:1}.feat .dev,.feat.rev .dev{order:2}}
+.dev{position:relative;display:flex;justify-content:center}
+.dev img{width:70%;max-width:300px;border-radius:28px;box-shadow:0 40px 80px -30px rgba(37,99,235,.4),0 0 0 1px var(--line)}
+.dev .glow{position:absolute;inset:8% 16%;background:var(--aura);filter:blur(56px);opacity:.4;z-index:-1}
+.flist{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:15px}
+.flist li{display:flex;gap:13px;align-items:flex-start}
+.flist .ic{width:42px;height:42px;border-radius:12px;background:var(--acsoft);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+.flist h4{font-size:16px;letter-spacing:-.02em}.flist p{font-size:13.5px;color:var(--tx2);margin-top:3px}
+.proof{background:linear-gradient(120deg,#0c1a33,#102544);border-radius:26px;padding:clamp(30px,4vw,48px);color:#fff;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
+@media(max-width:680px){.proof{grid-template-columns:1fr;gap:18px}}
+.proof .pn{font-family:var(--mono);font-weight:700;font-size:clamp(30px,4vw,44px);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.proof .pl{font-size:13.5px;color:rgba(255,255,255,.78);margin-top:4px}
+.finalform{position:relative;border-radius:30px;overflow:hidden;padding:clamp(40px,6vw,72px) clamp(24px,4vw,56px);color:#fff}
+.finalform>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;z-index:-2}
+.finalform::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(120deg,rgba(7,15,30,.92) 40%,rgba(7,15,30,.7) 70%,rgba(37,99,235,.5))}
+.finalgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}@media(max-width:880px){.finalgrid{grid-template-columns:1fr;gap:32px}}
+.finalform h2{color:#fff;font-size:clamp(28px,3.8vw,44px)}.finalform .ld{color:rgba(255,255,255,.84);max-width:460px}
+.finalform .bullets{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:11px}
+.finalform .bullets li{display:flex;gap:11px;font-size:14.5px;color:rgba(255,255,255,.9)}.finalform .bullets .c{color:#93c5fd;font-weight:800}
+.finalform .lead{background:rgba(255,255,255,.97)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--tx3);font-size:13.5px;text-align:center}footer a{color:var(--tx)}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><a class="lk" href="index.html"><span class="orb"></span>MyDose <span style="color:var(--ac);font-weight:600">Clinics</span></a><a class="back" href="index.html">← Site</a><a class="b" href="#lead">Agendar diagnóstico</a></div></nav>
+<div class="bgaura"></div>
 
-<header class="wrap hero">
-  <div>
-    <span class="pill">🏥 Clínicas multiprofissionais</span>
-    <h1>Escale a <span class="ac">clínica inteira</span> — não só uma agenda.</h1>
-    <p>Para clínicas com vários profissionais. Veja quanto cada um realmente fatura, padronize a experiência do paciente e abra novas receitas com comunidade, programas e IA — tudo num sistema só.</p>
-    <div class="hcta"><a class="btn" href="#lead">Agendar diagnóstico →</a></div>
-  </div>
-  <div class="heroimg">
-    <img src="assets/life-clinic.png" alt="Médica com paciente usando o app MyDose na clínica">
-    <div class="tagimg">gestão · <b>faturamento por profissional</b> · escala</div>
-  </div>
-</header>
+<nav><div class="wrap">
+  <a class="lk" href="index.html"><span class="orb"></span>MyDose <span class="nbadge">Clinics</span></a>
+  <a class="back" href="index.html">← Voltar ao site</a>
+  <a class="nbtn" href="#form">Falar com o time</a>
+</div></nav>
 
-<section><div class="wrap">
-  <p class="kick">O problema</p><h2>Você não enxerga o que cada profissional gera.</h2>
-  <div class="grid3">
-    <div class="card"><div class="e">🧩</div><h3>Gestão fragmentada</h3><p>Cada profissional usa ferramentas diferentes. Sem padrão, sem dado consolidado, sem controle.</p></div>
-    <div class="card"><div class="e">👻</div><h3>Faturamento invisível</h3><p>Difícil saber quanto cada profissional fatura, retém e cresce — então é difícil escalar com previsibilidade.</p></div>
-    <div class="card"><div class="e">📉</div><h3>Receita só em consulta</h3><p>A clínica vive da agenda. Sem programas e comunidade, o crescimento bate no teto das salas.</p></div>
+<header class="hero">
+  <div class="floats">
+    <span class="fl l drift" style="top:8%;right:3%;--d:9s;--r:6deg">🏥</span>
+    <span class="fl s bob hm" style="top:34%;right:-1%;--d:7s;--r:-10deg">👥</span>
+    <span class="fl s drift hm" style="bottom:18%;right:8%;--d:8s">📊</span>
   </div>
-</div></section>
-
-<section><div class="wrap">
-  <p class="kick">A solução</p><h2>Um sistema operacional para a clínica toda.</h2>
-  <p class="ld">Multiprofissional, com gestão por profissional, marca da clínica, comunidade compartilhada e IA. Padronize o cuidado, abra novas receitas e veja tudo num painel — por profissional e consolidado.</p>
-  <div class="sell"><span>👥 Multiprofissional (seats)</span><span>📊 Faturamento por profissional</span><span>🔁 Programas & protocolos</span><span>💬 Comunidade da clínica</span><span>🤖 IA de atendimento</span><span>🎤 Eventos & lançamentos</span></div>
-  <div class="results">
-    <div><div class="v">100%</div><div class="l">visão por profissional</div></div>
-    <div><div class="v">+receita</div><div class="l">novas fontes além da consulta</div></div>
-    <div><div class="v">1 sistema</div><div class="l">no lugar de 10 ferramentas</div></div>
-  </div>
-</div></section>
-
-<section id="produto"><div class="wrap">
-  <p class="kick">Veja o produto</p><h2>Um app para a <span class="ac">clínica inteira.</span></h2>
-  <p class="ld">Comunidade da clínica, gestão por profissional, protocolos e IA — tudo com a sua marca.</p>
-  <div class="video">
-    <span class="vplay" onclick="this.parentNode.innerHTML='&lt;iframe src=\'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen&gt;&lt;/iframe&gt;'">▶ Assistir demo do MyDose</span>
-    <!-- TODO produção: troque pelo embed real (YouTube/Vimeo) do vídeo do produto -->
-  </div>
-  <div class="mocks">
-    <img src="assets/app-comunidade.png" alt="Comunidade"><img src="assets/app-protocolos.png" alt="Protocolos"><img src="assets/app-meudia.png" alt="Acompanhamento"><img src="assets/app-conteudos.png" alt="Conteúdos"><img src="assets/app-ia.png" alt="IA">
-  </div>
-</div></section>
-
-<section id="lead"><div class="wrap">
-  <div class="leadwrap">
+  <div class="wrap"><div class="herogrid">
     <div>
-      <p class="kick">Fale com o time</p>
-      <h2 style="font-size:clamp(26px,3.4vw,38px)">Vamos diagnosticar a sua clínica.</h2>
-      <p class="ld">Preencha e nosso time comercial agenda um diagnóstico pra desenhar a operação da clínica no MyDose — com garantia de 30 dias.</p>
-      <div style="margin-top:20px;font-size:13.5px;color:var(--tx3)">⚡ Resposta em até 1 dia útil · +1.000 profissionais já usam</div>
+      <span class="eyebrow">🔵 MyDose Clinics · clínicas e equipes multiprofissionais</span>
+      <h1>Escale a clínica inteira —<br>não só a <em>sua agenda.</em></h1>
+      <p class="sub">Uma plataforma pra toda a equipe: comunidade, IA e <b style="color:var(--tx)">funis por especialidade</b> que aumentam adesão, retenção e receita recorrente da clínica.</p>
+      <div class="htags"><span>👥 Multiprofissional</span><span>📊 Gestão & BI</span><span>🎯 Captação</span><span>🔁 Retenção</span></div>
+      <div class="hstats">
+        <div class="hstat"><div class="n">5×</div><div class="l">mais receita por unidade</div></div>
+        <div class="hstat"><div class="n">+1.000</div><div class="l">profissionais usando</div></div>
+        <div class="hstat"><div class="n">3×</div><div class="l">mais adesão do paciente</div></div>
+      </div>
     </div>
-    <div>
+    <div class="lead rv" id="form">
+      <div class="lt">Quero a MyDose na minha clínica 🔵</div>
+      <div class="ls">Deixe seus dados — o nosso time monta uma proposta pra equipe em até 1 dia útil.</div>
       <form class="form" onsubmit="return sub(this)">
-        <label>Seu nome</label><input name="nome" required placeholder="seu nome">
-        <label>Nome da clínica</label><input name="clinica" required placeholder="nome da clínica">
+        <label>Nome completo</label><input name="nome" required placeholder="seu nome">
         <label>E-mail</label><input name="email" type="email" required placeholder="voce@email.com">
         <label>WhatsApp</label><input name="zap" required placeholder="(11) 90000-0000">
-        <label>Nº de profissionais</label>
-        <select name="prof" required><option value="">Selecione…</option><option>2 a 3</option><option>4 a 6</option><option>7 a 12</option><option>13+</option></select>
-        <button type="submit">Agendar diagnóstico →</button>
+        <label>Tipo de operação</label>
+        <select name="esp" required><option value="">Selecione…</option><option>Clínica multiprofissional</option><option>Consultório com equipe</option><option>Rede / Franquia</option><option>Outro</option></select>
+        <label>Profissionais na equipe</label>
+        <select name="pac"><option value="">Selecione…</option><option>Até 3</option><option>3 a 6</option><option>6 a 12</option><option>+12</option></select>
+        <button class="btn btn-ac" type="submit">Falar com o time <span class="ar">→</span></button>
       </form>
-      <div class="success" id="ok"><div class="o">✓</div><h3>Recebemos! 🎉</h3><p>Nosso time comercial entra em contato em até <b>1 dia útil</b> pra agendar.</p></div>
+      <div class="fnote">🔒 Sem spam. Usamos seus dados só pra montar a proposta.</div>
+      <div class="success"><div class="o">✓</div><h3>Recebido! 🎉</h3><p>Nosso time vai te chamar no <b>WhatsApp e e-mail</b> em até 1 dia útil com uma proposta pra sua clínica.</p></div>
     </div>
+  </div></div>
+</header>
+
+<section class="sec"><div class="wrap">
+  <div class="floats"><span class="fl drift" style="top:10%;left:3%;--d:9s;--r:-8deg">🧩</span></div>
+  <div class="center mx rv"><span class="kick">O que segura a sua clínica</span><h2>Mais cadeiras não significam<br>mais lucro — do jeito antigo.</h2></div>
+  <div class="g3">
+    <div class="card rv"><div class="e">🧩</div><h3>Equipe e ferramentas soltas</h3><p>App aqui, agenda ali, CRM acolá. Cada profissional faz de um jeito e ninguém enxerga o todo.</p></div>
+    <div class="card rv"><div class="e">💸</div><h3>Captação cara e instável</h3><p>Depende de indicação e tráfego mal medido. Quando o anúncio para, a agenda esvazia.</p></div>
+    <div class="card rv"><div class="e">🔁</div><h3>Retenção baixa</h3><p>Sem vínculo entre consultas, o paciente não volta — e o LTV da clínica fica muito abaixo do possível.</p></div>
   </div>
 </div></section>
 
-<footer><div class="wrap"><a href="index.html">← Voltar ao site MyDose</a> · Clinics · Take back control</div></footer>
-<script>function sub(f){f.style.display='none';document.getElementById('ok').classList.add('on');return false;}</script>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="center mx rv"><span class="kick">Como a MyDose resolve</span><h2>Uma operação só —<br>e <span style="color:var(--ac)">previsível.</span></h2></div>
+  <div class="feat">
+    <div class="a rv">
+      <ul class="flist">
+        <li><span class="ic">👥</span><div><h4>Plataforma multiprofissional</h4><p>Toda a equipe no mesmo app: agenda, comunidade da clínica, protocolos e checkout unificados.</p></div></li>
+        <li><span class="ic">🎯</span><div><h4>Funis por especialidade + tráfego</h4><p>Captação previsível pra cada serviço, com a mídia gerida por nós e medida de ponta a ponta.</p></div></li>
+        <li><span class="ic">📊</span><div><h4>BI por profissional e unidade</h4><p>Receita, adesão e metas por pessoa e por unidade — a clínica enxerga tudo num lugar só.</p></div></li>
+      </ul>
+    </div>
+    <div class="dev rv"><span class="glow"></span><img src="assets/app-protocolos.png" alt="Plataforma MyDose Clinics"></div>
+  </div>
+  <div class="feat rev">
+    <div class="a rv">
+      <ul class="flist">
+        <li><span class="ic">🤖</span><div><h4>IA pra toda a equipe</h4><p>Atende, reativa e acompanha pacientes 24/7 — no tom da clínica, multiplicando cada profissional.</p></div></li>
+        <li><span class="ic">🔁</span><div><h4>Retenção e receita recorrente</h4><p>Programas, grupos e protocolos viram assinatura — o paciente fica e o LTV sobe.</p></div></li>
+        <li><span class="ic">🚀</span><div><h4>Squad dedicado</h4><p>Nos planos Clinics, um time cuida de conteúdo, tráfego e estratégia da sua clínica.</p></div></li>
+      </ul>
+    </div>
+    <div class="dev rv"><span class="glow"></span><img src="assets/app-meudia.png" alt="Acompanhamento MyDose"></div>
+  </div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="proof rv">
+    <div><div class="pn">5×</div><div class="pl">mais receita por unidade</div></div>
+    <div><div class="pn">até 12</div><div class="pl">profissionais por plano</div></div>
+    <div><div class="pn">3×</div><div class="pl">mais adesão do paciente</div></div>
+  </div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="finalform rv">
+    <img src="assets/life-clinic.png" alt="">
+    <div class="finalgrid">
+      <div>
+        <h2>Vamos escalar a sua clínica?</h2>
+        <p class="ld">Conte pra gente o tamanho e o momento da operação. Montamos uma proposta pra clínica inteira — equipe, captação e retenção num só lugar.</p>
+        <ul class="bullets">
+          <li><span class="c">✓</span> Diagnóstico gratuito da operação</li>
+          <li><span class="c">✓</span> Proposta pra equipe (a partir de 3 profissionais)</li>
+          <li><span class="c">✓</span> Garantia de 30 dias · sem fidelidade-armadilha</li>
+        </ul>
+      </div>
+      <div class="lead">
+        <div class="lt">Falar com o time 🔵</div>
+        <div class="ls">Proposta pra equipe em até 1 dia útil.</div>
+        <form class="form" onsubmit="return sub(this)">
+          <label>Nome completo</label><input name="nome" required placeholder="seu nome">
+          <label>WhatsApp</label><input name="zap" required placeholder="(11) 90000-0000">
+          <label>Profissionais na equipe</label>
+          <select name="pac" required><option value="">Selecione…</option><option>Até 3</option><option>3 a 6</option><option>6 a 12</option><option>+12</option></select>
+          <button class="btn btn-ac" type="submit">Quero a proposta <span class="ar">→</span></button>
+        </form>
+        <div class="success"><div class="o">✓</div><h3>Recebido! 🎉</h3><p>Logo o nosso time fala com você.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="center" style="margin-top:30px"><a class="btn btn-gh" href="planos.html">Ver os planos Clinics <span class="ar">→</span></a></div>
+</div></section>
+
+<footer><div class="wrap"><a href="index.html">← Voltar ao site MyDose</a> · MyDose Clinics · Take back control</div></footer>
+
+<script>
+function sub(f){var p=f.parentNode;f.style.display='none';var ok=p.querySelector('.success');if(ok)ok.classList.add('on');/* TODO: enviar pro CRM/Formspree + automação */return false;}
+var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'-30px'});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.btn').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.15)+'px,'+((e.clientY-r.top-r.height/2)*.25)+'px)';});b.addEventListener('pointerleave',function(){b.style.transform='';});});}
+</script>
 </body>
 </html>
