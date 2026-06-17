@@ -198,19 +198,34 @@ nav .nbtn{font-weight:600;font-size:14px;background:var(--grad);color:#fff;paddi
 @media(max-width:1180px){.plans{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.plans{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}}
 .plan{position:relative;display:flex;flex-direction:column;border-radius:18px;border:1px solid var(--line);background:#fff;padding:18px 16px;box-shadow:0 14px 34px -26px rgba(22,18,31,.25);transition:transform .4s var(--eo),box-shadow .4s var(--eo),border-color .3s}
 .plan:hover{transform:translateY(-6px);box-shadow:0 30px 60px -32px rgba(124,58,237,.32);border-color:rgba(124,58,237,.3)}
-.plan.feat{border-color:transparent;background:linear-gradient(180deg,#fff,#fdf3f9);box-shadow:0 32px 66px -30px rgba(219,39,119,.44);overflow:hidden}
-.plan.feat::before{content:"";position:absolute;inset:0;border-radius:18px;padding:1.7px;background:var(--grad);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;z-index:2}
+/* ===== card em destaque (premium escuro) ===== */
+.plan.feat{border:none;background:linear-gradient(165deg,#221634,#33204f);color:#fff;box-shadow:0 38px 76px -28px rgba(124,58,237,.6);overflow:hidden}
+.plan.feat::before{display:none}
 .plan .badge{display:none}
-.plan.feat .badge{display:flex;align-items:center;justify-content:center;gap:6px;margin:-18px -16px 15px;padding:10px 12px;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#fff;background:var(--grad);border-radius:18px 18px 0 0;position:relative;z-index:1}
-@media(min-width:1181px){.plan.feat{transform:scale(1.025)}.plan.feat:hover{transform:scale(1.025) translateY(-6px)}}
+.plan.feat .badge{display:flex;align-items:center;justify-content:center;gap:6px;margin:-18px -16px 16px;padding:11px 12px;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--grad);border-radius:18px 18px 0 0}
+.plan.feat .pn{color:#fff}
+.plan.feat .who{color:rgba(255,255,255,.66)}
+.plan.feat .fat{background:rgba(255,255,255,.13);color:#fff}
+.plan.feat .pr{color:#fff}.plan.feat .pr small{color:rgba(255,255,255,.55)}
+.plan.feat .was{color:rgba(255,255,255,.5)}
+.plan.feat .media{color:rgba(255,255,255,.62)}
+.plan.feat ul{border-top-color:rgba(255,255,255,.15)}
+.plan.feat li{color:rgba(255,255,255,.82)}.plan.feat li b{color:#fff}
+.plan.feat li::before{border-left-color:#f472b6;border-bottom-color:#f472b6}
+.plan.feat .econ{color:#86efac;background:rgba(134,239,172,.14)}
+.plan.feat .sel.p{background:#fff;color:#1c1530;box-shadow:0 14px 32px -12px rgba(0,0,0,.45)}.plan.feat .sel.p:hover{background:#fff;box-shadow:0 20px 42px -12px rgba(0,0,0,.55)}
+.plan.feat .talk{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.85)}.plan.feat .talk:hover{border-color:#fff;color:#fff;background:rgba(255,255,255,.08)}
+@media(min-width:1181px){.plan.feat{transform:scale(1.03)}.plan.feat:hover{transform:scale(1.03) translateY(-6px)}}
 .plan .pn{font-weight:800;font-size:18px;letter-spacing:-.03em}
 .plan .who{font-size:11px;color:var(--tx2);margin-top:3px;line-height:1.25;min-height:0}
 .plan .fat{display:inline-block;font-size:10px;font-weight:600;color:var(--violet);background:rgba(124,58,237,.08);border-radius:6px;padding:3px 8px;margin-top:8px}
-.plan .pr{font-family:var(--mono);font-weight:700;font-size:25px;letter-spacing:-.02em;margin-top:10px}.plan .pr small{font-size:11px;color:var(--tx3);font-weight:500}
+.plan .was{display:block;font-size:11px;font-weight:600;color:var(--tx3);text-decoration:line-through;line-height:1;margin-bottom:3px}.plan .was:empty{display:none}
+.plan .pr{font-family:var(--mono);font-weight:700;font-size:26px;letter-spacing:-.02em;margin-top:10px}.plan .pr small{font-size:11px;color:var(--tx3);font-weight:500}
 .plan .media{font-size:10.5px;color:var(--tx3);font-weight:600;margin-top:2px}
 .plan .media:empty{display:none}
-.plan .econ{font-size:11px;font-weight:700;color:#be185d;min-height:0;margin-top:4px;opacity:0;transition:opacity .3s var(--eo)}
-.plan .econ.on{opacity:1}
+.plan .econ{display:inline-block;font-size:11px;font-weight:700;color:#16a34a;background:rgba(22,163,74,.1);border-radius:7px;padding:4px 9px;margin-top:7px;opacity:0;transform:translateY(-2px);transition:opacity .3s var(--eo),transform .3s var(--eo)}
+.plan .econ:empty{display:none}
+.plan .econ.on{opacity:1;transform:none}
 .plan ul{list-style:none;margin:10px 0 12px;flex:1;display:flex;flex-direction:column;gap:6px;padding-top:10px;border-top:1px solid var(--line)}
 .plan li{font-size:11.6px;line-height:1.28;color:var(--tx2);padding-left:18px;position:relative}
 .plan li::before{content:"";position:absolute;left:2px;top:4px;width:10px;height:6px;border-left:2px solid var(--violet);border-bottom:2px solid var(--violet);transform:rotate(-45deg)}
@@ -798,8 +813,8 @@ body.dark .bknote b,body.dark .vstack .a b{color:var(--tx)}
         <div class="ti"><span class="nm">📨 Disparos + agenda + formulários</span><span class="pz">R$ 907</span></div>
         <div class="sum"><span>+ de 10 ferramentas, separadas</span><span class="strike">R$ 3.890/mês</span></div>
       </div>
-      <div class="my"><span class="k">Com a MyDose, a partir de</span><span class="v">R$ 397</span></div>
-      <div class="win">Você economiza <b>R$ 3.493/mês</b> — e ganha as suas horas de volta.</div>
+      <div class="my"><span class="k">Com a MyDose, a partir de</span><span class="v">R$ 290</span></div>
+      <div class="win">Você economiza <b>R$ 3.600/mês</b> — e ganha as suas horas de volta.</div>
     </div>
   </div>
 </div></section>
@@ -867,8 +882,8 @@ body.dark .bknote b,body.dark .vstack .a b{color:var(--tx)}
       <span class="promo"><b>−50%</b> tarefas operacionais</span>
     </div>
     <div class="ptabs" id="ptabs"><button data-p="prof" class="on">👤 Profissional</button><button data-p="clin">🏥 Clínica</button></div>
-    <div class="toggle" id="toggle"><button data-k="tri" class="on">Trimestral</button><button data-k="sem">Semestral <span class="save">−15%</span></button><button data-k="anu">Anual <span class="save">−25%</span></button></div>
-    <div class="locknote">🔒 <b>Trava de preço:</b> o valor que você fechar hoje fica congelado pelo contrato inteiro.</div>
+    <div class="toggle" id="toggle"><button data-k="anu" class="on">Anual <span class="save">−25%</span></button><button data-k="sem">Semestral <span class="save">−15%</span></button><button data-k="tri">Trimestral</button></div>
+    <div class="locknote">💚 <b>Anual = melhor preço</b> (até ~2 meses grátis) · 🔒 trava de preço pelo contrato · 🛡️ 30 dias de garantia</div>
   </div>
 
   <!-- ====== PANE PROFISSIONAL ====== -->
@@ -876,43 +891,43 @@ body.dark .bknote b,body.dark .vstack .a b{color:var(--tx)}
     <div class="plans rv">
       <div class="plan">
         <div class="pn">Software</div><div class="who">A plataforma na sua mão — você toca o crescimento.</div><span class="fat">fatura até R$ 10k/mês</span>
-        <div class="pr">R$ <span data-tri="397" data-sem="337" data-anu="298">397</span><small>/mês</small></div><div class="media"></div><div class="econ"></div>
+        <div class="pr"><span class="was"></span>R$ <span data-tri="397" data-sem="340" data-anu="290">290</span><small>/mês</small></div><div class="media"></div><div class="econ"></div>
         <ul><li><b>Plataforma IA + Academy</b></li><li>Comunidade + checkout + CRM</li><li>500 WhatsApp · 100 créditos IA</li></ul>
-        <div class="acts"><button class="sel s js-talk" data-mode="checkout" data-plan="Software">Começar agora</button><button class="talk js-talk" data-mode="talk" data-plan="Software">Tirar dúvidas</button></div>
+        <div class="acts"><button class="sel s js-talk" data-mode="checkout" data-plan="Software">Começar agora</button><button class="talk js-talk" data-mode="talk" data-plan="Software">Falar com vendas</button></div>
       </div>
       <div class="plan">
         <div class="pn">Start</div><div class="who">A gente ativa os seus 2 aha moments.</div><span class="fat">fatura até R$ 20k/mês</span>
-        <div class="pr">R$ <span data-tri="797" data-sem="677" data-anu="598">797</span><small>/mês</small></div><div class="media"></div><div class="econ"></div>
+        <div class="pr"><span class="was"></span>R$ <span data-tri="797" data-sem="690" data-anu="590">590</span><small>/mês</small></div><div class="media"></div><div class="econ"></div>
         <ul><li><b>Ativação dos 2 aha moments</b></li><li>6 posts + 3 vídeos/mês</li><li>1.500 WhatsApp · 400 créditos IA</li></ul>
-        <div class="acts"><button class="sel s js-talk" data-mode="checkout" data-plan="Start">Começar agora</button><button class="talk js-talk" data-mode="talk" data-plan="Start">Tirar dúvidas</button></div>
+        <div class="acts"><button class="sel s js-talk" data-mode="checkout" data-plan="Start">Começar agora</button><button class="talk js-talk" data-mode="talk" data-plan="Start">Agendar reunião</button></div>
       </div>
       <div class="plan">
         <div class="pn">Co-pilot</div><div class="who">Crescimento com mídia e estrutura, guiado de perto.</div><span class="fat">fatura R$ 20–50k/mês</span>
-        <div class="pr">R$ <span data-tri="1.490" data-sem="1.267" data-anu="1.118">1.490</span><small>/mês</small></div><div class="media"></div><div class="econ"></div>
+        <div class="pr"><span class="was"></span>R$ <span data-tri="1.490" data-sem="1.290" data-anu="1.090">1.090</span><small>/mês</small></div><div class="media"></div><div class="econ"></div>
         <ul><li>12 posts + 6 vídeos/mês</li><li><b>Setup de tráfego + funis</b></li><li>4.000 WhatsApp · relatório IA</li></ul>
-        <div class="acts"><button class="sel s js-talk" data-mode="checkout" data-plan="Co-pilot">Começar agora</button><button class="talk js-talk" data-mode="talk" data-plan="Co-pilot">Tirar dúvidas</button></div>
+        <div class="acts"><button class="sel s js-talk" data-mode="checkout" data-plan="Co-pilot">Começar agora</button><button class="talk js-talk" data-mode="talk" data-plan="Co-pilot">Agendar reunião</button></div>
       </div>
       <div class="plan feat">
         <span class="badge">⭐ Mais escolhido</span>
         <div class="pn">Autopilot</div><div class="who">A máquina rodando: a gente faz e gere por você.</div><span class="fat">fatura R$ 50–150k/mês</span>
-        <div class="pr">R$ <span data-tri="2.990" data-sem="2.542" data-anu="2.243">2.990</span><small>/mês</small></div><div class="media">+ R$ 1.500 de mídia</div><div class="econ"></div>
+        <div class="pr"><span class="was"></span>R$ <span data-tri="2.990" data-sem="2.590" data-anu="2.190">2.190</span><small>/mês</small></div><div class="media">+ R$ 1.500 de mídia</div><div class="econ"></div>
         <ul><li><b>Tráfego gerido por nós</b></li><li>20 posts + 10 vídeos/mês</li><li>10.000 WhatsApp · gestor de conta</li></ul>
-        <div class="acts"><button class="sel p js-talk" data-mode="checkout" data-plan="Autopilot">Quero esse →</button><button class="talk js-talk" data-mode="talk" data-plan="Autopilot">Tirar dúvidas</button></div>
+        <div class="acts"><button class="sel p js-talk" data-mode="checkout" data-plan="Autopilot">Quero esse →</button><button class="talk js-talk" data-mode="talk" data-plan="Autopilot">Agendar reunião</button></div>
       </div>
       <div class="plan">
         <div class="pn">Partner</div><div class="who">Um squad cuidando da sua marca inteira.</div><span class="fat">fatura R$ 150k+/mês</span>
-        <div class="pr"><small class="apt">a partir de</small>R$ <span data-tri="7.900" data-sem="6.715" data-anu="5.925">7.900</span><small>/mês</small></div><div class="media">+ R$ 5.000 de mídia</div><div class="econ"></div>
+        <div class="pr"><span class="was"></span><small class="apt">a partir de</small>R$ <span data-tri="7.900" data-sem="6.900" data-anu="5.900">5.900</span><small>/mês</small></div><div class="media">+ R$ 5.000 de mídia</div><div class="econ"></div>
         <ul><li><b>Squad dedicado</b> + fábrica de produtos</li><li>36 posts + 18 vídeos/mês</li><li>25.000 WhatsApp · BI e metas</li></ul>
         <div class="acts"><button class="sel s js-talk" data-mode="talk" data-plan="Partner">Falar com o time</button></div>
       </div>
     </div>
 
-    <div class="vstack rv"><span class="a">No <b>Autopilot</b> você recebe <b>+R$ 127.000/ano</b> em valor entregue (plataforma + tráfego + 360 conteúdos + funis + gestão)</span><span class="arrow">→</span><span class="a">e investe</span><span class="big">R$ 2.990/mês</span></div>
+    <div class="vstack rv"><span class="a">No <b>Autopilot</b> você recebe <b>+R$ 127.000/ano</b> em valor entregue (plataforma + tráfego + 360 conteúdos + funis + gestão)</span><span class="arrow">→</span><span class="a">e investe a partir de</span><span class="big">R$ 2.190/mês</span></div>
 
     <details class="ctabdet rv"><summary class="ctabsum">📊 Comparar todos os entregáveis</summary><div class="ctabscroll"><table class="ctab">
       <thead><tr><th>Entregáveis / mês</th><th>Software</th><th>Start</th><th>Co-pilot</th><th class="fcol">Autopilot ⭐</th><th>Partner</th></tr></thead>
       <tbody>
-        <tr class="prow"><th>Investimento /mês</th><td>R$ <span data-tri="397" data-sem="337" data-anu="298">397</span></td><td>R$ <span data-tri="797" data-sem="677" data-anu="598">797</span></td><td>R$ <span data-tri="1.490" data-sem="1.267" data-anu="1.118">1.490</span></td><td class="fcol">R$ <span data-tri="2.990" data-sem="2.542" data-anu="2.243">2.990</span></td><td>R$ <span data-tri="7.900" data-sem="6.715" data-anu="5.925">7.900</span></td></tr>
+        <tr class="prow"><th>Investimento /mês</th><td>R$ <span data-tri="397" data-sem="340" data-anu="290">290</span></td><td>R$ <span data-tri="797" data-sem="690" data-anu="590">590</span></td><td>R$ <span data-tri="1.490" data-sem="1.290" data-anu="1.090">1.090</span></td><td class="fcol">R$ <span data-tri="2.990" data-sem="2.590" data-anu="2.190">2.190</span></td><td>R$ <span data-tri="7.900" data-sem="6.900" data-anu="5.900">5.900</span></td></tr>
         <tr><th>Verba de mídia</th><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="fcol">+R$ 1.500</td><td>+R$ 5.000</td></tr>
         <tr><th>Plataforma IA + Academy</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="fcol yes">✓</td><td class="yes">✓</td></tr>
         <tr><th>Posts com IA</th><td class="no">—</td><td>6</td><td>12</td><td class="fcol">20</td><td>36</td></tr>
@@ -935,20 +950,20 @@ body.dark .bknote b,body.dark .vstack .a b{color:var(--tx)}
     <div class="plans clin rv">
       <div class="plan">
         <div class="pn">Clinics Start</div><div class="who">Tire a clínica do papel com a equipe no mesmo app.</div><span class="fat">até 3 profissionais</span>
-        <div class="pr">R$ <span data-tri="1.990" data-sem="1.692" data-anu="1.493">1.990</span><small>/mês</small></div><div class="media"></div><div class="econ"></div>
+        <div class="pr"><span class="was"></span>R$ <span data-tri="1.990" data-sem="1.690" data-anu="1.490">1.490</span><small>/mês</small></div><div class="media"></div><div class="econ"></div>
         <ul><li><b>Plataforma multiprofissional + Academy</b></li><li>12 posts + 6 vídeos/mês</li><li>8.000 WhatsApp · 2.000 créditos IA</li></ul>
         <div class="acts"><button class="sel s js-talk" data-mode="talk" data-plan="Clinics Start">Quero proposta</button></div>
       </div>
       <div class="plan feat">
         <span class="badge">⭐ Melhor custo/cadeira</span>
         <div class="pn">Clinics Growth</div><div class="who">Escale a clínica com mídia e funis por especialidade.</div><span class="fat">até 6 profissionais</span>
-        <div class="pr">R$ <span data-tri="4.990" data-sem="4.242" data-anu="3.743">4.990</span><small>/mês</small></div><div class="media">+ R$ 2.500 de mídia</div><div class="econ"></div>
+        <div class="pr"><span class="was"></span>R$ <span data-tri="4.990" data-sem="4.240" data-anu="3.740">3.740</span><small>/mês</small></div><div class="media">+ R$ 2.500 de mídia</div><div class="econ"></div>
         <ul><li><b>Tráfego + conteúdo gerido</b></li><li>30 posts + 15 vídeos/mês</li><li>20.000 WhatsApp · gerente</li></ul>
         <div class="acts"><button class="sel p js-talk" data-mode="talk" data-plan="Clinics Growth">Quero esse →</button></div>
       </div>
       <div class="plan">
         <div class="pn">Clinics Performance</div><div class="who">Operação de alta performance, com squad e BI por unidade.</div><span class="fat">até 12 profissionais</span>
-        <div class="pr">R$ <span data-tri="9.900" data-sem="8.415" data-anu="7.425">9.900</span><small>/mês</small></div><div class="media">+ R$ 5.000 de mídia</div><div class="econ"></div>
+        <div class="pr"><span class="was"></span>R$ <span data-tri="9.900" data-sem="8.400" data-anu="7.400">7.400</span><small>/mês</small></div><div class="media">+ R$ 5.000 de mídia</div><div class="econ"></div>
         <ul><li><b>Squad + estrategista dedicado</b></li><li>60 posts + 30 vídeos/mês</li><li>50.000 WhatsApp · BI por unidade</li></ul>
         <div class="acts"><button class="sel s js-talk" data-mode="talk" data-plan="Clinics Performance">Falar com o time</button></div>
       </div>
@@ -957,7 +972,7 @@ body.dark .bknote b,body.dark .vstack .a b{color:var(--tx)}
     <details class="ctabdet rv"><summary class="ctabsum">📊 Comparar todos os entregáveis</summary><div class="ctabscroll"><table class="ctab">
       <thead><tr><th>Entregáveis / mês</th><th>Clinics Start</th><th class="fcol">Clinics Growth ⭐</th><th>Clinics Performance</th></tr></thead>
       <tbody>
-        <tr class="prow"><th>Investimento /mês</th><td>R$ <span data-tri="1.990" data-sem="1.692" data-anu="1.493">1.990</span></td><td class="fcol">R$ <span data-tri="4.990" data-sem="4.242" data-anu="3.743">4.990</span></td><td>R$ <span data-tri="9.900" data-sem="8.415" data-anu="7.425">9.900</span></td></tr>
+        <tr class="prow"><th>Investimento /mês</th><td>R$ <span data-tri="1.990" data-sem="1.690" data-anu="1.490">1.490</span></td><td class="fcol">R$ <span data-tri="4.990" data-sem="4.240" data-anu="3.740">3.740</span></td><td>R$ <span data-tri="9.900" data-sem="8.400" data-anu="7.400">7.400</span></td></tr>
         <tr><th>Verba de mídia</th><td class="no">—</td><td class="fcol">+R$ 2.500</td><td>+R$ 5.000</td></tr>
         <tr><th>Profissionais inclusos</th><td>até 3</td><td class="fcol">até 6</td><td>até 12</td></tr>
         <tr><th>Plataforma multiprofissional + Academy</th><td class="yes">✓</td><td class="fcol yes">✓</td><td class="yes">✓</td></tr>
@@ -1083,14 +1098,17 @@ body.dark .bknote b,body.dark .vstack .a b{color:var(--tx)}
   function applyTerm(k){
     document.querySelectorAll('[data-tri]').forEach(function(s){s.textContent=s.dataset[k];});
     document.querySelectorAll('.plan').forEach(function(p){
-      var pr=p.querySelector('[data-tri]'),ec=p.querySelector('.econ');if(!pr||!ec)return;
+      var pr=p.querySelector('[data-tri]'),ec=p.querySelector('.econ'),was=p.querySelector('.was');if(!pr)return;
+      if(was)was.textContent=(k==='tri')?'':('de R$ '+pr.dataset.tri+'/mês');
+      if(!ec)return;
       if(k==='tri'){ec.classList.remove('on');ec.textContent='';return;}
       var save=(num(pr.dataset.tri)-num(pr.dataset[k]))*12;
-      ec.textContent='💸 Você economiza R$ '+save.toLocaleString('pt-BR')+'/ano';
+      ec.textContent='💸 economiza R$ '+save.toLocaleString('pt-BR')+'/ano';
       ec.classList.add('on');
     });
   }
   document.querySelectorAll('#toggle button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#toggle button').forEach(x=>x.classList.remove('on'));this.classList.add('on');applyTerm(this.dataset.k);};});
+  applyTerm('anu'); // começa no plano anual
   // tabs profissional / clínica
   document.querySelectorAll('#ptabs button').forEach(function(b){b.onclick=function(){
     document.querySelectorAll('#ptabs button').forEach(x=>x.classList.remove('on'));this.classList.add('on');
