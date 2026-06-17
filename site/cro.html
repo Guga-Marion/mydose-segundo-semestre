@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyDose — mais adesão, mais receita, menos WhatsApp</title>
+<meta name="description" content="A plataforma de comunidade + IA que transforma pacientes em receita recorrente. +1.000 profissionais de saúde · 3× mais adesão · +R$10k em 30 dias. Comece hoje, com garantia de 30 dias.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;--bg2:#f7f6fb;--tx:#13111c;--tx2:#54506a;--tx3:#8b86a0;
+  --line:rgba(22,18,31,.10);--line2:rgba(22,18,31,.055);
+  --violet:#7c3aed;--pink:#db2777;--amber:#d97706;--green:#16a34a;
+  --grad:linear-gradient(100deg,#7c3aed,#db2777 60%,#f59e0b);
+  --f:'Outfit',sans-serif;--mono:'Space Grotesk',sans-serif;--eo:cubic-bezier(.16,1,.3,1);
+  --aura:radial-gradient(circle at 32% 28%,rgba(255,255,255,.7),transparent 26%),radial-gradient(circle at 74% 78%,#ffc24d,#fb8a3c 16%,transparent 52%),radial-gradient(circle at 42% 40%,#f3d0ff,#cf5fc0 52%,#a23ca0);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:var(--f);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{letter-spacing:-.045em;line-height:1.04;font-weight:800;text-wrap:balance}
+.bgaura{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(38vw 38vw at 98% -10%,rgba(219,39,119,.10),transparent 62%),radial-gradient(34vw 34vw at -8% 14%,rgba(124,58,237,.09),transparent 60%),radial-gradient(40vw 40vw at 82% 108%,rgba(245,158,11,.07),transparent 62%),#fff}
+.orb{border-radius:50%;background:var(--aura);box-shadow:inset -3px -4px 10px rgba(120,30,110,.4),inset 2px 3px 8px rgba(255,255,255,.5)}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s var(--eo),transform .8s var(--eo)}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:15px;padding:15px 26px;border-radius:14px;cursor:pointer;border:none;font-family:var(--f);transition:transform .35s var(--eo),box-shadow .35s var(--eo),background .2s}
+.btn-p{background:var(--grad);color:#fff;box-shadow:0 16px 40px -12px rgba(219,39,119,.55)}.btn-p:hover{box-shadow:0 22px 52px -12px rgba(219,39,119,.72);transform:translateY(-2px)}
+.btn-d{background:#16121f;color:#fff}.btn-d:hover{background:#000;transform:translateY(-2px)}
+.btn-gh{background:#fff;border:1px solid var(--line);color:var(--tx)}.btn-gh:hover{box-shadow:0 12px 28px -14px rgba(22,18,31,.25);transform:translateY(-2px)}
+.btn .ar{transition:transform .35s var(--eo)}.btn:hover .ar{transform:translateX(5px)}
+.btn-lg{padding:17px 30px;font-size:16px;border-radius:15px}
+/* nav */
+nav{position:sticky;top:0;height:66px;display:flex;align-items:center;z-index:60;background:rgba(255,255,255,.8);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+nav.solid{border-bottom-color:var(--line2);box-shadow:0 6px 24px -18px rgba(22,18,31,.3)}
+nav .wrap{display:flex;align-items:center;gap:14px;width:100%}
+nav .lk{display:flex;align-items:center;gap:9px;margin-right:auto;font-weight:800;font-size:19px;letter-spacing:-.04em}.nav .lk .orb{width:24px;height:24px}
+nav .lk .orb{width:24px;height:24px}
+nav .nlinks{display:flex;gap:4px}
+nav .nlinks a{font-size:14px;color:var(--tx2);padding:8px 13px;border-radius:9px;font-weight:500;transition:.2s}nav .nlinks a:hover{color:var(--tx);background:var(--bg2)}
+nav .ncta{font-size:13.5px;font-weight:700;background:var(--grad);color:#fff;padding:10px 18px;border-radius:11px;box-shadow:0 10px 26px -12px rgba(219,39,119,.5);transition:transform .3s var(--eo),box-shadow .3s}nav .ncta:hover{transform:translateY(-1px);box-shadow:0 16px 32px -12px rgba(219,39,119,.6)}
+@media(max-width:860px){nav .nlinks{display:none}}
+/* hero */
+.hero{padding:54px 0 60px}
+.hgrid{display:grid;grid-template-columns:1.06fr .94fr;gap:50px;align-items:center}
+@media(max-width:940px){.hgrid{grid-template-columns:1fr;gap:40px}}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;color:var(--violet);background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.18);padding:8px 15px;border-radius:100px;margin-bottom:22px}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+.hero h1{font-size:clamp(38px,5.8vw,66px);line-height:.98;letter-spacing:-.05em}
+.hero .sub{font-size:clamp(17px,1.6vw,20px);color:var(--tx2);max-width:520px;margin:22px 0 0}
+.hcta{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.microcopy{font-size:12.5px;color:var(--tx3);margin-top:14px;display:flex;align-items:center;gap:8px}
+.hrev{display:flex;align-items:center;gap:14px;margin-top:30px}
+.stars{color:#f59e0b;font-size:15px;letter-spacing:2px}
+.hrev .t{font-size:13px;color:var(--tx2)}.hrev .t b{color:var(--tx)}
+.avatars{display:flex}.avatars span{width:30px;height:30px;border-radius:50%;border:2px solid #fff;margin-left:-8px;background:var(--aura)}.avatars span:first-child{margin-left:0}
+/* hero visual */
+.hvis{position:relative}
+.hvis .photo{border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:0 50px 100px -40px rgba(124,58,237,.5)}
+.hvis .photo img{width:100%;aspect-ratio:4/3.4;object-fit:cover;object-position:56% 22%}
+.hvis .chip{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;padding:11px 14px;font-size:12.5px;font-weight:600;box-shadow:0 18px 40px -16px rgba(22,18,31,.3);display:flex;align-items:center;gap:9px}
+.hvis .c1{left:-18px;top:22%;animation:fl 6s var(--eo) infinite}.hvis .c1 b{color:var(--green)}
+.hvis .c2{right:-14px;bottom:16%;animation:fl 7s var(--eo) infinite .8s}.hvis .c2 b{color:var(--pink)}
+.hvis .orb{position:absolute;right:-22px;top:-22px;width:74px;height:74px;box-shadow:0 0 60px rgba(207,95,192,.6);animation:fl 8s var(--eo) infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@media(max-width:560px){.hvis .c1{left:-6px}.hvis .c2{right:-4px}.hvis .chip{font-size:11px;padding:9px 11px}}
+/* trust strip */
+.trust{border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);padding:22px 0;margin-top:8px}
+.trust .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 34px}
+.trust .it{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--tx2);font-weight:500}
+.trust .it b{font-family:var(--mono);font-weight:700;color:var(--tx);font-size:17px}
+/* sections */
+.sec{padding:clamp(60px,8vw,104px) 0}
+.kick{display:inline-block;font-size:12.5px;font-weight:700;color:var(--violet);margin-bottom:14px}
+.sec h2{font-size:clamp(30px,4.6vw,50px);font-weight:800;letter-spacing:-.045em}
+.lead{font-size:clamp(16px,1.5vw,19px);color:var(--tx2);max-width:640px;margin-top:16px}
+.center{text-align:center}.mx{max-width:720px;margin-left:auto;margin-right:auto}
+/* problem */
+.prob{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+@media(max-width:820px){.prob{grid-template-columns:1fr}}
+.pcard{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:28px;transition:transform .35s var(--eo),box-shadow .35s var(--eo)}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 30px 60px -34px rgba(22,18,31,.25)}
+.pcard .e{font-size:28px}.pcard h3{font-size:18px;margin:14px 0 8px}.pcard p{font-size:14.5px;color:var(--tx2)}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px;counter-reset:s}
+@media(max-width:820px){.steps{grid-template-columns:1fr}}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 26px;box-shadow:0 16px 40px -32px rgba(22,18,31,.3)}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:-16px;left:26px;width:38px;height:38px;border-radius:11px;background:var(--grad);color:#fff;font-family:var(--mono);font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 26px -10px rgba(219,39,119,.5)}
+.step h3{font-size:19px;margin:14px 0 8px}.step p{font-size:14.5px;color:var(--tx2)}
+/* feature split */
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;margin-top:46px}
+@media(max-width:860px){.feat{grid-template-columns:1fr;gap:34px}}
+.feat.rev .ftx{order:2}.feat.rev .fim{order:1}
+@media(max-width:860px){.feat .ftx,.feat.rev .ftx{order:1}.feat .fim,.feat.rev .fim{order:2}}
+.fim{position:relative;display:flex;justify-content:center}
+.fim img{width:74%;max-width:300px;border-radius:28px;box-shadow:0 44px 90px -34px rgba(124,58,237,.45),0 0 0 1px var(--line)}
+.fim .glow{position:absolute;inset:8% 16%;background:var(--aura);filter:blur(58px);opacity:.4;z-index:-1}
+.flist{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:16px}
+.flist li{display:flex;gap:13px;align-items:flex-start}
+.flist .ic{width:42px;height:42px;border-radius:12px;background:rgba(124,58,237,.09);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+.flist h4{font-size:16px}.flist p{font-size:14px;color:var(--tx2);margin-top:3px}
+/* results band */
+.results{background:linear-gradient(150deg,#16121f,#2a1f47);border-radius:30px;padding:clamp(36px,5vw,60px);color:#fff;text-align:center}
+.results h2{color:#fff;font-size:clamp(26px,3.6vw,42px)}
+.rnums{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:38px}
+@media(max-width:760px){.rnums{grid-template-columns:repeat(2,1fr);gap:28px}}
+.rnums .n{font-family:var(--mono);font-weight:700;font-size:clamp(30px,4.4vw,46px);line-height:1}.rnums .n .grad{font-family:var(--mono)}
+.rnums .l{font-size:13px;color:rgba(255,255,255,.7);margin-top:8px}
+/* testimonials */
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+@media(max-width:860px){.tg{grid-template-columns:1fr}}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 16px 42px -32px rgba(22,18,31,.3)}
+.tcard .q{font-size:15px;line-height:1.55;color:var(--tx)}
+.tcard .who{display:flex;align-items:center;gap:11px;margin-top:18px}
+.tcard .av{width:42px;height:42px;border-radius:50%;background:var(--aura);flex-shrink:0}
+.tcard .nm{font-weight:700;font-size:14px}.tcard .rl{font-size:12.5px;color:var(--tx3)}
+.tcard .st{color:#f59e0b;font-size:13px;letter-spacing:2px;margin-bottom:12px}
+/* pricing */
+.ptoggle{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px;gap:5px;margin:24px auto 0;box-shadow:0 8px 22px -16px rgba(22,18,31,.25)}
+.ptoggle button{font-family:var(--f);font-weight:700;font-size:14px;padding:11px 20px;border-radius:10px;border:none;background:transparent;color:var(--tx2);cursor:pointer;transition:.25s}
+.ptoggle button.on{background:#16121f;color:#fff}.ptoggle .sv{font-size:10px;color:var(--green);margin-left:4px}.ptoggle button.on .sv{color:#86efac}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px;align-items:start}
+@media(max-width:860px){.plans{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
+.plan{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 26px;display:flex;flex-direction:column;box-shadow:0 18px 44px -32px rgba(22,18,31,.3);transition:transform .4s var(--eo),box-shadow .4s var(--eo)}
+.plan:hover{transform:translateY(-6px);box-shadow:0 36px 72px -34px rgba(124,58,237,.3)}
+.plan.feat{background:linear-gradient(165deg,#221634,#33204f);border:none;color:#fff;box-shadow:0 40px 80px -28px rgba(124,58,237,.6)}
+@media(min-width:861px){.plan.feat{transform:scale(1.04)}.plan.feat:hover{transform:scale(1.04) translateY(-6px)}}
+.plan .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:var(--grad);color:#fff;padding:6px 14px;border-radius:100px;white-space:nowrap;box-shadow:0 10px 24px -8px rgba(219,39,119,.6)}
+.plan .pn{font-weight:800;font-size:21px}
+.plan .pd{font-size:13px;color:var(--tx2);margin-top:5px;min-height:38px}.plan.feat .pd{color:rgba(255,255,255,.66)}
+.plan .was{font-size:12.5px;color:var(--tx3);text-decoration:line-through;margin-top:14px}.plan.feat .was{color:rgba(255,255,255,.5)}
+.plan .pr{font-family:var(--mono);font-weight:700;font-size:38px;letter-spacing:-.02em;line-height:1;margin-top:2px}.plan .pr small{font-size:13px;color:var(--tx3);font-weight:500}.plan.feat .pr small{color:rgba(255,255,255,.55)}
+.plan .econ{font-size:12px;font-weight:700;color:var(--green);background:rgba(22,163,74,.1);border-radius:7px;padding:4px 9px;display:inline-block;margin-top:10px}.plan.feat .econ{color:#86efac;background:rgba(134,239,172,.15)}
+.plan ul{list-style:none;margin:20px 0 22px;display:flex;flex-direction:column;gap:11px;flex:1}
+.plan li{display:flex;gap:10px;font-size:13.5px;color:var(--tx2);line-height:1.4}.plan.feat li{color:rgba(255,255,255,.82)}
+.plan li::before{content:"✓";color:var(--green);font-weight:800;flex-shrink:0}.plan.feat li::before{color:#86efac}
+.plan li b{color:var(--tx);font-weight:700}.plan.feat li b{color:#fff}
+.plan .psel{text-align:center;font-weight:700;font-size:15px;padding:14px;border-radius:13px;cursor:pointer;border:none;font-family:var(--f);transition:transform .3s var(--eo),box-shadow .3s,background .2s}
+.plan .psel.p{background:var(--grad);color:#fff;box-shadow:0 14px 32px -12px rgba(219,39,119,.55)}.plan .psel.p:hover{transform:translateY(-2px)}
+.plan .psel.d{background:#16121f;color:#fff}.plan .psel.d:hover{background:#000;transform:translateY(-2px)}
+.plan.feat .psel.p{background:#fff;color:#1c1530}
+.plan .psub{text-align:center;font-size:12px;color:var(--tx3);margin-top:10px}.plan.feat .psub{color:rgba(255,255,255,.6)}
+.allplans{text-align:center;margin-top:26px;font-size:14px;color:var(--tx2)}.allplans a{color:var(--violet);font-weight:700}
+/* guarantee */
+.guar{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:30px}
+.guar span{font-size:13px;font-weight:600;color:var(--tx2);background:#fff;border:1px solid var(--line);padding:10px 16px;border-radius:100px;box-shadow:0 6px 16px -12px rgba(22,18,31,.2)}
+/* faq */
+.faq{max-width:760px;margin:40px auto 0}
+.qa{border:1px solid var(--line);border-radius:16px;margin-bottom:12px;background:#fff;overflow:hidden;transition:box-shadow .3s}
+.qa[open]{box-shadow:0 18px 44px -34px rgba(22,18,31,.3)}
+.qa summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";font-size:22px;color:var(--violet);font-weight:400;transition:transform .3s}
+.qa[open] summary::after{transform:rotate(45deg)}
+.qa .ans{padding:0 22px 20px;font-size:14.5px;color:var(--tx2);line-height:1.6}
+/* final cta */
+.fcta{position:relative;border-radius:30px;overflow:hidden;padding:clamp(40px,6vw,70px);color:#fff}
+.fcta>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;z-index:-2}
+.fcta::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(120deg,rgba(10,7,18,.92) 42%,rgba(10,7,18,.72) 70%,rgba(124,58,237,.5))}
+.fctagrid{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center}@media(max-width:880px){.fctagrid{grid-template-columns:1fr;gap:32px}}
+.fcta h2{color:#fff;font-size:clamp(28px,4vw,46px)}.fcta .lead{color:rgba(255,255,255,.85);max-width:460px}
+.fcta .bl{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:10px}.fcta .bl li{display:flex;gap:10px;font-size:14.5px;color:rgba(255,255,255,.9)}.fcta .bl .c{color:#86efac;font-weight:800}
+.card-form{background:#fff;border-radius:22px;padding:28px;box-shadow:0 50px 100px -30px rgba(0,0,0,.5)}
+.card-form .ft{font-weight:800;font-size:20px;color:var(--tx)}.card-form .fs{font-size:13px;color:var(--tx2);margin-top:6px}
+.frm{display:flex;flex-direction:column;gap:11px;margin-top:18px}
+.frm label{font-size:12px;font-weight:600;color:var(--tx2);margin-bottom:-6px}
+.frm input,.frm select{font-family:var(--f);font-size:15px;color:var(--tx);background:#faf9fc;border:1px solid var(--line);border-radius:12px;padding:13px 14px;outline:none;transition:.2s}
+.frm input:focus,.frm select:focus{border-color:var(--violet);box-shadow:0 0 0 4px rgba(124,58,237,.12)}
+.frm .btn{width:100%}
+.fnote{font-size:11.5px;color:var(--tx3);text-align:center;margin-top:11px}
+.fsuccess{display:none;text-align:center;padding:22px 6px}.fsuccess.on{display:block}.fsuccess .o{width:62px;height:62px;border-radius:50%;background:var(--aura);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:26px}.fsuccess h3{font-size:21px;color:var(--tx)}.fsuccess p{color:var(--tx2);font-size:14px;margin-top:8px}
+/* sticky mobile cta */
+.scta{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;padding:12px 16px;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.scta .btn{width:100%}
+@media(max-width:860px){.scta.show{display:block}}
+/* footer */
+footer{border-top:1px solid var(--line);padding:48px 0 90px;color:var(--tx3);font-size:13.5px}
+.fcols{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between}
+.fcols .nm{font-weight:800;font-size:18px;color:var(--tx);display:flex;align-items:center;gap:9px}
+.fcol .h{color:var(--tx);font-weight:600;margin-bottom:10px}.fcol div{margin-bottom:7px}footer a:hover{color:var(--tx)}
+@media(max-width:860px){footer{padding-bottom:90px}}
+</style>
+</head>
+<body>
+<div class="bgaura"></div>
+
+<nav id="nav"><div class="wrap">
+  <a class="lk" href="#top"><span class="orb"></span>MyDose</a>
+  <div class="nlinks"><a href="#como">Como funciona</a><a href="#produto">Produto</a><a href="#planos">Planos</a><a href="#faq">Dúvidas</a></div>
+  <a class="ncta" href="#planos">Começar agora</a>
+</div></nav>
+
+<!-- HERO -->
+<header class="hero" id="top"><div class="wrap"><div class="hgrid">
+  <div>
+    <span class="eyebrow"><span class="dot"></span> O sistema operacional de IA da saúde</span>
+    <h1>Cuide além da consulta.<br>Cresça <span class="grad">além da agenda.</span></h1>
+    <p class="sub">A MyDose une <b style="color:var(--tx)">comunidade gamificada e IA</b> pra você manter o paciente aderente, criar receita recorrente e recuperar o seu tempo — sem virar escravo do WhatsApp.</p>
+    <div class="hcta">
+      <a class="btn btn-p btn-lg" href="#planos">Começar agora <span class="ar">→</span></a>
+      <a class="btn btn-gh btn-lg" href="#demo">Ver demonstração</a>
+    </div>
+    <div class="microcopy">✓ Garantia de 30 dias · ✓ Sem fidelidade · ✓ No ar em 7 dias</div>
+    <div class="hrev">
+      <div class="avatars"><span></span><span></span><span></span><span></span></div>
+      <div><div class="stars">★★★★★</div><div class="t"><b>+1.000 profissionais</b> de saúde já usam</div></div>
+    </div>
+  </div>
+  <div class="hvis rv">
+    <div class="photo"><img src="assets/ph-nutri.png" alt="Profissional de saúde usando a MyDose"></div>
+    <span class="orb"></span>
+    <div class="chip c1">🔥 Adesão <b>+85%</b></div>
+    <div class="chip c2">🤖 IA respondeu <b>200 dúvidas</b> hoje</div>
+  </div>
+</div></div></header>
+
+<!-- TRUST -->
+<div class="trust"><div class="wrap"><div class="row">
+  <div class="it"><b>+1.000</b> profissionais</div>
+  <div class="it"><b>+130 mil</b> pacientes ativos</div>
+  <div class="it"><b>3×</b> mais adesão</div>
+  <div class="it">🩺 Médicos · 🥗 Nutris · 🧠 Psicólogos · 🏋️ Personal · 🏥 Clínicas</div>
+</div></div></div>
+
+<!-- PROBLEM -->
+<section class="sec"><div class="wrap">
+  <div class="center mx rv"><span class="kick">A verdade que ninguém te conta</span><h2>Você entrega resultado.<br>Mas a sua receita <span class="grad">não acompanha.</span></h2><p class="lead" style="margin-left:auto;margin-right:auto">O cuidado para quando a consulta acaba — e com ele, a adesão e a renda. Trabalhar mais não é a saída. Escalar é.</p></div>
+  <div class="prob">
+    <div class="pcard rv"><div class="e">🔁</div><h3>Recompra baixa</h3><p>O paciente some depois do plano e você recomeça a captação do zero — todo santo mês.</p></div>
+    <div class="pcard rv"><div class="e">📵</div><h3>Escravo do WhatsApp</h3><p>Mensagem fora de hora, cobrança manual, follow-up no improviso. O cuidado vira sobrecarga.</p></div>
+    <div class="pcard rv"><div class="e">⏳</div><h3>Renda no teto da agenda</h3><p>Sua receita é exatamente o número de horas que você aguenta. Crescer = não ter mais vida.</p></div>
+  </div>
+</div></section>
+
+<!-- HOW IT WORKS -->
+<section class="sec" id="como" style="padding-top:0"><div class="wrap">
+  <div class="center mx rv"><span class="kick">Como funciona</span><h2>Em 3 passos, do caos<br>à máquina que <span class="grad">roda sozinha.</span></h2></div>
+  <div class="steps">
+    <div class="step rv"><h3>Sua comunidade no ar</h3><p>App com a sua marca: comunidade gamificada (D.O.S.E.), protocolos e checkout. Pronto em 7 dias.</p></div>
+    <div class="step rv"><h3>A IA cuida 24/7</h3><p>Responde no WhatsApp, lembra do plano e reativa quem sumiu — no seu tom, com ética e sigilo.</p></div>
+    <div class="step rv"><h3>Receita recorrente</h3><p>Programas, desafios e cursos viram assinatura. Você monetiza a jornada inteira, não só a consulta.</p></div>
+  </div>
+  <div class="center" style="margin-top:38px"><a class="btn btn-d btn-lg" href="#planos">Quero essa máquina <span class="ar">→</span></a></div>
+</div></section>
+
+<!-- PRODUCT -->
+<section class="sec" id="produto" style="padding-top:0"><div class="wrap">
+  <div class="feat">
+    <div class="ftx rv">
+      <span class="kick">Comunidade que vicia (do bem)</span>
+      <h2>Seus pacientes abrem<br>o app <span class="grad">todo dia.</span></h2>
+      <p class="lead">Gamificação baseada em neurociência faz o paciente voltar por hábito — não por cobrança. Mais adesão, mais resultado, mais indicação.</p>
+      <ul class="flist">
+        <li><span class="ic">🔥</span><div><h4>Engajamento diário</h4><p>XP, desafios e ranking que criam constância real.</p></div></li>
+        <li><span class="ic">🤝</span><div><h4>Pertencimento</h4><p>Pacientes que se apoiam retêm mais e trazem mais gente.</p></div></li>
+      </ul>
+    </div>
+    <div class="fim rv"><span class="glow"></span><img src="assets/app-comunidade.png" alt="Comunidade MyDose"></div>
+  </div>
+  <div class="feat rev" style="margin-top:64px">
+    <div class="ftx rv">
+      <span class="kick">IA que trabalha por você</span>
+      <h2>Atende, orienta e reativa —<br><span class="grad">enquanto você vive.</span></h2>
+      <p class="lead">Treinada no seu protocolo e nos seus limites. A Dose IA mantém o vínculo e devolve as suas horas.</p>
+      <ul class="flist">
+        <li><span class="ic">💬</span><div><h4>Responde no WhatsApp</h4><p>Tira dúvidas e mantém o vínculo, com a sua marca.</p></div></li>
+        <li><span class="ic">🎯</span><div><h4>Reativa quem sumiu</h4><p>Detecta quem precisa de atenção e traz de volta sozinha.</p></div></li>
+      </ul>
+    </div>
+    <div class="fim rv"><span class="glow"></span><img src="assets/app-ia.png" alt="IA MyDose"></div>
+  </div>
+</div></section>
+
+<!-- RESULTS -->
+<section class="sec" id="demo" style="padding-top:0"><div class="wrap">
+  <div class="results rv">
+    <h2>Resultado que cabe no bolso<br>— e na sua semana.</h2>
+    <div class="rnums">
+      <div><div class="n grad">+R$10k</div><div class="l">em 30 dias, sem nova agenda</div></div>
+      <div><div class="n grad">3×</div><div class="l">mais adesão do paciente</div></div>
+      <div><div class="n grad">−50%</div><div class="l">de tarefas operacionais</div></div>
+      <div><div class="n grad">~2h</div><div class="l">por semana de operação</div></div>
+    </div>
+    <div style="margin-top:36px"><a class="btn btn-p btn-lg" href="https://guga-marion.github.io/mydose-segundo-semestre/site/live.html">Ver a demonstração ao vivo (quarta, 19h) <span class="ar">→</span></a></div>
+  </div>
+</div></section>
+
+<!-- TESTIMONIALS -->
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="center mx rv"><span class="kick">Quem já usa</span><h2>Profissionais que pararam<br>de trocar tempo por dinheiro.</h2></div>
+  <div class="tg">
+    <div class="tcard rv"><div class="st">★★★★★</div><p class="q">"Em 30 dias fiz minha primeira venda de programa dentro do app. Hoje tenho uma renda que não depende de eu estar na cadeira."</p><div class="who"><span class="av"></span><div><div class="nm">Dr. Arthur</div><div class="rl">Médico · parceiro MyDose</div></div></div></div>
+    <div class="tcard rv"><div class="st">★★★★★</div><p class="q">"A adesão dos meus pacientes triplicou. Eles voltam, seguem o plano e ainda indicam. Mudou a minha operação."</p><div class="who"><span class="av"></span><div><div class="nm">Nutricionista</div><div class="rl">Saúde física · MyDose Physical</div></div></div></div>
+    <div class="tcard rv"><div class="st">★★★★★</div><p class="q">"O no-show caiu de verdade. A IA mantém o vínculo entre as sessões com o cuidado que a saúde mental exige."</p><div class="who"><span class="av"></span><div><div class="nm">Psicóloga</div><div class="rl">Saúde mental · MyDose Mental</div></div></div></div>
+  </div>
+</div></section>
+
+<!-- PRICING -->
+<section class="sec" id="planos" style="padding-top:0"><div class="wrap">
+  <div class="center mx rv"><span class="kick">Planos · sem fidelidade-armadilha</span><h2>Comece simples.<br><span class="grad">Escale quando quiser.</span></h2><p class="lead" style="margin-left:auto;margin-right:auto">A plataforma é a mesma — muda quanto a gente faz por você. Mídia sempre fora do preço.</p>
+    <div class="ptoggle" id="ptoggle"><button data-k="anu" class="on">Anual <span class="sv">−25%</span></button><button data-k="tri">Trimestral</button></div>
+  </div>
+  <div class="plans rv">
+    <div class="plan">
+      <div class="pn">Software</div><div class="pd">Você toca o crescimento — com toda a plataforma na mão.</div>
+      <div class="was">de R$ 397/mês</div>
+      <div class="pr">R$ <span data-anu="290" data-tri="397">290</span><small>/mês</small></div>
+      <div class="econ" data-anu="economiza R$ 1.284/ano" data-tri="">economiza R$ 1.284/ano</div>
+      <ul><li><b>App + comunidade</b> com a sua marca</li><li>Dose IA + protocolos ilimitados</li><li>Checkout, assinaturas e CRM</li><li>500 WhatsApp/mês</li></ul>
+      <button class="psel d js-talk" data-mode="checkout" data-plan="Software">Começar agora</button>
+      <div class="psub">ou <a href="#" class="js-talk" data-mode="talk" data-plan="Software" style="color:inherit;text-decoration:underline">falar com vendas</a></div>
+    </div>
+    <div class="plan feat">
+      <span class="badge">⭐ Mais escolhido</span>
+      <div class="pn">Autopilot</div><div class="pd">A gente faz e roda o marketing por você. É só atender.</div>
+      <div class="was">de R$ 2.990/mês</div>
+      <div class="pr">R$ <span data-anu="2.190" data-tri="2.990">2.190</span><small>/mês</small></div>
+      <div class="econ" data-anu="economiza R$ 9.600/ano" data-tri="">economiza R$ 9.600/ano</div>
+      <ul><li><b>Tráfego gerido</b> de ponta a ponta</li><li>20 posts + 10 vídeos/mês</li><li>Funis + 2 ebooks/mês</li><li>Gestor de conta + relatório</li><li>+ R$ 1.500 de mídia (transparente)</li></ul>
+      <button class="psel p js-talk" data-mode="checkout" data-plan="Autopilot">Quero esse →</button>
+      <div class="psub">ou <a href="#" class="js-talk" data-mode="talk" data-plan="Autopilot" style="color:inherit;text-decoration:underline">agendar reunião</a></div>
+    </div>
+    <div class="plan">
+      <div class="pn">Clínicas & Enterprise</div><div class="pd">Pra equipes e clínicas que querem escalar a operação inteira.</div>
+      <div class="was">&nbsp;</div>
+      <div class="pr">sob medida</div>
+      <div class="econ" style="opacity:0">.</div>
+      <ul><li><b>Plataforma multiprofissional</b></li><li>Funis por especialidade + BI</li><li>Squad dedicado (Partner)</li><li>Proposta sob a sua realidade</li></ul>
+      <button class="psel d js-talk" data-mode="talk" data-plan="Clínicas / Enterprise">Falar com o time</button>
+      <div class="psub">resposta em até 1 dia útil</div>
+    </div>
+  </div>
+  <div class="allplans">Quer ver os 5 planos e a tabela completa de entregáveis? <a href="pro.html#planos">Comparar todos os planos →</a></div>
+  <div class="guar rv">
+    <span>🛡️ 30 dias de garantia (100% de volta)</span>
+    <span>🎯 Garantia do aha: 1ª venda em 30 dias ou trabalhamos de graça</span>
+    <span>🔒 Trava de preço</span>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" style="padding-top:0"><div class="wrap">
+  <div class="center mx rv"><span class="kick">Tira-dúvidas</span><h2>O que costumam<br>perguntar antes de começar.</h2></div>
+  <div class="faq rv">
+    <details class="qa"><summary>Preciso entender de tecnologia ou marketing?</summary><div class="ans">Não. No Software você tem tudo pronto e simples; nos planos com serviço (Co-pilot, Autopilot, Partner), a gente cuida do conteúdo, do tráfego e da estratégia por você. Você só cuida das pessoas.</div></details>
+    <details class="qa"><summary>Tenho poucos pacientes hoje. Ainda vale?</summary><div class="ans">Sim — é exatamente quando mais compensa. A comunidade aumenta a adesão e a recompra dos que você já tem, e a esteira de produtos cria receita sem você precisar de mais horários.</div></details>
+    <details class="qa"><summary>E a ética e o sigilo, principalmente na saúde mental?</summary><div class="ans">A IA é treinada nos seus limites, com ética e sigilo. Ela mantém o vínculo entre as sessões sem substituir o seu trabalho clínico — você define o tom e as regras.</div></details>
+    <details class="qa"><summary>Tem fidelidade ou multa?</summary><div class="ans">Sem fidelidade-armadilha. E você tem 30 dias de garantia: se não curtir, devolvemos 100% do investimento, sem perguntas.</div></details>
+    <details class="qa"><summary>Em quanto tempo vejo resultado?</summary><div class="ans">Nossa promessa: em 30 dias você faz a sua 1ª venda dentro do MyDose e tem pacientes usando os seus protocolos — ou a gente trabalha de graça até acontecer.</div></details>
+    <details class="qa"><summary>A verba de mídia está inclusa no preço?</summary><div class="ans">Não, e isso é de propósito: a mídia fica transparente e sob seu controle, fora da mensalidade. Você sempre sabe quanto vai pra anúncio.</div></details>
+  </div>
+</div></section>
+
+<!-- FINAL CTA + LEAD -->
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="fcta rv">
+    <img src="assets/life-doctor.png" alt="">
+    <div class="fctagrid">
+      <div>
+        <h2>Retome a sua agenda, a sua receita e o seu impacto.</h2>
+        <p class="lead">Fale com um especialista MyDose e receba um plano sob medida pra sua área. Sem compromisso.</p>
+        <ul class="bl">
+          <li><span class="c">✓</span> Diagnóstico gratuito da sua operação</li>
+          <li><span class="c">✓</span> Plano sob medida pra sua especialidade</li>
+          <li><span class="c">✓</span> Garantia de 30 dias · sem fidelidade</li>
+        </ul>
+      </div>
+      <div class="card-form">
+        <div class="ft">Começar é grátis 🎯</div>
+        <div class="fs">Deixe seus dados — falamos com você em até 1 dia útil.</div>
+        <form class="frm" onsubmit="return leadSub(this)">
+          <label>Nome completo</label><input name="nome" required placeholder="seu nome">
+          <label>WhatsApp</label><input name="zap" required placeholder="(11) 90000-0000">
+          <label>Você é</label>
+          <select name="esp" required><option value="">Selecione…</option><option>Médico(a)</option><option>Nutricionista</option><option>Psicólogo(a) / Psiquiatra</option><option>Personal / Fisioterapeuta</option><option>Clínica / equipe</option><option>Outro</option></select>
+          <button class="btn btn-p btn-lg" type="submit">Quero meu plano <span class="ar">→</span></button>
+        </form>
+        <div class="fnote">🔒 Sem spam. Usamos seus dados só pra entrar em contato.</div>
+        <div class="fsuccess"><div class="o">✓</div><h3>Recebido! 🎉</h3><p>Nosso time fala com você no WhatsApp em até 1 dia útil.</p></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div style="max-width:300px"><div class="nm"><span class="orb" style="width:26px;height:26px"></span>MyDose</div><p style="margin-top:12px">O sistema operacional de IA da saúde. +Adesão · +Receita · −Tempo.</p></div>
+    <div class="fcol"><div class="h">Produto</div><div><a href="#produto">O app</a></div><div><a href="#planos">Planos</a></div><div><a href="live.html">Aula ao vivo</a></div></div>
+    <div class="fcol"><div class="h">Para quem</div><div><a href="physical.html">Physical</a></div><div><a href="mental.html">Mental</a></div><div><a href="clinic.html">Clinics</a></div></div>
+    <div class="fcol"><div class="h">Mais</div><div><a href="pro.html">Site completo</a></div><div><a href="../index.html">Planejamento</a></div></div>
+  </div>
+  <div style="margin-top:36px;border-top:1px solid var(--line);padding-top:18px">© MyDose · Take back control · feito com ética e ciência.</div>
+</div></footer>
+
+<!-- sticky mobile cta -->
+<div class="scta" id="scta"><a class="btn btn-p" href="#planos">Começar agora · garantia de 30 dias</a></div>
+
+<!-- MODAL -->
+<div class="modal" id="talkModal" style="position:fixed;inset:0;z-index:120;display:none">
+  <div class="mback" data-close style="position:absolute;inset:0;background:rgba(8,6,15,.55);backdrop-filter:blur(4px)"></div>
+  <div class="mcard" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,92vw);max-height:90vh;overflow-y:auto;background:#fff;border-radius:24px;padding:30px;box-shadow:0 50px 100px -30px rgba(0,0,0,.5)">
+    <button class="mx" data-close aria-label="Fechar" style="position:absolute;top:14px;right:16px;border:none;background:transparent;font-size:20px;cursor:pointer;color:var(--tx3)">✕</button>
+    <span class="eyebrow" id="mPlan" style="margin-bottom:10px">MyDose</span>
+    <h3 id="mTitle" style="font-size:23px">Falar com o time</h3>
+    <p class="fs" id="mSub" style="font-size:13.5px;color:var(--tx2);margin-top:8px">Conte o seu momento — montamos uma proposta sob medida. Resposta em até 1 dia útil.</p>
+    <form class="frm" onsubmit="return leadSub(this)">
+      <label>Nome completo</label><input name="nome" required placeholder="seu nome">
+      <label>WhatsApp</label><input name="zap" required placeholder="(11) 90000-0000">
+      <label>E-mail</label><input name="email" type="email" required placeholder="voce@email.com">
+      <label>Você é</label>
+      <select name="esp" required><option value="">Selecione…</option><option>Médico(a)</option><option>Nutricionista</option><option>Psicólogo(a) / Psiquiatra</option><option>Personal / Fisioterapeuta</option><option>Clínica / equipe</option><option>Outro</option></select>
+      <label>Pacientes ativos hoje</label>
+      <select name="pac"><option value="">Selecione…</option><option>Até 30</option><option>30 a 100</option><option>100 a 300</option><option>+300</option></select>
+      <button class="btn btn-p btn-lg" type="submit">Enviar <span class="ar">→</span></button>
+    </form>
+    <div class="fnote">🔒 Sem spam. Usamos seus dados só pra entrar em contato.</div>
+    <div class="fsuccess"><div class="o">✓</div><h3>Recebido! 🎉</h3><p>Nosso time fala com você em até 1 dia útil.</p></div>
+  </div>
+</div>
+
+<script>
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// reveal
+var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'-40px'});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+// nav solid + sticky cta
+var nav=document.getElementById('nav'),scta=document.getElementById('scta');
+addEventListener('scroll',function(){var y=scrollY;nav.classList.toggle('solid',y>20);scta.classList.toggle('show',y>700);},{passive:true});
+// pricing toggle
+function applyP(k){
+  document.querySelectorAll('[data-anu]').forEach(function(s){if(s.dataset[k]!==undefined&&s.dataset[k]!=='')s.textContent=s.dataset[k];});
+  document.querySelectorAll('.econ').forEach(function(e){if(e.dataset.anu===undefined)return;var v=e.dataset[k];if(v){e.textContent=v;e.style.opacity='1';}else{e.textContent='';e.style.opacity='0';}});
+  document.querySelectorAll('.was').forEach(function(w){w.style.display=(k==='tri')?'none':'';});
+}
+document.querySelectorAll('#ptoggle button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#ptoggle button').forEach(x=>x.classList.remove('on'));this.classList.add('on');applyP(this.dataset.k);};});
+applyP('anu');
+// modal
+(function(){var m=document.getElementById('talkModal');if(!m)return;
+  function open(mode,plan){
+    document.getElementById('mPlan').textContent='Plano '+plan;
+    document.getElementById('mTitle').textContent=mode==='checkout'?('Começar com o '+plan):'Falar com o time';
+    document.getElementById('mSub').textContent=mode==='checkout'?('Confirme alguns dados e te levamos pro onboarding do '+plan+'.'):('Conte o seu momento — montamos uma proposta sob medida. Resposta em até 1 dia útil.');
+    var f=m.querySelector('.frm');f.style.display='';m.querySelector('.fsuccess').classList.remove('on');
+    m.style.display='block';
+  }
+  function close(){m.style.display='none';}
+  document.querySelectorAll('.js-talk').forEach(function(b){b.addEventListener('click',function(ev){ev.preventDefault();open(this.dataset.mode||'talk',this.dataset.plan||'MyDose');});});
+  m.querySelectorAll('[data-close]').forEach(function(x){x.addEventListener('click',close);});
+  addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+// form submit
+function leadSub(f){var card=f.closest('.card-form')||f.closest('.mcard');f.style.display='none';var ok=card.querySelector('.fsuccess');if(ok)ok.classList.add('on');/* TODO: CRM/Formspree + WhatsApp */return false;}
+// magnetic buttons
+if(!reduce&&innerWidth>980){document.querySelectorAll('.btn').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.12)+'px,'+((e.clientY-r.top-r.height/2)*.2)+'px)';});b.addEventListener('pointerleave',function(){b.style.transform='';});});}
+</script>
+</body>
+</html>
