@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MyDose Mental — reduza o no-show, mantenha o vínculo</title>
+<meta name="description" content="Pra psicólogos, psiquiatras e terapeutas: continuidade entre as sessões com ética e sigilo — IA treinada nos seus limites e comunidade que acolhe.">
+<meta name="theme-color" content="#592C5A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z' fill='%23415FF5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..650;1,9..144,300..650&family=Figtree:wght@400;500;600;700;800&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F4F2; --ink:#1E1D1D; --card:#fff; --muted:#565452; --gray:#848484;
+  --line:rgba(30,29,29,.1); --line-strong:rgba(30,29,29,.22);
+  --deep:#592C5A; --prim:#C64FCA; --p2:#F0B0F2; --p3:#F5E3F6;
+  --g1:linear-gradient(100deg,#415FF5 0%,#C64FCA 52%,#F56442 100%);
+  --serif:"Fraunces",Georgia,serif; --sans:"Figtree",sans-serif; --logo:"Quicksand",sans-serif;
+  --shadow:0 20px 60px -20px rgba(25,30,71,.25);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);font-size:16px;line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
+section{position:relative;padding:84px 0;overflow-x:clip}
+@media(min-width:860px){section{padding:118px 0}}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{width:min(1140px,100% - 40px);margin-inline:auto}
+.serif{font-family:var(--serif);font-weight:430;letter-spacing:-.01em;line-height:1.1;font-optical-sizing:auto}
+.serif em{font-style:italic}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+.wordmark{font-family:var(--logo);font-weight:700;font-size:25px;letter-spacing:-.03em}
+.wordmark span{background:var(--g1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wordmark small{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--prim);margin-left:8px;font-family:var(--sans);vertical-align:middle;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:15.5px;padding:17px 28px;border-radius:999px;transition:transform .3s,box-shadow .3s}
+.btn:hover{transform:translateY(-2px)}
+.btn-prim{background:var(--prim);color:#fff;box-shadow:0 14px 34px -12px color-mix(in srgb,var(--prim) 60%,transparent)}
+.btn-light{background:#fff;color:#1E1D1D}
+.btn-ghost{box-shadow:inset 0 0 0 1.5px var(--line-strong)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:.08s}.rv-d2{transition-delay:.16s}.rv-d3{transition-delay:.24s}
+nav{position:fixed;inset:0 0 auto;z-index:60;transition:background .3s,box-shadow .3s}
+nav.scrolled{background:rgba(246,244,242,.88);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:10px}
+.nav-back{font-size:14px;font-weight:700;color:var(--muted)}
+.nav-back:hover{color:var(--ink)}
+/* hero */
+.hero{background:var(--deep);color:#fff;padding:140px 0 0;position:relative;overflow:clip}
+.hero .pattern-edge{
+  position:absolute;inset:0 0 0 auto;width:52%;opacity:.16;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 52 52'%3E%3Cpath d='M26 1C29 15 37 23 51 26 37 29 29 37 26 51 23 37 15 29 1 26 15 23 23 15 26 1Z' fill='%23F0B0F2'/%3E%3Ccircle cx='26' cy='26' r='6.5' fill='%23F0B0F2'/%3E%3C/svg%3E");
+  background-size:46px 46px;
+  -webkit-mask-image:linear-gradient(100deg,transparent 30%,#000 70%);mask-image:linear-gradient(100deg,transparent 30%,#000 70%);
+}
+.hero-grid{display:grid;gap:44px;position:relative;z-index:1;align-items:end}
+@media(min-width:920px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+.hero .txt{padding-bottom:64px}
+.hero h1{font-size:clamp(38px,8.4vw,68px)}
+.hero h1 em{color:var(--p2)}
+.hero .sub{margin:20px 0 30px;color:rgba(255,255,255,.8);font-size:clamp(16px,2vw,18.5px);max-width:520px}
+.hero .sub b{color:#fff}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:13px}
+.hero-stats{display:flex;gap:12px 30px;flex-wrap:wrap;margin-top:32px}
+.hero-stats b{display:block;font-family:var(--serif);font-size:clamp(24px,4vw,32px);color:var(--p2)}
+.hero-stats span{font-size:13px;font-weight:600;color:rgba(255,255,255,.65)}
+.hero .ph{position:relative;z-index:1}
+.hero .ph img{border-radius:28px 28px 0 0;width:100%;aspect-ratio:4/3.4;object-fit:cover;box-shadow:0 -20px 60px rgba(0,0,0,.3)}
+/* dores */
+.sec-head{max-width:700px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(30px,5vw,48px)}
+.sec-head h2 em{color:var(--prim)}
+.sec-head p{margin-top:14px;color:var(--muted);font-size:16.5px}
+.cards3{display:grid;gap:16px}
+@media(min-width:860px){.cards3{grid-template-columns:1fr 1fr 1fr}}
+.c3{background:var(--card);border-radius:20px;padding:28px 24px;box-shadow:inset 0 0 0 1.5px var(--line);transition:transform .3s}
+.c3:hover{transform:translateY(-5px)}
+.c3 .ico{width:46px;height:46px;border-radius:14px;background:var(--p3);display:grid;place-items:center;font-size:21px;margin-bottom:13px}
+.c3 h4{font-size:18px;margin-bottom:6px}
+.c3 p{font-size:14.5px;color:var(--muted)}
+/* o que muda */
+.split{background:var(--p3);border-radius:26px;display:grid;overflow:hidden;position:relative}
+@media(min-width:920px){.split{grid-template-columns:1.1fr .9fr;align-items:center}}
+.split .txt{padding:42px 28px;position:relative;z-index:1}
+@media(min-width:920px){.split .txt{padding:58px 52px}}
+.split h3{font-size:clamp(26px,4vw,38px)}
+.feats{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:16px}
+.feats li{display:flex;gap:13px;align-items:flex-start}
+.feats .fi{width:40px;height:40px;border-radius:12px;background:var(--prim);color:#fff;display:grid;place-items:center;flex:none;font-size:16px}
+.feats b{display:block;font-size:15.5px}
+.feats span{font-size:14px;color:var(--muted)}
+.split .media{position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:320px;padding:0 26px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 52 52'%3E%3Cpath d='M26 1C29 15 37 23 51 26 37 29 29 37 26 51 23 37 15 29 1 26 15 23 23 15 26 1Z' fill='%23FFFFFF'/%3E%3Ccircle cx='26' cy='26' r='6.5' fill='%23FFFFFF'/%3E%3C/svg%3E");
+  background-size:52px 52px;background-color:var(--p2);}
+@media(min-width:920px){.split .media{min-height:460px}}
+.split .media img{width:min(240px,70%);margin-bottom:-36px;filter:drop-shadow(0 26px 44px rgba(0,0,0,.35))}
+/* depoimento */
+.depo{display:grid;gap:0;border-radius:26px;overflow:hidden;background:var(--deep);color:#fff}
+@media(min-width:860px){.depo{grid-template-columns:.9fr 1.1fr;align-items:center}}
+.depo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3.2}
+.depo .txt{padding:38px 30px}
+@media(min-width:860px){.depo .txt{padding:52px 48px}}
+.stars{color:#FFB021;font-size:16px;letter-spacing:2px}
+.depo blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.6vw,24px);line-height:1.4;margin:14px 0 18px}
+.depo .who b{display:block}
+.depo .who span{font-size:13.5px;color:rgba(255,255,255,.65)}
+/* cta final */
+.final{text-align:center}
+.final h2{font-size:clamp(32px,6vw,54px);max-width:760px;margin-inline:auto}
+.final h2 em{color:var(--prim)}
+.final p{margin:20px auto 32px;color:var(--muted);max-width:520px}
+.final .ctas{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+footer{background:#1E1D1D;color:#cfcac6;padding:44px 0;font-size:14px}
+.foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+footer .wordmark{color:#fff}
+/* modal */
+.modal{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:18px;background:rgba(16,18,38,.55);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .3s}
+.modal.on{opacity:1;pointer-events:auto}
+.modal-card{background:var(--bg);border-radius:26px;width:min(500px,100%);max-height:90dvh;overflow:auto;padding:32px 26px;position:relative}
+.modal-x{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.modal h3{font-family:var(--serif);font-size:26px;font-weight:500;margin-bottom:4px}
+.modal .msub{font-size:14px;color:var(--muted);margin-bottom:18px}
+.mform{display:flex;flex-direction:column;gap:12px}
+.mform input,.mform select{width:100%;padding:14px 16px;border-radius:13px;border:1.5px solid var(--line-strong);background:#fff;font:inherit;font-size:15px}
+.msuccess{display:none;text-align:center;padding:26px 4px}
+.msuccess.on{display:block}
+.msuccess h4{font-family:var(--serif);font-size:24px;margin:8px 0 6px}
+/* sparkles */
+.tw-field{position:absolute;inset:0;pointer-events:none;overflow:clip}
+.tw{position:absolute;animation:twinkle var(--twd,3.8s) ease-in-out var(--twl,0s) infinite}
+@keyframes twinkle{0%,100%{opacity:.12;transform:scale(.5)}50%{opacity:.65;transform:scale(1) rotate(20deg)}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a class="wordmark" href="nova-identidade-v2.html">my<span>dose</span><small>Mental</small></a>
+    <div style="display:flex;gap:16px;align-items:center">
+      <a class="nav-back" href="nova-identidade-v2.html">← voltar ao site</a>
+      <button class="btn btn-prim js-talk" style="padding:12px 20px;font-size:14px">Agendar demo</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="pattern-edge" data-par="46"></div>
+  <div class="tw-field" data-twinkle="8"></div>
+  <div class="wrap hero-grid">
+    <div class="txt">
+      <span class="eyebrow rv in" style="color:var(--p2)">✦ MyDose Mental 🧠</span>
+      <h1 class="serif rv in rv-d1">Reduza o <em>no-show</em>. Mantenha o vínculo.</h1>
+      <p class="sub rv in rv-d2">Pra psicólogos, psiquiatras e terapeutas: continuidade entre as sessões com <b>ética e sigilo</b> — IA treinada nos seus limites e comunidade que acolhe.</p>
+      <div class="ctas rv in rv-d3">
+        <button class="btn btn-light js-talk">Agende uma Demo →</button>
+        <a class="btn btn-ghost" style="color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35)" href="nova-identidade-v2.html#planos">Ver planos</a>
+      </div>
+      <div class="hero-stats rv in rv-d3"><div><b>−40%</b><span>de no-show</span></div><div><b>3×</b><span>mais adesão</span></div><div><b>~2h</b><span>de operação/semana</span></div></div>
+    </div>
+    <div class="ph rv in rv-d2"><img src="assets/life-mental.png" alt="Sessão de terapia com acompanhamento pelo MyDose" fetchpriority="high"></div>
+  </div>
+</header>
+
+<section style="padding-bottom:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" style="color:var(--prim)">✦ A dor de todo dia</span>
+      <h2 class="serif">Se você vive isso, <em>não é culpa sua</em>.</h2>
+    </div>
+    <div class="cards3"><div class="c3 rv"><span class="ico">🪑</span><h4>No-show corroendo a agenda</h4><p>Cada falta é receita perdida e vínculo enfraquecido — e você não tem como cobrar presença.</p></div><div class="c3 rv rv-d1"><span class="ico">🌫️</span><h4>O paciente some entre sessões</h4><p>A vida acontece entre uma sessão e outra — e é exatamente aí que o cuidado para.</p></div><div class="c3 rv rv-d2"><span class="ico">📵</span><h4>WhatsApp invadindo sua vida</h4><p>Mensagens fora de hora e a culpa de não responder. O cuidado virou sobrecarga.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="split rv">
+      <div class="txt">
+        <span class="eyebrow" style="color:var(--prim)">✦ O que muda com o MyDose Mental</span>
+        <h3 class="serif">A jornada continua <em style="color:var(--prim)">entre as consultas</em>.</h3>
+        <ul class="feats"><li><span class="fi">✦</span><div><b>Check-ins guiados entre sessões</b><span>Registros de humor e hábitos que chegam prontos pra você antes da sessão.</span></div></li><li><span class="fi">✦</span><div><b>IA com ética e sigilo</b><span>Você define os limites e o tom. Ela mantém o vínculo sem substituir a clínica.</span></div></li><li><span class="fi">✦</span><div><b>Comunidade que acolhe</b><span>Pertencimento moderado que reduz abandono — do jeito que a saúde mental exige.</span></div></li></ul>
+        <button class="btn btn-prim js-talk" style="margin-top:26px">Agende uma Demo →</button>
+      </div>
+      <div class="media"><img src="assets/app-ia.png" alt="App MyDose Mental" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="depo rv">
+      <img src="assets/dep-psi.jpg" alt="Psicóloga" loading="lazy">
+      <div class="txt">
+        <span class="stars">★★★★★</span>
+        <blockquote>“O no-show caiu de verdade. A IA mantém o vínculo entre as sessões com o cuidado que a saúde mental exige.”</blockquote>
+        <div class="who"><b>Psicóloga</b><span>Saúde mental · MyDose Mental</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow rv" style="color:var(--prim)">✦ Take back control</span>
+    <h2 class="serif rv">Comece hoje — <em>no ar em 7 dias</em>.</h2>
+    <p class="rv rv-d1">30 dias de garantia, sem fidelidade. Fale com um especialista e receba um plano sob medida pra sua área.</p>
+    <div class="ctas rv rv-d2">
+      <button class="btn btn-prim js-talk">Quero começar agora →</button>
+      <a class="btn btn-ghost" href="nova-identidade-v2.html#planos">Comparar planos</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span class="wordmark">my<span>dose</span><small>Mental</small></span>
+    <span>© MyDose · Take back control</span>
+  </div>
+</footer>
+
+<div class="modal" id="talkModal">
+  <div class="modal-card">
+    <button class="modal-x" data-close>✕</button>
+    <h3>Falar com o time · Mental</h3>
+    <p class="msub">Conte o seu momento — montamos uma proposta sob medida. Resposta em até 1 dia útil.</p>
+    <form class="mform" onsubmit="return talkSub(this)">
+      <input type="text" name="nome" placeholder="Nome completo" required>
+      <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <button class="btn btn-prim" type="submit">Enviar →</button>
+      <p style="font-size:12.5px;color:var(--gray);text-align:center">🔒 Sem spam. Usamos seus dados só pra entrar em contato.</p>
+    </form>
+    <div class="msuccess"><div style="font-size:46px">🎉</div><h4>Recebido!</h4><p style="color:var(--muted);font-size:14.5px">Nosso time fala com você em até 1 dia útil.</p></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var nav = document.getElementById('nav');
+  addEventListener('scroll', function(){ nav.classList.toggle('scrolled', scrollY > 16); }, {passive:true});
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  var m = document.getElementById('talkModal');
+  document.querySelectorAll('.js-talk').forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = m.querySelector('.mform'); f.style.display=''; f.reset && f.reset();
+      m.querySelector('.msuccess').classList.remove('on');
+      m.classList.add('on'); document.body.style.overflow='hidden';
+    });
+  });
+  function close(){ m.classList.remove('on'); document.body.style.overflow=''; }
+  m.querySelector('[data-close]').addEventListener('click', close);
+  m.addEventListener('click', function(e){ if(e.target === m) close(); });
+  addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+  window.talkSub = function(f){ f.style.display='none'; m.querySelector('.msuccess').classList.add('on'); return false; };
+  /* sparkles */
+  var COLORS = ['#F0B0F2','#C64FCA','#FFFFFF'];
+  document.querySelectorAll('[data-twinkle]').forEach(function(field){
+    if(reduce) return;
+    var n = +field.dataset.twinkle, html = '';
+    for(var i = 0; i < n; i++){
+      var sz = 9 + Math.random() * 16;
+      html += '<svg class="tw" style="top:' + (5 + Math.random() * 85) + '%;left:' + (3 + Math.random() * 92) + '%;--twd:' + (3 + Math.random() * 3).toFixed(1) + 's;--twl:' + (Math.random() * 4).toFixed(1) + 's" width="' + sz.toFixed(0) + '" height="' + sz.toFixed(0) + '" viewBox="0 0 100 100"><path d="M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z" fill="' + COLORS[i % COLORS.length] + '"/></svg>';
+    }
+    field.innerHTML = html;
+  });
+  /* parallax do pattern */
+  if(!reduce){
+    var pe = document.querySelector('[data-par]');
+    if(pe){
+      var tick = false;
+      addEventListener('scroll', function(){
+        if(tick) return; tick = true;
+        requestAnimationFrame(function(){
+          tick = false;
+          pe.style.transform = 'translateY(' + (scrollY * .12).toFixed(1) + 'px)';
+        });
+      }, {passive:true});
+    }
+  }
+})();
+</script>
+</body>
+</html>

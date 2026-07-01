@@ -185,8 +185,8 @@ nav.scrolled{background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-fi
 .sheet .btn{margin-top:30px}
 
 /* ============ HERO ============ */
-.hero{position:relative;padding:150px 0 90px;overflow:clip}
-@media(min-width:920px){.hero{padding:190px 0 120px}}
+.hero{position:relative;padding:118px 0 54px;overflow:clip}
+@media(min-width:920px){.hero{padding:118px 0 56px}}
 .hero-aurora{
   position:absolute;top:-220px;left:50%;transform:translateX(-50%);
   width:min(1100px,140vw);aspect-ratio:2.2;border-radius:50%;
@@ -197,23 +197,23 @@ nav.scrolled{background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-fi
 @keyframes aurora{to{transform:translateX(-50%) scale(1.12) rotate(4deg)}}
 .hero-grid{display:grid;gap:60px;align-items:center;position:relative;z-index:1}
 @media(min-width:920px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:40px}}
-.hero h1{font-size:clamp(42px,9.4vw,78px);letter-spacing:-.02em}
+.hero h1{font-size:clamp(36px,8vw,52px);letter-spacing:-.02em}
 .hero h1 .w{display:inline-block;opacity:0;transform:translateY(.7em) rotate(4deg);transform-origin:0 100%;
   transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
 body.loaded .hero h1 .w{opacity:1;transform:none}
-.hero-sub{margin:24px 0 34px;font-size:clamp(16.5px,2.1vw,19px);color:var(--muted);max-width:520px}
+.hero-sub{margin:18px 0 26px;font-size:clamp(16.5px,2.1vw,19px);color:var(--muted);max-width:520px}
 .hero-sub b{color:var(--ink)}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
-.hero-urgency{margin-top:14px;font-size:13.5px;font-weight:700;color:var(--orange)}
-.hero-stats{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:38px}
-.hero-stats .st b{display:block;font-family:var(--serif);font-size:clamp(26px,4vw,34px);line-height:1.1}
+.hero-urgency{margin-top:10px;font-size:13.5px;font-weight:700;color:var(--orange)}
+.hero-stats{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:18px}
+.hero-stats .st b{display:block;font-family:var(--serif);font-weight:460;font-optical-sizing:auto;font-size:clamp(26px,4vw,34px);line-height:1.1}
 .hero-stats .st span{font-size:13.5px;color:var(--gray);font-weight:600}
 .hero-visual{position:relative;z-index:1}
 .hero-photo{
   position:relative;border-radius:32px;overflow:hidden;box-shadow:var(--shadow);
-  aspect-ratio:4/4.6;z-index:2;transform:perspective(900px);transition:transform .2s ease-out;
+  aspect-ratio:4/3.9;z-index:2;transform:perspective(900px);transition:transform .2s ease-out;
 }
-@media(min-width:920px){.hero-photo{aspect-ratio:4/4.8}}
+@media(min-width:920px){.hero-photo{aspect-ratio:4/3.15}}
 .hero-photo img{width:100%;height:100%;object-fit:cover}
 .hero-blob{
   position:absolute;z-index:1;inset:auto -8% -10% auto;width:82%;aspect-ratio:1;
@@ -281,6 +281,27 @@ body.loaded .hero h1 .w{opacity:1;transform:none}
 .pro span{font-size:13px;font-weight:700;opacity:.75}
 .pros-note{margin-top:26px;color:rgba(255,255,255,.65);font-size:15px;max-width:640px}
 .pros-note b{color:#fff}
+
+.sec-navy .pattern-edge-w{
+  position:absolute;inset:0 0 0 auto;width:34%;opacity:.05;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 52 52'%3E%3Cpath d='M26 1C29 15 37 23 51 26 37 29 29 37 26 51 23 37 15 29 1 26 15 23 23 15 26 1Z' fill='%23FFFFFF'/%3E%3Ccircle cx='26' cy='26' r='6.5' fill='%23FFFFFF'/%3E%3C/svg%3E");
+  background-size:48px 48px;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 65%);mask-image:linear-gradient(90deg,transparent,#000 65%);
+}
+.dots i{transform:scale(0);transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.dots.go i{transform:scale(1)}
+.dots i.you{animation:youPulse 2.4s ease-out infinite}
+@keyframes youPulse{0%{box-shadow:0 0 0 0 rgba(198,79,202,.65)}70%{box-shadow:0 0 0 16px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.pros-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:44px}
+.pros-chips span{
+  font-weight:700;font-size:15px;padding:13px 20px;border-radius:999px;color:#1E1D1D;
+  transition:transform .3s;
+}
+.pros-chips span:hover{transform:translateY(-3px)}
+.pros-chips span:nth-child(4n+1){background:var(--blue-3)}
+.pros-chips span:nth-child(4n+2){background:var(--pink-3)}
+.pros-chips span:nth-child(4n+3){background:var(--peach-3)}
+.pros-chips span:nth-child(4n+4){background:var(--green-3)}
 
 /* ============ EXPANDIR × ESCALAR ============ */
 .duel{display:grid;gap:22px}
@@ -355,25 +376,25 @@ body.loaded .hero h1 .w{opacity:1;transform:none}
 .integr{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
 @media(min-width:860px){.integr{grid-template-columns:repeat(4,1fr)}}
 .int-card{
-  background:#fff;border-radius:18px;padding:22px 16px 16px;text-align:center;
+  background:#fff;border-radius:18px;padding:28px 18px 20px;text-align:center;
   box-shadow:inset 0 0 0 1.5px var(--line);
   display:flex;flex-direction:column;align-items:center;gap:12px;
   transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
 }
 .int-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-.int-card .lg{height:34px;display:flex;align-items:center;justify-content:center}
-.int-card .lg img,.int-card .lg svg{max-height:34px;max-width:120px;width:auto;object-fit:contain}
+.int-card .lg{height:48px;display:flex;align-items:center;justify-content:center}
+.int-card .lg img,.int-card .lg svg{max-height:48px;max-width:160px;width:auto;object-fit:contain}
 .int-card b{font-size:12.5px;font-weight:700;color:#848484;letter-spacing:.02em}
 [data-theme="dark"] .int-card{box-shadow:none}
 
 /* ============ FUNIL (método) ============ */
 .funnel{display:flex;flex-direction:column;align-items:center}
-.fstep{border-radius:var(--r);padding:32px 26px;position:relative;width:100%;transition:transform .35s}
+.fstep{border-radius:20px;padding:20px 22px;position:relative;width:100%;transition:transform .35s}
 .fstep:hover{transform:scale(1.015)}
-.fstep .pct{font-family:var(--serif);font-size:clamp(38px,6vw,54px);line-height:1}
-.fstep h4{font-size:21px;margin:8px 0 4px}
-.fstep p{font-size:14.5px;opacity:.78}
-.fstep .chips{margin-top:16px}
+.fstep .pct{font-family:var(--serif);font-size:clamp(26px,4.4vw,36px);line-height:1}
+.fstep h4{font-size:17.5px;margin:5px 0 2px}
+.fstep p{font-size:13.5px;opacity:.78}
+.fstep .chips{margin-top:12px}.fstep .chips i{padding:6px 11px;font-size:12px}
 .fstep .chips i{background:color-mix(in srgb,var(--card) 60%,transparent);color:var(--ink)}
 @media(min-width:860px){
   .fstep:nth-of-type(1){max-width:860px}
@@ -389,11 +410,11 @@ body.loaded .hero h1 .w{opacity:1;transform:none}
 .s3 .pct{background:linear-gradient(100deg,#A5DC85,#DCEDD2);-webkit-background-clip:text;background-clip:text;color:transparent}
 .s3 .chips i{background:rgba(255,255,255,.14);color:#fff}
 .fdrop{
-  display:flex;align-items:center;gap:10px;padding:14px 0;
-  font-size:13px;font-weight:800;color:var(--gray);letter-spacing:.04em;text-transform:uppercase;
+  display:flex;align-items:center;gap:10px;padding:7px 0;
+  font-size:12px;font-weight:800;color:var(--gray);letter-spacing:.04em;text-transform:uppercase;
 }
 .fdrop .fball{
-  width:38px;height:38px;border-radius:50%;background:var(--g1);color:#fff;
+  width:32px;height:32px;border-radius:50%;background:var(--g1);color:#fff;
   display:grid;place-items:center;animation:floatY 3.5s ease-in-out infinite;
 }
 
@@ -412,6 +433,39 @@ body.loaded .hero h1 .w{opacity:1;transform:none}
 .truth h2 em{color:var(--pink-2)}
 .truth p{margin-top:26px;font-size:clamp(16px,2vw,19px);color:rgba(255,255,255,.78);max-width:680px}
 .truth p b{color:#fff}
+
+.truth-grid{display:grid;gap:44px;position:relative;z-index:1;align-items:center}
+@media(min-width:920px){.truth-grid{grid-template-columns:1.05fr .95fr}}
+.wa-wrap{display:flex;justify-content:center}
+.wa-phone{
+  width:min(330px,92%);background:#0B141A;border-radius:34px;padding:14px;
+  box-shadow:0 34px 70px -20px rgba(0,0,0,.6);transform:rotate(-3deg);
+  animation:floatY 8s ease-in-out infinite;
+}
+.wa-head{
+  display:flex;align-items:center;gap:11px;background:#1F2C34;border-radius:20px 20px 8px 8px;
+  padding:13px 14px;color:#fff;
+}
+.wa-head .wa-av{width:38px;height:38px;border-radius:50%;background:var(--g2);display:grid;place-items:center;font-size:18px;flex:none}
+.wa-head b{display:block;font-size:14px;line-height:1.2}
+.wa-head small{font-size:11.5px;color:#8FA6AF}
+.wa-badge{margin-left:auto;background:#F15C6D;color:#fff;font-size:12px;font-weight:800;padding:5px 10px;border-radius:999px}
+.wa-msgs{display:flex;flex-direction:column;gap:8px;padding:14px 8px 10px}
+.wa-m{
+  align-self:flex-start;max-width:88%;background:#202C33;color:#E9EDEF;
+  font-size:13.5px;line-height:1.45;padding:9px 12px;border-radius:4px 14px 14px 14px;
+}
+.wa-m i{display:block;font-style:normal;font-size:10.5px;color:#8FA6AF;text-align:right;margin-top:3px}
+.wa-typing{
+  align-self:flex-start;background:#202C33;color:#67E28C;font-size:12.5px;font-weight:600;
+  padding:9px 14px;border-radius:4px 14px 14px 14px;
+}
+.wa-typing .tds i{display:inline-block;width:5px;height:5px;border-radius:50%;background:#67E28C;margin-left:3px;animation:blink 1.2s infinite}
+.wa-typing .tds i:nth-child(2){animation-delay:.2s}.wa-typing .tds i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.wa-cap{
+  margin-top:18px;text-align:center;font-size:13.5px;font-weight:700;color:var(--pink-2);
+}
 
 /* ============ PRÉDIO ============ */
 .tower-wrap{display:grid;gap:40px}
@@ -691,8 +745,18 @@ footer a:hover{color:#fff}
 @media(min-width:920px){.sticky-cta{display:none}}
 
 
+/* ============ TICKER no hero ============ */
+.hero-grid>*{min-width:0}
+.tick-hero{margin-top:24px;max-width:100%}
+.tick-label{display:block;text-align:center;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:9px}
+.marquee-hero{transform:none;border-radius:14px;padding:12px 0}
+.marquee-hero .marquee-track{animation-duration:44s}
+.marquee-hero span{font-size:13.5px;gap:16px;padding-right:16px}
+.tick-hero-d{display:none}
+@media(min-width:920px){.tick-hero-m{display:none}.tick-hero-d{display:block;margin-top:26px}}
+
 /* ============ SOCIAL PROOF (hero) ============ */
-.social-row{display:flex;align-items:center;gap:14px;margin-top:22px}
+.social-row{display:flex;align-items:center;gap:14px;margin-top:16px}
 .avs{display:flex}
 .avs img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2.5px solid var(--bg);margin-left:-10px}
 .avs img:first-child{margin-left:0}
@@ -791,6 +855,17 @@ details.faq .a b{color:var(--ink)}
 .vmodal-body .vph .in .big{font-size:40px;margin-bottom:8px}
 .vmodal-body p{font-size:14.5px;color:var(--muted)}
 
+/* ============ MOTION LAYER (scroll + sparkles) ============ */
+.tw-field{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:clip}
+.tw{position:absolute;animation:twinkle var(--twd,3.8s) ease-in-out var(--twl,0s) infinite}
+@keyframes twinkle{0%,100%{opacity:.12;transform:scale(.5) rotate(0deg)}50%{opacity:.7;transform:scale(1) rotate(22deg)}}
+.tile-ribbon{display:flex;justify-content:center;gap:20px;overflow:clip;padding:6px 0;margin:26px auto 34px}
+.tile-ribbon i{display:block;transform:scale(0);transition:transform .6s cubic-bezier(.34,1.56,.64,1)}
+.tile-ribbon.go i{transform:scale(1)}
+.tile-ribbon i svg{display:block;animation:spin 30s linear infinite}
+.tile-ribbon i:nth-child(even) svg{animation-duration:42s;animation-direction:reverse}
+[data-par]{will-change:transform}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   html{scroll-behavior:auto}
@@ -864,17 +939,22 @@ details.faq .a b{color:var(--ink)}
 <!-- ====== HERO ====== -->
 <header class="hero">
   <div class="hero-aurora"></div>
+  <div class="tw-field" data-twinkle="12"></div>
   <svg class="gf spin-slow" style="top:110px;left:-60px;width:150px;opacity:.55;color:var(--sec-blue-media)" viewBox="0 0 100 100"><use href="#gf-petal" fill="currentColor"/></svg>
   <svg class="gf" style="top:64%;left:46%;width:66px;color:var(--magenta);opacity:.5;animation:spinFloat 12s ease-in-out infinite" viewBox="0 0 100 100"><use href="#gf-spark" fill="currentColor"/></svg>
   <svg class="gf float-y2" style="top:22%;right:4%;width:40px;color:var(--orange);opacity:.6;z-index:2" viewBox="0 0 100 100"><use href="#gf-dose" fill="currentColor"/></svg>
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow rv in"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="url(#lg1)"/></svg> O sistema operacional de IA da saúde</span>
-      <h1 class="serif" id="heroH1">Você cuida das pessoas. A gente cuida do <em class="grad-text">resto</em>.</h1>
+      <h1 class="serif" id="heroH1">Retome o controle da sua agenda, do seu <em class="grad-text">faturamento</em> e do seu <em>impacto</em>.</h1>
       <p class="hero-sub rv rv-d2 in">A plataforma que transforma profissionais de saúde em referências: <b>comunidade gamificada + IA</b> que geram adesão, receita recorrente e tempo de volta — <b>sem virar uma fábrica de consultas</b>.</p>
       <div class="hero-ctas rv rv-d3 in">
         <button class="btn btn-primary js-talk" data-mode="checkout" data-plan="MyDose">Quero começar agora <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
         <a class="btn btn-ghost" href="#produto">Ver o produto</a>
+      </div>
+      <div class="tick-hero tick-hero-m rv rv-d3 in">
+        <span class="tick-label">✦ Substitua + de 10 ferramentas de uma vez ✦</span>
+        <div class="marquee marquee-hero"><div class="marquee-track" data-ticker="feats"></div></div>
       </div>
       <div class="social-row rv rv-d3 in">
         <span class="avs"><img src="assets/dep-medica.jpg" alt=""><img src="assets/dep-nutri.jpg" alt=""><img src="assets/dep-psi.jpg" alt=""><img src="assets/dep-medico.jpg" alt=""></span>
@@ -882,20 +962,14 @@ details.faq .a b{color:var(--ink)}
       </div>
       <p class="hero-urgency rv rv-d3 in">🔥 Onboarding com capacidade limitada — em agosto os preços sobem.</p>
       <div class="hero-stats rv rv-d4 in">
-        <div class="st"><b><span data-count="1000" data-prefix="+">0</span></b><span>profissionais de saúde</span></div>
-        <div class="st"><b class="grad-text">3×</b><span>mais adesão do paciente</span></div>
-        <div class="st"><b><span data-count="130" data-prefix="+" data-suffix=" mil">0</span></b><span>pacientes ativos</span></div>
-      </div>
-      <div class="micro-trust rv rv-d4 in">
-        <span>🛡️ 30 dias de garantia</span>
-        <span>✓ Sem fidelidade</span>
-        <span>⚡ No ar em 7 dias</span>
-        <span>🏆 App nº 1 em Saúde &amp; Bem-estar · App Store BR</span>
+        <div class="st"><b class="serif"><span data-count="1000" data-prefix="+">0</span></b><span>profissionais de saúde</span></div>
+        <div class="st"><b class="serif grad-text">5×</b><span>mais faturamento</span></div>
+        <div class="st"><b class="serif"><span data-count="130" data-prefix="+" data-suffix=" mil">0</span></b><span>pacientes ativos</span></div>
       </div>
     </div>
     <div class="hero-visual rv rv-d2 in">
-      <div class="hero-pattern pattern"></div>
-      <div class="hero-pattern-2 pattern"></div>
+      <div class="hero-pattern pattern" data-par="44,0"></div>
+      <div class="hero-pattern-2 pattern" data-par="-34,0"></div>
       <div class="hero-blob"></div>
       <div class="hero-photo" id="heroPhoto"><img src="assets/life-doctor.png" alt="Profissional de saúde mostrando o app MyDose para uma paciente" fetchpriority="high"></div>
       <div class="chip-float chip-a">
@@ -908,13 +982,11 @@ details.faq .a b{color:var(--ink)}
       </div>
     </div>
   </div>
+  <div class="wrap tick-hero tick-hero-d rv in">
+    <span class="tick-label">✦ Substitua + de 10 ferramentas de uma vez ✦</span>
+    <div class="marquee marquee-hero"><div class="marquee-track" data-ticker="feats"></div></div>
+  </div>
 </header>
-
-<!-- ====== TICKER · funcionalidades ====== -->
-<div class="ticker-zone">
-  <span class="ticker-label"><svg width="12" height="12" viewBox="0 0 100 100"><use href="#gf-spark" fill="url(#lg1)"/></svg> Substitua + de 10 ferramentas de uma vez <svg width="12" height="12" viewBox="0 0 100 100"><use href="#gf-spark" fill="url(#lg1)"/></svg></span>
-  <div class="marquee" aria-hidden="true"><div class="marquee-track" data-ticker="feats"></div></div>
-</div>
 
 <!-- ====== DORES ====== -->
 <section id="dores" style="padding-bottom:0">
@@ -937,6 +1009,7 @@ details.faq .a b{color:var(--ink)}
 
 <!-- ====== MATEMÁTICA ====== -->
 <section class="sec-navy on-dark" id="porque">
+  <div class="pattern-edge-w" data-par="70,0"></div>
   <svg class="gf spin-slower" style="top:40px;right:-70px;width:220px;color:rgba(255,255,255,.06)" viewBox="0 0 100 100"><use href="#gf-dose" fill="currentColor"/></svg>
   <div class="wrap">
     <div class="sec-head rv">
@@ -944,18 +1017,12 @@ details.faq .a b{color:var(--ink)}
       <h2 class="serif">São <em class="grad-text-2">9 milhões</em> de vocês.<br>Para 8,1 bilhões de pessoas.</h2>
     </div>
     <div class="ratio-card rv">
-      <div class="ratio-big serif">1 : 900</div>
+      <div class="ratio-big serif">1 : <span id="ratioN">900</span></div>
       <p style="margin-top:14px;color:rgba(255,255,255,.75);max-width:620px">É a conta por profissional. E <b style="color:#fff">900 pessoas não cabem numa agenda de consultas</b> — a saúde tem que acontecer entre elas, com comunidade e tecnologia.</p>
       <div class="dots" id="dots" aria-hidden="true"></div>
     </div>
-    <div class="pros">
-      <div class="pro rv" style="background:var(--blue-3)"><b>575 mil</b><span>Médicos</span></div>
-      <div class="pro rv rv-d1" style="background:var(--peach-3)"><b>500 mil</b><span>Ed. física / personal</span></div>
-      <div class="pro rv rv-d2" style="background:var(--pink-3)"><b>430 mil</b><span>Psicólogos</span></div>
-      <div class="pro rv rv-d3" style="background:var(--green-3)"><b>370 mil</b><span>Dentistas</span></div>
-      <div class="pro rv rv-d1" style="background:var(--blue-3)"><b>280 mil</b><span>Fisioterapeutas</span></div>
-      <div class="pro rv rv-d2" style="background:var(--pink-3)"><b>270 mil</b><span>Farmacêuticos</span></div>
-      <div class="pro rv rv-d3" style="background:var(--green-3)"><b>160 mil</b><span>Nutricionistas</span></div>
+    <div class="pros-chips rv">
+      <span>🩺 Médicos</span><span>🧠 Psicólogos</span><span>🥗 Nutricionistas</span><span>🫶 Terapeutas</span><span>🏋️ Personal &amp; Ed. física</span><span>🦴 Fisioterapeutas</span><span>🦷 Dentistas</span><span>💊 Farmacêuticos</span><span>✨ e muitos outros</span>
     </div>
     <p class="pros-note rv">Só os principais conselhos já passam de <b>2,5 milhões</b>. Somando enfermagem, estética, terapias integrativas e bem-estar, o mercado de saúde no Brasil ultrapassa <b>9 milhões de profissionais</b> — e cada um tem uma audiência esperando ser cuidada entre as consultas. <span style="opacity:.6;font-size:13px">· fontes: conselhos de classe</span></p>
     <div class="sec-cta rv">
@@ -1201,17 +1268,33 @@ details.faq .a b{color:var(--ink)}
 
 <!-- ====== VERDADE ====== -->
 <section class="sec-plum on-dark">
-  <div class="pattern-edge pattern"></div>
+  <div class="pattern-edge pattern" data-par="60,0"></div>
   <svg class="gf spin-slower" style="top:-60px;right:-80px;width:280px;color:rgba(240,176,242,.14)" viewBox="0 0 100 100"><use href="#gf-petal" fill="currentColor"/></svg>
   <svg class="gf spin-slow" style="bottom:30px;left:6%;width:60px;color:rgba(240,176,242,.3)" viewBox="0 0 100 100"><use href="#gf-spark" fill="currentColor"/></svg>
-  <div class="wrap truth">
-    <span class="eyebrow rv"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#F0B0F2"/></svg> A verdade que ninguém te conta</span>
-    <h2 class="serif rv">Você não estudou tantos anos pra virar <em>escravo do WhatsApp</em>.</h2>
-    <p class="rv rv-d1">A consulta acaba e o cuidado para. O paciente sente sua falta na quarta-feira, não só no dia da consulta. E a sua renda tem o teto exato da sua agenda — por mais que você corra.</p>
-    <p class="rv rv-d2">A MyDose muda isso com <b>ética e ciência</b>: o cuidado continua entre as consultas e nasce uma nova fonte de receita que respeita o seu tempo e a sua autoridade.</p>
-    <div class="hero-ctas rv rv-d3" style="margin-top:34px">
-      <a href="#planos" class="btn btn-light">Ver os planos <svg class="arr" width="18" height="18"><use href="#arr"/></svg></a>
-      <button class="btn js-talk" style="box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35);color:#fff" data-mode="talk" data-plan="MyDose">Falar com o time</button>
+  <div class="wrap truth-grid">
+    <div class="truth">
+      <span class="eyebrow rv"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#F0B0F2"/></svg> A verdade que ninguém te conta</span>
+      <h2 class="serif rv">Você não estudou tantos anos pra virar <em>escravo do WhatsApp</em>.</h2>
+      <p class="rv rv-d1">A consulta acaba, mas as mensagens não param — e a sua renda tem o teto exato da sua agenda. A MyDose muda isso com <b>ética e ciência</b>: a IA assume o vínculo entre as consultas e nasce uma receita que respeita o seu tempo.</p>
+      <div class="hero-ctas rv rv-d3" style="margin-top:30px">
+        <a href="#planos" class="btn btn-light">Ver os planos <svg class="arr" width="18" height="18"><use href="#arr"/></svg></a>
+        <button class="btn js-talk" style="box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35);color:#fff" data-mode="talk" data-plan="MyDose">Falar com o time</button>
+      </div>
+    </div>
+    <div class="wa-wrap rv rv-d2">
+      <div>
+        <div class="wa-phone">
+          <div class="wa-head"><span class="wa-av">👩‍⚕️</span><div><b>Você, fora do expediente</b><small>online 23:58</small></div><span class="wa-badge">+47</span></div>
+          <div class="wa-msgs">
+            <div class="wa-m">Dra, viu minha mensagem? 😣 <i>22:41</i></div>
+            <div class="wa-m">posso repetir o remédio de ontem? <i>23:12</i></div>
+            <div class="wa-m">tá aí?? <i>23:47</i></div>
+            <div class="wa-m">me responde quando puder 🙏 <i>06:02</i></div>
+            <div class="wa-typing">paciente digitando<span class="tds"><i></i><i></i><i></i></span></div>
+          </div>
+        </div>
+        <p class="wa-cap">Com a MyDose, a IA assume isso por você — no seu tom, com ética.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1288,7 +1371,7 @@ details.faq .a b{color:var(--ink)}
     </div>
     <div class="integr">
       <div class="int-card rv"><span class="lg"><img src="assets/int-whatsapp.png" alt="WhatsApp" loading="lazy"></span><b>Atendimento & disparos</b></div>
-      <div class="int-card rv rv-d1"><span class="lg"><svg viewBox="0 0 92 40" width="92" height="40" aria-label="Meta"><path d="M9 30C6 30 4 27 4 22.5 4 15 8.5 8 13.5 8c3.2 0 5.8 2.6 9 7.4C25.8 10.6 28.4 8 31.6 8 36.5 8 41 15 41 22.5 41 27 39 30 36 30c-2.6 0-4.4-2-7.2-6.6l-1.7-2.8-1.7 2.8C22.4 28 20.6 30 18 30Zm22.4-4.4c1.2 0 1.9-1.3 1.9-3.4 0-4.8-2.5-9.8-5-9.8-1.7 0-3.3 1.9-5.9 6.1 3.7 5.6 6.1 7.1 9 7.1ZM13.7 25.6c2.9 0 5.3-1.5 9-7.1-2.6-4.2-4.2-6.1-5.9-6.1-2.5 0-5 5-5 9.8 0 2.1.7 3.4 1.9 3.4Z" fill="url(#lgMeta)"/><text x="46" y="26" font-family="Figtree,sans-serif" font-weight="800" font-size="15" fill="#0064E0">Meta</text></svg></span><b>API oficial</b></div>
+      <div class="int-card rv rv-d1"><span class="lg"><svg viewBox="0 0 92 40" width="110" height="48" aria-label="Meta"><path d="M9 30C6 30 4 27 4 22.5 4 15 8.5 8 13.5 8c3.2 0 5.8 2.6 9 7.4C25.8 10.6 28.4 8 31.6 8 36.5 8 41 15 41 22.5 41 27 39 30 36 30c-2.6 0-4.4-2-7.2-6.6l-1.7-2.8-1.7 2.8C22.4 28 20.6 30 18 30Zm22.4-4.4c1.2 0 1.9-1.3 1.9-3.4 0-4.8-2.5-9.8-5-9.8-1.7 0-3.3 1.9-5.9 6.1 3.7 5.6 6.1 7.1 9 7.1ZM13.7 25.6c2.9 0 5.3-1.5 9-7.1-2.6-4.2-4.2-6.1-5.9-6.1-2.5 0-5 5-5 9.8 0 2.1.7 3.4 1.9 3.4Z" fill="url(#lgMeta)"/><text x="46" y="26" font-family="Figtree,sans-serif" font-weight="800" font-size="15" fill="#0064E0">Meta</text></svg></span><b>API oficial</b></div>
       <div class="int-card rv rv-d2"><span class="lg"><img src="assets/int-agenda.png" alt="Google Calendar" loading="lazy"></span><b>Agenda sincronizada</b></div>
       <div class="int-card rv rv-d3"><span class="lg"><img src="assets/int-memed.png" alt="Memed" loading="lazy"></span><b>Prescrição digital</b></div>
       <div class="int-card rv"><span class="lg"><img src="assets/int-asaas.png" alt="Asaas" loading="lazy"></span><b>Pagamentos & cobranças</b></div>
@@ -1332,7 +1415,7 @@ details.faq .a b{color:var(--ink)}
 
 <!-- ====== MYDOSE LAB ====== -->
 <section class="sec-lab on-dark" id="lab">
-  <div class="pattern-lab"></div>
+  <div class="pattern-lab" data-par="52,0"></div>
   <svg class="gf spin-slow" style="bottom:8%;left:4%;width:64px;color:rgba(240,176,242,.35)" viewBox="0 0 100 100"><use href="#gf-spark" fill="currentColor"/></svg>
   <div class="wrap lab-grid">
     <div>
@@ -1362,7 +1445,7 @@ details.faq .a b{color:var(--ink)}
       <p>Mesma plataforma, o jeito do seu nicho. Toque na sua área, veja a solução sob medida e <b>fale com o nosso time</b>.</p>
     </div>
     <div class="areas">
-      <a class="area a-fis rv" href="physical.html">
+      <a class="area a-fis rv" href="nova-physical.html">
         <div class="ph"><img src="assets/ph-fit.png" alt="Personal trainer acompanhando aluno" loading="lazy"></div>
         <div class="txt">
           <h4 class="serif">Physical</h4>
@@ -1370,7 +1453,7 @@ details.faq .a b{color:var(--ink)}
           <span class="link">Quero pra minha área <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></span>
         </div>
       </a>
-      <a class="area a-men rv rv-d1" href="mental.html">
+      <a class="area a-men rv rv-d1" href="nova-mental.html">
         <div class="ph"><img src="assets/life-mental.png" alt="Sessão de terapia com acompanhamento pelo app" loading="lazy"></div>
         <div class="txt">
           <h4 class="serif">Mental</h4>
@@ -1378,7 +1461,7 @@ details.faq .a b{color:var(--ink)}
           <span class="link">Quero pra minha área <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></span>
         </div>
       </a>
-      <a class="area a-cli rv rv-d2" href="clinic.html">
+      <a class="area a-cli rv rv-d2" href="nova-clinics.html">
         <div class="ph"><img src="assets/life-clinic.png" alt="Equipe de clínica usando o MyDose" loading="lazy"></div>
         <div class="txt">
           <h4 class="serif">Clinics</h4>
@@ -1389,6 +1472,8 @@ details.faq .a b{color:var(--ink)}
     </div>
   </div>
 </section>
+
+<div class="wrap tile-ribbon" data-ribbon aria-hidden="true"></div>
 
 <!-- ====== PLANOS ====== -->
 <section id="planos" style="padding-top:0">
@@ -1645,15 +1730,18 @@ details.faq .a b{color:var(--ink)}
   </div>
 </section>
 
+<div class="wrap tile-ribbon" data-ribbon aria-hidden="true"></div>
+
 <!-- ====== CTA FINAL ====== -->
 <section class="final">
+  <div class="tw-field" data-twinkle="9"></div>
   <svg class="gf" style="top:6%;left:6%;width:70px;color:var(--magenta);opacity:.5;animation:spinFloat 10s ease-in-out infinite" viewBox="0 0 100 100"><use href="#gf-spark" fill="currentColor"/></svg>
   <svg class="gf spin-slower" style="top:14%;right:8%;width:110px;color:var(--blue-2);opacity:.5" viewBox="0 0 100 100"><use href="#gf-petal" fill="currentColor"/></svg>
   <svg class="gf float-y" style="bottom:10%;left:12%;width:46px;color:var(--orange);opacity:.55" viewBox="0 0 100 100"><use href="#gf-dose" fill="currentColor"/></svg>
   <div class="wrap final-grid">
     <div>
       <span class="eyebrow rv"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="url(#lg1)"/></svg> Take back control</span>
-      <h2 class="serif rv">Retome a sua agenda, a sua receita e o <em class="grad-text">seu impacto</em>.</h2>
+      <h2 class="serif rv">Você cuida das pessoas. A gente cuida do <em class="grad-text">resto</em>.</h2>
       <p class="rv rv-d1" style="margin:22px 0 0;max-width:520px;color:var(--muted)">Fale com um especialista MyDose e receba um plano sob medida pra sua área. <b style="color:var(--ink)">Sem compromisso.</b></p>
       <ul class="final-checks rv rv-d1">
         <li><svg width="17" height="17" viewBox="0 0 20 20"><use href="#ck"/></svg> Diagnóstico gratuito da sua operação</li>
@@ -1705,7 +1793,7 @@ details.faq .a b{color:var(--ink)}
       </div>
       <div>
         <h6>Para quem</h6>
-        <ul><li><a href="physical.html">Physical</a></li><li><a href="mental.html">Mental</a></li><li><a href="clinic.html">Clinics</a></li></ul>
+        <ul><li><a href="nova-physical.html">Physical</a></li><li><a href="nova-mental.html">Mental</a></li><li><a href="nova-clinics.html">Clinics</a></li></ul>
       </div>
       <div>
         <h6>Empresa</h6>
@@ -1885,9 +1973,21 @@ details.faq .a b{color:var(--ink)}
   /* ---------- dots 1:900 ---------- */
   var dots = document.getElementById('dots');
   if(dots){
-    var html = '<i class="you"></i>';
-    for(var i2=0;i2<180;i2++) html += '<i></i>';
+    var html = '<i class="you" style="transition-delay:0ms"></i>';
+    for(var i2=0;i2<180;i2++) html += '<i style="transition-delay:' + (60 + i2*7) + 'ms"></i>';
     dots.innerHTML = html;
+  }
+  var ratioCard = document.querySelector('.ratio-card');
+  if(ratioCard){
+    new IntersectionObserver(function(es, obs){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var rn = document.getElementById('ratioN');
+        if(rn) count(rn, 900, reduce ? 1 : 1500, function(n){ return String(n); });
+        if(dots) dots.classList.add('go');
+        obs.disconnect();
+      });
+    }, {threshold:.4}).observe(ratioCard);
   }
 
   /* ---------- reveal on scroll ---------- */
@@ -1978,6 +2078,56 @@ details.faq .a b{color:var(--ink)}
       });
       b.addEventListener('pointerleave', function(){ b.style.transform = ''; });
     });
+  }
+
+  /* ---------- motion: sparkles cintilantes ---------- */
+  var TW_COLORS = ['#8699FD','#C64FCA','#F56442','#F0B0F2','#A5DC85','#415FF5'];
+  document.querySelectorAll('[data-twinkle]').forEach(function(field){
+    if(reduce) return;
+    var n = +field.dataset.twinkle, html = '';
+    for(var i = 0; i < n; i++){
+      var sz = 10 + Math.random() * 18, c = TW_COLORS[i % TW_COLORS.length];
+      html += '<svg class="tw" style="top:' + (4 + Math.random() * 88) + '%;left:' + (2 + Math.random() * 94) + '%;--twd:' + (3 + Math.random() * 3).toFixed(1) + 's;--twl:' + (Math.random() * 4).toFixed(1) + 's" width="' + sz.toFixed(0) + '" height="' + sz.toFixed(0) + '" viewBox="0 0 100 100"><path d="M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z" fill="' + c + '"/></svg>';
+    }
+    field.innerHTML = html;
+  });
+
+  /* ---------- motion: fitas de tiles da identidade ---------- */
+  var RB = [['#415FF5','#D6DDFF'],['#C64FCA','#F5E3F6'],['#F56442','#FFEAE5'],['#63AC39','#DCEDD2'],['#8699FD','#191E47'],['#F0B0F2','#592C5A']];
+  document.querySelectorAll('[data-ribbon]').forEach(function(rb){
+    var html = '';
+    for(var i = 0; i < 12; i++){
+      var c = RB[i % RB.length];
+      html += '<i style="transition-delay:' + (i * 70) + 'ms"><svg width="34" height="34" viewBox="0 0 52 52"><path d="M26 1C29 15 37 23 51 26 37 29 29 37 26 51 23 37 15 29 1 26 15 23 23 15 26 1Z" fill="' + c[0] + '"/><circle cx="26" cy="26" r="6.5" fill="' + c[1] + '"/></svg></i>';
+    }
+    rb.innerHTML = html;
+    new IntersectionObserver(function(es, obs){
+      es.forEach(function(e){ if(e.isIntersecting){ rb.classList.add('go'); obs.disconnect(); } });
+    }, {threshold:.4}).observe(rb);
+  });
+
+  /* ---------- motion: parallax dos patterns no scroll ---------- */
+  if(!reduce){
+    var pars = [].slice.call(document.querySelectorAll('[data-par]'));
+    if(pars.length){
+      pars.forEach(function(el){
+        el._cfg = el.dataset.par.split(',').map(Number);
+        el._host = el.closest('section,header') || el;
+      });
+      var parTick = false;
+      function parFrame(){
+        parTick = false;
+        var vh = innerHeight;
+        pars.forEach(function(el){
+          var r = el._host.getBoundingClientRect();
+          if(r.bottom < -120 || r.top > vh + 120) return;
+          var p = (r.top + r.height / 2 - vh / 2) / vh;
+          el.style.transform = 'translateY(' + (p * el._cfg[0]).toFixed(1) + 'px) rotate(' + (p * el._cfg[1]).toFixed(2) + 'deg)';
+        });
+      }
+      addEventListener('scroll', function(){ if(!parTick){ parTick = true; requestAnimationFrame(parFrame); } }, {passive:true});
+      parFrame();
+    }
   }
 
   /* ---------- MyDose Lab ---------- */
