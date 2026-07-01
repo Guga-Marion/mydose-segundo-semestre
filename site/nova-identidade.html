@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MyDose — O sistema operacional de IA da saúde</title>
+<meta name="description" content="A plataforma que transforma profissionais de saúde em referências: comunidade gamificada + IA que geram adesão, receita recorrente e tempo de volta.">
+<meta name="theme-color" content="#F6F4F2">
+<meta property="og:title" content="MyDose — O sistema operacional de IA da saúde">
+<meta property="og:description" content="Comunidade gamificada + IA. +Adesão · +Receita · −Tempo.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z' fill='%23415FF5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..650;1,9..144,300..650&family=Figtree:wght@400;500;600;700;800&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MyDose · Nova Identidade Visual 2026
+   Cores, gradientes, grafismos e tipografia do brand book IDV.
+   ============================================================ */
+:root{
+  --bg:#F6F4F2; --ink:#1E1D1D; --gray:#848484;
+  --blue:#415FF5; --magenta:#C64FCA; --orange:#F56442; --green:#63AC39;
+  --navy:#191E47; --plum:#592C5A; --rust:#5E1F10; --forest:#223F11;
+  --blue-2:#8699FD; --blue-3:#D6DDFF;
+  --pink-2:#F0B0F2; --pink-3:#F5E3F6;
+  --peach-2:#FF9F88; --peach-3:#FFEAE5;
+  --green-2:#A5DC85; --green-3:#DCEDD2;
+  --g1:linear-gradient(100deg,#415FF5 0%,#C64FCA 52%,#F56442 100%);
+  --g2:linear-gradient(100deg,#415FF5 0%,#9A55D8 50%,#F0B0F2 100%);
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Figtree",-apple-system,"Segoe UI",sans-serif;
+  --logo:"Quicksand",var(--sans);
+  --r:24px;
+  --shadow:0 20px 60px -20px rgba(25,30,71,.25);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{
+  font-family:var(--sans);color:var(--ink);background:var(--bg);
+  font-size:16px;line-height:1.6;overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+section{overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+::selection{background:var(--blue);color:#fff}
+
+/* ---------- tipografia ---------- */
+.serif{font-family:var(--serif);font-weight:420;font-optical-sizing:auto;letter-spacing:-.01em;line-height:1.08}
+.serif i,.serif em{font-style:italic;font-weight:450}
+h1,h2,h3{font-weight:420}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gray);margin-bottom:18px;
+}
+.eyebrow .dot{width:10px;height:10px;flex:none}
+.grad-text{background:var(--g1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.grad-text-2{background:var(--g2);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---------- layout ---------- */
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+section{position:relative;padding:88px 0}
+@media(min-width:860px){section{padding:130px 0}}
+.sec-head{max-width:720px;margin-bottom:48px}
+.sec-head h2{font-size:clamp(34px,5.6vw,58px)}
+.sec-head p{margin-top:16px;color:#555;font-size:clamp(16px,2vw,18.5px);max-width:600px}
+.on-dark .sec-head p{color:rgba(255,255,255,.72)}
+.on-dark .eyebrow{color:rgba(255,255,255,.55)}
+
+/* ---------- wordmark (só a fonte, sem símbolo) ---------- */
+.wordmark{
+  font-family:var(--logo);font-weight:700;font-size:26px;letter-spacing:-.03em;
+  line-height:1;color:var(--ink);
+}
+.wordmark span{background:var(--g1);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---------- botões ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-weight:700;font-size:16px;line-height:1;
+  padding:18px 30px;border-radius:999px;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,background .3s;
+  will-change:transform;
+}
+.btn .arr{transition:transform .3s}
+.btn:hover .arr{transform:translateX(4px)}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 14px 34px -12px rgba(65,95,245,.55)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 20px 44px -12px rgba(65,95,245,.6)}
+.btn-grad{background:var(--g1);color:#fff;box-shadow:0 14px 34px -12px rgba(198,79,202,.5)}
+.btn-grad:hover{transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(30,29,29,.22)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-light:hover{transform:translateY(-2px)}
+.btn-sm{padding:13px 22px;font-size:14.5px}
+
+/* ---------- grafismos ---------- */
+.gf{position:absolute;pointer-events:none;z-index:0}
+.spin-slow{animation:spin 46s linear infinite}
+.spin-slower{animation:spin 70s linear infinite reverse}
+.float-y{animation:floatY 7s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+/* pattern do brand (forma base repetida) */
+.pattern{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 52 52'%3E%3Cpath d='M26 1C29 15 37 23 51 26 37 29 29 37 26 51 23 37 15 29 1 26 15 23 23 15 26 1Z' fill='%23FFFFFF'/%3E%3Ccircle cx='26' cy='26' r='6.5' fill='%23FFFFFF'/%3E%3C/svg%3E");
+  background-size:52px 52px;
+}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:.08s}.rv-d2{transition-delay:.16s}.rv-d3{transition-delay:.24s}.rv-d4{transition-delay:.32s}
+
+/* ============ NAV ============ */
+nav{
+  position:fixed;inset:0 0 auto;z-index:60;
+  transition:background .3s,box-shadow .3s;
+}
+nav.scrolled{background:rgba(246,244,242,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(30,29,29,.07)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-links{display:none;gap:34px;font-weight:600;font-size:15px}
+.nav-links a{color:#444;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{display:none}
+.burger{display:flex;flex-direction:column;gap:5px;padding:10px;z-index:70}
+.burger span{width:24px;height:2.5px;background:var(--ink);border-radius:2px;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+@media(min-width:920px){
+  .nav-links{display:flex}.nav-cta{display:inline-flex}.burger{display:none}
+}
+.sheet{
+  position:fixed;inset:0;z-index:65;background:var(--bg);
+  display:flex;flex-direction:column;justify-content:center;padding:40px 28px;
+  opacity:0;pointer-events:none;transition:opacity .35s;
+}
+.sheet.open{opacity:1;pointer-events:auto}
+.sheet a{
+  font-family:var(--serif);font-size:clamp(34px,9vw,52px);line-height:1.25;
+  padding:8px 0;border-bottom:1px solid rgba(30,29,29,.08);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.sheet a small{font-family:var(--sans);font-size:13px;color:var(--gray);font-weight:700}
+.sheet .btn{margin-top:34px}
+
+/* ============ HERO ============ */
+.hero{padding:150px 0 70px;overflow:hidden}
+@media(min-width:920px){.hero{padding:190px 0 110px}}
+.hero-grid{display:grid;gap:56px;align-items:center}
+@media(min-width:920px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:40px}}
+.hero h1{font-size:clamp(42px,9.4vw,78px);letter-spacing:-.02em}
+.hero-sub{margin:24px 0 34px;font-size:clamp(16.5px,2.1vw,19px);color:#4a4a4a;max-width:520px}
+.hero-sub b{color:var(--ink)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+.hero-stats{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:44px}
+.hero-stats .st b{display:block;font-family:var(--serif);font-size:clamp(26px,4vw,34px);line-height:1.1}
+.hero-stats .st span{font-size:13.5px;color:var(--gray);font-weight:600}
+.hero-visual{position:relative;z-index:1}
+.hero-photo{
+  position:relative;border-radius:32px;overflow:hidden;box-shadow:var(--shadow);
+  aspect-ratio:4/4.6;z-index:2;
+}
+@media(min-width:920px){.hero-photo{aspect-ratio:4/4.8}}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-blob{
+  position:absolute;z-index:1;inset:auto -8% -10% auto;width:82%;aspect-ratio:1;
+  background:var(--g2);border-radius:46% 54% 55% 45%/48% 43% 57% 52%;
+  filter:blur(2px);opacity:.9;animation:blob 12s ease-in-out infinite alternate;
+}
+@keyframes blob{to{border-radius:54% 46% 44% 56%/52% 57% 43% 48%;transform:rotate(8deg)}}
+.hero-pattern{
+  position:absolute;z-index:0;top:-6%;left:-10%;width:60%;height:70%;
+  border-radius:28px;opacity:1;
+  background-color:var(--blue-3);
+}
+.chip-float{
+  position:absolute;z-index:3;display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+  border-radius:16px;padding:12px 16px;box-shadow:0 16px 40px -14px rgba(25,30,71,.35);
+  font-size:13.5px;font-weight:700;line-height:1.3;
+}
+.chip-float .ico{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:none;color:#fff}
+.chip-float small{display:block;font-weight:600;color:var(--gray);font-size:11.5px}
+.chip-a{top:8%;left:-6px;animation:floatY 6s ease-in-out infinite}
+.chip-b{bottom:12%;right:-6px;animation:floatY 7.5s .8s ease-in-out infinite}
+@media(min-width:920px){.chip-a{left:-30px}.chip-b{right:-24px}}
+
+/* ============ MARQUEE ============ */
+.marquee{background:var(--g1);padding:16px 0;overflow:hidden;transform:rotate(-1.2deg) scale(1.02);margin:10px 0}
+.marquee-track{display:flex;gap:0;white-space:nowrap;animation:mq 26s linear infinite;width:max-content}
+.marquee span{
+  color:#fff;font-family:var(--serif);font-style:italic;font-size:19px;
+  display:inline-flex;align-items:center;gap:22px;padding-right:22px;
+}
+.marquee svg{width:14px;height:14px;flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ============ MATEMÁTICA (navy) ============ */
+.sec-navy{background:var(--navy);color:#fff;border-radius:0}
+.ratio-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--r);padding:34px 26px;margin-top:20px;
+}
+.ratio-big{font-family:var(--serif);font-size:clamp(56px,11vw,96px);line-height:1;background:var(--g2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.dots{display:flex;flex-wrap:wrap;gap:7px;margin-top:26px;max-width:560px}
+.dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.28);flex:none}
+.dots i.you{background:var(--g1);width:22px;height:22px;box-shadow:0 0 22px rgba(198,79,202,.8);margin-right:6px}
+.pros{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:44px}
+.pro{
+  border-radius:18px;padding:18px 16px;color:var(--ink);
+  display:flex;flex-direction:column;gap:2px;
+  transition:transform .3s;
+}
+.pro:hover{transform:translateY(-4px)}
+.pro b{font-family:var(--serif);font-size:24px;line-height:1.15}
+.pro span{font-size:13px;font-weight:700;opacity:.75}
+.pros-note{margin-top:26px;color:rgba(255,255,255,.65);font-size:15px;max-width:640px}
+.pros-note b{color:#fff}
+
+/* ============ EXPANDIR × ESCALAR ============ */
+.duel{display:grid;gap:22px}
+@media(min-width:860px){.duel{grid-template-columns:1fr 1fr}}
+.duel-card{border-radius:var(--r);padding:36px 30px;position:relative;overflow:hidden}
+.duel-card h3{font-size:clamp(26px,3.4vw,32px);display:flex;align-items:center;gap:12px}
+.duel-card .tag{font-size:11.5px;font-weight:800;letter-spacing:.1em;padding:7px 12px;border-radius:999px;text-transform:uppercase}
+.duel-card ul{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:12px;font-size:15.5px}
+.duel-card ul b{font-weight:700}
+.duel-card .quote{margin-top:24px;font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.4}
+.d-exp{background:#fff;box-shadow:inset 0 0 0 1.5px rgba(30,29,29,.1)}
+.d-exp .tag{background:var(--peach-3);color:var(--rust)}
+.d-exp ul li{color:#555}
+.d-exp .quote{color:var(--gray)}
+.d-esc{background:var(--navy);color:#fff}
+.d-esc::after{
+  content:"";position:absolute;inset:auto -60px -60px auto;width:230px;height:230px;
+  background:var(--g1);border-radius:50%;filter:blur(70px);opacity:.5;
+}
+.d-esc .tag{background:rgba(255,255,255,.14);color:#fff}
+.d-esc ul li{color:rgba(255,255,255,.85)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chips i{font-style:normal;font-size:13px;font-weight:700;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.12)}
+.d-exp .chips i{background:var(--bg);color:#555}
+.duel-punch{
+  margin-top:40px;text-align:center;font-size:clamp(24px,4.4vw,40px);
+  max-width:720px;margin-inline:auto;
+}
+
+/* ============ PRODUTO (sub-marcas) ============ */
+.product{border-radius:var(--r);overflow:hidden;display:grid;position:relative}
+@media(min-width:920px){.product{grid-template-columns:1.1fr .9fr;align-items:center}}
+.product + .product{margin-top:26px}
+.product .txt{padding:44px 28px;position:relative;z-index:2}
+@media(min-width:920px){.product .txt{padding:64px 56px}}
+.product h3{font-size:clamp(30px,4.6vw,44px)}
+.product .lead{margin:14px 0 8px;font-size:16.5px;color:rgba(30,29,29,.72);max-width:440px}
+.feats{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:18px}
+.feats li{display:flex;gap:14px;align-items:flex-start}
+.feats .fico{width:42px;height:42px;border-radius:13px;flex:none;display:grid;place-items:center;color:#fff}
+.feats b{display:block;font-size:16px}
+.feats span{font-size:14.5px;color:rgba(30,29,29,.65)}
+.product .media{
+  position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:center;
+  padding:0 28px;min-height:340px;
+}
+@media(min-width:920px){.product .media{min-height:520px}}
+.product .media img{
+  width:min(260px,72%);filter:drop-shadow(0 30px 50px rgba(25,30,71,.35));
+  position:relative;z-index:2;margin-bottom:-40px;
+}
+@media(min-width:920px){.product .media img{width:min(300px,80%);margin-bottom:-70px}}
+.p-mental{background:var(--pink-3)}
+.p-mental .media{background-color:var(--pink-2)}
+.p-mental .fico{background:var(--magenta)}
+.p-blue{background:var(--blue-3)}
+.p-blue .media{background-color:var(--blue-2)}
+.p-blue .fico{background:var(--blue)}
+
+/* ============ MÉTODO ============ */
+.steps{display:grid;gap:18px;counter-reset:st}
+@media(min-width:860px){.steps{grid-template-columns:1fr 1fr 1fr}}
+.step{border-radius:var(--r);padding:32px 26px;position:relative;overflow:hidden}
+.step .pct{font-family:var(--serif);font-size:clamp(40px,6vw,56px);line-height:1}
+.step h4{font-size:20px;margin:10px 0 6px}
+.step p{font-size:14.5px;opacity:.75}
+.step .chips{margin-top:18px}
+.step .chips i{background:rgba(255,255,255,.6);color:var(--ink)}
+.s1{background:#fff;box-shadow:inset 0 0 0 1.5px rgba(30,29,29,.1)}
+.s1 .pct{color:var(--gray)}
+.s1 .chips i{background:var(--bg)}
+.s2{background:var(--peach-3)}
+.s2 .pct{color:var(--orange)}
+.s3{background:var(--forest);color:#fff}
+.s3 .pct{background:linear-gradient(100deg,#A5DC85,#DCEDD2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.s3 p{opacity:.8}
+.s3 .chips i{background:rgba(255,255,255,.14);color:#fff}
+.step-arrow{display:none}
+@media(min-width:860px){
+  .step-arrow{display:block;position:absolute;top:40px;right:-13px;z-index:3;width:26px;height:26px;color:var(--ink);opacity:.4}
+}
+
+/* ============ VERDADE (plum) ============ */
+.sec-plum{background:var(--plum);color:#fff;overflow:hidden}
+.truth{max-width:860px;position:relative;z-index:1}
+.truth h2{font-size:clamp(34px,6.4vw,62px);line-height:1.12}
+.truth h2 em{color:var(--pink-2)}
+.truth p{margin-top:26px;font-size:clamp(16px,2vw,19px);color:rgba(255,255,255,.78);max-width:680px}
+.truth p b{color:#fff}
+
+/* ============ PRÉDIO ============ */
+.tower-wrap{display:grid;gap:40px}
+@media(min-width:920px){.tower-wrap{grid-template-columns:.9fr 1.1fr;align-items:center}}
+.totals{display:flex;gap:16px;margin-top:30px}
+.total{
+  flex:1;background:#fff;border-radius:20px;padding:20px;box-shadow:var(--shadow);
+}
+.total b{display:block;font-family:var(--serif);font-size:clamp(28px,4vw,38px);line-height:1.1}
+.total span{font-size:13px;color:var(--gray);font-weight:700}
+.floors{display:flex;flex-direction:column;gap:12px}
+.floor{
+  display:flex;align-items:center;gap:16px;border-radius:18px;padding:18px 20px;
+  opacity:.25;transform:translateX(18px);
+  transition:opacity .6s,transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.floor.lit{opacity:1;transform:none}
+.floor .fico{width:44px;height:44px;border-radius:13px;background:rgba(255,255,255,.7);display:grid;place-items:center;flex:none}
+.floor b{font-size:16px;display:block}
+.floor small{font-size:13px;opacity:.7;font-weight:600}
+.floor .val{margin-left:auto;text-align:right;font-family:var(--serif);font-size:20px;white-space:nowrap}
+.floor .val small{display:block;font-family:var(--sans)}
+.f1{background:var(--pink-3)}.f2{background:var(--peach-3)}.f3{background:var(--blue-3)}
+.f4{background:var(--green-3)}.f5{background:#fff;box-shadow:inset 0 0 0 1.5px rgba(30,29,29,.1)}
+.tower-base{
+  margin-top:6px;border-radius:18px;padding:16px 20px;background:var(--navy);color:#fff;
+  font-size:14px;text-align:center;font-weight:600;
+}
+
+/* ============ FERRAMENTAS ============ */
+.tools{display:grid;gap:22px}
+@media(min-width:920px){.tools{grid-template-columns:1.05fr .95fr;align-items:stretch}}
+.tools-old{background:#fff;border-radius:var(--r);padding:34px 28px;box-shadow:inset 0 0 0 1.5px rgba(30,29,29,.1)}
+.tools-old h3{font-size:24px}
+.tool-list{list-style:none;margin-top:20px;display:flex;flex-direction:column}
+.tool-list li{
+  display:flex;justify-content:space-between;gap:14px;padding:11px 0;font-size:14.5px;font-weight:600;color:#555;
+  border-bottom:1px dashed rgba(30,29,29,.12);
+}
+.tool-list li b{font-weight:700;color:var(--ink)}
+.tools-old .sum{display:flex;justify-content:space-between;margin-top:16px;font-weight:800;font-size:16px}
+.tools-old .sum b{color:var(--orange);font-size:20px;font-family:var(--serif)}
+.tools-my{
+  background:var(--navy);color:#fff;border-radius:var(--r);padding:34px 28px;
+  display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;
+}
+.tools-my::before{
+  content:"";position:absolute;inset:-40% -40% auto auto;width:70%;aspect-ratio:1;
+  background:var(--g1);filter:blur(90px);opacity:.55;border-radius:50%;
+}
+.tools-my>*{position:relative}
+.tools-my h3{font-size:clamp(26px,3.4vw,34px)}
+.tools-my .big{font-family:var(--serif);font-size:clamp(52px,8vw,72px);line-height:1;margin:18px 0 4px}
+.tools-my .big small{font-size:.38em;font-family:var(--sans);font-weight:600;color:rgba(255,255,255,.7)}
+.save-pill{
+  display:inline-flex;align-self:flex-start;margin-top:18px;padding:12px 18px;border-radius:999px;
+  background:rgba(165,220,133,.18);color:var(--green-2);font-weight:800;font-size:15px;
+}
+
+/* ============ CALCULADORA ============ */
+.calc{background:var(--green-3);border-radius:var(--r);padding:36px 26px;display:grid;gap:36px}
+@media(min-width:920px){.calc{grid-template-columns:1fr 1fr;padding:56px;gap:56px}}
+.calc h3{font-size:clamp(28px,4vw,40px)}
+.calc .ok{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:10px;font-size:15px;font-weight:600;color:var(--forest)}
+.calc .ok li{display:flex;gap:10px;align-items:center}
+.calc .ok svg{flex:none}
+.ctrl{margin-top:26px}
+.ctrl label{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:10px}
+.ctrl label output{font-family:var(--serif);font-size:19px;color:var(--forest)}
+input[type=range]{
+  width:100%;appearance:none;-webkit-appearance:none;height:8px;border-radius:99px;
+  background:rgba(34,63,17,.18);outline:none;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:28px;height:28px;border-radius:50%;
+  background:var(--forest);border:5px solid #fff;box-shadow:0 4px 14px rgba(34,63,17,.4);cursor:grab;
+}
+input[type=range]::-moz-range-thumb{
+  width:18px;height:18px;border-radius:50%;background:var(--forest);border:5px solid #fff;
+  box-shadow:0 4px 14px rgba(34,63,17,.4);cursor:grab;
+}
+.calc-out{background:#fff;border-radius:20px;padding:30px 26px;box-shadow:var(--shadow);align-self:center}
+.calc-out .row{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px dashed rgba(30,29,29,.12)}
+.calc-out .row span{font-size:14px;font-weight:700;color:var(--gray)}
+.calc-out .row b{font-family:var(--serif);font-size:24px;font-weight:500}
+.calc-out .delta{border:0;padding-top:20px;display:block;text-align:center}
+.calc-out .delta b{font-size:clamp(38px,6vw,52px);display:block;background:var(--g1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.calc-out .delta span{color:var(--gray)}
+.calc-out .btn{width:100%;margin-top:22px}
+
+/* ============ ÁREAS ============ */
+.areas{display:grid;gap:20px}
+@media(min-width:860px){.areas{grid-template-columns:1fr 1fr 1fr}}
+.area{
+  border-radius:var(--r);overflow:hidden;color:#fff;display:flex;flex-direction:column;
+  transition:transform .4s cubic-bezier(.2,.8,.2,1);
+}
+.area:hover{transform:translateY(-6px)}
+.area .ph{aspect-ratio:16/10;overflow:hidden}
+.area .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.area:hover .ph img{transform:scale(1.05)}
+.area .txt{padding:26px;display:flex;flex-direction:column;gap:8px;flex:1}
+.area h4{font-size:26px}
+.area p{font-size:14.5px;opacity:.8;flex:1}
+.area .link{font-weight:800;font-size:14.5px;display:inline-flex;gap:8px;align-items:center;margin-top:14px}
+.a-fis{background:var(--rust)}
+.a-men{background:var(--plum)}
+.a-cli{background:var(--navy)}
+.a-fis h4{color:var(--peach-2)}.a-men h4{color:var(--pink-2)}.a-cli h4{color:var(--blue-2)}
+
+/* ============ PLANOS ============ */
+.plans-controls{display:flex;flex-direction:column;gap:16px;align-items:center;margin-bottom:44px}
+.seg{
+  display:inline-flex;background:#fff;border-radius:999px;padding:5px;
+  box-shadow:inset 0 0 0 1.5px rgba(30,29,29,.1);gap:4px;flex-wrap:wrap;justify-content:center;
+}
+.seg button{
+  padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;color:#666;
+  transition:background .25s,color .25s;white-space:nowrap;
+}
+.seg button.on{background:var(--ink);color:#fff}
+.seg button b{color:var(--green);font-size:12px}
+.seg button.on b{color:var(--green-2)}
+.plans-kpis{display:flex;gap:12px 28px;flex-wrap:wrap;justify-content:center;margin-bottom:40px}
+.plans-kpis .st{text-align:center}
+.plans-kpis .st b{font-family:var(--serif);font-size:clamp(26px,4vw,34px);display:block;line-height:1.1}
+.plans-kpis .st span{font-size:13px;color:var(--gray);font-weight:700}
+.plans{
+  display:grid;gap:18px;
+}
+@media(min-width:680px){.plans{grid-template-columns:1fr 1fr}}
+@media(min-width:1080px){.plans{grid-template-columns:repeat(5,1fr)}.plans.c3{grid-template-columns:repeat(3,1fr)}}
+.plan{
+  background:#fff;border-radius:22px;padding:26px 22px;display:flex;flex-direction:column;gap:6px;
+  box-shadow:inset 0 0 0 1.5px rgba(30,29,29,.09);position:relative;
+  transition:transform .35s,box-shadow .35s;
+}
+.plan:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.plan .star{
+  position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:var(--g1);color:#fff;font-size:11.5px;font-weight:800;letter-spacing:.06em;
+  padding:6px 14px;border-radius:999px;white-space:nowrap;
+}
+.plan.hot{background:var(--navy);color:#fff;box-shadow:0 24px 60px -18px rgba(25,30,71,.5)}
+.plan h4{font-size:21px;font-family:var(--serif);font-weight:500}
+.plan .desc{font-size:13.5px;color:var(--gray);min-height:38px}
+.plan.hot .desc{color:rgba(255,255,255,.7)}
+.plan .fat{font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-top:4px}
+.plan.hot .fat{color:var(--blue-2)}
+.plan .price{margin:10px 0 2px}
+.plan .price .cur{font-size:14px;font-weight:700;vertical-align:top}
+.plan .price b{font-family:var(--serif);font-size:42px;font-weight:500;letter-spacing:-.02em}
+.plan .price span{font-size:13.5px;color:var(--gray);font-weight:600}
+.plan .was{font-size:12.5px;color:var(--gray);text-decoration:line-through;min-height:18px}
+.plan .econ{font-size:12.5px;font-weight:800;color:var(--green);min-height:18px}
+.plan.hot .econ{color:var(--green-2)}
+.plan .media-plus{font-size:12.5px;font-weight:800;color:var(--orange)}
+.plan ul{list-style:none;margin:12px 0 18px;display:flex;flex-direction:column;gap:9px;font-size:13.5px;flex:1}
+.plan ul li{display:flex;gap:8px;align-items:flex-start}
+.plan ul svg{flex:none;margin-top:3px}
+.plan .btn{width:100%}
+.plan .talk2{margin-top:8px;font-size:13px;font-weight:700;color:var(--gray);text-align:center}
+.plan.hot .talk2{color:rgba(255,255,255,.6)}
+
+/* tabela comparativa */
+details.compare{margin-top:34px}
+details.compare summary{
+  cursor:pointer;list-style:none;display:inline-flex;gap:10px;align-items:center;
+  font-weight:800;font-size:15px;padding:14px 24px;border-radius:999px;background:#fff;
+  box-shadow:inset 0 0 0 1.5px rgba(30,29,29,.12);
+}
+details.compare summary::-webkit-details-marker{display:none}
+.tbl-scroll{overflow-x:auto;margin-top:20px;border-radius:18px;box-shadow:inset 0 0 0 1.5px rgba(30,29,29,.09);background:#fff;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
+th,td{padding:13px 16px;text-align:center;border-bottom:1px solid rgba(30,29,29,.07)}
+th{font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;background:var(--bg)}
+td:first-child,th:first-child{text-align:left;font-weight:700;position:sticky;left:0;background:#fff;min-width:170px}
+th:first-child{background:var(--bg)}
+tr:last-child td{border-bottom:0}
+.tbl-hint{text-align:center;font-size:12.5px;color:var(--gray);margin-top:10px;font-weight:600}
+
+/* garantias */
+.assures{display:grid;gap:16px;margin-top:56px}
+@media(min-width:860px){.assures{grid-template-columns:1fr 1fr 1fr}}
+.assure{border-radius:20px;padding:28px 24px}
+.assure h5{font-size:18px;margin-bottom:8px;display:flex;gap:10px;align-items:center}
+.assure p{font-size:14.5px;color:rgba(30,29,29,.7)}
+.assure p b{color:var(--ink)}
+.as-1{background:var(--blue-3)}.as-2{background:var(--pink-3)}.as-3{background:var(--green-3)}
+.plans-note{
+  margin-top:26px;font-size:14px;color:#555;background:#fff;border-radius:18px;padding:20px 24px;
+  box-shadow:inset 0 0 0 1.5px rgba(30,29,29,.09);
+}
+.plans-note b{color:var(--ink)}
+
+/* ============ AULA ============ */
+.live-card{
+  background:var(--rust);color:#fff;border-radius:var(--r);padding:44px 28px;
+  position:relative;overflow:hidden;
+}
+@media(min-width:860px){.live-card{padding:70px 64px}}
+.live-card::after{
+  content:"";position:absolute;inset:0 0 0 auto;width:45%;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 52 52'%3E%3Cpath d='M26 1C29 15 37 23 51 26 37 29 29 37 26 51 23 37 15 29 1 26 15 23 23 15 26 1Z' fill='%23FF9F88'/%3E%3C/svg%3E");
+  background-size:44px 44px;opacity:.28;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 60%);mask-image:linear-gradient(90deg,transparent,#000 60%);
+}
+.live-card>*{position:relative;z-index:1}
+.live-badge{
+  display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.14);
+  padding:9px 16px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:.05em;
+}
+.live-badge .pulse{width:9px;height:9px;border-radius:50%;background:var(--peach-2);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,159,136,.7)}70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.live-card h2{font-size:clamp(30px,5vw,50px);margin:20px 0 14px;max-width:640px}
+.live-card h2 em{color:var(--peach-2)}
+.live-card p{color:rgba(255,255,255,.8);max-width:560px;margin-bottom:28px}
+.live-card p b{color:#fff}
+.live-free{margin-top:14px;font-size:13.5px;color:rgba(255,255,255,.65);font-weight:600}
+
+/* ============ CTA FINAL ============ */
+.final{overflow:hidden;text-align:center}
+.final h2{font-size:clamp(38px,7.6vw,72px);max-width:900px;margin-inline:auto}
+.final p{margin:26px auto 36px;max-width:600px;color:#555;font-size:clamp(15.5px,2vw,18px)}
+.final p b{color:var(--ink)}
+.final .hero-ctas{justify-content:center}
+
+/* ============ FOOTER ============ */
+footer{background:var(--ink);color:#cfcac6;padding:64px 0 34px;font-size:14.5px}
+.foot-grid{display:grid;gap:36px}
+@media(min-width:860px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+footer .wordmark{color:#fff;font-size:28px}
+footer .tagline{margin-top:14px;color:#9b9591;max-width:280px}
+footer h6{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#8a8480;margin-bottom:14px}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+footer a:hover{color:#fff}
+.foot-bottom{
+  margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.09);
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:13px;color:#8a8480;
+}
+
+/* ============ MODAL ============ */
+.modal{
+  position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:18px;
+  background:rgba(25,30,71,.5);backdrop-filter:blur(6px);
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.modal.on{opacity:1;pointer-events:auto}
+.modal-card{
+  background:var(--bg);border-radius:26px;width:min(520px,100%);max-height:90dvh;overflow:auto;
+  padding:34px 28px;position:relative;transform:translateY(16px);transition:transform .35s;
+}
+.modal.on .modal-card{transform:none}
+.modal-x{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:17px}
+.m-plan{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--magenta)}
+.modal-card h3{font-family:var(--serif);font-size:28px;margin:8px 0 6px;font-weight:500}
+.modal-card .msub{font-size:14.5px;color:#555;margin-bottom:22px}
+.mform{display:flex;flex-direction:column;gap:13px}
+.mform input,.mform select{
+  width:100%;padding:15px 17px;border-radius:14px;border:1.5px solid rgba(30,29,29,.14);
+  background:#fff;font:inherit;font-size:15px;color:var(--ink);
+}
+.mform input:focus,.mform select:focus{outline:none;border-color:var(--blue)}
+.mform .btn{margin-top:6px}
+.m-priv{font-size:12.5px;color:var(--gray);text-align:center;margin-top:12px}
+.msuccess{display:none;text-align:center;padding:30px 6px}
+.msuccess.on{display:block}
+.msuccess .big{font-size:52px}
+.msuccess h4{font-family:var(--serif);font-size:26px;margin:10px 0 8px;font-weight:500}
+.msuccess p{color:#555;font-size:15px}
+
+/* ============ CTA MOBILE STICKY ============ */
+.sticky-cta{
+  position:fixed;left:14px;right:14px;bottom:14px;z-index:55;
+  transform:translateY(120%);transition:transform .45s cubic-bezier(.2,.8,.2,1);
+}
+.sticky-cta .btn{width:100%;box-shadow:0 18px 44px -10px rgba(65,95,245,.65)}
+.sticky-cta.show{transform:none}
+@media(min-width:920px){.sticky-cta{display:none}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ====== SVG defs: grafismos do brand ====== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#415FF5"/><stop offset=".55" stop-color="#C64FCA"/><stop offset="1" stop-color="#F56442"/>
+    </linearGradient>
+    <linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#415FF5"/><stop offset=".5" stop-color="#9A55D8"/><stop offset="1" stop-color="#F0B0F2"/>
+    </linearGradient>
+  </defs>
+  <symbol id="gf-spark" viewBox="0 0 100 100"><path d="M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z"/></symbol>
+  <symbol id="gf-dose" viewBox="0 0 100 100"><path d="M50 0Q85 15 100 50Q85 85 50 100Q15 85 0 50Q15 15 50 0Z"/></symbol>
+  <symbol id="gf-petal" viewBox="0 0 100 100">
+    <path d="M50 4C60 20 60 36 50 50 40 36 40 20 50 4Z"/>
+    <path d="M96 50C80 60 64 60 50 50 64 40 80 40 96 50Z"/>
+    <path d="M50 96C40 80 40 64 50 50 60 64 60 80 50 96Z"/>
+    <path d="M4 50C20 40 36 40 50 50 36 60 20 60 4 50Z"/>
+  </symbol>
+  <symbol id="gf-arcs" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="41" fill="none" stroke="currentColor" stroke-width="13" stroke-dasharray="44 22" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ck" viewBox="0 0 20 20"><path d="M4 10.5 8.2 15 16 5.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="arr" viewBox="0 0 20 20"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<!-- ====== NAV ====== -->
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="wordmark" aria-label="MyDose">my<span>dose</span></a>
+    <div class="nav-links">
+      <a href="#porque">Por que</a>
+      <a href="#escalar">Escalar</a>
+      <a href="#produto">O produto</a>
+      <a href="#calculadora">Calculadora</a>
+      <a href="#planos">Planos</a>
+    </div>
+    <button class="btn btn-primary btn-sm nav-cta js-talk" data-mode="checkout" data-plan="MyDose">Começar agora</button>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="sheet" id="sheet">
+  <a href="#porque">Por que <small>01</small></a>
+  <a href="#escalar">Escalar <small>02</small></a>
+  <a href="#produto">O produto <small>03</small></a>
+  <a href="#calculadora">Calculadora <small>04</small></a>
+  <a href="#planos">Planos <small>05</small></a>
+  <button class="btn btn-grad js-talk" data-mode="checkout" data-plan="MyDose">Começar agora <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
+</div>
+
+<!-- ====== HERO ====== -->
+<header class="hero">
+  <svg class="gf spin-slow" style="top:110px;left:-60px;width:150px;opacity:.5;color:var(--blue-3)" viewBox="0 0 100 100"><use href="#gf-petal" fill="currentColor"/></svg>
+  <svg class="gf spin-slower" style="top:66%;left:44%;width:70px;color:var(--peach-2);opacity:.55" viewBox="0 0 100 100"><use href="#gf-spark" fill="currentColor"/></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow rv"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="url(#lg1)"/></svg> O sistema operacional de IA da saúde</span>
+      <h1 class="serif rv rv-d1">Você cuida das pessoas. A&nbsp;gente cuida do <em class="grad-text">resto</em>.</h1>
+      <p class="hero-sub rv rv-d2">A plataforma que transforma profissionais de saúde em referências: <b>comunidade gamificada + IA</b> que geram adesão, receita recorrente e tempo de volta — <b>sem virar uma fábrica de consultas</b>.</p>
+      <div class="hero-ctas rv rv-d3">
+        <button class="btn btn-primary js-talk" data-mode="checkout" data-plan="MyDose">Quero começar agora <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
+        <a class="btn btn-ghost" href="#produto">Ver o produto</a>
+      </div>
+      <div class="hero-stats rv rv-d4">
+        <div class="st"><b>+1.000</b><span>profissionais de saúde</span></div>
+        <div class="st"><b class="grad-text">3×</b><span>mais adesão do paciente</span></div>
+        <div class="st"><b>+130 mil</b><span>pacientes ativos</span></div>
+      </div>
+    </div>
+    <div class="hero-visual rv rv-d2">
+      <div class="hero-pattern pattern"></div>
+      <div class="hero-blob"></div>
+      <div class="hero-photo"><img src="assets/life-doctor.png" alt="Profissional de saúde mostrando o app MyDose para uma paciente" fetchpriority="high"></div>
+      <div class="chip-float chip-a">
+        <span class="ico" style="background:var(--magenta)"><svg width="16" height="16" viewBox="0 0 100 100"><use href="#gf-spark" fill="#fff"/></svg></span>
+        <span>Comunidade ativa<small>+85% de engajamento</small></span>
+      </div>
+      <div class="chip-float chip-b">
+        <span class="ico" style="background:var(--blue)"><svg width="16" height="16" viewBox="0 0 100 100"><use href="#gf-petal" fill="#fff"/></svg></span>
+        <span>IA respondeu 200 dúvidas<small>hoje, enquanto você atendia</small></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ====== MARQUEE ====== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="mq"></div>
+</div>
+
+<!-- ====== MATEMÁTICA ====== -->
+<section class="sec-navy on-dark" id="porque">
+  <svg class="gf spin-slower" style="top:40px;right:-70px;width:220px;color:rgba(255,255,255,.06)" viewBox="0 0 100 100"><use href="#gf-dose" fill="currentColor"/></svg>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#8699FD"/></svg> A matemática que não fecha</span>
+      <h2 class="serif">São <em class="grad-text-2">9 milhões</em> de vocês.<br>Para 8,1 bilhões de pessoas.</h2>
+    </div>
+    <div class="ratio-card rv">
+      <div class="ratio-big serif">1 : 900</div>
+      <p style="margin-top:14px;color:rgba(255,255,255,.75);max-width:620px">É a conta por profissional. E <b style="color:#fff">900 pessoas não cabem numa agenda de consultas</b> — a saúde tem que acontecer entre elas, com comunidade e tecnologia.</p>
+      <div class="dots" id="dots" aria-hidden="true"></div>
+    </div>
+    <div class="pros">
+      <div class="pro rv" style="background:var(--blue-3)"><b>575 mil</b><span>Médicos</span></div>
+      <div class="pro rv rv-d1" style="background:var(--peach-3)"><b>500 mil</b><span>Ed. física / personal</span></div>
+      <div class="pro rv rv-d2" style="background:var(--pink-3)"><b>430 mil</b><span>Psicólogos</span></div>
+      <div class="pro rv rv-d3" style="background:var(--green-3)"><b>370 mil</b><span>Dentistas</span></div>
+      <div class="pro rv rv-d1" style="background:var(--blue-3)"><b>280 mil</b><span>Fisioterapeutas</span></div>
+      <div class="pro rv rv-d2" style="background:var(--pink-3)"><b>270 mil</b><span>Farmacêuticos</span></div>
+      <div class="pro rv rv-d3" style="background:var(--green-3)"><b>160 mil</b><span>Nutricionistas</span></div>
+    </div>
+    <p class="pros-note rv">Só os principais conselhos já passam de <b>2,5 milhões</b>. Somando enfermagem, estética, terapias integrativas e bem-estar, o mercado de saúde no Brasil ultrapassa <b>9 milhões de profissionais</b> — e cada um tem uma audiência esperando ser cuidada entre as consultas. <span style="opacity:.6;font-size:13px">· fontes: conselhos de classe</span></p>
+  </div>
+</section>
+
+<!-- ====== EXPANDIR × ESCALAR ====== -->
+<section id="escalar">
+  <svg class="gf spin-slow" style="bottom:8%;left:-70px;width:180px;color:var(--green-3)" viewBox="0 0 100 100"><use href="#gf-arcs"/></svg>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#F56442"/></svg> Trabalhar mais não é a resposta</span>
+      <h2 class="serif">Expandir <i>vs</i> escalar.<br>Você decide o seu <em class="grad-text">teto</em>.</h2>
+      <p>Expandir é girar mais horas pela mesma margem — e isso tem um teto. Escalar é a receita subir <b>sem a sua hora subir junto</b>.</p>
+    </div>
+    <div class="duel">
+      <div class="duel-card d-exp rv">
+        <h3 class="serif">Expandir <span class="tag">⚠ tem teto</span></h3>
+        <p style="margin-top:8px;font-size:14px;color:var(--gray);font-weight:600">Linear · tempo × dinheiro</p>
+        <ul>
+          <li>Receita cresce só se as <b>suas horas</b> crescem</li>
+          <li>Teto de <b>R$ 25–30k/mês</b></li>
+          <li><b>40–50h/semana</b> · sem folga</li>
+        </ul>
+        <p class="quote">“Pra ganhar mais, preciso trabalhar mais.”</p>
+      </div>
+      <div class="duel-card d-esc rv rv-d1">
+        <h3 class="serif">Escalar <span class="tag">∞ sem teto</span></h3>
+        <p style="margin-top:8px;font-size:14px;color:rgba(255,255,255,.6);font-weight:600">Exponencial · produtos × membros</p>
+        <ul>
+          <li>Receita sobe com <b>produtos e membros</b>, custo fixo</li>
+          <li><b>R$ 50K–500K+/mês</b> · escala infinita</li>
+        </ul>
+        <div class="chips">
+          <i>🩺 Consultas</i><i>🔁 Assinaturas</i><i>🧬 Protocolos</i><i>🎯 Desafios</i><i>📚 Cursos & e-books</i><i>🎤 Eventos & lives</i>
+        </div>
+        <p class="quote">“Mesmas horas. Receita sem teto.”</p>
+      </div>
+    </div>
+    <h3 class="serif duel-punch rv">E se <em class="grad-text">todos os seus produtos</em> crescessem dentro de <i>uma comunidade?</i></h3>
+  </div>
+</section>
+
+<!-- ====== PRODUTO ====== -->
+<section id="produto" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#C64FCA"/></svg> O produto</span>
+      <h2 class="serif">Duas forças, <em class="grad-text">um</em> lugar.</h2>
+    </div>
+
+    <div class="product p-mental rv">
+      <div class="txt">
+        <span class="eyebrow" style="color:var(--magenta)"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-petal" fill="#C64FCA"/></svg> Comunidade</span>
+        <h3 class="serif">Uma comunidade que seus pacientes <em>abrem todo dia</em>.</h3>
+        <p class="lead">Gamificação baseada em neurociência (o sistema D.O.S.E.) que faz o paciente voltar — não por obrigação, <b>por hábito</b>.</p>
+        <ul class="feats">
+          <li><span class="fico"><svg width="18" height="18" viewBox="0 0 100 100"><use href="#gf-spark" fill="#fff"/></svg></span><div><b>Engajamento diário</b><span>XP, hits e desafios que criam adesão real, dia após dia.</span></div></li>
+          <li><span class="fico"><svg width="18" height="18" viewBox="0 0 100 100"><use href="#gf-dose" fill="#fff"/></svg></span><div><b>Protocolos vivos</b><span>O plano que você prescreve acontece no app — com lembretes e acompanhamento.</span></div></li>
+          <li><span class="fico"><svg width="18" height="18" viewBox="0 0 100 100"><use href="#gf-petal" fill="#fff"/></svg></span><div><b>Pertencimento</b><span>Pacientes que se apoiam entre si retêm mais e indicam mais.</span></div></li>
+        </ul>
+      </div>
+      <div class="media pattern"><img src="assets/app-comunidade.png" alt="Tela da comunidade gamificada no app MyDose" loading="lazy" class="float-y"></div>
+    </div>
+
+    <div class="product p-blue rv">
+      <div class="media pattern" style="order:2"><img src="assets/app-ia.png" alt="Assistente de IA do MyDose respondendo um paciente" loading="lazy" class="float-y"></div>
+      <div class="txt" style="order:1">
+        <span class="eyebrow" style="color:var(--blue)"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#415FF5"/></svg> Inteligência artificial</span>
+        <h3 class="serif">Uma IA que atende <em>por você, 24/7</em>.</h3>
+        <p class="lead">Treinada no seu protocolo e nos seus limites — com <b>ética e sigilo</b>. Ela responde, orienta e ativa o paciente enquanto você vive a sua vida.</p>
+        <ul class="feats">
+          <li><span class="fico"><svg width="18" height="18" viewBox="0 0 100 100"><use href="#gf-spark" fill="#fff"/></svg></span><div><b>Responde no WhatsApp</b><span>Tira dúvidas e mantém o vínculo — no seu tom, com a sua marca.</span></div></li>
+          <li><span class="fico"><svg width="18" height="18" viewBox="0 0 100 100"><use href="#gf-arcs"/></svg></span><div><b>Reativa quem sumiu</b><span>Detecta quem precisa de atenção e traz de volta automaticamente.</span></div></li>
+          <li><span class="fico"><svg width="18" height="18" viewBox="0 0 100 100"><use href="#gf-dose" fill="#fff"/></svg></span><div><b>Relatório do que importa</b><span>Toda semana, o que melhorar — sem você garimpar dado.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== MÉTODO ====== -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#63AC39"/></svg> O método que funciona</span>
+      <h2 class="serif">Audiência vira comunidade. Comunidade vira <em class="grad-text">receita</em>.</h2>
+      <p>A conversão direta de audiência fria é 2–5%. Dentro de uma comunidade ativa, vai a <b>15–25%</b>.</p>
+    </div>
+    <div class="steps">
+      <div class="step s1 rv">
+        <div class="pct serif">2–5%</div>
+        <h4>Audiência fria</h4>
+        <p>você posta, eles passam reto</p>
+        <div class="chips"><i>📷 Instagram</i><i>🎵 TikTok</i><i>▶️ YouTube</i><i>💬 WhatsApp</i></div>
+        <svg class="step-arrow" viewBox="0 0 20 20"><use href="#arr"/></svg>
+      </div>
+      <div class="step s2 rv rv-d1">
+        <div class="pct serif">15–25%</div>
+        <h4>Comunidade ativa</h4>
+        <p>ela entra, engaja e vira fã</p>
+        <div class="chips"><i>🎮 Gamificação</i><i>📚 Conteúdos</i><i>🏆 Desafios</i><i>🤖 IA 24/7</i></div>
+        <svg class="step-arrow" viewBox="0 0 20 20"><use href="#arr"/></svg>
+      </div>
+      <div class="step s3 rv rv-d2">
+        <div class="pct serif">R$$$</div>
+        <h4>Produtos são consequência</h4>
+        <p>a esteira inteira monetizada</p>
+        <div class="chips"><i>🩺 Consultas</i><i>🔁 Planos</i><i>🧬 Protocolos</i><i>🎓 Cursos</i><i>🎤 Eventos</i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== VERDADE ====== -->
+<section class="sec-plum on-dark">
+  <svg class="gf spin-slower" style="top:-60px;right:-80px;width:280px;color:rgba(240,176,242,.14)" viewBox="0 0 100 100"><use href="#gf-petal" fill="currentColor"/></svg>
+  <svg class="gf spin-slow" style="bottom:30px;left:6%;width:60px;color:rgba(240,176,242,.3)" viewBox="0 0 100 100"><use href="#gf-spark" fill="currentColor"/></svg>
+  <div class="wrap truth">
+    <span class="eyebrow rv"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#F0B0F2"/></svg> A verdade que ninguém te conta</span>
+    <h2 class="serif rv">Você não estudou tantos anos pra virar <em>escravo do WhatsApp</em>.</h2>
+    <p class="rv rv-d1">A consulta acaba e o cuidado para. O paciente sente sua falta na quarta-feira, não só no dia da consulta. E a sua renda tem o teto exato da sua agenda — por mais que você corra.</p>
+    <p class="rv rv-d2">A MyDose muda isso com <b>ética e ciência</b>: o cuidado continua entre as consultas e nasce uma nova fonte de receita que respeita o seu tempo e a sua autoridade.</p>
+    <div class="hero-ctas rv rv-d3" style="margin-top:34px">
+      <a href="#planos" class="btn btn-light">Ver os planos <svg class="arr" width="18" height="18"><use href="#arr"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PRÉDIO ====== -->
+<section>
+  <div class="wrap tower-wrap">
+    <div>
+      <div class="sec-head rv" style="margin-bottom:0">
+        <span class="eyebrow"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#415FF5"/></svg> A sua comunidade é um prédio</span>
+        <h2 class="serif">Cada andar, um produto. Cada produto, uma <em class="grad-text">receita</em>.</h2>
+        <p>Você empilha pessoas e produtos no mesmo lugar — e monetiza a jornada inteira do paciente, não só a consulta. Da consulta ao evento, <b>6 fontes de receita</b> rodando sozinhas.</p>
+      </div>
+      <div class="totals rv">
+        <div class="total"><b id="tPeople">0</b><span>pessoas /mês</span></div>
+        <div class="total"><b class="grad-text" id="tMoney">R$ 0</b><span>receita /mês</span></div>
+      </div>
+    </div>
+    <div class="floors" id="bldg">
+      <div class="floor f1"><span class="fico">🏆</span><div><b>Desafios & gamificação</b><small>a porta de entrada</small></div><div class="val serif">R$ 3k<small>500 pessoas</small></div></div>
+      <div class="floor f2"><span class="fico">🎤</span><div><b>Eventos & lançamentos</b><small>picos de receita</small></div><div class="val serif">R$ 10k<small>300 pessoas</small></div></div>
+      <div class="floor f3"><span class="fico">🎓</span><div><b>Cursos & biblioteca</b><small>escala sem agenda</small></div><div class="val serif">R$ 9k<small>150 pessoas</small></div></div>
+      <div class="floor f4"><span class="fico">🧬</span><div><b>Protocolos & planos</b><small>recorrência de cuidado</small></div><div class="val serif">R$ 12k<small>100 pessoas</small></div></div>
+      <div class="floor f5"><span class="fico">🩺</span><div><b>Consultas & comunidade</b><small>o alto padrão</small></div><div class="val serif">R$ 16k<small>40 pessoas</small></div></div>
+      <div class="tower-base rv">Entrada única: pagamentos · IA · CRM — tudo integrado num só lugar</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FERRAMENTAS ====== -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#F56442"/></svg> Uma só, no lugar de muitas</span>
+      <h2 class="serif">Hoje, isso seriam <em class="grad-text">+ de 10 ferramentas</em>.</h2>
+      <p>Cada uma com mensalidade, login e fatura própria — e horas suas só pra fazer tudo conversar. Na MyDose, é <b>tudo num lugar só</b>. E a gente ainda faz por você.</p>
+    </div>
+    <div class="tools">
+      <div class="tools-old rv">
+        <h3 class="serif">A colcha de retalhos</h3>
+        <ul class="tool-list">
+          <li><span>📱 App de hábitos + comunidade</span><b>R$ 497</b></li>
+          <li><span>🤖 Assistente de IA</span><b>R$ 397</b></li>
+          <li><span>🗂️ Prontuário eletrônico</span><b>R$ 299</b></li>
+          <li><span>📊 CRM de vendas</span><b>R$ 400</b></li>
+          <li><span>🎓 Área de membros + checkout</span><b>R$ 800</b></li>
+          <li><span>📈 Gestão de anúncios</span><b>R$ 590</b></li>
+          <li><span>📨 Disparos + agenda + formulários</span><b>R$ 907</b></li>
+        </ul>
+        <div class="sum"><span>+ de 10 ferramentas, separadas</span><b>R$ 3.890/mês</b></div>
+      </div>
+      <div class="tools-my rv rv-d1">
+        <h3 class="serif">Com a MyDose, a partir de</h3>
+        <div class="big serif">R$ 290<small>/mês</small></div>
+        <p style="color:rgba(255,255,255,.75);font-size:15px">Você troca a colcha de retalhos de apps por uma plataforma única — <b style="color:#fff">e ainda ganha conteúdo, tráfego e IA rodando o crescimento</b>.</p>
+        <span class="save-pill">💸 Você economiza R$ 3.600/mês — e ganha as suas horas de volta</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CALCULADORA ====== -->
+<section id="calculadora" style="padding-top:0">
+  <svg class="gf spin-slow" style="top:0;right:-60px;width:160px;color:var(--green-2);opacity:.4" viewBox="0 0 100 100"><use href="#gf-petal" fill="currentColor"/></svg>
+  <div class="wrap">
+    <div class="calc rv">
+      <div>
+        <span class="eyebrow" style="color:var(--forest)"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#223F11"/></svg> Calculadora de receita</span>
+        <h3 class="serif">Quanto você deixa <em>na mesa</em> hoje?</h3>
+        <p style="margin-top:12px;color:rgba(34,63,17,.75);font-size:15.5px">Mexa nos controles e veja, ao vivo, a receita recorrente que você poderia gerar com programas e produtos sobre a sua comunidade.</p>
+        <ul class="ok">
+          <li><svg width="17" height="17" viewBox="0 0 20 20"><use href="#ck"/></svg> Sem abrir um novo horário na agenda</li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20"><use href="#ck"/></svg> ~2h por semana de operação</li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20"><use href="#ck"/></svg> Receita que continua entre as consultas</li>
+        </ul>
+        <div class="ctrl"><label>Pacientes ativos <output id="vP">80</output></label><input type="range" id="P" min="10" max="500" step="5" value="80"></div>
+        <div class="ctrl"><label>Valor da consulta <output id="vT">R$ 300</output></label><input type="range" id="T" min="100" max="1000" step="10" value="300"></div>
+        <div class="ctrl"><label>Produtos na esteira <output id="vN">3</output></label><input type="range" id="N" min="0" max="6" step="1" value="3"></div>
+      </div>
+      <div class="calc-out">
+        <div class="row"><span>Hoje (só consultas)</span><b id="oNow">R$ 0</b></div>
+        <div class="row"><span>Com MyDose</span><b id="oMy">R$ 0</b></div>
+        <div class="delta"><b id="oD">+R$ 0</b><span>a mais por mês</span></div>
+        <button class="btn btn-grad js-talk" data-mode="talk" data-plan="MyDose">Destravar essa receita <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ÁREAS ====== -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#C64FCA"/></svg> Feito pra você</span>
+      <h2 class="serif">Escolha a sua área. A gente fala a <em class="grad-text">sua língua</em>.</h2>
+      <p>Mesma plataforma, o jeito do seu nicho. Toque na sua área, veja a solução sob medida e <b>fale com o nosso time</b>.</p>
+    </div>
+    <div class="areas">
+      <a class="area a-fis rv js-talk-link" href="physical.html">
+        <div class="ph"><img src="assets/ph-fit.png" alt="Personal trainer acompanhando aluno" loading="lazy"></div>
+        <div class="txt">
+          <h4 class="serif">Physical</h4>
+          <p>Nutri, médicos, personal, fisio. Acabe com a recompra baixa.</p>
+          <span class="link">Quero pra minha área <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></span>
+        </div>
+      </a>
+      <a class="area a-men rv rv-d1" href="mental.html">
+        <div class="ph"><img src="assets/life-mental.png" alt="Sessão de terapia com acompanhamento pelo app" loading="lazy"></div>
+        <div class="txt">
+          <h4 class="serif">Mental</h4>
+          <p>Psicólogos, psiquiatras, terapeutas. Reduza o no-show.</p>
+          <span class="link">Quero pra minha área <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></span>
+        </div>
+      </a>
+      <a class="area a-cli rv rv-d2" href="clinic.html">
+        <div class="ph"><img src="assets/life-clinic.png" alt="Equipe de clínica usando o MyDose" loading="lazy"></div>
+        <div class="txt">
+          <h4 class="serif">Clinics</h4>
+          <p>Multiprofissional. Escale a clínica inteira com IA.</p>
+          <span class="link">Quero pra minha clínica <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PLANOS ====== -->
+<section id="planos" style="padding-top:0">
+  <svg class="gf spin-slower" style="top:60px;left:-80px;width:200px;color:var(--pink-3)" viewBox="0 0 100 100"><use href="#gf-dose" fill="currentColor"/></svg>
+  <div class="wrap">
+    <div class="sec-head rv" style="text-align:center;margin-inline:auto">
+      <span class="eyebrow"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="url(#lg1)"/></svg> Planos · oferta irrecusável</span>
+      <h2 class="serif">Escolha onde você quer <em class="grad-text">colocar a mão</em>.</h2>
+      <p style="margin-inline:auto">A plataforma é a mesma — o que muda é <b>quanto a gente faz por você</b>. Mídia sempre fora do preço, transparente. Suba de plano quando quiser.</p>
+    </div>
+    <div class="plans-kpis rv">
+      <div class="st"><b class="grad-text">3×</b><span>mais adesão</span></div>
+      <div class="st"><b class="grad-text">5×</b><span>mais receita</span></div>
+      <div class="st"><b class="grad-text">−50%</b><span>tarefas operacionais</span></div>
+    </div>
+    <div class="plans-controls rv">
+      <div class="seg" id="segWho">
+        <button class="on" data-who="pro">👤 Profissional</button>
+        <button data-who="cli">🏥 Clínica</button>
+      </div>
+      <div class="seg" id="segTerm">
+        <button class="on" data-k="anu">Anual <b>−25%</b></button>
+        <button data-k="sem">Semestral <b>−15%</b></button>
+        <button data-k="tri">Trimestral</button>
+      </div>
+      <p style="font-size:13.5px;color:var(--gray);font-weight:600;text-align:center">💚 Anual = melhor preço (até ~2 meses grátis) · 🔒 trava de preço pelo contrato · 🛡️ 30 dias de garantia</p>
+    </div>
+
+    <!-- PROFISSIONAL -->
+    <div id="plansPro">
+      <div class="plans">
+        <div class="plan rv">
+          <h4>Software</h4>
+          <p class="desc">A plataforma na sua mão — você toca o crescimento.</p>
+          <p class="fat">fatura até R$ 10k/mês</p>
+          <div class="price"><span class="cur">R$</span> <b data-tri="397" data-sem="340" data-anu="290">290</b> <span>/mês</span></div>
+          <p class="was"></p><p class="econ"></p>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> Plataforma IA + Academy</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> Comunidade + checkout + CRM</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 500 WhatsApp · 100 créditos IA</li>
+          </ul>
+          <button class="btn btn-ghost btn-sm js-talk" data-mode="checkout" data-plan="Software">Começar agora</button>
+          <button class="talk2 js-talk" data-mode="talk" data-plan="Software">Falar com vendas</button>
+        </div>
+        <div class="plan rv rv-d1">
+          <h4>Start</h4>
+          <p class="desc">A gente ativa os seus 2 aha moments.</p>
+          <p class="fat">fatura até R$ 20k/mês</p>
+          <div class="price"><span class="cur">R$</span> <b data-tri="797" data-sem="690" data-anu="590">590</b> <span>/mês</span></div>
+          <p class="was"></p><p class="econ"></p>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> Ativação dos 2 aha moments</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 6 posts + 3 vídeos/mês</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 1.500 WhatsApp · 400 créditos IA</li>
+          </ul>
+          <button class="btn btn-ghost btn-sm js-talk" data-mode="checkout" data-plan="Start">Começar agora</button>
+          <button class="talk2 js-talk" data-mode="talk" data-plan="Start">Agendar reunião</button>
+        </div>
+        <div class="plan rv rv-d2">
+          <h4>Co-pilot</h4>
+          <p class="desc">Crescimento com mídia e estrutura, guiado de perto.</p>
+          <p class="fat">fatura R$ 20–50k/mês</p>
+          <div class="price"><span class="cur">R$</span> <b data-tri="1.490" data-sem="1.290" data-anu="1.090">1.090</b> <span>/mês</span></div>
+          <p class="was"></p><p class="econ"></p>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 12 posts + 6 vídeos/mês</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> Setup de tráfego + funis</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 4.000 WhatsApp · relatório IA</li>
+          </ul>
+          <button class="btn btn-ghost btn-sm js-talk" data-mode="checkout" data-plan="Co-pilot">Começar agora</button>
+          <button class="talk2 js-talk" data-mode="talk" data-plan="Co-pilot">Agendar reunião</button>
+        </div>
+        <div class="plan hot rv rv-d3">
+          <span class="star">⭐ Mais escolhido</span>
+          <h4>Autopilot</h4>
+          <p class="desc">A máquina rodando: a gente faz e gere por você.</p>
+          <p class="fat">fatura R$ 50–150k/mês</p>
+          <div class="price"><span class="cur">R$</span> <b data-tri="2.990" data-sem="2.590" data-anu="2.190">2.190</b> <span style="color:rgba(255,255,255,.6)">/mês</span></div>
+          <p class="was"></p><p class="econ"></p>
+          <p class="media-plus">+ R$ 1.500 de mídia</p>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> Tráfego gerido por nós</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> 20 posts + 10 vídeos/mês</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> 10.000 WhatsApp · gestor de conta</li>
+          </ul>
+          <button class="btn btn-grad btn-sm js-talk" data-mode="checkout" data-plan="Autopilot">Quero esse <svg class="arr" width="16" height="16"><use href="#arr"/></svg></button>
+          <button class="talk2 js-talk" data-mode="talk" data-plan="Autopilot">Agendar reunião</button>
+        </div>
+        <div class="plan rv rv-d4">
+          <h4>Partner</h4>
+          <p class="desc">Um squad cuidando da sua marca inteira.</p>
+          <p class="fat">fatura R$ 150k+/mês</p>
+          <div class="price"><span style="font-size:12px;color:var(--gray);display:block;font-weight:700">a partir de</span><span class="cur">R$</span> <b data-tri="7.900" data-sem="6.900" data-anu="5.900">5.900</b> <span>/mês</span></div>
+          <p class="was"></p><p class="econ"></p>
+          <p class="media-plus">+ R$ 5.000 de mídia</p>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> Squad dedicado + fábrica de produtos</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 36 posts + 18 vídeos/mês</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 25.000 WhatsApp · BI e metas</li>
+          </ul>
+          <button class="btn btn-ghost btn-sm js-talk" data-mode="talk" data-plan="Partner">Falar com o time</button>
+        </div>
+      </div>
+      <p class="plans-note rv">No <b>Autopilot</b> você recebe <b>+R$ 127.000/ano</b> em valor entregue (plataforma + tráfego + 360 conteúdos + funis + gestão) → e investe a partir de <b>R$ 2.190/mês</b>.</p>
+      <details class="compare rv">
+        <summary>📊 Comparar todos os entregáveis <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></summary>
+        <div class="tbl-scroll">
+          <table>
+            <tr><th>Entregáveis / mês</th><th>Software</th><th>Start</th><th>Co-pilot</th><th>Autopilot ⭐</th><th>Partner</th></tr>
+            <tr><td>Investimento /mês</td><td>R$ <span data-tri="397" data-sem="340" data-anu="290">290</span></td><td>R$ <span data-tri="797" data-sem="690" data-anu="590">590</span></td><td>R$ <span data-tri="1.490" data-sem="1.290" data-anu="1.090">1.090</span></td><td>R$ <span data-tri="2.990" data-sem="2.590" data-anu="2.190">2.190</span></td><td>R$ <span data-tri="7.900" data-sem="6.900" data-anu="5.900">5.900</span></td></tr>
+            <tr><td>Verba de mídia</td><td>—</td><td>—</td><td>—</td><td>+R$ 1.500</td><td>+R$ 5.000</td></tr>
+            <tr><td>Plataforma IA + Academy</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Posts com IA</td><td>—</td><td>6</td><td>12</td><td>20</td><td>36</td></tr>
+            <tr><td>Vídeos / Reels editados</td><td>—</td><td>3</td><td>6</td><td>10</td><td>18</td></tr>
+            <tr><td>Ebooks / lead magnets</td><td>—</td><td>1</td><td>1</td><td>2</td><td>4</td></tr>
+            <tr><td>Gestão de tráfego</td><td>—</td><td>—</td><td>setup</td><td>rodado</td><td>agressivo</td></tr>
+            <tr><td>Relatório mensal</td><td>—</td><td>—</td><td>IA</td><td>IA + plano</td><td>gestor</td></tr>
+            <tr><td>WhatsApp / mês</td><td>500</td><td>1.500</td><td>4.000</td><td>10.000</td><td>25.000</td></tr>
+            <tr><td>E-mails / mês</td><td>2.000</td><td>5.000</td><td>15.000</td><td>40.000</td><td>100.000</td></tr>
+            <tr><td>Créditos IA / mês</td><td>100</td><td>400</td><td>1.000</td><td>3.000</td><td>8.000</td></tr>
+            <tr><td>Horas de gravação / mês</td><td>5h</td><td>10h</td><td>20h</td><td>40h</td><td>100h</td></tr>
+            <tr><td>Suporte humano</td><td>comunidade</td><td>e-mail</td><td>prioritário</td><td>gerente</td><td>gestor dedicado</td></tr>
+          </table>
+        </div>
+        <p class="tbl-hint">← arraste a tabela pra ver todos os planos →</p>
+      </details>
+    </div>
+
+    <!-- CLÍNICA -->
+    <div id="plansCli" hidden>
+      <div class="plans c3">
+        <div class="plan rv">
+          <h4>Clinics Start</h4>
+          <p class="desc">Tire a clínica do papel com a equipe no mesmo app.</p>
+          <p class="fat">até 3 profissionais</p>
+          <div class="price"><span class="cur">R$</span> <b data-tri="1.990" data-sem="1.690" data-anu="1.490">1.490</b> <span>/mês</span></div>
+          <p class="was"></p><p class="econ"></p>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> Plataforma multiprofissional + Academy</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 12 posts + 6 vídeos/mês</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 8.000 WhatsApp · 2.000 créditos IA</li>
+          </ul>
+          <button class="btn btn-ghost btn-sm js-talk" data-mode="talk" data-plan="Clinics Start">Quero proposta</button>
+        </div>
+        <div class="plan hot rv rv-d1">
+          <span class="star">⭐ Melhor custo/cadeira</span>
+          <h4>Clinics Growth</h4>
+          <p class="desc">Escale a clínica com mídia e funis por especialidade.</p>
+          <p class="fat">até 6 profissionais</p>
+          <div class="price"><span class="cur">R$</span> <b data-tri="4.990" data-sem="4.240" data-anu="3.740">3.740</b> <span style="color:rgba(255,255,255,.6)">/mês</span></div>
+          <p class="was"></p><p class="econ"></p>
+          <p class="media-plus">+ R$ 2.500 de mídia</p>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> Tráfego + conteúdo gerido</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> 30 posts + 15 vídeos/mês</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> 20.000 WhatsApp · gerente</li>
+          </ul>
+          <button class="btn btn-grad btn-sm js-talk" data-mode="checkout" data-plan="Clinics Growth">Quero esse <svg class="arr" width="16" height="16"><use href="#arr"/></svg></button>
+        </div>
+        <div class="plan rv rv-d2">
+          <h4>Clinics Performance</h4>
+          <p class="desc">Operação de alta performance, com squad e BI por unidade.</p>
+          <p class="fat">até 12 profissionais</p>
+          <div class="price"><span class="cur">R$</span> <b data-tri="9.900" data-sem="8.400" data-anu="7.400">7.400</b> <span>/mês</span></div>
+          <p class="was"></p><p class="econ"></p>
+          <p class="media-plus">+ R$ 5.000 de mídia</p>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> Squad + estrategista dedicado</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 60 posts + 30 vídeos/mês</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 50.000 WhatsApp · BI por unidade</li>
+          </ul>
+          <button class="btn btn-ghost btn-sm js-talk" data-mode="talk" data-plan="Clinics Performance">Falar com o time</button>
+        </div>
+      </div>
+      <details class="compare rv">
+        <summary>📊 Comparar todos os entregáveis <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></summary>
+        <div class="tbl-scroll">
+          <table>
+            <tr><th>Entregáveis / mês</th><th>Clinics Start</th><th>Clinics Growth ⭐</th><th>Clinics Performance</th></tr>
+            <tr><td>Investimento /mês</td><td>R$ <span data-tri="1.990" data-sem="1.690" data-anu="1.490">1.490</span></td><td>R$ <span data-tri="4.990" data-sem="4.240" data-anu="3.740">3.740</span></td><td>R$ <span data-tri="9.900" data-sem="8.400" data-anu="7.400">7.400</span></td></tr>
+            <tr><td>Verba de mídia</td><td>—</td><td>+R$ 2.500</td><td>+R$ 5.000</td></tr>
+            <tr><td>Profissionais inclusos</td><td>até 3</td><td>até 6</td><td>até 12</td></tr>
+            <tr><td>Plataforma multiprofissional + Academy</td><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Posts com IA</td><td>12</td><td>30</td><td>60</td></tr>
+            <tr><td>Vídeos / Reels editados</td><td>6</td><td>15</td><td>30</td></tr>
+            <tr><td>Ebooks / lead magnets</td><td>1</td><td>3</td><td>6</td></tr>
+            <tr><td>Gestão de tráfego</td><td>setup</td><td>gerido</td><td>agressivo</td></tr>
+            <tr><td>WhatsApp / mês</td><td>8.000</td><td>20.000</td><td>50.000</td></tr>
+            <tr><td>E-mails / mês</td><td>30.000</td><td>80.000</td><td>200.000</td></tr>
+            <tr><td>Créditos IA / mês</td><td>2.000</td><td>5.000</td><td>12.000</td></tr>
+            <tr><td>Suporte humano</td><td>prioritário</td><td>gerente</td><td>gestor + estrategista</td></tr>
+            <tr><td>Profissional extra</td><td>R$ 99</td><td>R$ 99</td><td>R$ 99</td></tr>
+          </table>
+        </div>
+        <p class="tbl-hint">← arraste a tabela pra ver todos os planos →</p>
+      </details>
+    </div>
+
+    <div class="assures">
+      <div class="assure as-1 rv">
+        <h5>🛡️ Garantia de 30 dias</h5>
+        <p>Não curtiu? Devolvemos <b>100% do seu investimento</b>. Sem pergunta, sem letrinha miúda.</p>
+      </div>
+      <div class="assure as-2 rv rv-d1">
+        <h5>🎯 Garantia do aha</h5>
+        <p>Sem a 1ª venda e protocolos rodando em 30 dias (fazendo a sua parte)? <b>A gente trabalha de graça até acontecer.</b></p>
+      </div>
+      <div class="assure as-3 rv rv-d2">
+        <h5>🔒 Trava de preço</h5>
+        <p>O valor que você fechar hoje fica <b>congelado pelo contrato inteiro</b>. O preço sobe; o seu, não.</p>
+      </div>
+    </div>
+    <p class="plans-note rv"><b>Onboarding dedicado + trava de preço</b> valem só fechando na reunião — <b>capacidade limitada por mês</b>. Quando o Clinics lançar (agosto), os preços sobem.<br><br>➕ <b>Precisa de mais volume?</b> Add-ons sob demanda — WhatsApp, e-mails, créditos de IA, conteúdos avulsos e profissional extra — entram só quando você quiser, sem surpresa na fatura. Os programas que <b>você cobra do paciente</b> (Início, Essencial, Premium) são receita sua, não custo de plataforma.</p>
+  </div>
+</section>
+
+<!-- ====== AULA AO VIVO ====== -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="live-card rv">
+      <span class="live-badge"><span class="pulse"></span> AO VIVO · TODA QUARTA, 19H</span>
+      <h2 class="serif">Antes de decidir, <em>veja funcionar ao vivo</em>.</h2>
+      <p>Toda quarta, 19h: Guga & Dr. Arthur mostram, na prática, como gerar <b>+R$ 10k em 30 dias</b> com comunidade e IA — e respondem as suas perguntas em tempo real.</p>
+      <a class="btn btn-light" href="live.html">Garantir minha vaga grátis <svg class="arr" width="18" height="18"><use href="#arr"/></svg></a>
+      <p class="live-free">✓ grátis · replay liberado por 7 dias</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA FINAL ====== -->
+<section class="final">
+  <svg class="gf spin-slow" style="top:6%;left:6%;width:70px;color:var(--magenta);opacity:.5" viewBox="0 0 100 100"><use href="#gf-spark" fill="currentColor"/></svg>
+  <svg class="gf spin-slower" style="top:14%;right:8%;width:110px;color:var(--blue-2);opacity:.5" viewBox="0 0 100 100"><use href="#gf-petal" fill="currentColor"/></svg>
+  <svg class="gf float-y" style="bottom:10%;left:12%;width:46px;color:var(--orange);opacity:.55" viewBox="0 0 100 100"><use href="#gf-dose" fill="currentColor"/></svg>
+  <div class="wrap">
+    <span class="eyebrow rv" style="justify-content:center;display:inline-flex"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="url(#lg1)"/></svg> Take back control</span>
+    <h2 class="serif rv">Retome o controle da sua agenda, da sua receita e do <em class="grad-text">impacto que você tem nas pessoas</em>.</h2>
+    <p class="rv rv-d1"><b>Garantia:</b> em 30 dias você faz a sua 1ª venda e tem pacientes usando os seus protocolos — ou a gente trabalha de graça até acontecer.</p>
+    <div class="hero-ctas rv rv-d2">
+      <a class="btn btn-grad" href="#planos">Ver planos <svg class="arr" width="18" height="18"><use href="#arr"/></svg></a>
+      <a class="btn btn-ghost" href="live.html">Entrar na aula grátis</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="wordmark">my<span>dose</span></span>
+        <p class="tagline">O sistema operacional de IA da saúde. +Adesão · +Receita · −Tempo.</p>
+      </div>
+      <div>
+        <h6>Produto</h6>
+        <ul><li><a href="#produto">O app</a></li><li><a href="#planos">Planos</a></li><li><a href="live.html">Aula ao vivo</a></li></ul>
+      </div>
+      <div>
+        <h6>Para quem</h6>
+        <ul><li><a href="physical.html">Physical</a></li><li><a href="mental.html">Mental</a></li><li><a href="clinic.html">Clinics</a></li></ul>
+      </div>
+      <div>
+        <h6>Empresa</h6>
+        <ul><li><a href="index.html">Planejamento</a></li><li><a href="#">Brand book</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© MyDose · Take back control</span>
+      <span>feito com ética e ciência por quem viveu a dor.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ====== STICKY CTA MOBILE ====== -->
+<div class="sticky-cta" id="stickyCta">
+  <button class="btn btn-primary js-talk" data-mode="checkout" data-plan="MyDose">Começar agora <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
+</div>
+
+<!-- ====== MODAL ====== -->
+<div class="modal" id="talkModal" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-x" data-close aria-label="Fechar">✕</button>
+    <p class="m-plan" id="mPlan">Plano MyDose</p>
+    <h3 id="mTitle">Falar com o time</h3>
+    <p class="msub" id="mSub">Conte o seu momento — montamos uma proposta sob medida. Resposta em até 1 dia útil.</p>
+    <form class="mform" onsubmit="return talkSub(this)">
+      <input type="hidden" id="mPlanInput" name="plano">
+      <input type="text" name="nome" placeholder="Nome completo" required>
+      <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <select name="perfil" required>
+        <option value="" disabled selected>Você é…</option>
+        <option>Nutricionista</option>
+        <option>Médico(a)</option>
+        <option>Psicólogo(a) / Psiquiatra</option>
+        <option>Personal / Fisioterapeuta</option>
+        <option>Clínica / equipe</option>
+        <option>Outro</option>
+      </select>
+      <select name="pacientes" required>
+        <option value="" disabled selected>Pacientes ativos hoje…</option>
+        <option>Até 30</option>
+        <option>30 a 100</option>
+        <option>100 a 300</option>
+        <option>+300</option>
+      </select>
+      <button class="btn btn-grad" type="submit">Enviar <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
+      <p class="m-priv">🔒 Sem spam. Usamos seus dados só pra entrar em contato.</p>
+    </form>
+    <div class="msuccess">
+      <div class="big">🎉</div>
+      <h4>Recebido!</h4>
+      <p>Nosso time vai te chamar no <b>WhatsApp e e-mail</b> em até 1 dia útil.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* nav scrolled + sticky cta */
+  var nav = document.getElementById('nav'), sticky = document.getElementById('stickyCta');
+  function onScroll(){
+    nav.classList.toggle('scrolled', scrollY > 20);
+    sticky.classList.toggle('show', scrollY > innerHeight * .9 && scrollY < document.body.scrollHeight - innerHeight * 2.2);
+  }
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* menu mobile */
+  var burger = document.getElementById('burger'), sheet = document.getElementById('sheet');
+  burger.addEventListener('click', function(){
+    var open = sheet.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  sheet.querySelectorAll('a,button').forEach(function(a){
+    a.addEventListener('click', function(){
+      sheet.classList.remove('open'); burger.classList.remove('open'); document.body.style.overflow='';
+    });
+  });
+
+  /* marquee */
+  var mq = document.getElementById('mq');
+  var star = '<svg viewBox="0 0 100 100"><path d="M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z" fill="#fff"/></svg>';
+  var words = ['+Adesão','+Receita','−Tempo','Take back control','Comunidade gamificada','IA 24/7','Bem-estar coletivo'];
+  var half = words.map(function(w){return '<span>'+w+' '+star+'</span>'}).join('');
+  mq.innerHTML = half + half;
+
+  /* dots 1:900 */
+  var dots = document.getElementById('dots');
+  if(dots){
+    var html = '<i class="you"></i>';
+    for(var i=0;i<180;i++) html += '<i></i>';
+    dots.innerHTML = html;
+  }
+
+  /* reveal on scroll */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+  /* prédio: andares acendem + contadores */
+  var bldg = document.getElementById('bldg');
+  if(bldg){
+    var floors = [].slice.call(bldg.querySelectorAll('.floor'));
+    var pEl = document.getElementById('tPeople'), mEl = document.getElementById('tMoney');
+    function count(el, to, fmt, dur){
+      var t0 = null;
+      function step(t){
+        if(!t0) t0 = t;
+        var k = Math.min((t - t0) / dur, 1);
+        k = 1 - Math.pow(1 - k, 3);
+        el.textContent = fmt(Math.round(to * k));
+        if(k < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    new IntersectionObserver(function(es, obs){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        floors.forEach(function(f, i){
+          setTimeout(function(){ f.classList.add('lit'); }, reduce ? 0 : 300 + i * 260);
+        });
+        count(pEl, 1090, function(n){ return n.toLocaleString('pt-BR'); }, reduce ? 1 : 1800);
+        count(mEl, 50000, function(n){ return 'R$ ' + n.toLocaleString('pt-BR'); }, reduce ? 1 : 1800);
+        obs.disconnect();
+      });
+    }, {threshold:.35}).observe(bldg);
+  }
+
+  /* calculadora (mesma fórmula do site PRO) */
+  var P = document.getElementById('P'), T = document.getElementById('T'), N = document.getElementById('N');
+  if(P){
+    function brl(n){ return 'R$ ' + Math.round(n).toLocaleString('pt-BR'); }
+    function calc(){
+      var p = +P.value, t = +T.value, n = +N.value;
+      document.getElementById('vP').textContent = p;
+      document.getElementById('vT').textContent = brl(t);
+      document.getElementById('vN').textContent = n;
+      var hoje = p * t, rec = p * .6 * (t * .55), prod = p * .2 * 90 * n;
+      document.getElementById('oNow').textContent = brl(hoje);
+      document.getElementById('oMy').textContent = brl(hoje + rec + prod);
+      document.getElementById('oD').textContent = '+' + brl(rec + prod);
+    }
+    [P, T, N].forEach(function(s){ s.addEventListener('input', calc); });
+    calc();
+  }
+
+  /* planos: profissional × clínica */
+  var segWho = document.getElementById('segWho');
+  segWho.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click', function(){
+      segWho.querySelectorAll('button').forEach(function(x){ x.classList.remove('on'); });
+      b.classList.add('on');
+      var pro = b.dataset.who === 'pro';
+      document.getElementById('plansPro').hidden = !pro;
+      document.getElementById('plansCli').hidden = pro;
+      document.querySelectorAll('#plansPro .rv, #plansCli .rv').forEach(function(el){ el.classList.add('in'); });
+    });
+  });
+
+  /* planos: período + economia dinâmica */
+  function num(v){ return parseInt(String(v).replace(/\./g,''), 10); }
+  function applyTerm(k){
+    document.querySelectorAll('[data-tri]').forEach(function(s){ s.textContent = s.dataset[k]; });
+    document.querySelectorAll('.plan').forEach(function(p){
+      var pr = p.querySelector('.price [data-tri]'), ec = p.querySelector('.econ'), was = p.querySelector('.was');
+      if(!pr) return;
+      if(was) was.textContent = (k === 'tri') ? '' : ('de R$ ' + pr.dataset.tri + '/mês');
+      if(!ec) return;
+      if(k === 'tri'){ ec.textContent = ''; return; }
+      var save = (num(pr.dataset.tri) - num(pr.dataset[k])) * 12;
+      ec.textContent = '💸 economiza R$ ' + save.toLocaleString('pt-BR') + '/ano';
+    });
+  }
+  var segTerm = document.getElementById('segTerm');
+  segTerm.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click', function(){
+      segTerm.querySelectorAll('button').forEach(function(x){ x.classList.remove('on'); });
+      b.classList.add('on');
+      applyTerm(b.dataset.k);
+    });
+  });
+  applyTerm('anu');
+
+  /* modal */
+  var m = document.getElementById('talkModal');
+  function openModal(mode, plan){
+    document.getElementById('mPlan').textContent = 'Plano ' + plan;
+    document.getElementById('mTitle').textContent = mode === 'checkout' ? ('Começar com o ' + plan) : 'Falar com o time';
+    document.getElementById('mSub').textContent = mode === 'checkout'
+      ? ('Confirme alguns dados e te levamos pro onboarding do ' + plan + '. Sem compromisso.')
+      : ('Conte o seu momento — montamos uma proposta sob medida pro ' + plan + '. Resposta em até 1 dia útil.');
+    document.getElementById('mPlanInput').value = plan + ' · ' + mode;
+    var f = m.querySelector('.mform');
+    f.style.display = ''; f.reset && f.reset();
+    m.querySelector('.msuccess').classList.remove('on');
+    m.classList.add('on');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){ m.classList.remove('on'); document.body.style.overflow = ''; }
+  document.querySelectorAll('.js-talk').forEach(function(b){
+    b.addEventListener('click', function(){ openModal(this.dataset.mode || 'talk', this.dataset.plan || 'MyDose'); });
+  });
+  m.querySelectorAll('[data-close]').forEach(function(x){ x.addEventListener('click', closeModal); });
+  m.addEventListener('click', function(e){ if(e.target === m) closeModal(); });
+  addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+  window.talkSub = function(f){
+    f.style.display = 'none';
+    m.querySelector('.msuccess').classList.add('on');
+    /* TODO: enviar pro CRM/Formspree + rota de checkout */
+    return false;
+  };
+})();
+</script>
+</body>
+</html>
