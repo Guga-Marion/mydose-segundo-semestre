@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# IAs / LLMs bem-vindas (GEO)
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://mydoseapp.com/sitemap.xml

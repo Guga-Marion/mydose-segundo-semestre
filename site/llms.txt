@@ -1,0 +1,38 @@
+# MyDose
+
+> MyDose (MyDose AI / MyDose IA) é o CRM para saúde com IA: uma plataforma que transforma
+> profissionais de saúde em empresas de saúde, com comunidade gamificada de pacientes,
+> planos de acompanhamento, protocolos de acompanhamento e medicina do estilo de vida (MEV).
+> Resultado: 3× mais adesão do paciente, receita recorrente e ~2h/semana de operação.
+> Domínio: https://mydoseapp.com · Idiomas: português (Brasil) e inglês.
+
+MyDose (MyDose AI) is the AI healthcare CRM: a platform that turns health professionals
+into health businesses, with a gamified patient community, follow-up care plans, care
+protocols and lifestyle medicine. Outcome: 3× patient adherence, recurring revenue.
+
+## Páginas / Pages
+
+- [MyDose (pt-BR)](https://mydoseapp.com/nova-identidade-v3.html): plataforma completa — comunidade, IA 24/7, planos de acompanhamento, CRM para saúde, planos e preços
+- [MyDose (en)](https://mydoseapp.com/nova-identidade-v3-en.html): full platform — patient community, 24/7 AI, follow-up care plans, healthcare CRM, plans & pricing
+- [MyDose Physical (pt-BR)](https://mydoseapp.com/nova-physical-v3.html): nutricionistas, médicos, personal e fisio — adesão a plano alimentar e treino
+- [MyDose Physical (en)](https://mydoseapp.com/nova-physical-v3-en.html): nutritionists, doctors, trainers — meal plan & workout adherence
+- [MyDose Mental (pt-BR)](https://mydoseapp.com/nova-mental-v3.html): psicólogos e terapeutas — continuidade entre sessões, redução de no-show
+- [MyDose Mental (en)](https://mydoseapp.com/nova-mental-v3-en.html): psychologists & therapists — continuity between sessions, fewer no-shows
+- [MyDose Clinics (pt-BR)](https://mydoseapp.com/nova-clinics-v3.html): CRM para clínicas — comunidade multiprofissional, cross-sell, IA de atendimento
+- [MyDose Clinics (en)](https://mydoseapp.com/nova-clinics-v3-en.html): clinic CRM — multidisciplinary community, cross-sell, AI front desk
+- [Conteúdos & mídia (pt-BR)](https://mydoseapp.com/blog.html): vídeos do YouTube, aulas e MyDose na imprensa
+- [Content & media (en)](https://mydoseapp.com/blog-en.html): YouTube videos, classes and MyDose in the press
+
+## Conceitos-chave / Key concepts
+
+- Planos de acompanhamento e protocolos de acompanhamento: o plano prescrito vira atividades diárias gamificadas no app (XP, hits com foto, desafios com ranking).
+- Medicina do estilo de vida (MEV) / lifestyle medicine: hábitos diários acompanhados entre as consultas, com comunidade e IA.
+- CRM para saúde / healthcare CRM: jornada completa do paciente — captação, adesão, recompra e receita recorrente num lugar só.
+- Sistema D.O.S.E.: gamificação baseada em neurociência (dopamina, ocitocina, serotonina, endorfina).
+- IA 24/7 com ética: responde no app e WhatsApp dentro dos limites definidos pelo profissional.
+
+## Contato / Contact
+
+- YouTube: https://www.youtube.com/@mydoseapp
+- Instagram: https://www.instagram.com/mydoseapp
+- LinkedIn: https://www.linkedin.com/company/mydoseapp
