@@ -227,8 +227,15 @@ body.loaded .hero h1 .w{opacity:1;transform:none}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
 .hero-urgency{margin-top:10px;font-size:13.5px;font-weight:700;color:var(--orange)}
 .hero-stats{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:18px}
+@media(max-width:759px){
+  .hero-stats{flex-wrap:nowrap;gap:10px;justify-content:space-between}
+  .hero-stats .st{flex:1;min-width:0}
+  .hero-stats .st b{font-size:clamp(21px,6.4vw,26px);white-space:nowrap}
+  .hero-stats .st > span{font-size:11.5px;line-height:1.35;display:block}
+}
 .hero-stats .st b{display:block;font-family:var(--serif);font-weight:460;font-optical-sizing:auto;font-size:clamp(26px,4vw,34px);line-height:1.1}
-.hero-stats .st span{font-size:13.5px;color:var(--gray);font-weight:600}
+.hero-stats .st b span{font-size:inherit;color:inherit;font-weight:inherit;-webkit-text-fill-color:inherit}
+.hero-stats .st > span{font-size:13.5px;color:var(--gray);font-weight:600}
 .hero-visual{position:relative;z-index:1}
 .hero-photo{
   position:relative;border-radius:32px;overflow:hidden;box-shadow:var(--shadow);
@@ -1130,7 +1137,7 @@ details.faq .a b{color:var(--ink)}
       <div class="hero-stats rv rv-d4 in">
         <div class="st"><b class="serif grad-text"><span data-count="1000" data-prefix="+">0</span></b><span>profissionais de saúde</span></div>
         <div class="st"><b class="serif grad-text">5×</b><span>mais faturamento</span></div>
-        <div class="st"><b class="serif grad-text"><span data-count="130" data-prefix="+" data-suffix=" mil">0</span></b><span>pacientes ativos</span></div>
+        <div class="st"><b class="serif grad-text"><span data-count="130" data-prefix="+" data-suffix=" mil">0</span></b><span>pacientes atendidos</span></div>
       </div>
     </div>
     <div class="hero-visual rv rv-d2 in">
