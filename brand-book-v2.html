@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyDose · Brand Book V2 — Estudo de Decisão Final</title>
+<meta name="description" content="Brand book V2 da MyDose: fusão do IDV original do designer com o sistema do site v3 — estudo de 6 candidatos de logo, tipografia, patterns e a decisão final da identidade.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z' fill='%23415FF5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Figtree:wght@400;500;600;700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MyDose · Brand Book V2 · Estudo de decisão final
+   Funde: IDV-MyDose-Draft.pdf (designer) × site v3 (sistema vivo)
+   ============================================================ */
+:root{
+  --blue:#415FF5;--magenta:#C64FCA;--orange:#F56442;--green:#63AC39;
+  --navy:#191E47;--plum:#592C5A;--rust:#5E1F10;--forest:#223F11;
+  --blue-2:#8699FD;--blue-3:#D6DDFF;--pink-2:#F0B0F2;--pink-3:#F5E3F6;
+  --peach-2:#FF9F88;--peach-3:#FFEAE5;--green-2:#A5DC85;--green-3:#DCEDD2;
+  --bg:#F6F4F2;--ink:#1E1D1D;--card:#fff;--muted:#565452;--gray:#848484;
+  --line:rgba(30,29,29,.1);
+  --g1:linear-gradient(100deg,#415FF5 0%,#C64FCA 52%,#F56442 100%);
+  --g2:linear-gradient(100deg,#415FF5 0%,#9A55D8 50%,#F0B0F2 100%);
+  --serif:"Fraunces",Georgia,serif;--sans:"Figtree",-apple-system,sans-serif;--logo:"Quicksand",sans-serif;
+  --shadow:0 20px 60px -20px rgba(25,30,71,.25);--r:24px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,video,svg{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+a{color:inherit;text-decoration:none}
+.serif{font-family:var(--serif);font-weight:430;letter-spacing:-.01em;line-height:1.08}
+.serif em,.serif i{font-style:italic;font-weight:460}
+.grad-text{background:var(--g1);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+
+/* wordmarks — as 4 vozes tipográficas do estudo */
+.wm{font-family:var(--logo);font-weight:700;letter-spacing:-.02em;line-height:1;display:inline-block;white-space:nowrap}
+.wm b{font-weight:700;background:var(--g1);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.wm.on-dark{color:#fff}
+.wm.mono b{background:none;color:currentColor;-webkit-text-fill-color:currentColor}
+.wmB{font-family:var(--sans);font-weight:800;letter-spacing:-.035em;line-height:1;display:inline-block;white-space:nowrap}
+.wmB b{font-weight:800}
+.wmC{font-family:var(--sans);font-weight:800;letter-spacing:-.035em;line-height:1;display:inline-block;white-space:nowrap}
+.wmC b{font-weight:800;background:var(--g1);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.wmD{font-family:var(--sans);font-weight:800;letter-spacing:-.035em;line-height:1;display:inline-flex;align-items:baseline;white-space:nowrap}
+.wmD .dot{width:.24em;height:.24em;border-radius:26%;background:var(--g1);margin-left:.1em;transform:translateY(-.02em)}
+.slogan{font-family:var(--serif);font-style:italic;font-weight:460;letter-spacing:.01em}
+
+/* estrutura */
+.chapter{min-height:100svh;padding:clamp(56px,9vh,110px) 0;position:relative;overflow:clip;display:flex;align-items:center}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 clamp(20px,4.5vw,44px)}
+.klabel{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gray);margin-bottom:22px}
+.klabel .n{font-family:var(--serif);font-size:15px;letter-spacing:0;background:var(--g1);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.klabel .rule{flex:1;height:1px;background:var(--line)}
+.on-dark .klabel{color:rgba(255,255,255,.55)}
+.on-dark .klabel .rule{background:rgba(255,255,255,.14)}
+h2.kt{font-family:var(--serif);font-weight:440;font-size:clamp(30px,4.6vw,52px);line-height:1.06;margin-bottom:14px;max-width:22ch}
+.ksub{color:var(--muted);max-width:66ch;font-size:clamp(15px,1.6vw,17.5px)}
+.on-dark{color:#fff}
+.on-dark h2.kt{color:#fff}
+.on-dark .ksub{color:rgba(255,255,255,.75)}
+.grid{display:grid;gap:18px}
+.card{background:var(--card);border-radius:var(--r);padding:26px;box-shadow:var(--shadow);position:relative}
+.tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:99px;background:var(--bg);color:var(--gray)}
+.note{font-size:13px;color:var(--gray);line-height:1.55}
+
+/* capa */
+.cover{background:
+  radial-gradient(110% 80% at 82% -10%,rgba(198,79,202,.34),transparent 60%),
+  radial-gradient(110% 90% at 12% 112%,rgba(65,95,245,.38),transparent 62%),
+  var(--navy);color:#fff;text-align:center}
+.cover .edition{display:flex;justify-content:center;gap:14px;align-items:center;font-size:12.5px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:30px}
+.cover .edition i{width:34px;height:1px;background:rgba(255,255,255,.35)}
+.cover .wm{display:block;font-size:clamp(60px,12vw,150px)}
+.cover .slogan{font-size:clamp(20px,3vw,30px);color:#fff;margin-top:26px}
+.cover .meta{margin-top:52px;font-size:13px;color:rgba(255,255,255,.45);font-weight:600;letter-spacing:.08em}
+.spark{position:absolute;color:#fff;opacity:.16;animation:tw 4.5s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.08;transform:scale(.6) rotate(0)}50%{opacity:.5;transform:scale(1) rotate(20deg)}}
+
+/* duas origens */
+.duo{grid-template-columns:1fr;gap:22px}
+@media(min-width:880px){.duo{grid-template-columns:1fr 1fr}}
+.origin{border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;background:var(--card)}
+.origin .head{padding:18px 24px;font-weight:800;font-size:14px;display:flex;justify-content:space-between;align-items:center}
+.origin .body{padding:26px 24px;display:grid;gap:14px}
+.origin .stage{border-radius:14px;min-height:120px;display:grid;place-items:center;background:var(--bg)}
+.origin ul{list-style:none;display:grid;gap:8px;font-size:13.5px;color:var(--muted)}
+.origin ul b{color:var(--ink)}
+
+/* candidatos de logo */
+.cands{grid-template-columns:1fr;gap:26px}
+@media(min-width:880px){.cands{grid-template-columns:1fr 1fr}}
+.cand{position:relative;background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.cand .stage{min-height:230px;display:grid;place-items:center;position:relative;padding:30px}
+.cand .body{padding:22px 26px 26px;display:grid;gap:12px;flex:1}
+.cand h4{font-size:18px;display:flex;gap:10px;align-items:center}
+.cand h4 .lt{font-family:var(--serif);font-size:24px;background:var(--g1);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.cand p{font-size:14px;color:var(--muted)}
+.cand .pros{display:flex;gap:8px;flex-wrap:wrap}
+.cand .pros span{font-size:11.5px;font-weight:800;padding:4px 10px;border-radius:99px}
+.p-yes{background:var(--green-3);color:var(--forest)}
+.p-mid{background:var(--blue-3);color:var(--navy)}
+.p-no{background:var(--peach-3);color:var(--rust)}
+.scorebar{display:grid;gap:6px;margin-top:4px}
+.scorebar .s{display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:700;color:var(--gray)}
+.scorebar .s small{width:110px;flex:0 0 auto;letter-spacing:.04em;text-transform:uppercase}
+.scorebar .t{flex:1;height:7px;border-radius:99px;background:var(--bg);overflow:hidden}
+.scorebar .t i{display:block;height:100%;border-radius:99px;background:var(--g1)}
+.badge-rec{position:absolute;top:16px;right:16px;font-size:11px;font-weight:800;letter-spacing:.1em;background:var(--g1);color:#fff;padding:5px 11px;border-radius:99px;z-index:2}
+.badge-ic{position:absolute;top:16px;right:16px;font-size:11px;font-weight:800;letter-spacing:.1em;background:var(--navy);color:#fff;padding:5px 11px;border-radius:99px;z-index:2}
+
+/* símbolo do designer + glyphs */
+.appicon{width:104px;height:104px;border-radius:27%;display:grid;place-items:center;box-shadow:0 18px 40px -14px rgba(25,30,71,.45)}
+.appicon svg{width:54%;height:54%}
+
+/* lockups slogan */
+.locks{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.lock{border-radius:var(--r);box-shadow:var(--shadow);min-height:210px;display:grid;place-items:center;text-align:center;padding:30px;position:relative;overflow:hidden}
+.lock small{position:absolute;bottom:12px;left:16px;font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
+
+/* tipografia confronto */
+.typeduel{grid-template-columns:1fr;gap:22px}
+@media(min-width:880px){.typeduel{grid-template-columns:1fr 1fr}}
+.tcol{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:28px}
+.tcol .big{font-size:clamp(40px,6vw,72px);line-height:1.05}
+.tcol .vs{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:10px;display:block}
+
+/* patterns */
+.patgrid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.pat{border-radius:18px;min-height:170px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.pat small{position:absolute;bottom:10px;left:14px;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.85);padding:4px 9px;border-radius:8px;color:var(--ink)}
+.pat-demo{margin-top:22px;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background:var(--navy);color:#fff;padding:clamp(28px,5vw,54px);position:relative}
+.pat-demo .inner{position:relative;z-index:2;max-width:30ch}
+.pat-demo h3{font-family:var(--serif);font-size:clamp(24px,3.4vw,36px);font-weight:440}
+
+/* missão/visão */
+.mvv{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.mvv .card b{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--magenta)}
+.mvv .card p{font-family:var(--serif);font-size:clamp(19px,2.2vw,24px);line-height:1.3;margin-top:10px}
+.mvv .card small{display:block;margin-top:12px;color:var(--gray);font-size:13px}
+
+/* decisão final */
+.final-rec{background:var(--card);border-radius:calc(var(--r) + 6px);box-shadow:var(--shadow);padding:clamp(26px,4vw,44px);display:grid;gap:22px}
+@media(min-width:900px){.final-rec{grid-template-columns:1.05fr .95fr}}
+.checklist{display:grid;gap:12px}
+.checklist label{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:var(--bg);font-size:14.5px;cursor:pointer}
+.checklist input{width:20px;height:20px;accent-color:var(--magenta);flex:0 0 auto;margin-top:2px}
+.checklist b{display:block}
+.checklist small{color:var(--gray)}
+
+/* contracapa */
+.backcover{background:
+  radial-gradient(110% 80% at 18% -10%,rgba(65,95,245,.35),transparent 60%),
+  radial-gradient(110% 90% at 88% 112%,rgba(245,100,66,.3),transparent 62%),
+  var(--navy);color:#fff;text-align:center}
+
+/* nav + print */
+.dots{position:fixed;right:16px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:9px;z-index:50}
+.dots a{width:9px;height:9px;border-radius:50%;background:rgba(30,29,29,.2);transition:all .25s;display:block}
+.dots a.on{background:var(--magenta);transform:scale(1.45)}
+.printbtn{position:fixed;left:18px;bottom:18px;z-index:50;background:var(--ink);color:#fff;font-weight:800;font-size:13.5px;padding:13px 20px;border-radius:99px;box-shadow:var(--shadow);display:inline-flex;gap:8px;align-items:center}
+.printbtn:hover{background:var(--navy)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:760px){.dots{display:none}}
+@media print{
+  @page{size:A4 landscape;margin:0}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .chapter{min-height:auto;page-break-after:always;padding:36px 0}
+  .dots,.printbtn{display:none!important}
+  .rv{opacity:1!important;transform:none!important}
+}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.spark{animation:none}}
+</style>
+</head>
+<body>
+
+<!-- defs: sparkle do site + formas do designer recriadas -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#415FF5"/><stop offset=".52" stop-color="#C64FCA"/><stop offset="1" stop-color="#F56442"/>
+    </linearGradient>
+    <!-- tile do pattern denso do designer (forma-base: pétalas nos cantos + losango central) -->
+    <pattern id="tileIDV" width="34" height="34" patternUnits="userSpaceOnUse">
+      <g fill="currentColor">
+        <path d="M17 8.5C19.5 13 22 15.5 26.5 17 22 18.5 19.5 21 17 25.5 14.5 21 12 18.5 7.5 17 12 15.5 14.5 13 17 8.5Z"/>
+        <path d="M0 0C4.5 1.5 7 1.5 11.5 0 10 4.5 10 7 11.5 11.5 7 10 4.5 10 0 11.5 1.5 7 1.5 4.5 0 0Z" opacity=".85"/>
+        <path d="M34 0C29.5 1.5 27 1.5 22.5 0 24 4.5 24 7 22.5 11.5 27 10 29.5 10 34 11.5 32.5 7 32.5 4.5 34 0Z" opacity=".85"/>
+        <path d="M0 34C4.5 32.5 7 32.5 11.5 34 10 29.5 10 27 11.5 22.5 7 24 4.5 24 0 22.5 1.5 27 1.5 29.5 0 34Z" opacity=".85"/>
+        <path d="M34 34C29.5 32.5 27 32.5 22.5 34 24 29.5 24 27 22.5 22.5 27 24 29.5 24 34 22.5 32.5 27 32.5 29.5 34 34Z" opacity=".85"/>
+      </g>
+    </pattern>
+  </defs>
+  <symbol id="sparkle" viewBox="0 0 100 100"><path d="M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z"/></symbol>
+  <!-- flor/azulejo do designer (aproximação): 4 pétalas + losango central vazado -->
+  <symbol id="florIDV" viewBox="0 0 100 100">
+    <g transform="rotate(45 50 50)">
+      <path d="M50 4C60 16 60 32 50 42 40 32 40 16 50 4Z"/>
+      <path d="M50 96C60 84 60 68 50 58 40 68 40 84 50 96Z"/>
+      <path d="M4 50C16 40 32 40 42 50 32 60 16 60 4 50Z"/>
+      <path d="M96 50C84 40 68 40 58 50 68 60 84 60 96 50Z"/>
+    </g>
+    <path d="M50 40 60 50 50 60 40 50Z" opacity=".55"/>
+  </symbol>
+  <!-- diamante-squircle (grafismo simples nº1 do designer) -->
+  <symbol id="diamIDV" viewBox="0 0 100 100"><path d="M50 6C62 28 72 38 94 50 72 62 62 72 50 94 38 72 28 62 6 50 28 38 38 28 50 6Z"/></symbol>
+  <!-- diamante vazado (grafismo nº2) -->
+  <symbol id="diamOco" viewBox="0 0 100 100"><path d="M50 6C62 28 72 38 94 50 72 62 62 72 50 94 38 72 28 62 6 50 28 38 38 28 50 6ZM50 30C44 40 40 44 30 50 40 56 44 60 50 70 56 60 60 56 70 50 60 44 56 40 50 30Z" fill-rule="evenodd"/></symbol>
+</svg>
+
+<nav class="dots" id="dots" aria-hidden="true"></nav>
+<button class="printbtn" onclick="print()">⤓ Exportar PDF</button>
+
+<!-- ══════ 00 · CAPA ══════ -->
+<section class="chapter cover" id="c0">
+  <svg class="spark" style="top:12%;left:8%;width:26px" viewBox="0 0 100 100"><use href="#sparkle" fill="currentColor"/></svg>
+  <svg class="spark" style="top:24%;right:12%;width:16px;animation-delay:1.2s" viewBox="0 0 100 100"><use href="#sparkle" fill="currentColor"/></svg>
+  <svg class="spark" style="bottom:16%;right:22%;width:22px;animation-delay:.6s" viewBox="0 0 100 100"><use href="#sparkle" fill="currentColor"/></svg>
+  <div class="wrap">
+    <p class="edition"><i></i> Brand Book · V2 · Estudo de decisão final <i></i></p>
+    <span class="wm on-dark">my<b>dose</b></span>
+    <p class="slogan">Take back control.</p>
+    <p class="meta">Julho 2026 · funde o IDV do designer (draft) com o sistema vivo do site v3 · para decisão do Guga</p>
+  </div>
+</section>
+
+<!-- ══════ 01 · O QUE ESTÁ EM JOGO ══════ -->
+<section class="chapter" id="c1">
+  <div class="wrap">
+    <div class="klabel"><span class="n">01</span> O QUE ESTÁ EM JOGO <span class="rule"></span></div>
+    <h2 class="kt rv">Duas origens. <em class="grad-text">Uma decisão.</em></h2>
+    <p class="ksub rv">Existem hoje duas fontes de verdade: o <b>IDV draft do designer</b> (cores, forma-base, patterns, Americana) e o <b>site v3</b> (wordmark tipográfico, Fraunces/Figtree, motion). As cores são idênticas nos dois — a decisão que falta é <b>logo</b>, <b>tipografia oficial</b> e <b>quais grafismos entram no site</b>. Este book coloca tudo lado a lado pra você bater o martelo.</p>
+    <div class="grid duo rv" style="margin-top:28px">
+      <div class="origin">
+        <div class="head" style="background:var(--pink-3);color:var(--plum)">ORIGEM A · IDV do designer <span class="tag" style="background:#fff">draft 2026</span></div>
+        <div class="body">
+          <div class="stage"><span style="display:inline-flex;align-items:center;gap:10px"><svg width="34" height="34" viewBox="0 0 100 100"><use href="#florIDV" fill="#1E1D1D"/></svg><span class="wmB" style="font-size:34px">mydose</span></span></div>
+          <ul>
+            <li><b>Símbolo:</b> flor/azulejo da forma-base (4 pétalas + miolo vazado)</li>
+            <li><b>Wordmark:</b> sans geométrica bold, sólida, 1 cor</li>
+            <li><b>Fontes:</b> Americana (títulos) + Google Sans (texto)</li>
+            <li><b>Força:</b> patterns ricos, sub-marcas com glyphs próprios, posters lindos</li>
+            <li><b>Fraqueza:</b> símbolo complexo em tamanho pequeno; parece "azulejo/spa", pouco tech</li>
+          </ul>
+        </div>
+      </div>
+      <div class="origin">
+        <div class="head" style="background:var(--blue-3);color:var(--navy)">ORIGEM B · Site v3 <span class="tag" style="background:#fff">no ar · aprovado ✓</span></div>
+        <div class="body">
+          <div class="stage"><span class="wm" style="font-size:38px">my<b>dose</b></span></div>
+          <ul>
+            <li><b>Logo:</b> wordmark Quicksand, "dose" em Gradiente 1, sem símbolo</li>
+            <li><b>Fontes:</b> Fraunces (títulos) + Figtree (texto)</li>
+            <li><b>Grafismos:</b> sparkle + pattern espaçado, tudo em movimento</li>
+            <li><b>Força:</b> vivo, digital, memorável, o Guga amou</li>
+            <li><b>Fraqueza:</b> sem símbolo pra ícone de app/avatar; Quicksand é fonte comum</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 02 · MISSÃO VISÃO ══════ -->
+<section class="chapter" id="c2" style="background:linear-gradient(165deg,#F6F4F2,#F5E3F6 130%)">
+  <div class="wrap">
+    <div class="klabel"><span class="n">02</span> MISSÃO · VISÃO · PROMESSA <span class="rule"></span></div>
+    <h2 class="kt rv">Por que a MyDose <em class="grad-text">existe</em>.</h2>
+    <div class="grid mvv rv" style="margin-top:26px">
+      <div class="card"><b>Missão</b><p class="serif">Fazer a saúde acontecer <em>entre</em> as consultas — transformando hábito em jogo e cuidado em vínculo diário.</p><small>o que fazemos todo dia</small></div>
+      <div class="card"><b>Visão</b><p class="serif">Um mundo onde cada profissional de saúde é uma <em>empresa de saúde</em> — e cada paciente tem sua dose diária de cuidado.</p><small>onde vamos chegar · 1:900</small></div>
+      <div class="card"><b>Promessa</b><p class="serif" style="font-style:italic">Take back control.</p><small>a assinatura verbal — <b>sempre em inglês, nunca traduzida</b>, em qualquer idioma e material</small></div>
+    </div>
+    <p class="note rv" style="margin-top:24px">Valores que o sistema visual carrega: <b>ética e ciência</b> (a serifa que pensa) · <b>energia da dose</b> (o gradiente) · <b>o hit</b> (o sparkle) · <b>gente antes de tela</b> (a fotografia viva).</p>
+  </div>
+</section>
+
+<!-- ══════ 03 · O ESTUDO: 6 CANDIDATOS ══════ -->
+<section class="chapter" id="c3" style="background:#EFECE9">
+  <div class="wrap">
+    <div class="klabel"><span class="n">03</span> O ESTUDO · 6 CANDIDATOS <span class="rule"></span></div>
+    <h2 class="kt rv">O logo final: <em class="grad-text">seis caminhos</em>, um martelo.</h2>
+    <p class="ksub rv">A e B são as origens puras. <b>C e D são os "meio do caminho"</b> que você pediu — novos, criados aqui. E e F resolvem o ícone. Barras = avaliação técnica (memorável · escala pequena · cara de saúde-tech · quão "nossa" é).</p>
+    <div class="grid cands rv" style="margin-top:28px">
+
+      <div class="cand">
+        <div class="stage" style="background:var(--bg)"><span class="wm" style="font-size:clamp(38px,5vw,54px)">my<b>dose</b></span></div>
+        <div class="body">
+          <h4><span class="lt">A</span> Wordmark do site · Quicksand + gradiente</h4>
+          <p>O logo que está no ar e que você ama. Redondo, humano, a "dose" viva no gradiente.</p>
+          <div class="scorebar">
+            <span class="s"><small>memorável</small><span class="t"><i style="width:82%"></i></span></span>
+            <span class="s"><small>escala pequena</small><span class="t"><i style="width:70%"></i></span></span>
+            <span class="s"><small>saúde-tech</small><span class="t"><i style="width:78%"></i></span></span>
+            <span class="s"><small>ownability</small><span class="t"><i style="width:62%"></i></span></span>
+          </div>
+          <div class="pros"><span class="p-yes">✓ já aprovado no site</span><span class="p-mid">◐ Quicksand é fonte comum</span></div>
+        </div>
+      </div>
+
+      <div class="cand">
+        <div class="stage" style="background:var(--bg)"><span style="display:inline-flex;align-items:center;gap:12px"><svg width="40" height="40" viewBox="0 0 100 100"><use href="#florIDV" fill="#1E1D1D"/></svg><span class="wmB" style="font-size:clamp(34px,4.6vw,50px)">mydose</span></span></div>
+        <div class="body">
+          <h4><span class="lt">B</span> Original do designer · flor + bold sólida</h4>
+          <p>Sistema completo e consistente — mas a flor lê "spa/azulejo", se perde pequena, e você já vetou o elemento.</p>
+          <div class="scorebar">
+            <span class="s"><small>memorável</small><span class="t"><i style="width:70%"></i></span></span>
+            <span class="s"><small>escala pequena</small><span class="t"><i style="width:44%"></i></span></span>
+            <span class="s"><small>saúde-tech</small><span class="t"><i style="width:52%"></i></span></span>
+            <span class="s"><small>ownability</small><span class="t"><i style="width:74%"></i></span></span>
+          </div>
+          <div class="pros"><span class="p-no">✕ elemento vetado pelo Guga</span><span class="p-yes">✓ patterns aproveitáveis</span></div>
+        </div>
+      </div>
+
+      <div class="cand">
+        <span class="badge-rec">★ RECOMENDADO · ASSINATURA</span>
+        <div class="stage" style="background:var(--bg)"><span class="wmC" style="font-size:clamp(38px,5vw,54px)">my<b>dose</b></span></div>
+        <div class="body">
+          <h4><span class="lt">C</span> Híbrido · bold do designer + gradiente do site</h4>
+          <p><b>O meio do caminho nº 1.</b> A estrutura tipográfica geométrica e forte do designer (Figtree ExtraBold, tracking fechado) com a energia do site: "dose" no Gradiente 1. Mais firme que a Quicksand, mais vivo que o sólido. Cara de empresa de saúde-tech.</p>
+          <div class="scorebar">
+            <span class="s"><small>memorável</small><span class="t"><i style="width:88%"></i></span></span>
+            <span class="s"><small>escala pequena</small><span class="t"><i style="width:86%"></i></span></span>
+            <span class="s"><small>saúde-tech</small><span class="t"><i style="width:92%"></i></span></span>
+            <span class="s"><small>ownability</small><span class="t"><i style="width:78%"></i></span></span>
+          </div>
+          <div class="pros"><span class="p-yes">✓ une as duas origens</span><span class="p-yes">✓ troca no site = 1 linha de CSS</span></div>
+        </div>
+      </div>
+
+      <div class="cand">
+        <div class="stage" style="background:var(--bg)"><span class="wmD" style="font-size:clamp(38px,5vw,54px);color:var(--ink)">mydose<span class="dot"></span></span></div>
+        <div class="body">
+          <h4><span class="lt">D</span> Wordmark + ponto-dose</h4>
+          <p><b>O meio do caminho nº 2.</b> Tudo sólido e sóbrio, e a "dose" vira um único ponto-squircle em gradiente no final — a pílula, o pixel, o hit. Minimalismo absoluto; o ponto vira o ícone.</p>
+          <div class="scorebar">
+            <span class="s"><small>memorável</small><span class="t"><i style="width:76%"></i></span></span>
+            <span class="s"><small>escala pequena</small><span class="t"><i style="width:90%"></i></span></span>
+            <span class="s"><small>saúde-tech</small><span class="t"><i style="width:84%"></i></span></span>
+            <span class="s"><small>ownability</small><span class="t"><i style="width:70%"></i></span></span>
+          </div>
+          <div class="pros"><span class="p-yes">✓ elegante e escalável</span><span class="p-mid">◐ gradiente quase some no favicon</span></div>
+        </div>
+      </div>
+
+      <div class="cand">
+        <span class="badge-ic">★ RECOMENDADO · ÍCONE</span>
+        <div class="stage" style="background:linear-gradient(160deg,#1a1f52,#4a2a68)">
+          <span style="display:flex;gap:22px;align-items:center">
+            <span class="appicon" style="background:var(--g1)"><svg viewBox="0 0 100 100"><use href="#sparkle" fill="#fff"/></svg></span>
+            <span class="appicon" style="background:#fff"><svg viewBox="0 0 100 100"><use href="#diamIDV" fill="url(#lg1)"/></svg></span>
+          </span>
+        </div>
+        <div class="body">
+          <h4><span class="lt">E</span> Ícones-dose · sparkle × diamante</h4>
+          <p>Dois finalistas pro app/favicon/avatar: o <b>sparkle do site</b> (esq.) e o <b>diamante-squircle do designer</b> (dir.) — a forma simples nº 1 do IDV, sem a flor completa. Ambos honram a forma-base; o sparkle é mais enérgico, o diamante mais sóbrio.</p>
+          <div class="scorebar">
+            <span class="s"><small>memorável</small><span class="t"><i style="width:84%"></i></span></span>
+            <span class="s"><small>escala pequena</small><span class="t"><i style="width:94%"></i></span></span>
+            <span class="s"><small>saúde-tech</small><span class="t"><i style="width:86%"></i></span></span>
+            <span class="s"><small>ownability</small><span class="t"><i style="width:80%"></i></span></span>
+          </div>
+          <div class="pros"><span class="p-yes">✓ resolve app icon sem a flor</span><span class="p-mid">◐ escolher UM e aposentar o outro</span></div>
+        </div>
+      </div>
+
+      <div class="cand">
+        <div class="stage" style="background:var(--navy)">
+          <span style="display:inline-flex;align-items:center;gap:12px">
+            <svg width="36" height="36" viewBox="0 0 100 100"><use href="#diamOco" fill="url(#lg1)"/></svg>
+            <span class="wmC on-dark" style="font-size:clamp(32px,4.4vw,46px);color:#fff">my<b>dose</b></span>
+          </span>
+        </div>
+        <div class="body">
+          <h4><span class="lt">F</span> Lockup completo · diamante + híbrido</h4>
+          <p>Se você quiser símbolo na assinatura: o diamante vazado (grafismo nº 2 do designer, muito mais simples que a flor) ao lado do wordmark híbrido C. Um aceno ao trabalho do designer, sem o azulejo.</p>
+          <div class="scorebar">
+            <span class="s"><small>memorável</small><span class="t"><i style="width:80%"></i></span></span>
+            <span class="s"><small>escala pequena</small><span class="t"><i style="width:72%"></i></span></span>
+            <span class="s"><small>saúde-tech</small><span class="t"><i style="width:80%"></i></span></span>
+            <span class="s"><small>ownability</small><span class="t"><i style="width:82%"></i></span></span>
+          </div>
+          <div class="pros"><span class="p-mid">◐ só se símbolo for obrigatório na assinatura</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 04 · A ASSINATURA VERBAL ══════ -->
+<section class="chapter on-dark" id="c4" style="background:linear-gradient(168deg,var(--navy),#241A4A 60%,var(--plum))">
+  <div class="wrap">
+    <div class="klabel"><span class="n">04</span> A ASSINATURA · TAKE BACK CONTROL <span class="rule"></span></div>
+    <h2 class="kt rv">O slogan não muda. <em style="background:var(--g2);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent">Não traduz.</em></h2>
+    <p class="ksub rv">"Take back control." é a promessa da marca em qualquer idioma, material ou país — sempre em inglês, sempre com ponto final, sempre em Fraunces itálico. Lockups oficiais com o wordmark recomendado (C):</p>
+    <div class="grid locks rv" style="margin-top:28px">
+      <div class="lock" style="background:#fff;color:var(--ink)">
+        <span><span class="wmC" style="font-size:34px">my<b>dose</b></span><br><span class="slogan" style="font-size:16px;color:var(--muted)">Take back control.</span></span>
+        <small style="color:var(--gray)">empilhado · claro</small>
+      </div>
+      <div class="lock" style="background:var(--ink);color:#fff">
+        <span><span class="wmC" style="font-size:34px;color:#fff">my<b>dose</b></span><br><span class="slogan" style="font-size:16px;color:rgba(255,255,255,.75)">Take back control.</span></span>
+        <small style="color:rgba(255,255,255,.6)">empilhado · escuro</small>
+      </div>
+      <div class="lock" style="background:var(--g1);color:#fff">
+        <span><span class="wmC" style="font-size:34px;color:#fff"><span style="-webkit-text-fill-color:#fff">my</span><b style="background:none;-webkit-text-fill-color:#fff;color:#fff">dose</b></span><br><span class="slogan" style="font-size:16px;color:rgba(255,255,255,.9)">Take back control.</span></span>
+        <small style="color:rgba(255,255,255,.7)">sobre gradiente · mono branco</small>
+      </div>
+      <div class="lock" style="background:#fff;color:var(--ink)">
+        <span><span class="wmC" style="font-size:30px">my<b>dose</b></span><span class="slogan" style="font-size:15px;color:var(--muted)"> — Take back control.</span></span>
+        <small style="color:var(--gray)">linha única · assinatura de e-mail e rodapés</small>
+      </div>
+    </div>
+    <p class="note rv" style="margin-top:20px;color:rgba(255,255,255,.6)">Errado: "Retome o controle." como assinatura ✕ · "Take Back Control" sem ponto ✕ · slogan em bold ✕ · slogan maior que o wordmark ✕. (Como headline de campanha, "Retome o controle…" pode existir — a <b style="color:#fff">assinatura</b> é que é intocável.)</p>
+  </div>
+</section>
+
+<!-- ══════ 05 · TIPOGRAFIA: O CONFRONTO ══════ -->
+<section class="chapter" id="c5">
+  <div class="wrap">
+    <div class="klabel"><span class="n">05</span> TIPOGRAFIA · AMERICANA × FRAUNCES <span class="rule"></span></div>
+    <h2 class="kt rv">Mesma alma, <em class="grad-text">fonte viável</em>.</h2>
+    <div class="grid typeduel rv" style="margin-top:26px">
+      <div class="tcol">
+        <span class="vs">IDV do designer · Americana + Google Sans</span>
+        <p class="big serif" style="font-weight:500">Multiplique seu tempo.</p>
+        <p class="note" style="margin-top:14px">Americana é uma serifa display elegante — mas é <b>licenciada, sem web font oficial e sem itálico variável</b>. Google Sans é exclusiva do Google (não licenciável fora do ecossistema).</p>
+        <div class="pros" style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap"><span class="p-no" style="font-size:11.5px;font-weight:800;padding:4px 10px;border-radius:99px">✕ licenças inviáveis pra web</span></div>
+      </div>
+      <div class="tcol" style="outline:2px solid var(--magenta);outline-offset:-2px">
+        <span class="vs">Site v3 · Fraunces + Figtree ✓ recomendado</span>
+        <p class="big serif">Multiplique <em class="grad-text">seu tempo</em>.</p>
+        <p class="note" style="margin-top:14px">Fraunces entrega o mesmo espírito editorial da Americana — com <b>eixo óptico variável, itálico expressivo e licença aberta</b>. Figtree cobre o papel da Google Sans com a mesma geometria humanista. É o que já está no ar.</p>
+        <div class="pros" style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap"><span class="p-yes" style="font-size:11.5px;font-weight:800;padding:4px 10px;border-radius:99px">✓ open source · já implementado</span></div>
+      </div>
+    </div>
+    <p class="note rv" style="margin-top:20px">Veredito: <b>Fraunces e Figtree são as fontes oficiais da marca</b> (digital e impresso). Americana pode sobreviver apenas em peças impressas especiais do time de design, se a licença for comprada — nunca no produto ou no site. Quicksand segue exclusiva do wordmark (se o candidato A vencer) ou é aposentada (se C/D vencerem).</p>
+  </div>
+</section>
+
+<!-- ══════ 06 · PATTERNS DO DESIGNER ══════ -->
+<section class="chapter" id="c6" style="background:#EFECE9">
+  <div class="wrap">
+    <div class="klabel"><span class="n">06</span> PATTERNS · O QUE APROVEITAR NO SITE <span class="rule"></span></div>
+    <h2 class="kt rv">O azulejo fica. <em class="grad-text">Como textura.</em></h2>
+    <p class="ksub rv">Os patterns densos do IDV são a melhor parte do trabalho do designer. Recriados aqui em SVG (leves, prontos pro site). Veredito: entram no site como <b>textura de superfícies profundas e faixas decorativas (opacidade 6–14%)</b> — convivendo com o pattern espaçado que o v3 já usa. Nunca atrás de texto corrido.</p>
+    <div class="grid patgrid rv" style="margin-top:26px">
+      <div class="pat" style="background:#EDEAE7"><svg width="100%" height="100%" style="position:absolute;inset:0;color:#B9B4AE"><rect width="100%" height="100%" fill="url(#tileIDV)"/></svg><small>neutro · decks e fundos claros</small></div>
+      <div class="pat" style="background:var(--orange)"><svg width="100%" height="100%" style="position:absolute;inset:0;color:#FFEAE5;opacity:.6"><rect width="100%" height="100%" fill="url(#tileIDV)"/></svg><small>physical</small></div>
+      <div class="pat" style="background:var(--blue)"><svg width="100%" height="100%" style="position:absolute;inset:0;color:#D6DDFF;opacity:.6"><rect width="100%" height="100%" fill="url(#tileIDV)"/></svg><small>clinics</small></div>
+      <div class="pat" style="background:var(--pink-2)"><svg width="100%" height="100%" style="position:absolute;inset:0;color:#592C5A;opacity:.28"><rect width="100%" height="100%" fill="url(#tileIDV)"/></svg><small>mental</small></div>
+      <div class="pat" style="background:var(--green-2)"><svg width="100%" height="100%" style="position:absolute;inset:0;color:#223F11;opacity:.26"><rect width="100%" height="100%" fill="url(#tileIDV)"/></svg><small>nutrition</small></div>
+    </div>
+    <div class="pat-demo rv">
+      <svg width="100%" height="100%" style="position:absolute;inset:0;color:#fff;opacity:.07"><rect width="100%" height="100%" fill="url(#tileIDV)"/></svg>
+      <div class="inner">
+        <span style="font-size:11px;font-weight:800;letter-spacing:.18em;color:var(--pink-2)">✦ DEMO · COMO ENTRA NO SITE</span>
+        <h3>Textura de fundo em seção profunda, a 7% de opacidade.</h3>
+        <p style="font-size:14px;color:rgba(255,255,255,.72);margin-top:10px">O conteúdo respira por cima; o azulejo dá o toque artesanal-português da forma-base sem virar ruído. Classe pronta: <b style="color:#fff">.pattern-idv</b>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 07 · APLICAÇÕES DOS FINALISTAS ══════ -->
+<section class="chapter" id="c7">
+  <div class="wrap">
+    <div class="klabel"><span class="n">07</span> OS FINALISTAS EM CAMPO <span class="rule"></span></div>
+    <h2 class="kt rv">C na assinatura, sparkle no <em class="grad-text">bolso</em>.</h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:26px" >
+      <div class="card rv" style="padding:0;overflow:hidden">
+        <div style="background:rgba(246,244,242,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;justify-content:space-between;align-items:center">
+          <span class="wmC" style="font-size:21px">my<b>dose</b></span>
+          <span style="display:flex;gap:8px;align-items:center"><span class="tag">EN</span><span style="background:var(--blue);color:#fff;font-size:12px;font-weight:800;padding:8px 14px;border-radius:99px">Crie sua comunidade</span></span>
+        </div>
+        <div style="padding:26px 18px 30px"><p class="note">Nav do site com o híbrido C — troca de 1 linha de CSS, zero impacto no resto do design.</p></div>
+      </div>
+      <div class="card rv" style="display:grid;place-items:center;background:linear-gradient(160deg,#1a1f52,#4a2a68);min-height:190px">
+        <span style="text-align:center">
+          <span class="appicon" style="background:var(--g1);width:84px;height:84px;margin:0 auto"><svg viewBox="0 0 100 100"><use href="#sparkle" fill="#fff"/></svg></span>
+          <span style="display:block;color:#fff;font-size:11.5px;font-weight:700;margin-top:10px;opacity:.85">MyDose</span>
+        </span>
+      </div>
+      <div class="card rv" style="display:grid;place-items:center;background:var(--bg)">
+        <span class="lock" style="box-shadow:none;background:#fff;width:min(280px,100%);aspect-ratio:1.75;border-radius:14px;box-shadow:0 20px 44px -16px rgba(25,30,71,.4)">
+          <span><span class="wmC" style="font-size:22px">my<b>dose</b></span><br><span class="slogan" style="font-size:12.5px;color:var(--muted)">Take back control.</span></span>
+        </span>
+      </div>
+      <div class="card rv on-dark" style="background:var(--navy);position:relative;overflow:hidden;min-height:190px;display:flex;flex-direction:column;justify-content:space-between">
+        <svg width="100%" height="100%" style="position:absolute;inset:0;color:#fff;opacity:.06"><rect width="100%" height="100%" fill="url(#tileIDV)"/></svg>
+        <span class="serif" style="position:relative;font-size:21px;line-height:1.2">A adesão do seu paciente é um <em style="color:var(--peach-2)">jogo</em>.</span>
+        <span style="position:relative;display:flex;justify-content:space-between;align-items:baseline"><span class="wmC" style="font-size:19px;color:#fff">my<b>dose</b></span><span class="slogan" style="font-size:12px;color:rgba(255,255,255,.7)">Take back control.</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ 08 · A DECISÃO ══════ -->
+<section class="chapter" id="c8" style="background:linear-gradient(165deg,#F6F4F2,#D6DDFF 160%)">
+  <div class="wrap">
+    <div class="klabel"><span class="n">08</span> A DECISÃO FINAL <span class="rule"></span></div>
+    <h2 class="kt rv">Marque e <em class="grad-text">bata o martelo</em>.</h2>
+    <div class="final-rec rv" style="margin-top:24px">
+      <div>
+        <span class="tag" style="background:var(--pink-3);color:var(--plum)">RECOMENDAÇÃO DO ESTUDO</span>
+        <p class="serif" style="font-size:clamp(20px,2.6vw,27px);margin-top:14px;line-height:1.3">Assinatura: <b>C — híbrido</b> (bold geométrica + "dose" em gradiente).<br>Ícone: <b>sparkle em squircle</b> gradiente.<br>Slogan: <b>Take back control.</b> — sempre.<br>Fontes: <b>Fraunces + Figtree</b>.<br>Patterns do designer: <b>entram como textura</b> (.pattern-idv).</p>
+        <p class="note" style="margin-top:16px">Por quê: C mantém 100% do site que você amou (é só o wordmark que muda, e pra mais forte), honra a estrutura tipográfica do trabalho do designer, e o sparkle resolve o ícone sem a flor. O sistema inteiro fica coeso: forma-base nos patterns, sparkle no hit, gradiente na dose.</p>
+      </div>
+      <div class="checklist">
+        <label><input type="checkbox"><span><b>Logo assinatura</b><small>A (site atual) · B (designer) · <b>C ★</b> · D (ponto-dose) · F (com símbolo)</small></span></label>
+        <label><input type="checkbox"><span><b>Ícone app/avatar</b><small><b>sparkle ★</b> · diamante do designer</small></span></label>
+        <label><input type="checkbox"><span><b>Slogan</b><small>"Take back control." — fixado, sem tradução (já decidido ✓)</small></span></label>
+        <label><input type="checkbox"><span><b>Fontes oficiais</b><small><b>Fraunces + Figtree ★</b> · manter Americana só em impressos licenciados</small></span></label>
+        <label><input type="checkbox"><span><b>Patterns do IDV no site</b><small><b>sim, como textura ≤14% ★</b> · não usar</small></span></label>
+      </div>
+    </div>
+    <p class="note rv" style="margin-top:18px">Decidiu? A troca no site v3 é cirúrgica: o wordmark é um componente único (classe <b>.wordmark</b>) — 1 edição de CSS aplica o vencedor em todas as páginas. Depois disso eu regenero o brand book final consolidado numa versão única pro time.</p>
+  </div>
+</section>
+
+<!-- ══════ CONTRACAPA ══════ -->
+<section class="chapter backcover" id="c9">
+  <div class="wrap">
+    <span class="wmC on-dark rv" style="font-size:clamp(40px,7vw,80px);color:#fff">my<b>dose</b></span>
+    <p class="slogan rv" style="font-size:clamp(18px,2.4vw,25px);color:rgba(255,255,255,.85);margin-top:18px">Take back control.</p>
+    <p class="rv" style="margin-top:44px;font-size:13px;color:rgba(255,255,255,.5);font-weight:600">
+      Brand Book V2 · estudo de decisão · Julho 2026<br>
+      <a href="brand-book.html" style="text-decoration:underline">ver V1 (sistema do site)</a> · <a href="site/nova-identidade-v3.html" style="text-decoration:underline">ver o site vivo</a>
+    </p>
+  </div>
+</section>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'-60px'});
+  document.querySelectorAll('.rv').forEach(function(x){io.observe(x)});
+})();
+(function(){
+  var chs = [].slice.call(document.querySelectorAll('.chapter'));
+  var nav = document.getElementById('dots');
+  chs.forEach(function(c){ var a=document.createElement('a'); a.href='#'+c.id; nav.appendChild(a); });
+  var links = [].slice.call(nav.children);
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ var i=chs.indexOf(e.target); links.forEach(function(l,j){l.classList.toggle('on',j===i)}); } });
+  },{rootMargin:'-45% 0px -45% 0px'});
+  chs.forEach(function(c){io.observe(c)});
+})();
+</script>
+</body>
+</html>
