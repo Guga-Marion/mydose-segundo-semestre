@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyDose Physical — adesão e recorrência para nutris, médicos e personal</title>
+<meta name="description" content="MyDose Physical — adesão e recorrência para nutris, médicos e personal">
+<meta name="theme-color" content="#5E1F10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Figtree:wght@400;600;700;800&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#F56442;--deep:#5E1F10;--pastel:#FFEAE5;--pastel2:#FF9F88;
+ --bg:#F6F4F2;--ink:#1E1D1D;--card:#fff;--muted:#565452;--gray:#848484;--navy:#191E47;
+ --line:rgba(30,29,29,.1);--g1:linear-gradient(100deg,#415FF5,#C64FCA 52%,#F56442);--ga:linear-gradient(100deg,#F56442,#C64FCA);
+ --serif:"Fraunces",Georgia,serif;--sans:"Figtree",-apple-system,sans-serif;--logo:"Quicksand",sans-serif;
+ --shadow:0 20px 60px -20px rgba(25,30,71,.25);--r:24px;--blue:#415FF5;--blue-2:#8699FD;--green-2:#A5DC85}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);font-size:16px;line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
+section{overflow-x:clip;padding:clamp(60px,9vw,110px) 0;position:relative}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,36px)}
+.serif{font-family:var(--serif);font-weight:430;letter-spacing:-.01em;line-height:1.1}
+.serif em{font-style:italic}
+.grad-a{background:var(--ga);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 26px;border-radius:99px;font-weight:800;font-size:15.5px;transition:transform .18s,box-shadow .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-grad{background:var(--ga);color:#fff;box-shadow:0 14px 34px -12px #F5644288}
+.btn-ghost{box-shadow:inset 0 0 0 1.5px var(--line);background:var(--card)}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-sm{padding:12px 20px;font-size:14px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+/* nav */
+nav{position:sticky;top:0;z-index:100;background:rgba(246,244,242,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:18px;padding:14px clamp(18px,4vw,36px);max-width:1160px;margin:0 auto}
+.logo{font-family:var(--logo);font-weight:700;font-size:22px}
+.logo b{background:var(--g1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo .sub{font-size:12px;font-weight:800;color:var(--accent);letter-spacing:.08em;margin-left:6px;text-transform:uppercase}
+.nav-back{font-size:14px;font-weight:700;color:var(--muted)}
+.nav-back:hover{color:var(--ink)}
+.nav-sp{flex:1}
+.lang{font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;box-shadow:inset 0 0 0 1.5px var(--line)}
+.lang:hover{background:var(--card)}
+/* hero */
+.hero{padding:clamp(48px,7vw,90px) 0;position:relative;overflow:clip;background:
+ radial-gradient(90% 70% at 90% -20%,#FFEAE5,transparent 60%),var(--bg)}
+.hero-grid{display:grid;gap:clamp(28px,5vw,64px);align-items:center}
+@media(min-width:920px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+.hero h1{font-size:clamp(34px,5.4vw,58px);margin:6px 0 16px}
+.hero h1 em{background:var(--ga);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{font-size:clamp(16px,2vw,18.5px);color:var(--muted);max-width:56ch}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin:26px 0 18px}
+.social{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--gray);font-weight:600}
+.social .stars{color:#FFC53D;letter-spacing:2px;font-style:normal}
+.social img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #fff;margin-left:-10px}
+.social .avs{display:flex;padding-left:10px}
+.hero-media{position:relative;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3.2}
+.hero-media video{width:100%;height:100%;object-fit:cover}
+.hero-chip{position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:16px;padding:10px 16px;font-size:13.5px;font-weight:800;box-shadow:var(--shadow)}
+.hero-chip small{display:block;font-weight:600;color:var(--gray)}
+.urg{font-size:13.5px;font-weight:700;color:var(--accent);margin-top:14px}
+/* números */
+.nums{display:flex;flex-wrap:wrap;gap:14px 44px;justify-content:center;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.nums .st b{display:block;font-size:clamp(28px,4vw,38px);background:var(--ga);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nums .st span{font-size:13.5px;color:var(--gray);font-weight:600}
+/* dores */
+.pains{display:grid;gap:18px;margin-top:34px}
+@media(min-width:760px){.pains{grid-template-columns:repeat(3,1fr)}}
+.pain{background:var(--card);border-radius:var(--r);padding:26px;box-shadow:var(--shadow)}
+.pain .pico{width:52px;height:52px;border-radius:16px;background:var(--pastel);display:grid;place-items:center;font-size:24px;margin-bottom:14px}
+.pain h4{font-size:18px;margin-bottom:6px}
+.pain p{font-size:14.5px;color:var(--muted)}
+.sec-head{max-width:720px;margin-bottom:14px}
+.sec-head h2{font-size:clamp(28px,4.4vw,44px)}
+.sec-head h2 em{background:var(--ga);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sec-head p{color:var(--muted);margin-top:10px}
+/* app section (dark) */
+.sec-app{background:linear-gradient(165deg,var(--navy),#5E1F10);color:#fff}
+.sec-app .sec-head h2{color:#fff}
+.sec-app .sec-head p{color:rgba(255,255,255,.72)}
+.app-grid{display:grid;gap:clamp(28px,5vw,70px);align-items:center;margin-top:20px}
+@media(min-width:920px){.app-grid{grid-template-columns:.9fr 1.1fr}}
+.phone{position:relative;width:min(280px,70vw);margin:0 auto;aspect-ratio:393/852;border-radius:44px;padding:9px;
+ background:linear-gradient(145deg,#3C4166,#101228);box-shadow:0 40px 90px -30px rgba(0,0,0,.65),inset 0 0 0 1.5px rgba(255,255,255,.16)}
+.phone video{width:100%;height:100%;object-fit:cover;border-radius:36px;background:#0B0D1E}
+.phone .glow{position:absolute;inset:-50px;border-radius:50%;background:radial-gradient(circle,#F5644255,transparent 70%);filter:blur(34px);z-index:-1}
+.feats{list-style:none;display:grid;gap:18px}
+.feats li{display:flex;gap:14px}
+.feats .fico{flex:0 0 auto;width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.12);display:grid;place-items:center;font-size:21px}
+.feats b{display:block;font-size:16.5px}
+.feats span{font-size:14.5px;color:rgba(255,255,255,.72)}
+/* steps */
+.steps{display:grid;gap:18px;margin-top:30px}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:var(--card);border-radius:var(--r);padding:28px;box-shadow:var(--shadow);position:relative}
+.step .n{font-size:44px;background:var(--ga);-webkit-background-clip:text;background-clip:text;color:transparent}
+.step h4{margin:8px 0 6px;font-size:17.5px}
+.step p{font-size:14.5px;color:var(--muted)}
+/* case */
+.case{background:var(--pastel);border-radius:calc(var(--r) + 8px);padding:clamp(26px,4.5vw,54px);display:grid;gap:30px;align-items:center}
+@media(min-width:880px){.case{grid-template-columns:.42fr .58fr}}
+.case .ph{border-radius:var(--r);overflow:hidden;aspect-ratio:4/4.4;box-shadow:var(--shadow)}
+.case .ph img{width:100%;height:100%;object-fit:cover}
+.case h3{font-size:clamp(24px,3.4vw,34px)}
+.case h3 em{background:var(--ga);-webkit-background-clip:text;background-clip:text;color:transparent}
+.case .who{font-size:13.5px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin:10px 0}
+.case blockquote{font-size:16px;color:var(--muted);border:0}
+.case-nums{display:flex;gap:26px;flex-wrap:wrap;margin-top:20px}
+.case-nums b{display:block;font-size:26px;font-family:var(--serif)}
+.case-nums span{font-size:12.5px;color:var(--gray);font-weight:700}
+/* planos */
+.plans{display:grid;gap:18px;margin-top:34px}
+@media(min-width:880px){.plans{grid-template-columns:repeat(3,1fr);align-items:start}}
+.plan{background:var(--card);border-radius:var(--r);padding:28px;box-shadow:var(--shadow);position:relative}
+.plan.hot{background:linear-gradient(165deg,var(--navy),#5E1F10);color:#fff;transform:scale(1.03)}
+.plan.hot .desc,.plan.hot .price span{color:rgba(255,255,255,.7)}
+.plan .star{position:absolute;top:-13px;left:24px;background:var(--ga);color:#fff;font-size:12px;font-weight:800;padding:5px 12px;border-radius:99px}
+.plan h4{font-size:20px;font-family:var(--serif)}
+.plan .desc{font-size:13.5px;color:var(--muted);margin:4px 0 14px}
+.plan .price b{font-size:34px;font-family:var(--serif)}
+.plan .price span{display:block;font-size:12.5px;color:var(--gray);font-weight:600}
+.plan ul{list-style:none;margin:16px 0 18px;display:grid;gap:8px;font-size:14px}
+.plan .btn{width:100%;justify-content:center}
+.guarantee{text-align:center;font-size:13.5px;font-weight:700;color:var(--gray);margin-top:22px}
+.plans-all{display:block;text-align:center;margin-top:16px;font-weight:800;color:var(--accent)}
+/* faq */
+.faqs{max-width:760px;margin:26px auto 0;display:grid;gap:12px}
+.faqs details{background:var(--card);border-radius:18px;padding:18px 22px;box-shadow:var(--shadow)}
+.faqs summary{font-weight:800;font-size:15.5px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faqs summary::-webkit-details-marker{display:none}
+.faqs .pl{color:var(--accent);font-size:20px;transition:transform .3s}
+.faqs details[open] .pl{transform:rotate(45deg)}
+.faqs p{margin-top:10px;font-size:14.5px;color:var(--muted)}
+/* final */
+.final{background:linear-gradient(165deg,var(--navy),#5E1F10);color:#fff;text-align:center;border-radius:calc(var(--r) + 10px);padding:clamp(40px,7vw,80px) clamp(20px,5vw,60px);position:relative;overflow:clip}
+.final h2{font-size:clamp(30px,4.6vw,48px);color:#fff}
+.final h2 em{background:linear-gradient(100deg,#8699FD,#FF9F88);-webkit-background-clip:text;background-clip:text;color:transparent}
+.final p{color:rgba(255,255,255,.75);max-width:52ch;margin:12px auto 26px}
+footer{padding:34px 0 60px;text-align:center;font-size:13.5px;color:var(--gray)}
+footer a{font-weight:700}
+/* sticky mobile CTA */
+.sticky-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:90;display:none}
+.sticky-cta .btn{width:100%;justify-content:center;box-shadow:0 18px 44px -12px #F56442aa}
+@media(max-width:760px){.sticky-cta{display:block}}
+.quiz{position:fixed;inset:0;z-index:1000;display:none;background:
+  radial-gradient(120% 90% at 85% -10%,rgba(198,79,202,.28),transparent 60%),
+  radial-gradient(120% 90% at 10% 110%,rgba(65,95,245,.3),transparent 60%),var(--navy);
+  color:#fff;overflow-y:auto;overscroll-behavior:contain}
+.quiz.on{display:block;animation:qzIn .45s cubic-bezier(.22,1,.36,1)}
+@keyframes qzIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.qz-top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:14px;padding:16px clamp(16px,4vw,36px);background:rgba(25,30,71,.75);backdrop-filter:blur(12px)}
+.qz-logo{font-family:var(--logo);font-weight:700;font-size:20px;color:#fff}
+.qz-logo b{background:var(--g1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.qz-bar{flex:1;height:6px;border-radius:99px;background:rgba(255,255,255,.14);overflow:hidden}
+.qz-bar i{display:block;height:100%;width:0;border-radius:99px;background:var(--g1);transition:width .5s cubic-bezier(.22,1,.36,1)}
+.qz-x{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;font-size:16px;color:#fff;flex:0 0 auto}
+.qz-x:hover{background:rgba(255,255,255,.2)}
+.qz-wrap{max-width:680px;margin:0 auto;padding:clamp(22px,5vh,54px) 20px 80px;min-height:calc(100svh - 70px);display:flex;flex-direction:column;justify-content:center}
+.qz-step{display:none}
+.qz-step.on{display:block;animation:qzStep .5s cubic-bezier(.22,1,.36,1)}
+@keyframes qzStep{from{opacity:0;transform:translateX(36px)}to{opacity:1;transform:none}}
+.qz-kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-2);margin-bottom:14px}
+.qz-step h2{font-family:var(--serif);font-weight:450;font-size:clamp(26px,5vw,40px);line-height:1.1;margin-bottom:10px;color:#fff}
+.qz-step h2 em{font-style:italic;background:var(--g2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.qz-sub{color:rgba(255,255,255,.72);font-size:15.5px;margin-bottom:26px;max-width:52ch}
+.qz-opts{display:grid;gap:12px}
+.qz-opt{display:flex;align-items:center;gap:14px;text-align:left;padding:16px 18px;border-radius:18px;
+  background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.14);color:#fff;font-size:16px;font-weight:700;
+  transition:transform .18s,background .18s,border-color .18s;cursor:pointer}
+.qz-opt small{display:block;font-weight:500;font-size:13px;color:rgba(255,255,255,.6)}
+.qz-opt .qe{font-size:26px;flex:0 0 auto;width:48px;height:48px;border-radius:14px;background:rgba(255,255,255,.1);display:grid;place-items:center}
+.qz-opt:hover{transform:translateY(-2px) scale(1.01);background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35)}
+.qz-opt.sel{background:rgba(65,95,245,.35);border-color:var(--blue-2);animation:qzPop .32s}
+@keyframes qzPop{50%{transform:scale(.97)}}
+.qz-back{margin-top:26px;font-size:14px;color:rgba(255,255,255,.55);display:inline-flex;gap:6px;align-items:center}
+.qz-back:hover{color:#fff}
+.qz-note{margin-top:18px;display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.55)}
+.qz-note .stars{color:#FFC53D;letter-spacing:2px}
+.qz-form{display:grid;gap:14px}
+.qz-form label{font-size:13px;font-weight:700;color:rgba(255,255,255,.75);display:block;margin-bottom:6px}
+.qz-form input{width:100%;padding:15px 16px;border-radius:14px;border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;font-size:16px;font-family:inherit;outline:none;transition:border-color .2s}
+.qz-form input::placeholder{color:rgba(255,255,255,.35)}
+.qz-form input:focus{border-color:var(--blue-2);background:rgba(255,255,255,.12)}
+.qz-preview{margin:0 0 24px;padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.25);display:flex;align-items:center;gap:14px}
+.qz-preview .qav{width:52px;height:52px;border-radius:16px;background:var(--g1);display:grid;place-items:center;font-size:24px;flex:0 0 auto}
+.qz-preview b{display:block;font-size:16px}
+.qz-preview small{color:rgba(255,255,255,.6);font-size:13px}
+.qz-done{text-align:center}
+.qz-done .qbig{font-size:64px;animation:qzPop .6s}
+.qz-done h2{margin-top:6px}
+.qz-cal{margin-top:26px;text-align:left;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:22px}
+.qz-cal h4{font-size:15px;font-weight:800;margin-bottom:4px}
+.qz-cal .qcsub{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:14px}
+.qz-days,.qz-slots{display:flex;gap:8px;flex-wrap:wrap}
+.qz-days{margin-bottom:12px}
+.qz-chip{padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.16);color:#fff;font-size:14px;font-weight:700;transition:all .15s;cursor:pointer}
+.qz-chip:hover{border-color:rgba(255,255,255,.4)}
+.qz-chip.sel{background:var(--blue);border-color:var(--blue)}
+.qz-cal .qok{margin-top:14px;font-size:14.5px;font-weight:700;color:var(--green-2);display:none;align-items:center;gap:8px}
+.qz-cal .qok.on{display:flex;animation:qzStep .4s}
+.qz-confetti{position:fixed;inset:0;pointer-events:none;z-index:1002;overflow:hidden}
+.qz-confetti i{position:absolute;top:-4vh;width:10px;height:14px;border-radius:3px;animation:qzFall linear forwards}
+@keyframes qzFall{to{transform:translateY(110vh) rotate(720deg)}}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><div class="nav-in">
+  <span class="logo">my<b>dose</b><span class="sub">Physical</span></span>
+  <a class="nav-back" href="nova-identidade-v3.html">← Site principal</a>
+  <span class="nav-sp"></span>
+  <a class="lang" href="nova-physical-v3-en.html">EN</a>
+  <button class="btn btn-grad btn-sm js-quiz">Crie sua comunidade</button>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">✦ MyDose Physical · Nutrição · Medicina · Ed. física · Fisio</span>
+      <h1 class="serif">O paciente que <em>segue o plano</em> é o paciente que <em>fica</em>.</h1>
+      <p class="hero-sub">O MyDose Physical transforma seu plano alimentar ou treino em um jogo diário — com foto do prato, XP e comunidade. <b>Adesão 3× maior, recompra no automático.</b></p>
+      <div class="hero-ctas">
+        <button class="btn btn-grad js-quiz">Crie sua comunidade →</button>
+        <a class="btn btn-ghost" href="#app">Ver o app ao vivo</a>
+      </div>
+      <div class="social"><span class="avs"><img src="assets/dep-medica.jpg" alt=""><img src="assets/dep-nutri.jpg" alt=""><img src="assets/dep-psi.jpg" alt=""></span><span><i class="stars">★★★★★</i><br>+400 nutris, médicos e personal já usam</span></div>
+      <p class="urg">🔥 Onboarding com capacidade limitada — em agosto os preços sobem.</p>
+    </div>
+    <div class="hero-media rv in">
+      <video data-motion src="assets/motion/area-fit.mp4" poster="assets/motion/area-fit-poster.jpg" muted loop playsinline preload="metadata"></video>
+      <div class="hero-chip">85% <small>taxa de adesão média</small></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap"><span class="eyebrow" style="display:block;text-align:center;margin:26px 0 8px">✦ Resultados de quem usa</span><div class="nums"><div class="st rv"><b class="serif">85%</b><span>taxa de adesão média</span></div>
+<div class="st rv"><b class="serif">3×</b><span>mais recompra</span></div>
+<div class="st rv"><b class="serif">+R$ 10k</b><span>em 30 dias, sem nova agenda</span></div></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head rv"><span class="eyebrow">✦ Onde dói</span><h2 class="serif">Você entrega o melhor plano. E ele <em>morre na geladeira</em>.</h2></div>
+    <div class="pains"><div class="pain rv"><span class="pico">🥗</span><h4>O plano não é seguido</h4><p>O paciente jura que seguiu. A balança diz outra coisa. Sem adesão, seu resultado não aparece — e a culpa cai em você.</p></div>
+<div class="pain rv"><span class="pico">🔁</span><h4>Recompra baixa</h4><p>Fim do plano = fim da relação. Todo mês você recomeça a captação do zero, refém de indicação.</p></div>
+<div class="pain rv"><span class="pico">📵</span><h4>WhatsApp lotado</h4><p>"Posso trocar o almoço?" às 22h. Você virou suporte gratuito do seu próprio serviço.</p></div></div>
+  </div>
+</section>
+
+<section class="sec-app" id="app">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="eyebrow" style="color:#FF9F88">✦ O app em ação</span><h2 class="serif">O seu protocolo, <em>vivo no bolso</em> do paciente.</h2><p>Gravado direto do app — assim seus pacientes registram um hit:</p></div>
+    <div class="app-grid">
+      <div class="phone rv in"><span class="glow"></span><video data-motion src="assets/proto/hit.mp4" poster="assets/proto/hit-poster.jpg" muted loop playsinline preload="metadata"></video></div>
+      <ul class="feats"><li class="rv"><span class="fico">📸</span><div><b>Hit com foto do prato</b><span>O registro leva 10 segundos, vale XP e vira post na comunidade — prova social que puxa os outros.</span></div></li>
+<li class="rv"><span class="fico">📅</span><div><b>Protocolo na agenda</b><span>Café, treino, água: cada item do seu plano vira atividade com lembrete no Meu Dia.</span></div></li>
+<li class="rv"><span class="fico">🏆</span><div><b>Desafios com ranking</b><span>Transformação 30 Dias com premiação: o grupo inteiro se puxa — e você nem precisou mandar mensagem.</span></div></li></ul>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:0">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="eyebrow">✦ Como funciona</span><h2 class="serif">No ar em <em>7 dias</em>, em 3 passos.</h2></div>
+    <div class="steps"><div class="step rv"><span class="n serif">1</span><h4>Traga seu protocolo</h4><p>A gente transforma seu plano em atividades gamificadas — em até 7 dias no ar.</p></div>
+<div class="step rv"><span class="n serif">2</span><h4>Convide seus pacientes</h4><p>Eles entram na sua comunidade com a sua marca. XP e desafios desde o dia 1.</p></div>
+<div class="step rv"><span class="n serif">3</span><h4>Venda o contínuo</h4><p>Acompanhamento vira assinatura recorrente. A IA cuida das dúvidas do dia a dia.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="case rv">
+      <div class="ph"><img src="assets/dep-nutri.jpg" alt="Nutricionista · MyDose Physical" loading="lazy"></div>
+      <div>
+        <span class="eyebrow">✦ Prova real</span>
+        <h3 class="serif">“A adesão dos meus pacientes <em>triplicou</em>.”</h3>
+        <p class="who">Nutricionista · MyDose Physical</p>
+        <blockquote>“Meus pacientes registram cada refeição com foto e ganham XP. Os desafios criaram um clima de time — a adesão triplicou e minha recompra nunca foi tão alta. Hoje vendo o acompanhamento contínuo como assinatura.”</blockquote>
+        <div class="case-nums"><div><b>3×</b><span>adesão</span></div>
+<div><b>85%</b><span>pacientes ativos</span></div>
+<div><b>+R$ 12k</b><span>receita nova /mês</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="planos" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv" style="text-align:center;margin-inline:auto"><span class="eyebrow">✦ Planos · sem fidelidade-armadilha</span><h2 class="serif">Invista menos do que <em>uma consulta</em> por semana.</h2></div>
+    <div class="plans"><div class="plan rv"><h4>Start</h4><p class="desc">A gente ativa seus 2 aha moments.</p>
+<div class="price"><b>R$ 590</b><span>/mês no anual</span></div><ul><li>✓ Ativação guiada em 7 dias</li>
+<li>✓ 6 posts + 3 vídeos/mês</li>
+<li>✓ 1.500 WhatsApp · 400 créditos IA</li></ul><button class="btn btn-ghost btn-sm js-quiz">Crie sua comunidade</button></div>
+<div class="plan hot rv"><span class="star">⭐ Mais escolhido</span><h4>Autopilot</h4><p class="desc">A máquina rodando: a gente faz por você.</p>
+<div class="price"><b>R$ 2.190</b><span>/mês no anual</span></div><ul><li>✓ Tráfego gerido por nós</li>
+<li>✓ 20 posts + 10 vídeos/mês</li>
+<li>✓ 10.000 WhatsApp · gestor de conta</li></ul><button class="btn btn-grad btn-sm js-quiz">Crie sua comunidade</button></div>
+<div class="plan rv"><h4>Software</h4><p class="desc">A plataforma na sua mão.</p>
+<div class="price"><b>R$ 290</b><span>/mês no anual</span></div><ul><li>✓ Plataforma IA + Academy</li>
+<li>✓ Comunidade + checkout + CRM</li>
+<li>✓ 500 WhatsApp · 100 créditos IA</li></ul><button class="btn btn-ghost btn-sm js-quiz">Crie sua comunidade</button></div>
+</div>
+    <p class="guarantee">🛡️ 30 dias de garantia incondicional · 🔒 trava de preço · 💚 sem fidelidade-armadilha</p>
+    <a class="plans-all" href="nova-identidade-v3.html#planos">Ver todos os planos e entregáveis →</a>
+  </div>
+</section>
+
+<section style="padding-top:0" id="faq">
+  <div class="wrap">
+    <div class="sec-head rv" style="text-align:center;margin-inline:auto"><span class="eyebrow">✦ Perguntas frequentes</span><h2 class="serif">O que todo mundo pergunta <em>antes de começar</em>.</h2></div>
+    <div class="faqs"><details class="rv"><summary>Funciona pra plano alimentar e treino? <span class="pl">+</span></summary><p>Sim. Qualquer protocolo vira atividades: refeições, treinos, hidratação, sono, medicação. Você define, o app cobra.</p></details>
+<details class="rv"><summary>Meus pacientes vão usar mesmo? <span class="pl">+</span></summary><p>O registro com foto leva 10 segundos e vale XP. Média de 85% de adesão nas comunidades ativas — o jogo faz o trabalho.</p></details>
+<details class="rv"><summary>Quanto tempo pra estar no ar? <span class="pl">+</span></summary><p>Até 7 dias: a gente monta a comunidade, importa seu protocolo e ativa os primeiros desafios com você.</p></details>
+<details class="rv"><summary>A IA responde o que pro paciente? <span class="pl">+</span></summary><p>Dúvidas do dia a dia dentro dos SEUS limites: trocas de alimentos que você aprovou, horários, lembretes. Caso clínico, ela chama você.</p></details>
+<details class="rv"><summary>E se eu não gostar? <span class="pl">+</span></summary><p>30 dias de garantia incondicional + sem fidelidade-armadilha. Cancela quando quiser.</p></details></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="final rv">
+      <span class="eyebrow" style="color:#FF9F88">✦ Comece hoje</span>
+      <h2 class="serif">Sua comunidade pronta em <em>7 dias</em>.</h2>
+      <p>Responda 3 perguntas e nosso time ativa tudo com você — contato em até 24h.</p>
+      <button class="btn btn-light js-quiz" style="font-size:17px;padding:18px 34px">Crie sua comunidade agora →</button>
+    </div>
+  </div>
+</section>
+
+<footer>my<b>dose</b> Physical · <a href="nova-identidade-v3.html">mydose</a> · <a href="nova-physical-v3-en.html">EN</a></footer>
+
+<div class="sticky-cta"><button class="btn btn-grad js-quiz">Crie sua comunidade · ★★★★★</button></div>
+
+
+<div class="quiz" id="quiz" role="dialog" aria-modal="true">
+  <div class="qz-top">
+    <span class="qz-logo">my<b>dose</b></span>
+    <div class="qz-bar"><i id="qzBar"></i></div>
+    <button class="qz-x" id="qzX" aria-label="close">✕</button>
+  </div>
+  <div class="qz-wrap">
+    <div class="qz-step on" data-step="0">
+      <span class="qz-kicker">✦ Crie sua comunidade · leva 40 segundos</span>
+      <h2 class="serif">Qual é a sua <em>área</em>?</h2><p class="qz-sub">Vamos montar a comunidade do seu jeito — gamificação, protocolos e IA com a cara da sua especialidade.</p>
+      <div class="qz-opts"><button class="qz-opt" data-k="area" data-v="Médico(a)"><span class="qe">🩺</span><span>Médico(a)<small>consultório, clínica ou online</small></span></button>
+<button class="qz-opt" data-k="area" data-v="Nutricionista"><span class="qe">🥗</span><span>Nutricionista<small>planos alimentares que acontecem de verdade</small></span></button>
+<button class="qz-opt" data-k="area" data-v="Psicólogo(a)"><span class="qe">🧠</span><span>Psicólogo(a)<small>vínculo e continuidade entre sessões</small></span></button>
+<button class="qz-opt" data-k="area" data-v="Personal / Ed. física"><span class="qe">🏋️</span><span>Personal / Ed. física<small>treinos com adesão e recorrência</small></span></button>
+<button class="qz-opt" data-k="area" data-v="Outra área da saúde"><span class="qe">✨</span><span>Outra área da saúde<small>fisio, dentista, terapeuta, farma…</small></span></button></div>
+      <p class="qz-note"><span class="stars">★★★★★</span> +1.000 profissionais já criaram a sua</p>
+    </div>
+    <div class="qz-step" data-step="1">
+      <span class="qz-kicker">✦ Quase lá</span>
+      <h2 class="serif">Você já vende algo <em>além das consultas</em>?</h2><p class="qz-sub">Programas, planos de acompanhamento, e-books, mentorias… qualquer produto conta.</p>
+      <div class="qz-opts"><button class="qz-opt" data-k="produto" data-v="Ainda não — só consultas"><span class="qe">🌱</span><span>Ainda não — só consultas<small>perfeito: é onde a MyDose mais multiplica</small></span></button>
+<button class="qz-opt" data-k="produto" data-v="Tenho 1–2 produtos"><span class="qe">💼</span><span>Tenho 1–2 produtos<small>vamos colocá-los pra vender no automático</small></span></button>
+<button class="qz-opt" data-k="produto" data-v="Tenho uma esteira e quero escalar"><span class="qe">🚀</span><span>Tenho uma esteira e quero escalar<small>comunidade + IA = seu próximo patamar</small></span></button></div>
+      <button class="qz-back" data-back>← voltar</button>
+    </div>
+    <div class="qz-step" data-step="2">
+      <span class="qz-kicker">✦ Última pergunta</span>
+      <h2 class="serif">Quantas pessoas você <em>impacta</em> hoje?</h2><p class="qz-sub">Pacientes ativos + audiência nas redes. Chute sem medo — é só pra calibrar o plano.</p>
+      <div class="qz-opts"><button class="qz-opt" data-k="alcance" data-v="Até 50 pessoas"><span class="qe">🌰</span><span>Até 50 pessoas<small>começando — melhor hora pra estruturar</small></span></button>
+<button class="qz-opt" data-k="alcance" data-v="50 a 300"><span class="qe">🌿</span><span>50 a 300<small>sua comunidade nasce cheia</small></span></button>
+<button class="qz-opt" data-k="alcance" data-v="300 a 1.000"><span class="qe">🌳</span><span>300 a 1.000<small>potencial de receita recorrente imediata</small></span></button>
+<button class="qz-opt" data-k="alcance" data-v="Mais de 1.000"><span class="qe">🔥</span><span>Mais de 1.000<small>você está sentado numa mina de ouro</small></span></button></div>
+      <button class="qz-back" data-back>← voltar</button>
+    </div>
+    <div class="qz-step" data-step="3">
+      <span class="qz-kicker">✦ Sua comunidade está quase pronta</span>
+      <div class="qz-preview"><span class="qav">🏛️</span><span><b id="qzPrevName">MyDose</b><small id="qzPrevSub"></small></span></div>
+      <h2 class="serif">Pra quem a gente <em>entrega</em>?</h2><p class="qz-sub">Nosso time ativa sua comunidade e te chama no WhatsApp — em até 24h.</p>
+      <form class="qz-form" id="qzForm">
+        <div><label for="qzNome">Seu nome</label><input id="qzNome" required autocomplete="name"></div>
+        <div><label for="qzZap">WhatsApp</label><input id="qzZap" required inputmode="tel" autocomplete="tel"></div>
+        <div><label for="qzMail">E-mail profissional</label><input id="qzMail" type="email" required autocomplete="email"></div>
+        <button class="btn btn-grad qz-cta" type="submit">Criar minha comunidade →</button>
+      </form>
+      <p class="qz-note">🔒 Seus dados ficam só com a gente. Sem spam, sem compromisso.</p>
+      <button class="qz-back" data-back>← voltar</button>
+    </div>
+    <div class="qz-step qz-done" data-step="4">
+      <div class="qbig">🎉</div>
+      <h2 class="serif">Pronto, <em id="qzDoneName">doutor(a)</em>!<br>Sua comunidade começou a nascer.</h2>
+      <p class="qz-sub" style="margin-inline:auto">Nosso time entra em contato <b style="color:#fff">em até 24 horas</b> pra ativar tudo com você. Quer sugerir o melhor horário?</p>
+      <div class="qz-cal">
+        <h4>📅 Escolha um horário sugerido</h4><p class="qcsub">A gente te liga nesse horário (ou o mais perto possível).</p>
+        <div class="qz-days" id="qzDays"></div>
+        <div class="qz-slots">
+          <button class="qz-chip" data-slot="09:00">☀️ 09:00</button>
+          <button class="qz-chip" data-slot="14:00">🌤️ 14:00</button>
+          <button class="qz-chip" data-slot="19:00">🌙 19:00</button>
+        </div>
+        <p class="qok" id="qzOk">✓ <span id="qzOkTxt"></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* reveals */
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'-40px'});
+  document.querySelectorAll('.rv').forEach(function(x){io.observe(x)});
+})();
+/* vídeos data-motion */
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vids=document.querySelectorAll('video[data-motion]');
+  if(reduce){vids.forEach(function(v){v.pause()});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting)e.target.play().catch(function(){});else e.target.pause();})},{rootMargin:'120px'});
+  vids.forEach(function(v){io.observe(v)});
+})();
+/* quiz open */
+document.querySelectorAll('.js-quiz').forEach(function(b){b.addEventListener('click',function(){window.openQuiz&&window.openQuiz('Physical')})});
+</script><script>
+(function(){
+  var qz=document.getElementById('quiz'); if(!qz) return;
+  var bar=document.getElementById('qzBar');
+  var steps=[].slice.call(qz.querySelectorAll('.qz-step'));
+  var answers={plano:'Physical'};
+  var cur=0,TOTAL=steps.length;
+  function go(i){cur=Math.max(0,Math.min(TOTAL-1,i));
+    steps.forEach(function(s,j){s.classList.toggle('on',j===cur)});
+    bar.style.width=((cur+1)/TOTAL*100)+'%';qz.scrollTop=0;
+    if(cur===3){document.getElementById('qzPrevName').textContent='Comunidade de '+(answers.area||'MyDose');
+      document.getElementById('qzPrevSub').textContent='gamificação + IA prontas pra ativar';}}
+  window.openQuiz=function(p){answers.plano=p||'Physical';qz.classList.add('on');document.body.style.overflow='hidden';go(0);};
+  function closeQuiz(){qz.classList.remove('on');document.body.style.overflow='';}
+  document.getElementById('qzX').addEventListener('click',closeQuiz);
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&qz.classList.contains('on')&&cur<4)closeQuiz();});
+  qz.querySelectorAll('.qz-opt').forEach(function(o){o.addEventListener('click',function(){
+    this.parentNode.querySelectorAll('.qz-opt').forEach(function(x){x.classList.remove('sel')});
+    this.classList.add('sel');answers[this.dataset.k]=this.dataset.v;var self=this;
+    setTimeout(function(){go(cur+1);self.classList.remove('sel')},380);});});
+  qz.querySelectorAll('[data-back]').forEach(function(b){b.addEventListener('click',function(){go(cur-1)});});
+  function confetti(){var c=document.createElement('div');c.className='qz-confetti';
+    var cols=['#415FF5','#C64FCA','#F56442','#63AC39','#FFC53D','#F0B0F2'];
+    for(var i=0;i<90;i++){var p=document.createElement('i');p.style.left=(Math.random()*100)+'vw';
+      p.style.background=cols[i%cols.length];p.style.animationDuration=(2.2+Math.random()*2.4)+'s';
+      p.style.animationDelay=(Math.random()*.7)+'s';c.appendChild(p);}
+    document.body.appendChild(c);setTimeout(function(){c.remove()},6000);}
+  document.getElementById('qzForm').addEventListener('submit',function(e){e.preventDefault();
+    answers.nome=document.getElementById('qzNome').value.trim();
+    answers.whatsapp=document.getElementById('qzZap').value.trim();
+    answers.email=document.getElementById('qzMail').value.trim();
+    var first=answers.nome.replace(/^(dra?|dr|doutora?)\.?\s+/i,'').split(' ')[0]||'';
+    if(first)document.getElementById('qzDoneName').textContent=first;
+    try{localStorage.setItem('md-lead',JSON.stringify(answers))}catch(err){}
+    /* TODO: enviar pro CRM */
+    go(4);confetti();buildDays();});
+  var pickedDay=null,pickedSlot=null,DIAS=['dom','seg','ter','qua','qui','sex','sáb'];
+  function buildDays(){var wrap=document.getElementById('qzDays');if(wrap.childNodes.length)return;
+    var d=new Date(),added=0;
+    while(added<4){d.setDate(d.getDate()+1);if(d.getDay()===0||d.getDay()===6)continue;
+      var b=document.createElement('button');b.className='qz-chip';
+      b.dataset.day=d.getDate()+'/'+(d.getMonth()+1);b.textContent=DIAS[d.getDay()]+' · '+b.dataset.day;
+      b.addEventListener('click',function(){wrap.querySelectorAll('.qz-chip').forEach(function(x){x.classList.remove('sel')});
+        this.classList.add('sel');pickedDay=this.dataset.day;maybeConfirm();});
+      wrap.appendChild(b);added++;}}
+  qz.querySelectorAll('[data-slot]').forEach(function(s){s.addEventListener('click',function(){
+    this.parentNode.querySelectorAll('.qz-chip').forEach(function(x){x.classList.remove('sel')});
+    this.classList.add('sel');pickedSlot=this.dataset.slot;maybeConfirm();});});
+  function maybeConfirm(){if(!pickedDay||!pickedSlot)return;
+    answers.horario=pickedDay+' '+pickedSlot;
+    try{localStorage.setItem('md-lead',JSON.stringify(answers))}catch(err){}
+    document.getElementById('qzOkTxt').textContent='Combinado: dia {d} às {s}. Nosso time confirma com você!'.replace('{d}',pickedDay).replace('{s}',pickedSlot);
+    document.getElementById('qzOk').classList.add('on');}
+})();
+</script>
+</body>
+</html>
