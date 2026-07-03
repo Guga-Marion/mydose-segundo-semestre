@@ -11,6 +11,7 @@
 <link rel="canonical" href="https://mydoseapp.com/nova-identidade-v3.html">
 <link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/nova-identidade-v3.html">
 <link rel="alternate" hreflang="en" href="https://mydoseapp.com/nova-identidade-v3-en.html">
+<link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/nova-identidade-v3-es.html">
 <link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/nova-identidade-v3-en.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MyDose">
@@ -177,9 +178,14 @@ nav.scrolled{background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-fi
 .nav-links a:hover{color:var(--ink)}
 .nav-right{display:flex;align-items:center;gap:10px}
 .nav-cta{display:none}
-.lang-btn{display:grid;place-items:center;min-width:38px;height:38px;padding:0 10px;border-radius:99px;font-size:12.5px;font-weight:800;box-shadow:inset 0 0 0 1.5px var(--line);transition:background .2s}
-.lang-btn:hover{background:var(--card)}
-.sheet-lang{font-weight:800;font-size:15px}
+.lang-seg{display:inline-flex;align-items:center;gap:2px;background:var(--chip);border-radius:99px;padding:3px;box-shadow:inset 0 0 0 1.5px var(--line)}
+.lang-seg a{padding:5px 9px;border-radius:99px;font-size:11.5px;font-weight:800;color:var(--gray);line-height:1;letter-spacing:.02em;transition:background .2s,color .2s}
+.lang-seg a.on{background:var(--ink);color:var(--bg)}
+.lang-seg a:hover:not(.on){color:var(--ink)}
+.sheet-langs{display:flex;align-items:center;gap:8px;margin:4px 0}
+.sheet-langs .sl-lbl{font-size:13px;font-weight:700;color:var(--gray)}
+.sheet-langs a{font-weight:800;font-size:14px;padding:7px 13px;border-radius:99px;box-shadow:inset 0 0 0 1.5px var(--line)}
+.sheet-langs a.on{background:var(--ink);color:var(--bg);box-shadow:none}
 .theme-btn{
   width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:17px;
   box-shadow:inset 0 0 0 1.5px var(--line);transition:transform .3s;
@@ -1091,7 +1097,7 @@ details.faq .a b{color:var(--ink)}
       <a href="#faq">Dúvidas</a>
     </div>
     <div class="nav-right">
-      <a class="lang-btn" href="nova-identidade-v3-en.html" aria-label="English version">EN</a>
+      <div class="lang-seg" role="group" aria-label="Idioma / Language / Idioma"><a class="on" aria-current="true" href="#">PT</a><a href="nova-identidade-v3-en.html" aria-label="English">EN</a><a href="nova-identidade-v3-es.html" aria-label="Español">ES</a></div>
       <button class="theme-btn" id="themeBtn" aria-label="Alternar tema">🌙</button>
       <button class="btn btn-primary btn-sm nav-cta js-talk" data-mode="checkout" data-plan="MyDose">Crie sua comunidade</button>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -1105,7 +1111,7 @@ details.faq .a b{color:var(--ink)}
   <a href="#lab">MyDose Lab <small>04</small></a>
   <a href="#planos">Planos <small>05</small></a>
   <a href="#faq">Dúvidas <small>06</small></a>
-  <a class="sheet-lang" href="nova-identidade-v3-en.html">🌐 English version</a>
+  <div class="sheet-langs"><span class="sl-lbl">🌐</span><a class="on" href="#">PT</a><a href="nova-identidade-v3-en.html">EN</a><a href="nova-identidade-v3-es.html">ES</a></div>
   <button class="btn btn-grad js-talk" data-mode="checkout" data-plan="MyDose">Crie sua comunidade <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
 </div>
 

@@ -4,7 +4,7 @@
 > profissionais de saúde em empresas de saúde, com comunidade gamificada de pacientes,
 > planos de acompanhamento, protocolos de acompanhamento e medicina do estilo de vida (MEV).
 > Resultado: 3× mais adesão do paciente, receita recorrente e ~2h/semana de operação.
-> Domínio: https://mydoseapp.com · Idiomas: português (Brasil) e inglês.
+> Domínio: https://mydoseapp.com · Idiomas: português (Brasil), inglês e espanhol (América Latina, es-419).
 
 MyDose (MyDose AI) is the AI healthcare CRM: a platform that turns health professionals
 into health businesses, with a gamified patient community, follow-up care plans, care
@@ -20,6 +20,10 @@ protocols and lifestyle medicine. Outcome: 3× patient adherence, recurring reve
 - [MyDose Mental (en)](https://mydoseapp.com/nova-mental-v3-en.html): psychologists & therapists — continuity between sessions, fewer no-shows
 - [MyDose Clinics (pt-BR)](https://mydoseapp.com/nova-clinics-v3.html): CRM para clínicas — comunidade multiprofissional, cross-sell, IA de atendimento
 - [MyDose Clinics (en)](https://mydoseapp.com/nova-clinics-v3-en.html): clinic CRM — multidisciplinary community, cross-sell, AI front desk
+- [MyDose (es-419)](https://mydoseapp.com/nova-identidade-v3-es.html): plataforma completa en español latinoamericano — comunidad, IA 24/7, planes de seguimiento, CRM de salud, planes y precios
+- [MyDose Physical (es-419)](https://mydoseapp.com/nova-physical-v3-es.html): nutricionistas, médicos, personal — adherencia a plan de alimentación y entrenamiento
+- [MyDose Mental (es-419)](https://mydoseapp.com/nova-mental-v3-es.html): psicólogos y terapeutas — continuidad entre sesiones, menos ausentismo
+- [MyDose Clinics (es-419)](https://mydoseapp.com/nova-clinics-v3-es.html): CRM para clínicas — comunidad multiprofesional, cross-sell, IA de atención
 - [Conteúdos & mídia (pt-BR)](https://mydoseapp.com/blog.html): vídeos do YouTube, aulas e MyDose na imprensa
 - [Content & media (en)](https://mydoseapp.com/blog-en.html): YouTube videos, classes and MyDose in the press
 
