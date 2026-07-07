@@ -26,3 +26,11 @@ def contact(rows):
     # rows: list of (k, v_html)
     inner = ''.join('<div><div class="k">%s</div><div class="v">%s</div></div>' % (k, v) for k, v in rows)
     return '    <div class="contact-card">%s</div>\n' % inner
+
+def raw(html):
+    return '    %s\n' % html
+
+def faq(items, empty_msg=""):
+    inner = ''.join('<details class="faq"><summary>%s <span class="plus">+</span></summary><p class="a">%s</p></details>' % (q, a) for q, a in items)
+    em = '<p class="faq-empty">%s</p>' % empty_msg if empty_msg else ''
+    return '    <div class="faq-list">%s%s</div>\n' % (inner, em)

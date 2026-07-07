@@ -1,8 +1,16 @@
-# -*- coding: utf-8 -*-
-"""Shell (CSS + nav + rodapé) das páginas legais/internas do MyDose v3.
-Reutiliza os tokens e a identidade da nova-identidade-v3.html."""
-
-CSS = r"""
+<!DOCTYPE html>
+<html lang="es-419">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Cookies · MyDose</title>
+<meta name="description" content="Política de Cookies do MyDose.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z' fill='%23415FF5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Figtree:wght@400;500;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+<style>
 :root{
   --blue:#415FF5; --magenta:#C64FCA; --orange:#F56442; --green:#63AC39;
   --navy:#191E47; --plum:#592C5A;
@@ -150,100 +158,36 @@ footer a:hover{color:#fff}
 .foot-social a:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
 .foot-bottom{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;margin-top:40px;padding-top:22px;
   border-top:1px solid rgba(255,255,255,.1);color:#8a8480;font-size:12.5px}
-"""
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-in"><a href="nova-identidade-v3-es.html" class="wordmark" aria-label="MyDose">my<span>dose</span></a><div class="nav-right"><div class="lang-seg" role="group" aria-label="Idioma / Language / Idioma"><a href="cookies.html">PT</a><a href="cookies-en.html">EN</a><a class="on" aria-current="true" href="#">ES</a></div><button class="theme-btn" id="themeBtn" aria-label="tema">🌙</button><a class="btn-back" href="nova-identidade-v3-es.html">‹ <span class="bk-txt">Volver al sitio</span></a></div></div></nav>
+<div class="wrap doc-head">
+  <p class="eyebrow">Política de Cookies</p>
+  <h1>Política de Cookies</h1>
+  <div class="upd">Última actualización: <b>24 de junio de 2024</b></div>
+  <p class="langnote">Esta es una traducción de cortesía. La <b>versión en portugués</b> es la oficial y prevalece en caso de discrepancia.</p>
+</div>
+<div class="wrap doc-wrap">
+  <nav class="toc" aria-label="En esta página"><h6>En esta página</h6><ol><li><a href="#c1">¿Qué son las Cookies?</a></li><li><a href="#c2">¿Por qué usamos Cookies?</a></li><li><a href="#c3">Tipos de Cookies que Usamos</a></li><li><a href="#c4">Cómo Controlar las Cookies</a></li><li><a href="#c5">Gestionar Preferencias</a></li></ol></nav>
+  <article class="doc">
+    <p class="lead">Esta Política de Cookies explica cómo MyDose usa cookies y tecnologías similares para reconocerlo cuando visita nuestro sitio.</p>
+    <h2 id="c1">¿Qué son las Cookies?</h2>
+    <p>Las cookies son pequeños archivos de datos que se colocan en su computadora o dispositivo móvil cuando visita un sitio web. Las cookies son ampliamente utilizadas por los propietarios de sitios para que sus sitios funcionen, o para trabajar de forma más eficiente, así como para proporcionar información de informes.</p>
+    <h2 id="c2">¿Por qué usamos Cookies?</h2>
+    <p>Usamos cookies por varias razones: mejorar la funcionalidad del sitio, personalizar su experiencia, analizar cómo usa nuestro sitio y ofrecer publicidad relevante.</p>
+    <h2 id="c3">Tipos de Cookies que Usamos</h2>
+    <p>Usamos cookies esenciales (necesarias para el funcionamiento del sitio), cookies de rendimiento (para analizar cómo usa el sitio), cookies funcionales (para recordar sus preferencias) y cookies de marketing (para mostrar anuncios relevantes).</p>
+    <h2 id="c4">Cómo Controlar las Cookies</h2>
+    <p>Puede controlar y/o eliminar las cookies como desee. Puede eliminar todas las cookies que ya están en su computadora y puede configurar la mayoría de los navegadores para impedir que se coloquen.</p>
+    <h2 id="c5">Gestionar Preferencias</h2>
+    <p>Puede gestionar sus preferencias de cookies en cualquier momento:</p>
+    <button type="button" class="btn-submit" style="max-width:260px" onclick="var n=this.nextElementSibling;n.style.display=n.style.display==='block'?'none':'block'">Configurar Cookies</button><p class="m-priv" style="display:none;text-align:left;margin-top:12px;max-width:560px">Para gestionar las cookies, acceda a la configuración de privacidad de su navegador. Allí puede aceptar, rechazar o eliminar cookies. Si las rechaza, parte de la funcionalidad del sitio puede verse comprometida.</p>
 
-# rótulos traduzíveis do nav e rodapé
-UI = {
-  "pt": {"back":"Voltar ao site","upd":"Última atualização","toc":"Nesta página",
-         "official":"Esta é uma tradução de cortesia. A <b>versão em português</b> é a oficial e prevalece em caso de divergência.",
-         "f_product":"Produto","f_who":"Para quem","f_company":"Empresa","f_legal":"Legal",
-         "f_app":"O app","f_lab":"MyDose Lab","f_integr":"Integrações","f_plans":"Planos","f_live":"Aula ao vivo",
-         "f_content":"Conteúdos & mídia","f_press":"MyDose na imprensa","f_channel":"Canal no YouTube",
-         "tagline":"Seu operacional de IA para escalar na saúde. +Adesão · +Receita · −Tempo.","rights":"Take back control"},
-  "en": {"back":"Back to site","upd":"Last updated","toc":"On this page",
-         "official":"This is a courtesy translation. The <b>Portuguese version</b> is the official one and prevails in case of any discrepancy.",
-         "f_product":"Product","f_who":"For whom","f_company":"Company","f_legal":"Legal",
-         "f_app":"The app","f_lab":"MyDose Lab","f_integr":"Integrations","f_plans":"Plans","f_live":"Live class",
-         "f_content":"Content & media","f_press":"MyDose in the press","f_channel":"YouTube channel",
-         "tagline":"Your AI operating layer to scale in healthcare. +Adherence · +Revenue · −Time.","rights":"Take back control"},
-  "es": {"back":"Volver al sitio","upd":"Última actualización","toc":"En esta página",
-         "official":"Esta es una traducción de cortesía. La <b>versión en portugués</b> es la oficial y prevalece en caso de discrepancia.",
-         "f_product":"Producto","f_who":"Para quién","f_company":"Empresa","f_legal":"Legal",
-         "f_app":"La app","f_lab":"MyDose Lab","f_integr":"Integraciones","f_plans":"Planes","f_live":"Clase en vivo",
-         "f_content":"Contenidos & medios","f_press":"MyDose en la prensa","f_channel":"Canal de YouTube",
-         "tagline":"Tu capa operativa de IA para escalar en salud. +Adhesión · +Ingresos · −Tiempo.","rights":"Take back control"},
-}
+  </article>
+</div>
+<footer><div class="wrap"><div class="foot-grid"><div><span class="wordmark">my<span>dose</span></span><p class="tagline">Tu capa operativa de IA para escalar en salud. +Adhesión · +Ingresos · −Tiempo.</p><div class="foot-social" aria-label="Social"><a href="https://www.youtube.com/@mydoseapp" target="_blank" rel="noopener" aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5s-7 0-8.9.6A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.6 8.9.6 8.9.6s7 0 8.9-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.2ZM9.7 15.3V8.7L15.8 12l-6.1 3.3Z"/></svg></a><a href="https://www.instagram.com/mydoseapp" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3a3.8 3.8 0 0 1-.9 1.4c-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.3.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4a3.8 3.8 0 0 1-1.4-.9 3.8 3.8 0 0 1-.9-1.4c-.2-.4-.4-1.1-.4-2.3-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.3-.1 1.6-.1 4.8-.1Zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8Zm0 7.2a2.9 2.9 0 1 0 0-5.7 2.9 2.9 0 0 0 0 5.7Zm5.6-7.4a1 1 0 1 1-2.1 0 1 1 0 0 1 2.1 0Z"/></svg></a><a href="https://www.linkedin.com/company/mydoseapp" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.2 2.4 4.2 5.4v6.3ZM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1Zm1.8 13H3.6V9h3.5v11.4Z"/></svg></a></div></div><div><h6>Producto</h6><ul><li><a href="nova-identidade-v3-es.html#produto">La app</a></li><li><a href="nova-identidade-v3-es.html#lab">MyDose Lab</a></li><li><a href="nova-identidade-v3-es.html#integracoes">Integraciones</a></li><li><a href="nova-identidade-v3-es.html#planos">Planes</a></li><li><a href="live.html">Clase en vivo</a></li></ul></div><div><h6>Para quién</h6><ul><li><a href="nova-physical-v3-es.html">Physical</a></li><li><a href="nova-mental-v3-es.html">Mental</a></li><li><a href="nova-clinics-v3-es.html">Clinics</a></li></ul></div><div><h6>Empresa</h6><ul><li><a href="blog.html">Contenidos & medios</a></li><li><a href="blog.html#imprensa">MyDose en la prensa</a></li><li><a href="https://www.youtube.com/@mydoseapp" target="_blank" rel="noopener">Canal de YouTube</a></li><li><a href="central-de-ajuda-es.html">Centro de Ayuda</a></li><li><a href="contato-es.html">Contacto</a></li></ul></div><div><h6>Legal</h6><ul><li><a href="privacidade-es.html">Política de Privacidad</a></li><li><a href="termos-es.html">Términos de Uso</a></li><li><a href="cookies-es.html">Política de Cookies</a></li><li><a href="lgpd-es.html">LGPD (Protección de Datos)</a></li></ul></div></div><div class="foot-bottom"><span>© MyDose · Take back control</span><span>feito com ética e ciência.</span></div></div></footer>
 
-# páginas legais e seus nomes de arquivo por idioma (base pt = sem sufixo)
-LEGAL_PAGES = ["privacidade","termos","cookies","lgpd","central-de-ajuda","contato"]
-# coluna "Legal" do rodapé
-LEGAL_IN_FOOTER = ["privacidade","termos","cookies","lgpd"]
-# coluna "Suporte" do rodapé
-SUPPORT_IN_FOOTER = ["central-de-ajuda","contato"]
-LEGAL_TITLES = {
-  "privacidade":{"pt":"Política de Privacidade","en":"Privacy Policy","es":"Política de Privacidad"},
-  "termos":{"pt":"Termos de Uso","en":"Terms of Use","es":"Términos de Uso"},
-  "cookies":{"pt":"Política de Cookies","en":"Cookie Policy","es":"Política de Cookies"},
-  "lgpd":{"pt":"LGPD","en":"LGPD (Data Protection)","es":"LGPD (Protección de Datos)"},
-  "central-de-ajuda":{"pt":"Central de Ajuda","en":"Help Center","es":"Centro de Ayuda"},
-  "contato":{"pt":"Contato","en":"Contact","es":"Contacto"},
-}
-
-def fname(page, lang):
-    return page + (".html" if lang=="pt" else "-%s.html"%lang)
-
-def home(lang):
-    return "nova-identidade-v3.html" if lang=="pt" else "nova-identidade-v3-%s.html"%lang
-
-def nav_html(page, lang):
-    langs = ""
-    for lg in ["pt","en","es"]:
-        on = ' class="on" aria-current="true"' if lg==lang else ''
-        href = "#" if lg==lang else fname(page, lg)
-        langs += '<a%s href="%s">%s</a>' % (on, href, lg.upper())
-    u = UI[lang]
-    return ('<nav><div class="wrap nav-in">'
-      '<a href="%s" class="wordmark" aria-label="MyDose">my<span>dose</span></a>'
-      '<div class="nav-right">'
-      '<div class="lang-seg" role="group" aria-label="Idioma / Language / Idioma">%s</div>'
-      '<button class="theme-btn" id="themeBtn" aria-label="tema">🌙</button>'
-      '<a class="btn-back" href="%s">‹ <span class="bk-txt">%s</span></a>'
-      '</div></div></nav>') % (home(lang), langs, home(lang), u["back"])
-
-def _links_for(pages, lang):
-    return "".join('<li><a href="%s">%s</a></li>' % (fname(p, lang), LEGAL_TITLES[p][lang]) for p in pages)
-
-def footer_html(lang):
-    u = UI[lang]
-    social = ('<div class="foot-social" aria-label="Social">'
-      '<a href="https://www.youtube.com/@mydoseapp" target="_blank" rel="noopener" aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5s-7 0-8.9.6A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.6 8.9.6 8.9.6s7 0 8.9-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.2ZM9.7 15.3V8.7L15.8 12l-6.1 3.3Z"/></svg></a>'
-      '<a href="https://www.instagram.com/mydoseapp" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3a3.8 3.8 0 0 1-.9 1.4c-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.3.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4a3.8 3.8 0 0 1-1.4-.9 3.8 3.8 0 0 1-.9-1.4c-.2-.4-.4-1.1-.4-2.3-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.3-.1 1.6-.1 4.8-.1Zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8Zm0 7.2a2.9 2.9 0 1 0 0-5.7 2.9 2.9 0 0 0 0 5.7Zm5.6-7.4a1 1 0 1 1-2.1 0 1 1 0 0 1 2.1 0Z"/></svg></a>'
-      '<a href="https://www.linkedin.com/company/mydoseapp" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.2 2.4 4.2 5.4v6.3ZM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1Zm1.8 13H3.6V9h3.5v11.4Z"/></svg></a></div>')
-    prod = ('<div><h6>%s</h6><ul>'
-      '<li><a href="%s#produto">%s</a></li><li><a href="%s#lab">%s</a></li>'
-      '<li><a href="%s#integracoes">%s</a></li><li><a href="%s#planos">%s</a></li>'
-      '<li><a href="live.html">%s</a></li></ul></div>') % (u["f_product"],
-        home(lang),u["f_app"],home(lang),u["f_lab"],home(lang),u["f_integr"],home(lang),u["f_plans"],u["f_live"])
-    who = ('<div><h6>%s</h6><ul>'
-      '<li><a href="nova-physical-v3%s.html">Physical</a></li>'
-      '<li><a href="nova-mental-v3%s.html">Mental</a></li>'
-      '<li><a href="nova-clinics-v3%s.html">Clinics</a></li></ul></div>') % (
-        u["f_who"], "" if lang=="pt" else "-"+lang, "" if lang=="pt" else "-"+lang, "" if lang=="pt" else "-"+lang)
-    comp = ('<div><h6>%s</h6><ul>'
-      '<li><a href="blog.html">%s</a></li><li><a href="blog.html#imprensa">%s</a></li>'
-      '<li><a href="https://www.youtube.com/@mydoseapp" target="_blank" rel="noopener">%s</a></li>'
-      '%s</ul></div>') % (
-        u["f_company"], u["f_content"], u["f_press"], u["f_channel"], _links_for(SUPPORT_IN_FOOTER, lang))
-    legal = '<div><h6>%s</h6><ul>%s</ul></div>' % (u["f_legal"], _links_for(LEGAL_IN_FOOTER, lang))
-    return ('<footer><div class="wrap"><div class="foot-grid">'
-      '<div><span class="wordmark">my<span>dose</span></span>'
-      '<p class="tagline">%s</p>%s</div>'
-      '%s%s%s%s'
-      '</div><div class="foot-bottom"><span>© MyDose · %s</span>'
-      '<span>feito com ética e ciência.</span></div></div></footer>') % (
-        u["tagline"], social, prod, who, comp, legal, u["rights"])
-
-THEME_JS = r"""
 <script>
 (function(){
   var r=document.documentElement,b=document.getElementById('themeBtn');
@@ -284,54 +228,6 @@ THEME_JS = r"""
   });}
 })();
 </script>
-"""
 
-FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E"
-  "%3Cpath d='M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z' fill='%23415FF5'/%3E%3C/svg%3E")
-
-def page(pagekey, lang, title, updated, blocks, toc):
-    """Monta o HTML completo de uma página legal."""
-    u = UI[lang]
-    lang_attr = {"pt":"pt-BR","en":"en","es":"es-419"}[lang]
-    toc_html = ""
-    if toc:
-        lis = "".join('<li><a href="#%s">%s</a></li>' % (tid, tlabel) for tid,tlabel in toc)
-        toc_html = '<nav class="toc" aria-label="%s"><h6>%s</h6><ol>%s</ol></nav>' % (u["toc"], u["toc"], lis)
-    langnote = "" if lang=="pt" else '<p class="langnote">%s</p>' % u["official"]
-    updrow = ('<div class="upd">%s: <b>%s</b></div>' % (u["upd"], updated)) if updated else ""
-    return """<!DOCTYPE html>
-<html lang="%(la)s">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>%(title)s · MyDose</title>
-<meta name="description" content="%(title)s do MyDose.">
-<meta name="robots" content="noindex">
-<link rel="icon" href="%(fav)s">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Figtree:wght@400;500;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
-<style>%(css)s</style>
-</head>
-<body>
-%(nav)s
-<div class="wrap doc-head">
-  <p class="eyebrow">%(title)s</p>
-  <h1>%(title)s</h1>
-  %(updrow)s
-  %(langnote)s
-</div>
-<div class="wrap doc-wrap%(notoc)s">
-  %(toc)s
-  <article class="doc">
-%(blocks)s
-  </article>
-</div>
-%(footer)s
-%(js)s
 </body>
 </html>
-""" % {"la":lang_attr,"title":title,"fav":FAVICON,"css":CSS,"nav":nav_html(pagekey,lang),
-       "updrow":updrow,"langnote":langnote,"toc":toc_html,"blocks":blocks,
-       "notoc":"" if toc else " no-toc",
-       "footer":footer_html(lang),"js":THEME_JS}

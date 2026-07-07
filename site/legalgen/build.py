@@ -10,6 +10,10 @@ OUT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))  # site/
 MODULES = {
   "privacidade":"content_privacidade",
   "termos":"content_termos",
+  "cookies":"content_cookies",
+  "lgpd":"content_lgpd",
+  "central-de-ajuda":"content_ajuda",
+  "contato":"content_contato",
 }
 
 def gen(pagekey, lang):
