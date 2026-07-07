@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es-419">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad · MyDose</title>
+<meta name="description" content="Política de Privacidad do MyDose.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z' fill='%23415FF5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Figtree:wght@400;500;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#415FF5; --magenta:#C64FCA; --orange:#F56442; --green:#63AC39;
+  --navy:#191E47; --plum:#592C5A;
+  --g1:linear-gradient(100deg,#415FF5 0%,#C64FCA 52%,#F56442 100%);
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Figtree",-apple-system,"Segoe UI",sans-serif;
+  --logo:"Quicksand",var(--sans);
+  --bg:#F6F4F2; --ink:#1E1D1D; --card:#FFFFFF; --muted:#565452; --gray:#848484;
+  --line:rgba(30,29,29,.1); --line-strong:rgba(30,29,29,.22);
+  --chip:#F6F4F2; --footer:#1E1D1D;
+  --shadow:0 20px 60px -20px rgba(25,30,71,.25);
+  --r:20px;
+}
+[data-theme="dark"]{
+  --bg:#101226; --ink:#F6F4F2; --card:#1B1E3E; --muted:#B9BCD8; --gray:#8E92B4;
+  --line:rgba(246,244,242,.11); --line-strong:rgba(246,244,242,.3);
+  --chip:#252950; --footer:#0B0D1E;
+  --shadow:0 20px 60px -20px rgba(0,0,0,.55);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;transition:background .35s,color .35s}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+::selection{background:var(--blue);color:#fff}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.grad{background:var(--g1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* nav */
+nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 86%,transparent);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+.wordmark{font-family:var(--logo);font-weight:700;font-size:23px;letter-spacing:-.02em;color:var(--ink)}
+.wordmark span{background:var(--g1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nav-right{display:flex;align-items:center;gap:11px}
+.lang-seg{display:inline-flex;align-items:center;gap:2px;background:var(--chip);border-radius:99px;padding:3px;box-shadow:inset 0 0 0 1.5px var(--line)}
+.lang-seg a{padding:5px 9px;border-radius:99px;font-size:11.5px;font-weight:800;color:var(--gray);line-height:1;letter-spacing:.02em;transition:background .2s,color .2s}
+.lang-seg a.on{background:var(--ink);color:var(--bg)}
+.lang-seg a:hover:not(.on){color:var(--ink)}
+.theme-btn{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:15px;border:1px solid var(--line)}
+.theme-btn:hover{border-color:var(--line-strong)}
+.btn-back{font-size:13.5px;font-weight:700;padding:9px 15px;border-radius:99px;background:var(--ink);color:var(--bg);
+  display:inline-flex;align-items:center;gap:7px;transition:transform .15s,opacity .2s}
+.btn-back:hover{transform:translateY(-1px);opacity:.92}
+@media(max-width:680px){.btn-back .bk-txt{display:none}.btn-back{width:36px;height:36px;padding:0;justify-content:center;border-radius:50%}}
+
+/* doc header */
+.doc-head{padding:54px 0 20px}
+.doc-head .eyebrow{font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--gray)}
+.doc-head h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,52px);line-height:1.05;margin-top:14px;letter-spacing:-.02em;text-wrap:balance}
+.doc-head .upd{margin-top:16px;font-size:13.5px;color:var(--muted);display:inline-flex;align-items:center;gap:8px;
+  background:var(--card);border:1px solid var(--line);padding:7px 13px;border-radius:99px}
+.doc-head .upd b{color:var(--ink);font-weight:700}
+
+/* official-version note */
+.langnote{margin:8px 0 0;max-width:760px;font-size:13.5px;color:var(--muted);background:var(--card);border:1px solid var(--line);
+  border-left:3px solid var(--blue);border-radius:0 12px 12px 0;padding:12px 16px}
+
+/* layout */
+.doc-wrap{display:grid;gap:40px;padding:14px 0 40px}
+@media(min-width:940px){.doc-wrap{grid-template-columns:230px 1fr}}
+.toc{align-self:start}
+@media(min-width:940px){.toc{position:sticky;top:88px}}
+.toc h6{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:12px}
+.toc ol{list-style:none;display:flex;flex-direction:column;gap:2px;counter-reset:t}
+.toc a{display:block;font-size:13px;color:var(--muted);padding:6px 10px;border-radius:9px;border-left:2px solid transparent;line-height:1.35;transition:color .15s,background .15s,border-color .15s}
+.toc a:hover{color:var(--ink);background:var(--card)}
+.toc a.active{color:var(--ink);border-left-color:var(--blue);background:var(--card);font-weight:600}
+@media(max-width:939px){.toc{display:none}}
+
+.doc{max-width:760px;min-width:0}
+.doc h2{font-family:var(--serif);font-weight:600;font-size:clamp(21px,2.7vw,27px);letter-spacing:-.01em;margin:42px 0 4px;
+  scroll-margin-top:88px;line-height:1.2}
+.doc h2:first-child{margin-top:0}
+.doc h2 .cap{display:block;font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.doc h3{font-family:var(--serif);font-weight:600;font-size:18px;margin:26px 0 2px}
+.doc p{margin:14px 0;color:var(--ink)}
+.doc .lead{font-size:17.5px;color:var(--muted);line-height:1.7}
+.doc ul,.doc ol{margin:12px 0 12px 4px;padding-left:22px;display:flex;flex-direction:column;gap:8px}
+.doc li{padding-left:4px}
+.doc strong,.doc b{font-weight:700}
+.doc a.inl{color:var(--blue);font-weight:600;word-break:break-word}
+.doc code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.86em;background:var(--chip);padding:2px 6px;border-radius:6px;
+  border:1px solid var(--line);word-break:break-all}
+.callout{margin:18px 0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+.callout.warn{border-left:3px solid var(--orange)}
+.callout .cl-t{font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin-bottom:7px}
+.contact-card{margin:18px 0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow);
+  display:flex;flex-wrap:wrap;gap:10px 34px}
+.contact-card div{min-width:150px}
+.contact-card .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
+.contact-card .v{font-weight:650;margin-top:4px}
+.contact-card a{color:var(--blue)}
+
+/* footer (do v3) */
+footer{background:var(--footer);color:#cfcac6;padding:60px 0 30px;font-size:14.5px;margin-top:20px}
+.foot-grid{display:grid;gap:34px}
+@media(min-width:860px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr 1fr}}
+footer .wordmark{color:#fff;font-size:26px}
+footer .tagline{margin-top:13px;color:#9b9591;max-width:280px;font-size:13.5px}
+footer h6{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8a8480;margin-bottom:13px}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+footer a:hover{color:#fff}
+.foot-social{display:flex;gap:9px;margin-top:15px}
+.foot-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.09);display:grid;place-items:center;color:#cfcac6;transition:background .2s,transform .2s,color .2s}
+.foot-social a:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+.foot-bottom{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;margin-top:40px;padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.1);color:#8a8480;font-size:12.5px}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-in"><a href="nova-identidade-v3-es.html" class="wordmark" aria-label="MyDose">my<span>dose</span></a><div class="nav-right"><div class="lang-seg" role="group" aria-label="Idioma / Language / Idioma"><a href="privacidade.html">PT</a><a href="privacidade-en.html">EN</a><a class="on" aria-current="true" href="#">ES</a></div><button class="theme-btn" id="themeBtn" aria-label="tema">🌙</button><a class="btn-back" href="nova-identidade-v3-es.html">‹ <span class="bk-txt">Volver al sitio</span></a></div></div></nav>
+<div class="wrap doc-head">
+  <p class="eyebrow">Política de Privacidad</p>
+  <h1>Política de Privacidad</h1>
+  <div class="upd">Última actualización: <b>16 de junio de 2026</b></div>
+  <p class="langnote">Esta es una traducción de cortesía. La <b>versión en portugués</b> es la oficial y prevalece en caso de discrepancia.</p>
+</div>
+<div class="wrap doc-wrap">
+  <nav class="toc" aria-label="En esta página"><h6>En esta página</h6><ol><li><a href="#ch1">Disposiciones Generales</a></li><li><a href="#ch2">Información Recopilada</a></li><li><a href="#ch3">Cómo Usamos la Información</a></li><li><a href="#ch4">Compartición de Información</a></li><li><a href="#ch5">Cookies</a></li><li><a href="#ch6">Acceso y Corrección</a></li><li><a href="#ch7">Notificación de Cambios</a></li><li><a href="#ch8">Inteligencia Artificial (IA)</a></li><li><a href="#ch9">Uso de E-mail</a></li><li><a href="#ch10">Prohibiciones</a></li><li><a href="#ch11">Seguridad de la Información</a></li><li><a href="#ch12">Marketing Digital</a></li><li><a href="#ch13">Contacto</a></li><li><a href="#ch14">Google User Data — Limited Use</a></li></ol></nav>
+  <article class="doc">
+    <p class="lead">Hola Usuario, gracias por acceder a la aplicación MyDose. My Dose LLC tiene el compromiso de cumplir las leyes que protegen la privacidad de los datos de los Usuarios y del público en general. Para prestar los servicios relacionados con la aplicación MyDose, es necesario tratar y compartir datos personales. AL UTILIZAR LA APLICACIÓN MYDOSE, EL USUARIO ACEPTA TÁCITA E ÍNTEGRAMENTE LAS DISPOSICIONES AQUÍ CONTENIDAS.</p>
+    <h2 id="ch1"><span class="cap">Capítulo I</span>Disposiciones Generales</h2>
+    <p>1.1. La aplicación MyDose considera de suma importancia la relación con sus Usuarios y sus datos personales. Esta Política de Privacidad fue elaborada para comunicar nuestras prácticas de recopilación, uso y divulgación de información.</p>
+    <p>1.2. La información personal son datos proporcionados por los Usuarios que pueden utilizarse para identificarlos individualmente.</p>
+    <p>1.3. La información personal sensible incluye datos sobre origen racial o étnico, convicciones religiosas, opiniones políticas y datos de salud, conforme lo estipulado por la Ley 13.709/18 (LGPD).</p>
+    <p>1.4. AL UTILIZAR LA APLICACIÓN MYDOSE, USTED AUTORIZA LA RECOPILACIÓN, EL USO Y LA DIVULGACIÓN DE INFORMACIÓN SOBRE USTED, EN LOS TÉRMINOS DE ESTA POLÍTICA.</p>
+    <p>1.5. La aplicación MyDose opera de conformidad con la legislación brasileña, incluyendo la Ley n.º 12.965/2014 (Marco Civil de Internet) y la Ley n.º 13.709/2018 (LGPD).</p>
+    <p>1.6. En caso de dudas, contáctenos por el correo <a class="inl" href="mailto:contact@mydoseapp.com">contact@mydoseapp.com</a>.</p>
+    <p>1.7. Esta Política describe qué información puede recopilarse sobre los Usuarios y cómo puede utilizarse.</p>
+    <h2 id="ch2"><span class="cap">Capítulo II</span>Información Recopilada</h2>
+    <p>2.1. Datos recopilados de los Usuarios:</p>
+    <ul><li>Nombre completo</li><li>Dirección de correo electrónico válida</li><li>Fecha de nacimiento</li><li>Edad</li><li>Información de salud física, bienestar mental, presupuesto personal y nutrición</li></ul>
+    <p>2.1.1. Los datos personales se recopilan en diversas circunstancias, incluyendo el registro en la aplicación y la activación de funcionalidades.</p>
+    <p>2.1.2. También se recopilan datos personales sensibles, tales como datos de actividad física, información médica y de salud provenientes de dispositivos conectados (Google Fit, Apple Health, Samsung Health, Strava, Garmin, etc.).</p>
+    <p>2.1.3. Los Usuarios pueden optar por conectar y compartir información de aplicaciones asociadas con MyDose.</p>
+    <p>2.1.4. La información recopilada por socios y terceros está sujeta a sus propios términos y políticas.</p>
+    <p>2.2. Datos recopilados de los Usuarios Líderes:</p>
+    <ul><li>Nombre completo</li><li>Dirección de correo electrónico válida</li><li>Teléfono</li><li>Identificación fiscal (CPF o CNPJ)</li><li>Dirección completa</li><li>Datos de tarjeta de crédito</li></ul>
+    <p>2.3. La recopilación de datos de menores se realizará mediante el consentimiento del Responsable.</p>
+    <p>2.4. <strong>Datos obtenidos mediante las API de Google.</strong> Cuando un Usuario Líder opta por conectar su cuenta de Google, MyDose solicita acceso a los siguientes ámbitos de la API de Google:</p>
+    <ul><li><code>https://www.googleapis.com/auth/calendar.events</code> — para crear eventos de calendario (con enlace de Google Meet) en el Google Calendar del profesional cuando se agenda una consulta en línea en la plataforma.</li><li><code>https://www.googleapis.com/auth/userinfo.email</code> — para identificar y mostrar qué cuenta de Google fue conectada.</li></ul>
+    <p>El tratamiento de todos los datos obtenidos mediante estas API de Google se rige exclusivamente por el <strong>Capítulo XIV (Google User Data — Limited Use)</strong> a continuación, que prevalece sobre cualquier disposición en contrario de esta Política.</p>
+    <h2 id="ch3"><span class="cap">Capítulo III</span>Cómo Usamos la Información</h2>
+    <p>3.1. MyDose utiliza la información recopilada para:</p>
+    <ul><li>a) Identificar y registrar Usuarios y prestar los servicios de la aplicación</li><li>b) Garantizar que el contenido se presente de la forma más eficiente</li><li>c) Realizar mejoras generales en la aplicación</li><li>d) Ofrecer a los Administradores de RR.HH. acceso a los datos para análisis e informes</li><li>e) Contactar y notificar a los Usuarios sobre cambios en la plataforma</li><li>f) Realizar investigaciones estadísticas</li><li>g) Alimentar la base de datos Data Lake de MyDose</li><li>h) Fines promocionales o de marketing</li><li>i) Desarrollar soluciones personalizadas para una vida más saludable</li></ul>
+    <p>3.2. La información adicional no personal puede utilizarse para cualquier finalidad.</p>
+    <p>3.3. <strong>MYDOSE MANTIENE LOS REGISTROS DE ACCESO A INTERNET BAJO CONFIDENCIALIDAD, EN UN ENTORNO CONTROLADO Y SEGURO, CON CIFRADO EN TRÁNSITO.</strong></p>
+    <p>3.4. La información médica sensible no se utilizará en decisiones futuras de suscripción o siniestros.</p>
+    <p>3.5. Los servicios de MyDose no están destinados a diagnosticar, curar, mitigar, tratar o prevenir ninguna condición, ni sustituyen la atención médica profesional.</p>
+    <p>3.6. Los usos descritos en los ítems 3.1(d), 3.1(f), 3.1(g), 3.1(h) y 3.2 NO se aplican a los datos obtenidos mediante las API de Google. Esos datos se utilizan únicamente según lo descrito en el Capítulo XIV.</p>
+    <h2 id="ch4"><span class="cap">Capítulo IV</span>Compartición de Información</h2>
+    <p>4.1. MyDose no divulga a terceros ninguna información proporcionada por el Usuario, excepto:</p>
+    <ul><li>a) Para cumplir una obligación legal o prevenir fraudes</li><li>b) Para proteger los derechos, la propiedad o la seguridad de MyDose</li><li>c) Con autoridades policiales o gubernamentales</li><li>d) Mediante notificación y consentimiento previos del Usuario</li><li>e) Por acción del propio Usuario, como compartir con Líderes de Comunidad</li><li>f) Para investigación estadística o autoral</li><li>g) Con empresas terceras prestadoras de servicios en conformidad con estándares de privacidad</li><li>h) Con agentes, contratistas o prestadores de servicios terceros</li><li>i) Con servidores terceros contratados que almacenan la base de datos (Google Cloud Platform, Supabase)</li><li>j) En caso de venta, fusión o reestructuración empresarial</li></ul>
+    <p>4.2. <strong>Compartición internacional.</strong> MyDose utiliza servicios de Google Cloud Platform para almacenar y procesar datos, que pueden transferirse a los Estados Unidos.</p>
+    <p>4.3. <strong>Compartición con IA.</strong> Los datos de los Usuarios (excluidos los datos obtenidos mediante las API de Google) pueden compartirse mediante integración de API con Gemini (Google AI) para informes, automatización de procesos e interacciones automatizadas. Los datos obtenidos mediante las API de Google nunca se transmiten a servicios de IA, conforme al Capítulo XIV.</p>
+    <p>4.4. <strong>No divulgación.</strong> Salvo en las situaciones anteriores, MyDose no divulgará ninguna información personal.</p>
+    <p>4.5. EL USUARIO TIENE DERECHO A NO ACEPTAR ESTOS TÉRMINOS Y A ELIMINAR SUS DATOS.</p>
+    <p>4.6. Al aceptar estos términos, el Usuario autoriza la compartición de datos. El Usuario puede revocar el consentimiento en cualquier momento, incluso desconectando su cuenta de Google.</p>
+    <p>4.7. MyDose conservará los datos del Usuario mientras este permanezca registrado o mientras exista un interés legítimo de la empresa.</p>
+    <p>4.8. La compartición permitida por los ítems 4.1(f), 4.1(g), 4.1(h) y 4.3 NO se aplica a los datos obtenidos mediante las API de Google, salvo cuando sea estrictamente necesario para proveer la funcionalidad orientada al usuario, según se detalla en el Capítulo XIV.</p>
+    <h2 id="ch5"><span class="cap">Capítulo V</span>Cookies</h2>
+    <p>5.1. Una cookie es información almacenada localmente en el dispositivo del Usuario que contiene datos sobre sus actividades en Internet.</p>
+    <p>5.2. Cookies utilizadas:</p>
+    <ul><li><strong>Cookies de Rendimiento:</strong> recopilan información anónima sobre el uso de la plataforma</li><li><strong>Cookies Funcionales:</strong> proporcionan una mejor experiencia de navegación</li></ul>
+    <p>5.3. El acceso a las cookies termina cuando el Usuario cierra el navegador. Puede aceptar o rechazar cookies en la configuración del navegador.</p>
+    <p>5.4. Se requiere la aceptación del Usuario antes del uso de cookies.</p>
+    <p>5.5. Si opta por rechazar las cookies, el acceso a la mayor parte de la información disponible puede verse comprometido.</p>
+    <h2 id="ch6"><span class="cap">Capítulo VI</span>Acceso y Corrección de Información Personal</h2>
+    <p>6.1. MyDose adoptará todas las medidas adecuadas para actualizar y corregir la información personal identificable.</p>
+    <p>6.2. El Usuario tiene derecho a acceder, modificar, corregir y eliminar sus datos en cualquier momento.</p>
+    <p>6.3. Es responsabilidad del Usuario mantener su información personal actualizada.</p>
+    <p>6.3.1. El Usuario es responsable de la información ingresada en la aplicación, afirmando que ha revisado su exactitud, incluso cuando la información sea extraída por inteligencia artificial.</p>
+    <p>6.4. El Usuario tiene derecho a acceder a su información personal en los términos de la Ley n.º 12.965/2014 y la Ley n.º 13.709/2018, contactando a <a class="inl" href="mailto:contact@mydoseapp.com">contact@mydoseapp.com</a>.</p>
+    <p>6.5. MyDose adopta todas las medidas necesarias para proteger la información personal contra pérdida, uso indebido y acceso no autorizado, con cifrado y estándares rigurosos de seguridad.</p>
+    <p>6.6. El Usuario es responsable de la protección de sus contraseñas y credenciales de acceso.</p>
+    <h2 id="ch7"><span class="cap">Capítulo VII</span>Notificación de Modificaciones de la Política de Privacidad</h2>
+    <p>7.1. MyDose puede modificar la Política de Privacidad periódicamente. En caso de cambios en el uso de información personal, los Usuarios serán notificados mediante anuncios en la plataforma o por correo electrónico.</p>
+    <p>7.2. El uso continuado de los servicios tras cualquier cambio constituye la aceptación de la Política modificada.</p>
+    <p>7.3. Pueden ocurrir ajustes menores sin previo aviso.</p>
+    <h2 id="ch8"><span class="cap">Capítulo VIII</span>Uso de Funcionalidades de Inteligencia Artificial (IA)</h2>
+    <p>Nuestra aplicación puede ofrecer funcionalidades opcionales basadas en servicios de Inteligencia Artificial de terceros (por ejemplo, Gemini / Google AI) para ayudar en la generación de resúmenes o sugerencias de salud.</p>
+    <p><strong>Compartición de datos:</strong> Al optar por usar estas funcionalidades, entradas de texto específicas o datos explícitamente seleccionados por usted pueden transmitirse al proveedor de IA para su procesamiento. Los datos obtenidos mediante las API de Google (como datos de Google Calendar) quedan excluidos y nunca se transmiten a servicios de IA.</p>
+    <p><strong>Consentimiento:</strong> Al usar estas funcionalidades de IA, usted consiente esta transferencia de datos.</p>
+    <p><strong>Aviso:</strong> Todo contenido generado por IA tiene carácter meramente informativo y es revisado por su profesional de salud. No constituye asesoramiento médico.</p>
+    <p><strong>Retención de datos:</strong> No permitimos que los proveedores de IA de terceros utilicen sus datos personales para entrenar sus modelos.</p>
+    <h2 id="ch9"><span class="cap">Capítulo IX</span>Uso de Correo Electrónico</h2>
+    <p>9.1. Al registrarse, el Usuario acepta recibir notificaciones, novedades e información importante por correo electrónico.</p>
+    <p>9.1.1. El Usuario puede optar por darse de baja utilizando el opt-out o solicitando la eliminación vía <a class="inl" href="mailto:contact@mydoseapp.com">contact@mydoseapp.com</a>.</p>
+    <p>9.1.2. Los correos administrativos relacionados con el mantenimiento de la cuenta no pueden cancelarse.</p>
+    <p>9.1.3. El uso de MyDose para Spam está absolutamente prohibido.</p>
+    <p>9.2. Se garantiza la máxima confidencialidad en el tratamiento de las direcciones de correo de los Usuarios.</p>
+    <p>9.2.1. Se garantiza al Usuario la posibilidad de eliminar su dirección de correo electrónico.</p>
+    <h2 id="ch10"><span class="cap">Capítulo X</span>Prohibiciones</h2>
+    <p>10.1. MyDose se reserva el derecho de rechazar o eliminar cualquier conexión que contenga información incorrecta o afirmaciones infundadas.</p>
+    <h2 id="ch11"><span class="cap">Capítulo XI</span>Seguridad de la Información Personal</h2>
+    <p>11.1. La aplicación MyDose utiliza cifrado de datos. La información está alojada en servidores en los Estados Unidos, con acceso solo por empleados autorizados.</p>
+    <p>11.2. Si MyDose tiene conocimiento de cualquier violación de seguridad, notificará inmediatamente a los Usuarios afectados.</p>
+    <p>11.3. MyDose puede copiar, divulgar, distribuir, incorporar y usar materiales y datos con fines comerciales o no comerciales, respetando esta Política. <strong>Esta disposición NO se aplica a los datos obtenidos mediante las API de Google, que se rigen exclusivamente por el Capítulo XIV.</strong></p>
+    <p>11.4. El Usuario será responsable de indemnizar a MyDose por los costos derivados de violaciones de esta Política.</p>
+    <p>11.5. MyDose coopera con las autoridades que soliciten la identificación de personas que violen estas disposiciones.</p>
+    <p>11.6. Esta Política trata únicamente del uso y la divulgación de información recopilada por MyDose. MyDose no controla las políticas de privacidad de terceros.</p>
+    <h2 id="ch12"><span class="cap">Capítulo XII</span>Marketing Digital</h2>
+    <p>12.1. Al adherirse a la aplicación MyDose, el Usuario comprende y reconoce que MyDose puede enviar comunicaciones de marketing por redes sociales como Facebook, Instagram, Google, LinkedIn, etc. MyDose también puede contactar a los Usuarios vía WhatsApp. El Usuario puede optar por dejar de recibir comunicaciones de marketing enviando una solicitud a <a class="inl" href="mailto:contact@mydoseapp.com">contact@mydoseapp.com</a>.</p>
+    <p>12.2. <strong>Los datos obtenidos mediante las API de Google nunca se utilizan para marketing, publicidad o cualquier finalidad promocional, conforme al Capítulo XIV.</strong></p>
+    <h2 id="ch13"><span class="cap">Capítulo XIII</span>Contacto</h2>
+    <p>13.1. El Usuario puede contactar a MyDose en cualquier momento para compartir opiniones sobre prácticas de privacidad o dudas relacionadas con su información personal:</p>
+    <div class="contact-card"><div><div class="k">Correo</div><div class="v"><a href="mailto:contact@mydoseapp.com">contact@mydoseapp.com</a></div></div><div><div class="k">Teléfono</div><div class="v">+1 424-537-2605</div></div><div><div class="k">Dirección</div><div class="v">Los Ángeles, California — EE. UU.</div></div></div>
+    <h2 id="ch14"><span class="cap">Capítulo XIV</span>Google User Data — Limited Use</h2>
+    <p>El uso y la transferencia por parte de MyDose de cualquier información recibida de las API de Google — incluyendo los ámbitos <code>calendar.events</code> y <code>userinfo.email</code> — se rigen por la Google API Services User Data Policy, incluidos los requisitos de Limited Use.</p>
+    <p>Específicamente, <strong>los datos obtenidos mediante las API de Google se utilizan únicamente para proveer y mejorar las funcionalidades orientadas al usuario</strong> para las cuales el usuario concedió acceso. El ámbito <code>calendar.events</code> se usa solo para crear eventos de calendario (con enlace de Google Meet) en el Google Calendar del profesional cuando se agenda una consulta en línea en la plataforma. El ámbito <code>userinfo.email</code> se usa solo para identificar y mostrar qué cuenta de Google fue conectada.</p>
+    <p>MyDose no:</p>
+    <ul><li>utiliza datos de usuarios de Google para publicidad, marketing o cualquier finalidad promocional;</li><li>vende datos de usuarios de Google, ni los transfiere a terceros, salvo cuando sea necesario para proveer o mejorar la funcionalidad orientada al usuario, para cumplir la ley aplicable, o como parte de una fusión o adquisición con aviso al usuario;</li><li>usa o transfiere datos de usuarios de Google para desarrollar, mejorar o entrenar modelos generalizados o no personalizados de inteligencia artificial y/o aprendizaje automático, incluidos servicios de IA de terceros como Gemini;</li><li>permite que humanos lean datos de usuarios de Google, salvo cuando: (a) el usuario otorgue consentimiento previo explícito; (b) sea necesario por motivos de seguridad; (c) sea exigido para cumplir la ley aplicable; o (d) los datos estén agregados y anonimizados y se usen para operaciones internas.</li></ul>
+    <p>Este Capítulo XIV prevalece sobre cualquier disposición en contrario de esta Política. Las disposiciones de los Capítulos III, IV, VIII, XI y XII relativas a marketing, agregación de datos, Data Lake, uso comercial, compartición con terceros y procesamiento por IA no se aplican a los datos obtenidos mediante las API de Google.</p>
+    <p>Los usuarios pueden revocar en cualquier momento el acceso de MyDose a sus datos de Google desconectando su cuenta de Google dentro de la aplicación, o mediante la página de permisos de la Cuenta de Google.</p>
+    <div class="callout"><div class="cl-t">Google API Services User Data Policy</div><p>MyDose's use and transfer of information received from Google APIs to any other app will adhere to the <a class='inl' href='https://developers.google.com/terms/api-services-user-data-policy' target='_blank' rel='noopener'>Google API Services User Data Policy</a>, including the Limited Use requirements. MyDose does not use or transfer data obtained through Google Workspace APIs to develop, improve, or train generalized artificial intelligence and/or machine learning models.</p></div>
+
+  </article>
+</div>
+<footer><div class="wrap"><div class="foot-grid"><div><span class="wordmark">my<span>dose</span></span><p class="tagline">Tu capa operativa de IA para escalar en salud. +Adhesión · +Ingresos · −Tiempo.</p><div class="foot-social" aria-label="Social"><a href="https://www.youtube.com/@mydoseapp" target="_blank" rel="noopener" aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5s-7 0-8.9.6A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.6 8.9.6 8.9.6s7 0 8.9-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.2ZM9.7 15.3V8.7L15.8 12l-6.1 3.3Z"/></svg></a><a href="https://www.instagram.com/mydoseapp" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3a3.8 3.8 0 0 1-.9 1.4c-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.3.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4a3.8 3.8 0 0 1-1.4-.9 3.8 3.8 0 0 1-.9-1.4c-.2-.4-.4-1.1-.4-2.3-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.3-.1 1.6-.1 4.8-.1Zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8Zm0 7.2a2.9 2.9 0 1 0 0-5.7 2.9 2.9 0 0 0 0 5.7Zm5.6-7.4a1 1 0 1 1-2.1 0 1 1 0 0 1 2.1 0Z"/></svg></a><a href="https://www.linkedin.com/company/mydoseapp" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.2 2.4 4.2 5.4v6.3ZM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1Zm1.8 13H3.6V9h3.5v11.4Z"/></svg></a></div></div><div><h6>Producto</h6><ul><li><a href="nova-identidade-v3-es.html#produto">La app</a></li><li><a href="nova-identidade-v3-es.html#lab">MyDose Lab</a></li><li><a href="nova-identidade-v3-es.html#integracoes">Integraciones</a></li><li><a href="nova-identidade-v3-es.html#planos">Planes</a></li><li><a href="live.html">Clase en vivo</a></li></ul></div><div><h6>Para quién</h6><ul><li><a href="nova-physical-v3-es.html">Physical</a></li><li><a href="nova-mental-v3-es.html">Mental</a></li><li><a href="nova-clinics-v3-es.html">Clinics</a></li></ul></div><div><h6>Empresa</h6><ul><li><a href="blog.html">Contenidos & medios</a></li><li><a href="blog.html#imprensa">MyDose en la prensa</a></li><li><a href="https://www.youtube.com/@mydoseapp" target="_blank" rel="noopener">Canal de YouTube</a></li></ul></div><div><h6>Legal</h6><ul><li><a href="privacidade-es.html">Política de Privacidad</a></li><li><a href="termos-es.html">Términos de Uso</a></li></ul></div></div><div class="foot-bottom"><span>© MyDose · Take back control</span><span>feito com ética e ciência.</span></div></div></footer>
+
+<script>
+(function(){
+  var r=document.documentElement,b=document.getElementById('themeBtn');
+  var sv=null;try{sv=localStorage.getItem('md-theme')}catch(e){}
+  if(sv)r.setAttribute('data-theme',sv);
+  else if(window.matchMedia&&matchMedia('(prefers-color-scheme:dark)').matches)r.setAttribute('data-theme','dark');
+  function pin(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙'}pin();
+  b.addEventListener('click',function(){var d=r.getAttribute('data-theme')==='dark'?'light':'dark';
+    r.setAttribute('data-theme',d);try{localStorage.setItem('md-theme',d)}catch(e){}pin()});
+  // TOC scroll-spy
+  var links=[].slice.call(document.querySelectorAll('.toc a'));
+  var secs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))}).filter(Boolean);
+  if('IntersectionObserver' in window && secs.length){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){var id=e.target.id;links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+id)})}})},
+      {rootMargin:'-15% 0px -70% 0px'});
+    secs.forEach(function(s){io.observe(s)});
+  }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termos de Uso · MyDose</title>
+<meta name="description" content="Termos de Uso do MyDose.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z' fill='%23415FF5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Figtree:wght@400;500;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#415FF5; --magenta:#C64FCA; --orange:#F56442; --green:#63AC39;
+  --navy:#191E47; --plum:#592C5A;
+  --g1:linear-gradient(100deg,#415FF5 0%,#C64FCA 52%,#F56442 100%);
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Figtree",-apple-system,"Segoe UI",sans-serif;
+  --logo:"Quicksand",var(--sans);
+  --bg:#F6F4F2; --ink:#1E1D1D; --card:#FFFFFF; --muted:#565452; --gray:#848484;
+  --line:rgba(30,29,29,.1); --line-strong:rgba(30,29,29,.22);
+  --chip:#F6F4F2; --footer:#1E1D1D;
+  --shadow:0 20px 60px -20px rgba(25,30,71,.25);
+  --r:20px;
+}
+[data-theme="dark"]{
+  --bg:#101226; --ink:#F6F4F2; --card:#1B1E3E; --muted:#B9BCD8; --gray:#8E92B4;
+  --line:rgba(246,244,242,.11); --line-strong:rgba(246,244,242,.3);
+  --chip:#252950; --footer:#0B0D1E;
+  --shadow:0 20px 60px -20px rgba(0,0,0,.55);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;transition:background .35s,color .35s}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+::selection{background:var(--blue);color:#fff}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.grad{background:var(--g1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* nav */
+nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 86%,transparent);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+.wordmark{font-family:var(--logo);font-weight:700;font-size:23px;letter-spacing:-.02em;color:var(--ink)}
+.wordmark span{background:var(--g1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nav-right{display:flex;align-items:center;gap:11px}
+.lang-seg{display:inline-flex;align-items:center;gap:2px;background:var(--chip);border-radius:99px;padding:3px;box-shadow:inset 0 0 0 1.5px var(--line)}
+.lang-seg a{padding:5px 9px;border-radius:99px;font-size:11.5px;font-weight:800;color:var(--gray);line-height:1;letter-spacing:.02em;transition:background .2s,color .2s}
+.lang-seg a.on{background:var(--ink);color:var(--bg)}
+.lang-seg a:hover:not(.on){color:var(--ink)}
+.theme-btn{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:15px;border:1px solid var(--line)}
+.theme-btn:hover{border-color:var(--line-strong)}
+.btn-back{font-size:13.5px;font-weight:700;padding:9px 15px;border-radius:99px;background:var(--ink);color:var(--bg);
+  display:inline-flex;align-items:center;gap:7px;transition:transform .15s,opacity .2s}
+.btn-back:hover{transform:translateY(-1px);opacity:.92}
+@media(max-width:680px){.btn-back .bk-txt{display:none}.btn-back{width:36px;height:36px;padding:0;justify-content:center;border-radius:50%}}
+
+/* doc header */
+.doc-head{padding:54px 0 20px}
+.doc-head .eyebrow{font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--gray)}
+.doc-head h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,52px);line-height:1.05;margin-top:14px;letter-spacing:-.02em;text-wrap:balance}
+.doc-head .upd{margin-top:16px;font-size:13.5px;color:var(--muted);display:inline-flex;align-items:center;gap:8px;
+  background:var(--card);border:1px solid var(--line);padding:7px 13px;border-radius:99px}
+.doc-head .upd b{color:var(--ink);font-weight:700}
+
+/* official-version note */
+.langnote{margin:8px 0 0;max-width:760px;font-size:13.5px;color:var(--muted);background:var(--card);border:1px solid var(--line);
+  border-left:3px solid var(--blue);border-radius:0 12px 12px 0;padding:12px 16px}
+
+/* layout */
+.doc-wrap{display:grid;gap:40px;padding:14px 0 40px}
+@media(min-width:940px){.doc-wrap{grid-template-columns:230px 1fr}}
+.toc{align-self:start}
+@media(min-width:940px){.toc{position:sticky;top:88px}}
+.toc h6{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:12px}
+.toc ol{list-style:none;display:flex;flex-direction:column;gap:2px;counter-reset:t}
+.toc a{display:block;font-size:13px;color:var(--muted);padding:6px 10px;border-radius:9px;border-left:2px solid transparent;line-height:1.35;transition:color .15s,background .15s,border-color .15s}
+.toc a:hover{color:var(--ink);background:var(--card)}
+.toc a.active{color:var(--ink);border-left-color:var(--blue);background:var(--card);font-weight:600}
+@media(max-width:939px){.toc{display:none}}
+
+.doc{max-width:760px;min-width:0}
+.doc h2{font-family:var(--serif);font-weight:600;font-size:clamp(21px,2.7vw,27px);letter-spacing:-.01em;margin:42px 0 4px;
+  scroll-margin-top:88px;line-height:1.2}
+.doc h2:first-child{margin-top:0}
+.doc h2 .cap{display:block;font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.doc h3{font-family:var(--serif);font-weight:600;font-size:18px;margin:26px 0 2px}
+.doc p{margin:14px 0;color:var(--ink)}
+.doc .lead{font-size:17.5px;color:var(--muted);line-height:1.7}
+.doc ul,.doc ol{margin:12px 0 12px 4px;padding-left:22px;display:flex;flex-direction:column;gap:8px}
+.doc li{padding-left:4px}
+.doc strong,.doc b{font-weight:700}
+.doc a.inl{color:var(--blue);font-weight:600;word-break:break-word}
+.doc code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.86em;background:var(--chip);padding:2px 6px;border-radius:6px;
+  border:1px solid var(--line);word-break:break-all}
+.callout{margin:18px 0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+.callout.warn{border-left:3px solid var(--orange)}
+.callout .cl-t{font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin-bottom:7px}
+.contact-card{margin:18px 0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow);
+  display:flex;flex-wrap:wrap;gap:10px 34px}
+.contact-card div{min-width:150px}
+.contact-card .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
+.contact-card .v{font-weight:650;margin-top:4px}
+.contact-card a{color:var(--blue)}
+
+/* footer (do v3) */
+footer{background:var(--footer);color:#cfcac6;padding:60px 0 30px;font-size:14.5px;margin-top:20px}
+.foot-grid{display:grid;gap:34px}
+@media(min-width:860px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr 1fr}}
+footer .wordmark{color:#fff;font-size:26px}
+footer .tagline{margin-top:13px;color:#9b9591;max-width:280px;font-size:13.5px}
+footer h6{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8a8480;margin-bottom:13px}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+footer a:hover{color:#fff}
+.foot-social{display:flex;gap:9px;margin-top:15px}
+.foot-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.09);display:grid;place-items:center;color:#cfcac6;transition:background .2s,transform .2s,color .2s}
+.foot-social a:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+.foot-bottom{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;margin-top:40px;padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.1);color:#8a8480;font-size:12.5px}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-in"><a href="nova-identidade-v3.html" class="wordmark" aria-label="MyDose">my<span>dose</span></a><div class="nav-right"><div class="lang-seg" role="group" aria-label="Idioma / Language / Idioma"><a class="on" aria-current="true" href="#">PT</a><a href="termos-en.html">EN</a><a href="termos-es.html">ES</a></div><button class="theme-btn" id="themeBtn" aria-label="tema">🌙</button><a class="btn-back" href="nova-identidade-v3.html">‹ <span class="bk-txt">Voltar ao site</span></a></div></div></nav>
+<div class="wrap doc-head">
+  <p class="eyebrow">Termos de Uso</p>
+  <h1>Termos de Uso</h1>
+  <div class="upd">Última atualização: <b>05 de janeiro de 2026</b></div>
+  
+</div>
+<div class="wrap doc-wrap">
+  <nav class="toc" aria-label="Nesta página"><h6>Nesta página</h6><ol><li><a href="#s1">Aceitação dos Termos</a></li><li><a href="#s2">Definições</a></li><li><a href="#s3">O que é o MyDose</a></li><li><a href="#s4">Código de Adesão</a></li><li><a href="#s5">Serviços Prestados</a></li><li><a href="#s6">Planos e Cancelamento</a></li><li><a href="#s7">Obrigações e Responsabilidades</a></li><li><a href="#s8">Limitação de Responsabilidade</a></li><li><a href="#s9">MyDose Inteligência Artificial</a></li><li><a href="#s10">Marketing Digital</a></li><li><a href="#s11">Consentimento</a></li><li><a href="#s12">Propriedade Intelectual</a></li><li><a href="#s13">Suporte e Contato</a></li><li><a href="#s14">Conteúdo da Comunidade</a></li></ol></nav>
+  <article class="doc">
+    <p class="lead">Estes Termos e Condições se aplicam ao app MyDose e à plataforma web MyDose, solução oferecida pela My Dose LLC, empresa constituída em Delaware — Estados Unidos. Ao utilizar a plataforma, você concorda tácita e inteiramente com as disposições aqui contidas. Se não estiver confortável em aceitar estes T&C, não poderá usar a plataforma e os serviços do MyDose.</p>
+    <h2 id="s1"><span class="cap">Seção 1</span>Aceitação dos Termos e Condições</h2>
+    <p>1.1. Estes T&C contêm informações importantes e o usuário deve lê-los antes de solicitar a ativação de sua adesão ao aplicativo.</p>
+    <p>1.2. A versão atualizada está disponível em nossos portais ou pelo e-mail <a class="inl" href="mailto:contact@mydoseapp.com">contact@mydoseapp.com</a>.</p>
+    <p>1.3. Quando você marca 'Li e estou de acordo', está dizendo que leu, entendeu e concorda em seguir as regras.</p>
+    <p>1.4. O MyDose pode modificar estes T&C a qualquer momento. Sempre que houver atualização significativa, informaremos via e-mail ou notificações na plataforma.</p>
+    <p>1.5. Requisitos para cadastro: fornecer e-mail válido, número de identificação, e declarar estar em condições físicas e mentais para participar das Comunidades.</p>
+    <p>1.6. Menores de 18 anos ('Usuários Menores') precisam do consentimento expresso do responsável legal através de 'Conta Vinculada'.</p>
+    <h2 id="s2"><span class="cap">Seção 2</span>Definições</h2>
+    <ul><li><strong>Conteúdo:</strong> tudo que os usuários compartilham (textos, fotos, vídeos, áudios, e-books)</li><li><strong>Comunidade:</strong> espaço virtual para compartilhar hábitos saudáveis</li><li><strong>Comunidade Privada:</strong> criada por Líderes para impulsionar seus negócios</li><li><strong>Comunidade Pública:</strong> aberta ao público</li><li><strong>Plataforma MyDose:</strong> aplicações para jornadas de bem-estar físico, nutricional e mental</li><li><strong>Usuário:</strong> pessoa física com perfil na plataforma</li><li><strong>Usuário Líder:</strong> pessoa que contrata plano de assinatura para criar Comunidades</li><li><strong>Usuário Gestor:</strong> pessoa que auxilia o Líder na gestão da Comunidade</li></ul>
+    <h2 id="s3"><span class="cap">Seção 3</span>O que é o MyDose</h2>
+    <p>3.1. A Plataforma MyDose oferece jornadas de bem-estar físico, nutricional e mental, bem como orientações de saúde.</p>
+    <p>3.2. O usuário pode compartilhar sua jornada e evolução com outros usuários, gerando engajamento e potencializando práticas saudáveis.</p>
+    <p>3.3. O MyDose acredita na força da Comunidade e no poder de colaboração para criar e manter hábitos saudáveis.</p>
+    <p>3.4. O MyDose é uma plataforma digital focada no gerenciamento eficiente de Comunidades online, fornecendo ferramentas para criação, personalização e administração.</p>
+    <h2 id="s4"><span class="cap">Seção 4</span>Código de Adesão</h2>
+    <p>4.1. O código de adesão é o e-mail do Usuário.</p>
+    <p>4.2. A adesão é pessoal e intransferível. O Usuário é responsável pela guarda do código, sendo vedada divulgação a terceiros.</p>
+    <p>4.3. O Usuário deve comunicar imediatamente o MyDose sobre uso não autorizado.</p>
+    <p>4.4. O Usuário concorda em:</p>
+    <ul><li>Não usar a plataforma para fins fraudulentos ou ilegais</li><li>Notificar sobre uso não autorizado</li><li>Solicitar nova senha se suspeitar comprometimento</li><li>Usar a plataforma de boa-fé</li></ul>
+    <h2 id="s5"><span class="cap">Seção 5</span>Serviços Prestados</h2>
+    <p>5.1. O MyDose concede licença pessoal, não exclusiva e intransferível para usar os Serviços.</p>
+    <p>5.2. A plataforma permite:</p>
+    <ul><li>Criação e gestão de Comunidades gamificadas</li><li>Ferramentas para mudanças comportamentais</li><li>Sistema de recompensas e reconhecimento</li><li>Analytics e relatórios de progresso</li><li>Integração com ferramentas de terceiros</li><li>Interações com inteligência artificial</li><li>Recursos de comunicação e engajamento</li></ul>
+    <p>5.3. Novas funcionalidades podem ser adicionadas e existentes modificadas a qualquer momento.</p>
+    <h2 id="s6"><span class="cap">Seção 6</span>Planos e Cancelamento</h2>
+    <p>6.1. Usuários podem participar gratuitamente de Comunidades Públicas e Privadas.</p>
+    <p>6.2. Usuários Líderes contratam planos de assinatura (mensal, trimestral, semestral ou anual).</p>
+    <p>6.3. Todos os planos RENOVAM-SE AUTOMATICAMENTE até pedido de cancelamento.</p>
+    <p>7.1. Usuários Líderes podem cancelar a qualquer momento, com efeitos até a próxima recorrência.</p>
+    <p>7.2. Reembolso disponível em até 7 dias do pagamento. Após este prazo, não há reembolso.</p>
+    <p>7.5. PEDIDOS DE CANCELAMENTO devem ser enviados por e-mail para <a class="inl" href="mailto:contact@mydoseapp.com">contact@mydoseapp.com</a> com 20 dias de antecedência da renovação.</p>
+    <h2 id="s7"><span class="cap">Seção 7</span>Obrigações e Responsabilidades</h2>
+    <p>8.1. O usuário é responsável por todas as manifestações, conteúdos inseridos e interações realizadas.</p>
+    <p>8.2. Condutas vedadas incluem:</p>
+    <ul><li>Publicar informações incorretas ou criar identidade falsa</li><li>Usar conta de outra pessoa</li><li>Realizar engenharia reversa do aplicativo</li><li>Interferir no funcionamento ou segurança</li><li>Acessar áreas não autorizadas</li><li>Usar bots, scripts ou raspagem de dados</li><li>Assediar ou prejudicar outros usuários</li><li>Violar direitos de propriedade intelectual</li></ul>
+    <p>8.3. Conteúdos proibidos: dados de terceiros sem autorização, conteúdo ilegal, discriminatório, vírus ou malwares.</p>
+    <h2 id="s8"><span class="cap">Seção 8</span>Limitação de Responsabilidade</h2>
+    <p>9.1. O MyDose não é responsável por dados incorretos ou incompletos fornecidos.</p>
+    <p>9.2. O aplicativo NÃO substitui atendimento médico, nutricionista ou profissional de saúde. O Usuário é responsável pela própria saúde.</p>
+    <p>9.3. O MyDose se isenta de responsabilidade por atos de Usuários Líderes e Usuários que causem danos.</p>
+    <p>9.4. O MyDose não é responsável por conteúdos postados nas Comunidades.</p>
+    <p>9.5. Contratos entre Usuários Líderes e Usuários não vinculam o MyDose.</p>
+    <p>9.10. Usuários Líderes são responsáveis por administrar suas comunidades de forma ética e por todo relacionamento com seus Usuários.</p>
+    <h2 id="s9"><span class="cap">Seção 9</span>MyDose Inteligência Artificial</h2>
+    <p>10.1. Partes dos serviços podem incluir tecnologias de inteligência artificial ou aprendizado de máquina.</p>
+    <p>10.2. O MyDose trabalha para tornar os serviços mais precisos e confiáveis. No entanto, resultados podem não refletir com precisão pessoas, locais ou fatos reais.</p>
+    <p>10.3. Os usuários entendem que:</p>
+    <ul><li>Resultados podem conter erros ou informações incorretas</li><li>Não devem confiar nos resultados como fonte única de informações</li><li>Devem avaliar a precisão antes de utilizar ou compartilhar</li><li>Resultados podem ser incompletos, incorretos ou ofensivos</li></ul>
+    <h2 id="s10"><span class="cap">Seção 10</span>Marketing Digital</h2>
+    <p>11.1. Ao se registrar, o Usuário reconhece que pode receber materiais promocionais de marketing dos nossos parceiros estratégicos.</p>
+    <p>11.2. O Usuário pode optar por não receber comunicações enviando solicitação para <a class="inl" href="mailto:contact@mydoseapp.com">contact@mydoseapp.com</a>.</p>
+    <p>11.3. O MyDose poderá enviar comunicações via redes sociais (Facebook, Instagram, Google, LinkedIn) e WhatsApp.</p>
+    <h2 id="s11"><span class="cap">Seção 11</span>Consentimento</h2>
+    <p>12.1. O Usuário consente em receber documentos e informações por comunicação eletrônica.</p>
+    <p>12.2. O MyDose pode contatar via e-mail, SMS, notificações push, WhatsApp e telefone.</p>
+    <p>12.2.1. O Usuário consente que o MyDose e os Usuários Líderes possam usar e compartilhar suas informações pessoais para exames e estudos de saúde.</p>
+    <p>12.2.3. O MyDose pode compartilhar dados anonimizados com parceiros para análises de perfil, estudos analíticos e campanhas de marketing.</p>
+    <h2 id="s12"><span class="cap">Seção 12</span>Propriedade Intelectual</h2>
+    <p>12.1. O MyDose pode usar a marca do Usuário Líder em seu portfólio para divulgação.</p>
+    <p>12.2. O MyDose e usuários se comprometem a não prejudicar os direitos de propriedade intelectual.</p>
+    <p>12.3. Todos os direitos de Propriedade Intelectual do aplicativo são do MyDose ou licenciados a ele.</p>
+    <p>12.4. Nenhuma disposição transfere direitos de patente, segredo de negócio, código-fonte, designs, sistemas tecnológicos ou inteligência artificial do MyDose aos usuários.</p>
+    <h2 id="s13"><span class="cap">Seção 13</span>Suporte e Contato</h2>
+    <p>O MyDose oferece suporte aos Usuários Líderes para questões técnicas e orientações. Usuários devem procurar suporte diretamente com os Usuários Líderes de suas Comunidades.</p>
+    <div class="contact-card"><div><div class="k">E-mail</div><div class="v"><a href="mailto:contact@mydoseapp.com">contact@mydoseapp.com</a></div></div><div><div class="k">Horário</div><div class="v">9h às 17h, seg. a sex.</div></div><div><div class="k">Empresa</div><div class="v">My Dose LLC — Delaware, EUA</div></div></div>
+    <h2 id="s14"><span class="cap">Seção 14</span>Conteúdo da Comunidade</h2>
+    <p>Ao utilizar as funcionalidades de comunidade e compartilhamento do MyDose, o usuário concorda em não publicar conteúdo ofensivo, odioso, sexualmente explícito ou violento. Reservamo-nos o direito de remover qualquer conteúdo denunciado em até 24 horas e banir usuários que violem estas regras, mantendo uma política de tolerância zero para abusos.</p>
+
+  </article>
+</div>
+<footer><div class="wrap"><div class="foot-grid"><div><span class="wordmark">my<span>dose</span></span><p class="tagline">Seu operacional de IA para escalar na saúde. +Adesão · +Receita · −Tempo.</p><div class="foot-social" aria-label="Social"><a href="https://www.youtube.com/@mydoseapp" target="_blank" rel="noopener" aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5s-7 0-8.9.6A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.6 8.9.6 8.9.6s7 0 8.9-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.2ZM9.7 15.3V8.7L15.8 12l-6.1 3.3Z"/></svg></a><a href="https://www.instagram.com/mydoseapp" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3a3.8 3.8 0 0 1-.9 1.4c-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.3.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4a3.8 3.8 0 0 1-1.4-.9 3.8 3.8 0 0 1-.9-1.4c-.2-.4-.4-1.1-.4-2.3-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.3-.1 1.6-.1 4.8-.1Zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8Zm0 7.2a2.9 2.9 0 1 0 0-5.7 2.9 2.9 0 0 0 0 5.7Zm5.6-7.4a1 1 0 1 1-2.1 0 1 1 0 0 1 2.1 0Z"/></svg></a><a href="https://www.linkedin.com/company/mydoseapp" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.2 2.4 4.2 5.4v6.3ZM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1Zm1.8 13H3.6V9h3.5v11.4Z"/></svg></a></div></div><div><h6>Produto</h6><ul><li><a href="nova-identidade-v3.html#produto">O app</a></li><li><a href="nova-identidade-v3.html#lab">MyDose Lab</a></li><li><a href="nova-identidade-v3.html#integracoes">Integrações</a></li><li><a href="nova-identidade-v3.html#planos">Planos</a></li><li><a href="live.html">Aula ao vivo</a></li></ul></div><div><h6>Para quem</h6><ul><li><a href="nova-physical-v3.html">Physical</a></li><li><a href="nova-mental-v3.html">Mental</a></li><li><a href="nova-clinics-v3.html">Clinics</a></li></ul></div><div><h6>Empresa</h6><ul><li><a href="blog.html">Conteúdos & mídia</a></li><li><a href="blog.html#imprensa">MyDose na imprensa</a></li><li><a href="https://www.youtube.com/@mydoseapp" target="_blank" rel="noopener">Canal no YouTube</a></li></ul></div><div><h6>Legal</h6><ul><li><a href="privacidade.html">Política de Privacidade</a></li><li><a href="termos.html">Termos de Uso</a></li></ul></div></div><div class="foot-bottom"><span>© MyDose · Take back control</span><span>feito com ética e ciência.</span></div></div></footer>
+
+<script>
+(function(){
+  var r=document.documentElement,b=document.getElementById('themeBtn');
+  var sv=null;try{sv=localStorage.getItem('md-theme')}catch(e){}
+  if(sv)r.setAttribute('data-theme',sv);
+  else if(window.matchMedia&&matchMedia('(prefers-color-scheme:dark)').matches)r.setAttribute('data-theme','dark');
+  function pin(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙'}pin();
+  b.addEventListener('click',function(){var d=r.getAttribute('data-theme')==='dark'?'light':'dark';
+    r.setAttribute('data-theme',d);try{localStorage.setItem('md-theme',d)}catch(e){}pin()});
+  // TOC scroll-spy
+  var links=[].slice.call(document.querySelectorAll('.toc a'));
+  var secs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))}).filter(Boolean);
+  if('IntersectionObserver' in window && secs.length){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){var id=e.target.id;links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+id)})}})},
+      {rootMargin:'-15% 0px -70% 0px'});
+    secs.forEach(function(s){io.observe(s)});
+  }
+})();
+</script>
+
+</body>
+</html>
