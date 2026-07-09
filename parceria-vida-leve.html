@@ -14,23 +14,31 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Figtree:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:"Americana BT";src:url("site/assets/fonts/americana-regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Americana BT";src:url("site/assets/fonts/americana-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("site/assets/fonts/gsans-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("site/assets/fonts/gsans-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("site/assets/fonts/gsans-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("site/assets/fonts/gsans-700.woff2") format("woff2");font-weight:700 800;font-style:normal;font-display:swap}
+</style>
+<style>
   :root{
-    --bg:#F1EEEA; --surface:#FFFFFF; --surface-2:#FAF8F5; --panel:#FFFFFF;
-    --ink:#1B1A1A; --muted:#6C6863; --faint:#9A948E; --line:#E6E0D9; --line-2:#EFEAE3;
+    --bg:#F6F4F2; --surface:#FFFFFF; --surface-2:#FAF9F7; --panel:#FFFFFF;
+    --ink:#1E1D1D; --muted:#565452; --faint:#848484; --line:#E7E4E0; --line-2:#EFEDEA;
     --mydose:#415FF5; --macuco:#C64FCA; --joint:#3E9E52;
     --mydose-t:#E9EDFF; --macuco-t:#FBEAFB; --joint-t:#E7F3E8;
     --milestone:#E0902B;
     --today:#F5563F;
     --f0-band:rgba(150,150,150,.06); --f1-band:rgba(65,95,245,.055); --f2-band:rgba(198,79,202,.06);
-    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
-    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --serif:"Americana BT",Georgia,serif;
+    --sans:"Google Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
     --grad:linear-gradient(100deg,#415FF5 0%,#C64FCA 52%,#F56442 100%);
     --shadow:0 1px 2px rgba(25,30,71,.04),0 14px 34px -22px rgba(25,30,71,.22);
     --labelw:224px;
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --bg:#0C0E1C; --surface:#161930; --surface-2:#12152A; --panel:#171A32;
+      --bg:#101226; --surface:#1B1E3E; --surface-2:#161936; --panel:#1B1E3E;
       --ink:#ECEAF2; --muted:#A5A4BE; --faint:#78778F; --line:#282C4A; --line-2:#22253F;
       --mydose-t:#1A2050; --macuco-t:#341A46; --joint-t:#153017;
       --f0-band:rgba(255,255,255,.03); --f1-band:rgba(120,150,255,.07); --f2-band:rgba(220,120,224,.07);
@@ -278,6 +286,12 @@
   .dlv-ft .n b{color:var(--ink)}
   @media(max-width:600px){.dlv-hd,.dlv-bd,.dlv-ft{padding-left:18px;padding-right:18px}}
 
+
+  .brand img{display:block}
+  img.blg-d{display:none}
+  [data-theme="dark"] img.blg-l{display:none}
+  [data-theme="dark"] img.blg-d{display:block}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme]) img.blg-l{display:none} :root:not([data-theme]) img.blg-d{display:block} }
 </style>
 <style>
   /* fontes reais da marca (GitHub Pages, sem CSP do artifact) */
@@ -288,7 +302,7 @@
 <body>
 <header class="top">
   <div class="wrap">
-    <div class="brand"><span>my<span class="grad">dose</span></span><span class="x">×</span><span>Vida Leve</span></div>
+    <div class="brand"><img class="blg-l" src="site/assets/brand/logo-mydose-gradient-preto.svg" alt="MyDose" width="99" height="21"><img class="blg-d" src="site/assets/brand/logo-mydose-gradient-branco.svg" alt="" width="99" height="21" aria-hidden="true"><span class="x">×</span><span>Vida Leve</span></div>
     <div class="top-right">
       <span class="tag">Painel de projeto · Confidencial</span>
       <button class="theme-btn" id="themeBtn" aria-label="Alternar tema">☾</button>
