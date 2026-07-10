@@ -835,7 +835,7 @@ footer a:hover{color:#fff}
 /* ============ RESULTADOS ============ */
 .results{background:var(--g1);border-radius:var(--r);padding:44px 28px;color:#fff;text-align:center;position:relative;overflow:hidden}
 @media(min-width:860px){.results{padding:60px 56px}}
-.results::after{content:"";position:absolute;inset:0;opacity:.14;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 52 52'%3E%3Cpath d='M26 1C29 15 37 23 51 26 37 29 29 37 26 51 23 37 15 29 1 26 15 23 23 15 26 1Z' fill='%23FFFFFF'/%3E%3C/svg%3E");background-size:44px 44px}
+.results::after{content:"";position:absolute;inset:0;opacity:.07;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 52 52'%3E%3Cpath d='M26 1C29 15 37 23 51 26 37 29 29 37 26 51 23 37 15 29 1 26 15 23 23 15 26 1Z' fill='%23FFFFFF'/%3E%3C/svg%3E");background-size:44px 44px}
 .results>*{position:relative;z-index:1}
 .results h3{font-size:clamp(26px,4vw,38px);margin-bottom:30px}
 .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 14px;max-width:860px;margin:0 auto 34px}
@@ -1225,6 +1225,11 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
 .plan{display:flex;flex-direction:column}
 .plan ul{flex:1}
 .plan ul li b{font-weight:800}
+
+/* ============ V6.3 · polish mobile + ícones ============ */
+@media(max-width:919px){.gf{display:none!important}}
+.results .pattern{opacity:.10}
+.pros-chips span svg,.chips i svg{vertical-align:-2px;margin-right:2px;opacity:.85}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "MyDose", "alternateName": ["MyDose AI", "MyDose IA", "MyDose App"], "url": "https://mydoseapp.com/", "logo": "https://mydoseapp.com/assets/motion/hero-doctor-poster.jpg", "description": "CRM para saúde com IA: comunidade gamificada de pacientes, planos e protocolos de acompanhamento e medicina do estilo de vida (MEV) para profissionais de saúde.", "sameAs": ["https://www.youtube.com/@mydoseapp", "https://www.instagram.com/mydoseapp", "https://www.linkedin.com/company/mydoseapp", "https://www.tiktok.com/@mydoseapp"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "MyDose", "applicationCategory": "HealthApplication", "operatingSystem": "iOS, Android, Web", "url": "https://mydoseapp.com/", "description": "Plataforma de IA para profissionais de saúde: comunidade gamificada, planos de acompanhamento, protocolos de acompanhamento, CRM para saúde e medicina do estilo de vida (MEV).", "offers": {"@type": "Offer", "price": "290", "priceCurrency": "BRL", "description": "Plano Software, a partir de R$ 290/mês no anual"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1000"}}</script>
@@ -1504,6 +1509,21 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
   <path d="M7 16v6" />
   <path d="M13 19v3" />
   <path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5" /></symbol>
+  <symbol id="i-music-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <circle cx="8" cy="18" r="4" />
+  <path d="M12 18V2l7 4" /></symbol><symbol id="i-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
+  <path d="M14 2v5a1 1 0 0 0 1 1h5" />
+  <path d="M10 9H8" />
+  <path d="M16 13H8" />
+  <path d="M16 17H8" /></symbol><symbol id="i-badge-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+  <path d="m9 12 2 2 4-4" /></symbol><symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" /></symbol>
   <symbol id="ck" viewBox="0 0 20 20"><path d="M4 10.5 8.2 15 16 5.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="arr" viewBox="0 0 20 20"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="arr-dn" viewBox="0 0 20 20"><path d="M10 3v13M4.5 11 10 16.5 15.5 11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -1526,7 +1546,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
     </div>
     <div class="nav-right">
       <div class="lang-seg" role="group" aria-label="Idioma / Language / Idioma"><a class="on" aria-current="true" href="#">PT</a><a href="nova-identidade-v3-en.html" aria-label="English">EN</a><a href="nova-identidade-v3-es.html" aria-label="Español">ES</a></div>
-      <button class="theme-btn" id="themeBtn" aria-label="Alternar tema"><svg width="17" height="17" style="color:#8699FD"><use href="#i-moon"/></svg></button>
+      <button class="theme-btn" id="themeBtn" aria-label="Alternar tema"><svg width="17" height="17" style="color:#415FF5"><use href="#i-moon"/></svg></button>
       <button class="btn btn-primary btn-sm nav-cta js-talk" data-mode="checkout" data-plan="MyDose">Crie sua comunidade</button>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -1647,7 +1667,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
       <div class="dots" id="dots" aria-hidden="true"></div>
     </div>
     <div class="pros-chips rv">
-      <span>Médicos</span><span>Psicólogos</span><span>Nutricionistas</span><span><svg class="gi" width="12" height="12" style="color:#F0B0F2" viewBox="0 0 171 171" aria-hidden="true"><use href="#gf-spark" fill="currentColor"/></svg> e muitos, muitos outros</span>
+      <span><svg width="13" height="13" aria-hidden="true"><use href="#i-stethoscope"/></svg> Médicos</span><span><svg width="13" height="13" aria-hidden="true"><use href="#i-brain"/></svg> Psicólogos</span><span><svg width="13" height="13" aria-hidden="true"><use href="#i-salad"/></svg> Nutricionistas</span><span><svg width="13" height="13" aria-hidden="true"><use href="#i-sparkles"/></svg> e muitos, muitos outros</span>
     </div>
     <p class="pros-note rv">Só os principais conselhos já passam de <b>2,5 milhões</b>. Somando enfermagem, estética, terapias integrativas e bem-estar, o mercado de saúde no Brasil ultrapassa <b>9 milhões de profissionais</b> — e cada um tem uma audiência esperando ser cuidada entre as consultas. <span style="opacity:.6;font-size:13px">· fontes: conselhos de classe</span></p>
     <div class="sec-cta rv">
@@ -1707,7 +1727,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
           <li><b>R$ 50K–500K+/mês</b> · escala infinita</li>
         </ul>
         <div class="chips">
-          <i>Consultas</i><i>Assinaturas</i><i>Protocolos</i><i>Desafios</i><i>Cursos & e-books</i><i>Eventos & lives</i>
+          <i><svg width="13" height="13" aria-hidden="true"><use href="#i-stethoscope"/></svg> Consultas</i><i><svg width="13" height="13" aria-hidden="true"><use href="#i-badge-check"/></svg> Assinaturas</i><i><svg width="13" height="13" aria-hidden="true"><use href="#i-clipboard-list"/></svg> Protocolos</i><i><svg width="13" height="13" aria-hidden="true"><use href="#i-trophy"/></svg> Desafios</i><i><svg width="13" height="13" aria-hidden="true"><use href="#i-book-open"/></svg> Cursos & e-books</i><i><svg width="13" height="13" aria-hidden="true"><use href="#i-mic"/></svg> Eventos & lives</i>
         </div>
         <p class="quote">“Mesmas horas. Faturamento sem teto.”</p>
       </div>
@@ -1728,7 +1748,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
     </div>
     <div class="steps3">
       <div class="step3 rv">
-        <span class="badge7"><svg class="li-ic" width="13" height="13" style="color:#FFB627" aria-hidden="true"><use href="#i-zap"/></svg> no ar em 7 dias</span>
+        <span class="badge7"><svg class="li-ic" width="13" height="13" style="color:#E0902B" aria-hidden="true"><use href="#i-zap"/></svg> no ar em 7 dias</span>
         <div class="n serif">01</div>
         <h4>Sua comunidade no ar</h4>
         <p>App com a sua marca: comunidade gamificada (D.O.S.E.), protocolos e checkout. Pronto em 7 dias.</p>
@@ -1766,9 +1786,9 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
         <h3 class="serif">Uma comunidade que seus pacientes <em>abrem todo dia</em>.</h3>
         <p class="lead">Gamificação baseada em neurociência (o sistema D.O.S.E.) que faz o paciente voltar — não por obrigação, <b>por hábito</b>.</p>
         <ul class="feats">
-          <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#FFB627" aria-hidden="true"><use href="#i-trophy"/></svg></span><div><b>Engajamento diário</b><span>XP, hits e desafios que criam adesão real, dia após dia.</span></div></li>
+          <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#E0902B" aria-hidden="true"><use href="#i-trophy"/></svg></span><div><b>Engajamento diário</b><span>XP, hits e desafios que criam adesão real, dia após dia.</span></div></li>
           <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#C64FCA" aria-hidden="true"><use href="#i-mic"/></svg></span><div><b>Protocolos vivos</b><span>O plano que você prescreve acontece no app — com lembretes e acompanhamento.</span></div></li>
-          <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#8699FD" aria-hidden="true"><use href="#i-graduation-cap"/></svg></span><div><b>Pertencimento</b><span>Pacientes que se apoiam entre si retêm mais e indicam mais.</span></div></li>
+          <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#415FF5" aria-hidden="true"><use href="#i-graduation-cap"/></svg></span><div><b>Pertencimento</b><span>Pacientes que se apoiam entre si retêm mais e indicam mais.</span></div></li>
         </ul>
         <button class="btn btn-magenta js-talk" data-mode="talk" data-plan="Demo · Comunidade">Agende uma Demo <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
       </div>
@@ -1825,7 +1845,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
           <h3 class="serif">Um feed que seus pacientes <em>abrem todo dia</em></h3>
           <p>Fórum, conteúdos e desafios com ranking, XP e hits — a adesão vira jogo, e o jogo vira hábito.</p>
           <ul class="tfeats">
-            <li><span class="tk"><svg class="li-ic" width="17" height="17" style="color:#FFB627" aria-hidden="true"><use href="#i-trophy"/></svg></span><span><b>Desafios com premiação</b> — Transformação 30 Dias, ranking ao vivo e 158 pessoas se puxando pra cima.</span></li>
+            <li><span class="tk"><svg class="li-ic" width="17" height="17" style="color:#E0902B" aria-hidden="true"><use href="#i-trophy"/></svg></span><span><b>Desafios com premiação</b> — Transformação 30 Dias, ranking ao vivo e 158 pessoas se puxando pra cima.</span></li>
             <li><span class="tk"><svg class="li-ic" width="17" height="17" style="color:#415FF5" aria-hidden="true"><use href="#i-trending-up"/></svg></span><span><b>Progresso da semana</b> — o paciente vê a barra encher. E não quer deixar cair.</span></li>
           </ul>
         </article>
@@ -1898,21 +1918,21 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
         <div class="pct serif">2–5%</div>
         <h4>Audiência fria</h4>
         <p>você posta, eles passam reto</p>
-        <div class="chips"><i>Instagram</i><i>TikTok</i><i>YouTube</i><i>WhatsApp</i></div>
+        <div class="chips"><i><svg width="13" height="13" aria-hidden="true"><use href="#i-camera"/></svg> Instagram</i><i><svg width="13" height="13" aria-hidden="true"><use href="#i-music-2"/></svg> TikTok</i><i><svg width="13" height="13" aria-hidden="true"><use href="#i-play"/></svg> YouTube</i><i><svg width="13" height="13" aria-hidden="true"><use href="#i-message-circle"/></svg> WhatsApp</i></div>
       </div>
       <div class="fdrop rv"><span class="fball"><svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr-dn"/></svg></span> ela entra na sua comunidade</div>
       <div class="fstep s2 rv rv-d1">
         <div class="pct serif">15–25%</div>
         <h4>Comunidade ativa</h4>
         <p>ela entra, engaja e vira fã</p>
-        <div class="chips"><i>Gamificação</i><i>Conteúdos</i><i>Desafios</i><i>IA 24/7</i></div>
+        <div class="chips"><i><svg width="13" height="13" aria-hidden="true"><use href="#i-gamepad-2"/></svg> Gamificação</i><i><svg width="13" height="13" aria-hidden="true"><use href="#i-book-open"/></svg> Conteúdos</i><i><svg width="13" height="13" aria-hidden="true"><use href="#i-trophy"/></svg> Desafios</i><i><svg width="13" height="13" aria-hidden="true"><use href="#i-bot"/></svg> IA 24/7</i></div>
       </div>
       <div class="fdrop rv"><span class="fball"><svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr-dn"/></svg></span> e compra a esteira inteira</div>
       <div class="fstep s3 rv rv-d2">
         <div class="pct serif">R$$$</div>
         <h4>Produtos são consequência</h4>
         <p>a esteira inteira monetizada</p>
-        <div class="chips"><i>Consultas</i><i>Planos</i><i>Protocolos</i><i>Cursos</i><i>Eventos</i></div>
+        <div class="chips"><i><svg width="13" height="13" aria-hidden="true"><use href="#i-stethoscope"/></svg> Consultas</i><i><svg width="13" height="13" aria-hidden="true"><use href="#i-clipboard-list"/></svg> Planos</i><i><svg width="13" height="13" aria-hidden="true"><use href="#i-heart-pulse"/></svg> Protocolos</i><i><svg width="13" height="13" aria-hidden="true"><use href="#i-graduation-cap"/></svg> Cursos</i><i><svg width="13" height="13" aria-hidden="true"><use href="#i-mic"/></svg> Eventos</i></div>
       </div>
     </div>
     <div class="sec-cta rv" style="justify-content:center">
@@ -2020,9 +2040,9 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
       </div>
     </div>
     <div class="floors" id="bldg">
-      <div class="floor f1"><span class="fico"><svg class="gi" width="18" height="18" style="color:#FFB627" viewBox="0 0 171 171" aria-hidden="true"><use href="#gf-spark" fill="currentColor"/></svg></span><div><b>Desafios & gamificação</b><small>a porta de entrada</small></div><div class="val serif">R$ 3k<small>500 pessoas</small></div></div>
+      <div class="floor f1"><span class="fico"><svg class="gi" width="18" height="18" style="color:#E0902B" viewBox="0 0 171 171" aria-hidden="true"><use href="#gf-spark" fill="currentColor"/></svg></span><div><b>Desafios & gamificação</b><small>a porta de entrada</small></div><div class="val serif">R$ 3k<small>500 pessoas</small></div></div>
       <div class="floor f2"><span class="fico"><svg class="gi" width="18" height="18" style="color:#C64FCA" viewBox="0 0 173 173" aria-hidden="true"><use href="#gf-concave" fill="currentColor"/></svg></span><div><b>Eventos & lançamentos</b><small>picos de faturamento</small></div><div class="val serif">R$ 10k<small>300 pessoas</small></div></div>
-      <div class="floor f3"><span class="fico"><svg class="gi" width="18" height="18" style="color:#8699FD" viewBox="0 0 189 189" aria-hidden="true"><use href="#gf-diamond" fill="currentColor"/></svg></span><div><b>Cursos & biblioteca</b><small>escala sem agenda</small></div><div class="val serif">R$ 9k<small>150 pessoas</small></div></div>
+      <div class="floor f3"><span class="fico"><svg class="gi" width="18" height="18" style="color:#415FF5" viewBox="0 0 189 189" aria-hidden="true"><use href="#gf-diamond" fill="currentColor"/></svg></span><div><b>Cursos & biblioteca</b><small>escala sem agenda</small></div><div class="val serif">R$ 9k<small>150 pessoas</small></div></div>
       <div class="floor f4"><span class="fico"><svg class="gi" width="18" height="18" style="color:#63AC39" viewBox="0 0 150 150" aria-hidden="true"><use href="#gf-arcs" fill="currentColor"/></svg></span><div><b>Protocolos & planos</b><small>recorrência de cuidado</small></div><div class="val serif">R$ 12k<small>100 pessoas</small></div></div>
       <div class="floor f5"><span class="fico"><svg class="gi" width="14" height="19" style="color:#415FF5" viewBox="0 0 142 194" aria-hidden="true"><use href="#gf-circles" fill="currentColor"/></svg></span><div><b>Consultas & comunidade</b><small>o alto padrão</small></div><div class="val serif">R$ 16k<small>40 pessoas</small></div></div>
       <div class="tower-base rv">Entrada única: pagamentos · IA · CRM — tudo integrado num só lugar</div>
@@ -2131,10 +2151,10 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
       </div>
     </div>
     <ul class="lab-items rv rv-d1">
-      <li><span class="lico"><svg class="li-ic" width="17" height="17" style="color:#F0B0F2" aria-hidden="true"><use href="#i-video"/></svg></span><div><b>Lives e aulas semanais</b><span>com Guga, Dr. Arthur e convidados</span></div></li>
-      <li><span class="lico"><svg class="li-ic" width="17" height="17" style="color:#8699FD" aria-hidden="true"><use href="#i-book-open"/></svg></span><div><b>Todos os conteúdos do MyDose</b><span>área de membros com acesso completo</span></div></li>
-      <li><span class="lico"><svg class="li-ic" width="17" height="17" style="color:#A5DC85" aria-hidden="true"><use href="#i-clipboard-list"/></svg></span><div><b>Programas de acompanhamento</b><span>o modelo que é melhor pra você — e pro paciente</span></div></li>
-      <li><span class="lico"><svg class="li-ic" width="17" height="17" style="color:#FF9F88" aria-hidden="true"><use href="#i-users"/></svg></span><div><b>Comunidade de quem tá escalando</b><span>networking com profissionais como você</span></div></li>
+      <li><span class="lico"><svg class="li-ic" width="17" height="17" style="color:#C64FCA" aria-hidden="true"><use href="#i-video"/></svg></span><div><b>Lives e aulas semanais</b><span>com Guga, Dr. Arthur e convidados</span></div></li>
+      <li><span class="lico"><svg class="li-ic" width="17" height="17" style="color:#415FF5" aria-hidden="true"><use href="#i-book-open"/></svg></span><div><b>Todos os conteúdos do MyDose</b><span>área de membros com acesso completo</span></div></li>
+      <li><span class="lico"><svg class="li-ic" width="17" height="17" style="color:#63AC39" aria-hidden="true"><use href="#i-clipboard-list"/></svg></span><div><b>Programas de acompanhamento</b><span>o modelo que é melhor pra você — e pro paciente</span></div></li>
+      <li><span class="lico"><svg class="li-ic" width="17" height="17" style="color:#F56442" aria-hidden="true"><use href="#i-users"/></svg></span><div><b>Comunidade de quem tá escalando</b><span>networking com profissionais como você</span></div></li>
     </ul>
   </div>
 </section>
@@ -2560,7 +2580,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
         <button class="qz-opt" data-k="area" data-v="Nutricionista"><span class="qe"><svg class="li-ic" width="22" height="22" style="color:#63AC39" aria-hidden="true"><use href="#i-salad"/></svg></span><span>Nutricionista<small>planos alimentares que acontecem de verdade</small></span></button>
         <button class="qz-opt" data-k="area" data-v="Psicólogo(a)"><span class="qe"><svg class="li-ic" width="22" height="22" style="color:#C64FCA" aria-hidden="true"><use href="#i-brain"/></svg></span><span>Psicólogo(a)<small>vínculo e continuidade entre sessões</small></span></button>
         <button class="qz-opt" data-k="area" data-v="Personal/Ed. física"><span class="qe"><svg class="li-ic" width="22" height="22" style="color:#F56442" aria-hidden="true"><use href="#i-dumbbell"/></svg></span><span>Personal / Ed. física<small>treinos com adesão e recorrência</small></span></button>
-        <button class="qz-opt" data-k="area" data-v="Outra área da saúde"><span class="qe"><svg class="li-ic" width="22" height="22" style="color:#8699FD" aria-hidden="true"><use href="#i-sparkles"/></svg></span><span>Outra área da saúde<small>fisio, dentista, terapeuta, farma…</small></span></button>
+        <button class="qz-opt" data-k="area" data-v="Outra área da saúde"><span class="qe"><svg class="li-ic" width="22" height="22" style="color:#415FF5" aria-hidden="true"><use href="#i-sparkles"/></svg></span><span>Outra área da saúde<small>fisio, dentista, terapeuta, farma…</small></span></button>
       </div>
       <p class="qz-note"><span class="stars">★★★★★</span> +1.000 profissionais já criaram a sua</p>
     </div>
@@ -2570,8 +2590,8 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
       <h2 class="serif">Você já vende algo <em>além das consultas</em>?</h2>
       <p class="qz-sub">Programas, planos de acompanhamento, e-books, mentorias… qualquer produto conta.</p>
       <div class="qz-opts">
-        <button class="qz-opt" data-k="produto" data-v="Só consultas"><span class="qe"><svg class="li-ic" width="22" height="22" style="color:#A5DC85" aria-hidden="true"><use href="#i-sprout"/></svg></span><span>Ainda não — só consultas<small>perfeito: é onde a MyDose mais multiplica</small></span></button>
-        <button class="qz-opt" data-k="produto" data-v="Tenho 1-2 produtos"><span class="qe"><svg class="li-ic" width="22" height="22" style="color:#8699FD" aria-hidden="true"><use href="#i-briefcase"/></svg></span><span>Tenho 1–2 produtos<small>vamos colocá-los pra vender no automático</small></span></button>
+        <button class="qz-opt" data-k="produto" data-v="Só consultas"><span class="qe"><svg class="li-ic" width="22" height="22" style="color:#63AC39" aria-hidden="true"><use href="#i-sprout"/></svg></span><span>Ainda não — só consultas<small>perfeito: é onde a MyDose mais multiplica</small></span></button>
+        <button class="qz-opt" data-k="produto" data-v="Tenho 1-2 produtos"><span class="qe"><svg class="li-ic" width="22" height="22" style="color:#415FF5" aria-hidden="true"><use href="#i-briefcase"/></svg></span><span>Tenho 1–2 produtos<small>vamos colocá-los pra vender no automático</small></span></button>
         <button class="qz-opt" data-k="produto" data-v="Tenho esteira e quero escalar"><span class="qe"><svg class="li-ic" width="22" height="22" style="color:#F56442" aria-hidden="true"><use href="#i-rocket"/></svg></span><span>Tenho uma esteira e quero escalar<small>comunidade + IA = seu próximo patamar</small></span></button>
       </div>
       <button class="qz-back" data-back>← voltar</button>
@@ -2582,7 +2602,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
       <h2 class="serif">Quantas pessoas você <em>impacta</em> hoje?</h2>
       <p class="qz-sub">Pacientes ativos + audiência nas redes. Chute sem medo — é só pra calibrar o plano.</p>
       <div class="qz-opts">
-        <button class="qz-opt" data-k="alcance" data-v="até 50"><span class="qe"><svg class="li-ic" width="22" height="22" style="color:#A5DC85" aria-hidden="true"><use href="#i-sprout"/></svg></span><span>Até 50 pessoas<small>começando — melhor hora pra estruturar</small></span></button>
+        <button class="qz-opt" data-k="alcance" data-v="até 50"><span class="qe"><svg class="li-ic" width="22" height="22" style="color:#63AC39" aria-hidden="true"><use href="#i-sprout"/></svg></span><span>Até 50 pessoas<small>começando — melhor hora pra estruturar</small></span></button>
         <button class="qz-opt" data-k="alcance" data-v="50-300"><span class="qe"><svg class="li-ic" width="22" height="22" style="color:#63AC39" aria-hidden="true"><use href="#i-leaf"/></svg></span><span>50 a 300<small>sua comunidade nasce cheia</small></span></button>
         <button class="qz-opt" data-k="alcance" data-v="300-1000"><span class="qe"><svg class="li-ic" width="22" height="22" style="color:#3E7A1E" aria-hidden="true"><use href="#i-trees"/></svg></span><span>300 a 1.000<small>potencial de faturamento imediato</small></span></button>
         <button class="qz-opt" data-k="alcance" data-v="+1000"><span class="qe"><svg class="li-ic" width="22" height="22" style="color:#F56442" aria-hidden="true"><use href="#i-flame"/></svg></span><span>Mais de 1.000<small>você está sentado numa mina de ouro</small></span></button>
@@ -2685,7 +2705,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
   var themeBtn = document.getElementById('themeBtn'), metaTheme = document.getElementById('metaTheme');
   function paintTheme(){
     var dark = document.documentElement.dataset.theme === 'dark';
-    themeBtn.innerHTML = dark ? '<svg width="17" height="17" style="color:#FFB627"><use href="#i-sun"/></svg>' : '<svg width="17" height="17" style="color:#8699FD"><use href="#i-moon"/></svg>';
+    themeBtn.innerHTML = dark ? '<svg width="17" height="17" style="color:#E0902B"><use href="#i-sun"/></svg>' : '<svg width="17" height="17" style="color:#415FF5"><use href="#i-moon"/></svg>';
     metaTheme.content = dark ? '#101226' : '#F6F4F2';
   }
   themeBtn.addEventListener('click', function(){
