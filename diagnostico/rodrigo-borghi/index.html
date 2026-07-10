@@ -20,22 +20,19 @@ a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
 img{max-width:100%}
 .serif{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.08}
 .wrap{width:min(980px,100% - 40px);margin-inline:auto}
-/* capa */
 .capa{position:relative;background:var(--navy);color:#fff;overflow:hidden;padding:26px 0 74px}
 .capa .stripes{position:absolute;inset:0;pointer-events:none;opacity:.5;
  background:repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 2px,transparent 2px 13px);
  -webkit-mask-image:linear-gradient(115deg,transparent 40%,#000 80%);mask-image:linear-gradient(115deg,transparent 40%,#000 80%)}
 .capa .gf{position:absolute;pointer-events:none}
 .topo{display:flex;justify-content:space-between;align-items:center;gap:14px;position:relative;z-index:2}
-.topo .conf{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);
- border:1px solid rgba(255,255,255,.22);border-radius:99px;padding:7px 13px}
+.topo .conf{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.22);border-radius:99px;padding:7px 13px}
 .capa-grid{position:relative;z-index:2;display:grid;gap:34px;align-items:center;margin-top:56px}
 @media(min-width:800px){.capa-grid{grid-template-columns:auto 1fr;gap:52px}}
 .foto-wrap{position:relative;width:min(200px,52vw);margin-inline:auto}
 .foto-ring{width:100%;aspect-ratio:1;border-radius:50%;padding:5px;background:var(--g1)}
 .foto-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;border:5px solid var(--navy)}
-.foto-badge{position:absolute;right:-6px;bottom:6px;background:#fff;color:var(--navy);font-size:11px;font-weight:800;
- border-radius:99px;padding:6px 11px;box-shadow:0 10px 26px -8px rgba(0,0,0,.5)}
+.foto-badge{position:absolute;right:-6px;bottom:6px;background:#fff;color:var(--navy);font-size:11px;font-weight:800;border-radius:99px;padding:6px 11px;box-shadow:0 10px 26px -8px rgba(0,0,0,.5)}
 .capa .eyeb{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6)}
 .capa .eyeb .sq{width:11px;height:11px;border-radius:3px;background:var(--g1)}
 .capa h1{font-size:clamp(32px,6vw,54px);margin:12px 0 8px;text-wrap:balance}
@@ -47,13 +44,12 @@ img{max-width:100%}
 .btn:hover{transform:translateY(-2px);text-decoration:none}
 .btn-g{background:var(--g1);color:#fff;box-shadow:0 14px 34px -12px rgba(198,79,202,.55)}
 .btn-w{background:#fff;color:var(--navy)}
-/* corpo */
 section{padding:56px 0 8px}
 .eyeb2{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--gray)}
 .eyeb2 .sq{width:10px;height:10px;border-radius:3px;background:var(--g1)}
 h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,4vw,34px);margin:10px 0 8px;letter-spacing:-.01em;line-height:1.15;text-wrap:balance}
 h2 em{font-style:italic}
-.sub{color:var(--muted);max-width:62ch}
+.sub{color:var(--muted);max-width:64ch}
 .snap{display:grid;gap:12px;margin-top:24px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
 .sn{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
 .sn b{display:block;font-family:var(--serif);font-size:clamp(22px,3vw,30px);line-height:1.1}
@@ -68,10 +64,48 @@ h2 em{font-style:italic}
 .ach .n{font-family:var(--serif);font-size:15px;color:#fff;background:var(--navy);width:30px;height:30px;border-radius:10px;display:grid;place-items:center;margin-bottom:12px}
 .ach b{font-size:15.5px;display:block;margin-bottom:6px}
 .ach p{font-size:13.5px;color:var(--muted);line-height:1.55}
-.estrat{margin-top:24px;background:var(--navy);color:#fff;border-radius:24px;padding:30px}
-.estrat p{color:rgba(255,255,255,.85);max-width:74ch;font-size:15.5px}
+/* expandir x escalar */
+.exps{display:grid;gap:14px;margin-top:24px}
+@media(min-width:800px){.exps{grid-template-columns:1fr 1fr}}
+.exp{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px}
+.exp h4{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.exp .h-red{color:var(--orange)}.exp .h-grn{color:var(--green)}
+.exp p{font-size:13.5px;color:var(--muted);margin-top:8px}
+.exp svg{width:100%;height:auto;margin-top:8px}
+.esc-frase{margin-top:16px;background:var(--card);border:1px solid var(--line);border-left:none;border-radius:18px;padding:18px 22px;font-size:15px;color:var(--muted)}
+.esc-frase b{color:var(--ink)}
+/* ACP */
+.acp{display:grid;gap:12px;margin-top:24px}
+@media(min-width:800px){.acp{grid-template-columns:1fr auto 1fr auto 1fr}}
+.acp .step{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px}
+.acp .arr{display:grid;place-items:center;color:var(--gray);font-size:20px}
+@media(max-width:799px){.acp .arr{transform:rotate(90deg);padding:2px 0}}
+.acp .tag{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;padding:5px 10px;display:inline-block;margin-bottom:10px}
+.acp b{font-family:var(--serif);font-size:19px;display:block;margin-bottom:6px;font-weight:400}
+.acp p{font-size:13.5px;color:var(--muted)}
+.acp .pct{font-size:11.5px;font-weight:800;color:var(--gray);display:block;margin-top:10px}
+/* prédio */
+.tower{display:grid;gap:26px;margin-top:24px;align-items:end}
+@media(min-width:840px){.tower{grid-template-columns:.9fr 1.1fr}}
+.floors{display:flex;flex-direction:column;gap:9px}
+.floor{display:flex;align-items:center;gap:13px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:13px 16px;
+ opacity:.3;transform:translateX(16px);transition:opacity .6s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.floor.on{opacity:1;transform:none}
+.floor .fn{font-family:var(--serif);font-size:13px;color:var(--gray);width:24px;flex:none}
+.floor b{font-size:14px;display:block}
+.floor small{font-size:11.5px;color:var(--gray);font-weight:600}
+.floor .val{margin-left:auto;text-align:right;font-family:var(--serif);font-size:17px;white-space:nowrap}
+.floor .val small{display:block;font-family:var(--sans)}
+.floor.base{background:var(--navy);color:#fff;border-color:var(--navy);opacity:.3}
+.floor.base.on{opacity:1}
+.floor.base small{color:rgba(255,255,255,.65)}
+.tower-side .tsum{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;margin-top:14px}
+.tower-side .tsum b{font-family:var(--serif);font-size:clamp(26px,3.6vw,36px);display:block;background:var(--g1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tower-side .tsum span{font-size:12.5px;color:var(--gray);font-weight:700}
+.estrat{margin-top:18px;background:var(--navy);color:#fff;border-radius:24px;padding:28px}
+.estrat p{color:rgba(255,255,255,.85);max-width:74ch;font-size:15px}
 .estrat .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:10px}
-.progs{display:grid;gap:14px;margin-top:24px}
+.progs{display:grid;gap:14px;margin-top:20px}
 @media(min-width:800px){.progs{grid-template-columns:repeat(3,1fr)}}
 .prog{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:8px}
 .prog.hi{outline:2px solid var(--blue);outline-offset:-2px;position:relative}
@@ -81,12 +115,10 @@ h2 em{font-style:italic}
 .prog .pv small{font-family:var(--sans);font-size:12px;color:var(--gray)}
 .prog p{font-size:13px;color:var(--muted);line-height:1.5}
 .pnote{margin-top:12px;font-size:12.5px;color:var(--gray)}
-/* projeção */
 .proj{display:grid;gap:14px;margin-top:24px}
 @media(min-width:800px){.proj{grid-template-columns:1fr 1fr}}
 .pj{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px}
 .pj h4{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-bottom:12px}
-.pj .flow{display:flex;flex-direction:column;gap:8px}
 .pj .fr{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:9px 0;border-top:1px dashed var(--line)}
 .pj .fr:first-of-type{border-top:0}
 .pj .fr b{white-space:nowrap}
@@ -96,15 +128,55 @@ h2 em{font-style:italic}
 .tot.grad b{background:var(--g1);-webkit-background-clip:text;background-clip:text;color:transparent}
 .dica{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;font-size:14px;color:var(--muted)}
 .dica b{color:var(--ink)}
+/* ferramentas */
+.tools{display:grid;gap:14px;margin-top:24px}
+@media(min-width:840px){.tools{grid-template-columns:1.1fr .9fr}}
+.tool-list{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px 22px;list-style:none}
+.tool-list li{display:flex;justify-content:space-between;gap:10px;font-size:14px;color:var(--muted);padding:8px 0;border-bottom:1px dashed var(--line)}
+.tool-list li b{color:var(--ink);font-variant-numeric:tabular-nums}
+.tool-list .sum{border-bottom:0;font-weight:800;color:var(--ink);padding-top:12px}
+.tool-my{background:var(--navy);color:#fff;border-radius:20px;padding:26px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.tool-my .big{font-family:var(--serif);font-size:clamp(30px,4.4vw,44px);line-height:1.05}
+.tool-my p{color:rgba(255,255,255,.8);font-size:13.5px}
+.tool-my .save{display:inline-block;background:rgba(255,255,255,.14);border-radius:99px;padding:7px 13px;font-size:12.5px;font-weight:800;margin-top:6px;align-self:flex-start}
+/* implementação */
+.fases{display:grid;gap:12px;margin-top:24px}
+@media(min-width:800px){.fases{grid-template-columns:repeat(4,1fr)}}
+.fase{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.fase .fnum{font-family:var(--serif);color:#fff;background:var(--navy);width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-size:14px;margin-bottom:10px}
+.fase b{font-size:14.5px;display:block;margin-bottom:5px}
+.fase p{font-size:12.5px;color:var(--muted);line-height:1.5}
+.selos{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+.selos span{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:9px 15px;font-size:12.5px;font-weight:700}
+/* planos */
+.plans{display:grid;gap:14px;margin-top:24px}
+@media(min-width:840px){.plans{grid-template-columns:repeat(4,1fr)}}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:7px}
+.plan.rec{outline:2.5px solid transparent;border:2px solid transparent;background:
+ linear-gradient(var(--card),var(--card)) padding-box,var(--g1) border-box;position:relative}
+.plan.rec::before{content:"NOSSA SUGESTÃO PRA VOCÊ";position:absolute;top:-10px;left:14px;background:var(--g1);color:#fff;font-size:9px;font-weight:800;letter-spacing:.07em;border-radius:99px;padding:4px 9px}
+.plan b{font-size:15.5px}
+.plan .fx{font-size:11px;font-weight:800;color:var(--gray);letter-spacing:.04em;text-transform:uppercase}
+.plan .pv{font-family:var(--serif);font-size:23px}
+.plan .pv small{font-family:var(--sans);font-size:11.5px;color:var(--gray)}
+.plan ul{list-style:none;font-size:12.5px;color:var(--muted);display:grid;gap:4px}
+.plan ul li::before{content:"✓ ";color:var(--green);font-weight:800}
+.pq{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 22px;font-size:14px;color:var(--muted)}
+.pq b{color:var(--ink)}
 /* final */
 .final{margin:60px 0 0;background:var(--navy);color:#fff;border-radius:28px 28px 0 0;padding:52px 0 46px;position:relative;overflow:hidden}
 .final .stripes{position:absolute;inset:0;opacity:.5;background:repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 2px,transparent 2px 13px);
  -webkit-mask-image:linear-gradient(115deg,transparent 45%,#000 85%);mask-image:linear-gradient(115deg,transparent 45%,#000 85%)}
 .final .wrap{position:relative;z-index:2}
-.final h2{color:#fff;max-width:22ch}
-.final p{color:rgba(255,255,255,.8);max-width:60ch}
+.final h2{color:#fff;max-width:24ch}
+.final p{color:rgba(255,255,255,.8);max-width:62ch}
+.passos{display:grid;gap:10px;margin:20px 0 4px}
+@media(min-width:760px){.passos{grid-template-columns:repeat(3,1fr)}}
+.passo{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px}
+.passo b{display:block;font-size:14px;margin-bottom:3px}
+.passo span{font-size:12.5px;color:rgba(255,255,255,.7)}
 .final .tbc{font-family:var(--serif);font-style:italic;font-size:clamp(26px,4.4vw,40px);margin:26px 0 4px}
-.final .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.final .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
 footer{padding:22px 0 46px;font-size:12.5px;color:var(--gray);display:flex;flex-wrap:wrap;gap:8px 26px;justify-content:space-between}
 @media print{.capa{border-radius:0}.btn{display:none}}
 </style></head>
@@ -150,53 +222,112 @@ footer{padding:22px 0 46px;font-size:12.5px;color:var(--gray);display:flex;flex-
     <div class="sn"><b>R$ 500</b><span>consulta média estimada*</span></div>
   </div>
   <div class="leitura"><div class="li"><span class="d"></span><span>Sua audiência já é um ativo de mídia: 34 mil pessoas confiando em você sobre o tema mais sensível que existe.</span></div><div class="li"><span class="d"></span><span>A agenda física não escala pra esse alcance — a conta 34.000 : 1 só fecha com produto além da consulta.</span></div><div class="li"><span class="d"></span><span>Indicação direta do Dr. Arthur (co-founder MyDose e médico): você veria por dentro exatamente a máquina que ele mesmo roda.</span></div></div>
-  <p class="pnote">*valores estimados por especialidade e região — calibramos juntos na reunião.</p>
+  <p class="pnote">*Análise feita de fora, com dados públicos — é hipótese de trabalho, não veredito. A reunião existe pra calibrar com a sua realidade.</p>
 </div></section>
 
 <section><div class="wrap">
   <span class="eyeb2"><span class="sq"></span> 02 · O diagnóstico</span>
-  <h2>Três coisas que estão travando a sua <em>escala</em></h2>
+  <h2>Três coisas que, pela nossa leitura, travam a sua <em>escala</em></h2>
   <div class="achados"><div class="ach"><span class="n">1</span><b>Audiência grande, monetização de consultório</b><p>Você alcança dezenas de milhares e fatura sobre dezenas de agendamentos: o funil está estrangulado no meio.</p></div><div class="ach"><span class="n">2</span><b>Saúde mental pede continuidade em escala</b><p>Milhares seguem seu conteúdo como “terapia de feed” — sem um espaço estruturado, esse cuidado se perde no algoritmo.</p></div><div class="ach"><span class="n">3</span><b>Seu tempo é o teto</b><p>Qualquer crescimento hoje custa exatamente mais uma hora sua. 34 mil pessoas não cabem nisso.</p></div></div>
 </div></section>
 
 <section><div class="wrap">
-  <span class="eyeb2"><span class="sq"></span> 03 · A estratégia</span>
-  <h2>Como isso vira uma <em>empresa de saúde</em></h2>
-  <div class="estrat"><span class="tag">Desenhado para psiquiatra</span><p>Transformar a audiência em comunidade de saúde mental com curadoria sua — conteúdo guiado, grupos por tema com moderação assistida por IA (ética, com limites, escala pra você) e programas de acompanhamento em camadas: do membro gratuito ao paciente Premium. Mesmo capturando só 3% da audiência, é a maior operação desta lista.</p></div>
+  <span class="eyeb2"><span class="sq"></span> 03 · Expandir × Escalar</span>
+  <h2>Os dois caminhos a partir daqui</h2>
+  <div class="exps">
+    <div class="exp"><h4 class="h-red">Expandir · mais horas</h4><svg viewBox="0 0 300 120" aria-hidden="true"><line x1="10" y1="28" x2="290" y2="28" stroke="#F56442" stroke-width="2" stroke-dasharray="6 5"/><text x="14" y="20" font-size="10" font-weight="800" fill="#F56442" font-family="Google Sans,sans-serif">TETO = SUAS HORAS</text><path d="M10 106 L60 96 L110 82 L160 62 L210 42 L250 30 L290 28" fill="none" stroke="#848484" stroke-width="3" stroke-linecap="round"/><text x="200" y="112" font-size="10" font-weight="700" fill="#848484" font-family="Google Sans,sans-serif">receita = agenda cheia</text></svg><p>Mais consultas, mais salas, mais agenda — a receita cresce colada no seu tempo e bate no teto das suas horas.</p></div>
+    <div class="exp"><h4 class="h-grn">Escalar · mais estrutura</h4><svg viewBox="0 0 300 120" aria-hidden="true"><path d="M10 100 C90 96 180 62 290 18 L290 100 Z" fill="rgba(99,172,57,.14)"/><path d="M10 100 C90 96 180 62 290 18" fill="none" stroke="#63AC39" stroke-width="3" stroke-linecap="round"/><path d="M10 104 L290 96" fill="none" stroke="#848484" stroke-width="2.5" stroke-dasharray="2 5" stroke-linecap="round"/><text x="14" y="20" font-size="10" font-weight="800" fill="#63AC39" font-family="Google Sans,sans-serif">RECEITA RECORRENTE</text><text x="196" y="114" font-size="10" font-weight="700" fill="#848484" font-family="Google Sans,sans-serif">custo ~fixo (plataforma)</text></svg><p>Comunidade + programas + IA: a receita cresce sobre estrutura, com custo quase fixo — a “boca de jacaré” abre a seu favor.</p></div>
+  </div>
+  <div class="esc-frase"><b>No seu caso, Rodrigo:</b> Expandir, no seu caso, nem é opção — a agenda já não alcança a audiência. Escalar é destravar o meio do funil: comunidade estruturada de saúde mental, programas em camadas, e a sua presença multiplicada com curadoria (nunca substituída).</div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="eyeb2"><span class="sq"></span> 04 · O funil que funciona</span>
+  <h2>A → C → P: audiência vira comunidade. Comunidade vira <em>receita</em>.</h2>
+  <div class="acp">
+    <div class="step"><span class="tag" style="background:#FFEAE5;color:#F56442">A · Audiência</span><b>Os 34 mil que te acompanham sobre saúde mental</b><p>Audiência é commodity: todo mundo tem seguidores, poucos convertem. Seguidor frio precisa de aquecimento.</p><span class="pct">2–5% descem pro próximo nível</span></div>
+    <div class="arr">→</div>
+    <div class="step"><span class="tag" style="background:#D6DDFF;color:#415FF5">C · Comunidade</span><b>Uma comunidade guiada com grupos por tema e moderação assistida</b><p>Comunidade é ativo: rituais, check-ins, ranking e confiança — isso não se compra. 5× mais conversão que seguidor frio.</p><span class="pct">15–25% viram clientes pagantes</span></div>
+    <div class="arr">→</div>
+    <div class="step"><span class="tag" style="background:#DCEDD2;color:#3E7A1E">P · Produto</span><b>Programas em camadas: do membro ao paciente premium</b><p>Produto é consequência: quem confia compra sem fricção — consultas, planos recorrentes, protocolos, eventos.</p><span class="pct">R$$$ recorrente</span></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="eyeb2"><span class="sq"></span> 05 · O seu prédio</span>
+  <h2>Cada andar, um produto. Cada produto, uma <em>receita</em>.</h2>
+  <p class="sub">É assim que a gente enxerga a sua comunidade: um prédio que você constrói andar por andar — e que a MyDose sustenta na fundação. Os valores são o exemplo do nosso modelo; o SEU prédio a gente desenha junto na reunião.</p>
+  <div class="tower">
+    <div class="tower-side">
+      <div class="estrat" style="margin-top:0"><span class="tag">A estratégia pra psiquiatra</span><p>Transformar a audiência em comunidade de saúde mental com curadoria sua — conteúdo guiado, grupos por tema com moderação assistida por IA (ética, com limites, escala pra você) e programas de acompanhamento em camadas: do membro gratuito ao paciente Premium. Mesmo capturando só 3% da audiência, é a maior operação desta lista.</p></div>
+      <div class="tsum"><b>R$ 50k/mês</b><span>potencial do prédio completo · exemplo do modelo MyDose</span></div>
+    </div>
+    <div class="floors" id="floors"><div class="floor" data-fl><span class="fn">5º</span><div><b>Consultório 1:1 premium</b><small>o topo, com fila</small></div><span class="val">R$ 16k<small>40 pessoas</small></span></div><div class="floor" data-fl><span class="fn">4º</span><div><b>Programas de continuidade</b><small>recorrência de cuidado</small></div><span class="val">R$ 12k<small>100 pessoas</small></span></div><div class="floor" data-fl><span class="fn">3º</span><div><b>Psicoeducação (cursos)</b><small>escala sem agenda</small></div><span class="val">R$ 9k<small>150 pessoas</small></span></div><div class="floor" data-fl><span class="fn">2º</span><div><b>Encontros & lives</b><small>picos de receita</small></div><span class="val">R$ 10k<small>300 pessoas</small></span></div><div class="floor" data-fl><span class="fn">1º</span><div><b>Desafios de rotina & sono</b><small>a porta de entrada</small></div><span class="val">R$ 3k<small>500 pessoas</small></span></div><div class="floor base" data-fl><span class="fn">⌂</span><div><b>Fundação · MyDose</b><small>pagamentos · IA · CRM — tudo integrado</small></div></div></div>
+  </div>
+  <h2 style="margin-top:44px;font-size:clamp(20px,3vw,26px)">O 4º andar em detalhe: os seus programas</h2>
   <div class="progs"><div class="prog"><b>Início · Comunidade Guiada</b><span class="pv">R$ 160<small>/mês por paciente</small></span><p>Conteúdo estruturado + comunidade moderada + check-ins</p></div><div class="prog hi"><b>Essencial · Acompanhado</b><span class="pv">R$ 270<small>/mês por paciente</small></span><p>4 consultas/ano + grupos por tema + IA com protocolo</p></div><div class="prog"><b>Premium · Próximo</b><span class="pv">R$ 460<small>/mês por paciente</small></span><p>Consulta bimestral + acompanhamento próximo + prioridade</p></div></div>
   <p class="pnote">Estrutura dos programas de acompanhamento MyDose — entregáveis e valores calibrados pra sua operação na reunião.</p>
 </div></section>
 
 <section><div class="wrap">
-  <span class="eyeb2"><span class="sq"></span> 04 · Projeção financeira</span>
+  <span class="eyeb2"><span class="sq"></span> 06 · Projeção financeira</span>
   <h2>A matemática, com os <em>seus</em> números</h2>
   <div class="proj">
     <div class="pj">
       <h4>Frente 1 · Seus pacientes atuais</h4>
-      <div class="flow">
-        <div class="fr"><span>30 pacientes migrando pro programa Essencial</span><b>30 × R$ 270</b></div>
-        <div class="fr"><span>Receita recorrente — além das consultas</span><b>R$ 8.100/mês</b></div>
-      </div>
+      <div class="fr"><span>30 pacientes migrando pro programa Essencial</span><b>30 × R$ 270</b></div>
+      <div class="fr"><span>Receita recorrente — além das consultas</span><b>R$ 8.100/mês</b></div>
       <div class="tot"><b>+R$ 97.200</b><span>por ano · frente consultório</span></div>
     </div>
     <div class="pj">
       <h4>Frente 2 · Sua audiência de 34.000</h4>
-      <div class="flow">
-        <div class="fr"><span>Comunidade gratuita (3% da audiência)</span><b>~1.020 membros</b></div>
-        <div class="fr"><span>Assinantes de programa (15% da comunidade)</span><b>~153 × R$ 270</b></div>
-      </div>
+      <div class="fr"><span>Comunidade gratuita (3% da audiência)</span><b>~1.020 membros</b></div>
+      <div class="fr"><span>Assinantes de programa (15% da comunidade)</span><b>~153 × R$ 270</b></div>
       <div class="tot grad"><b>+R$ 41.310/mês</b><span>recorrentes · frente audiência</span></div>
     </div>
   </div>
-  <div class="dica">Somando as duas frentes: <b>~R$ 592.920/ano</b> de receita recorrente nova — e o plano MyDose <b>se paga com 2 pacientes</b> no programa do meio. Cenário base do funil MyDose (2–5% → comunidade · 15–25% → programas); refinamos com os seus dados na reunião.</div>
+  <div class="dica">Somando as duas frentes: <b>~R$ 592.920/ano</b> de receita recorrente nova — e o plano MyDose <b>se paga com 2 pacientes</b> no programa do meio. Cenário base do funil (2–5% → comunidade · 15–25% → programas); refinamos com os seus dados reais na reunião.</div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="eyeb2"><span class="sq"></span> 07 · Uma só, no lugar de muitas</span>
+  <h2>Isso tudo, hoje, seriam <em>+ de 10 ferramentas</em></h2>
+  <div class="tools">
+    <ul class="tool-list"><li><span>App de hábitos + comunidade</span><b>R$ 497</b></li><li><span>Assistente de IA</span><b>R$ 397</b></li><li><span>Prontuário eletrônico</span><b>R$ 299</b></li><li><span>CRM de pacientes</span><b>R$ 400</b></li><li><span>Área de membros + checkout</span><b>R$ 800</b></li><li><span>Gestão de anúncios</span><b>R$ 590</b></li><li><span>Disparos + agenda + formulários</span><b>R$ 907</b></li><li class="sum"><span>+ de 10 ferramentas, separadas</span><b>R$ 3.890/mês</b></li></ul>
+    <div class="tool-my"><span class="big">R$ 290<small style="font-size:14px;font-family:var(--sans)">/mês</small></span>
+      <p>Com a MyDose, tudo num lugar só, a partir de R$ 290/mês — e a gente ainda faz conteúdo, tráfego e IA rodarem o seu crescimento.</p>
+      <span class="save">Você economiza ~R$ 3.600/mês</span></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="eyeb2"><span class="sq"></span> 08 · Implementação</span>
+  <h2>Do “ok” aos primeiros resultados em até <em>30 dias</em></h2>
+  <p class="sub">15 etapas, 4 fases, time de implementação dedicado — você não configura nada sozinho, Rodrigo.</p>
+  <div class="fases"><div class="fase"><span class="fnum">F1</span><b>Onboarding inicial</b><p>Boas-vindas, formulário de descoberta e reunião de inicialização — sua conta no ar.</p></div><div class="fase"><span class="fnum">F2</span><b>Estruturação pra vendas</b><p>Comunidade com a sua marca, protocolos importados, programas e checkout prontos.</p></div><div class="fase"><span class="fnum">F3</span><b>Gestão dos pacientes</b><p>Primeiros pacientes convidados, desafios ativados, IA treinada no seu tom.</p></div><div class="fase"><span class="fnum">F4</span><b>Pós-onboarding</b><p>Rotina de crescimento: funis rodando, relatórios e acompanhamento do time.</p></div></div>
+  <div class="selos"><span>⚡ No ar em 7 dias</span><span>1ª venda em 30 dias — ou trabalhamos de graça</span><span>Time de implementação dedicado</span></div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="eyeb2"><span class="sq"></span> 09 · Investimento</span>
+  <h2>Escolha onde você quer colocar a mão</h2>
+  <p class="sub">A plataforma é a mesma — o que muda é quanto a gente faz por você. Sem fidelidade-armadilha; mídia sempre fora do preço, transparente.</p>
+  <div class="plans"><div class="plan"><b>Software</b><span class="fx">fatura até R$ 10k/mês</span><span class="pv">R$ 290<small>/mês no anual</small></span><ul><li>Plataforma IA + Academy</li><li>Comunidade + checkout + CRM</li><li>500 WhatsApp · 100 créditos IA</li></ul></div><div class="plan"><b>Start</b><span class="fx">fatura até R$ 20k/mês</span><span class="pv">R$ 590<small>/mês no anual</small></span><ul><li>Ativação guiada em 7 dias</li><li>6 posts + 3 vídeos/mês</li><li>1.500 WhatsApp · 400 créditos IA</li></ul></div><div class="plan"><b>Co-pilot</b><span class="fx">fatura R$ 20–50k/mês</span><span class="pv">R$ 1.090<small>/mês no anual</small></span><ul><li>Setup de tráfego + funis</li><li>12 posts + 6 vídeos/mês</li><li>Relatórios e metas</li></ul></div><div class="plan rec"><b>Autopilot</b><span class="fx">fatura R$ 50–150k/mês</span><span class="pv">R$ 2.190<small>/mês no anual</small></span><ul><li>Tráfego gerido por nós</li><li>20 posts + 10 vídeos/mês</li><li>10.000 WhatsApp · gestor de conta</li></ul></div></div>
+  <div class="pq"><b>Por que sugerimos o Autopilot pra você:</b> pelo tamanho da audiência: com 34 mil seguidores, tráfego gerido + 20 posts/mês + gestor de conta é o que faz o funil rodar na velocidade que esse ativo merece. É uma hipótese de partida — o plano certo sai da conversa.</div>
+  <div class="selos"><span>🛡 30 dias de garantia incondicional</span><span>Garantia do aha: 1ª venda em 30 dias ou trabalhamos de graça</span><span>Trava de preço pelo contrato</span></div>
 </div></section>
 
 <div class="final">
   <div class="stripes"></div>
   <div class="wrap">
-    <span class="eyeb" style="color:rgba(255,255,255,.6)"><span class="sq" style="background:var(--g1)"></span> 05 · Próximo passo</span>
-    <h2>Esse diagnóstico completo — com o seu plano de 30 dias — a gente apresenta na reunião.</h2>
-    <p>Sem pitch genérico: a conversa inteira é sobre a SUA operação. Você sai com o desenho da comunidade, os programas prontos pra vender e o cronograma de 7 dias pro ar. Garantia de 30 dias, sem fidelidade.</p>
+    <span class="eyeb" style="color:rgba(255,255,255,.6)"><span class="sq" style="background:var(--g1)"></span> 10 · Próximo passo</span>
+    <h2>Rodrigo, esse diagnóstico vivo — com o seu prédio desenhado — a gente fecha juntos na reunião.</h2>
+    <p>Sem pitch genérico: a conversa inteira é sobre a SUA operação.</p>
+    <div class="passos">
+      <div class="passo"><b>1 · Reunião de diagnóstico</b><span>45 min — validamos as hipóteses desta página com os seus números reais</span></div>
+      <div class="passo"><b>2 · Desenho do seu prédio</b><span>comunidade, programas e preços calibrados pra sua operação</span></div>
+      <div class="passo"><b>3 · No ar em 7 dias</b><span>implementação guiada, 1ª venda em 30 dias ou trabalhamos de graça</span></div>
+    </div>
     <p class="tbc">Take back control.</p>
     <div class="ctas">
       <a class="btn btn-g" href="https://wa.me/5548999999999?text=Quero%20ver%20meu%20diagn%C3%B3stico%20MyDose%20completo%20—%20Rodrigo" target="_blank" rel="noopener">Confirmar minha reunião</a>
@@ -204,5 +335,14 @@ footer{padding:22px 0 46px;font-size:12.5px;color:var(--gray);display:flex;flex-
     </div>
   </div>
 </div>
-<footer class="wrap"><span>Diagnóstico preparado pelo time MyDose · 10/07/2026 · dados públicos do Instagram</span><span><a href="../">← Todos os diagnósticos</a></span></footer>
+<footer class="wrap"><span>Diagnóstico preparado pelo time MyDose · 10/07/2026 · dados públicos do Instagram · hipóteses a validar em conversa</span><span><a href="../">← Todos os diagnósticos</a></span></footer>
+<script>
+(function(){
+  var fls=[].slice.call(document.querySelectorAll('[data-fl]'));
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){fls.forEach(function(f){f.classList.add('on')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+    var i=fls.indexOf(e.target);setTimeout(function(){e.target.classList.add('on')}, (fls.length-1-i)*140);io.unobserve(e.target)}})},{threshold:.3});
+  fls.forEach(function(f){io.observe(f)});
+})();
+</script>
 </body></html>
