@@ -1230,6 +1230,25 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
 @media(max-width:919px){.gf{display:none!important}}
 .results .pattern{opacity:.10}
 .pros-chips span svg,.chips i svg{vertical-align:-2px;margin-right:2px;opacity:.85}
+
+/* ============ V6.5 · SaaS desktop + app lado a lado ============ */
+.dk-bar{display:flex;gap:5px;padding:9px 12px;background:#ECEAF6;position:relative;z-index:2}
+.dk-bar i{width:8px;height:8px;border-radius:50%;background:#D2CFE2}
+.dk-bar i:nth-child(1){background:#FF5C57}.dk-bar i:nth-child(2){background:#FFB627}.dk-bar i:nth-child(3){background:#63AC39}
+.desk-shot{border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 26px 60px -22px rgba(25,30,71,.45)}
+.desk-shot video{width:100%;display:block}
+.duo{position:relative;width:100%;padding:0 0 56px}
+.duo .desk-shot{width:94%}
+.duo .mini-phone{position:absolute;right:-2%;bottom:0;width:min(158px,38%)!important;margin-bottom:0!important;box-shadow:0 22px 50px -18px rgba(25,30,71,.55)}
+.sub-duo{margin-top:10px;color:var(--muted);font-size:clamp(15px,2vw,17px)}
+.tour-desk{position:absolute;right:56%;top:9%;width:min(560px,52vw);border-radius:14px;overflow:hidden;background:#fff;
+  box-shadow:0 34px 80px -26px rgba(0,0,0,.6);transform:rotateY(9deg);display:none}
+.tour-desk .td-vid{width:100%;display:none}
+.tour-desk .td-vid.on{display:block}
+@media(min-width:1060px){
+  .tour-desk{display:block}
+  .tour-stage .tour-scene{transform:translateX(17%)}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "MyDose", "alternateName": ["MyDose AI", "MyDose IA", "MyDose App"], "url": "https://mydoseapp.com/", "logo": "https://mydoseapp.com/assets/motion/hero-doctor-poster.jpg", "description": "CRM para saúde com IA: comunidade gamificada de pacientes, planos e protocolos de acompanhamento e medicina do estilo de vida (MEV) para profissionais de saúde.", "sameAs": ["https://www.youtube.com/@mydoseapp", "https://www.instagram.com/mydoseapp", "https://www.linkedin.com/company/mydoseapp", "https://www.tiktok.com/@mydoseapp"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "MyDose", "applicationCategory": "HealthApplication", "operatingSystem": "iOS, Android, Web", "url": "https://mydoseapp.com/", "description": "Plataforma de IA para profissionais de saúde: comunidade gamificada, planos de acompanhamento, protocolos de acompanhamento, CRM para saúde e medicina do estilo de vida (MEV).", "offers": {"@type": "Offer", "price": "290", "priceCurrency": "BRL", "description": "Plano Software, a partir de R$ 290/mês no anual"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1000"}}</script>
@@ -1778,6 +1797,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
     <div class="sec-head rv">
       <span class="eyebrow"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#C64FCA"/></svg> O produto</span>
       <h2 class="serif">Duas forças, <em class="grad-text">um</em> lugar.</h2>
+      <p class="sub-duo">O software completo no seu desktop. O app no bolso do paciente. O mesmo sistema.</p>
     </div>
 
     <div class="product p-mental rv">
@@ -1792,11 +1812,17 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
         </ul>
         <button class="btn btn-magenta js-talk" data-mode="talk" data-plan="Demo · Comunidade">Agende uma Demo <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
       </div>
-      <div class="media pattern"><div class="mini-phone float-y"><span class="mp-isl"></span><video data-motion src="assets/proto/comunidade.mp4" poster="assets/proto/comunidade-poster.jpg" muted loop playsinline preload="none" aria-label="Tela da comunidade gamificada no app MyDose, navegada ao vivo"></video></div></div>
+      <div class="media pattern"><div class="duo">
+        <div class="desk-shot"><span class="dk-bar"><i></i><i></i><i></i></span><video data-motion src="assets/proto/desk-comunidade.mp4" poster="assets/proto/desk-comunidade-poster.jpg" muted loop playsinline preload="none" aria-label="Comunidade no MyDose desktop: feed com a IA respondendo membros"></video></div>
+        <div class="mini-phone float-y"><span class="mp-isl"></span><video data-motion src="assets/proto/comunidade.mp4" poster="assets/proto/comunidade-poster.jpg" muted loop playsinline preload="none" aria-label="Tela da comunidade gamificada no app MyDose, navegada ao vivo"></video></div>
+      </div></div>
     </div>
 
     <div class="product p-blue rv">
-      <div class="media pattern" style="order:2"><div class="mini-phone float-y"><span class="mp-isl"></span><video data-motion src="assets/proto/ia.mp4" poster="assets/proto/ia-poster.jpg" muted loop playsinline preload="none" aria-label="Assistente de IA do MyDose respondendo um paciente, ao vivo"></video></div></div>
+      <div class="media pattern" style="order:2"><div class="duo">
+        <div class="desk-shot"><span class="dk-bar"><i></i><i></i><i></i></span><video data-motion src="assets/proto/desk-ia.mp4" poster="assets/proto/desk-ia-poster.jpg" muted loop playsinline preload="none" aria-label="Prontuário no MyDose desktop com Resumo IA do paciente"></video></div>
+        <div class="mini-phone float-y"><span class="mp-isl"></span><video data-motion src="assets/proto/ia.mp4" poster="assets/proto/ia-poster.jpg" muted loop playsinline preload="none" aria-label="Assistente de IA do MyDose respondendo um paciente, ao vivo"></video></div>
+      </div></div>
       <div class="txt" style="order:1">
         <span class="eyebrow" style="color:var(--blue)"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#415FF5"/></svg> Inteligência artificial</span>
         <h3 class="serif">Uma IA que atende <em>por você, 24/7</em>.</h3>
@@ -1818,14 +1844,21 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
   <div class="tw-field" data-twinkle="10"></div>
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#F0B0F2"/></svg> O app em ação</span>
-      <h2 class="serif">Não é maquete. É o app <em class="grad-text-2">acontecendo</em>.</h2>
-      <p>Gravado direto do produto: os toques, os fluxos e a gamificação que seus pacientes vão viver todos os dias — role e assista.</p>
+      <span class="eyebrow"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#F0B0F2"/></svg> O sistema em ação</span>
+      <h2 class="serif">O sistema inteiro, <em class="grad-text-2">ao vivo</em>: do desktop ao bolso do paciente.</h2>
+      <p>Gravado direto do produto: o <b>SaaS no seu desktop</b> e o <b>app do paciente</b>, lado a lado — os fluxos que vocês vão viver todos os dias. Role e assista.</p>
     </div>
     <div class="tour">
       <div class="tour-stage">
         <div class="tour-scene">
           <div class="tour-glow" id="tourGlow"></div>
+          <div class="tour-desk" id="tourDesk" aria-hidden="true">
+            <span class="dk-bar"><i></i><i></i><i></i></span>
+            <video class="td-vid on" src="assets/proto/desk-comunidade.mp4" poster="assets/proto/desk-comunidade-poster.jpg" muted loop playsinline preload="metadata"></video>
+            <video class="td-vid" src="assets/proto/desk-desafios.mp4" poster="assets/proto/desk-desafios-poster.jpg" muted loop playsinline preload="none"></video>
+            <video class="td-vid" src="assets/proto/desk-protocolo.mp4" poster="assets/proto/desk-protocolo-poster.jpg" muted loop playsinline preload="none"></video>
+            <video class="td-vid" src="assets/proto/desk-ia.mp4" poster="assets/proto/desk-ia-poster.jpg" muted loop playsinline preload="none"></video>
+          </div>
           <div class="tour-phone" id="tourPhone">
             <span class="tp-isl"></span>
             <div class="tp-screen">
@@ -3148,6 +3181,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
   var phone = document.getElementById('tourPhone');
   var glow = document.getElementById('tourGlow');
   var vids = [].slice.call(sec.querySelectorAll('.tp-vid'));
+  var dvids = [].slice.call(sec.querySelectorAll('.td-vid'));
   var steps = [].slice.call(sec.querySelectorAll('.tstep'));
   var badges = { 1: document.getElementById('tbXp'), 3: document.getElementById('tbIa') };
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -3157,6 +3191,12 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
     cur = i;
     steps.forEach(function(s,j){ s.classList.toggle('on', j===i); });
     vids.forEach(function(v,j){
+      var on = j===i;
+      v.classList.toggle('on', on);
+      if(on && inView && !reduce){ if(v.preload==='none') v.preload='auto'; v.currentTime = 0; v.play().catch(function(){}); }
+      else v.pause();
+    });
+    dvids.forEach(function(v,j){
       var on = j===i;
       v.classList.toggle('on', on);
       if(on && inView && !reduce){ if(v.preload==='none') v.preload='auto'; v.currentTime = 0; v.play().catch(function(){}); }
@@ -3173,7 +3213,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
   var secIo = new IntersectionObserver(function(es){
     es.forEach(function(e){
       inView = e.isIntersecting;
-      if(inView) setActive(cur); else vids.forEach(function(v){ v.pause(); });
+      if(inView) setActive(cur); else { vids.forEach(function(v){ v.pause(); }); dvids.forEach(function(v){ v.pause(); }); }
     });
   }, {rootMargin:'80px'});
   secIo.observe(sec);
