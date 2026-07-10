@@ -7,17 +7,22 @@
 <meta name="description" content="Termos de Uso do MyDose.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z' fill='%23415FF5'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Figtree:wght@400;500;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"Americana BT";src:url("assets/fonts/americana-regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Americana BT";src:url("assets/fonts/americana-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-700.woff2") format("woff2");font-weight:700 800;font-style:normal;font-display:swap}
+</style>
 <style>
 :root{
   --blue:#415FF5; --magenta:#C64FCA; --orange:#F56442; --green:#63AC39;
   --navy:#191E47; --plum:#592C5A;
   --g1:linear-gradient(100deg,#415FF5 0%,#C64FCA 52%,#F56442 100%);
-  --serif:"Fraunces",Georgia,serif;
-  --sans:"Figtree",-apple-system,"Segoe UI",sans-serif;
-  --logo:"Quicksand",var(--sans);
+  --serif:"Americana BT",Georgia,serif;
+  --sans:"Google Sans",-apple-system,sans-serif;
+  --logo:"Americana BT",serif;
   --bg:#F6F4F2; --ink:#1E1D1D; --card:#FFFFFF; --muted:#565452; --gray:#848484;
   --line:rgba(30,29,29,.1); --line-strong:rgba(30,29,29,.22);
   --chip:#F6F4F2; --footer:#1E1D1D;
@@ -158,10 +163,50 @@ footer a:hover{color:#fff}
 .foot-social a:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
 .foot-bottom{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;margin-top:40px;padding-top:22px;
   border-top:1px solid rgba(255,255,255,.1);color:#8a8480;font-size:12.5px}
+
+/* identidade oficial 2026 */
+.serif,h1,h2,h3,.sheet a{font-weight:400}
+.serif i,.serif em{font-weight:400}
+.blogo{display:inline-flex;align-items:center}
+.blogo img{display:block}
+img.blg-d{display:none}
+[data-theme="dark"] img.blg-l{display:none}
+[data-theme="dark"] img.blg-d{display:block}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) img.blg-l{display:none} :root:not([data-theme="light"]) img.blg-d{display:block} }
+footer img.blg-l{display:none}footer img.blg-d{display:block}
+.theme-btn svg{transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.theme-btn:hover svg{transform:rotate(40deg)}
 </style>
 </head>
 <body>
-<nav><div class="wrap nav-in"><a href="nova-identidade-v3.html" class="wordmark" aria-label="MyDose">my<span>dose</span></a><div class="nav-right"><div class="lang-seg" role="group" aria-label="Idioma / Language / Idioma"><a class="on" aria-current="true" href="#">PT</a><a href="termos-en.html">EN</a><a href="termos-es.html">ES</a></div><button class="theme-btn" id="themeBtn" aria-label="tema">🌙</button><a class="btn-back" href="nova-identidade-v3.html">‹ <span class="bk-txt">Voltar ao site</span></a></div></div></nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <circle cx="12" cy="12" r="4" />
+  <path d="M12 2v2" />
+  <path d="M12 20v2" />
+  <path d="m4.93 4.93 1.41 1.41" />
+  <path d="m17.66 17.66 1.41 1.41" />
+  <path d="M2 12h2" />
+  <path d="M20 12h2" />
+  <path d="m6.34 17.66-1.41 1.41" />
+  <path d="m19.07 4.93-1.41 1.41" /></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></symbol><symbol id="i-rotate-ccw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+  <path d="M3 3v5h5" /></symbol><symbol id="i-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></symbol><symbol id="i-alarm-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <circle cx="12" cy="13" r="8" />
+  <path d="M12 9v4l2 2" />
+  <path d="M5 3 2 6" />
+  <path d="m22 6-3-3" />
+  <path d="M6.38 18.7 4 21" />
+  <path d="M17.64 18.67 20 21" /></symbol><symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></symbol></svg>
+<nav><div class="wrap nav-in"><a href="nova-identidade-v3.html" class="wordmark" aria-label="MyDose"><span class="blogo"><img class="blg-l" src="assets/brand/logo-mydose-gradient-preto.svg" alt="MyDose" width="104" height="22"><img class="blg-d" src="assets/brand/logo-mydose-gradient-branco.svg" alt="" width="104" height="22" aria-hidden="true"></span></a><div class="nav-right"><div class="lang-seg" role="group" aria-label="Idioma / Language / Idioma"><a class="on" aria-current="true" href="#">PT</a><a href="termos-en.html">EN</a><a href="termos-es.html">ES</a></div><button class="theme-btn" id="themeBtn" aria-label="tema"><svg width="17" height="17" style="color:#8699FD"><use href="#i-moon"/></svg></button><a class="btn-back" href="nova-identidade-v3.html">‹ <span class="bk-txt">Voltar ao site</span></a></div></div></nav>
 <div class="wrap doc-head">
   <p class="eyebrow">Termos de Uso</p>
   <h1>Termos de Uso</h1>
@@ -243,7 +288,7 @@ footer a:hover{color:#fff}
 
   </article>
 </div>
-<footer><div class="wrap"><div class="foot-grid"><div><span class="wordmark">my<span>dose</span></span><p class="tagline">Seu operacional de IA para escalar na saúde. +Adesão · +Receita · −Tempo.</p><div class="foot-social" aria-label="Social"><a href="https://www.youtube.com/@mydoseapp" target="_blank" rel="noopener" aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5s-7 0-8.9.6A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.6 8.9.6 8.9.6s7 0 8.9-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.2ZM9.7 15.3V8.7L15.8 12l-6.1 3.3Z"/></svg></a><a href="https://www.instagram.com/mydoseapp" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3a3.8 3.8 0 0 1-.9 1.4c-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.3.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4a3.8 3.8 0 0 1-1.4-.9 3.8 3.8 0 0 1-.9-1.4c-.2-.4-.4-1.1-.4-2.3-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.3-.1 1.6-.1 4.8-.1Zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8Zm0 7.2a2.9 2.9 0 1 0 0-5.7 2.9 2.9 0 0 0 0 5.7Zm5.6-7.4a1 1 0 1 1-2.1 0 1 1 0 0 1 2.1 0Z"/></svg></a><a href="https://www.linkedin.com/company/mydoseapp" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.2 2.4 4.2 5.4v6.3ZM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1Zm1.8 13H3.6V9h3.5v11.4Z"/></svg></a></div></div><div><h6>Produto</h6><ul><li><a href="nova-identidade-v3.html#produto">O app</a></li><li><a href="nova-identidade-v3.html#lab">MyDose Lab</a></li><li><a href="nova-identidade-v3.html#integracoes">Integrações</a></li><li><a href="nova-identidade-v3.html#planos">Planos</a></li><li><a href="live.html">Aula ao vivo</a></li></ul></div><div><h6>Para quem</h6><ul><li><a href="nova-physical-v3.html">Physical</a></li><li><a href="nova-mental-v3.html">Mental</a></li><li><a href="nova-clinics-v3.html">Clinics</a></li></ul></div><div><h6>Empresa</h6><ul><li><a href="blog.html">Conteúdos & mídia</a></li><li><a href="blog.html#imprensa">MyDose na imprensa</a></li><li><a href="https://www.youtube.com/@mydoseapp" target="_blank" rel="noopener">Canal no YouTube</a></li><li><a href="central-de-ajuda.html">Central de Ajuda</a></li><li><a href="contato.html">Contato</a></li></ul></div><div><h6>Legal</h6><ul><li><a href="privacidade.html">Política de Privacidade</a></li><li><a href="termos.html">Termos de Uso</a></li><li><a href="cookies.html">Política de Cookies</a></li><li><a href="lgpd.html">LGPD</a></li></ul></div></div><div class="foot-bottom"><span>© MyDose · Take back control</span><span>feito com ética e ciência.</span></div></div></footer>
+<footer><div class="wrap"><div class="foot-grid"><div><span class="blogo"><img class="blg-l" src="assets/brand/logo-mydose-gradient-preto.svg" alt="MyDose" width="104" height="22"><img class="blg-d" src="assets/brand/logo-mydose-gradient-branco.svg" alt="" width="104" height="22" aria-hidden="true"></span><p class="tagline">Seu operacional de IA para escalar na saúde. +Adesão · +Receita · −Tempo.</p><div class="foot-social" aria-label="Social"><a href="https://www.youtube.com/@mydoseapp" target="_blank" rel="noopener" aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5s-7 0-8.9.6A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.6 8.9.6 8.9.6s7 0 8.9-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.2ZM9.7 15.3V8.7L15.8 12l-6.1 3.3Z"/></svg></a><a href="https://www.instagram.com/mydoseapp" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3a3.8 3.8 0 0 1-.9 1.4c-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.3.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4a3.8 3.8 0 0 1-1.4-.9 3.8 3.8 0 0 1-.9-1.4c-.2-.4-.4-1.1-.4-2.3-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.3-.1 1.6-.1 4.8-.1Zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8Zm0 7.2a2.9 2.9 0 1 0 0-5.7 2.9 2.9 0 0 0 0 5.7Zm5.6-7.4a1 1 0 1 1-2.1 0 1 1 0 0 1 2.1 0Z"/></svg></a><a href="https://www.linkedin.com/company/mydoseapp" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.2 2.4 4.2 5.4v6.3ZM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1Zm1.8 13H3.6V9h3.5v11.4Z"/></svg></a></div></div><div><h6>Produto</h6><ul><li><a href="nova-identidade-v3.html#produto">O app</a></li><li><a href="nova-identidade-v3.html#lab">MyDose Lab</a></li><li><a href="nova-identidade-v3.html#integracoes">Integrações</a></li><li><a href="nova-identidade-v3.html#planos">Planos</a></li><li><a href="live.html">Aula ao vivo</a></li></ul></div><div><h6>Para quem</h6><ul><li><a href="nova-physical-v3.html">Physical</a></li><li><a href="nova-mental-v3.html">Mental</a></li><li><a href="nova-clinics-v3.html">Clinics</a></li></ul></div><div><h6>Empresa</h6><ul><li><a href="blog.html">Conteúdos & mídia</a></li><li><a href="blog.html#imprensa">MyDose na imprensa</a></li><li><a href="https://www.youtube.com/@mydoseapp" target="_blank" rel="noopener">Canal no YouTube</a></li><li><a href="central-de-ajuda.html">Central de Ajuda</a></li><li><a href="contato.html">Contato</a></li></ul></div><div><h6>Legal</h6><ul><li><a href="privacidade.html">Política de Privacidade</a></li><li><a href="termos.html">Termos de Uso</a></li><li><a href="cookies.html">Política de Cookies</a></li><li><a href="lgpd.html">LGPD</a></li></ul></div></div><div class="foot-bottom"><span>© MyDose · Take back control</span><span>feito com ética e ciência.</span></div></div></footer>
 
 <script>
 (function(){

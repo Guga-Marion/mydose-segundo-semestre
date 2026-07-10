@@ -27,9 +27,14 @@
 <meta name="twitter:image" content="https://mydoseapp.com/assets/motion/hero-doctor-poster.jpg">
 <meta name="theme-color" content="#F6F4F2" id="metaTheme">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z' fill='%23415FF5'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..650;1,9..144,300..650&family=Figtree:wght@400;500;600;700;800&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"Americana BT";src:url("assets/fonts/americana-regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Americana BT";src:url("assets/fonts/americana-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-700.woff2") format("woff2");font-weight:700 800;font-style:normal;font-display:swap}
+</style>
 <script>
 /* aplica o tema antes do paint pra não piscar */
 (function(){
@@ -52,9 +57,9 @@
   --green-2:#A5DC85; --green-3:#DCEDD2;
   --g1:linear-gradient(100deg,#415FF5 0%,#C64FCA 52%,#F56442 100%);
   --g2:linear-gradient(100deg,#415FF5 0%,#9A55D8 50%,#F0B0F2 100%);
-  --serif:"Fraunces",Georgia,serif;
-  --sans:"Figtree",-apple-system,"Segoe UI",sans-serif;
-  --logo:"Quicksand",var(--sans);
+  --serif:"Americana BT",Georgia,serif;
+  --sans:"Google Sans",-apple-system,sans-serif;
+  --logo:"Americana BT",serif;
   --r:24px;
 
   /* tokens de tema (claro) */
@@ -1057,9 +1062,49 @@ details.faq .a b{color:var(--ink)}
   section:not(#planos){display:none!important}
   .nav-links{display:none!important}
   #planos{padding-top:34px!important}
+
+/* identidade oficial 2026 */
+.serif,h1,h2,h3,.sheet a{font-weight:400}
+.serif i,.serif em{font-weight:400}
+.blogo{display:inline-flex;align-items:center}
+.blogo img{display:block}
+img.blg-d{display:none}
+[data-theme="dark"] img.blg-l{display:none}
+[data-theme="dark"] img.blg-d{display:block}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) img.blg-l{display:none} :root:not([data-theme="light"]) img.blg-d{display:block} }
+footer img.blg-l{display:none}footer img.blg-d{display:block}
+.theme-btn svg{transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.theme-btn:hover svg{transform:rotate(40deg)}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <circle cx="12" cy="12" r="4" />
+  <path d="M12 2v2" />
+  <path d="M12 20v2" />
+  <path d="m4.93 4.93 1.41 1.41" />
+  <path d="m17.66 17.66 1.41 1.41" />
+  <path d="M2 12h2" />
+  <path d="M20 12h2" />
+  <path d="m6.34 17.66-1.41 1.41" />
+  <path d="m19.07 4.93-1.41 1.41" /></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></symbol><symbol id="i-rotate-ccw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+  <path d="M3 3v5h5" /></symbol><symbol id="i-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></symbol><symbol id="i-alarm-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <circle cx="12" cy="13" r="8" />
+  <path d="M12 9v4l2 2" />
+  <path d="M5 3 2 6" />
+  <path d="m22 6-3-3" />
+  <path d="M6.38 18.7 4 21" />
+  <path d="M17.64 18.67 20 21" /></symbol><symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></symbol></svg>
 
 <!-- ====== SVG defs: grafismos do brand ====== -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -1093,7 +1138,7 @@ details.faq .a b{color:var(--ink)}
 <!-- ====== NAV ====== -->
 <nav id="nav">
   <div class="wrap nav-in">
-    <a href="#" class="wordmark" aria-label="MyDose">my<span>dose</span></a>
+    <a href="#" class="wordmark" aria-label="MyDose"><span class="blogo"><img class="blg-l" src="assets/brand/logo-mydose-gradient-preto.svg" alt="MyDose" width="104" height="22"><img class="blg-d" src="assets/brand/logo-mydose-gradient-branco.svg" alt="" width="104" height="22" aria-hidden="true"></span></a>
     <div class="nav-links">
       <a href="#como">Cómo funciona</a>
       <a href="#produto">El producto</a>
@@ -1104,7 +1149,7 @@ details.faq .a b{color:var(--ink)}
     </div>
     <div class="nav-right">
       <div class="lang-seg" role="group" aria-label="Idioma / Language / Idioma"><a href="planos-v3.html" aria-label="Português">PT</a><a href="planos-v3-en.html" aria-label="English">EN</a><a class="on" aria-current="true" href="#">ES</a></div>
-      <button class="theme-btn" id="themeBtn" aria-label="Cambiar tema">🌙</button>
+      <button class="theme-btn" id="themeBtn" aria-label="Cambiar tema"><svg width="17" height="17" style="color:#8699FD"><use href="#i-moon"/></svg></button>
       <button class="btn btn-primary btn-sm nav-cta js-talk" data-mode="checkout" data-plan="MyDose">Creá tu comunidad</button>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -1117,7 +1162,7 @@ details.faq .a b{color:var(--ink)}
   <a href="#lab">MyDose Lab <small>04</small></a>
   <a href="#planos">Planes <small>05</small></a>
   <a href="#faq">Preguntas <small>06</small></a>
-  <div class="sheet-langs"><span class="sl-lbl">🌐</span><a href="planos-v3.html">PT</a><a href="planos-v3-en.html">EN</a><a class="on" href="#">ES</a></div>
+  <div class="sheet-langs"><span class="sl-lbl"></span><a href="planos-v3.html">PT</a><a href="planos-v3-en.html">EN</a><a class="on" href="#">ES</a></div>
   <button class="btn btn-grad js-talk" data-mode="checkout" data-plan="MyDose">Creá tu comunidad <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
 </div>
 
@@ -1138,14 +1183,14 @@ details.faq .a b{color:var(--ink)}
         <a class="btn btn-ghost" href="#produto">Ver el producto</a>
       </div>
       <div class="tick-hero tick-hero-m rv rv-d3 in">
-        <span class="tick-label">✦ Reemplazá +10 herramientas de una vez ✦</span>
+        <span class="tick-label">Reemplazá +10 herramientas de una vez ✦</span>
         <div class="marquee marquee-hero"><div class="marquee-track" data-ticker="feats"></div></div>
       </div>
       <div class="social-row rv rv-d3 in">
         <span class="avs"><img src="assets/dep-medica.jpg" alt=""><img src="assets/dep-nutri.jpg" alt=""><img src="assets/dep-psi.jpg" alt=""><img src="assets/dep-medico.jpg" alt=""></span>
-        <span><i class="stars">★★★★★</i><small>+1.000 profesionales de la salud ya lo usan</small></span>
+        <span><i class="stars"></i><small>+1.000 profesionales de la salud ya lo usan</small></span>
       </div>
-      <p class="hero-urgency rv rv-d3 in">🔥 Onboarding con cupos limitados — en agosto suben los precios.</p>
+      <p class="hero-urgency rv rv-d3 in">Onboarding con cupos limitados — en agosto suben los precios.</p>
       <div class="hero-stats rv rv-d4 in">
         <div class="st"><b class="serif grad-text"><span data-count="1000" data-prefix="+">0</span></b><span>profesionales de la salud</span></div>
         <div class="st"><b class="serif grad-text">5×</b><span>más ingresos</span></div>
@@ -1168,7 +1213,7 @@ details.faq .a b{color:var(--ink)}
     </div>
   </div>
   <div class="wrap tick-hero tick-hero-d rv in">
-    <span class="tick-label">✦ Reemplazá +10 herramientas de una vez ✦</span>
+    <span class="tick-label">Reemplazá +10 herramientas de una vez ✦</span>
     <div class="marquee marquee-hero"><div class="marquee-track" data-ticker="feats"></div></div>
   </div>
 </header>
@@ -1182,8 +1227,8 @@ details.faq .a b{color:var(--ink)}
       <p>El cuidado se detiene cuando termina la consulta — y con él, la adherencia y los ingresos. Trabajar más no es la salida. <b>Escalar sí.</b></p>
     </div>
     <div class="pains">
-      <div class="pain rv"><span class="pico" style="background:var(--sec-peach)">🔁</span><h4>Recompra baja</h4><p>El paciente desaparece después del plan y volvés a captar desde cero — todos los meses.</p></div>
-      <div class="pain rv rv-d1"><span class="pico" style="background:var(--sec-pink)">📵</span><h4>Esclavo del WhatsApp</h4><p>Mensajes a cualquier hora, cobros manuales, seguimiento improvisado. El cuidado se vuelve sobrecarga.</p></div>
+      <div class="pain rv"><span class="pico" style="background:var(--sec-peach)"></span><h4>Recompra baja</h4><p>El paciente desaparece después del plan y volvés a captar desde cero — todos los meses.</p></div>
+      <div class="pain rv rv-d1"><span class="pico" style="background:var(--sec-pink)"></span><h4>Esclavo del WhatsApp</h4><p>Mensajes a cualquier hora, cobros manuales, seguimiento improvisado. El cuidado se vuelve sobrecarga.</p></div>
       <div class="pain rv rv-d2"><span class="pico" style="background:var(--sec-blue)">⏳</span><h4>Ingresos con el techo de la agenda</h4><p>Tus ingresos son exactamente las horas que aguantás. Crecer = quedarte sin vida.</p></div>
     </div>
     <div class="sec-cta rv" style="justify-content:center">
@@ -1207,7 +1252,7 @@ details.faq .a b{color:var(--ink)}
       <div class="dots" id="dots" aria-hidden="true"></div>
     </div>
     <div class="pros-chips rv">
-      <span>🩺 Médicos</span><span>🧠 Psicólogos</span><span>🥗 Nutricionistas</span><span>🫶 Terapeutas</span><span>🏋️ Personal trainers</span><span>🦴 Kinesiólogos</span><span>🦷 Dentistas</span><span>💊 Farmacéuticos</span><span>✨ y muchos más</span>
+      <span>Médicos</span><span>Psicólogos</span><span>Nutricionistas</span><span>Terapeutas</span><span>Personal trainers</span><span>Kinesiólogos</span><span>Dentistas</span><span>Farmacéuticos</span><span>y muchos más</span>
     </div>
     <p class="pros-note rv">Solo los principales colegios ya superan los <b>2,5 millones</b>. Sumando enfermería, estética, terapias integrativas y bienestar, el mercado de salud en Latinoamérica supera los <b>9 millones de profesionales</b> — y cada uno tiene una audiencia esperando ser cuidada entre las consultas. <span style="opacity:.6;font-size:13px">· fuentes: colegios profesionales</span></p>
     <div class="sec-cta rv">
@@ -1227,7 +1272,7 @@ details.faq .a b{color:var(--ink)}
     </div>
     <div class="duel">
       <div class="duel-card d-exp rv">
-        <h3 class="serif">Expandir <span class="tag">⚠ tiene techo</span></h3>
+        <h3 class="serif">Expandir <span class="tag">tiene techo</span></h3>
         <p style="margin-top:8px;font-size:14px;color:var(--gray);font-weight:600">Lineal · tiempo × dinero</p>
         <div class="chart">
           <svg viewBox="0 0 320 170" fill="none">
@@ -1267,7 +1312,7 @@ details.faq .a b{color:var(--ink)}
           <li><b>USD 10K–100K+/mes</b> · escala infinita</li>
         </ul>
         <div class="chips">
-          <i>🩺 Consultas</i><i>🔁 Suscripciones</i><i>🧬 Protocolos</i><i>🎯 Desafíos</i><i>📚 Cursos & e-books</i><i>🎤 Eventos & vivos</i>
+          <i>Consultas</i><i>Suscripciones</i><i>Protocolos</i><i>Desafíos</i><i>Cursos & e-books</i><i>Eventos & vivos</i>
         </div>
         <p class="quote">“Las mismas horas. Ingresos sin techo.”</p>
       </div>
@@ -1288,7 +1333,7 @@ details.faq .a b{color:var(--ink)}
     </div>
     <div class="steps3">
       <div class="step3 rv">
-        <span class="badge7">⚡ online en 7 días</span>
+        <span class="badge7">online en 7 días</span>
         <div class="n serif">01</div>
         <h4>Tu comunidad online</h4>
         <p>App con tu marca: comunidad gamificada (D.O.S.E.), protocolos y checkout. Lista en 7 días.</p>
@@ -1375,8 +1420,8 @@ details.faq .a b{color:var(--ink)}
               <video class="tp-vid" src="assets/proto/ia.mp4" poster="assets/proto/ia-poster.jpg" muted loop playsinline preload="none"></video>
             </div>
           </div>
-          <span class="tour-badge tb-xp" id="tbXp">⭐ +10 XP · Hit registrado</span>
-          <span class="tour-badge tb-ia" id="tbIa">💬 Fernanda I.A. · en línea</span>
+          <span class="tour-badge tb-xp" id="tbXp">+10 XP · Hit registrado</span>
+          <span class="tour-badge tb-ia" id="tbIa">Fernanda I.A. · en línea</span>
         </div>
       </div>
       <div class="tour-steps" id="tourSteps">
@@ -1385,8 +1430,8 @@ details.faq .a b{color:var(--ink)}
           <h3 class="serif">Un feed que tus pacientes <em>abren todos los días</em></h3>
           <p>Foro, contenidos y desafíos con ranking, XP y hits — la adherencia se vuelve juego, y el juego se vuelve hábito.</p>
           <ul class="tfeats">
-            <li><span class="tk">🏆</span><span><b>Desafíos con premios</b> — Transformación 30 Días, ranking en vivo y 158 personas empujándose hacia arriba.</span></li>
-            <li><span class="tk">✦</span><span><b>Progreso de la semana</b> — el paciente ve llenarse la barra. Y no quiere dejarla caer.</span></li>
+            <li><span class="tk"></span><span><b>Desafíos con premios</b> — Transformación 30 Días, ranking en vivo y 158 personas empujándose hacia arriba.</span></li>
+            <li><span class="tk"></span><span><b>Progreso de la semana</b> — el paciente ve llenarse la barra. Y no quiere dejarla caer.</span></li>
           </ul>
         </article>
         <article class="tstep">
@@ -1394,8 +1439,8 @@ details.faq .a b{color:var(--ink)}
           <h3 class="serif">Registrar un hábito toma <em>10 segundos</em> — y libera serotonina</h3>
           <p>Foto del plato, epígrafe, compartir: +10 XP en la cuenta y el cerebro agradeciendo. Es neurociencia aplicada a la adherencia.</p>
           <ul class="tfeats">
-            <li><span class="tk">📸</span><span><b>Hit con foto</b> — el registro se vuelve posteo en la comunidad y prueba social para todo el grupo.</span></li>
-            <li><span class="tk">⭐</span><span><b>Recompensa inmediata</b> — la celebración de XP cierra el loop del hábito, todos los días.</span></li>
+            <li><span class="tk"></span><span><b>Hit con foto</b> — el registro se vuelve posteo en la comunidad y prueba social para todo el grupo.</span></li>
+            <li><span class="tk"></span><span><b>Recompensa inmediata</b> — la celebración de XP cierra el loop del hábito, todos los días.</span></li>
           </ul>
         </article>
         <article class="tstep">
@@ -1403,8 +1448,8 @@ details.faq .a b{color:var(--ink)}
           <h3 class="serif">El plan que prescribís <em>ocurre en la app</em></h3>
           <p>Desayuno, entrenamiento, sesión: cada actividad de tu protocolo entra en la agenda del paciente con recordatorio y XP.</p>
           <ul class="tfeats">
-            <li><span class="tk">📅</span><span><b>Mi Día</b> — la línea de tiempo diaria del paciente, con tu protocolo adentro.</span></li>
-            <li><span class="tk">🔁</span><span><b>Adherencia visible</b> — ves quién lo hizo, quién falló y quién te necesita.</span></li>
+            <li><span class="tk"></span><span><b>Mi Día</b> — la línea de tiempo diaria del paciente, con tu protocolo adentro.</span></li>
+            <li><span class="tk"></span><span><b>Adherencia visible</b> — ves quién lo hizo, quién falló y quién te necesita.</span></li>
           </ul>
         </article>
         <article class="tstep">
@@ -1412,8 +1457,8 @@ details.faq .a b{color:var(--ink)}
           <h3 class="serif">Tu IA atiende <em>mientras vos vivís</em></h3>
           <p>Entrenada en tu protocolo, con tu tono: responde dudas, orienta las comidas y mantiene el vínculo — 24 horas al día.</p>
           <ul class="tfeats">
-            <li><span class="tk">💬</span><span><b>En el chat de la app y en WhatsApp</b> — el paciente nunca se queda sin respuesta.</span></li>
-            <li><span class="tk">🛡️</span><span><b>Con ética y límites</b> — orienta dentro de lo que definiste. Si es algo serio, te llama.</span></li>
+            <li><span class="tk"></span><span><b>En el chat de la app y en WhatsApp</b> — el paciente nunca se queda sin respuesta.</span></li>
+            <li><span class="tk"></span><span><b>Con ética y límites</b> — orienta dentro de lo que definiste. Si es algo serio, te llama.</span></li>
           </ul>
         </article>
       </div>
@@ -1458,21 +1503,21 @@ details.faq .a b{color:var(--ink)}
         <div class="pct serif">2–5%</div>
         <h4>Audiencia fría</h4>
         <p>vos posteás, pasan de largo</p>
-        <div class="chips"><i>📷 Instagram</i><i>🎵 TikTok</i><i>▶️ YouTube</i><i>💬 WhatsApp</i></div>
+        <div class="chips"><i>Instagram</i><i>TikTok</i><i>▶️ YouTube</i><i>WhatsApp</i></div>
       </div>
       <div class="fdrop rv"><span class="fball"><svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr-dn"/></svg></span> entra en tu comunidad</div>
       <div class="fstep s2 rv rv-d1">
         <div class="pct serif">15–25%</div>
         <h4>Comunidad activa</h4>
         <p>entra, se engancha y se vuelve fan</p>
-        <div class="chips"><i>🎮 Gamificación</i><i>📚 Contenidos</i><i>🏆 Desafíos</i><i>🤖 IA 24/7</i></div>
+        <div class="chips"><i>Gamificación</i><i>Contenidos</i><i>Desafíos</i><i>IA 24/7</i></div>
       </div>
       <div class="fdrop rv"><span class="fball"><svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr-dn"/></svg></span> y compra toda la línea</div>
       <div class="fstep s3 rv rv-d2">
         <div class="pct serif">R$$$</div>
         <h4>Los productos son consecuencia</h4>
         <p>toda la línea monetizada</p>
-        <div class="chips"><i>🩺 Consultas</i><i>🔁 Planes</i><i>🧬 Protocolos</i><i>🎓 Cursos</i><i>🎤 Eventos</i></div>
+        <div class="chips"><i>Consultas</i><i>Planes</i><i>Protocolos</i><i>Cursos</i><i>Eventos</i></div>
       </div>
     </div>
     <div class="sec-cta rv" style="justify-content:center">
@@ -1496,7 +1541,7 @@ details.faq .a b{color:var(--ink)}
           <button class="vbtn js-video" data-name="Dr. Arthur"><span class="play">▶</span> Ver testimonio</button>
         </div>
         <div class="txt">
-          <i class="stars">★★★★★</i>
+          <i class="stars"></i>
           <blockquote>“En 30 días hice mi primera venta de programa dentro de la app. Hoy tengo un ingreso que no depende de que yo esté en el sillón.”</blockquote>
           <div class="who"><b>Dr. Arthur</b><span>Médico · partner MyDose</span></div>
         </div>
@@ -1506,7 +1551,7 @@ details.faq .a b{color:var(--ink)}
           <button class="vbtn js-video" data-name="Nutricionista"><span class="play">▶</span> Ver testimonio</button>
         </div>
         <div class="txt">
-          <i class="stars">★★★★★</i>
+          <i class="stars"></i>
           <blockquote>“La adherencia de mis pacientes se triplicó. Vuelven, siguen el plan y encima recomiendan. Cambió mi operación.”</blockquote>
           <div class="who"><b>Nutricionista</b><span>Salud física · MyDose Physical</span></div>
         </div>
@@ -1516,7 +1561,7 @@ details.faq .a b{color:var(--ink)}
           <button class="vbtn js-video" data-name="Psicóloga"><span class="play">▶</span> Ver testimonio</button>
         </div>
         <div class="txt">
-          <i class="stars">★★★★★</i>
+          <i class="stars"></i>
           <blockquote>“El ausentismo bajó de verdad. La IA mantiene el vínculo entre sesiones con el cuidado que la salud mental exige.”</blockquote>
           <div class="who"><b>Psicóloga</b><span>Salud mental · MyDose Mental</span></div>
         </div>
@@ -1546,7 +1591,7 @@ details.faq .a b{color:var(--ink)}
     <div class="wa-wrap rv rv-d2">
       <div>
         <div class="wa-phone">
-          <div class="wa-head"><span class="wa-av">👩‍⚕️</span><div><b>Vos, fuera de horario</b><small>en línea 23:58</small></div><span class="wa-badge">+47</span></div>
+          <div class="wa-head"><span class="wa-av">‍⚕️</span><div><b>Vos, fuera de horario</b><small>en línea 23:58</small></div><span class="wa-badge">+47</span></div>
           <div class="wa-msgs">
             <div class="wa-m">Doc, ¿viste mi mensaje? 😣 <i>22:41</i></div>
             <div class="wa-m">¿puedo repetir el remedio de ayer? <i>23:12</i></div>
@@ -1579,11 +1624,11 @@ details.faq .a b{color:var(--ink)}
       </div>
     </div>
     <div class="floors" id="bldg">
-      <div class="floor f1"><span class="fico">🏆</span><div><b>Desafíos & gamificación</b><small>la puerta de entrada</small></div><div class="val serif">$ 3k<small>500 personas</small></div></div>
-      <div class="floor f2"><span class="fico">🎤</span><div><b>Eventos & lanzamientos</b><small>picos de ingreso</small></div><div class="val serif">$ 10k<small>300 personas</small></div></div>
-      <div class="floor f3"><span class="fico">🎓</span><div><b>Cursos & biblioteca</b><small>escala sin agenda</small></div><div class="val serif">$ 9k<small>150 personas</small></div></div>
-      <div class="floor f4"><span class="fico">🧬</span><div><b>Protocolos & planes</b><small>recurrencia de cuidado</small></div><div class="val serif">$ 12k<small>100 personas</small></div></div>
-      <div class="floor f5"><span class="fico">🩺</span><div><b>Consultas & comunidad</b><small>el nivel premium</small></div><div class="val serif">$ 16k<small>40 personas</small></div></div>
+      <div class="floor f1"><span class="fico"></span><div><b>Desafíos & gamificación</b><small>la puerta de entrada</small></div><div class="val serif">$ 3k<small>500 personas</small></div></div>
+      <div class="floor f2"><span class="fico"></span><div><b>Eventos & lanzamientos</b><small>picos de ingreso</small></div><div class="val serif">$ 10k<small>300 personas</small></div></div>
+      <div class="floor f3"><span class="fico"></span><div><b>Cursos & biblioteca</b><small>escala sin agenda</small></div><div class="val serif">$ 9k<small>150 personas</small></div></div>
+      <div class="floor f4"><span class="fico"></span><div><b>Protocolos & planes</b><small>recurrencia de cuidado</small></div><div class="val serif">$ 12k<small>100 personas</small></div></div>
+      <div class="floor f5"><span class="fico"></span><div><b>Consultas & comunidad</b><small>el nivel premium</small></div><div class="val serif">$ 16k<small>40 personas</small></div></div>
       <div class="tower-base rv">Una sola entrada: pagos · IA · CRM — todo integrado en un solo lugar</div>
     </div>
   </div>
@@ -1601,13 +1646,13 @@ details.faq .a b{color:var(--ink)}
       <div class="tools-old rv">
         <h3 class="serif">El rejunte de apps</h3>
         <ul class="tool-list">
-          <li><span>📱 App de hábitos + comunidad</span><b>$ 497</b></li>
-          <li><span>🤖 Asistente de IA</span><b>$ 397</b></li>
-          <li><span>🗂️ Historia clínica electrónica</span><b>$ 299</b></li>
-          <li><span>📊 CRM de ventas</span><b>$ 400</b></li>
-          <li><span>🎓 Área de miembros + checkout</span><b>$ 800</b></li>
-          <li><span>📈 Gestión de anuncios</span><b>$ 590</b></li>
-          <li><span>📨 Envíos + agenda + formularios</span><b>$ 907</b></li>
+          <li><span>App de hábitos + comunidad</span><b>$ 497</b></li>
+          <li><span>Asistente de IA</span><b>$ 397</b></li>
+          <li><span>Historia clínica electrónica</span><b>$ 299</b></li>
+          <li><span>CRM de ventas</span><b>$ 400</b></li>
+          <li><span>Área de miembros + checkout</span><b>$ 800</b></li>
+          <li><span>Gestión de anuncios</span><b>$ 590</b></li>
+          <li><span>Envíos + agenda + formularios</span><b>$ 907</b></li>
         </ul>
         <div class="sum"><span>+10 herramientas, separadas</span><b>$ 3.890/mes</b></div>
       </div>
@@ -1615,7 +1660,7 @@ details.faq .a b{color:var(--ink)}
         <h3 class="serif">Con MyDose, desde</h3>
         <div class="big serif">$ 290<small>/mes</small></div>
         <p style="color:rgba(255,255,255,.75);font-size:15px">Cambiás el rejunte de apps por una sola plataforma — <b style="color:#fff">y encima sumás contenido, tráfico e IA moviendo tu crecimiento</b>.</p>
-        <span class="save-pill">💸 Ahorrás $ 3.600/mes</span>
+        <span class="save-pill">Ahorrás $ 3.600/mes</span>
         <button class="btn btn-light js-talk" data-mode="checkout" data-plan="MyDose">Cambiarme a MyDose <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
       </div>
     </div>
@@ -1681,7 +1726,7 @@ details.faq .a b{color:var(--ink)}
   <svg class="gf spin-slow" style="bottom:8%;left:4%;width:64px;color:rgba(240,176,242,.35)" viewBox="0 0 100 100"><use href="#gf-spark" fill="currentColor"/></svg>
   <div class="wrap lab-grid">
     <div>
-      <span class="lab-free rv">🧪 MyDose Lab · comunidad gratuita</span>
+      <span class="lab-free rv">MyDose Lab · comunidad gratuita</span>
       <h2 class="serif rv">Aprendé a escalar tu consultorio — <em style="color:var(--pink-2)">gratis</em>.</h2>
       <p class="lead rv rv-d1">MyDose Lab es nuestra comunidad de contenido: vivos, clases y detrás de escena para enseñar a profesionales de la salud a <b>emprender, escalar consultorios y clínicas</b>, cuidar a más gente y trabajar con programas de seguimiento — mejor para vos, mejor para el paciente.</p>
       <div class="hero-ctas rv rv-d2" style="margin-top:30px">
@@ -1690,10 +1735,10 @@ details.faq .a b{color:var(--ink)}
       </div>
     </div>
     <ul class="lab-items rv rv-d1">
-      <li><span class="lico">🎥</span><div><b>Vivos y clases semanales</b><span>con Guga, Dr. Arthur e invitados</span></div></li>
-      <li><span class="lico">📚</span><div><b>Todo el contenido de MyDose</b><span>área de miembros con acceso completo</span></div></li>
-      <li><span class="lico">🧬</span><div><b>Programas de seguimiento</b><span>el modelo que es mejor para vos — y para el paciente</span></div></li>
-      <li><span class="lico">🤝</span><div><b>Comunidad de quienes están escalando</b><span>networking con profesionales como vos</span></div></li>
+      <li><span class="lico"></span><div><b>Vivos y clases semanales</b><span>con Guga, Dr. Arthur e invitados</span></div></li>
+      <li><span class="lico"></span><div><b>Todo el contenido de MyDose</b><span>área de miembros con acceso completo</span></div></li>
+      <li><span class="lico"></span><div><b>Programas de seguimiento</b><span>el modelo que es mejor para vos — y para el paciente</span></div></li>
+      <li><span class="lico"></span><div><b>Comunidad de quienes están escalando</b><span>networking con profesionales como vos</span></div></li>
     </ul>
   </div>
 </section>
@@ -1753,15 +1798,15 @@ details.faq .a b{color:var(--ink)}
     </div>
     <div class="plans-controls rv">
       <div class="seg" id="segWho">
-        <button class="on" data-who="pro">👤 Profesional</button>
-        <button data-who="cli">🏥 Clínica</button>
+        <button class="on" data-who="pro">Profesional</button>
+        <button data-who="cli">Clínica</button>
       </div>
       <div class="seg" id="segTerm">
         <button class="on" data-k="anu">Anual <b>−25%</b></button>
         <button data-k="sem">Semestral <b>−15%</b></button>
         <button data-k="tri">Trimestral</button>
       </div>
-      <p style="font-size:13.5px;color:var(--gray);font-weight:600;text-align:center">💚 Anual = mejor precio (hasta ~2 meses gratis) · 🔒 precio congelado por contrato · 🛡️ 30 días de garantía</p>
+      <p style="font-size:13.5px;color:var(--gray);font-weight:600;text-align:center">Anual = mejor precio (hasta ~2 meses gratis) · 🔒 precio congelado por contrato · 🛡️ 30 días de garantía</p>
     </div>
 
     <!-- PROFISSIONAL -->
@@ -1810,7 +1855,7 @@ details.faq .a b{color:var(--ink)}
           <button class="talk2 js-talk" data-mode="talk" data-plan="Co-pilot">Agendar reunión</button>
         </div>
         <div class="plan hot rv rv-d3">
-          <span class="star">⭐ El más elegido</span>
+          <span class="star">El más elegido</span>
           <h4>Autopilot</h4>
           <p class="desc">La máquina andando: lo hacemos y lo gestionamos por vos.</p>
           <p class="fat">facturás $ 50–150k/mes</p>
@@ -1842,13 +1887,13 @@ details.faq .a b{color:var(--ink)}
       </div>
       <p class="plans-note rv">En <b>Autopilot</b> recibís <b>+$ 127.000/año</b> en valor entregado (plataforma + tráfico + 360 contenidos + embudos + gestión) → e invertís desde <b>$ 2.190/mes</b>.</p>
       <details class="compare rv">
-        <summary>📊 Comparar todos los entregables <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></summary>
+        <summary>Comparar todos los entregables <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></summary>
         <div class="tbl-scroll">
           <table>
             <tr><th>Entregables / mes</th><th>Software</th><th>Start</th><th>Co-pilot</th><th>Autopilot ⭐</th><th>Partner</th></tr>
             <tr><td>Inversión /mes</td><td>R$ <span data-tri="397" data-sem="340" data-anu="290">290</span></td><td>R$ <span data-tri="797" data-sem="690" data-anu="590">590</span></td><td>R$ <span data-tri="1.490" data-sem="1.290" data-anu="1.090">1.090</span></td><td>R$ <span data-tri="2.990" data-sem="2.590" data-anu="2.190">2.190</span></td><td>R$ <span data-tri="7.900" data-sem="6.900" data-anu="5.900">5.900</span></td></tr>
             <tr><td>Presupuesto de pauta</td><td>—</td><td>—</td><td>—</td><td>+R$ 1.500</td><td>+R$ 5.000</td></tr>
-            <tr><td>Plataforma IA + Academy</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Plataforma IA + Academy</td><td></td><td></td><td></td><td></td><td></td></tr>
             <tr><td>Posteos con IA</td><td>—</td><td>6</td><td>12</td><td>20</td><td>36</td></tr>
             <tr><td>Videos / Reels editados</td><td>—</td><td>3</td><td>6</td><td>10</td><td>18</td></tr>
             <tr><td>Ebooks / lead magnets</td><td>—</td><td>1</td><td>1</td><td>2</td><td>4</td></tr>
@@ -1882,7 +1927,7 @@ details.faq .a b{color:var(--ink)}
           <button class="btn btn-ghost btn-sm js-talk" data-mode="talk" data-plan="Clinics Start">Quiero propuesta</button>
         </div>
         <div class="plan hot rv rv-d1">
-          <span class="star">⭐ Mejor costo/silla</span>
+          <span class="star">Mejor costo/silla</span>
           <h4>Clinics Growth</h4>
           <p class="desc">Escalá la clínica con pauta y embudos por especialidad.</p>
           <p class="fat">hasta 6 profesionales</p>
@@ -1912,14 +1957,14 @@ details.faq .a b{color:var(--ink)}
         </div>
       </div>
       <details class="compare rv">
-        <summary>📊 Comparar todos los entregables <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></summary>
+        <summary>Comparar todos los entregables <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></summary>
         <div class="tbl-scroll">
           <table>
             <tr><th>Entregables / mes</th><th>Clinics Start</th><th>Clinics Growth ⭐</th><th>Clinics Performance</th></tr>
             <tr><td>Inversión /mes</td><td>R$ <span data-tri="1.990" data-sem="1.690" data-anu="1.490">1.490</span></td><td>R$ <span data-tri="4.990" data-sem="4.240" data-anu="3.740">3.740</span></td><td>R$ <span data-tri="9.900" data-sem="8.400" data-anu="7.400">7.400</span></td></tr>
             <tr><td>Presupuesto de pauta</td><td>—</td><td>+R$ 2.500</td><td>+R$ 5.000</td></tr>
             <tr><td>Profesionales incluidos</td><td>hasta 3</td><td>hasta 6</td><td>hasta 12</td></tr>
-            <tr><td>Plataforma multiprofesional + Academy</td><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Plataforma multiprofesional + Academy</td><td></td><td></td><td></td></tr>
             <tr><td>Posteos con IA</td><td>12</td><td>30</td><td>60</td></tr>
             <tr><td>Videos / Reels editados</td><td>6</td><td>15</td><td>30</td></tr>
             <tr><td>Ebooks / lead magnets</td><td>1</td><td>3</td><td>6</td></tr>
@@ -1937,19 +1982,19 @@ details.faq .a b{color:var(--ink)}
 
     <div class="assures">
       <div class="assure as-1 rv">
-        <h5>🛡️ Garantía de 30 días</h5>
+        <h5>Garantía de 30 días</h5>
         <p>¿No te gustó? Te devolvemos <b>el 100% de tu inversión</b>. Sin preguntas, sin letra chica.</p>
       </div>
       <div class="assure as-2 rv rv-d1">
-        <h5>🎯 Garantía del aha</h5>
+        <h5>Garantía del aha</h5>
         <p>¿Sin tu primera venta y protocolos andando en 30 días (haciendo tu parte)? <b>Trabajamos gratis hasta que pase.</b></p>
       </div>
       <div class="assure as-3 rv rv-d2">
-        <h5>🔒 Precio congelado</h5>
+        <h5>Precio congelado</h5>
         <p>El valor que cerrás hoy queda <b>congelado por todo el contrato</b>. El precio sube; el tuyo, no.</p>
       </div>
     </div>
-    <p class="plans-note rv"><b>Onboarding dedicado + precio congelado</b> valen solo cerrando en la reunión — <b>cupos limitados por mes</b>. Cuando salga Clinics (agosto), suben los precios.<br><br>➕ <b>¿Necesitás más volumen?</b> Add-ons a demanda — WhatsApp, e-mails, créditos de IA, contenidos sueltos y profesional extra — entran solo cuando vos quieras, sin sorpresas en la factura. Los programas que <b>le cobrás al paciente</b> (Inicio, Esencial, Premium) son ingreso tuyo, no costo de plataforma.</p>
+    <p class="plans-note rv"><b>Onboarding dedicado + precio congelado</b> valen solo cerrando en la reunión — <b>cupos limitados por mes</b>. Cuando salga Clinics (agosto), suben los precios.<br><br><b>¿Necesitás más volumen?</b> Add-ons a demanda — WhatsApp, e-mails, créditos de IA, contenidos sueltos y profesional extra — entran solo cuando vos quieras, sin sorpresas en la factura. Los programas que <b>le cobrás al paciente</b> (Inicio, Esencial, Premium) son ingreso tuyo, no costo de plataforma.</p>
   </div>
 </section>
 
@@ -1983,7 +2028,7 @@ details.faq .a b{color:var(--ink)}
         <h2 class="serif">Antes de decidir, <em>miralo funcionar en vivo</em>.</h2>
         <p>Todos los miércoles, 19h: Guga & Dr. Arthur muestran, en la práctica, cómo generar <b>+USD 2k en 30 días</b> con comunidad e IA — y responden tus preguntas en tiempo real.</p>
         <a class="btn btn-light" href="live.html">Reservar mi lugar gratis <svg class="arr" width="18" height="18"><use href="#arr"/></svg></a>
-        <p class="live-free">✓ gratis · cupos limitados por camada · replay disponible por 7 días</p>
+        <p class="live-free">gratis · cupos limitados por camada · replay disponible por 7 días</p>
       </div>
       <div class="live-media">
         <img src="assets/live-workshop.jpg" alt="Guga y Dr. Arthur en el taller Consultorio Escalable, en vivo y gratis" loading="lazy">
@@ -2027,10 +2072,10 @@ details.faq .a b{color:var(--ink)}
           <option>Otro</option>
         </select>
         <button class="btn btn-grad" type="submit">Quiero mi plan <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
-        <p class="m-priv">🔒 Sin spam. Usamos tus datos solo para contactarte.</p>
+        <p class="m-priv">Sin spam. Usamos tus datos solo para contactarte.</p>
       </form>
       <div class="msuccess">
-        <div class="big">🎉</div>
+        <div class="big"></div>
         <h4>¡Recibido!</h4>
         <p>Nuestro equipo te escribe por <b>WhatsApp</b> en 1 día hábil.</p>
       </div>
@@ -2046,7 +2091,7 @@ details.faq .a b{color:var(--ink)}
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <span class="wordmark">my<span>dose</span></span>
+        <span class="blogo"><img class="blg-l" src="assets/brand/logo-mydose-gradient-preto.svg" alt="MyDose" width="104" height="22"><img class="blg-d" src="assets/brand/logo-mydose-gradient-branco.svg" alt="" width="104" height="22" aria-hidden="true"></span>
         <p class="tagline">Tu operativo de IA para escalar en salud. +Adherencia · +Ingresos · −Tiempo.</p>
         <div class="foot-social" aria-label="Social">
         <a href="https://www.youtube.com/@mydoseapp" target="_blank" rel="noopener" aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5s-7 0-8.9.6A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.6 8.9.6 8.9.6s7 0 8.9-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.2ZM9.7 15.3V8.7L15.8 12l-6.1 3.3Z"/></svg></a>
@@ -2086,54 +2131,54 @@ details.faq .a b{color:var(--ink)}
 <!-- ====== QUIZ · Crie sua comunidade ====== -->
 <div class="quiz" id="quiz" role="dialog" aria-modal="true" aria-label="Creá tu comunidad">
   <div class="qz-top">
-    <span class="qz-logo">my<b>dose</b></span>
+    <span class="qz-logo"><span class="blogo"><img class="blg-l" style="display:none" src="assets/brand/logo-mydose-gradient-preto.svg" alt="MyDose" width="104" height="22"><img class="blg-d" src="assets/brand/logo-mydose-gradient-branco.svg" alt="" width="104" height="22" aria-hidden="true" style="display:block"></span></span>
     <div class="qz-bar"><i id="qzBar"></i></div>
-    <button class="qz-x" id="qzX" aria-label="Cerrar">✕</button>
+    <button class="qz-x" id="qzX" aria-label="Cerrar"></button>
   </div>
   <div class="qz-wrap">
 
     <div class="qz-step on" data-step="0">
-      <span class="qz-kicker">✦ Creá tu comunidad · toma 40 segundos</span>
+      <span class="qz-kicker">Creá tu comunidad · toma 40 segundos</span>
       <h2 class="serif">¿Cuál es tu <em>área</em>?</h2>
       <p class="qz-sub">Armamos tu comunidad a tu manera — gamificación, protocolos e IA con la cara de tu especialidad.</p>
       <div class="qz-opts">
-        <button class="qz-opt" data-k="area" data-v="Médico/a"><span class="qe">🩺</span><span>Médico/a<small>consultorio, clínica u online</small></span></button>
-        <button class="qz-opt" data-k="area" data-v="Nutricionista"><span class="qe">🥗</span><span>Nutricionista<small>planes de alimentación que pasan de verdad</small></span></button>
-        <button class="qz-opt" data-k="area" data-v="Psicólogo/a"><span class="qe">🧠</span><span>Psicólogo/a<small>vínculo y continuidad entre sesiones</small></span></button>
-        <button class="qz-opt" data-k="area" data-v="Personal trainer"><span class="qe">🏋️</span><span>Personal trainer<small>entrenamientos con adherencia y recurrencia</small></span></button>
-        <button class="qz-opt" data-k="area" data-v="Otra área de la salud"><span class="qe">✨</span><span>Otra área de la salud<small>kine, dentista, terapeuta, farma…</small></span></button>
+        <button class="qz-opt" data-k="area" data-v="Médico/a"><span class="qe"></span><span>Médico/a<small>consultorio, clínica u online</small></span></button>
+        <button class="qz-opt" data-k="area" data-v="Nutricionista"><span class="qe"></span><span>Nutricionista<small>planes de alimentación que pasan de verdad</small></span></button>
+        <button class="qz-opt" data-k="area" data-v="Psicólogo/a"><span class="qe"></span><span>Psicólogo/a<small>vínculo y continuidad entre sesiones</small></span></button>
+        <button class="qz-opt" data-k="area" data-v="Personal trainer"><span class="qe"></span><span>Personal trainer<small>entrenamientos con adherencia y recurrencia</small></span></button>
+        <button class="qz-opt" data-k="area" data-v="Otra área de la salud"><span class="qe"></span><span>Otra área de la salud<small>kine, dentista, terapeuta, farma…</small></span></button>
       </div>
-      <p class="qz-note"><span class="stars">★★★★★</span> +1.000 profesionales ya crearon la suya</p>
+      <p class="qz-note"><span class="stars"></span> +1.000 profesionales ya crearon la suya</p>
     </div>
 
     <div class="qz-step" data-step="1">
-      <span class="qz-kicker">✦ Casi listo</span>
+      <span class="qz-kicker">Casi listo</span>
       <h2 class="serif">¿Ya vendés algo <em>además de las consultas</em>?</h2>
       <p class="qz-sub">Programas, planes de seguimiento, e-books, mentorías… cualquier producto cuenta.</p>
       <div class="qz-opts">
-        <button class="qz-opt" data-k="produto" data-v="Solo consultas"><span class="qe">🌱</span><span>Todavía no — solo consultas<small>perfecto: es donde MyDose más multiplica</small></span></button>
-        <button class="qz-opt" data-k="produto" data-v="Tengo 1-2 productos"><span class="qe">💼</span><span>Tengo 1–2 productos<small>los ponemos a vender en automático</small></span></button>
-        <button class="qz-opt" data-k="produto" data-v="Tengo línea y quiero escalar"><span class="qe">🚀</span><span>Tengo una línea y quiero escalar<small>comunidad + IA = tu próximo nivel</small></span></button>
+        <button class="qz-opt" data-k="produto" data-v="Solo consultas"><span class="qe"></span><span>Todavía no — solo consultas<small>perfecto: es donde MyDose más multiplica</small></span></button>
+        <button class="qz-opt" data-k="produto" data-v="Tengo 1-2 productos"><span class="qe"></span><span>Tengo 1–2 productos<small>los ponemos a vender en automático</small></span></button>
+        <button class="qz-opt" data-k="produto" data-v="Tengo línea y quiero escalar"><span class="qe"></span><span>Tengo una línea y quiero escalar<small>comunidad + IA = tu próximo nivel</small></span></button>
       </div>
       <button class="qz-back" data-back>← volver</button>
     </div>
 
     <div class="qz-step" data-step="2">
-      <span class="qz-kicker">✦ Última pregunta</span>
+      <span class="qz-kicker">Última pregunta</span>
       <h2 class="serif">¿A cuántas personas <em>impactás</em> hoy?</h2>
       <p class="qz-sub">Pacientes activos + audiencia en redes. Tirá un número sin miedo — es solo para calibrar el plan.</p>
       <div class="qz-opts">
-        <button class="qz-opt" data-k="alcance" data-v="hasta 50"><span class="qe">🌰</span><span>Hasta 50 personas<small>arrancando — el mejor momento para estructurar</small></span></button>
-        <button class="qz-opt" data-k="alcance" data-v="50-300"><span class="qe">🌿</span><span>50 a 300<small>tu comunidad nace llena</small></span></button>
-        <button class="qz-opt" data-k="alcance" data-v="300-1000"><span class="qe">🌳</span><span>300 a 1.000<small>potencial de ingresos recurrentes inmediato</small></span></button>
-        <button class="qz-opt" data-k="alcance" data-v="+1000"><span class="qe">🔥</span><span>Más de 1.000<small>estás sentado en una mina de oro</small></span></button>
+        <button class="qz-opt" data-k="alcance" data-v="hasta 50"><span class="qe"></span><span>Hasta 50 personas<small>arrancando — el mejor momento para estructurar</small></span></button>
+        <button class="qz-opt" data-k="alcance" data-v="50-300"><span class="qe"></span><span>50 a 300<small>tu comunidad nace llena</small></span></button>
+        <button class="qz-opt" data-k="alcance" data-v="300-1000"><span class="qe"></span><span>300 a 1.000<small>potencial de ingresos recurrentes inmediato</small></span></button>
+        <button class="qz-opt" data-k="alcance" data-v="+1000"><span class="qe"></span><span>Más de 1.000<small>estás sentado en una mina de oro</small></span></button>
       </div>
       <button class="qz-back" data-back>← volver</button>
     </div>
 
     <div class="qz-step" data-step="3">
-      <span class="qz-kicker">✦ Tu comunidad está casi lista</span>
-      <div class="qz-preview"><span class="qav">🏛️</span><span><b id="qzPrevName">Comunidad MyDose</b><small id="qzPrevSub">gamificación + IA listas para activar</small></span></div>
+      <span class="qz-kicker">Tu comunidad está casi lista</span>
+      <div class="qz-preview"><span class="qav"></span><span><b id="qzPrevName">Comunidad MyDose</b><small id="qzPrevSub">gamificación + IA listas para activar</small></span></div>
       <h2 class="serif">¿A quién se lo <em>entregamos</em>?</h2>
       <p class="qz-sub">Nuestro equipo activa tu comunidad y te escribe por WhatsApp — en 24h.</p>
       <form class="qz-form" id="qzForm">
@@ -2142,24 +2187,24 @@ details.faq .a b{color:var(--ink)}
         <div><label for="qzMail">E-mail profesional</label><input id="qzMail" type="email" required placeholder="ana@clinica.com" autocomplete="email"></div>
         <button class="btn btn-grad qz-cta" type="submit">Crear mi comunidad <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
       </form>
-      <p class="qz-note">🔒 Tus datos quedan solo con nosotros. Sin spam, sin compromiso.</p>
+      <p class="qz-note">Tus datos quedan solo con nosotros. Sin spam, sin compromiso.</p>
       <button class="qz-back" data-back>← volver</button>
     </div>
 
     <div class="qz-step qz-done" data-step="4">
-      <div class="qbig">🎉</div>
+      <div class="qbig"></div>
       <h2 class="serif">¡Listo, <em id="qzDoneName">doctor/a</em>!<br>Tu comunidad empezó a nacer.</h2>
       <p class="qz-sub" style="margin-inline:auto">Nuestro equipo te contacta <b style="color:#fff">en 24 horas</b> para activar todo con vos. ¿Querés sugerir el mejor horario?</p>
       <div class="qz-cal">
-        <h4>📅 Elegí un horario sugerido</h4>
+        <h4>Elegí un horario sugerido</h4>
         <p class="qcsub">Te llamamos en ese horario (o lo más cerca posible).</p>
         <div class="qz-days" id="qzDays"></div>
         <div class="qz-slots">
-          <button class="qz-chip" data-slot="09:00">☀️ 09:00</button>
-          <button class="qz-chip" data-slot="14:00">🌤️ 14:00</button>
-          <button class="qz-chip" data-slot="19:00">🌙 19:00</button>
+          <button class="qz-chip" data-slot="09:00">09:00</button>
+          <button class="qz-chip" data-slot="14:00">14:00</button>
+          <button class="qz-chip" data-slot="19:00">19:00</button>
         </div>
-        <p class="qok" id="qzOk">✓ <span id="qzOkTxt">Horário sugerido enviado!</span></p>
+        <p class="qok" id="qzOk"><span id="qzOkTxt">Horário sugerido enviado!</span></p>
       </div>
       <p class="qz-note" style="justify-content:center">Mientras tanto, entrá a nuestra clase en vivo del miércoles a las 19h → <a href="live.html" style="text-decoration:underline;color:#fff">reservar lugar</a></p>
     </div>
@@ -2169,7 +2214,7 @@ details.faq .a b{color:var(--ink)}
 
 <div class="modal" id="talkModal" role="dialog" aria-modal="true">
   <div class="modal-card">
-    <button class="modal-x" data-close aria-label="Cerrar">✕</button>
+    <button class="modal-x" data-close aria-label="Cerrar"></button>
     <p class="m-plan" id="mPlan">Plan MyDose</p>
     <h3 id="mTitle">Hablar con el equipo</h3>
     <p class="msub" id="mSub">Contanos tu momento — armamos una propuesta a medida. Respuesta en 1 día hábil.</p>
@@ -2195,10 +2240,10 @@ details.faq .a b{color:var(--ink)}
         <option>+300</option>
       </select>
       <button class="btn btn-grad" type="submit">Enviar <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
-      <p class="m-priv">🔒 Sin spam. Usamos tus datos solo para contactarte.</p>
+      <p class="m-priv">Sin spam. Usamos tus datos solo para contactarte.</p>
     </form>
     <div class="msuccess">
-      <div class="big">🎉</div>
+      <div class="big"></div>
       <h4>¡Recibido!</h4>
       <p>Nuestro equipo te escribe por <b>WhatsApp y e-mail</b> en 1 día hábil.</p>
     </div>
@@ -2208,10 +2253,10 @@ details.faq .a b{color:var(--ink)}
 <!-- ====== VIDEO MODAL ====== -->
 <div class="modal" id="videoModal" role="dialog" aria-modal="true">
   <div class="modal-card">
-    <button class="modal-x" data-vclose aria-label="Cerrar">✕</button>
+    <button class="modal-x" data-vclose aria-label="Cerrar"></button>
     <p class="m-plan" id="vName">Testimonio</p>
     <div class="vmodal-body">
-      <div class="vph"><div class="pattern"></div><div class="in"><div class="big">🎬</div><b>Testimonio en video llegando acá</b></div></div>
+      <div class="vph"><div class="pattern"></div><div class="in"><div class="big"></div><b>Testimonio en video llegando acá</b></div></div>
       <p>Mientras tanto, mirá la plataforma funcionando <b>en vivo, todos los miércoles a las 19h</b> — con Q&amp;A en tiempo real.</p>
       <a class="btn btn-primary btn-sm" href="live.html" style="margin-top:14px">Reservar lugar en la demo</a>
     </div>
@@ -2226,7 +2271,7 @@ details.faq .a b{color:var(--ink)}
   var themeBtn = document.getElementById('themeBtn'), metaTheme = document.getElementById('metaTheme');
   function paintTheme(){
     var dark = document.documentElement.dataset.theme === 'dark';
-    themeBtn.textContent = dark ? '☀️' : '🌙';
+    themeBtn.innerHTML = dark ? '<svg width="17" height="17" style="color:#FFB627"><use href="#i-sun"/></svg>' : '<svg width="17" height="17" style="color:#8699FD"><use href="#i-moon"/></svg>';
     metaTheme.content = dark ? '#101226' : '#F6F4F2';
   }
   themeBtn.addEventListener('click', function(){

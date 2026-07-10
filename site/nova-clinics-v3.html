@@ -21,14 +21,19 @@
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#191E47">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Figtree:wght@400;600;700;800&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"Americana BT";src:url("assets/fonts/americana-regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Americana BT";src:url("assets/fonts/americana-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-700.woff2") format("woff2");font-weight:700 800;font-style:normal;font-display:swap}
+</style>
 <style>
 :root{--accent:#415FF5;--deep:#191E47;--pastel:#D6DDFF;--pastel2:#8699FD;
  --bg:#F6F4F2;--ink:#1E1D1D;--card:#fff;--muted:#565452;--gray:#848484;--navy:#191E47;
  --line:rgba(30,29,29,.1);--g1:linear-gradient(100deg,#415FF5,#C64FCA 52%,#F56442);--ga:linear-gradient(100deg,#415FF5,#C64FCA);
- --serif:"Fraunces",Georgia,serif;--sans:"Figtree",-apple-system,sans-serif;--logo:"Quicksand",sans-serif;
+ --serif:"Americana BT",Georgia,serif;--sans:"Google Sans",-apple-system,sans-serif;--logo:"Americana BT",serif;
  --shadow:0 20px 60px -20px rgba(25,30,71,.25);--r:24px;--blue:#415FF5;--blue-2:#8699FD;--green-2:#A5DC85}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:clip}
@@ -227,29 +232,69 @@ footer a{font-weight:700}
 @keyframes qzFall{to{transform:translateY(110vh) rotate(720deg)}}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}}
+
+/* identidade oficial 2026 */
+.serif,h1,h2,h3,.sheet a{font-weight:400}
+.serif i,.serif em{font-weight:400}
+.blogo{display:inline-flex;align-items:center}
+.blogo img{display:block}
+img.blg-d{display:none}
+[data-theme="dark"] img.blg-l{display:none}
+[data-theme="dark"] img.blg-d{display:block}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) img.blg-l{display:none} :root:not([data-theme="light"]) img.blg-d{display:block} }
+footer img.blg-l{display:none}footer img.blg-d{display:block}
+.theme-btn svg{transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.theme-btn:hover svg{transform:rotate(40deg)}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <circle cx="12" cy="12" r="4" />
+  <path d="M12 2v2" />
+  <path d="M12 20v2" />
+  <path d="m4.93 4.93 1.41 1.41" />
+  <path d="m17.66 17.66 1.41 1.41" />
+  <path d="M2 12h2" />
+  <path d="M20 12h2" />
+  <path d="m6.34 17.66-1.41 1.41" />
+  <path d="m19.07 4.93-1.41 1.41" /></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></symbol><symbol id="i-rotate-ccw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+  <path d="M3 3v5h5" /></symbol><symbol id="i-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></symbol><symbol id="i-alarm-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <circle cx="12" cy="13" r="8" />
+  <path d="M12 9v4l2 2" />
+  <path d="M5 3 2 6" />
+  <path d="m22 6-3-3" />
+  <path d="M6.38 18.7 4 21" />
+  <path d="M17.64 18.67 20 21" /></symbol><symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></symbol></svg>
 <nav><div class="nav-in">
-  <span class="logo">my<b>dose</b><span class="sub">Clinics</span></span>
+  <span class="logo"><span class="blogo"><img class="blg-l" src="assets/brand/logo-mydose-gradient-preto.svg" alt="MyDose" width="104" height="22"><img class="blg-d" src="assets/brand/logo-mydose-gradient-branco.svg" alt="" width="104" height="22" aria-hidden="true"></span><span class="sub">Clinics</span></span>
   <a class="nav-back" href="nova-identidade-v3.html">← Site principal</a>
   <span class="nav-sp"></span>
-  <div class="lang-seg" role="group" aria-label="Idioma"><a class="on" href="#">PT</a><div class="lang-seg" role="group" aria-label="Idioma"><a class="on" href="#">PT</a><a href="nova-clinics-v3-en.html">EN</a><a href="nova-clinics-v3-es.html">ES</a></div><a href="nova-clinics-v3-es.html">ES</a></div>
+  <div class="lang-seg" role="group" aria-label="Idioma"><a class="on" href="#">PT</a><a href="nova-clinics-v3-en.html">EN</a><a href="nova-clinics-v3-es.html">ES</a></div>
   <button class="btn btn-grad btn-sm js-quiz">Crie sua comunidade</button>
 </div></nav>
 
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">✦ MyDose Clinics · Clínicas · Times multiprofissionais</span>
+      <span class="eyebrow">MyDose Clinics · Clínicas · Times multiprofissionais</span>
       <h1 class="serif">Sua clínica não precisa de <em>mais leads</em>. Precisa <em>reter quem já entrou</em>.</h1>
       <p class="hero-sub">O MyDose Clinics coloca todos os profissionais no mesmo app, com uma comunidade por unidade, cross-sell entre especialidades e IA de atendimento — <b>LTV por paciente até 4× maior</b>.</p>
       <div class="hero-ctas">
         <button class="btn btn-grad js-quiz">Crie sua comunidade →</button>
         <a class="btn btn-ghost" href="#app">Ver o app ao vivo</a>
       </div>
-      <div class="social"><span class="avs"><img src="assets/dep-medica.jpg" alt=""><img src="assets/dep-nutri.jpg" alt=""><img src="assets/dep-psi.jpg" alt=""></span><span><i class="stars">★★★★★</i><br>Clínicas com +130 mil pacientes ativos na plataforma</span></div>
-      <p class="urg">🔥 Onboarding com capacidade limitada — em agosto os preços sobem.</p>
+      <div class="social"><span class="avs"><img src="assets/dep-medica.jpg" alt=""><img src="assets/dep-nutri.jpg" alt=""><img src="assets/dep-psi.jpg" alt=""></span><span><i class="stars"></i><br>Clínicas com +130 mil pacientes ativos na plataforma</span></div>
+      <p class="urg">Onboarding com capacidade limitada — em agosto os preços sobem.</p>
     </div>
     <div class="hero-media rv in">
       <video data-motion src="assets/motion/area-clinic.mp4" poster="assets/motion/area-clinic-poster.jpg" muted loop playsinline preload="metadata"></video>
@@ -258,37 +303,37 @@ footer a{font-weight:700}
   </div>
 </header>
 
-<div class="wrap"><span class="eyebrow" style="display:block;text-align:center;margin:26px 0 8px">✦ Resultados de quem usa</span><div class="nums"><div class="st rv"><b class="serif">4×</b><span>LTV por paciente</span></div>
+<div class="wrap"><span class="eyebrow" style="display:block;text-align:center;margin:26px 0 8px">Resultados de quem usa</span><div class="nums"><div class="st rv"><b class="serif">4×</b><span>LTV por paciente</span></div>
 <div class="st rv"><b class="serif">−50%</b><span>custo de atendimento</span></div>
-<div class="st rv"><b class="serif">6</b><span>fontes de receita por paciente</span></div></div></div>
+<div class="st rv"><b class="serif">6</b><span>fontes de faturamento por paciente</span></div></div></div>
 
 <section>
   <div class="wrap">
-    <div class="sec-head rv"><span class="eyebrow">✦ Onde dói</span><h2 class="serif">Cada paciente que sai pela porta é <em>CAC jogado fora</em>.</h2></div>
-    <div class="pains"><div class="pain rv"><span class="pico">🚪</span><h4>Paciente de uma consulta só</h4><p>Você pagou caro pra ele entrar. Ele resolveu a dor pontual e nunca mais voltou — nem conheceu as outras especialidades.</p></div>
-<div class="pain rv"><span class="pico">🧩</span><h4>Time desconectado</h4><p>Nutri não sabe o que o fisio prescreveu. Cada profissional é uma ilha — e o paciente sente.</p></div>
-<div class="pain rv"><span class="pico">💸</span><h4>Recepção afogada</h4><p>Confirmação, remarcação, dúvida de convênio: sua equipe gasta o dia em tarefas que uma IA resolve.</p></div></div>
+    <div class="sec-head rv"><span class="eyebrow">Onde dói</span><h2 class="serif">Cada paciente que sai pela porta é <em>CAC jogado fora</em>.</h2></div>
+    <div class="pains"><div class="pain rv"><span class="pico"></span><h4>Paciente de uma consulta só</h4><p>Você pagou caro pra ele entrar. Ele resolveu a dor pontual e nunca mais voltou — nem conheceu as outras especialidades.</p></div>
+<div class="pain rv"><span class="pico"></span><h4>Time desconectado</h4><p>Nutri não sabe o que o fisio prescreveu. Cada profissional é uma ilha — e o paciente sente.</p></div>
+<div class="pain rv"><span class="pico"></span><h4>Recepção afogada</h4><p>Confirmação, remarcação, dúvida de convênio: sua equipe gasta o dia em tarefas que uma IA resolve.</p></div></div>
   </div>
 </section>
 
 <section class="sec-app" id="app">
   <div class="wrap">
-    <div class="sec-head rv"><span class="eyebrow" style="color:#8699FD">✦ O app em ação</span><h2 class="serif">Todas as especialidades. <em>Uma</em> comunidade.</h2><p>Gravado direto do app — a comunidade da clínica e a esteira de produtos:</p></div>
+    <div class="sec-head rv"><span class="eyebrow" style="color:#8699FD">O app em ação</span><h2 class="serif">Todas as especialidades. <em>Uma</em> comunidade.</h2><p>Gravado direto do app — a comunidade da clínica e a esteira de produtos:</p></div>
     <div class="app-grid">
       <div class="phone rv in"><span class="glow"></span><video data-motion src="assets/proto/comunidade.mp4" poster="assets/proto/comunidade-poster.jpg" muted loop playsinline preload="metadata"></video></div>
-      <ul class="feats"><li class="rv"><span class="fico">🏥</span><div><b>Comunidade por unidade</b><span>Pacientes de todas as especialidades no mesmo lugar, com desafios, conteúdo e o carimbo da sua marca.</span></div></li>
-<li class="rv"><span class="fico">🔀</span><div><b>Cross-sell natural</b><span>O paciente da nutri vê o desafio do fisio. Indicação interna vira receita — sem esforço comercial.</span></div></li>
-<li class="rv"><span class="fico">💳</span><div><b>Esteira de produtos</b><span>Programas, planos anuais, conteúdo pago: 6 fontes de receita por paciente dentro do app.</span></div></li></ul>
+      <ul class="feats"><li class="rv"><span class="fico"></span><div><b>Comunidade por unidade</b><span>Pacientes de todas as especialidades no mesmo lugar, com desafios, conteúdo e o carimbo da sua marca.</span></div></li>
+<li class="rv"><span class="fico"></span><div><b>Cross-sell natural</b><span>O paciente da nutri vê o desafio do fisio. Indicação interna viro faturamento — sem esforço comercial.</span></div></li>
+<li class="rv"><span class="fico"></span><div><b>Esteira de produtos</b><span>Programas, planos anuais, conteúdo pago: 6 fontes de faturamento por paciente dentro do app.</span></div></li></ul>
     </div>
   </div>
 </section>
 
 <section style="padding-bottom:0">
   <div class="wrap">
-    <div class="sec-head rv"><span class="eyebrow">✦ Como funciona</span><h2 class="serif">No ar em <em>7 dias</em>, em 3 passos.</h2></div>
+    <div class="sec-head rv"><span class="eyebrow">Como funciona</span><h2 class="serif">No ar em <em>7 dias</em>, em 3 passos.</h2></div>
     <div class="steps"><div class="step rv"><span class="n serif">1</span><h4>Mapeamos sua operação</h4><p>Especialidades, protocolos e jornada do paciente — desenhamos a comunidade da clínica.</p></div>
 <div class="step rv"><span class="n serif">2</span><h4>Ativamos o time</h4><p>Cada profissional com seu espaço, todos na mesma marca. Treinamento incluso.</p></div>
-<div class="step rv"><span class="n serif">3</span><h4>Rodamos a receita</h4><p>Programas multiprofissionais, IA de atendimento e relatórios de LTV por paciente.</p></div></div>
+<div class="step rv"><span class="n serif">3</span><h4>Rodamos o faturamento</h4><p>Programas multiprofissionais, IA de atendimento e relatórios de LTV por paciente.</p></div></div>
   </div>
 </section>
 
@@ -297,10 +342,10 @@ footer a{font-weight:700}
     <div class="case rv">
       <div class="ph"><img src="assets/dep-medica.jpg" alt="Dr. Arthur · médico e sócio de clínica, parceiro MyDose" loading="lazy"></div>
       <div>
-        <span class="eyebrow">✦ Prova real</span>
+        <span class="eyebrow">Prova real</span>
         <h3 class="serif">“Em 30 dias fiz minha primeira <em>venda de programa</em>.”</h3>
         <p class="who">Dr. Arthur · médico e sócio de clínica, parceiro MyDose</p>
-        <blockquote>“A gente vivia refém de agenda cheia com margem apertada. Com a comunidade, os pacientes passaram a comprar programas de acompanhamento entre as consultas. Em 30 dias fiz a primeira venda — hoje é a linha de receita que mais cresce.”</blockquote>
+        <blockquote>“A gente vivia refém de agenda cheia com margem apertada. Com a comunidade, os pacientes passaram a comprar programas de acompanhamento entre as consultas. Em 30 dias fiz a primeira venda — hoje é a linha de faturamento que mais cresce.”</blockquote>
         <div class="case-nums"><div><b>30 dias</b><span>primeira venda</span></div>
 <div><b>4×</b><span>LTV</span></div>
 <div><b>+R$ 50k</b><span>receita nova /mês</span></div></div>
@@ -311,28 +356,28 @@ footer a{font-weight:700}
 
 <section id="planos" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head rv" style="text-align:center;margin-inline:auto"><span class="eyebrow">✦ Planos · sem fidelidade-armadilha</span><h2 class="serif">Invista menos do que <em>uma consulta</em> por semana.</h2></div>
+    <div class="sec-head rv" style="text-align:center;margin-inline:auto"><span class="eyebrow">Planos · sem fidelidade-armadilha</span><h2 class="serif">Invista menos do que <em>uma consulta</em> por semana.</h2></div>
     <div class="plans"><div class="plan rv"><h4>Clinics Start</h4><p class="desc">Equipe no mesmo app.</p>
-<div class="price"><b>R$ 1.490</b><span>/mês no anual · até 3 profissionais</span></div><ul><li>✓ Plataforma multiprofissional</li>
-<li>✓ 12 posts + 6 vídeos/mês</li>
-<li>✓ 8.000 WhatsApp · 2.000 créditos IA</li></ul><button class="btn btn-ghost btn-sm js-quiz">Crie sua comunidade</button></div>
-<div class="plan hot rv"><span class="star">⭐ Mais escolhido</span><h4>Clinics Growth</h4><p class="desc">Crescimento gerido com mídia.</p>
-<div class="price"><b>R$ 2.990</b><span>/mês no anual · até 8 profissionais</span></div><ul><li>✓ Tráfego + funis rodados por nós</li>
-<li>✓ 20 posts + 10 vídeos/mês</li>
-<li>✓ 20.000 WhatsApp · gestor de conta</li></ul><button class="btn btn-grad btn-sm js-quiz">Crie sua comunidade</button></div>
+<div class="price"><b>R$ 1.490</b><span>/mês no anual · até 3 profissionais</span></div><ul><li>Plataforma multiprofissional</li>
+<li>12 posts + 6 vídeos/mês</li>
+<li>8.000 WhatsApp · 2.000 créditos IA</li></ul><button class="btn btn-ghost btn-sm js-quiz">Crie sua comunidade</button></div>
+<div class="plan hot rv"><span class="star">Mais escolhido</span><h4>Clinics Growth</h4><p class="desc">Crescimento gerido com mídia.</p>
+<div class="price"><b>R$ 2.990</b><span>/mês no anual · até 8 profissionais</span></div><ul><li>Tráfego + funis rodados por nós</li>
+<li>20 posts + 10 vídeos/mês</li>
+<li>20.000 WhatsApp · gestor de conta</li></ul><button class="btn btn-grad btn-sm js-quiz">Crie sua comunidade</button></div>
 <div class="plan rv"><h4>Clinics Performance</h4><p class="desc">Operação completa, squad dedicado.</p>
-<div class="price"><b>R$ 5.900+</b><span>/mês no anual · ilimitado</span></div><ul><li>✓ Squad dedicado + BI e metas</li>
-<li>✓ 36 posts + 18 vídeos/mês</li>
-<li>✓ API + integrações sob medida</li></ul><button class="btn btn-ghost btn-sm js-quiz">Crie sua comunidade</button></div>
+<div class="price"><b>R$ 5.900+</b><span>/mês no anual · ilimitado</span></div><ul><li>Squad dedicado + BI e metas</li>
+<li>36 posts + 18 vídeos/mês</li>
+<li>API + integrações sob medida</li></ul><button class="btn btn-ghost btn-sm js-quiz">Crie sua comunidade</button></div>
 </div>
-    <p class="guarantee">🛡️ 30 dias de garantia incondicional · 🔒 trava de preço · 💚 sem fidelidade-armadilha</p>
+    <p class="guarantee">30 dias de garantia incondicional · 🔒 trava de preço · 💚 sem fidelidade-armadilha</p>
     <a class="plans-all" href="nova-identidade-v3.html#planos">Ver todos os planos e entregáveis →</a>
   </div>
 </section>
 
 <section style="padding-top:0" id="faq">
   <div class="wrap">
-    <div class="sec-head rv" style="text-align:center;margin-inline:auto"><span class="eyebrow">✦ Perguntas frequentes</span><h2 class="serif">O que todo mundo pergunta <em>antes de começar</em>.</h2></div>
+    <div class="sec-head rv" style="text-align:center;margin-inline:auto"><span class="eyebrow">Perguntas frequentes</span><h2 class="serif">O que todo mundo pergunta <em>antes de começar</em>.</h2></div>
     <div class="faqs"><details class="rv"><summary>Quantos profissionais consigo colocar? <span class="pl">+</span></summary><p>Do Start (até 3) ao Performance (ilimitado). A comunidade é da clínica; cada profissional tem seu espaço e seus protocolos.</p></details>
 <details class="rv"><summary>A IA atende pelo WhatsApp da clínica? <span class="pl">+</span></summary><p>Sim: confirmações, remarcações, dúvidas frequentes e triagem — no seu número, com escalação pra recepção quando precisa.</p></details>
 <details class="rv"><summary>Integra com meu sistema de gestão? <span class="pl">+</span></summary><p>Integramos agenda (Google Calendar), pagamentos (Asaas), prescrição (Memed) e WhatsApp. API disponível no Performance.</p></details>
@@ -344,7 +389,7 @@ footer a{font-weight:700}
 <section style="padding-top:0">
   <div class="wrap">
     <div class="final rv">
-      <span class="eyebrow" style="color:#8699FD">✦ Comece hoje</span>
+      <span class="eyebrow" style="color:#8699FD">Comece hoje</span>
       <h2 class="serif">Sua comunidade pronta em <em>7 dias</em>.</h2>
       <p>Responda 3 perguntas e nosso time ativa tudo com você — contato em até 24h.</p>
       <button class="btn btn-light js-quiz" style="font-size:17px;padding:18px 34px">Crie sua comunidade agora →</button>
@@ -359,41 +404,41 @@ footer a{font-weight:700}
 
 <div class="quiz" id="quiz" role="dialog" aria-modal="true">
   <div class="qz-top">
-    <span class="qz-logo">my<b>dose</b></span>
+    <span class="qz-logo"><span class="blogo"><img class="blg-l" style="display:none" src="assets/brand/logo-mydose-gradient-preto.svg" alt="MyDose" width="104" height="22"><img class="blg-d" src="assets/brand/logo-mydose-gradient-branco.svg" alt="" width="104" height="22" aria-hidden="true" style="display:block"></span></span>
     <div class="qz-bar"><i id="qzBar"></i></div>
-    <button class="qz-x" id="qzX" aria-label="close">✕</button>
+    <button class="qz-x" id="qzX" aria-label="close"></button>
   </div>
   <div class="qz-wrap">
     <div class="qz-step on" data-step="0">
-      <span class="qz-kicker">✦ Crie sua comunidade · leva 40 segundos</span>
+      <span class="qz-kicker">Crie sua comunidade · leva 40 segundos</span>
       <h2 class="serif">Qual é a sua <em>área</em>?</h2><p class="qz-sub">Vamos montar a comunidade do seu jeito — gamificação, protocolos e IA com a cara da sua especialidade.</p>
-      <div class="qz-opts"><button class="qz-opt" data-k="area" data-v="Médico(a)"><span class="qe">🩺</span><span>Médico(a)<small>consultório, clínica ou online</small></span></button>
-<button class="qz-opt" data-k="area" data-v="Nutricionista"><span class="qe">🥗</span><span>Nutricionista<small>planos alimentares que acontecem de verdade</small></span></button>
-<button class="qz-opt" data-k="area" data-v="Psicólogo(a)"><span class="qe">🧠</span><span>Psicólogo(a)<small>vínculo e continuidade entre sessões</small></span></button>
-<button class="qz-opt" data-k="area" data-v="Personal / Ed. física"><span class="qe">🏋️</span><span>Personal / Ed. física<small>treinos com adesão e recorrência</small></span></button>
-<button class="qz-opt" data-k="area" data-v="Outra área da saúde"><span class="qe">✨</span><span>Outra área da saúde<small>fisio, dentista, terapeuta, farma…</small></span></button></div>
-      <p class="qz-note"><span class="stars">★★★★★</span> +1.000 profissionais já criaram a sua</p>
+      <div class="qz-opts"><button class="qz-opt" data-k="area" data-v="Médico(a)"><span class="qe"></span><span>Médico(a)<small>consultório, clínica ou online</small></span></button>
+<button class="qz-opt" data-k="area" data-v="Nutricionista"><span class="qe"></span><span>Nutricionista<small>planos alimentares que acontecem de verdade</small></span></button>
+<button class="qz-opt" data-k="area" data-v="Psicólogo(a)"><span class="qe"></span><span>Psicólogo(a)<small>vínculo e continuidade entre sessões</small></span></button>
+<button class="qz-opt" data-k="area" data-v="Personal / Ed. física"><span class="qe"></span><span>Personal / Ed. física<small>treinos com adesão e recorrência</small></span></button>
+<button class="qz-opt" data-k="area" data-v="Outra área da saúde"><span class="qe"></span><span>Outra área da saúde<small>fisio, dentista, terapeuta, farma…</small></span></button></div>
+      <p class="qz-note"><span class="stars"></span> +1.000 profissionais já criaram a sua</p>
     </div>
     <div class="qz-step" data-step="1">
-      <span class="qz-kicker">✦ Quase lá</span>
+      <span class="qz-kicker">Quase lá</span>
       <h2 class="serif">Você já vende algo <em>além das consultas</em>?</h2><p class="qz-sub">Programas, planos de acompanhamento, e-books, mentorias… qualquer produto conta.</p>
-      <div class="qz-opts"><button class="qz-opt" data-k="produto" data-v="Ainda não — só consultas"><span class="qe">🌱</span><span>Ainda não — só consultas<small>perfeito: é onde a MyDose mais multiplica</small></span></button>
-<button class="qz-opt" data-k="produto" data-v="Tenho 1–2 produtos"><span class="qe">💼</span><span>Tenho 1–2 produtos<small>vamos colocá-los pra vender no automático</small></span></button>
-<button class="qz-opt" data-k="produto" data-v="Tenho uma esteira e quero escalar"><span class="qe">🚀</span><span>Tenho uma esteira e quero escalar<small>comunidade + IA = seu próximo patamar</small></span></button></div>
+      <div class="qz-opts"><button class="qz-opt" data-k="produto" data-v="Ainda não — só consultas"><span class="qe"></span><span>Ainda não — só consultas<small>perfeito: é onde a MyDose mais multiplica</small></span></button>
+<button class="qz-opt" data-k="produto" data-v="Tenho 1–2 produtos"><span class="qe"></span><span>Tenho 1–2 produtos<small>vamos colocá-los pra vender no automático</small></span></button>
+<button class="qz-opt" data-k="produto" data-v="Tenho uma esteira e quero escalar"><span class="qe"></span><span>Tenho uma esteira e quero escalar<small>comunidade + IA = seu próximo patamar</small></span></button></div>
       <button class="qz-back" data-back>← voltar</button>
     </div>
     <div class="qz-step" data-step="2">
-      <span class="qz-kicker">✦ Última pergunta</span>
+      <span class="qz-kicker">Última pergunta</span>
       <h2 class="serif">Quantas pessoas você <em>impacta</em> hoje?</h2><p class="qz-sub">Pacientes ativos + audiência nas redes. Chute sem medo — é só pra calibrar o plano.</p>
-      <div class="qz-opts"><button class="qz-opt" data-k="alcance" data-v="Até 50 pessoas"><span class="qe">🌰</span><span>Até 50 pessoas<small>começando — melhor hora pra estruturar</small></span></button>
-<button class="qz-opt" data-k="alcance" data-v="50 a 300"><span class="qe">🌿</span><span>50 a 300<small>sua comunidade nasce cheia</small></span></button>
-<button class="qz-opt" data-k="alcance" data-v="300 a 1.000"><span class="qe">🌳</span><span>300 a 1.000<small>potencial de receita recorrente imediata</small></span></button>
-<button class="qz-opt" data-k="alcance" data-v="Mais de 1.000"><span class="qe">🔥</span><span>Mais de 1.000<small>você está sentado numa mina de ouro</small></span></button></div>
+      <div class="qz-opts"><button class="qz-opt" data-k="alcance" data-v="Até 50 pessoas"><span class="qe"></span><span>Até 50 pessoas<small>começando — melhor hora pra estruturar</small></span></button>
+<button class="qz-opt" data-k="alcance" data-v="50 a 300"><span class="qe"></span><span>50 a 300<small>sua comunidade nasce cheia</small></span></button>
+<button class="qz-opt" data-k="alcance" data-v="300 a 1.000"><span class="qe"></span><span>300 a 1.000<small>potencial de faturamento recorrente imediata</small></span></button>
+<button class="qz-opt" data-k="alcance" data-v="Mais de 1.000"><span class="qe"></span><span>Mais de 1.000<small>você está sentado numa mina de ouro</small></span></button></div>
       <button class="qz-back" data-back>← voltar</button>
     </div>
     <div class="qz-step" data-step="3">
-      <span class="qz-kicker">✦ Sua comunidade está quase pronta</span>
-      <div class="qz-preview"><span class="qav">🏛️</span><span><b id="qzPrevName">MyDose</b><small id="qzPrevSub"></small></span></div>
+      <span class="qz-kicker">Sua comunidade está quase pronta</span>
+      <div class="qz-preview"><span class="qav"></span><span><b id="qzPrevName">MyDose</b><small id="qzPrevSub"></small></span></div>
       <h2 class="serif">Pra quem a gente <em>entrega</em>?</h2><p class="qz-sub">Nosso time ativa sua comunidade e te chama no WhatsApp — em até 24h.</p>
       <form class="qz-form" id="qzForm">
         <div><label for="qzNome">Seu nome</label><input id="qzNome" required autocomplete="name"></div>
@@ -401,22 +446,22 @@ footer a{font-weight:700}
         <div><label for="qzMail">E-mail profissional</label><input id="qzMail" type="email" required autocomplete="email"></div>
         <button class="btn btn-grad qz-cta" type="submit">Criar minha comunidade →</button>
       </form>
-      <p class="qz-note">🔒 Seus dados ficam só com a gente. Sem spam, sem compromisso.</p>
+      <p class="qz-note">Seus dados ficam só com a gente. Sem spam, sem compromisso.</p>
       <button class="qz-back" data-back>← voltar</button>
     </div>
     <div class="qz-step qz-done" data-step="4">
-      <div class="qbig">🎉</div>
+      <div class="qbig"></div>
       <h2 class="serif">Pronto, <em id="qzDoneName">doutor(a)</em>!<br>Sua comunidade começou a nascer.</h2>
       <p class="qz-sub" style="margin-inline:auto">Nosso time entra em contato <b style="color:#fff">em até 24 horas</b> pra ativar tudo com você. Quer sugerir o melhor horário?</p>
       <div class="qz-cal">
-        <h4>📅 Escolha um horário sugerido</h4><p class="qcsub">A gente te liga nesse horário (ou o mais perto possível).</p>
+        <h4>Escolha um horário sugerido</h4><p class="qcsub">A gente te liga nesse horário (ou o mais perto possível).</p>
         <div class="qz-days" id="qzDays"></div>
         <div class="qz-slots">
-          <button class="qz-chip" data-slot="09:00">☀️ 09:00</button>
-          <button class="qz-chip" data-slot="14:00">🌤️ 14:00</button>
-          <button class="qz-chip" data-slot="19:00">🌙 19:00</button>
+          <button class="qz-chip" data-slot="09:00">09:00</button>
+          <button class="qz-chip" data-slot="14:00">14:00</button>
+          <button class="qz-chip" data-slot="19:00">19:00</button>
         </div>
-        <p class="qok" id="qzOk">✓ <span id="qzOkTxt"></span></p>
+        <p class="qok" id="qzOk"><span id="qzOkTxt"></span></p>
       </div>
     </div>
   </div>

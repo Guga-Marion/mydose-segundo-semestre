@@ -27,9 +27,14 @@
 <meta name="twitter:image" content="https://mydoseapp.com/assets/motion/hero-doctor-poster.jpg">
 <meta name="theme-color" content="#F6F4F2" id="metaTheme">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z' fill='%23415FF5'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..650;1,9..144,300..650&family=Figtree:wght@400;500;600;700;800&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"Americana BT";src:url("assets/fonts/americana-regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Americana BT";src:url("assets/fonts/americana-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-700.woff2") format("woff2");font-weight:700 800;font-style:normal;font-display:swap}
+</style>
 <script>
 /* aplica o tema antes do paint pra não piscar */
 (function(){
@@ -52,9 +57,9 @@
   --green-2:#A5DC85; --green-3:#DCEDD2;
   --g1:linear-gradient(100deg,#415FF5 0%,#C64FCA 52%,#F56442 100%);
   --g2:linear-gradient(100deg,#415FF5 0%,#9A55D8 50%,#F0B0F2 100%);
-  --serif:"Fraunces",Georgia,serif;
-  --sans:"Figtree",-apple-system,"Segoe UI",sans-serif;
-  --logo:"Quicksand",var(--sans);
+  --serif:"Americana BT",Georgia,serif;
+  --sans:"Google Sans",-apple-system,sans-serif;
+  --logo:"Americana BT",serif;
   --r:24px;
 
   /* tokens de tema (claro) */
@@ -1048,12 +1053,54 @@ details.faq .a b{color:var(--ink)}
   .tstep{opacity:1}
   .tour-badge{opacity:1;transform:none}
 }
+
+/* identidade oficial 2026 */
+.serif,h1,h2,h3,.sheet a{font-weight:400}
+.serif i,.serif em{font-weight:400}
+.blogo{display:inline-flex;align-items:center}
+.blogo img{display:block}
+img.blg-d{display:none}
+[data-theme="dark"] img.blg-l{display:none}
+[data-theme="dark"] img.blg-d{display:block}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) img.blg-l{display:none} :root:not([data-theme="light"]) img.blg-d{display:block} }
+footer img.blg-l{display:none}footer img.blg-d{display:block}
+.theme-btn svg{transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.theme-btn:hover svg{transform:rotate(40deg)}
+
+.hero-pattern,.hero-pattern-2{display:none}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "MyDose", "alternateName": ["MyDose AI", "MyDose IA", "MyDose App"], "url": "https://mydoseapp.com/", "logo": "https://mydoseapp.com/assets/motion/hero-doctor-poster.jpg", "description": "CRM para saúde com IA: comunidade gamificada de pacientes, planos e protocolos de acompanhamento e medicina do estilo de vida (MEV) para profissionais de saúde.", "sameAs": ["https://www.youtube.com/@mydoseapp", "https://www.instagram.com/mydoseapp", "https://www.linkedin.com/company/mydoseapp", "https://www.tiktok.com/@mydoseapp"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "MyDose", "applicationCategory": "HealthApplication", "operatingSystem": "iOS, Android, Web", "url": "https://mydoseapp.com/nova-identidade-v3-en.html", "description": "AI platform for health professionals: gamified patient community, follow-up care plans and protocols, healthcare CRM and lifestyle medicine.", "offers": {"@type": "Offer", "price": "290", "priceCurrency": "BRL", "description": "Plano Software, a partir de R$ 290/mês no anual"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1000"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need to understand tech or marketing?", "acceptedAnswer": {"@type": "Answer", "text": "No. With the Software plan everything is ready and simple; on service plans (Co-pilot, Autopilot, Partner), MyDose handles content, ads and strategy for you."}}, {"@type": "Question", "name": "I have few patients today. Is it still worth it?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — that's exactly when it pays off most. The community boosts adherence and repeat sales from patients you already have, and the product ladder creates revenue without more appointment slots."}}, {"@type": "Question", "name": "What about ethics and confidentiality, especially in mental health?", "acceptedAnswer": {"@type": "Answer", "text": "The AI is trained within your limits, with ethics and confidentiality. It keeps the bond between sessions without replacing clinical work — you set the tone and the rules."}}, {"@type": "Question", "name": "Any lock-in or cancellation fee?", "acceptedAnswer": {"@type": "Answer", "text": "No lock-in traps. And you get a 30-day guarantee: if you don't love it, we refund 100%."}}, {"@type": "Question", "name": "How soon do I see results?", "acceptedAnswer": {"@type": "Answer", "text": "Within 30 days you make your first sale inside MyDose and have patients using your follow-up protocols — or we work for free until it happens."}}, {"@type": "Question", "name": "Is the ad budget included in the price?", "acceptedAnswer": {"@type": "Answer", "text": "No — on purpose: ad spend stays transparent and under your control, outside the subscription."}}]}</script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <circle cx="12" cy="12" r="4" />
+  <path d="M12 2v2" />
+  <path d="M12 20v2" />
+  <path d="m4.93 4.93 1.41 1.41" />
+  <path d="m17.66 17.66 1.41 1.41" />
+  <path d="M2 12h2" />
+  <path d="M20 12h2" />
+  <path d="m6.34 17.66-1.41 1.41" />
+  <path d="m19.07 4.93-1.41 1.41" /></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></symbol><symbol id="i-rotate-ccw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+  <path d="M3 3v5h5" /></symbol><symbol id="i-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></symbol><symbol id="i-alarm-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <circle cx="12" cy="13" r="8" />
+  <path d="M12 9v4l2 2" />
+  <path d="M5 3 2 6" />
+  <path d="m22 6-3-3" />
+  <path d="M6.38 18.7 4 21" />
+  <path d="M17.64 18.67 20 21" /></symbol><symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></symbol></svg>
 
 <!-- ====== SVG defs: grafismos do brand ====== -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -1087,7 +1134,7 @@ details.faq .a b{color:var(--ink)}
 <!-- ====== NAV ====== -->
 <nav id="nav">
   <div class="wrap nav-in">
-    <a href="#" class="wordmark" aria-label="MyDose">my<span>dose</span></a>
+    <a href="#" class="wordmark" aria-label="MyDose"><span class="blogo"><img class="blg-l" src="assets/brand/logo-mydose-gradient-preto.svg" alt="MyDose" width="104" height="22"><img class="blg-d" src="assets/brand/logo-mydose-gradient-branco.svg" alt="" width="104" height="22" aria-hidden="true"></span></a>
     <div class="nav-links">
       <a href="#como">How it works</a>
       <a href="#produto">Product</a>
@@ -1098,7 +1145,7 @@ details.faq .a b{color:var(--ink)}
     </div>
     <div class="nav-right">
       <div class="lang-seg" role="group" aria-label="Idioma / Language / Idioma"><a href="nova-identidade-v3.html" aria-label="Português">PT</a><a class="on" aria-current="true" href="#">EN</a><a href="nova-identidade-v3-es.html" aria-label="Español">ES</a></div>
-      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">🌙</button>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><svg width="17" height="17" style="color:#8699FD"><use href="#i-moon"/></svg></button>
       <button class="btn btn-primary btn-sm nav-cta js-talk" data-mode="checkout" data-plan="MyDose">Create your community</button>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -1111,7 +1158,7 @@ details.faq .a b{color:var(--ink)}
   <a href="#lab">MyDose Lab <small>04</small></a>
   <a href="#planos">Plans <small>05</small></a>
   <a href="#faq">FAQ <small>06</small></a>
-  <div class="sheet-langs"><span class="sl-lbl">🌐</span><a href="nova-identidade-v3.html">PT</a><a class="on" href="#">EN</a><a href="nova-identidade-v3-es.html">ES</a></div>
+  <div class="sheet-langs"><span class="sl-lbl"></span><a href="nova-identidade-v3.html">PT</a><a class="on" href="#">EN</a><a href="nova-identidade-v3-es.html">ES</a></div>
   <button class="btn btn-grad js-talk" data-mode="checkout" data-plan="MyDose">Create your community <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
 </div>
 
@@ -1132,14 +1179,14 @@ details.faq .a b{color:var(--ink)}
         <a class="btn btn-ghost" href="#produto">See the product</a>
       </div>
       <div class="tick-hero tick-hero-m rv rv-d3 in">
-        <span class="tick-label">✦ Replace 10+ tools at once ✦</span>
+        <span class="tick-label">Replace 10+ tools at once ✦</span>
         <div class="marquee marquee-hero"><div class="marquee-track" data-ticker="feats"></div></div>
       </div>
       <div class="social-row rv rv-d3 in">
         <span class="avs"><img src="assets/dep-medica.jpg" alt=""><img src="assets/dep-nutri.jpg" alt=""><img src="assets/dep-psi.jpg" alt=""><img src="assets/dep-medico.jpg" alt=""></span>
-        <span><i class="stars">★★★★★</i><small>+1,000 health professionals already use it</small></span>
+        <span><i class="stars"></i><small>+1,000 health professionals already use it</small></span>
       </div>
-      <p class="hero-urgency rv rv-d3 in">🔥 Limited onboarding capacity — prices go up in August.</p>
+      <p class="hero-urgency rv rv-d3 in">Limited onboarding capacity — prices go up in August.</p>
       <div class="hero-stats rv rv-d4 in">
         <div class="st"><b class="serif grad-text"><span data-count="1000" data-prefix="+">0</span></b><span>health professionals</span></div>
         <div class="st"><b class="serif grad-text">5×</b><span>more revenue</span></div>
@@ -1162,7 +1209,7 @@ details.faq .a b{color:var(--ink)}
     </div>
   </div>
   <div class="wrap tick-hero tick-hero-d rv in">
-    <span class="tick-label">✦ Replace 10+ tools at once ✦</span>
+    <span class="tick-label">Replace 10+ tools at once ✦</span>
     <div class="marquee marquee-hero"><div class="marquee-track" data-ticker="feats"></div></div>
   </div>
 </header>
@@ -1176,8 +1223,8 @@ details.faq .a b{color:var(--ink)}
       <p>Care stops when the appointment ends — taking adherence and income with it. Working more isn’t the way out. <b>Scaling is.</b></p>
     </div>
     <div class="pains">
-      <div class="pain rv"><span class="pico" style="background:var(--sec-peach)">🔁</span><h4>Low repeat sales</h4><p>Patients vanish after the plan and you restart acquisition from zero — every single month.</p></div>
-      <div class="pain rv rv-d1"><span class="pico" style="background:var(--sec-pink)">📵</span><h4>WhatsApp slave</h4><p>Late-night messages, manual billing, improvised follow-ups. Care becomes overload.</p></div>
+      <div class="pain rv"><span class="pico" style="background:var(--sec-peach)"></span><h4>Low repeat sales</h4><p>Patients vanish after the plan and you restart acquisition from zero — every single month.</p></div>
+      <div class="pain rv rv-d1"><span class="pico" style="background:var(--sec-pink)"></span><h4>WhatsApp slave</h4><p>Late-night messages, manual billing, improvised follow-ups. Care becomes overload.</p></div>
       <div class="pain rv rv-d2"><span class="pico" style="background:var(--sec-blue)">⏳</span><h4>Income capped by the calendar</h4><p>Your revenue is exactly the hours you can endure. Growing = having no life.</p></div>
     </div>
     <div class="sec-cta rv" style="justify-content:center">
@@ -1201,7 +1248,7 @@ details.faq .a b{color:var(--ink)}
       <div class="dots" id="dots" aria-hidden="true"></div>
     </div>
     <div class="pros-chips rv">
-      <span>🩺 Physicians</span><span>🧠 Psychologists</span><span>🥗 Nutritionists</span><span>🫶 Therapists</span><span>🏋️ Trainers &amp; fitness pros</span><span>🦴 Physiotherapists</span><span>🦷 Dentists</span><span>💊 Pharmacists</span><span>✨ and many more</span>
+      <span>Physicians</span><span>Psychologists</span><span>Nutritionists</span><span>Therapists</span><span>Trainers &amp; fitness pros</span><span>Physiotherapists</span><span>Dentists</span><span>Pharmacists</span><span>and many more</span>
     </div>
     <p class="pros-note rv">The main professional boards alone exceed <b>2.5 million</b>. Adding nursing, aesthetics, integrative therapies and wellness, Brazil’s health market surpasses <b>9 million professionals</b> — each with an audience waiting to be cared for between appointments. <span style="opacity:.6;font-size:13px">· sources: professional boards</span></p>
     <div class="sec-cta rv">
@@ -1221,7 +1268,7 @@ details.faq .a b{color:var(--ink)}
     </div>
     <div class="duel">
       <div class="duel-card d-exp rv">
-        <h3 class="serif">Expand <span class="tag">⚠ has a ceiling</span></h3>
+        <h3 class="serif">Expand <span class="tag">has a ceiling</span></h3>
         <p style="margin-top:8px;font-size:14px;color:var(--gray);font-weight:600">Linear · time × money</p>
         <div class="chart">
           <svg viewBox="0 0 320 170" fill="none">
@@ -1261,7 +1308,7 @@ details.faq .a b{color:var(--ink)}
           <li><b>R$ 50K–500K+/mo</b> · infinite scale</li>
         </ul>
         <div class="chips">
-          <i>🩺 Appointments</i><i>🔁 Subscriptions</i><i>🧬 Protocols</i><i>🎯 Challenges</i><i>📚 Courses & e-books</i><i>🎤 Events & lives</i>
+          <i>Appointments</i><i>Subscriptions</i><i>Protocols</i><i>Challenges</i><i>Courses & e-books</i><i>Events & lives</i>
         </div>
         <p class="quote">“Same hours. Uncapped revenue.”</p>
       </div>
@@ -1282,7 +1329,7 @@ details.faq .a b{color:var(--ink)}
     </div>
     <div class="steps3">
       <div class="step3 rv">
-        <span class="badge7">⚡ live in 7 days</span>
+        <span class="badge7">live in 7 days</span>
         <div class="n serif">01</div>
         <h4>Your community goes live</h4>
         <p>An app with your brand: gamified community (D.O.S.E.), protocols and checkout. Ready in 7 days.</p>
@@ -1369,8 +1416,8 @@ details.faq .a b{color:var(--ink)}
               <video class="tp-vid" src="assets/proto/ia.mp4" poster="assets/proto/ia-poster.jpg" muted loop playsinline preload="none"></video>
             </div>
           </div>
-          <span class="tour-badge tb-xp" id="tbXp">⭐ +10 XP · Hit logged</span>
-          <span class="tour-badge tb-ia" id="tbIa">💬 Fernanda A.I. · online</span>
+          <span class="tour-badge tb-xp" id="tbXp">+10 XP · Hit logged</span>
+          <span class="tour-badge tb-ia" id="tbIa">Fernanda A.I. · online</span>
         </div>
       </div>
       <div class="tour-steps" id="tourSteps">
@@ -1379,8 +1426,8 @@ details.faq .a b{color:var(--ink)}
           <h3 class="serif">A feed your patients <em>open every day</em></h3>
           <p>Forum, content and challenges with rankings, XP and hits — adherence becomes a game, and the game becomes a habit.</p>
           <ul class="tfeats">
-            <li><span class="tk">🏆</span><span><b>Challenges with prizes</b> — 30-Day Transformation, live rankings and 158 people pushing each other up.</span></li>
-            <li><span class="tk">✦</span><span><b>Weekly progress</b> — patients watch the bar fill up. And they don’t want to let it drop.</span></li>
+            <li><span class="tk"></span><span><b>Challenges with prizes</b> — 30-Day Transformation, live rankings and 158 people pushing each other up.</span></li>
+            <li><span class="tk"></span><span><b>Weekly progress</b> — patients watch the bar fill up. And they don’t want to let it drop.</span></li>
           </ul>
         </article>
         <article class="tstep">
@@ -1388,8 +1435,8 @@ details.faq .a b{color:var(--ink)}
           <h3 class="serif">Logging a habit takes <em>10 seconds</em> — and releases serotonin</h3>
           <p>Photo of the plate, caption, share: +10 XP in the account and the brain saying thanks. It’s neuroscience applied to adherence.</p>
           <ul class="tfeats">
-            <li><span class="tk">📸</span><span><b>Hit with a photo</b> — the log becomes a community post and social proof for the whole group.</span></li>
-            <li><span class="tk">⭐</span><span><b>Instant reward</b> — the XP celebration closes the habit loop, every day.</span></li>
+            <li><span class="tk"></span><span><b>Hit with a photo</b> — the log becomes a community post and social proof for the whole group.</span></li>
+            <li><span class="tk"></span><span><b>Instant reward</b> — the XP celebration closes the habit loop, every day.</span></li>
           </ul>
         </article>
         <article class="tstep">
@@ -1397,8 +1444,8 @@ details.faq .a b{color:var(--ink)}
           <h3 class="serif">The plan you prescribe <em>happens in the app</em></h3>
           <p>Breakfast, workout, session: every activity in your protocol lands on the patient’s calendar with a reminder and XP.</p>
           <ul class="tfeats">
-            <li><span class="tk">📅</span><span><b>My Day</b> — the patient’s daily timeline, with your protocol inside.</span></li>
-            <li><span class="tk">🔁</span><span><b>Visible adherence</b> — you see who did it, who failed and who needs you.</span></li>
+            <li><span class="tk"></span><span><b>My Day</b> — the patient’s daily timeline, with your protocol inside.</span></li>
+            <li><span class="tk"></span><span><b>Visible adherence</b> — you see who did it, who failed and who needs you.</span></li>
           </ul>
         </article>
         <article class="tstep">
@@ -1406,8 +1453,8 @@ details.faq .a b{color:var(--ink)}
           <h3 class="serif">Your AI responds <em>while you live</em></h3>
           <p>Trained on your protocol, in your tone: it answers questions, guides meals and keeps the bond — 24 hours a day.</p>
           <ul class="tfeats">
-            <li><span class="tk">💬</span><span><b>In the app chat and on WhatsApp</b> — patients never go unanswered.</span></li>
-            <li><span class="tk">🛡️</span><span><b>With ethics and limits</b> — it guides within what you defined. Serious cases go to you.</span></li>
+            <li><span class="tk"></span><span><b>In the app chat and on WhatsApp</b> — patients never go unanswered.</span></li>
+            <li><span class="tk"></span><span><b>With ethics and limits</b> — it guides within what you defined. Serious cases go to you.</span></li>
           </ul>
         </article>
       </div>
@@ -1452,21 +1499,21 @@ details.faq .a b{color:var(--ink)}
         <div class="pct serif">2–5%</div>
         <h4>Cold audience</h4>
         <p>you post, they scroll past</p>
-        <div class="chips"><i>📷 Instagram</i><i>🎵 TikTok</i><i>▶️ YouTube</i><i>💬 WhatsApp</i></div>
+        <div class="chips"><i>Instagram</i><i>TikTok</i><i>▶️ YouTube</i><i>WhatsApp</i></div>
       </div>
       <div class="fdrop rv"><span class="fball"><svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr-dn"/></svg></span> they join your community</div>
       <div class="fstep s2 rv rv-d1">
         <div class="pct serif">15–25%</div>
         <h4>Active community</h4>
         <p>they join, engage and become fans</p>
-        <div class="chips"><i>🎮 Gamification</i><i>📚 Content</i><i>🏆 Challenges</i><i>🤖 AI 24/7</i></div>
+        <div class="chips"><i>Gamification</i><i>Content</i><i>Challenges</i><i>AI 24/7</i></div>
       </div>
       <div class="fdrop rv"><span class="fball"><svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr-dn"/></svg></span> and they buy the whole ladder</div>
       <div class="fstep s3 rv rv-d2">
         <div class="pct serif">$$$</div>
         <h4>Products are a consequence</h4>
         <p>the whole ladder monetized</p>
-        <div class="chips"><i>🩺 Appointments</i><i>🔁 Plans</i><i>🧬 Protocols</i><i>🎓 Courses</i><i>🎤 Events</i></div>
+        <div class="chips"><i>Appointments</i><i>Plans</i><i>Protocols</i><i>Courses</i><i>Events</i></div>
       </div>
     </div>
     <div class="sec-cta rv" style="justify-content:center">
@@ -1490,7 +1537,7 @@ details.faq .a b{color:var(--ink)}
           <button class="vbtn js-video" data-name="Dr. Arthur"><span class="play">▶</span> Watch testimonial</button>
         </div>
         <div class="txt">
-          <i class="stars">★★★★★</i>
+          <i class="stars"></i>
           <blockquote>“In 30 days I made my first program sale inside the app. Today I have income that doesn’t depend on me being in the chair.”</blockquote>
           <div class="who"><b>Dr. Arthur</b><span>Physician · MyDose partner</span></div>
         </div>
@@ -1500,7 +1547,7 @@ details.faq .a b{color:var(--ink)}
           <button class="vbtn js-video" data-name="Nutritionist"><span class="play">▶</span> Watch testimonial</button>
         </div>
         <div class="txt">
-          <i class="stars">★★★★★</i>
+          <i class="stars"></i>
           <blockquote>“My patients’ adherence tripled. They come back, follow the plan and even refer others. It changed my operation.”</blockquote>
           <div class="who"><b>Nutritionist</b><span>Physical health · MyDose Physical</span></div>
         </div>
@@ -1510,7 +1557,7 @@ details.faq .a b{color:var(--ink)}
           <button class="vbtn js-video" data-name="Psychologist"><span class="play">▶</span> Watch testimonial</button>
         </div>
         <div class="txt">
-          <i class="stars">★★★★★</i>
+          <i class="stars"></i>
           <blockquote>“No-shows truly dropped. The AI keeps the bond between sessions with the care mental health demands.”</blockquote>
           <div class="who"><b>Psychologist</b><span>Mental health · MyDose Mental</span></div>
         </div>
@@ -1540,7 +1587,7 @@ details.faq .a b{color:var(--ink)}
     <div class="wa-wrap rv rv-d2">
       <div>
         <div class="wa-phone">
-          <div class="wa-head"><span class="wa-av">👩‍⚕️</span><div><b>You, after hours</b><small>online 11:58pm</small></div><span class="wa-badge">+47</span></div>
+          <div class="wa-head"><span class="wa-av">‍⚕️</span><div><b>You, after hours</b><small>online 11:58pm</small></div><span class="wa-badge">+47</span></div>
           <div class="wa-msgs">
             <div class="wa-m">Doc, did you see my message? 😣 <i>10:41pm</i></div>
             <div class="wa-m">can I repeat yesterday’s medication? <i>11:12pm</i></div>
@@ -1573,11 +1620,11 @@ details.faq .a b{color:var(--ink)}
       </div>
     </div>
     <div class="floors" id="bldg">
-      <div class="floor f1"><span class="fico">🏆</span><div><b>Challenges & gamification</b><small>the front door</small></div><div class="val serif">R$ 3k<small>500 people</small></div></div>
-      <div class="floor f2"><span class="fico">🎤</span><div><b>Events & launches</b><small>revenue spikes</small></div><div class="val serif">R$ 10k<small>300 people</small></div></div>
-      <div class="floor f3"><span class="fico">🎓</span><div><b>Courses & library</b><small>scale without a calendar</small></div><div class="val serif">R$ 9k<small>150 people</small></div></div>
-      <div class="floor f4"><span class="fico">🧬</span><div><b>Protocols & plans</b><small>recurring care</small></div><div class="val serif">R$ 12k<small>100 people</small></div></div>
-      <div class="floor f5"><span class="fico">🩺</span><div><b>Appointments & community</b><small>the premium tier</small></div><div class="val serif">R$ 16k<small>40 people</small></div></div>
+      <div class="floor f1"><span class="fico"></span><div><b>Challenges & gamification</b><small>the front door</small></div><div class="val serif">R$ 3k<small>500 people</small></div></div>
+      <div class="floor f2"><span class="fico"></span><div><b>Events & launches</b><small>revenue spikes</small></div><div class="val serif">R$ 10k<small>300 people</small></div></div>
+      <div class="floor f3"><span class="fico"></span><div><b>Courses & library</b><small>scale without a calendar</small></div><div class="val serif">R$ 9k<small>150 people</small></div></div>
+      <div class="floor f4"><span class="fico"></span><div><b>Protocols & plans</b><small>recurring care</small></div><div class="val serif">R$ 12k<small>100 people</small></div></div>
+      <div class="floor f5"><span class="fico"></span><div><b>Appointments & community</b><small>the premium tier</small></div><div class="val serif">R$ 16k<small>40 people</small></div></div>
       <div class="tower-base rv">One entrance: payments · AI · CRM — everything integrated in one place</div>
     </div>
   </div>
@@ -1595,13 +1642,13 @@ details.faq .a b{color:var(--ink)}
       <div class="tools-old rv">
         <h3 class="serif">The patchwork quilt</h3>
         <ul class="tool-list">
-          <li><span>📱 Habits app + community</span><b>R$ 497</b></li>
-          <li><span>🤖 AI assistant</span><b>R$ 397</b></li>
-          <li><span>🗂️ Electronic health records</span><b>R$ 299</b></li>
-          <li><span>📊 Sales CRM</span><b>R$ 400</b></li>
-          <li><span>🎓 Members area + checkout</span><b>R$ 800</b></li>
-          <li><span>📈 Ads management</span><b>R$ 590</b></li>
-          <li><span>📨 Broadcasts + calendar + forms</span><b>R$ 907</b></li>
+          <li><span>Habits app + community</span><b>R$ 497</b></li>
+          <li><span>AI assistant</span><b>R$ 397</b></li>
+          <li><span>Electronic health records</span><b>R$ 299</b></li>
+          <li><span>Sales CRM</span><b>R$ 400</b></li>
+          <li><span>Members area + checkout</span><b>R$ 800</b></li>
+          <li><span>Ads management</span><b>R$ 590</b></li>
+          <li><span>Broadcasts + calendar + forms</span><b>R$ 907</b></li>
         </ul>
         <div class="sum"><span>10+ tools, separately</span><b>R$ 3,890/mo</b></div>
       </div>
@@ -1609,7 +1656,7 @@ details.faq .a b{color:var(--ink)}
         <h3 class="serif">With MyDose, starting at</h3>
         <div class="big serif">R$ 290<small>/mo</small></div>
         <p style="color:rgba(255,255,255,.75);font-size:15px">You swap the patchwork of apps for one platform — <b style="color:#fff">and get content, ads and AI running your growth on top</b>.</p>
-        <span class="save-pill">💸 You save R$ 3,600/mo</span>
+        <span class="save-pill">You save R$ 3,600/mo</span>
         <button class="btn btn-light js-talk" data-mode="checkout" data-plan="MyDose">Switch to MyDose <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
       </div>
     </div>
@@ -1675,7 +1722,7 @@ details.faq .a b{color:var(--ink)}
   <svg class="gf spin-slow" style="bottom:8%;left:4%;width:64px;color:rgba(240,176,242,.35)" viewBox="0 0 100 100"><use href="#gf-spark" fill="currentColor"/></svg>
   <div class="wrap lab-grid">
     <div>
-      <span class="lab-free rv">🧪 MyDose Lab · free community</span>
+      <span class="lab-free rv">MyDose Lab · free community</span>
       <h2 class="serif rv">Learn to scale your practice — <em style="color:var(--pink-2)">for free</em>.</h2>
       <p class="lead rv rv-d1">MyDose Lab is our content community: lives, classes and behind-the-scenes to teach health professionals to <b>build businesses, scale practices and clinics</b>, care for more people and run ongoing-care programs — better for you, better for patients.</p>
       <div class="hero-ctas rv rv-d2" style="margin-top:30px">
@@ -1684,10 +1731,10 @@ details.faq .a b{color:var(--ink)}
       </div>
     </div>
     <ul class="lab-items rv rv-d1">
-      <li><span class="lico">🎥</span><div><b>Weekly lives and classes</b><span>with Guga, Dr. Arthur and guests</span></div></li>
-      <li><span class="lico">📚</span><div><b>All MyDose content</b><span>members area with full access</span></div></li>
-      <li><span class="lico">🧬</span><div><b>Ongoing-care programs</b><span>the model that’s better for you — and for patients</span></div></li>
-      <li><span class="lico">🤝</span><div><b>A community of people scaling</b><span>networking with professionals like you</span></div></li>
+      <li><span class="lico"></span><div><b>Weekly lives and classes</b><span>with Guga, Dr. Arthur and guests</span></div></li>
+      <li><span class="lico"></span><div><b>All MyDose content</b><span>members area with full access</span></div></li>
+      <li><span class="lico"></span><div><b>Ongoing-care programs</b><span>the model that’s better for you — and for patients</span></div></li>
+      <li><span class="lico"></span><div><b>A community of people scaling</b><span>networking with professionals like you</span></div></li>
     </ul>
   </div>
 </section>
@@ -1747,15 +1794,15 @@ details.faq .a b{color:var(--ink)}
     </div>
     <div class="plans-controls rv">
       <div class="seg" id="segWho">
-        <button class="on" data-who="pro">👤 Professional</button>
-        <button data-who="cli">🏥 Clinic</button>
+        <button class="on" data-who="pro">Professional</button>
+        <button data-who="cli">Clinic</button>
       </div>
       <div class="seg" id="segTerm">
         <button class="on" data-k="anu">Annual <b>−25%</b></button>
         <button data-k="sem">Semiannual <b>−15%</b></button>
         <button data-k="tri">Quarterly</button>
       </div>
-      <p style="font-size:13.5px;color:var(--gray);font-weight:600;text-align:center">💚 Annual = best price (up to ~2 months free) · 🔒 price locked for the contract · 🛡️ 30-day guarantee</p>
+      <p style="font-size:13.5px;color:var(--gray);font-weight:600;text-align:center">Annual = best price (up to ~2 months free) · 🔒 price locked for the contract · 🛡️ 30-day guarantee</p>
     </div>
 
     <!-- PROFISSIONAL -->
@@ -1804,7 +1851,7 @@ details.faq .a b{color:var(--ink)}
           <button class="talk2 js-talk" data-mode="talk" data-plan="Co-pilot">Book a meeting</button>
         </div>
         <div class="plan hot rv rv-d3">
-          <span class="star">⭐ Most popular</span>
+          <span class="star">Most popular</span>
           <h4>Autopilot</h4>
           <p class="desc">The machine running: we build and manage it for you.</p>
           <p class="fat">for revenue of R$ 50–150k/mo</p>
@@ -1836,13 +1883,13 @@ details.faq .a b{color:var(--ink)}
       </div>
       <p class="plans-note rv">With <b>Autopilot</b> you receive <b>R$ 127,000+/year</b> in delivered value (platform + ads + 360 content pieces + funnels + management) → investing from <b>R$ 2,190/mo</b>.</p>
       <details class="compare rv">
-        <summary>📊 Compare all deliverables <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></summary>
+        <summary>Compare all deliverables <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></summary>
         <div class="tbl-scroll">
           <table>
             <tr><th>Deliverables / mo</th><th>Software</th><th>Start</th><th>Co-pilot</th><th>Autopilot ⭐</th><th>Partner</th></tr>
             <tr><td>Investment /mo</td><td>R$ <span data-tri="397" data-sem="340" data-anu="290">290</span></td><td>R$ <span data-tri="797" data-sem="690" data-anu="590">590</span></td><td>R$ <span data-tri="1.490" data-sem="1.290" data-anu="1.090">1.090</span></td><td>R$ <span data-tri="2.990" data-sem="2.590" data-anu="2.190">2.190</span></td><td>R$ <span data-tri="7.900" data-sem="6.900" data-anu="5.900">5.900</span></td></tr>
             <tr><td>Ad budget</td><td>—</td><td>—</td><td>—</td><td>+R$ 1.500</td><td>+R$ 5.000</td></tr>
-            <tr><td>AI platform + Academy</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><td>AI platform + Academy</td><td></td><td></td><td></td><td></td><td></td></tr>
             <tr><td>AI-made posts</td><td>—</td><td>6</td><td>12</td><td>20</td><td>36</td></tr>
             <tr><td>Edited videos / Reels</td><td>—</td><td>3</td><td>6</td><td>10</td><td>18</td></tr>
             <tr><td>Ebooks / lead magnets</td><td>—</td><td>1</td><td>1</td><td>2</td><td>4</td></tr>
@@ -1876,7 +1923,7 @@ details.faq .a b{color:var(--ink)}
           <button class="btn btn-ghost btn-sm js-talk" data-mode="talk" data-plan="Clinics Start">Get a proposal</button>
         </div>
         <div class="plan hot rv rv-d1">
-          <span class="star">⭐ Best cost per chair</span>
+          <span class="star">Best cost per chair</span>
           <h4>Clinics Growth</h4>
           <p class="desc">Scale the clinic with ads and funnels per specialty.</p>
           <p class="fat">up to 6 professionals</p>
@@ -1906,14 +1953,14 @@ details.faq .a b{color:var(--ink)}
         </div>
       </div>
       <details class="compare rv">
-        <summary>📊 Compare all deliverables <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></summary>
+        <summary>Compare all deliverables <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></summary>
         <div class="tbl-scroll">
           <table>
             <tr><th>Deliverables / mo</th><th>Clinics Start</th><th>Clinics Growth ⭐</th><th>Clinics Performance</th></tr>
             <tr><td>Investment /mo</td><td>R$ <span data-tri="1.990" data-sem="1.690" data-anu="1.490">1.490</span></td><td>R$ <span data-tri="4.990" data-sem="4.240" data-anu="3.740">3.740</span></td><td>R$ <span data-tri="9.900" data-sem="8.400" data-anu="7.400">7.400</span></td></tr>
             <tr><td>Ad budget</td><td>—</td><td>+R$ 2.500</td><td>+R$ 5.000</td></tr>
             <tr><td>Professionals included</td><td>up to 3</td><td>up to 6</td><td>up to 12</td></tr>
-            <tr><td>Multidisciplinary platform + Academy</td><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Multidisciplinary platform + Academy</td><td></td><td></td><td></td></tr>
             <tr><td>AI-made posts</td><td>12</td><td>30</td><td>60</td></tr>
             <tr><td>Edited videos / Reels</td><td>6</td><td>15</td><td>30</td></tr>
             <tr><td>Ebooks / lead magnets</td><td>1</td><td>3</td><td>6</td></tr>
@@ -1931,19 +1978,19 @@ details.faq .a b{color:var(--ink)}
 
     <div class="assures">
       <div class="assure as-1 rv">
-        <h5>🛡️ 30-day guarantee</h5>
+        <h5>30-day guarantee</h5>
         <p>Didn’t love it? We refund <b>100% of your investment</b>. No questions, no fine print.</p>
       </div>
       <div class="assure as-2 rv rv-d1">
-        <h5>🎯 The aha guarantee</h5>
+        <h5>The aha guarantee</h5>
         <p>No first sale and protocols running in 30 days (doing your part)? <b>We work for free until it happens.</b></p>
       </div>
       <div class="assure as-3 rv rv-d2">
-        <h5>🔒 Price lock</h5>
+        <h5>Price lock</h5>
         <p>The price you close today stays <b>frozen for the whole contract</b>. Prices rise; yours doesn’t.</p>
       </div>
     </div>
-    <p class="plans-note rv"><b>Dedicated onboarding + price lock</b> only apply when closing in the meeting — <b>limited capacity per month</b>. When Clinics launches (August), prices go up.<br><br>➕ <b>Need more volume?</b> On-demand add-ons — WhatsApp, e-mails, AI credits, extra content and extra professionals — kick in only when you want, no invoice surprises. The programs <b>you charge patients for</b> (Starter, Essential, Premium) are your revenue, not platform cost.</p>
+    <p class="plans-note rv"><b>Dedicated onboarding + price lock</b> only apply when closing in the meeting — <b>limited capacity per month</b>. When Clinics launches (August), prices go up.<br><br><b>Need more volume?</b> On-demand add-ons — WhatsApp, e-mails, AI credits, extra content and extra professionals — kick in only when you want, no invoice surprises. The programs <b>you charge patients for</b> (Starter, Essential, Premium) are your revenue, not platform cost.</p>
   </div>
 </section>
 
@@ -1977,7 +2024,7 @@ details.faq .a b{color:var(--ink)}
         <h2 class="serif">Before deciding, <em>watch it work live</em>.</h2>
         <p>Every Wednesday, 7pm BRT: Guga & Dr. Arthur show, hands-on, how to generate <b>+R$ 10k in 30 days</b> with community and AI — answering your questions in real time.</p>
         <a class="btn btn-light" href="live.html">Save my free seat <svg class="arr" width="18" height="18"><use href="#arr"/></svg></a>
-        <p class="live-free">✓ free · limited seats per cohort · replay available for 7 days</p>
+        <p class="live-free">free · limited seats per cohort · replay available for 7 days</p>
       </div>
       <div class="live-media">
         <img src="assets/live-workshop.jpg" alt="Guga and Dr. Arthur at the free live Scalable Practice workshop" loading="lazy">
@@ -2021,10 +2068,10 @@ details.faq .a b{color:var(--ink)}
           <option>Other</option>
         </select>
         <button class="btn btn-grad" type="submit">I want my plan <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
-        <p class="m-priv">🔒 No spam. We use your data only to reach out.</p>
+        <p class="m-priv">No spam. We use your data only to reach out.</p>
       </form>
       <div class="msuccess">
-        <div class="big">🎉</div>
+        <div class="big"></div>
         <h4>Got it!</h4>
         <p>Our team will message you on <b>WhatsApp</b> within 1 business day.</p>
       </div>
@@ -2040,7 +2087,7 @@ details.faq .a b{color:var(--ink)}
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <span class="wordmark">my<span>dose</span></span>
+        <span class="blogo"><img class="blg-l" src="assets/brand/logo-mydose-gradient-preto.svg" alt="MyDose" width="104" height="22"><img class="blg-d" src="assets/brand/logo-mydose-gradient-branco.svg" alt="" width="104" height="22" aria-hidden="true"></span>
         <p class="tagline">Your AI operating layer to scale healthcare. +Adherence · +Revenue · −Time.</p>
         <div class="foot-social" aria-label="Social">
         <a href="https://www.youtube.com/@mydoseapp" target="_blank" rel="noopener" aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5s-7 0-8.9.6A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.6 8.9.6 8.9.6s7 0 8.9-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.2ZM9.7 15.3V8.7L15.8 12l-6.1 3.3Z"/></svg></a>
@@ -2082,39 +2129,39 @@ details.faq .a b{color:var(--ink)}
   <div class="qz-top">
     <span class="qz-logo">my<b>dose</b></span>
     <div class="qz-bar"><i id="qzBar"></i></div>
-    <button class="qz-x" id="qzX" aria-label="close">✕</button>
+    <button class="qz-x" id="qzX" aria-label="close"></button>
   </div>
   <div class="qz-wrap">
     <div class="qz-step on" data-step="0">
-      <span class="qz-kicker">✦ Create your community · takes 40 seconds</span>
+      <span class="qz-kicker">Create your community · takes 40 seconds</span>
       <h2 class="serif">What’s your <em>field</em>?</h2><p class="qz-sub">We’ll shape your community your way — gamification, protocols and AI tailored to your specialty.</p>
-      <div class="qz-opts"><button class="qz-opt" data-k="area" data-v="Physician"><span class="qe">🩺</span><span>Physician<small>practice, clinic or online</small></span></button>
-<button class="qz-opt" data-k="area" data-v="Nutritionist"><span class="qe">🥗</span><span>Nutritionist<small>meal plans that actually happen</small></span></button>
-<button class="qz-opt" data-k="area" data-v="Psychologist"><span class="qe">🧠</span><span>Psychologist<small>bond and continuity between sessions</small></span></button>
-<button class="qz-opt" data-k="area" data-v="Trainer / Fitness pro"><span class="qe">🏋️</span><span>Trainer / Fitness pro<small>workouts with adherence and recurrence</small></span></button>
-<button class="qz-opt" data-k="area" data-v="Other health field"><span class="qe">✨</span><span>Other health field<small>physio, dentist, therapist, pharma…</small></span></button></div>
-      <p class="qz-note"><span class="stars">★★★★★</span> +1,000 professionals already created theirs</p>
+      <div class="qz-opts"><button class="qz-opt" data-k="area" data-v="Physician"><span class="qe"></span><span>Physician<small>practice, clinic or online</small></span></button>
+<button class="qz-opt" data-k="area" data-v="Nutritionist"><span class="qe"></span><span>Nutritionist<small>meal plans that actually happen</small></span></button>
+<button class="qz-opt" data-k="area" data-v="Psychologist"><span class="qe"></span><span>Psychologist<small>bond and continuity between sessions</small></span></button>
+<button class="qz-opt" data-k="area" data-v="Trainer / Fitness pro"><span class="qe"></span><span>Trainer / Fitness pro<small>workouts with adherence and recurrence</small></span></button>
+<button class="qz-opt" data-k="area" data-v="Other health field"><span class="qe"></span><span>Other health field<small>physio, dentist, therapist, pharma…</small></span></button></div>
+      <p class="qz-note"><span class="stars"></span> +1,000 professionals already created theirs</p>
     </div>
     <div class="qz-step" data-step="1">
-      <span class="qz-kicker">✦ Almost there</span>
+      <span class="qz-kicker">Almost there</span>
       <h2 class="serif">Do you already sell anything <em>beyond appointments</em>?</h2><p class="qz-sub">Programs, care plans, e-books, mentorships… any product counts.</p>
-      <div class="qz-opts"><button class="qz-opt" data-k="produto" data-v="Not yet — appointments only"><span class="qe">🌱</span><span>Not yet — appointments only<small>perfect: that’s where MyDose multiplies most</small></span></button>
-<button class="qz-opt" data-k="produto" data-v="I have 1–2 products"><span class="qe">💼</span><span>I have 1–2 products<small>let’s put them on sale on autopilot</small></span></button>
-<button class="qz-opt" data-k="produto" data-v="I have a ladder and want to scale"><span class="qe">🚀</span><span>I have a ladder and want to scale<small>community + AI = your next level</small></span></button></div>
+      <div class="qz-opts"><button class="qz-opt" data-k="produto" data-v="Not yet — appointments only"><span class="qe"></span><span>Not yet — appointments only<small>perfect: that’s where MyDose multiplies most</small></span></button>
+<button class="qz-opt" data-k="produto" data-v="I have 1–2 products"><span class="qe"></span><span>I have 1–2 products<small>let’s put them on sale on autopilot</small></span></button>
+<button class="qz-opt" data-k="produto" data-v="I have a ladder and want to scale"><span class="qe"></span><span>I have a ladder and want to scale<small>community + AI = your next level</small></span></button></div>
       <button class="qz-back" data-back>← back</button>
     </div>
     <div class="qz-step" data-step="2">
-      <span class="qz-kicker">✦ Last question</span>
+      <span class="qz-kicker">Last question</span>
       <h2 class="serif">How many people do you <em>impact</em> today?</h2><p class="qz-sub">Active patients + social audience. A rough guess is fine — it just calibrates the plan.</p>
-      <div class="qz-opts"><button class="qz-opt" data-k="alcance" data-v="Up to 50 people"><span class="qe">🌰</span><span>Up to 50 people<small>starting out — the best time to structure</small></span></button>
-<button class="qz-opt" data-k="alcance" data-v="50 to 300"><span class="qe">🌿</span><span>50 to 300<small>your community is born full</small></span></button>
-<button class="qz-opt" data-k="alcance" data-v="300 to 1,000"><span class="qe">🌳</span><span>300 to 1,000<small>immediate recurring-revenue potential</small></span></button>
-<button class="qz-opt" data-k="alcance" data-v="More than 1,000"><span class="qe">🔥</span><span>More than 1,000<small>you’re sitting on a gold mine</small></span></button></div>
+      <div class="qz-opts"><button class="qz-opt" data-k="alcance" data-v="Up to 50 people"><span class="qe"></span><span>Up to 50 people<small>starting out — the best time to structure</small></span></button>
+<button class="qz-opt" data-k="alcance" data-v="50 to 300"><span class="qe"></span><span>50 to 300<small>your community is born full</small></span></button>
+<button class="qz-opt" data-k="alcance" data-v="300 to 1,000"><span class="qe"></span><span>300 to 1,000<small>immediate recurring-revenue potential</small></span></button>
+<button class="qz-opt" data-k="alcance" data-v="More than 1,000"><span class="qe"></span><span>More than 1,000<small>you’re sitting on a gold mine</small></span></button></div>
       <button class="qz-back" data-back>← back</button>
     </div>
     <div class="qz-step" data-step="3">
-      <span class="qz-kicker">✦ Your community is almost ready</span>
-      <div class="qz-preview"><span class="qav">🏛️</span><span><b id="qzPrevName">MyDose</b><small id="qzPrevSub"></small></span></div>
+      <span class="qz-kicker">Your community is almost ready</span>
+      <div class="qz-preview"><span class="qav"></span><span><b id="qzPrevName">MyDose</b><small id="qzPrevSub"></small></span></div>
       <h2 class="serif">Who do we <em>deliver</em> it to?</h2><p class="qz-sub">Our team activates your community and pings you on WhatsApp — within 24h.</p>
       <form class="qz-form" id="qzForm">
         <div><label for="qzNome">Your name</label><input id="qzNome" required autocomplete="name"></div>
@@ -2122,22 +2169,22 @@ details.faq .a b{color:var(--ink)}
         <div><label for="qzMail">Work e-mail</label><input id="qzMail" type="email" required autocomplete="email"></div>
         <button class="btn btn-grad qz-cta" type="submit">Create my community →</button>
       </form>
-      <p class="qz-note">🔒 Your data stays with us. No spam, no commitment.</p>
+      <p class="qz-note">Your data stays with us. No spam, no commitment.</p>
       <button class="qz-back" data-back>← back</button>
     </div>
     <div class="qz-step qz-done" data-step="4">
-      <div class="qbig">🎉</div>
+      <div class="qbig"></div>
       <h2 class="serif">Done, <em id="qzDoneName">doctor</em>!<br>Your community has started to grow.</h2>
       <p class="qz-sub" style="margin-inline:auto">Our team will reach out <b style="color:#fff">within 24 hours</b> to activate everything with you. Want to suggest the best time?</p>
       <div class="qz-cal">
-        <h4>📅 Pick a suggested time</h4><p class="qcsub">We’ll call you at that time (or as close as possible).</p>
+        <h4>Pick a suggested time</h4><p class="qcsub">We’ll call you at that time (or as close as possible).</p>
         <div class="qz-days" id="qzDays"></div>
         <div class="qz-slots">
-          <button class="qz-chip" data-slot="09:00">☀️ 09:00</button>
-          <button class="qz-chip" data-slot="14:00">🌤️ 14:00</button>
-          <button class="qz-chip" data-slot="19:00">🌙 19:00</button>
+          <button class="qz-chip" data-slot="09:00">09:00</button>
+          <button class="qz-chip" data-slot="14:00">14:00</button>
+          <button class="qz-chip" data-slot="19:00">19:00</button>
         </div>
-        <p class="qok" id="qzOk">✓ <span id="qzOkTxt"></span></p>
+        <p class="qok" id="qzOk"><span id="qzOkTxt"></span></p>
       </div>
     </div>
   </div>
@@ -2145,7 +2192,7 @@ details.faq .a b{color:var(--ink)}
 
 <div class="modal" id="talkModal" role="dialog" aria-modal="true">
   <div class="modal-card">
-    <button class="modal-x" data-close aria-label="Close">✕</button>
+    <button class="modal-x" data-close aria-label="Close"></button>
     <p class="m-plan" id="mPlan">MyDose plan</p>
     <h3 id="mTitle">Talk to our team</h3>
     <p class="msub" id="mSub">Tell us your moment — we’ll craft a tailored proposal. Reply within 1 business day.</p>
@@ -2171,10 +2218,10 @@ details.faq .a b{color:var(--ink)}
         <option>+300</option>
       </select>
       <button class="btn btn-grad" type="submit">Send <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
-      <p class="m-priv">🔒 No spam. We use your data only to reach out.</p>
+      <p class="m-priv">No spam. We use your data only to reach out.</p>
     </form>
     <div class="msuccess">
-      <div class="big">🎉</div>
+      <div class="big"></div>
       <h4>Got it!</h4>
       <p>Our team will reach you on <b>WhatsApp and e-mail</b> within 1 business day.</p>
     </div>
@@ -2184,10 +2231,10 @@ details.faq .a b{color:var(--ink)}
 <!-- ====== VIDEO MODAL ====== -->
 <div class="modal" id="videoModal" role="dialog" aria-modal="true">
   <div class="modal-card">
-    <button class="modal-x" data-vclose aria-label="Close">✕</button>
+    <button class="modal-x" data-vclose aria-label="Close"></button>
     <p class="m-plan" id="vName">Testimonial</p>
     <div class="vmodal-body">
-      <div class="vph"><div class="pattern"></div><div class="in"><div class="big">🎬</div><b>Video testimonial coming here</b></div></div>
+      <div class="vph"><div class="pattern"></div><div class="in"><div class="big"></div><b>Video testimonial coming here</b></div></div>
       <p>Meanwhile, watch the platform working <b>live, every Wednesday at 7pm BRT</b> — with real-time Q&amp;A.</p>
       <a class="btn btn-primary btn-sm" href="live.html" style="margin-top:14px">Save a seat at the demo</a>
     </div>
@@ -2202,7 +2249,7 @@ details.faq .a b{color:var(--ink)}
   var themeBtn = document.getElementById('themeBtn'), metaTheme = document.getElementById('metaTheme');
   function paintTheme(){
     var dark = document.documentElement.dataset.theme === 'dark';
-    themeBtn.textContent = dark ? '☀️' : '🌙';
+    themeBtn.innerHTML = dark ? '<svg width="17" height="17" style="color:#FFB627"><use href="#i-sun"/></svg>' : '<svg width="17" height="17" style="color:#8699FD"><use href="#i-moon"/></svg>';
     metaTheme.content = dark ? '#101226' : '#F6F4F2';
   }
   themeBtn.addEventListener('click', function(){

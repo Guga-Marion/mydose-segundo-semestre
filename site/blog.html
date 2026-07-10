@@ -21,13 +21,18 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Conteúdos MyDose — aulas, vídeos e MyDose na imprensa | medicina do estilo de vida", "url": "https://mydoseapp.com/blog.html", "description": "Aulas e vídeos do canal MyDose no YouTube sobre medicina do estilo de vida (MEV), adesão de pacientes, planos de acompanhamento e como escalar consultórios — e a MyDose na imprensa.", "isPartOf": {"@type": "WebSite", "name": "MyDose", "url": "https://mydoseapp.com/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "MyDose", "url": "https://mydoseapp.com/", "sameAs": ["https://www.youtube.com/@mydoseapp", "https://www.instagram.com/mydoseapp", "https://www.linkedin.com/company/mydoseapp", "https://www.tiktok.com/@mydoseapp"]}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 2C56 32 68 44 98 50 68 56 56 68 50 98 44 68 32 56 2 50 32 44 44 32 50 2Z' fill='%23415FF5'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Figtree:wght@400;600;700;800&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"Americana BT";src:url("assets/fonts/americana-regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Americana BT";src:url("assets/fonts/americana-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Google Sans";src:url("assets/fonts/gsans-700.woff2") format("woff2");font-weight:700 800;font-style:normal;font-display:swap}
+</style>
 <style>
 :root{--blue:#415FF5;--magenta:#C64FCA;--orange:#F56442;--navy:#191E47;--bg:#F6F4F2;--ink:#1E1D1D;--card:#fff;--muted:#565452;--gray:#848484;
  --line:rgba(30,29,29,.1);--g1:linear-gradient(100deg,#415FF5,#C64FCA 52%,#F56442);
- --serif:"Fraunces",Georgia,serif;--sans:"Figtree",-apple-system,sans-serif;--logo:"Quicksand",sans-serif;
+ --serif:"Americana BT",Georgia,serif;--sans:"Google Sans",-apple-system,sans-serif;--logo:"Americana BT",serif;
  --shadow:0 20px 60px -20px rgba(25,30,71,.25);--r:24px}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:clip}
@@ -81,11 +86,51 @@ nav{position:sticky;top:0;z-index:100;background:rgba(246,244,242,.85);backdrop-
 .final h2{font-size:clamp(26px,4vw,40px);color:#fff;margin-bottom:18px}
 footer{padding:34px 0 60px;text-align:center;font-size:13.5px;color:var(--gray)}
 @media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+
+/* identidade oficial 2026 */
+.serif,h1,h2,h3,.sheet a{font-weight:400}
+.serif i,.serif em{font-weight:400}
+.blogo{display:inline-flex;align-items:center}
+.blogo img{display:block}
+img.blg-d{display:none}
+[data-theme="dark"] img.blg-l{display:none}
+[data-theme="dark"] img.blg-d{display:block}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) img.blg-l{display:none} :root:not([data-theme="light"]) img.blg-d{display:block} }
+footer img.blg-l{display:none}footer img.blg-d{display:block}
+.theme-btn svg{transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.theme-btn:hover svg{transform:rotate(40deg)}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <circle cx="12" cy="12" r="4" />
+  <path d="M12 2v2" />
+  <path d="M12 20v2" />
+  <path d="m4.93 4.93 1.41 1.41" />
+  <path d="m17.66 17.66 1.41 1.41" />
+  <path d="M2 12h2" />
+  <path d="M20 12h2" />
+  <path d="m6.34 17.66-1.41 1.41" />
+  <path d="m19.07 4.93-1.41 1.41" /></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></symbol><symbol id="i-rotate-ccw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+  <path d="M3 3v5h5" /></symbol><symbol id="i-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></symbol><symbol id="i-alarm-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <circle cx="12" cy="13" r="8" />
+  <path d="M12 9v4l2 2" />
+  <path d="M5 3 2 6" />
+  <path d="m22 6-3-3" />
+  <path d="M6.38 18.7 4 21" />
+  <path d="M17.64 18.67 20 21" /></symbol><symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- @license lucide-static v1.24.0 - ISC -->
+
+  <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></symbol></svg>
 <nav><div class="nav-in">
-  <span class="logo">my<b>dose</b></span>
+  <span class="logo"><span class="blogo"><img class="blg-l" src="assets/brand/logo-mydose-gradient-preto.svg" alt="MyDose" width="104" height="22"><img class="blg-d" src="assets/brand/logo-mydose-gradient-branco.svg" alt="" width="104" height="22" aria-hidden="true"></span></span>
   <a class="nav-back" href="nova-identidade-v3.html">← Site principal</a>
   <span class="nav-sp"></span>
   <a class="lang" href="blog-en.html">EN</a>
@@ -102,14 +147,14 @@ footer{padding:34px 0 60px;text-align:center;font-size:13.5px;color:var(--gray)}
 
 <section id="videos">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">✦ Vídeos e aulas</span><h2 class="serif">Do canal, <em>pra sua operação</em>.</h2></div>
+    <div class="sec-head"><span class="eyebrow">Vídeos e aulas</span><h2 class="serif">Do canal, <em>pra sua operação</em>.</h2></div>
     <div class="vids" id="vids"></div>
   </div>
 </section>
 
 <section id="imprensa" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">✦ MyDose na imprensa</span><h2 class="serif">O que estão <em>falando da gente</em>.</h2></div>
+    <div class="sec-head"><span class="eyebrow">MyDose na imprensa</span><h2 class="serif">O que estão <em>falando da gente</em>.</h2></div>
     <div class="press" id="press"></div>
   </div>
 </section>
@@ -154,7 +199,7 @@ var PRESS = [
     } else {
       vw.insertAdjacentHTML('beforeend',
         '<div class="vid ph"><span class="th"><span class="play">▶</span></span>' +
-        '<span class="tx"><b>🎬 espaço reservado pra vídeo — cole o ID do YouTube no bloco VIDEOS do código</b></span></div>');
+        '<span class="tx"><b>espaço reservado pra vídeo — cole o ID do YouTube no bloco VIDEOS do código</b></span></div>');
     }
   });
   var pw = document.getElementById('press');
@@ -167,7 +212,7 @@ var PRESS = [
     } else if(p.outlet || p.title){
       pw.insertAdjacentHTML('beforeend',
         '<div class="pr ph"><span class="outlet">' + (p.outlet || '—') + '</span><b>' + (p.title || '') + '</b>' +
-        '<small>📎 espaço reservado — cole o link da matéria no bloco PRESS do código</small></div>');
+        '<small>espaço reservado — cole o link da matéria no bloco PRESS do código</small></div>');
     }
   });
 })();
