@@ -1297,6 +1297,21 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
   .dt-app{bottom:-30px}
 }
 
+
+/* ============ V6.14 · duo: pattern suave, respiro, tag no phone (prints 11/07) ============ */
+.product .media.pattern::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:1}
+.p-mental .media.pattern::before{background:var(--sec-pink-media);opacity:.86}
+.p-blue .media.pattern::before{background:var(--sec-blue-media);opacity:.86}
+.duo{z-index:2;width:min(430px,82%)}
+.duo .mini-phone{right:-14px;bottom:-34px;width:min(150px,33%)!important}
+.dt-app{left:auto;right:-20px;bottom:-54px;background:var(--g1);color:#fff}
+@media(max-width:919px){
+  .product .media.pattern::before{opacity:.93}
+  .duo{width:min(360px,82%);margin:42px auto 62px}
+  .duo .mini-phone{width:35%!important;right:-8px;bottom:-30px}
+  .dt-app{right:-6px;bottom:-50px}
+}
+
 /* ============ V6.8 · school/habits/os + prédio navy + colcha ============ */
 .see-all{display:inline-block;margin:10px 0 14px;font-size:12.5px;font-weight:800;color:var(--blue);letter-spacing:.02em}
 .plan.hot .see-all{color:#A5C4FF}
@@ -1753,7 +1768,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
 </nav>
 <div class="sheet" id="sheet">
   <div class="sheet-top">
-    <img src="assets/brand/logo-mydose-gradient-branco.svg" alt="MyDose" width="104" height="22">
+    <img src="assets/brand/logo-mydose-gradient-branco.svg" alt="MyDose" width="113" height="24">
     <button class="sheet-x" id="sheetX" aria-label="Fechar menu">×</button>
   </div>
   <nav class="sheet-nav">
@@ -2005,9 +2020,9 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
         <h3 class="serif">Uma comunidade que seus pacientes <em>abrem todo dia</em>.</h3>
         <p class="lead">Gamificação baseada em neurociência (o sistema D.O.S.E.) que faz o paciente voltar — não por obrigação, <b>por hábito</b>.</p>
         <ul class="feats">
-          <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#E0902B" aria-hidden="true"><use href="#i-trophy"/></svg></span><div><b>Engajamento diário</b><span>XP, hits e desafios que criam adesão real, dia após dia.</span></div></li>
-          <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#C64FCA" aria-hidden="true"><use href="#i-mic"/></svg></span><div><b>Protocolos vivos</b><span>O plano que você prescreve acontece no app — com lembretes e acompanhamento.</span></div></li>
-          <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#415FF5" aria-hidden="true"><use href="#i-graduation-cap"/></svg></span><div><b>Pertencimento</b><span>Pacientes que se apoiam entre si retêm mais e indicam mais.</span></div></li>
+          <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#fff" aria-hidden="true"><use href="#i-trophy"/></svg></span><div><b>Engajamento diário</b><span>XP, hits e desafios que criam adesão real, dia após dia.</span></div></li>
+          <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#fff" aria-hidden="true"><use href="#i-clipboard-list"/></svg></span><div><b>Protocolos vivos</b><span>O plano que você prescreve acontece no app — com lembretes e acompanhamento.</span></div></li>
+          <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#fff" aria-hidden="true"><use href="#i-users"/></svg></span><div><b>Pertencimento</b><span>Pacientes que se apoiam entre si retêm mais e indicam mais.</span></div></li>
         </ul>
         <button class="btn btn-magenta js-talk" data-mode="talk" data-plan="Demo · Comunidade">Agende uma Demo <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
       </div>
@@ -2031,9 +2046,9 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
         <h3 class="serif">Uma IA que atende <em>por você, 24/7</em>.</h3>
         <p class="lead">Treinada no seu protocolo e nos seus limites — com <b>ética e sigilo</b>. Ela responde, orienta e ativa o paciente enquanto você vive a sua vida.</p>
         <ul class="feats">
-          <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#63AC39" aria-hidden="true"><use href="#i-clipboard-list"/></svg></span><div><b>Responde no WhatsApp</b><span>Tira dúvidas e mantém o vínculo — no seu tom, com a sua marca.</span></div></li>
-          <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#415FF5" aria-hidden="true"><use href="#i-stethoscope"/></svg></span><div><b>Reativa quem sumiu</b><span>Detecta quem precisa de atenção e traz de volta automaticamente.</span></div></li>
-          <li><span class="fico"><svg width="18" height="18" viewBox="0 0 100 100"><use href="#gf-dose" fill="#fff"/></svg></span><div><b>Relatório do que importa</b><span>Toda semana, o que melhorar — sem você garimpar dado.</span></div></li>
+          <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#fff" aria-hidden="true"><use href="#i-message-circle"/></svg></span><div><b>Responde no WhatsApp</b><span>Tira dúvidas e mantém o vínculo — no seu tom, com a sua marca.</span></div></li>
+          <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#fff" aria-hidden="true"><use href="#i-rotate-ccw"/></svg></span><div><b>Reativa quem sumiu</b><span>Detecta quem precisa de atenção e traz de volta automaticamente.</span></div></li>
+          <li><span class="fico"><svg class="li-ic" width="19" height="19" style="color:#fff" aria-hidden="true"><use href="#i-chart-column"/></svg></span><div><b>Relatório do que importa</b><span>Toda semana, o que melhorar — sem você garimpar dado.</span></div></li>
         </ul>
         <button class="btn btn-primary js-talk" data-mode="talk" data-plan="Demo · IA">Agende uma Demo <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
       </div>
