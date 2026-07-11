@@ -1249,6 +1249,37 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
   .tour-desk{display:block}
   .tour-stage .tour-scene{transform:translateX(17%)}
 }
+
+/* ============ V6.6 · laptop mockup + vendas na hero + mobile ============ */
+.dk-bar{position:relative;display:flex;gap:5px;padding:10px 12px;background:#ECEAF6;z-index:2;border-radius:12px 12px 0 0}
+.dk-bar::after{content:"app.mydoseapp.com";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  background:#fff;color:#848484;font:600 9.5px/1 var(--sans);letter-spacing:.02em;padding:4px 14px;border-radius:99px}
+.desk-shot{position:relative;overflow:visible;border-radius:12px;background:#fff;
+  box-shadow:0 26px 60px -22px rgba(25,30,71,.45)}
+.desk-shot video{width:100%;display:block;border-radius:0 0 12px 12px}
+.desk-shot::after{content:"";position:absolute;left:-6%;right:-6%;bottom:-12px;height:12px;
+  background:linear-gradient(#E4E1EE,#BDB9CE);border-radius:2px 2px 14px 14px;box-shadow:0 10px 22px -10px rgba(25,30,71,.4)}
+.tour-desk{overflow:visible;background:transparent;box-shadow:none}
+.tour-desk .td-vid{border-radius:0 0 12px 12px;box-shadow:0 34px 80px -26px rgba(0,0,0,.6)}
+.tour-desk::after{content:"";position:absolute;left:-6%;right:-6%;bottom:-12px;height:12px;
+  background:linear-gradient(#3A3F63,#23274A);border-radius:2px 2px 14px 14px}
+.duo{padding:0 0 64px}
+.duo-tag{position:absolute;z-index:4;font:800 10.5px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;
+  padding:6px 11px;border-radius:99px;box-shadow:0 8px 20px -8px rgba(25,30,71,.35)}
+.dt-desk{top:-11px;left:6px;background:var(--navy);color:#fff}
+.dt-app{bottom:44px;right:-6px;background:#fff;color:var(--navy)}
+@media(max-width:919px){
+  .hero4{padding:96px 0 34px}
+  .hero6-grid{gap:28px}
+  .hero6-copy .hero-sub{margin:14px 0 20px}
+  .hv-pattern{top:-4%;right:-18%;width:70%}
+  .chip-float{padding:10px 13px;font-size:12.5px}
+  .chip-float small{font-size:10.5px}
+  .chip-a{left:4px;bottom:-14px;top:auto;animation:none}
+  .chip-b{display:none}.chip-c{display:none}
+  .hero-visual7{margin-bottom:10px}
+  .hero4-meta{margin-top:20px}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "MyDose", "alternateName": ["MyDose AI", "MyDose IA", "MyDose App"], "url": "https://mydoseapp.com/", "logo": "https://mydoseapp.com/assets/motion/hero-doctor-poster.jpg", "description": "CRM para saúde com IA: comunidade gamificada de pacientes, planos e protocolos de acompanhamento e medicina do estilo de vida (MEV) para profissionais de saúde.", "sameAs": ["https://www.youtube.com/@mydoseapp", "https://www.instagram.com/mydoseapp", "https://www.linkedin.com/company/mydoseapp", "https://www.tiktok.com/@mydoseapp"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "MyDose", "applicationCategory": "HealthApplication", "operatingSystem": "iOS, Android, Web", "url": "https://mydoseapp.com/", "description": "Plataforma de IA para profissionais de saúde: comunidade gamificada, planos de acompanhamento, protocolos de acompanhamento, CRM para saúde e medicina do estilo de vida (MEV).", "offers": {"@type": "Offer", "price": "290", "priceCurrency": "BRL", "description": "Plano Software, a partir de R$ 290/mês no anual"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1000"}}</script>
@@ -1609,16 +1640,16 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
           <video data-motion src="assets/motion/hero-doctor.mp4" poster="assets/motion/hero-doctor-poster.jpg" muted loop playsinline preload="metadata" aria-label="Profissional de saúde mostrando o app MyDose para uma paciente"></video>
         </div>
         <div class="chip-float chip-a">
-          <span class="ico" style="background:var(--magenta)"><svg width="16" height="16"><use href="#i-users"/></svg></span>
-          <span>Comunidade ativa<small>+85% de engajamento</small></span>
+          <span class="ico" style="background:var(--green)"><svg width="16" height="16"><use href="#i-banknote"/></svg></span>
+          <span>+R$ 15 mil de faturamento<small>você vendeu 4 planos de acompanhamento hoje</small></span>
         </div>
         <div class="chip-float chip-b">
-          <span class="ico" style="background:var(--blue)"><svg width="16" height="16"><use href="#i-bot"/></svg></span>
-          <span>IA respondeu 200 dúvidas<small>hoje, enquanto você atendia</small></span>
+          <span class="ico" style="background:var(--blue)"><svg width="16" height="16"><use href="#i-stethoscope"/></svg></span>
+          <span>Venda nova · consulta<small>agendada e paga pelo app</small></span>
         </div>
         <div class="chip-float chip-c">
-          <span class="ico" style="background:var(--green)"><svg width="15" height="15"><use href="#i-zap"/></svg></span>
-          <span>No ar em 7 dias<small>implementação guiada</small></span>
+          <span class="ico" style="background:var(--magenta)"><svg width="16" height="16"><use href="#i-book-open"/></svg></span>
+          <span>Venda nova · curso + e-book<small>no automático, enquanto você atendia</small></span>
         </div>
       </div>
     </div>
@@ -1813,6 +1844,8 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
         <button class="btn btn-magenta js-talk" data-mode="talk" data-plan="Demo · Comunidade">Agende uma Demo <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
       </div>
       <div class="media pattern"><div class="duo">
+        <span class="duo-tag dt-desk">Software · no seu desktop</span>
+        <span class="duo-tag dt-app">App · do paciente</span>
         <div class="desk-shot"><span class="dk-bar"><i></i><i></i><i></i></span><video data-motion src="assets/proto/desk-comunidade.mp4" poster="assets/proto/desk-comunidade-poster.jpg" muted loop playsinline preload="none" aria-label="Comunidade no MyDose desktop: feed com a IA respondendo membros"></video></div>
         <div class="mini-phone float-y"><span class="mp-isl"></span><video data-motion src="assets/proto/comunidade.mp4" poster="assets/proto/comunidade-poster.jpg" muted loop playsinline preload="none" aria-label="Tela da comunidade gamificada no app MyDose, navegada ao vivo"></video></div>
       </div></div>
@@ -1820,6 +1853,8 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
 
     <div class="product p-blue rv">
       <div class="media pattern" style="order:2"><div class="duo">
+        <span class="duo-tag dt-desk">Software · no seu desktop</span>
+        <span class="duo-tag dt-app">App · do paciente</span>
         <div class="desk-shot"><span class="dk-bar"><i></i><i></i><i></i></span><video data-motion src="assets/proto/desk-ia.mp4" poster="assets/proto/desk-ia-poster.jpg" muted loop playsinline preload="none" aria-label="Prontuário no MyDose desktop com Resumo IA do paciente"></video></div>
         <div class="mini-phone float-y"><span class="mp-isl"></span><video data-motion src="assets/proto/ia.mp4" poster="assets/proto/ia-poster.jpg" muted loop playsinline preload="none" aria-label="Assistente de IA do MyDose respondendo um paciente, ao vivo"></video></div>
       </div></div>
