@@ -1430,7 +1430,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
 .sec-bldg .total span{color:#565452}
 
 /* ============ V6.10 · tour com SaaS também no mobile ============ */
-.tt-desk{position:absolute;top:-12px;left:10px;z-index:5;background:#fff;color:var(--navy)}
+.tt-desk{position:absolute;top:527px;left:10px;z-index:6;background:#fff;color:var(--navy)}
 .tt-app{position:absolute;z-index:7;right:6%;bottom:2%;background:var(--g1);color:#fff;display:none}
 @media(min-width:1060px){.tt-app{display:block;right:calc(50% - 210px);bottom:6%}}
 @media(max-width:1059px) and (min-width:920px){.tour-desk{display:block;position:static;transform:none;width:100%;margin-bottom:14px}}
@@ -1449,7 +1449,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
 }
 
 /* V6.10 fixes */
-.tt-desk{left:auto;right:12px}
+@media(max-width:1280px){.tt-desk{font-size:9.5px;padding:5px 9px}}
 @media(max-width:919px){
   .tour-badge{display:none!important}
   .tt-desk{top:44px;right:auto;left:10px;transform:none;font-size:9px;padding:5px 10px;white-space:nowrap}
@@ -2122,10 +2122,10 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
     </div>
     <div class="tour">
       <div class="tour-stage">
+        <span class="duo-tag tt-desk">AI Operating System · do profissional</span>
         <div class="tour-scene">
           <div class="tour-glow" id="tourGlow"></div>
           <div class="tour-desk" id="tourDesk" aria-hidden="true">
-            <span class="duo-tag tt-desk">AI Operating System · do profissional</span>
             <span class="dk-bar"><i></i><i></i><i></i></span>
             <video class="td-vid on" src="assets/proto/desk-comunidade.mp4" poster="assets/proto/desk-comunidade-poster.jpg" muted loop playsinline preload="metadata"></video>
             <video class="td-vid" src="assets/proto/desk-desafios.mp4" poster="assets/proto/desk-desafios-poster.jpg" muted loop playsinline preload="none"></video>
