@@ -1312,6 +1312,56 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
   .dt-app{right:-6px;bottom:-50px}
 }
 
+
+/* ============ V6.15 · duo2: palco escuro + fio de dados (redesign, prints 11/07 19h59) ============ */
+.product .media.d2-media{display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:0 30px}
+.d2-plum{background:radial-gradient(130% 100% at 16% 6%,#6E3A6F 0%,#592C5A 44%,#3A1C3B 100%)!important}
+.d2-navy{background:radial-gradient(130% 100% at 16% 6%,#2B3268 0%,#191E47 46%,#0E1130 100%)!important}
+.d2-gf{position:absolute;width:330px;right:-100px;top:-100px;opacity:.13;pointer-events:none;animation:spin 70s linear infinite}
+.duo2{position:relative;width:min(470px,100%);margin:74px auto 84px;perspective:1400px}
+.d2-desk{position:relative;width:86%;border-radius:13px 13px 4px 4px;background:#fff;transform:rotateY(-6deg) rotateX(1.5deg);
+  box-shadow:0 60px 100px -34px rgba(0,0,0,.7),0 20px 44px -20px rgba(0,0,0,.55)}
+.d2-desk .dk-bar{border-radius:13px 13px 0 0;background:#EEECF4}
+.d2-desk video{width:100%;display:block;border-radius:0 0 4px 4px}
+.d2-desk::after{content:"";position:absolute;left:-6.5%;right:-6.5%;bottom:-12px;height:12px;
+  background:linear-gradient(#4A5079,#20244A);border-radius:3px 3px 15px 15px;box-shadow:0 20px 34px -12px rgba(0,0,0,.6)}
+.d2-flow{position:absolute;z-index:3;right:34px;top:-22px;width:132px;height:96px;pointer-events:none;overflow:visible}
+.d2-flow path{stroke-width:3.5;stroke-linecap:round;stroke-dasharray:.5 11;animation:d2dash 1.3s linear infinite}
+@keyframes d2dash{to{stroke-dashoffset:-23}}
+.d2-phone{position:absolute;right:-6px;bottom:-40px;width:152px;aspect-ratio:393/852;border-radius:26px;padding:7px;z-index:4;
+  background:linear-gradient(150deg,#3C4166,#0F1228);transform:rotate(4deg);
+  box-shadow:0 40px 70px -22px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.09)}
+.d2-phone video{width:100%;height:100%;object-fit:cover;border-radius:20px;background:#0B0D1E;display:block}
+.mp-isl2{position:absolute;top:13px;left:50%;transform:translateX(-50%);width:34px;height:7px;border-radius:99px;background:#0B0D1E;z-index:2}
+.dt2-desk{position:absolute;top:-13px;left:14px;z-index:5;background:#fff;color:var(--navy)}
+.dt2-app{position:absolute;left:50%;bottom:-13px;transform:translateX(-50%);z-index:5;background:var(--g1);color:#fff;white-space:nowrap}
+.d2-chip{position:absolute;z-index:6;display:flex;gap:9px;align-items:center;background:#fff;border-radius:14px;padding:9px 13px;
+  box-shadow:0 20px 44px -14px rgba(0,0,0,.6);animation:floatY 5.5s ease-in-out infinite}
+.d2-chip b{display:block;font:700 12px/1.15 var(--sans);color:#1E1D1D;letter-spacing:0}
+.d2-chip small{display:block;font:500 10.5px/1.2 var(--sans);color:#848484;margin-top:2px}
+.dc-ic{width:26px;height:26px;border-radius:9px;display:grid;place-items:center;flex:none}
+.d2c-a{left:-18px;top:17%}
+.d2c-b{left:-22px;bottom:-30px}
+[data-theme="dark"] .d2-chip{background:#23264C}
+[data-theme="dark"] .d2-chip b{color:#fff}
+[data-theme="dark"] .dt2-desk{background:#23264C;color:#fff}
+@media(max-width:919px){
+  .product .media.d2-media{padding:0 20px}
+  .duo2{width:min(380px,100%);margin:64px auto 76px}
+  .d2-desk{transform:rotateY(-4deg) rotateX(1deg)}
+  .d2-phone{width:104px;right:0;bottom:-26px;border-radius:19px;padding:5px}
+  .d2-phone video{border-radius:15px}
+  .mp-isl2{top:11px;width:28px;height:6px}
+  .d2-flow{right:8px;top:-28px;width:112px;height:84px}
+  .d2c-a{left:-8px;top:15%}
+  .d2c-b{left:-8px;bottom:-26px}
+  .d2-chip{padding:8px 11px}
+  .d2-chip b{font-size:11px}
+  .dt2-app{left:38%}
+  .d2-chip small{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){.d2-flow path,.d2-chip,.d2-gf{animation:none}}
+
 /* ============ V6.8 · school/habits/os + prédio navy + colcha ============ */
 .see-all{display:inline-block;margin:10px 0 14px;font-size:12.5px;font-weight:800;color:var(--blue);letter-spacing:.02em}
 .plan.hot .see-all{color:#A5C4FF}
@@ -2026,20 +2076,24 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
         </ul>
         <button class="btn btn-magenta js-talk" data-mode="talk" data-plan="Demo · Comunidade">Agende uma Demo <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
       </div>
-      <div class="media pattern"><div class="duo">
-        <span class="duo-tag dt-desk">Software · no seu desktop</span>
-        <span class="duo-tag dt-app">App · do paciente</span>
-        <div class="desk-shot"><span class="dk-bar"><i></i><i></i><i></i></span><video data-motion src="assets/proto/desk-comunidade.mp4" poster="assets/proto/desk-comunidade-poster.jpg" muted loop playsinline preload="none" aria-label="Comunidade no MyDose desktop: feed com a IA respondendo membros"></video></div>
-        <div class="mini-phone float-y"><span class="mp-isl"></span><video data-motion src="assets/proto/comunidade.mp4" poster="assets/proto/comunidade-poster.jpg" muted loop playsinline preload="none" aria-label="Tela da comunidade gamificada no app MyDose, navegada ao vivo"></video></div>
+      <div class="media d2-media d2-plum"><div class="duo2">
+        <svg class="d2-gf" viewBox="0 0 100 100" aria-hidden="true"><use href="#gf-petal" fill="#F0B0F2"/></svg>
+        <div class="d2-desk"><span class="duo-tag dt2-desk">Software · no seu desktop</span><span class="dk-bar"><i></i><i></i><i></i></span><video data-motion src="assets/proto/desk-comunidade.mp4" poster="assets/proto/desk-comunidade-poster.jpg" muted loop playsinline preload="none" aria-label="Comunidade no MyDose desktop: feed com a IA respondendo membros"></video></div>
+        <svg class="d2-flow" viewBox="0 0 150 110" aria-hidden="true"><defs><linearGradient id="d2g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C64FCA"/><stop offset="1" stop-color="#F56442"/></linearGradient></defs><path d="M10 12C58 0 116 26 140 92" fill="none" stroke="url(#d2g1)"/></svg>
+        <div class="d2-phone"><span class="mp-isl2"></span><video data-motion src="assets/proto/comunidade.mp4" poster="assets/proto/comunidade-poster.jpg" muted loop playsinline preload="none" aria-label="Tela da comunidade gamificada no app MyDose, navegada ao vivo"></video><span class="duo-tag dt2-app">App · do paciente</span></div>
+        <div class="d2-chip d2c-a" style="--dcd:0s"><span class="dc-ic" style="background:var(--orange)"><svg width="14" height="14" style="color:#fff" aria-hidden="true"><use href="#i-flame"/></svg></span><div><b>Desafio da semana</b><small>87% da comunidade concluiu</small></div></div>
+        <div class="d2-chip d2c-b" style="--dcd:0s;animation-delay:1.7s"><span class="dc-ic" style="background:var(--magenta)"><svg width="14" height="14" style="color:#fff" aria-hidden="true"><use href="#i-camera"/></svg></span><div><b>Marina registrou um hit</b><small>+10 XP · agora mesmo</small></div></div>
       </div></div>
     </div>
 
     <div class="product p-blue rv">
-      <div class="media pattern" style="order:2"><div class="duo">
-        <span class="duo-tag dt-desk">Software · no seu desktop</span>
-        <span class="duo-tag dt-app">App · do paciente</span>
-        <div class="desk-shot"><span class="dk-bar"><i></i><i></i><i></i></span><video data-motion src="assets/proto/desk-ia.mp4" poster="assets/proto/desk-ia-poster.jpg" muted loop playsinline preload="none" aria-label="Prontuário no MyDose desktop com Resumo IA do paciente"></video></div>
-        <div class="mini-phone float-y"><span class="mp-isl"></span><video data-motion src="assets/proto/ia.mp4" poster="assets/proto/ia-poster.jpg" muted loop playsinline preload="none" aria-label="Assistente de IA do MyDose respondendo um paciente, ao vivo"></video></div>
+      <div class="media d2-media d2-navy" style="order:2"><div class="duo2">
+        <svg class="d2-gf" viewBox="0 0 100 100" aria-hidden="true"><use href="#gf-spark" fill="#8699FD"/></svg>
+        <div class="d2-desk"><span class="duo-tag dt2-desk">Software · no seu desktop</span><span class="dk-bar"><i></i><i></i><i></i></span><video data-motion src="assets/proto/desk-ia.mp4" poster="assets/proto/desk-ia-poster.jpg" muted loop playsinline preload="none" aria-label="Prontuário no MyDose desktop com Resumo IA do paciente"></video></div>
+        <svg class="d2-flow" viewBox="0 0 150 110" aria-hidden="true"><defs><linearGradient id="d2g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#415FF5"/><stop offset="1" stop-color="#C64FCA"/></linearGradient></defs><path d="M10 12C58 0 116 26 140 92" fill="none" stroke="url(#d2g2)"/></svg>
+        <div class="d2-phone"><span class="mp-isl2"></span><video data-motion src="assets/proto/ia.mp4" poster="assets/proto/ia-poster.jpg" muted loop playsinline preload="none" aria-label="Assistente de IA do MyDose respondendo um paciente, ao vivo"></video><span class="duo-tag dt2-app">App · do paciente</span></div>
+        <div class="d2-chip d2c-a" style="--dcd:0s"><span class="dc-ic" style="background:var(--blue)"><svg width="14" height="14" style="color:#fff" aria-hidden="true"><use href="#i-bot"/></svg></span><div><b>Fernanda I.A. respondeu</b><small>em 40 segundos · 02:37</small></div></div>
+        <div class="d2-chip d2c-b" style="--dcd:0s;animation-delay:1.7s"><span class="dc-ic" style="background:var(--green)"><svg width="14" height="14" style="color:#fff" aria-hidden="true"><use href="#i-file-text"/></svg></span><div><b>Resumo do paciente pronto</b><small>antes da consulta das 8h</small></div></div>
       </div></div>
       <div class="txt" style="order:1">
         <span class="eyebrow" style="color:var(--blue)"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#415FF5"/></svg> Inteligência artificial</span>
