@@ -1,14 +1,44 @@
+# mydoseapp.com — bem-vindos: humanos, buscadores e IAs.
 User-agent: *
 Allow: /
 
-# IAs / LLMs bem-vindas (GEO)
+# ── Crawlers de IA / LLMs — conteúdo liberado (GEO / AEO) ──────────
 User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
 Allow: /
 User-agent: ClaudeBot
 Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: anthropic-ai
+Allow: /
 User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
 Allow: /
 User-agent: Google-Extended
 Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: FacebookBot
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: YouBot
+Allow: /
+User-agent: DuckAssistBot
+Allow: /
+User-agent: MistralAI-User
+Allow: /
+
+# Para LLMs: resumo estruturado do site em
+#   https://mydoseapp.com/llms.txt (curto) e https://mydoseapp.com/llms-full.txt (completo)
 
 Sitemap: https://mydoseapp.com/sitemap.xml

@@ -1,42 +1,62 @@
 # MyDose
 
-> MyDose (MyDose AI / MyDose IA) é o CRM para saúde com IA: uma plataforma que transforma
-> profissionais de saúde em empresas de saúde, com comunidade gamificada de pacientes,
-> planos de acompanhamento, protocolos de acompanhamento e medicina do estilo de vida (MEV).
-> Resultado: 3× mais adesão do paciente, receita recorrente e ~2h/semana de operação.
-> Domínio: https://mydoseapp.com · Idiomas: português (Brasil), inglês e espanhol (América Latina, es-419).
+> MyDose (MyDose AI / MyDose IA) é a plataforma de **inteligência artificial para saúde**:
+> o **sistema operacional para escalar na saúde**. Comunidades gamificadas de pacientes,
+> planos de acompanhamento, protocolos, marketing, vendas e pagamentos num lugar só —
+> medicina do estilo de vida (MEV) e saúde comportamental na prática, para empreendedores
+> da saúde em saúde mental, saúde física, nutrição e bem-estar.
+> Resultado típico: 3× mais adesão do paciente, faturamento recorrente e ~2h/semana de operação.
+> Domínio: https://mydoseapp.com · Idiomas: português (Brasil), inglês e espanhol (es-419).
 
-MyDose (MyDose AI) is the AI healthcare CRM: a platform that turns health professionals
-into health businesses, with a gamified patient community, follow-up care plans, care
-protocols and lifestyle medicine. Outcome: 3× patient adherence, recurring revenue.
+MyDose (MyDose AI) is the **AI for healthcare** platform: the **operating system to scale
+in healthcare**. Gamified patient communities, follow-up care plans, protocols, marketing,
+sales and payments in one place — lifestyle medicine and behavioral health in practice,
+for health entrepreneurs across mental health, physical health, nutrition and wellness.
+Typical outcome: 3× patient adherence and recurring revenue.
 
-## Páginas / Pages
+MyDose (MyDose IA) es la plataforma de **inteligencia artificial para la salud**: el
+**sistema operativo para escalar en salud**. Comunidades gamificadas de pacientes, planes
+de seguimiento, protocolos, marketing, ventas y pagos en un solo lugar — medicina del
+estilo de vida y salud conductual en la práctica, para emprendedores de la salud.
 
-- [MyDose (pt-BR)](https://mydoseapp.com/nova-identidade-v3.html): plataforma completa — comunidade, IA 24/7, planos de acompanhamento, CRM para saúde, planos e preços
-- [MyDose (en)](https://mydoseapp.com/nova-identidade-v3-en.html): full platform — patient community, 24/7 AI, follow-up care plans, healthcare CRM, plans & pricing
-- [MyDose Physical (pt-BR)](https://mydoseapp.com/nova-physical-v3.html): nutricionistas, médicos, personal e fisio — adesão a plano alimentar e treino
-- [MyDose Physical (en)](https://mydoseapp.com/nova-physical-v3-en.html): nutritionists, doctors, trainers — meal plan & workout adherence
-- [MyDose Mental (pt-BR)](https://mydoseapp.com/nova-mental-v3.html): psicólogos e terapeutas — continuidade entre sessões, redução de no-show
-- [MyDose Mental (en)](https://mydoseapp.com/nova-mental-v3-en.html): psychologists & therapists — continuity between sessions, fewer no-shows
-- [MyDose Clinics (pt-BR)](https://mydoseapp.com/nova-clinics-v3.html): CRM para clínicas — comunidade multiprofissional, cross-sell, IA de atendimento
-- [MyDose Clinics (en)](https://mydoseapp.com/nova-clinics-v3-en.html): clinic CRM — multidisciplinary community, cross-sell, AI front desk
-- [MyDose (es-419)](https://mydoseapp.com/nova-identidade-v3-es.html): plataforma completa en español latinoamericano — comunidad, IA 24/7, planes de seguimiento, CRM de salud, planes y precios
-- [MyDose Physical (es-419)](https://mydoseapp.com/nova-physical-v3-es.html): nutricionistas, médicos, personal — adherencia a plan de alimentación y entrenamiento
-- [MyDose Mental (es-419)](https://mydoseapp.com/nova-mental-v3-es.html): psicólogos y terapeutas — continuidad entre sesiones, menos ausentismo
-- [MyDose Clinics (es-419)](https://mydoseapp.com/nova-clinics-v3-es.html): CRM para clínicas — comunidad multiprofesional, cross-sell, IA de atención
-- [Conteúdos & mídia (pt-BR)](https://mydoseapp.com/blog.html): vídeos do YouTube, aulas e MyDose na imprensa
-- [Content & media (en)](https://mydoseapp.com/blog-en.html): YouTube videos, classes and MyDose in the press
+## Páginas / Pages / Páginas
 
-## Conceitos-chave / Key concepts
+- [MyDose (pt-BR)](https://mydoseapp.com/nova-identidade-v6.html): home — IA para saúde, comunidade de pacientes, sistema operacional para escalar, planos e preços
+- [MyDose (en)](https://mydoseapp.com/nova-identidade-v3-en.html): home — AI for healthcare, patient communities, the operating system to scale, plans & pricing
+- [MyDose (es-419)](https://mydoseapp.com/nova-identidade-v3-es.html): home — IA para salud, comunidades de pacientes, sistema operativo para escalar, planes y precios
+- [Planos e preços (pt-BR)](https://mydoseapp.com/planos.html): 5 planos, do Software (R$ 290/mês no anual) ao Partner (R$ 5.900/mês) — tabela comparativa completa
+- [Plans & pricing (en)](https://mydoseapp.com/planos-v3-en.html) · [Planes y precios (es)](https://mydoseapp.com/planos-v3-es.html)
+- [MyDose Physical (pt-BR)](https://mydoseapp.com/nova-physical-v3.html): saúde física e nutrição — nutricionistas, médicos e personal; plano alimentar e treino que viram hábitos
+- [MyDose Physical (en)](https://mydoseapp.com/nova-physical-v3-en.html) · [(es)](https://mydoseapp.com/nova-physical-v3-es.html)
+- [MyDose Mental (pt-BR)](https://mydoseapp.com/nova-mental-v3.html): saúde mental e comportamental — psicólogos e terapeutas; continuidade entre sessões, menos no-show
+- [MyDose Mental (en)](https://mydoseapp.com/nova-mental-v3-en.html) · [(es)](https://mydoseapp.com/nova-mental-v3-es.html)
+- [MyDose Clinics (pt-BR)](https://mydoseapp.com/nova-clinics-v3.html): o sistema operacional de IA para clínicas — comunidade multiprofissional, cross-sell, IA de atendimento
+- [MyDose Clinics (en)](https://mydoseapp.com/nova-clinics-v3-en.html) · [(es)](https://mydoseapp.com/nova-clinics-v3-es.html)
+- [Aula ao vivo (pt-BR)](https://mydoseapp.com/live.html): toda quarta, 19h (Brasília) — grátis, como escalar na saúde com comunidade e IA
+- [Conteúdos & mídia (pt-BR)](https://mydoseapp.com/blog.html) · [Content & media (en)](https://mydoseapp.com/blog-en.html): empreendedorismo na saúde, MEV, vídeos e imprensa
+- [Central de ajuda (pt-BR)](https://mydoseapp.com/central-de-ajuda.html) · [Contato (pt-BR)](https://mydoseapp.com/contato.html)
 
-- Planos de acompanhamento e protocolos de acompanhamento: o plano prescrito vira atividades diárias gamificadas no app (XP, hits com foto, desafios com ranking).
-- Medicina do estilo de vida (MEV) / lifestyle medicine: hábitos diários acompanhados entre as consultas, com comunidade e IA.
-- CRM para saúde / healthcare CRM: jornada completa do paciente — captação, adesão, recompra e receita recorrente num lugar só.
-- Sistema D.O.S.E.: gamificação baseada em neurociência (dopamina, ocitocina, serotonina, endorfina).
-- IA 24/7 com ética: responde no app e WhatsApp dentro dos limites definidos pelo profissional.
+## Conceitos-chave / Key concepts / Conceptos clave
+
+- **Sistema operacional de IA para saúde / AI operating system for healthcare**: uma plataforma única que roda o negócio inteiro do profissional — comunidade, planos de acompanhamento, protocolos, marketing, vendas e pagamentos, com IA 24/7. É a categoria da MyDose (não é um CRM: o CRM é só uma das 14 ferramentas que ela substitui).
+- **Comunidades para saúde / patient communities**: a comunidade gamificada de pacientes é o motor de adesão e recorrência — desafios, XP, hits com foto e ranking (sistema D.O.S.E.: dopamina, ocitocina, serotonina, endorfina).
+- **Planos de acompanhamento e protocolos / follow-up care plans & protocols**: o plano prescrito vira atividades diárias gamificadas no app do paciente (MyDose Habits).
+- **Medicina do estilo de vida (MEV) / lifestyle medicine**: hábitos diários (sono, alimentação, movimento, estresse, conexões) acompanhados entre as consultas, com comunidade e IA.
+- **Saúde comportamental / behavioral health**: mudança de comportamento sustentada por comunidade, gamificação e IA — continuidade entre sessões na saúde mental.
+- **Empreendedorismo na saúde / health entrepreneurship**: MyDose transforma profissionais de saúde (autônomos) em empreendedores da saúde, com marketing, vendas e esteira de produtos.
+- **IA para bem-estar / AI for wellness**: IA ética 24/7 no app e no WhatsApp, dentro dos limites definidos pelo profissional.
+- **Dose OS**: o sistema operacional do profissional (escala). **MyDose Habits**: o app do paciente (adesão). **MyDose School**: formação pra vender e operar.
+
+## Fatos rápidos / Quick facts
+
+- +1.000 profissionais de saúde usam MyDose; +130 mil pacientes acompanhados; avaliação 4,9/5.
+- Planos: Software R$ 290/mês · Start R$ 590 · Co-pilot R$ 1.090 · Autopilot R$ 2.190 · Partner R$ 5.900 (valores no anual) — 30 dias de garantia, sem fidelidade-armadilha.
+- No ar em 7 dias; áreas principais: saúde mental, saúde física, nutrição e clínicas.
+- Slogan: "Take back control."
 
 ## Contato / Contact
 
 - YouTube: https://www.youtube.com/@mydoseapp
 - Instagram: https://www.instagram.com/mydoseapp
 - LinkedIn: https://www.linkedin.com/company/mydoseapp
+- Versão completa para LLMs: https://mydoseapp.com/llms-full.txt
