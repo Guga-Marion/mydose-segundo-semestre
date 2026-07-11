@@ -176,63 +176,183 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/live.html"/>
   </url>
   <url>
-    <loc>https://mydoseapp.com/contato.html</loc>
+    <loc>https://mydoseapp.com/pt/contact/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/contato.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/contato-en.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/pt/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/contact/"/>
     <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/contato-es.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/contato-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/contact/"/>
   </url>
   <url>
-    <loc>https://mydoseapp.com/contato-en.html</loc>
+    <loc>https://mydoseapp.com/contact/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/contato.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/contato-en.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/pt/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/contact/"/>
     <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/contato-es.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/contato-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/contact/"/>
   </url>
   <url>
     <loc>https://mydoseapp.com/contato-es.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/contato.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/contato-en.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/pt/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/contact/"/>
     <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/contato-es.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/contato-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/contact/"/>
   </url>
   <url>
-    <loc>https://mydoseapp.com/central-de-ajuda.html</loc>
+    <loc>https://mydoseapp.com/pt/help-center/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/central-de-ajuda.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/central-de-ajuda-en.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/pt/help-center/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/help-center/"/>
     <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/central-de-ajuda-es.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/central-de-ajuda-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/help-center/"/>
   </url>
   <url>
-    <loc>https://mydoseapp.com/central-de-ajuda-en.html</loc>
+    <loc>https://mydoseapp.com/help-center/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/central-de-ajuda.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/central-de-ajuda-en.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/pt/help-center/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/help-center/"/>
     <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/central-de-ajuda-es.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/central-de-ajuda-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/help-center/"/>
   </url>
   <url>
     <loc>https://mydoseapp.com/central-de-ajuda-es.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/central-de-ajuda.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/central-de-ajuda-en.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/pt/help-center/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/help-center/"/>
     <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/central-de-ajuda-es.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/central-de-ajuda-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/help-center/"/>
+  </url>
+  <url>
+    <loc>https://mydoseapp.com/pt/privacy-policy/</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/pt/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/privacidade-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/privacy-policy/"/>
+  </url>
+  <url>
+    <loc>https://mydoseapp.com/privacy-policy/</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/pt/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/privacidade-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/privacy-policy/"/>
+  </url>
+  <url>
+    <loc>https://mydoseapp.com/privacidade-es.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/pt/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/privacidade-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/privacy-policy/"/>
+  </url>
+  <url>
+    <loc>https://mydoseapp.com/pt/terms-of-use/</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/pt/terms-of-use/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/terms-of-use/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/termos-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/terms-of-use/"/>
+  </url>
+  <url>
+    <loc>https://mydoseapp.com/terms-of-use/</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/pt/terms-of-use/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/terms-of-use/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/termos-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/terms-of-use/"/>
+  </url>
+  <url>
+    <loc>https://mydoseapp.com/termos-es.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/pt/terms-of-use/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/terms-of-use/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/termos-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/terms-of-use/"/>
+  </url>
+  <url>
+    <loc>https://mydoseapp.com/pt/cookies/</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/pt/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/cookies-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/cookies/"/>
+  </url>
+  <url>
+    <loc>https://mydoseapp.com/cookies/</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/pt/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/cookies-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/cookies/"/>
+  </url>
+  <url>
+    <loc>https://mydoseapp.com/cookies-es.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/pt/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/cookies-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/cookies/"/>
+  </url>
+  <url>
+    <loc>https://mydoseapp.com/lgpd/</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/lgpd/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/gdpr/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/lgpd-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/gdpr/"/>
+  </url>
+  <url>
+    <loc>https://mydoseapp.com/gdpr/</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/lgpd/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/gdpr/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/lgpd-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/gdpr/"/>
+  </url>
+  <url>
+    <loc>https://mydoseapp.com/lgpd-es.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mydoseapp.com/lgpd/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mydoseapp.com/gdpr/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://mydoseapp.com/lgpd-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mydoseapp.com/gdpr/"/>
   </url>
 </urlset>

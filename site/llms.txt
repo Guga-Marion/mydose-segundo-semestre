@@ -34,7 +34,7 @@ estilo de vida y salud conductual en la práctica, para emprendedores de la salu
 - [MyDose Clinics (en)](https://mydoseapp.com/nova-clinics-v3-en.html) · [(es)](https://mydoseapp.com/nova-clinics-v3-es.html)
 - [Aula ao vivo (pt-BR)](https://mydoseapp.com/live.html): toda quarta, 19h (Brasília) — grátis, como escalar na saúde com comunidade e IA
 - [Conteúdos & mídia (pt-BR)](https://mydoseapp.com/blog.html) · [Content & media (en)](https://mydoseapp.com/blog-en.html): empreendedorismo na saúde, MEV, vídeos e imprensa
-- [Central de ajuda (pt-BR)](https://mydoseapp.com/central-de-ajuda.html) · [Contato (pt-BR)](https://mydoseapp.com/contato.html)
+- [Central de ajuda (pt-BR)](https://mydoseapp.com/pt/help-center/) · [Contato (pt-BR)](https://mydoseapp.com/pt/contact/)
 
 ## Conceitos-chave / Key concepts / Conceptos clave
 
