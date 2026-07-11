@@ -1362,6 +1362,33 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
 .sec-bldg .floor.base small{color:rgba(255,255,255,.65);opacity:1}
 .sec-bldg .total{color:#1E1D1D}
 .sec-bldg .total span{color:#565452}
+
+/* ============ V6.10 · tour com SaaS também no mobile ============ */
+.tt-desk{position:absolute;top:-12px;left:10px;z-index:5;background:#fff;color:var(--navy)}
+.tt-app{position:absolute;z-index:7;right:6%;bottom:2%;background:var(--g1);color:#fff;display:none}
+@media(min-width:1060px){.tt-app{display:block;right:calc(50% - 210px);bottom:6%}}
+@media(max-width:1059px) and (min-width:920px){.tour-desk{display:block;position:static;transform:none;width:100%;margin-bottom:14px}}
+@media(max-width:919px){
+  .tour-desk{display:block;position:static;transform:none;width:100%;margin:6px auto 0;max-width:430px}
+  .tour-desk::after{left:-4%;right:-4%;bottom:-9px;height:9px}
+  .tour-scene{width:min(430px,94%);margin-inline:auto;position:relative}
+  .tour-phone{position:absolute!important;right:-6px;bottom:-14px;width:31%!important;min-width:104px;padding:5px;border-radius:22px;z-index:6}
+  .tour-phone .tp-isl{display:none}
+  .tour-phone .tp-screen{border-radius:17px}
+  .tour-glow{inset:-30px -20px}
+  .tb-xp{right:2%;top:-8px}
+  .tb-ia{left:2%;top:-8px}
+  .tt-app{display:block;right:-2px;bottom:-26px}
+  .tour-stage{padding:16px 0 30px}
+}
+
+/* V6.10 fixes */
+.tt-desk{left:auto;right:12px}
+@media(max-width:919px){
+  .tour-badge{display:none!important}
+  .tt-desk{top:44px;right:auto;left:10px;transform:none;font-size:9px;padding:5px 10px;white-space:nowrap}
+  .tt-app{font-size:9px}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "MyDose", "alternateName": ["MyDose AI", "MyDose IA", "MyDose App"], "url": "https://mydoseapp.com/", "logo": "https://mydoseapp.com/assets/motion/hero-doctor-poster.jpg", "description": "CRM para saúde com IA: comunidade gamificada de pacientes, planos e protocolos de acompanhamento e medicina do estilo de vida (MEV) para profissionais de saúde.", "sameAs": ["https://www.youtube.com/@mydoseapp", "https://www.instagram.com/mydoseapp", "https://www.linkedin.com/company/mydoseapp", "https://www.tiktok.com/@mydoseapp"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "MyDose", "applicationCategory": "HealthApplication", "operatingSystem": "iOS, Android, Web", "url": "https://mydoseapp.com/", "description": "Plataforma de IA para profissionais de saúde: comunidade gamificada, planos de acompanhamento, protocolos de acompanhamento, CRM para saúde e medicina do estilo de vida (MEV).", "offers": {"@type": "Offer", "price": "290", "priceCurrency": "BRL", "description": "Plano Software, a partir de R$ 290/mês no anual"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1000"}}</script>
@@ -1980,13 +2007,14 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
     <div class="sec-head rv">
       <span class="eyebrow"><svg class="dot" viewBox="0 0 100 100"><use href="#gf-spark" fill="#F0B0F2"/></svg> O sistema em ação</span>
       <h2 class="serif">O sistema inteiro, <em class="grad-text-2">ao vivo</em>: do desktop ao bolso do paciente.</h2>
-      <p>Gravado direto do produto: o <b>SaaS no seu desktop</b> e o <b>app do paciente</b>, lado a lado — os fluxos que vocês vão viver todos os dias. Role e assista.</p>
+      <p>De um lado, o <b>AI Operating System</b> do profissional — o sistema operacional pra escalar na saúde. Do outro, o <b>app do paciente</b> — a adesão diária e o seu ecossistema de produtos e serviços de saúde (consultas, planos, cursos, eventos) no bolso dele. Gravado direto do produto — role e assista aos dois.</p>
     </div>
     <div class="tour">
       <div class="tour-stage">
         <div class="tour-scene">
           <div class="tour-glow" id="tourGlow"></div>
           <div class="tour-desk" id="tourDesk" aria-hidden="true">
+            <span class="duo-tag tt-desk">AI Operating System · do profissional</span>
             <span class="dk-bar"><i></i><i></i><i></i></span>
             <video class="td-vid on" src="assets/proto/desk-comunidade.mp4" poster="assets/proto/desk-comunidade-poster.jpg" muted loop playsinline preload="metadata"></video>
             <video class="td-vid" src="assets/proto/desk-desafios.mp4" poster="assets/proto/desk-desafios-poster.jpg" muted loop playsinline preload="none"></video>
@@ -2004,6 +2032,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
           </div>
           <span class="tour-badge tb-xp" id="tbXp">★ +10 XP · Hit registrado</span>
           <span class="tour-badge tb-ia" id="tbIa">Fernanda I.A. · online</span>
+          <span class="duo-tag tt-app">App · do paciente</span>
         </div>
       </div>
       <div class="tour-steps" id="tourSteps">
