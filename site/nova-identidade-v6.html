@@ -1389,6 +1389,32 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
   .tt-desk{top:44px;right:auto;left:10px;transform:none;font-size:9px;padding:5px 10px;white-space:nowrap}
   .tt-app{font-size:9px}
 }
+
+/* V6.11 fixes */
+.tool-list li.sum{font-family:var(--sans)}
+.tool-list li.sum b{text-decoration:none!important;color:var(--orange);font-weight:800;font-family:var(--sans);font-size:16px}
+
+/* ============ V6.12 · hero mobile focada em conversão ============ */
+.chip-m{display:none}
+@media(max-width:919px){
+  .hero4 .wrap{display:flex;flex-direction:column}
+  .hero6-grid{display:contents}
+  .hero6-copy{order:1}
+  .hero4 .tick-hero-m{order:2;margin-top:18px}
+  .hero-visual7{order:3;margin-top:26px}
+  .hero4-meta{order:4}
+  .hero4 .hero-urgency{order:5}
+  .hero4 h1{font-size:clamp(28px,7.6vw,33px)}
+  .hero6-copy .hero-sub{font-size:15px;margin:12px 0 16px}
+  .hero6-copy .hero-ctas .btn{padding:14px 22px;font-size:14.5px}
+  .hero6-copy .social-row{margin-top:12px}
+  .chip-m{position:static;display:flex;margin:14px 0 0;animation:none;width:fit-content}
+  .chip-a{display:none}
+  .chip-b{display:flex;top:6%;right:2%;bottom:auto;left:auto;animation:floatY 7s ease-in-out infinite}
+  .hero4{padding:92px 0 30px}
+}
+
+@media(max-width:919px){.ticker-zone{display:none}.tick-hero-d{display:none!important}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "MyDose", "alternateName": ["MyDose AI", "MyDose IA", "MyDose App"], "url": "https://mydoseapp.com/", "logo": "https://mydoseapp.com/assets/motion/hero-doctor-poster.jpg", "description": "CRM para saúde com IA: comunidade gamificada de pacientes, planos e protocolos de acompanhamento e medicina do estilo de vida (MEV) para profissionais de saúde.", "sameAs": ["https://www.youtube.com/@mydoseapp", "https://www.instagram.com/mydoseapp", "https://www.linkedin.com/company/mydoseapp", "https://www.tiktok.com/@mydoseapp"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "MyDose", "applicationCategory": "HealthApplication", "operatingSystem": "iOS, Android, Web", "url": "https://mydoseapp.com/", "description": "Plataforma de IA para profissionais de saúde: comunidade gamificada, planos de acompanhamento, protocolos de acompanhamento, CRM para saúde e medicina do estilo de vida (MEV).", "offers": {"@type": "Offer", "price": "290", "priceCurrency": "BRL", "description": "Plano Software, a partir de R$ 290/mês no anual"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1000"}}</script>
@@ -1736,8 +1762,6 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
   <svg class="sh-gf sh-g2" viewBox="0 0 184 184" aria-hidden="true"><use href="#gf-petal" fill="#C64FCA"/></svg>
   <svg class="sh-gf sh-g3" viewBox="0 0 171 171" aria-hidden="true"><use href="#gf-dose" fill="#F56442"/></svg>
 </div>
-  <button class="btn btn-grad js-talk" data-mode="checkout" data-plan="MyDose">Crie sua comunidade <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
-</div>
 
 <!-- ====== HERO ====== -->
 <header class="hero hero4">
@@ -1755,6 +1779,10 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
         <div class="social-row rv rv-d3 in">
           <span class="avs"><img src="assets/dep-medica.jpg" alt=""><img src="assets/dep-nutri.jpg" alt=""><img src="assets/dep-psi.jpg" alt=""><img src="assets/dep-medico.jpg" alt=""></span>
           <span><i class="stars">★★★★★</i><small>+1.000 profissionais de saúde já usam</small></span>
+        </div>
+        <div class="chip-float chip-m rv rv-d3 in">
+          <span class="ico" style="background:var(--green)"><svg width="16" height="16"><use href="#i-banknote"/></svg></span>
+          <span>+R$ 15 mil de faturamento<small>você vendeu 4 planos de acompanhamento hoje</small></span>
         </div>
       </div>
 
@@ -2273,7 +2301,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
           <li><span><svg class="li-ic" width="15" height="15" style="color:var(--gray)" aria-hidden="true"><use href="#i-graduation-cap"/></svg> Área de membros + cursos</span><b>R$ 800</b></li>
           <li><span><svg class="li-ic" width="15" height="15" style="color:var(--gray)" aria-hidden="true"><use href="#i-trending-up"/></svg> Gestão de anúncios</span><b>R$ 590</b></li>
           <li class="more-tools"><button type="button" data-more-tools>Ver todas as 14 ferramentas ↓</button></li>
-          <li class="sum"><span>14 ferramentas que você <b>não</b> vai precisar pagar</span><b>R$ 4.753/mês</b></li>
+          <li class="sum"><span>14 ferramentas que você deixa de pagar</span><b>R$ 4.753/mês</b></li>
         </ul>
       </div>
       <div class="tools-my rv rv-d1">
