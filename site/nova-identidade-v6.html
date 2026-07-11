@@ -1295,6 +1295,73 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
   .duo .mini-phone{width:36%!important;right:-8px;bottom:-36px}
   .dt-app{bottom:-30px}
 }
+
+/* ============ V6.8 · school/habits/os + prédio navy + colcha ============ */
+.see-all{display:inline-block;margin:10px 0 14px;font-size:12.5px;font-weight:800;color:var(--blue);letter-spacing:.02em}
+.plan.hot .see-all{color:#A5C4FF}
+/* prédio com silhueta */
+.sec-bldg .floors{align-items:center}
+.sec-bldg .floor{border-radius:10px;gap:12px}
+.sec-bldg .floor:nth-child(1){width:76%}
+.sec-bldg .floor:nth-child(2){width:82%}
+.sec-bldg .floor:nth-child(3){width:88%}
+.sec-bldg .floor:nth-child(4){width:94%}
+.sec-bldg .floor:nth-child(5){width:100%}
+.sec-bldg .floor.base{width:100%;border-radius:10px 10px 18px 18px;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.18);color:#fff}
+.sec-bldg .floors::before{content:"";width:34%;height:10px;border-radius:6px 6px 0 0;background:rgba(255,255,255,.16);margin-bottom:-4px}
+.sec-bldg .floor .fico{background:rgba(255,255,255,.9)}
+/* colcha de retalhos */
+.tool-list li b{text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:var(--orange);color:var(--gray);font-weight:700}
+.tool-list li.sum b{color:var(--orange);text-decoration:line-through;text-decoration-color:var(--ink)}
+.tool-list li.sum span b{color:var(--ink);text-decoration:none}
+.tool-list:not(.all) li:nth-child(n+9):not(.sum):not(.more-tools){display:none}
+.more-tools{border-bottom:0!important;justify-content:center!important}
+.more-tools button{font:700 13px/1 var(--sans);color:var(--blue);background:var(--bg);border:0;border-radius:99px;padding:9px 16px;cursor:pointer}
+.more-tools button:hover{background:var(--sec-blue)}
+
+/* ============ V6.9 · menu mobile novo ============ */
+.sheet{position:fixed;inset:0;z-index:65;background:var(--navy);color:#fff;
+  display:flex;flex-direction:column;padding:18px 24px 30px;overflow:auto;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+  background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.045) 0 2px,transparent 2px 13px)}
+.sheet.open{opacity:1;pointer-events:auto}
+.sheet-top{display:flex;justify-content:space-between;align-items:center;padding:8px 0 10px}
+.sheet-x{width:44px;height:44px;border-radius:50%;font-size:26px;line-height:1;display:grid;place-items:center;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;transition:transform .3s}
+.sheet-x:active{transform:scale(.92)}
+.sheet-nav{display:flex;flex-direction:column;margin-top:16px;position:relative;z-index:2}
+.sheet-nav a{
+  font-family:var(--serif);font-weight:400;font-size:clamp(28px,7.4vw,40px);line-height:1.2;color:#fff;
+  padding:13px 0;border-bottom:1px solid rgba(255,255,255,.12);
+  display:flex;justify-content:space-between;align-items:center;
+  opacity:0;transform:translateY(18px);transition:opacity .5s cubic-bezier(.2,.8,.2,1),transform .5s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.sheet.open .sheet-nav a{opacity:1;transform:none}
+.sheet-nav a small{font-family:var(--sans);font-size:12px;color:rgba(255,255,255,.45);font-weight:800}
+.sheet-nav a:active{color:#F0B0F2}
+.sheet-foot{margin-top:auto;padding-top:26px;position:relative;z-index:2;
+  opacity:0;transform:translateY(18px);transition:opacity .5s cubic-bezier(.2,.8,.2,1) var(--d,0s),transform .5s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.sheet.open .sheet-foot{opacity:1;transform:none}
+.sheet-proof{display:flex;align-items:center;gap:12px;margin:18px 0 14px}
+.sheet-proof .avs img{border-color:var(--navy)}
+.sheet-proof .stars{color:#FFB021;font-style:normal;letter-spacing:2px;font-size:14px;display:block}
+.sheet-proof small{font-size:12.5px;font-weight:700;color:rgba(255,255,255,.75)}
+.sheet .sheet-langs{margin:6px 0 0}
+.sheet .sheet-langs .sl-lbl{color:rgba(255,255,255,.5)}
+.sheet .sheet-langs a{font-family:var(--sans);font-size:14px;font-weight:800;padding:7px 13px;color:rgba(255,255,255,.75);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.25)}
+.sheet .sheet-langs a.on{background:#fff;color:var(--navy);box-shadow:none}
+.sh-gf{position:absolute;pointer-events:none;opacity:0;transition:opacity .8s .3s,transform .9s cubic-bezier(.2,.8,.2,1) .3s;transform:scale(.6) rotate(-20deg)}
+.sheet.open .sh-gf{opacity:.5;transform:none}
+.sh-g1{top:14%;right:7%;width:44px}
+.sh-g2{bottom:30%;right:-26px;width:110px;opacity:.25!important}
+.sh-g3{bottom:12%;left:-18px;width:64px;opacity:.35!important}
+@media(prefers-reduced-motion:reduce){.sheet-nav a,.sheet-foot,.sh-gf{opacity:1!important;transform:none!important;transition:none}}
+
+.sec-bldg .floor{color:#1E1D1D}
+.sec-bldg .floor small{color:#1E1D1D;opacity:.62}
+.sec-bldg .floor.base{color:#fff}
+.sec-bldg .floor.base small{color:rgba(255,255,255,.65);opacity:1}
+.sec-bldg .total{color:#1E1D1D}
+.sec-bldg .total span{color:#565452}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "MyDose", "alternateName": ["MyDose AI", "MyDose IA", "MyDose App"], "url": "https://mydoseapp.com/", "logo": "https://mydoseapp.com/assets/motion/hero-doctor-poster.jpg", "description": "CRM para saúde com IA: comunidade gamificada de pacientes, planos e protocolos de acompanhamento e medicina do estilo de vida (MEV) para profissionais de saúde.", "sameAs": ["https://www.youtube.com/@mydoseapp", "https://www.instagram.com/mydoseapp", "https://www.linkedin.com/company/mydoseapp", "https://www.tiktok.com/@mydoseapp"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "MyDose", "applicationCategory": "HealthApplication", "operatingSystem": "iOS, Android, Web", "url": "https://mydoseapp.com/", "description": "Plataforma de IA para profissionais de saúde: comunidade gamificada, planos de acompanhamento, protocolos de acompanhamento, CRM para saúde e medicina do estilo de vida (MEV).", "offers": {"@type": "Offer", "price": "290", "priceCurrency": "BRL", "description": "Plano Software, a partir de R$ 290/mês no anual"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1000"}}</script>
@@ -1618,13 +1685,30 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
   </div>
 </nav>
 <div class="sheet" id="sheet">
-  <a href="#como">Como funciona <small>01</small></a>
-  <a href="#produto">O produto <small>02</small></a>
-  <a href="#depoimentos">Depoimentos <small>03</small></a>
-  <a href="#lab">MyDose Lab <small>04</small></a>
-  <a href="#planos">Planos <small>05</small></a>
-  <a href="#faq">Dúvidas <small>06</small></a>
-  <div class="sheet-langs"><span class="sl-lbl">Idioma</span><a class="on" href="#">PT</a><a href="nova-identidade-v3-en.html">EN</a><a href="nova-identidade-v3-es.html">ES</a></div>
+  <div class="sheet-top">
+    <img src="assets/brand/logo-mydose-gradient-branco.svg" alt="MyDose" width="104" height="22">
+    <button class="sheet-x" id="sheetX" aria-label="Fechar menu">×</button>
+  </div>
+  <nav class="sheet-nav">
+    <a href="#como" style="--d:.05s">Como funciona <small>01</small></a>
+    <a href="#produto" style="--d:.1s">O produto <small>02</small></a>
+    <a href="#depoimentos" style="--d:.15s">Depoimentos <small>03</small></a>
+    <a href="#lab" style="--d:.2s">MyDose Lab <small>04</small></a>
+    <a href="#planos" style="--d:.25s">Planos <small>05</small></a>
+    <a href="#faq" style="--d:.3s">Dúvidas <small>06</small></a>
+  </nav>
+  <div class="sheet-foot" style="--d:.36s">
+    <button class="btn btn-grad js-talk" data-mode="checkout" data-plan="MyDose" style="width:100%">Crie sua comunidade <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
+    <div class="sheet-proof">
+      <span class="avs"><img src="assets/dep-medica.jpg" alt=""><img src="assets/dep-nutri.jpg" alt=""><img src="assets/dep-psi.jpg" alt=""><img src="assets/dep-medico.jpg" alt=""></span>
+      <span><i class="stars">★★★★★</i><small>+1.000 profissionais de saúde já usam</small></span>
+    </div>
+    <div class="sheet-langs"><span class="sl-lbl">Idioma</span><a class="on" href="#">PT</a><a href="nova-identidade-v3-en.html">EN</a><a href="nova-identidade-v3-es.html">ES</a></div>
+  </div>
+  <svg class="sh-gf sh-g1" viewBox="0 0 171 171" aria-hidden="true"><use href="#gf-spark" fill="url(#lg1)"/></svg>
+  <svg class="sh-gf sh-g2" viewBox="0 0 184 184" aria-hidden="true"><use href="#gf-petal" fill="#C64FCA"/></svg>
+  <svg class="sh-gf sh-g3" viewBox="0 0 171 171" aria-hidden="true"><use href="#gf-dose" fill="#F56442"/></svg>
+</div>
   <button class="btn btn-grad js-talk" data-mode="checkout" data-plan="MyDose">Crie sua comunidade <svg class="arr" width="18" height="18"><use href="#arr"/></svg></button>
 </div>
 
@@ -2105,7 +2189,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
 </section>
 
 <!-- ====== PRÉDIO ====== -->
-<section class="sec-forest on-dark">
+<section class="sec-navy on-dark sec-bldg">
   <svg class="gf" data-rot=".025" style="top:-60px;right:-80px;width:280px;color:rgba(255,255,255,.12)" viewBox="0 0 144 144"><use href="#gf-mandala-o"/></svg>
   <div class="wrap tower-wrap">
     <div>
@@ -2159,7 +2243,8 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
           <li><span><svg class="li-ic" width="15" height="15" style="color:var(--gray)" aria-hidden="true"><use href="#i-leaf"/></svg> MEV · medicina do estilo de vida</span><b>R$ 350</b></li>
           <li><span><svg class="li-ic" width="15" height="15" style="color:var(--gray)" aria-hidden="true"><use href="#i-graduation-cap"/></svg> Área de membros + cursos</span><b>R$ 800</b></li>
           <li><span><svg class="li-ic" width="15" height="15" style="color:var(--gray)" aria-hidden="true"><use href="#i-trending-up"/></svg> Gestão de anúncios</span><b>R$ 590</b></li>
-          <li class="sum"><span>14 ferramentas, separadas</span><b>R$ 4.753/mês</b></li>
+          <li class="more-tools"><button type="button" data-more-tools>Ver todas as 14 ferramentas ↓</button></li>
+          <li class="sum"><span>14 ferramentas que você <b>não</b> vai precisar pagar</span><b>R$ 4.753/mês</b></li>
         </ul>
       </div>
       <div class="tools-my rv rv-d1">
@@ -2325,13 +2410,16 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
           <div class="price"><span class="cur">R$</span> <b data-tri="397" data-sem="340" data-anu="290">290</b> <span>/mês</span></div>
           <p class="was"></p><p class="econ"></p>
           <ul>
-            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> Plataforma completa: Habits + Dose OS + Academy</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <b>MyDose Habits</b> — o app do paciente, feito pra adesão</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <b>Dose OS</b> — o sistema operacional, feito pra escala</li>
+            <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <b>MyDose School</b> — formação pra vender e operar</li>
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> App do paciente: protocolos e planos de acompanhamento</li>
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> Comunidade gamificada + checkout e pagamentos</li>
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> CRM + WhatsApp integrado (500 disparos/mês)</li>
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> IA cria por você: 4 posts, edição de vídeo e 1 e-book/mês</li>
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> Até 40h de gravação de consulta/mês</li>
           </ul>
+          <a class="see-all" href="#planos" data-open-compare>ver todas as funcionalidades →</a>
           <button class="btn btn-ghost btn-sm js-talk" data-mode="checkout" data-plan="Software">Começar agora</button>
         </div>
         <div class="plan rv rv-d1">
@@ -2348,6 +2436,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 1.500 disparos de WhatsApp/mês</li>
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> Até 80h de gravação de consulta/mês</li>
           </ul>
+          <a class="see-all" href="#planos" data-open-compare>ver todas as funcionalidades →</a>
           <button class="btn btn-ghost btn-sm js-talk" data-mode="checkout" data-plan="Start">Começar agora</button>
           <button class="talk2 js-talk" data-mode="talk" data-plan="Start">Agendar reunião</button>
         </div>
@@ -2365,6 +2454,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 4.000 disparos de WhatsApp/mês</li>
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> Gravação de consulta ilimitada</li>
           </ul>
+          <a class="see-all" href="#planos" data-open-compare>ver todas as funcionalidades →</a>
           <button class="btn btn-ghost btn-sm js-talk" data-mode="checkout" data-plan="Co-pilot">Começar agora</button>
           <button class="talk2 js-talk" data-mode="talk" data-plan="Co-pilot">Agendar reunião</button>
         </div>
@@ -2383,6 +2473,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> 2 infoprodutos/ano (cursos em vídeo, e-books)</li>
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> 10.000 disparos de WhatsApp · gestor de conta</li>
           </ul>
+          <a class="see-all" href="#planos" data-open-compare>ver todas as funcionalidades →</a>
           <button class="btn btn-grad btn-sm js-talk" data-mode="checkout" data-plan="Autopilot">Quero esse <svg class="arr" width="16" height="16"><use href="#arr"/></svg></button>
           <button class="talk2 js-talk" data-mode="talk" data-plan="Autopilot">Agendar reunião</button>
         </div>
@@ -2400,6 +2491,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 25.000 disparos de WhatsApp · BI e metas</li>
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> Otimização contínua de mídia e funis</li>
           </ul>
+          <a class="see-all" href="#planos" data-open-compare>ver todas as funcionalidades →</a>
           <button class="btn btn-ghost btn-sm js-talk" data-mode="talk" data-plan="Partner">Falar com o time</button>
         </div>
       </div>
@@ -2411,7 +2503,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
             <tr><th>Entregáveis / mês</th><th>Software</th><th>Start</th><th>Co-pilot</th><th>Autopilot ★</th><th>Partner</th></tr>
             <tr><td>Investimento /mês</td><td>R$ <span data-tri="397" data-sem="340" data-anu="290">290</span></td><td>R$ <span data-tri="797" data-sem="690" data-anu="590">590</span></td><td>R$ <span data-tri="1.490" data-sem="1.290" data-anu="1.090">1.090</span></td><td>R$ <span data-tri="2.990" data-sem="2.590" data-anu="2.190">2.190</span></td><td>R$ <span data-tri="7.900" data-sem="6.900" data-anu="5.900">5.900</span></td></tr>
             <tr><td>Verba de mídia</td><td>—</td><td>—</td><td>—</td><td>+R$ 1.500</td><td>+R$ 5.000</td></tr>
-            <tr><td>Plataforma completa (Habits + Dose OS + Academy)</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><td>MyDose Habits + Dose OS + MyDose School</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
             <tr><td>App do paciente · protocolos e planos de acompanhamento</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
             <tr><td>Comunidade gamificada + criador de eventos</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
             <tr><td>Checkout, meios de pagamento e CRM</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
@@ -2425,7 +2517,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
             <tr><td>Créditos IA / mês</td><td>100</td><td>400</td><td>1.000</td><td>3.000</td><td>8.000</td></tr>
             <tr><td>Gravação de consulta / mês</td><td>40h</td><td>80h</td><td>Ilimitada</td><td>Ilimitada</td><td>Ilimitada</td></tr>
             <tr><td>Executivo de estratégia</td><td>—</td><td>—</td><td>Compartilhado</td><td>Compartilhado</td><td>Dedicado</td></tr>
-            <tr><td>Suporte humano</td><td>Chat + Academy</td><td>Onboarding guiado</td><td>Executivo + relatórios</td><td>Gestor de conta</td><td>Time dedicado + metas</td></tr>
+            <tr><td>Suporte humano</td><td>Chat + MyDose School</td><td>Onboarding guiado</td><td>Executivo + relatórios</td><td>Gestor de conta</td><td>Time dedicado + metas</td></tr>
           </table>
         </div>
         <p class="tbl-hint">← arraste a tabela pra ver todos os planos →</p>
@@ -2446,6 +2538,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 12 posts + 6 vídeos/mês</li>
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 8.000 WhatsApp · 2.000 créditos IA</li>
           </ul>
+          <a class="see-all" href="#planos" data-open-compare>ver todas as funcionalidades →</a>
           <button class="btn btn-ghost btn-sm js-talk" data-mode="talk" data-plan="Clinics Start">Quero proposta</button>
         </div>
         <div class="plan hot rv rv-d1">
@@ -2461,6 +2554,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> 30 posts + 15 vídeos/mês</li>
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> 20.000 WhatsApp · gerente</li>
           </ul>
+          <a class="see-all" href="#planos" data-open-compare>ver todas as funcionalidades →</a>
           <button class="btn btn-grad btn-sm js-talk" data-mode="checkout" data-plan="Clinics Growth">Quero esse <svg class="arr" width="16" height="16"><use href="#arr"/></svg></button>
         </div>
         <div class="plan rv rv-d2">
@@ -2475,6 +2569,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 60 posts + 30 vídeos/mês</li>
             <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> 50.000 WhatsApp · BI por unidade</li>
           </ul>
+          <a class="see-all" href="#planos" data-open-compare>ver todas as funcionalidades →</a>
           <button class="btn btn-ghost btn-sm js-talk" data-mode="talk" data-plan="Clinics Performance">Falar com o time</button>
         </div>
       </div>
@@ -3316,6 +3411,32 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
         tick = false;
       });
     }, {passive:true});
+  })();
+
+  /* ---------- abrir tabela comparativa pelos cards ---------- */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('[data-open-compare]');
+    if(!a) return;
+    e.preventDefault();
+    var d = document.querySelector('details.compare');
+    if(d){ d.open = true; d.scrollIntoView({behavior:'smooth', block:'start'}); }
+  });
+
+  /* ---------- ver todas as ferramentas ---------- */
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('[data-more-tools]');
+    if(!b) return;
+    var ul = b.closest('.tool-list');
+    ul.classList.add('all');
+    b.parentElement.remove();
+  });
+
+  /* ---------- fechar menu pelo X ---------- */
+  (function(){
+    var x = document.getElementById('sheetX'), sh = document.getElementById('sheet'), bg = document.getElementById('burger');
+    if(x && sh) x.addEventListener('click', function(){
+      sh.classList.remove('open'); if(bg) bg.classList.remove('open'); document.body.style.overflow='';
+    });
   })();
 </script>
 </body>
