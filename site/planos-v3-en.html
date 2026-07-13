@@ -239,6 +239,34 @@ nav.scr{background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop
 .compare tr:last-child td{border-bottom:0}
 .tbl-hint{font-size:12px;color:var(--gray);text-align:center;margin-top:8px;font-weight:600}
 @media(min-width:900px){.tbl-hint{display:none}}
+/* ===== tabela gigante · o que está incluso ===== */
+.bigt-head{text-align:center;max-width:680px;margin:6px auto 20px}
+.bigt-head h3{font-family:var(--serif);font-size:clamp(24px,3.4vw,33px);margin-bottom:9px}
+.bigt-head p{font-size:14.5px;color:var(--muted)}
+.bigt-head p b{color:var(--ink)}
+.bigt-wrap{overflow-x:auto;border-radius:20px;box-shadow:inset 0 0 0 1.5px var(--line);background:var(--card);-webkit-overflow-scrolling:touch}
+.bigt{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+.bigt th,.bigt td{padding:12px 16px;text-align:center;border-bottom:1px solid var(--line);vertical-align:middle}
+.bigt thead th{position:sticky;top:0;z-index:3;background:var(--card);font-family:var(--serif);font-weight:500;font-size:17px;padding:16px 16px}
+.bigt thead th .pr{display:block;font-family:var(--sans);font-size:12.5px;color:var(--gray);font-weight:700;margin-top:2px}
+.bigt thead th.hot{color:var(--blue)}
+.bigt td:first-child,.bigt th:first-child{text-align:left;position:sticky;left:0;z-index:2;background:var(--card);min-width:238px;font-weight:600}
+.bigt td:nth-child(3),.bigt th:nth-child(3){background:color-mix(in srgb,var(--sec-blue) 24%,var(--card))}
+.bigt .ck{color:var(--green);font-weight:800;font-size:16px}
+.bigt .no{color:var(--line-strong);font-weight:700}
+.bigt tr.grp>td{background:var(--chip);font-weight:800;font-size:14.5px}
+.bigt tr.grp>td:nth-child(3){background:color-mix(in srgb,var(--sec-blue) 40%,var(--chip))}
+.bigt .gname{display:inline-flex;align-items:center;gap:11px}
+.bigt .gi{width:31px;height:31px;border-radius:9px;display:grid;place-items:center;flex:none}
+.bigt .gi svg{width:18px;height:18px;color:#fff}
+.bigt-more{display:block;margin:6px 0 0 42px;font-size:12.5px;font-weight:700;color:var(--blue);cursor:pointer;background:none;text-align:left}
+.bigt-more::before{content:"+ ";font-weight:800}
+.bigt-more.open::before{content:"– "}
+.bigt tr.sub{display:none}
+.bigt tr.sub.show{display:table-row}
+.bigt tr.sub>td:first-child{padding-left:58px;font-weight:500;color:var(--muted);font-size:13.5px}
+.bigt tr.sec>td{background:var(--ink);color:var(--bg);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-align:left;position:static}
+.bigt tr.sec>td:nth-child(3){background:var(--ink)}
 
 /* ---------- a conta ---------- */
 .conta{display:grid;gap:18px}
@@ -671,31 +699,62 @@ body.modal-open .sticky-cta{display:none}
       </div>
     </div>
 
-    <details class="compare rv">
-      <summary>Compare the plans, side by side <svg width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></summary>
-      <div class="tbl-scroll">
-        <table>
-          <tr><th>What you get / mo</th><th>Solo Pilot</th><th>Co-Pilot ★</th><th>Auto-Pilot</th></tr>
+    <div class="bigt-head rv" id="comparar">
+      <h3 class="serif">Everything that’s <em class="grad-text">included</em>, at a glance.</h3>
+      <p>The whole platform — <b>Adherence</b>, <b>Scale</b> and <b>Training</b> — comes with all 3 plans. What changes is <b>how much we do for you</b>. Tap the <b>+</b> to see every feature in each area.</p>
+    </div>
+    <div class="bigt-wrap rv">
+      <table class="bigt">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Solo Pilot<span class="pr">R$ <span data-tri="397" data-sem="340" data-anu="290">290</span>/mo</span></th>
+            <th class="hot">Co-Pilot ★<span class="pr">R$ <span data-tri="1.190" data-sem="990" data-anu="890">890</span>/mo</span></th>
+            <th>Auto-Pilot<span class="pr">R$ <span data-tri="2.690" data-sem="2.290" data-anu="1.990">1.990</span>/mo</span></th>
+          </tr>
+        </thead>
+        <tbody>
           <tr><td>Who does the work</td><td>You + AI</td><td>Us, with you</td><td>Us, for you</td></tr>
-          <tr><td>Investment /mo (annual)</td><td>R$ <span data-tri="397" data-sem="340" data-anu="290">290</span></td><td>R$ <span data-tri="1.190" data-sem="990" data-anu="890">890</span></td><td>R$ <span data-tri="2.690" data-sem="2.290" data-anu="1.990">1.990</span></td></tr>
-          <tr><td>MyDose Habits + Dose OS + School</td><td>✓</td><td>✓</td><td>✓</td></tr>
-          <tr><td>Own-branded app + community</td><td>✓</td><td>✓</td><td>✓</td></tr>
-          <tr><td>Sales page, checkout and CRM</td><td>✓</td><td>✓</td><td>✓</td></tr>
+          <tr class="grp"><td><span class="gname"><span class="gi" style="background:var(--blue)"><svg aria-hidden="true"><use href="#i-smartphone"/></svg></span> Adherence · MyDose Habits</span><button class="bigt-more" type="button" data-grp="ades">see the 8 features</button></td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="ades"><td>App with <b>your brand</b></td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="ades"><td>Protocols and follow-up care plans</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="ades"><td>Electronic health record</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="ades"><td>Gamification — the D.O.S.E. system</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="ades"><td>Habit check-in with photo, XP and challenges</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="ades"><td>Reminders and auto-reactivation</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="ades"><td>Meal plan and lifestyle medicine</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="ades"><td>AI answering the patient 24/7</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="grp"><td><span class="gname"><span class="gi" style="background:var(--orange)"><svg aria-hidden="true"><use href="#i-rocket"/></svg></span> Scale · Dose OS</span><button class="bigt-more" type="button" data-grp="esc">see the 9 features</button></td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="esc"><td>Gamified patient community</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="esc"><td>Sales page + checkout</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="esc"><td>Payment methods and billing</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="esc"><td>Patient CRM</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="esc"><td>Integrated WhatsApp + automations</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="esc"><td>Email marketing / newsletter</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="esc"><td>Membership area + courses</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="esc"><td>Event, live and challenge builder</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="esc"><td>Forms and intake</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="grp"><td><span class="gname"><span class="gi" style="background:var(--magenta)"><svg aria-hidden="true"><use href="#i-graduation-cap"/></svg></span> Training · MyDose School</span><button class="bigt-more" type="button" data-grp="form">see the 6 features</button></td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="form"><td>Health entrepreneurship training</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="form"><td>Pricing products and plans</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="form"><td>How to build follow-up care plans</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="form"><td>How to use AI (Claude and ChatGPT)</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="form"><td>Create e-books, scripts and content</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sub" data-grp="form"><td>Library, tutorials and workshops</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr class="sec"><td colspan="4">How much we do for you</td></tr>
           <tr><td>AI credits / mo</td><td>100</td><td>300</td><td>1,000</td></tr>
-          <tr><td>Content created by the team</td><td>— (AI with you)</td><td>10 posts + 4 videos</td><td>20 posts + 10 videos</td></tr>
+          <tr><td>Content created by our team</td><td>— (AI with you)</td><td>10 posts + 4 videos</td><td>20 posts + 10 videos</td></tr>
+          <tr><td>Ads managed by us</td><td class="no">—</td><td class="ck">✓</td><td class="ck">✓ end to end</td></tr>
+          <tr><td>Strategy specialist</td><td class="no">—</td><td>Group</td><td>Dedicated</td></tr>
           <tr><td>Courses / e-books to sell</td><td>1 e-book (AI)</td><td>1 per year</td><td>2 per year</td></tr>
-          <tr><td>Specialists guiding you</td><td>—</td><td>Scale + community (group)</td><td>Dedicated strategist</td></tr>
-          <tr><td>Ads (traffic)</td><td>—</td><td>Managed by us</td><td>End to end + optimization</td></tr>
-          <tr><td>Go-live setup</td><td>You (or Turbo, R$ 497)</td><td>Included · 7 days</td><td>Included · white-glove</td></tr>
-          <tr><td>WhatsApp messages</td><td>500</td><td>4,000</td><td>10,000</td></tr>
+          <tr><td>WhatsApp messages / mo</td><td>500</td><td>4,000</td><td>10,000</td></tr>
           <tr><td>Recorded + summarized visits</td><td>40h</td><td>Unlimited</td><td>Unlimited</td></tr>
-          <tr><td>AI answering patients 24/7</td><td>✓</td><td>✓</td><td>✓</td></tr>
+          <tr><td>Go-live setup</td><td>You (or Turbo, R$ 497)</td><td>Included · 7 days</td><td>Included · white-glove</td></tr>
           <tr><td>Guarantees</td><td>30 days + 1st sale</td><td>30 days + 1st sale</td><td>+ 90-day ROI</td></tr>
-        </table>
-      </div>
-      <p class="tbl-hint">← drag the table to compare →</p>
-    </details>
-
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-hint">← drag to see all plans →</p>
     <div class="addons-head rv">
       <h3 class="serif">Growing? Only pay more for what you <em class="grad-text">actually use</em>.</h3>
       <p>No plan inflated just in case. When your base grows, you buy more only of what you need — no surprises on the bill.</p>
@@ -939,6 +998,15 @@ body.modal-open .sticky-cta{display:none}
     });
   });
   applyTerm('anu');
+
+  /* ---------- tabela: expandir funcionalidades por área ---------- */
+  document.querySelectorAll('.bigt-more').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var g = btn.dataset.grp, open = btn.classList.toggle('open');
+      document.querySelectorAll('tr.sub[data-grp="'+g+'"]').forEach(function(r){ r.classList.toggle('show', open); });
+      btn.textContent = open ? 'hide features' : ('see the ' + document.querySelectorAll('tr.sub[data-grp="'+g+'"]').length + ' features');
+    });
+  });
 
   /* ---------- modal de lead ---------- */
   var modal = document.getElementById('leadModal');
