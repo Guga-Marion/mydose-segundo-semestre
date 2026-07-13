@@ -172,7 +172,7 @@ footer a:hover{color:#fff}
 img.blg-d{display:none}
 [data-theme="dark"] img.blg-l{display:none}
 [data-theme="dark"] img.blg-d{display:block}
-@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) img.blg-l{display:none} :root:not([data-theme="light"]) img.blg-d{display:block} }
+@media (prefers-color-scheme:dark){ :root[data-theme="dark"] img.blg-l{display:none} :root[data-theme="dark"] img.blg-d{display:block} }
 footer img.blg-l{display:none}footer img.blg-d{display:block}
 .theme-btn svg{transition:transform .55s cubic-bezier(.2,.8,.2,1)}
 .theme-btn:hover svg{transform:rotate(40deg)}
@@ -320,8 +320,7 @@ footer img.blg-l{display:none}footer img.blg-d{display:block}
 (function(){
   var r=document.documentElement,b=document.getElementById('themeBtn');
   var sv=null;try{sv=localStorage.getItem('md-theme')}catch(e){}
-  if(sv)r.setAttribute('data-theme',sv);
-  else if(window.matchMedia&&matchMedia('(prefers-color-scheme:dark)').matches)r.setAttribute('data-theme','dark');
+  r.setAttribute('data-theme',sv||'light');
   function pin(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙'}pin();
   b.addEventListener('click',function(){var d=r.getAttribute('data-theme')==='dark'?'light':'dark';
     r.setAttribute('data-theme',d);try{localStorage.setItem('md-theme',d)}catch(e){}pin()});

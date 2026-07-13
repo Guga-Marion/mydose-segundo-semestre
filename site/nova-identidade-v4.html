@@ -33,7 +33,7 @@
 <script>
 /* aplica o tema antes do paint pra não piscar */
 (function(){
-  var t = localStorage.getItem('md-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  var t = localStorage.getItem('md-theme') || 'light';
   document.documentElement.dataset.theme = t;
 })();
 </script>

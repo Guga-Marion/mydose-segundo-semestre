@@ -242,7 +242,7 @@ footer a{font-weight:700}
 img.blg-d{display:none}
 [data-theme="dark"] img.blg-l{display:none}
 [data-theme="dark"] img.blg-d{display:block}
-@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) img.blg-l{display:none} :root:not([data-theme="light"]) img.blg-d{display:block} }
+@media (prefers-color-scheme:dark){ :root[data-theme="dark"] img.blg-l{display:none} :root[data-theme="dark"] img.blg-d{display:block} }
 footer img.blg-l{display:none}footer img.blg-d{display:block}
 .theme-btn svg{transition:transform .55s cubic-bezier(.2,.8,.2,1)}
 .theme-btn:hover svg{transform:rotate(40deg)}
