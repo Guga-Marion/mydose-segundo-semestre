@@ -195,6 +195,31 @@ nav.scr{background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop
 .plan .roi{font-size:13px;font-weight:800;color:var(--green-2);margin-top:12px;display:grid;grid-template-columns:17px 1fr;gap:8px;align-items:start}
 .plan .roi svg{margin-top:3px}
 .plan .cta{margin-top:auto;padding-top:18px;display:grid;gap:8px}
+/* ===== card feats simplificados (com + estilo Viver de IA) ===== */
+.plan ul.pfeats{list-style:none;margin-top:14px;display:grid;gap:11px}
+.plan .pfeats>li{display:block;font-size:13.8px;line-height:1.35}
+.plan li.pf-line{display:grid;grid-template-columns:16px 1fr;gap:9px;align-items:start}
+.pf-line>svg{margin-top:2px}
+.pf-line b{font-weight:700}
+.pfeat summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:600}
+.pfeat summary::-webkit-details-marker{display:none}
+.pfeat summary>b{flex:1;font-weight:700}
+.pf-ico{width:23px;height:23px;border-radius:7px;display:grid;place-items:center;flex:none}
+.pf-ico svg{width:14px;height:14px;color:#fff}
+.pf-tag{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--gray);background:var(--chip);padding:2px 7px;border-radius:999px;white-space:nowrap}
+.plan.hot .pf-tag{background:rgba(255,255,255,.16);color:rgba(255,255,255,.8)}
+.pf-x{font-size:18px;font-weight:800;color:var(--blue);transition:transform .25s;line-height:1;flex:none}
+.plan.hot .pf-x{color:var(--blue-2)}
+.pfeat[open] .pf-x{transform:rotate(45deg)}
+.plan ul.pf-body{list-style:none;margin:10px 0 3px 32px;display:grid;gap:6px;font-size:12.8px;font-weight:500}
+.plan .pf-body>li{display:list-item;position:relative;padding-left:14px;color:var(--muted);grid-template-columns:none}
+.plan.hot .pf-body>li{color:rgba(255,255,255,.72)}
+.pf-body>li::before{content:"";position:absolute;left:2px;top:8px;width:4px;height:4px;border-radius:50%;background:var(--gray)}
+.plan li.pf-sup{display:flex;gap:10px;align-items:center;margin-top:4px;padding-top:12px;border-top:1px solid var(--line)}
+.plan.hot .pf-sup{border-color:rgba(255,255,255,.16)}
+.pf-sup b{font-weight:800;font-size:14px}
+.pf-sup small{display:block;font-size:11.3px;color:var(--gray);font-weight:600;margin-top:1px;line-height:1.3}
+.plan.hot .pf-sup small{color:rgba(255,255,255,.62)}
 .plan .talk2{font-size:13px;font-weight:700;color:var(--gray);text-align:center}
 .plan.hot .talk2{color:rgba(255,255,255,.6)}
 .plans-note{margin-top:28px;font-size:14px;color:var(--muted);background:var(--card);border-radius:18px;padding:18px 22px;box-shadow:inset 0 0 0 1.5px var(--line);text-align:center}
@@ -641,14 +666,16 @@ body.modal-open .sticky-cta{display:none}
         <p class="desc">La plataforma completa en tu mano. Crecés a tu ritmo, con la IA creando y la escuela enseñándote el camino.</p>
         <div class="price"><span class="cur">R$</span> <b data-tri="397" data-sem="340" data-anu="290">290</b> <span class="per">/mes</span></div>
         <p class="was"></p><p class="econ"></p>
-        <ul>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Habits + Dose OS + School</b>, todo liberado desde el día 1</span></li>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Créditos de IA para crear</b> — posts, videos, e-books y guiones en automático</span></li>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>500 mensajes de WhatsApp</b> que recuerdan y traen al paciente de vuelta</span></li>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>40h de consulta grabada y resumida</b> — sin tipear la historia clínica</span></li>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>IA respondiendo a tus pacientes</b> con tu tono y tus reglas</span></li>
+        <ul class="pfeats">
+          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Pacientes ilimitados</b></span></li>
+          <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--blue)"><svg aria-hidden="true"><use href="#i-smartphone"/></svg></span><b>Adherencia del paciente</b><span class="pf-tag">Habits</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>App con tu marca</li><li>Protocolos y planes de acompañamiento</li><li>Historia clínica electrónica</li><li>Gamificación (el sistema D.O.S.E.)</li><li>Recordatorios y reactivación automática</li><li>IA respondiendo al paciente 24/7</li></ul></details></li>
+          <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--orange)"><svg aria-hidden="true"><use href="#i-rocket"/></svg></span><b>Escala & negocios</b><span class="pf-tag">Dose OS</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>Comunidad de pacientes</li><li>Página de venta + checkout</li><li>CRM + email marketing</li><li>Área de miembros + cursos</li><li>Eventos, vivos y desafíos</li><li>Embudos y automatizaciones</li></ul></details></li>
+          <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--magenta)"><svg aria-hidden="true"><use href="#i-graduation-cap"/></svg></span><b>Educación</b><span class="pf-tag">School</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>Emprendedorismo en salud</li><li>Fijar precios de productos y planes</li><li>Crear planes de acompañamiento</li><li>Usar la IA (Claude y ChatGPT)</li><li>Biblioteca, tutoriales y workshops</li></ul></details></li>
+          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Integración con WhatsApp</b> · 500 msgs/mes</span></li>
+          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Grabación de consultas</b> · 40h/mes</span></li>
+          <li class="pf-sup"><span class="pf-ico" style="background:var(--i-message-circle)"><svg aria-hidden="true"><use href="#green"/></svg></span><span><b>Soporte humano por chat</b><small>consultas con el equipo, dentro de la plataforma</small></span></li>
         </ul>
-        <p class="bump">Entra en tu mes (desde <b>R$ 397 en trimestral</b>) y se paga con la 1ª venta. ¿No querés armarlo solo? <b>Activación Turbo: R$ 497</b>, una sola vez.</p>
+        <p class="bump">Entra en tu mes (desde <b>R$ 397 en trimestral</b>) y se paga con la 1ª venta. ¿No querés armarlo solo? <b>Activación Turbo: R$ 497</b>.</p>
         <div class="cta">
           <button class="btn btn-ghost btn-sm" data-open="Solo Pilot">Empezar ahora</button>
         </div>
@@ -663,13 +690,14 @@ body.modal-open .sticky-cta{display:none}
         <div class="price"><span class="cur">R$</span> <b data-tri="1.190" data-sem="990" data-anu="890">890</b> <span class="per">/mes</span></div>
         <p class="was"></p><p class="econ"></p>
         <p class="media-plus">+ presupuesto de anuncios sugerido (es tuyo, aparte)</p>
-        <ul>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> <span><b>Todo lo de Solo Pilot, y más:</b></span></li>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> <span><b>Especialista de escala + de comunidad</b> orientándote en encuentros de estrategia</span></li>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> <span><b>3× más créditos de IA</b> + contenido específico para tu área (médico, psi, nutri…)</span></li>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> <span><b>Tus anuncios gestionados por nosotros</b> — los armamos y los cuidamos para que aparezcas</span></li>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> <span><b>4.000 WhatsApp</b> + consulta grabada sin límite</span></li>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> <span><b>Armado incluido en 7 días</b> — ponemos todo online por vos</span></li>
+        <ul class="pfeats">
+          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> <span><b>Pacientes ilimitados</b></span></li>
+          <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--blue)"><svg aria-hidden="true"><use href="#i-smartphone"/></svg></span><b>Adherencia del paciente</b><span class="pf-tag">Habits</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>App con tu marca</li><li>Protocolos y planes de acompañamiento</li><li>Historia clínica electrónica</li><li>Gamificación (el sistema D.O.S.E.)</li><li>Recordatorios y reactivación automática</li><li>IA respondiendo al paciente 24/7</li></ul></details></li>
+          <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--orange)"><svg aria-hidden="true"><use href="#i-rocket"/></svg></span><b>Escala & negocios</b><span class="pf-tag">Dose OS</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>Comunidad de pacientes</li><li>Página de venta + checkout</li><li>CRM + email marketing</li><li>Área de miembros + cursos</li><li>Eventos, vivos y desafíos</li><li>Embudos y automatizaciones</li></ul></details></li>
+          <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--magenta)"><svg aria-hidden="true"><use href="#i-graduation-cap"/></svg></span><b>Educación</b><span class="pf-tag">School</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>Emprendedorismo en salud</li><li>Fijar precios de productos y planes</li><li>Crear planes de acompañamiento</li><li>Usar la IA (Claude y ChatGPT)</li><li>Biblioteca, tutoriales y workshops</li></ul></details></li>
+          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> <span><b>Integración con WhatsApp</b> · 4.000 msgs/mes</span></li>
+          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> <span><b>Grabación de consultas</b> · ilimitada</span></li>
+          <li class="pf-sup"><span class="pf-ico" style="background:var(--i-message-circle)"><svg aria-hidden="true"><use href="#green"/></svg></span><span><b>Soporte humano por grupo de WhatsApp</b><small>especialistas de escala y comunidad produciendo con vos</small></span></li>
         </ul>
         <div class="cta">
           <button class="btn btn-grad btn-sm" data-open="Co-Pilot">Quiero el equipo de mi lado <svg class="arr" width="16" height="16" viewBox="0 0 20 20"><use href="#arr"/></svg></button>
@@ -685,14 +713,16 @@ body.modal-open .sticky-cta{display:none}
         <div class="price"><span class="cur">R$</span> <b data-tri="2.690" data-sem="2.290" data-anu="1.990">1.990</b> <span class="per">/mes</span></div>
         <p class="was"></p><p class="econ"></p>
         <p class="media-plus">+ presupuesto de anuncios sugerido (es tuyo, aparte)</p>
-        <ul>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Todo lo de Co-Pilot, y más:</b></span></li>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Nos sentamos con vos</b> — estratega dedicado y plan de crecimiento solo tuyo</span></li>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Contenido y anuncios de punta a punta</b> — el doble de contenido, lo operamos todo</span></li>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Créditos a full</b> + 10.000 WhatsApp + 2 productos digitales al año</span></li>
-          <li><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Un gestor de cuenta cuidando tu resultado</b></span></li>
+        <ul class="pfeats">
+          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Pacientes ilimitados</b></span></li>
+          <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--blue)"><svg aria-hidden="true"><use href="#i-smartphone"/></svg></span><b>Adherencia del paciente</b><span class="pf-tag">Habits</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>App con tu marca</li><li>Protocolos y planes de acompañamiento</li><li>Historia clínica electrónica</li><li>Gamificación (el sistema D.O.S.E.)</li><li>Recordatorios y reactivación automática</li><li>IA respondiendo al paciente 24/7</li></ul></details></li>
+          <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--orange)"><svg aria-hidden="true"><use href="#i-rocket"/></svg></span><b>Escala & negocios</b><span class="pf-tag">Dose OS</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>Comunidad de pacientes</li><li>Página de venta + checkout</li><li>CRM + email marketing</li><li>Área de miembros + cursos</li><li>Eventos, vivos y desafíos</li><li>Embudos y automatizaciones</li></ul></details></li>
+          <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--magenta)"><svg aria-hidden="true"><use href="#i-graduation-cap"/></svg></span><b>Educación</b><span class="pf-tag">School</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>Emprendedorismo en salud</li><li>Fijar precios de productos y planes</li><li>Crear planes de acompañamiento</li><li>Usar la IA (Claude y ChatGPT)</li><li>Biblioteca, tutoriales y workshops</li></ul></details></li>
+          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Integración con WhatsApp</b> · 10.000 msgs/mes</span></li>
+          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Grabación de consultas</b> · ilimitada</span></li>
+          <li class="pf-sup"><span class="pf-ico" style="background:var(--i-badge-check)"><svg aria-hidden="true"><use href="#green"/></svg></span><span><b>Soporte humano dedicado</b><small>ejecutivo + especialista de escala + especialista de IA, solo tuyos</small></span></li>
         </ul>
-        <p class="roi"><svg width="15" height="15" style="color:#63AC39" aria-hidden="true"><use href="#i-trending-up"/></svg> <span><b>ROI garantizado:</b> si en 90 días el plan no se paga solo, te devolvemos la diferencia.</span></p>
+        <p class="roi"><svg width="15" height="15" style="color:#63AC39" aria-hidden="true"><use href="#i-trending-up"/></svg> <span><b>ROI garantizado:</b> en 90 días el plan se paga o te devolvemos la diferencia.</span></p>
         <div class="cta">
           <button class="btn btn-ghost btn-sm" data-open="Auto-Pilot">Quiero todo en automático</button>
         </div>
@@ -715,6 +745,7 @@ body.modal-open .sticky-cta{display:none}
         </thead>
         <tbody>
           <tr><td>Quién hace el trabajo</td><td>Vos + IA</td><td>Nosotros, con vos</td><td>Nosotros, por vos</td></tr>
+          <tr><td>Pacientes ilimitados</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
           <tr class="grp"><td><span class="gname"><span class="gi" style="background:var(--blue)"><svg aria-hidden="true"><use href="#i-smartphone"/></svg></span> Adherencia · MyDose Habits</span><button class="bigt-more" type="button" data-grp="ades">ver las 8 funcionalidades</button></td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
           <tr class="sub" data-grp="ades"><td>App del paciente con <b>tu marca</b></td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
           <tr class="sub" data-grp="ades"><td>Protocolos y planes de acompañamiento</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
@@ -745,7 +776,7 @@ body.modal-open .sticky-cta{display:none}
           <tr><td>Créditos de IA / mes</td><td>100</td><td>300</td><td>1.000</td></tr>
           <tr><td>Contenido creado por nuestro equipo</td><td>— (IA con vos)</td><td>10 posts + 4 videos</td><td>20 posts + 10 videos</td></tr>
           <tr><td>Anuncios gestionados por nosotros</td><td class="no">—</td><td class="ck">✓</td><td class="ck">✓ punta a punta</td></tr>
-          <tr><td>Especialista de estrategia</td><td class="no">—</td><td>En grupo</td><td>Dedicado</td></tr>
+          <tr><td>Soporte humano</td><td>Por chat</td><td>Grupo de WhatsApp</td><td>Dedicado (ejecutivo + escala + IA)</td></tr>
           <tr><td>Cursos / e-books para vender</td><td>1 e-book (IA)</td><td>1 por año</td><td>2 por año</td></tr>
           <tr><td>Mensajes de WhatsApp / mes</td><td>500</td><td>4.000</td><td>10.000</td></tr>
           <tr><td>Consulta grabada y resumida</td><td>40h</td><td>Sin límite</td><td>Sin límite</td></tr>
