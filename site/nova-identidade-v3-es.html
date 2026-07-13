@@ -285,7 +285,7 @@ body.loaded .hero h1 .w{opacity:1;transform:none}
 .chip-float small{display:block;font-weight:600;color:var(--gray);font-size:11.5px}
 .chip-a{top:8%;left:-6px;animation:floatY 6s ease-in-out infinite}
 .chip-b{bottom:12%;right:-6px;animation:floatY 7.5s .8s ease-in-out infinite}
-@media(min-width:920px){.chip-a{left:-30px}.chip-b{right:-24px}}
+@media(min-width:920px){.chip-a{left:-30px}.chip-b{right:-24px}.chip-d{left:-34px}}
 
 /* ============ TICKER (funcionalidades) ============ */
 .ticker-zone{padding:26px 0 10px;text-align:center}
@@ -1209,6 +1209,7 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
   -webkit-mask-image:linear-gradient(210deg,#000 45%,transparent 88%);mask-image:linear-gradient(210deg,#000 45%,transparent 88%);opacity:.85}
 .hv-spark{position:absolute;z-index:3;left:2%;top:4%;width:52px;animation:spinFloat 11s ease-in-out infinite}
 .chip-c{top:-4px;right:2%;animation:floatY 8s 1.4s ease-in-out infinite}
+.chip-d{bottom:15%;left:-6px;animation:floatY 8.5s .5s ease-in-out infinite}
 @media(min-width:920px){
   .hero6-grid{grid-template-columns:.92fr 1.08fr;gap:44px}
   .chip-a{left:-14px;top:14%}.chip-b{right:-6px;bottom:9%}
@@ -1476,7 +1477,8 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
   .hero6-copy .social-row{margin-top:12px}
   .chip-m{position:static;display:flex;margin:14px 0 0;animation:none;width:fit-content}
   .chip-a{display:none}
-  .chip-b{display:flex;top:6%;right:2%;bottom:auto;left:auto;animation:floatY 7s ease-in-out infinite}
+  .chip-b{display:none}
+  .chip-d{display:flex;position:absolute;top:6%;right:2%;bottom:auto;left:auto;animation:floatY 7s ease-in-out infinite}
   .hero4{padding:92px 0 30px}
 }
 
@@ -1887,6 +1889,10 @@ a.mz:hover .mz-g{transform:scale(1.12) rotate(-4deg)}
         <div class="chip-float chip-a">
           <span class="ico" style="background:var(--green)"><svg width="16" height="16"><use href="#i-banknote"/></svg></span>
           <span>+R$ 15 mil de facturación<small>vendiste 4 planes de acompañamiento hoy</small></span>
+        </div>
+        <div class="chip-float chip-d">
+          <span class="ico" style="background:var(--orange)"><svg width="16" height="16"><use href="#i-heart-pulse"/></svg></span>
+          <span>Protocolo 100% completado<small>adherencia del paciente en 83%</small></span>
         </div>
         <div class="chip-float chip-b">
           <span class="ico" style="background:var(--blue)"><svg width="16" height="16"><use href="#i-stethoscope"/></svg></span>
