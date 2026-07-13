@@ -199,6 +199,9 @@ nav.scr{background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop
 .plan ul.pfeats{list-style:none;margin-top:14px;display:grid;gap:11px}
 .plan .pfeats>li{display:block;font-size:13.8px;line-height:1.35}
 .plan li.pf-line{display:grid;grid-template-columns:16px 1fr;gap:9px;align-items:start}
+.plan li.pf-row{display:flex;align-items:center;gap:9px;font-size:13.8px;line-height:1.35}
+.pf-row .pf-txt{flex:1}
+.pf-row .pf-txt b{font-weight:700}
 .pf-line>svg{margin-top:2px}
 .pf-line b{font-weight:700}
 .pfeat summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:600}
@@ -622,14 +625,12 @@ nav{top:40px}
       <span class="avs"><img src="assets/dep-medica.jpg" alt=""><img src="assets/dep-nutri.jpg" alt=""><img src="assets/dep-psi.jpg" alt=""><img src="assets/dep-medico.jpg" alt=""></span>
       <span><i class="stars">★★★★★</i><br><small>+1.000 profissionais de saúde já usam</small></span>
     </div>
-    <div class="hero-badges"><span>30 dias de garantia total</span><span>Sem fidelidade-armadilha</span><span>Preço travado no contrato</span></div>
   </div>
 </header>
 
 <!-- ============ TRUST STRIP ============ -->
 <div class="tstrip">
   <div class="tstrip-in">
-    <div class="ts"><i>★★★★★</i><span>+1.000 profissionais</span></div>
     <div class="ts"><b class="grad-text">7 dias</b><span>pra estar no ar</span></div>
     <div class="ts"><b class="grad-text">3×</b><span>mais adesão</span></div>
     <div class="ts"><b class="grad-text">5×</b><span>mais faturamento</span></div>
@@ -688,12 +689,12 @@ nav{top:40px}
         <div class="price"><span class="cur">R$</span> <b data-tri="397" data-sem="340" data-anu="290">290</b> <span class="per">/mês</span></div>
         <p class="was"></p><p class="econ"></p>
         <ul class="pfeats">
-          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Pacientes ilimitados</b></span></li>
+          <li class="pf-row"><span class="pf-ico" style="background:var(--green)"><svg aria-hidden="true"><use href="#i-users"/></svg></span><span class="pf-txt"><b>Até 50 pacientes</b></span></li>
           <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--blue)"><svg aria-hidden="true"><use href="#i-smartphone"/></svg></span><b>Adesão do paciente</b><span class="pf-tag">Habits</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>App com a sua marca</li><li>Protocolos e planos de acompanhamento</li><li>Prontuário eletrônico</li><li>Gamificação (o sistema D.O.S.E.)</li><li>Lembretes e reativação automática</li><li>IA respondendo o paciente 24/7</li></ul></details></li>
           <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--orange)"><svg aria-hidden="true"><use href="#i-rocket"/></svg></span><b>Escala & negócios</b><span class="pf-tag">Dose OS</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>Comunidade de pacientes</li><li>Página de venda + checkout</li><li>CRM + e-mail marketing</li><li>Área de membros + cursos</li><li>Eventos, lives e desafios</li><li>Funis e automações</li></ul></details></li>
           <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--magenta)"><svg aria-hidden="true"><use href="#i-graduation-cap"/></svg></span><b>Educação</b><span class="pf-tag">School</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>Empreendedorismo na saúde</li><li>Precificar produtos e planos</li><li>Criar planos de acompanhamento</li><li>Usar a IA (Claude e ChatGPT)</li><li>Biblioteca, tutoriais e workshops</li></ul></details></li>
-          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Integração com WhatsApp</b> · 500 msgs/mês</span></li>
-          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Gravação de consultas</b> · 40h/mês</span></li>
+          <li class="pf-row"><span class="pf-ico" style="background:var(--green)"><svg aria-hidden="true"><use href="#i-message-circle"/></svg></span><span class="pf-txt"><b>Integração com WhatsApp</b> · 500 msgs/mês</span></li>
+          <li class="pf-row"><span class="pf-ico" style="background:var(--green)"><svg aria-hidden="true"><use href="#i-video"/></svg></span><span class="pf-txt"><b>Gravação de consultas</b> · 40h/mês</span></li>
           <li class="pf-sup"><span class="pf-ico" style="background:var(--green)"><svg aria-hidden="true"><use href="#i-message-circle"/></svg></span><span><b>Suporte humano por chat</b><small>tira-dúvidas com o time, dentro da plataforma</small></span></li>
         </ul>
         <p class="bump">Cabe no seu mês (a partir de <b>R$ 397 no trimestral</b>) e se paga na 1ª venda. Não quer montar sozinho? <b>Ativação Turbo: R$ 497</b>.</p>
@@ -712,12 +713,12 @@ nav{top:40px}
         <p class="was"></p><p class="econ"></p>
         <p class="media-plus">+ verba de anúncios sugerida (é sua, à parte)</p>
         <ul class="pfeats">
-          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> <span><b>Pacientes ilimitados</b></span></li>
+          <li class="pf-row"><span class="pf-ico" style="background:var(--green)"><svg aria-hidden="true"><use href="#i-users"/></svg></span><span class="pf-txt"><b>Até 250 pacientes</b></span></li>
           <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--blue)"><svg aria-hidden="true"><use href="#i-smartphone"/></svg></span><b>Adesão do paciente</b><span class="pf-tag">Habits</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>App com a sua marca</li><li>Protocolos e planos de acompanhamento</li><li>Prontuário eletrônico</li><li>Gamificação (o sistema D.O.S.E.)</li><li>Lembretes e reativação automática</li><li>IA respondendo o paciente 24/7</li></ul></details></li>
           <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--orange)"><svg aria-hidden="true"><use href="#i-rocket"/></svg></span><b>Escala & negócios</b><span class="pf-tag">Dose OS</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>Comunidade de pacientes</li><li>Página de venda + checkout</li><li>CRM + e-mail marketing</li><li>Área de membros + cursos</li><li>Eventos, lives e desafios</li><li>Funis e automações</li></ul></details></li>
           <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--magenta)"><svg aria-hidden="true"><use href="#i-graduation-cap"/></svg></span><b>Educação</b><span class="pf-tag">School</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>Empreendedorismo na saúde</li><li>Precificar produtos e planos</li><li>Criar planos de acompanhamento</li><li>Usar a IA (Claude e ChatGPT)</li><li>Biblioteca, tutoriais e workshops</li></ul></details></li>
-          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> <span><b>Integração com WhatsApp</b> · 4.000 msgs/mês</span></li>
-          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#A5DC85"><use href="#ck"/></svg> <span><b>Gravação de consultas</b> · ilimitada</span></li>
+          <li class="pf-row"><span class="pf-ico" style="background:var(--green)"><svg aria-hidden="true"><use href="#i-message-circle"/></svg></span><span class="pf-txt"><b>Integração com WhatsApp</b> · 4.000 msgs/mês</span></li>
+          <li class="pf-row"><span class="pf-ico" style="background:var(--green)"><svg aria-hidden="true"><use href="#i-video"/></svg></span><span class="pf-txt"><b>Gravação de consultas</b> · ilimitada</span></li>
           <li class="pf-sup"><span class="pf-ico" style="background:var(--green)"><svg aria-hidden="true"><use href="#i-message-circle"/></svg></span><span><b>Suporte humano por grupo de WhatsApp</b><small>especialistas de escala e comunidade produzindo junto</small></span></li>
         </ul>
         <div class="cta">
@@ -735,12 +736,12 @@ nav{top:40px}
         <p class="was"></p><p class="econ"></p>
         <p class="media-plus">+ verba de anúncios sugerida (é sua, à parte)</p>
         <ul class="pfeats">
-          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Pacientes ilimitados</b></span></li>
+          <li class="pf-row"><span class="pf-ico" style="background:var(--green)"><svg aria-hidden="true"><use href="#i-users"/></svg></span><span class="pf-txt"><b>Pacientes ilimitados</b></span></li>
           <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--blue)"><svg aria-hidden="true"><use href="#i-smartphone"/></svg></span><b>Adesão do paciente</b><span class="pf-tag">Habits</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>App com a sua marca</li><li>Protocolos e planos de acompanhamento</li><li>Prontuário eletrônico</li><li>Gamificação (o sistema D.O.S.E.)</li><li>Lembretes e reativação automática</li><li>IA respondendo o paciente 24/7</li></ul></details></li>
           <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--orange)"><svg aria-hidden="true"><use href="#i-rocket"/></svg></span><b>Escala & negócios</b><span class="pf-tag">Dose OS</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>Comunidade de pacientes</li><li>Página de venda + checkout</li><li>CRM + e-mail marketing</li><li>Área de membros + cursos</li><li>Eventos, lives e desafios</li><li>Funis e automações</li></ul></details></li>
           <li><details class="pfeat"><summary><span class="pf-ico" style="background:var(--magenta)"><svg aria-hidden="true"><use href="#i-graduation-cap"/></svg></span><b>Educação</b><span class="pf-tag">School</span><span class="pf-x">+</span></summary><ul class="pf-body"><li>Empreendedorismo na saúde</li><li>Precificar produtos e planos</li><li>Criar planos de acompanhamento</li><li>Usar a IA (Claude e ChatGPT)</li><li>Biblioteca, tutoriais e workshops</li></ul></details></li>
-          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Integração com WhatsApp</b> · 10.000 msgs/mês</span></li>
-          <li class="pf-line"><svg width="15" height="15" viewBox="0 0 20 20" color="#63AC39"><use href="#ck"/></svg> <span><b>Gravação de consultas</b> · ilimitada</span></li>
+          <li class="pf-row"><span class="pf-ico" style="background:var(--green)"><svg aria-hidden="true"><use href="#i-message-circle"/></svg></span><span class="pf-txt"><b>Integração com WhatsApp</b> · 10.000 msgs/mês</span></li>
+          <li class="pf-row"><span class="pf-ico" style="background:var(--green)"><svg aria-hidden="true"><use href="#i-video"/></svg></span><span class="pf-txt"><b>Gravação de consultas</b> · ilimitada</span></li>
           <li class="pf-sup"><span class="pf-ico" style="background:var(--green)"><svg aria-hidden="true"><use href="#i-badge-check"/></svg></span><span><b>Suporte humano dedicado</b><small>executivo + especialista de escala + especialista de IA, só seus</small></span></li>
         </ul>
         <p class="roi"><svg width="15" height="15" style="color:#63AC39" aria-hidden="true"><use href="#i-trending-up"/></svg> <span><b>ROI garantido:</b> em 90 dias o plano se paga ou devolvemos a diferença.</span></p>
@@ -858,7 +859,7 @@ nav{top:40px}
         </thead>
         <tbody>
           <tr><td>Quem faz o trabalho</td><td>Você + IA</td><td>A gente, com você</td><td>A gente, por você</td></tr>
-          <tr><td>Pacientes ilimitados</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+          <tr><td>Limite de pacientes</td><td>Até 50</td><td>Até 250</td><td class="ck">Ilimitado</td></tr>
 
           <tr class="grp"><td><span class="gname"><span class="gi" style="background:var(--blue)"><svg aria-hidden="true"><use href="#i-smartphone"/></svg></span> Adesão · MyDose Habits</span><button class="bigt-more" type="button" data-grp="ades">ver as 8 funcionalidades</button></td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
           <tr class="sub" data-grp="ades"><td>App do paciente com a <b>sua marca</b></td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
