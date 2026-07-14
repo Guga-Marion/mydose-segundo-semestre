@@ -667,7 +667,7 @@ input[type=range]::-moz-range-thumb{
 /* ===== cards de plano: funcionalidades bonitas (importado do /planos) ===== */
 .plan ul.pfeats{list-style:none;margin-top:14px;display:grid;gap:11px}
 .plan .pfeats>li{display:block;font-size:13.8px;line-height:1.35}
-.plan li.pf-row{display:flex;align-items:center;gap:9px;font-size:13.8px;line-height:1.35}
+.plan li.pf-row{display:flex;align-items:flex-start;gap:9px;font-size:13.8px;line-height:1.35}
 .pf-row .pf-txt{flex:1}
 .pf-row .pf-txt b{font-weight:700}
 .pfeat summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:600}
@@ -687,7 +687,7 @@ input[type=range]::-moz-range-thumb{
 .pf-sup b{font-weight:800;font-size:14px}
 .pf-sup small{display:block;font-size:11.3px;color:var(--gray);font-weight:600;margin-top:1px;line-height:1.3}
 .plan.hot .pf-sup small{color:rgba(255,255,255,.62)}
-.plan li.pf-hi{display:flex;align-items:center;gap:9px;background:var(--chip);border-radius:13px;padding:10px 13px;margin:0 -13px 6px}
+.plan li.pf-hi{display:flex;align-items:flex-start;gap:9px;background:var(--chip);border-radius:13px;padding:10px 13px;margin:0 -13px 6px}
 .plan.hot li.pf-hi{background:rgba(255,255,255,.08)}
 .pf-hi b{font-size:15.5px;font-weight:800;line-height:1.15}
 .pf-hi small{display:block;font-size:11px;color:var(--gray);font-weight:600;margin-top:1px}
@@ -701,8 +701,9 @@ input[type=range]::-moz-range-thumb{
 .plan li.pf-row.pf-off .pf-txt{color:var(--gray)}
 .pf-ico.pf-no{background:var(--line-strong);color:#fff;font-size:12px;font-weight:800;line-height:1}
 .plan.hot .pf-ico.pf-no{background:rgba(255,255,255,.22)}
-.plan li.pf-sup{display:flex;align-items:center;gap:9px;background:var(--sec-green);border-radius:12px;padding:10px 13px;margin:7px -13px 0;border-top:none}
+.plan li.pf-sup{display:flex;align-items:flex-start;gap:9px;background:var(--sec-green);border-radius:12px;padding:10px 13px;margin:7px -13px 0;border-top:none}
 .plan.hot li.pf-sup{background:rgba(99,172,57,.2)}
+.pf-row .pf-ico,.pf-hi .pf-ico,.pf-sup .pf-ico{margin-top:-2px}
 .plan ul svg{flex:none;margin-top:3px}
 .plan .btn{width:100%}
 .plan .talk2{margin-top:8px;font-size:13px;font-weight:700;color:var(--gray);text-align:center}
