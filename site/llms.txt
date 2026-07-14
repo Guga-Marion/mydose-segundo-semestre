@@ -25,7 +25,7 @@ estilo de vida y salud conductual en la práctica, para emprendedores de la salu
 - [MyDose (en)](https://mydoseapp.com/nova-identidade-v3-en.html): home — AI for healthcare, patient communities, the operating system to scale, plans & pricing
 - [MyDose (es-419)](https://mydoseapp.com/nova-identidade-v3-es.html): home — IA para salud, comunidades de pacientes, sistema operativo para escalar, planes y precios
 - [Planos e preços (pt-BR)](https://mydoseapp.com/planos.html): 5 planos, do Software (R$ 290/mês no anual) ao Partner (R$ 5.900/mês) — tabela comparativa completa
-- [Plans & pricing (en)](https://mydoseapp.com/planos-v3-en.html) · [Planes y precios (es)](https://mydoseapp.com/planos-v3-es.html)
+- [Plans & pricing (en)](https://mydoseapp.com/planos-en.html) · [Planes y precios (es)](https://mydoseapp.com/planos-es.html)
 - [MyDose Physical (pt-BR)](https://mydoseapp.com/nova-physical-v3.html): saúde física e nutrição — nutricionistas, médicos e personal; plano alimentar e treino que viram hábitos
 - [MyDose Physical (en)](https://mydoseapp.com/nova-physical-v3-en.html) · [(es)](https://mydoseapp.com/nova-physical-v3-es.html)
 - [MyDose Mental (pt-BR)](https://mydoseapp.com/nova-mental-v3.html): saúde mental e comportamental — psicólogos e terapeutas; continuidade entre sessões, menos no-show
