@@ -215,6 +215,24 @@
     font-size:12px;font-weight:600;cursor:pointer;box-shadow:var(--shadow);font-family:var(--sans)}
   .tog:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 
+  /* Topo tone + workshop CTA */
+  .top .card-id{background:var(--blue-soft);color:var(--blue)}
+  .cta .col.work{background:var(--blue-soft)}
+  .cta .work .lab{color:var(--blue)} .cta .work .lab::before{background:var(--blue)}
+
+  /* Brief / mini-rows (cortes, prova social) */
+  .brief{padding:4px 22px 6px}
+  .minirow{display:grid;grid-template-columns:30px 1fr;gap:12px;padding:15px 0;border-bottom:1px solid var(--line-2)}
+  .minirow:last-child{border-bottom:none}
+  .minirow .n{font-family:var(--mono);font-weight:700;font-size:12px;color:var(--hook);padding-top:2px}
+  .minirow h5{margin:0 0 3px;font-size:15px;font-weight:700;font-family:var(--serif)}
+  .minirow p{margin:0;font-size:13.5px;color:var(--ink-2)}
+  .minirow .say{margin-top:7px;font-size:13.5px;color:var(--ink)}
+  .minirow .say b{font-weight:700}
+  .minirow .kv{font-size:12px;color:var(--ink-3);margin-top:7px;display:flex;gap:6px;flex-wrap:wrap;align-items:baseline}
+  .minirow .kv b{color:var(--ink-2);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:10px}
+  .qtag{font-size:12.5px;color:var(--ink);background:var(--line-2);border-radius:6px;padding:2px 8px;display:inline-block;margin:3px 5px 0 0}
+
   @media (max-width:640px){
     .princ,.strip{grid-template-columns:1fr}
     .cta{grid-template-columns:1fr}
@@ -228,7 +246,7 @@
 <div class="wrap">
 
   <header class="mast">
-    <div class="kicker">MyDose · Ads Q3 <span class="dot"></span> Roteiros short-form · 30–60s <span class="dot"></span> v2 — hooks validados · 22/07/2026</div>
+    <div class="kicker">MyDose · Ads Q3 <span class="dot"></span> Roteiros short-form · 30–60s <span class="dot"></span> v3 — funil completo · 22/07/2026</div>
     <h1>9 roteiros pra gravar, escritos em cima de <em>hooks já validados</em></h1>
     <p class="lede">Cada roteiro tem <b>30 a 60 segundos</b>, quebrado na minutagem, com o hook dos 0–3s montado sobre um framework testado (o gancho decide o resultado). <b>Falado</b> é o que você lê na câmera; <b>Texto na tela</b> é legível no mudo. Projeções financeiras são a <b>mesma gravação</b> pro meio e pro fim — só troca o CTA. Persona: o profissional de saúde empreendedor — médico, psicólogo, nutri — cansado de depender só da consulta, refém do WhatsApp, sem previsibilidade de faturamento.</p>
 
@@ -659,20 +677,373 @@
     </div>
   </section>
 
-  <!-- ============ PREVIEW DAS PRÓXIMAS LINHAS ============ -->
+  <!-- ============ TOPO · ADS DE CONVITE PRO WORKSHOP ============ -->
   <section class="sec">
     <div class="sec-head">
-      <span class="sec-n">05</span><h2>Preview · as próximas 6 linhas</h2>
+      <span class="sec-n">05</span><h2>Ads de convite pro Workshop</h2>
+      <span class="sec-tag t-fun">Topo · 3x · CTA = inscrição</span>
     </div>
-    <p class="sec-sub">Briefing + hook de partida das linhas que ainda vou roteirizar por completo. Roteiro cheio na próxima rodada — diz qual você quer priorizar.</p>
-    <div class="prev">
-      <div class="pcard topo"><div class="pt-tag">Topo</div><h4>Cortes do Workshop <span class="qty">· 3x</span></h4><div class="desc">Recortes do conteúdo ao vivo. Prova de valor direta — pega o melhor momento e corta.</div><div class="hk"><em>Hook · Behind-the-scenes</em>“Isso aqui foi ao vivo no workshop — e resume por que consulta não escala.”</div></div>
-      <div class="pcard topo"><div class="pt-tag">Topo</div><h4>Vídeos do Dr. Arthur <span class="qty">· 3x</span></h4><div class="desc">Autoridade médica na câmera. Founder + credibilidade clínica.</div><div class="hk"><em>Hook · Credential lead</em>“Sou médico. Demorei anos pra entender que atender bem não é escalar.”</div></div>
-      <div class="pcard topo"><div class="pt-tag">Topo</div><h4>Ads de convite pro Workshop <span class="qty">· 3x</span></h4><div class="desc">Chamada direta pra inscrição. Data, hora, promessa específica.</div><div class="hk"><em>Hook · How-to + FOMO</em>“Quarta, 19h, ao vivo e de graça: como transformar consulta em consultório escalável.”</div></div>
-      <div class="pcard meio"><div class="pt-tag">Meio</div><h4>Tela dividida tutorial <span class="qty">· 5x</span></h4><div class="desc">Você fala de um lado, a ferramenta rodando do outro. Mostra na prática.</div><div class="hk"><em>Hook · Tool reveal</em>“De um lado eu explico, do outro eu monto o plano ao vivo. Olha a velocidade.”</div></div>
-      <div class="pcard fim"><div class="pt-tag">Fim</div><h4>Prova social <span class="qty">· 3x</span></h4><div class="desc">Cliente real vendendo o MyDose. A validação vem de quem já usa — depoimento autêntico.</div><div class="hk"><em>Hook · Testemunho</em>“Em 30 dias eu fiz minha primeira venda de programa de acompanhamento.” (Dr. Arthur)</div></div>
-      <div class="pcard fim"><div class="pt-tag">Topo · Meio · Fim</div><h4>Estáticos <span class="qty">· briefing</span></h4><div class="desc">Artes de captação, meio e de diagnóstico. Headline forte + subhead traduzindo em resultado.</div><div class="hk"><em>Direção · Callout</em>Headline com a dor (“Sua hora vale menos do que você pensa”) + CTA por fase.</div></div>
+    <p class="sec-sub">Chamada direta pra aula ao vivo de quarta, 19h — “Consultório Escalável”, grátis e sem gravação. Peças curtas (20–35s): promessa específica + urgência real. CTA sempre pra <code>inscrição no workshop</code>.</p>
+
+    <article class="card top">
+      <div class="card-head">
+        <span class="card-id">AC-01</span>
+        <div class="card-title">
+          <h3>Convite direto</h3>
+          <p>Data, hora, promessa. O mais “reto” dos três — funciona pra público frio.</p>
+          <div class="chips"><span class="chip hook">Hook · How-to promise</span><span class="chip dur">⏱ <b>~30s</b></span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Tempo</th><th class="vis">Visual</th><th class="txt">Texto na tela</th><th>Falado</th></tr></thead>
+        <tbody>
+          <tr class="beat0"><td class="time">0–3s<span>Hook</span></td>
+            <td class="vis">Você direto na câmera, energia alta. Card com “QUA · 19h · AO VIVO”.</td>
+            <td class="txt">Quarta, 19h, ao vivo e de graça</td>
+            <td class="said">Quarta, sete da noite, ao vivo e de graça: <b>como transformar consulta em consultório escalável.</b></td></tr>
+          <tr><td class="time">3–20s<span>Corpo</span></td>
+            <td class="vis">Bullets aparecendo: precificação · plano de acompanhamento · parar de depender da consulta.</td>
+            <td class="txt">O que a faculdade não ensina do negócio</td>
+            <td class="said">Se você é médico, nutri ou psicólogo e sente que travou no teto da agenda, essa aula é pra você. Sem enrolação: precificação, plano de acompanhamento e como parar de depender só da consulta — o que a faculdade não ensinou sobre o negócio da saúde.</td></tr>
+          <tr><td class="time">20s→CTA<span>CTA</span></td>
+            <td class="vis">Botão “Garantir vaga”; contador de vagas.</td>
+            <td class="txt">Vagas limitadas · não fica gravado</td>
+            <td class="said">Vagas limitadas e não fica gravado. <b>Clica aqui e garante o teu lugar.</b></td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos</span><ul>
+        <li><em>FOMO</em> Essa aula sai do ar quarta à noite. Depois, não tem replay.</li>
+        <li><em>Callout</em> Profissional de saúde que quer empreender: começa por essa aula.</li>
+      </ul></div>
+      <div class="cta single"><div class="col work"><div class="lab">CTA · Inscrição no Workshop</div><p>“Clica aqui e garante tua vaga na aula de quarta, 19h — é de graça.”</p><span class="dest">→ Página de inscrição (live) · público de topo pro remarketing</span></div></div>
+    </article>
+
+    <article class="card top">
+      <div class="card-head">
+        <span class="card-id">AC-02</span>
+        <div class="card-title">
+          <h3>O colega que fatura o dobro</h3>
+          <p>Contraste de destino. Cutuca a comparação sem soar arrogante.</p>
+          <div class="chips"><span class="chip hook">Hook · Contrarian</span><span class="chip dur">⏱ <b>~32s</b></span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Tempo</th><th class="vis">Visual</th><th class="txt">Texto na tela</th><th>Falado</th></tr></thead>
+        <tbody>
+          <tr class="beat0"><td class="time">0–3s<span>Hook</span></td>
+            <td class="vis">Você falando; split sutil “agenda cheia” × “agenda com espaço”.</td>
+            <td class="txt">Menos paciente, o dobro do faturamento</td>
+            <td class="said">Enquanto você lota a agenda, tem colega faturando o dobro atendendo menos. <b>Quarta eu explico como.</b></td></tr>
+          <tr><td class="time">3–22s<span>Corpo</span></td>
+            <td class="vis">Ícones: mesmo paciente comprando de novo; esteira de produtos.</td>
+            <td class="txt">Não é atender mais. É o modelo.</td>
+            <td class="said">A diferença não é talento nem trabalhar mais. É o modelo de negócio. Eles cobram por resultado, criam acompanhamento, e têm mais de uma fonte de faturamento saindo da mesma base de pacientes. Na aula eu mostro o mapa inteiro.</td></tr>
+          <tr><td class="time">22s→CTA<span>CTA</span></td>
+            <td class="vis">Card do workshop + botão.</td>
+            <td class="txt">Quarta, 19h · ao vivo · grátis</td>
+            <td class="said">É quarta, sete da noite, ao vivo. <b>Clica aqui e entra.</b></td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos</span><ul>
+        <li><em>Confissão</em> Eu atendia mais que todo mundo e ganhava menos. Até entender isto.</li>
+        <li><em>Pergunta</em> Por que dois profissionais igualmente bons faturam tão diferente?</li>
+      </ul></div>
+      <div class="cta single"><div class="col work"><div class="lab">CTA · Inscrição no Workshop</div><p>“Clica aqui e garante tua vaga na aula de quarta, 19h — é de graça.”</p><span class="dest">→ Página de inscrição (live) · público de topo pro remarketing</span></div></div>
+    </article>
+
+    <article class="card top">
+      <div class="card-head">
+        <span class="card-id">AC-03</span>
+        <div class="card-title">
+          <h3>Callout de persona</h3>
+          <p>Fala com o nome do público. Alta relevância, ótimo pra segmentar por profissão.</p>
+          <div class="chips"><span class="chip hook">Hook · Empatia (callout)</span><span class="chip dur">⏱ <b>~28s</b></span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Tempo</th><th class="vis">Visual</th><th class="txt">Texto na tela</th><th>Falado</th></tr></thead>
+        <tbody>
+          <tr class="beat0"><td class="time">0–3s<span>Hook</span></td>
+            <td class="vis">Você apontando pra câmera.</td>
+            <td class="txt">Médico, nutri, psicólogo: isto é pra você</td>
+            <td class="said">Profissional de saúde que quer empreender e não sabe por onde começar — <b>essa aula é o teu primeiro passo.</b></td></tr>
+          <tr><td class="time">3–20s<span>Corpo</span></td>
+            <td class="vis">Você falando; palavras-chave surgindo: previsibilidade, acompanhamento, escala.</td>
+            <td class="txt">Sai da insegurança do “quanto ganho mês que vem”</td>
+            <td class="said">Em uma hora, ao vivo, eu mostro como sair da insegurança de não saber quanto você vai faturar mês que vem, e montar um consultório que cresce sem te consumir. É prático, é pra aplicar já.</td></tr>
+          <tr><td class="time">20s→CTA<span>CTA</span></td>
+            <td class="vis">Botão “Quero minha vaga”.</td>
+            <td class="txt">Quarta, 19h · vagas limitadas</td>
+            <td class="said">Quarta, dezenove horas. <b>Clica aqui e garante tua vaga.</b></td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos</span><ul>
+        <li><em>Aspiração</em> Imagina saber exatamente quanto vai faturar no próximo mês.</li>
+        <li><em>Frustração</em> Ninguém te ensinou a ganhar dinheiro com o que você estudou tanto.</li>
+      </ul></div>
+      <div class="cta single"><div class="col work"><div class="lab">CTA · Inscrição no Workshop</div><p>“Clica aqui e garante tua vaga na aula de quarta, 19h — é de graça.”</p><span class="dest">→ Página de inscrição (live) · público de topo pro remarketing</span></div></div>
+    </article>
+  </section>
+
+  <!-- ============ TOPO · VÍDEOS DO DR. ARTHUR ============ -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-n">06</span><h2>Vídeos do Dr. Arthur</h2>
+      <span class="sec-tag t-fun">Topo · 3x · autoridade</span>
     </div>
+    <p class="sec-sub">Talking-head do Dr. Arthur (médico, co-fundador). A força aqui é credibilidade clínica: ele abre com credencial e fala de igual pra igual com o profissional. Fala de conversa, olho na câmera. CTA suave pro workshop ou Lab.</p>
+
+    <article class="card his single">
+      <div class="card-head">
+        <span class="card-id">DA-01</span>
+        <div class="card-title">
+          <h3>“Atender bem não é escalar”</h3>
+          <p>A virada de chave dele mesmo. Desarma a crença de que competência clínica basta.</p>
+          <div class="chips"><span class="chip hook">Hook · Credential lead</span><span class="chip dur">⏱ <b>~40s</b></span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Tempo</th><th class="vis">Visual</th><th class="txt">Texto na tela</th><th>Falado</th></tr></thead>
+        <tbody>
+          <tr class="beat0"><td class="time">0–3s<span>Hook</span></td>
+            <td class="vis">Dr. Arthur, jaleco/ambiente clínico, olhando na câmera.</td>
+            <td class="txt">Dr. Arthur · médico</td>
+            <td class="said">Sou médico. E demorei anos pra entender uma coisa: <b>atender bem não é a mesma coisa que escalar.</b></td></tr>
+          <tr><td class="time">3–18s<span>Corpo</span></td>
+            <td class="vis">Ele falando; corte de agenda cheia, celular tocando.</td>
+            <td class="txt">Ser excelente e ainda assim travado</td>
+            <td class="said">Eu era um bom médico, agenda cheia, e mesmo assim travado — refém do telefone, sem previsibilidade, trocando tempo por dinheiro numa conta que nunca fechava.</td></tr>
+          <tr><td class="time">18–35s<span>Virada</span></td>
+            <td class="vis">Ele mais próximo; palavra “acompanhamento” na tela.</td>
+            <td class="txt">O paciente acompanhado tem mais resultado</td>
+            <td class="said">O que mudou foi parar de vender consulta avulsa e começar a acompanhar o paciente ao longo do tempo. Ele tem mais resultado, fica, indica — e o meu faturamento virou previsível. É medicina melhor e negócio melhor ao mesmo tempo.</td></tr>
+          <tr><td class="time">35–42s<span>CTA</span></td>
+            <td class="vis">Ele convidando; card do workshop.</td>
+            <td class="txt">Te mostro como · quarta, 19h</td>
+            <td class="said">Quarta eu mostro exatamente como montar isso. <b>Clica aqui e vem comigo.</b></td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos</span><ul>
+        <li><em>Confissão</em> Como médico, vou admitir um erro que me custou anos e muito dinheiro.</li>
+        <li><em>Myth buster</em> Ninguém na faculdade te conta que atender mais pode te empobrecer.</li>
+      </ul></div>
+      <div class="cta single"><div class="col work"><div class="lab">CTA · Workshop ou Lab</div><p>“Clica aqui e entra na aula de quarta, 19h — ou entra no MyDose Lab pra começar hoje.”</p><span class="dest">→ Inscrição no workshop (topo) · alterna pro Lab conforme o público</span></div></div>
+    </article>
+
+    <article class="card his single">
+      <div class="card-head">
+        <span class="card-id">DA-02</span>
+        <div class="card-title">
+          <h3>“Colega excelente ganhando mal”</h3>
+          <p>Indignação empática. Fala do problema de precificação sem culpar o profissional.</p>
+          <div class="chips"><span class="chip hook">Hook · Credential + Empatia</span><span class="chip dur">⏱ <b>~38s</b></span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Tempo</th><th class="vis">Visual</th><th class="txt">Texto na tela</th><th>Falado</th></tr></thead>
+        <tbody>
+          <tr class="beat0"><td class="time">0–3s<span>Hook</span></td>
+            <td class="vis">Dr. Arthur, tom firme e caloroso.</td>
+            <td class="txt">O que mais me incomoda na saúde</td>
+            <td class="said">Como médico, o que mais me incomoda é ver <b>colega excelente ganhando mal.</b></td></tr>
+          <tr><td class="time">3–20s<span>Corpo</span></td>
+            <td class="vis">Ele falando; conta rápida na tela (consulta − custos).</td>
+            <td class="txt">Não é falta de competência. É de modelo.</td>
+            <td class="said">Não é falta de competência — é falta de modelo. A gente aprende a cuidar de gente e ninguém ensina a precificar, a criar um plano, a não depender de uma consulta por vez. Aí o profissional bom fica preso numa conta que não fecha.</td></tr>
+          <tr><td class="time">20–33s<span>Virada</span></td>
+            <td class="vis">“acompanhamento + precificação” na tela; ele confiante.</td>
+            <td class="txt">Cobrar por resultado muda tudo</td>
+            <td class="said">Quando você aprende a cobrar por resultado e acompanhar o paciente ao longo do tempo, muda tudo — pro paciente e pro teu bolso. E não precisa atender mais gente pra isso.</td></tr>
+          <tr><td class="time">33–38s<span>CTA</span></td>
+            <td class="vis">Convite; card do workshop.</td>
+            <td class="txt">Quarta, 19h, ao vivo</td>
+            <td class="said">Vem quarta que eu te mostro o caminho. <b>Clica aqui.</b></td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos</span><ul>
+        <li><em>Contrarian</em> Cobrar barato não é humildade. Às vezes é o que impede você de ajudar mais.</li>
+        <li><em>Pergunta</em> Por que tanto profissional de saúde brilhante vive apertado?</li>
+      </ul></div>
+      <div class="cta single"><div class="col work"><div class="lab">CTA · Workshop ou Lab</div><p>“Clica aqui e entra na aula de quarta, 19h — ou entra no MyDose Lab pra começar hoje.”</p><span class="dest">→ Inscrição no workshop (topo) · alterna pro Lab conforme o público</span></div></div>
+    </article>
+
+    <article class="card his single">
+      <div class="card-head">
+        <span class="card-id">DA-03</span>
+        <div class="card-title">
+          <h3>“A medicina do futuro é acompanhamento”</h3>
+          <p>Visão de futuro. Posiciona o profissional na frente da mudança — inspiração + convite.</p>
+          <div class="chips"><span class="chip hook">Hook · Visão / Myth buster</span><span class="chip dur">⏱ <b>~38s</b></span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Tempo</th><th class="vis">Visual</th><th class="txt">Texto na tela</th><th>Falado</th></tr></thead>
+        <tbody>
+          <tr class="beat0"><td class="time">0–3s<span>Hook</span></td>
+            <td class="vis">Dr. Arthur, tom de quem revela algo.</td>
+            <td class="txt">A consulta pontual tá com os dias contados</td>
+            <td class="said">A medicina do futuro não é consulta pontual. <b>É acompanhamento.</b> E quem entender isso primeiro sai na frente.</td></tr>
+          <tr><td class="time">3–20s<span>Corpo</span></td>
+            <td class="vis">Ele falando; linha do tempo paciente↔profissional contínua.</td>
+            <td class="txt">Da doença tratada tarde à prevenção contínua</td>
+            <td class="said">O mundo tá cansado de tratar doença tarde demais. O paciente quer alguém que caminhe com ele — hábito, prevenção, resultado ao longo do tempo. Isso é medicina do estilo de vida, e é o que dá resultado de verdade.</td></tr>
+          <tr><td class="time">20–33s<span>Virada</span></td>
+            <td class="vis">“você + sistema” na tela; ele confiante.</td>
+            <td class="txt">Você não precisa fazer isso sozinho</td>
+            <td class="said">A boa notícia: você não precisa montar isso sozinho nem virar escravo do WhatsApp pra acompanhar todo mundo. Tem um sistema que faz o operacional por você, pra você fazer a parte que só você faz.</td></tr>
+          <tr><td class="time">33–38s<span>CTA</span></td>
+            <td class="vis">Convite; card do workshop.</td>
+            <td class="txt">Quarta, 19h · ao vivo · grátis</td>
+            <td class="said">Vem quarta ao vivo que eu te mostro. <b>Clica aqui e entra.</b></td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos</span><ul>
+        <li><em>Aspiração</em> Imagina ser o profissional que acompanha o paciente a vida inteira.</li>
+        <li><em>Cliffhanger</em> Tem uma mudança acontecendo na saúde e a maioria dos consultórios vai perder.</li>
+      </ul></div>
+      <div class="cta single"><div class="col work"><div class="lab">CTA · Workshop ou Lab</div><p>“Clica aqui e entra na aula de quarta, 19h — ou entra no MyDose Lab pra começar hoje.”</p><span class="dest">→ Inscrição no workshop (topo) · alterna pro Lab conforme o público</span></div></div>
+    </article>
+  </section>
+
+  <!-- ============ TOPO · CORTES DO WORKSHOP ============ -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-n">07</span><h2>Cortes do Workshop</h2>
+      <span class="sec-tag t-fun">Topo · 3x · editado do ao vivo</span>
+    </div>
+    <p class="sec-sub">Não é roteiro novo — é seleção e edição do melhor do ao vivo (prova de valor direta). Aqui vão os 3 momentos pra caçar na gravação, com a legenda de abertura (o “hook de corte”) e a nota de edição. Regra: o corte tem que abrir no pico, não na introdução. CTA pro workshop/Lab.</p>
+    <article class="card top">
+      <div class="brief">
+        <div class="minirow"><div class="n">CW<br>01</div><div>
+          <h5>A matemática do teto da agenda</h5>
+          <p>O momento em que você mostra, no número, que vender hora tem limite (a conta 1:900 / “só existem tantas horas na semana”).</p>
+          <div class="say"><b>Legenda de abertura:</b> “Foi aqui que a sala inteira travou.” &nbsp;·&nbsp; on-screen: <b>“Sua agenda tem um teto matemático”</b></div>
+          <div class="kv"><b>edição</b> abre no clímax do número · corta os “então…/né?” · 30–45s · legenda queimada</div>
+        </div></div>
+        <div class="minirow"><div class="n">CW<br>02</div><div>
+          <h5>O “aha” da precificação</h5>
+          <p>O trecho em que cai a ficha de que o problema não é preço da consulta, é o modelo. Idealmente com reação/pergunta da plateia.</p>
+          <div class="say"><b>Legenda de abertura:</b> “Ninguém te ensinou isso na faculdade.” &nbsp;·&nbsp; on-screen: <b>“Você não cobra pela hora. Cobra pelo resultado.”</b></div>
+          <div class="kv"><b>edição</b> mantém a reação da sala (prova social) · 35–50s</div>
+        </div></div>
+        <div class="minirow"><div class="n">CW<br>03</div><div>
+          <h5>Prova ao vivo (resultado real)</h5>
+          <p>Momento em que aparece um caso/número de quem já aplicou — depoimento espontâneo ou você contando um resultado concreto durante a aula.</p>
+          <div class="say"><b>Legenda de abertura:</b> “Isso é de um profissional de verdade, não teoria.” &nbsp;·&nbsp; on-screen: <b>“Do consultório travado ao faturamento previsível”</b></div>
+          <div class="kv"><b>edição</b> destaca o número na tela · sem promessa de garantia · 30–40s</div>
+        </div></div>
+      </div>
+      <div class="cta single"><div class="col work"><div class="lab">CTA · Workshop</div><p>“Isso foi um pedaço da última aula. A próxima é quarta, 19h — clica aqui e participa ao vivo.”</p><span class="dest">→ Inscrição no workshop · quem assistiu vira público de remarketing</span></div></div>
+    </article>
+  </section>
+
+  <!-- ============ MEIO · TELA DIVIDIDA TUTORIAL ============ -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-n">08</span><h2>Tela dividida tutorial</h2>
+      <span class="sec-tag t-his">Meio · 5x · você + tela</span>
+    </div>
+    <p class="sec-sub">Formato fixo: <b>você fala de um lado, a tela do MyDose roda do outro</b> (ou você em cima / tela embaixo no vertical). Mostra a ferramenta na prática — a velocidade é o argumento. Hook padrão “Tool reveal”: promete o resultado e mostra em tempo real. Cada peça pega UMA tarefa. CTA pro <code>Lab</code> (meio).</p>
+    <article class="card fun">
+      <div class="card-head">
+        <span class="card-id">TD · template</span>
+        <div class="card-title">
+          <h3>Estrutura (vale pras 5)</h3>
+          <p>0–3s hook “imagina/olha isso” + o antes → 3–10s mostra fazendo → 10–25s o resultado na tela → CTA.</p>
+          <div class="chips"><span class="chip hook">Hook · Tool reveal / Behind-the-scenes</span><span class="chip dur">⏱ <b>25–40s</b> cada</span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Peça</th><th class="vis">Mostra na tela (lado direito)</th><th class="txt">Legenda / hook</th><th>Falado (lado esquerdo)</th></tr></thead>
+        <tbody>
+          <tr><td class="time">TD-01<span>Plano</span></td>
+            <td class="vis">Montando um plano de acompanhamento do zero: seleciona objetivo, protocolo, duração — publica.</td>
+            <td class="txt">Um plano de acompanhamento em 2 minutos</td>
+            <td class="said">“Olha a velocidade: eu monto um plano de acompanhamento completo pro paciente em menos de dois minutos — e ele já cai no app dele.” <b>É assim que você para de vender só consulta.</b></td></tr>
+          <tr><td class="time">TD-02<span>IA</span></td>
+            <td class="vis">Consulta gravada → botão resumir → prontuário preenchendo (queixa/conduta/evolução).</td>
+            <td class="txt">A IA escreve o prontuário por você</td>
+            <td class="said">“Terminei a consulta e não digitei nada. A IA gravou, resumiu e preencheu o prontuário. Eu só reviso.” <b>Quantas horas você ganharia de volta na semana?</b></td></tr>
+          <tr><td class="time">TD-03<span>Venda</span></td>
+            <td class="vis">Cria produto → página de vendas → checkout → link pronto pra compartilhar.</td>
+            <td class="txt">Do produto ao checkout, sem programador</td>
+            <td class="said">“Vou transformar meu conhecimento num produto: crio, faço a página de vendas e o checkout, tudo aqui dentro. Pronto pra vender.” <b>Faturamento fora da consulta, no automático.</b></td></tr>
+          <tr><td class="time">TD-04<span>App</span></td>
+            <td class="vis">Visão do paciente: protocolo do dia, registro, lembrete, gamificação (+XP).</td>
+            <td class="txt">O que o teu paciente vê todo dia</td>
+            <td class="said">“Esse é o app no bolso do paciente: ele segue o protocolo, registra, ganha lembrete e comemora cada meta.” <b>É isso que faz a adesão triplicar.</b></td></tr>
+          <tr><td class="time">TD-05<span>WhatsApp</span></td>
+            <td class="vis">Automação de WhatsApp: agendamento, confirmação e remarcação disparando sozinhos.</td>
+            <td class="txt">O WhatsApp trabalhando sem você</td>
+            <td class="said">“Agendamento, confirmação e remarcação acontecendo sozinhos no WhatsApp, sem eu responder um por um.” <b>Deixa de ser refém do celular.</b></td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos (topo de cada peça)</span><ul>
+        <li><em>Aspiração</em> Imagina fazer [tarefa] em 2 minutos, sem depender de ninguém.</li>
+        <li><em>Cliffhanger</em> Isso aqui levava horas. Olha quanto tempo leva agora.</li>
+      </ul></div>
+      <div class="cta">
+        <div class="col meio"><div class="lab">CTA Meio</div><p>“Quer ver todas por dentro? Entra de graça no MyDose Lab. Clica aqui.”</p><span class="dest">→ MyDose Lab · gera público de remarketing</span></div>
+        <div class="col fim"><div class="lab">CTA Fim</div><p>“Clica aqui e faz um diagnóstico pra rodar isso no teu consultório.”</p><span class="dest">→ Diagnóstico com o time</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ FIM · PROVA SOCIAL ============ -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-n">09</span><h2>Prova social</h2>
+      <span class="sec-tag t-his">Fim · 3x · cliente real</span>
+    </div>
+    <p class="sec-sub">Quem vende aqui é o cliente, não você — a validação vem de quem já usa. Não é roteiro decorado: é <b>guia de captação</b>. Três arcos de história, com as perguntas que puxam a fala certa e a estrutura de edição. Depoimento autêntico, sem promessa de garantia. CTA pro <code>diagnóstico</code>.</p>
+    <article class="card his">
+      <div class="brief">
+        <div class="minirow"><div class="n">PS<br>01</div><div>
+          <h5>Previsibilidade de faturamento</h5>
+          <p>Arco: dependia só da consulta → montou acompanhamento → hoje sabe quanto fatura. Abre com a frase mais forte do cliente (edite pro melhor trecho ir pro segundo 1).</p>
+          <div class="kv"><b>perguntas</b></div>
+          <span class="qtag">Como era teu faturamento antes do MyDose?</span><span class="qtag">O que mudou depois do plano de acompanhamento?</span><span class="qtag">Como você se sente sabendo quanto vai faturar no mês?</span>
+          <div class="say"><b>on-screen:</b> nome + profissão + “cliente MyDose” · destaque o número que ele citar</div>
+        </div></div>
+        <div class="minirow"><div class="n">PS<br>02</div><div>
+          <h5>Adesão e resultado do paciente</h5>
+          <p>Arco: paciente sumia depois da consulta → passou a acompanhar pelo app → adesão e resultado subiram. Prova clínica antes da comercial.</p>
+          <div class="kv"><b>perguntas</b></div>
+          <span class="qtag">O que acontecia com teu paciente depois da consulta?</span><span class="qtag">O que mudou na adesão com o app?</span><span class="qtag">Conta um resultado de paciente que te marcou.</span>
+          <div class="say"><b>on-screen:</b> corte da tela do app quando ele falar do acompanhamento</div>
+        </div></div>
+        <div class="minirow"><div class="n">PS<br>03</div><div>
+          <h5>Tempo e liberdade (saiu do WhatsApp)</h5>
+          <p>Arco: refém do celular e sem folga → sistema assumiu o operacional → recuperou tempo/tranquilidade. Emocional, ótimo pra fechar.</p>
+          <div class="kv"><b>perguntas</b></div>
+          <span class="qtag">Como era tua relação com o WhatsApp/tua rotina antes?</span><span class="qtag">O que o sistema passou a fazer no teu lugar?</span><span class="qtag">O que você faz hoje com o tempo que ganhou?</span>
+          <div class="say"><b>on-screen:</b> antes (celular caótico) → depois (rotina com respiro)</div>
+        </div></div>
+      </div>
+      <div class="cta single"><div class="col fim"><div class="lab">CTA Fim · Diagnóstico</div><p>“Esse resultado pode ser o teu. Clica aqui e faz um diagnóstico com o meu time.”</p><span class="dest">→ Diagnóstico · público de remarketing (quem viu Lab/tutorial) converte melhor aqui</span></div></div>
+    </article>
+  </section>
+
+  <!-- ============ ESTÁTICOS · BRIEFING ============ -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-n">10</span><h2>Estáticos · briefing</h2>
+      <span class="sec-tag t-fin">Topo · Meio · Fim de diagnóstico</span>
+    </div>
+    <p class="sec-sub">Sem minutagem — arte parada. A regra é uma só: <b>headline com a dor/promessa + subhead que traduz em resultado + CTA da fase</b>. Fundo na identidade (azulejo, gradiente azul→magenta→laranja). Aqui vão pares prontos por fase.</p>
+    <article class="card fin">
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Fase</th><th>Headline</th><th>Subhead</th><th>CTA</th></tr></thead>
+        <tbody>
+          <tr><td class="time">Topo</td><td class="txt">Sua hora vale menos do que você pensa.</td><td class="said">Descubra o modelo que faz o profissional de saúde faturar sem lotar a agenda.</td><td class="vis">Participe do workshop grátis →</td></tr>
+          <tr><td class="time">Topo</td><td class="txt">Você cuida das pessoas. Quem cuida do teu negócio?</td><td class="said">Aula ao vivo, quarta 19h: consultório escalável na prática.</td><td class="vis">Garanta sua vaga →</td></tr>
+          <tr><td class="time">Meio</td><td class="txt">Do prontuário à venda, tudo num sistema só.</td><td class="said">Acompanhamento, IA na consulta e esteira de produtos — veja por dentro.</td><td class="vis">Entre no MyDose Lab →</td></tr>
+          <tr><td class="time">Meio</td><td class="txt">O app que faz a adesão do paciente triplicar.</td><td class="said">Plano de acompanhamento no bolso do paciente, sem você no WhatsApp.</td><td class="vis">Conheça no Lab →</td></tr>
+          <tr><td class="time">Fim</td><td class="txt">Pare de depender só da consulta.</td><td class="said">Faça um diagnóstico e monte seu primeiro plano de acompanhamento com o time.</td><td class="vis">Fazer meu diagnóstico →</td></tr>
+          <tr><td class="time">Fim</td><td class="txt">Faturamento previsível é possível na saúde.</td><td class="said">Nosso time desenha sua esteira. Comece pelo diagnóstico.</td><td class="vis">Quero meu diagnóstico →</td></tr>
+        </tbody>
+      </table></div>
+    </article>
   </section>
 
   <div class="note">
@@ -689,7 +1060,7 @@
   </div>
 
   <div class="foot">
-    <span>MyDose · Roteiros de Ads Q3 · v2 · 3 projeções · 3 histórias · 3 funcionalidades + preview de 6 linhas</span>
+    <span>MyDose · Roteiros de Ads Q3 · v3 · funil completo — Topo (convite, Dr. Arthur, cortes) · Meio (projeções, tela dividida, funcionalidades) · Fim (histórias, prova social) + estáticos</span>
     <span>Fundamentos de hook baseados em: Adligator · Motion · OpusClip · Vexub (short-form hook frameworks, 2025–2026).</span>
   </div>
 </div>
