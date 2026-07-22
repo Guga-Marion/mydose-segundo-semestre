@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Roteiros de Ads · MyDose</title>
+<style>
+  :root{
+    --bg:#F6F4F2; --panel:#FFFFFF; --ink:#1C1B1A; --ink-2:#565350; --ink-3:#8B8783;
+    --line:#E7E2DD; --line-2:#EFEAE5;
+    --blue:#3550E8; --blue-soft:#EEF0FE;
+    --magenta:#B23BB6; --magenta-soft:#FBEDFB;
+    --orange:#E5502F; --orange-soft:#FDECE6;
+    --green:#4F9A2C; --green-soft:#EDF6E7;
+    --hook:#6E4BE0; --hook-soft:#F0ECFD;
+    --shadow:0 1px 2px rgba(28,27,26,.04), 0 6px 22px rgba(28,27,26,.06);
+    --serif:"Iowan Old Style","Palatino Linotype","Palatino",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:"SF Mono",ui-monospace,"Menlo","Consolas",monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0F1020; --panel:#171932; --ink:#F1EFF6; --ink-2:#B9B6C7; --ink-3:#83809A;
+      --line:#282B49; --line-2:#22243E;
+      --blue:#8A9BFF; --blue-soft:#1C2145; --magenta:#E693EB; --magenta-soft:#331B39;
+      --orange:#FF9276; --orange-soft:#3A1E17; --green:#96D06E; --green-soft:#1E2E17;
+      --hook:#B6A0FF; --hook-soft:#241F42;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#F6F4F2; --panel:#FFFFFF; --ink:#1C1B1A; --ink-2:#565350; --ink-3:#8B8783;
+    --line:#E7E2DD; --line-2:#EFEAE5;
+    --blue:#3550E8; --blue-soft:#EEF0FE; --magenta:#B23BB6; --magenta-soft:#FBEDFB;
+    --orange:#E5502F; --orange-soft:#FDECE6; --green:#4F9A2C; --green-soft:#EDF6E7;
+    --hook:#6E4BE0; --hook-soft:#F0ECFD;
+    --shadow:0 1px 2px rgba(28,27,26,.04), 0 6px 22px rgba(28,27,26,.06);
+  }
+  :root[data-theme="dark"]{
+    --bg:#0F1020; --panel:#171932; --ink:#F1EFF6; --ink-2:#B9B6C7; --ink-3:#83809A;
+    --line:#282B49; --line-2:#22243E;
+    --blue:#8A9BFF; --blue-soft:#1C2145; --magenta:#E693EB; --magenta-soft:#331B39;
+    --orange:#FF9276; --orange-soft:#3A1E17; --green:#96D06E; --green-soft:#1E2E17;
+    --hook:#B6A0FF; --hook-soft:#241F42;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.5;-webkit-font-smoothing:antialiased;font-size:16px}
+  .wrap{max-width:1180px;margin:0 auto;padding:clamp(20px,4vw,56px) clamp(16px,3.5vw,40px) 100px}
+
+  /* Masthead */
+  .mast{border-bottom:1px solid var(--line);padding-bottom:26px;margin-bottom:30px}
+  .kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);
+    font-weight:600;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .kicker .dot{width:5px;height:5px;border-radius:50%;background:var(--orange)}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5.2vw,50px);
+    line-height:1.04;margin:14px 0 12px;letter-spacing:-.015em;text-wrap:balance}
+  h1 em{font-style:italic;
+    background:linear-gradient(96deg,var(--blue),var(--magenta) 55%,var(--orange));
+    -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+  .lede{color:var(--ink-2);max-width:70ch;font-size:clamp(15px,1.6vw,17px)}
+  .lede b{color:var(--ink);font-weight:600}
+
+  /* Principle strip */
+  .princ{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+  .pc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 15px;
+    box-shadow:var(--shadow)}
+  .pc b{font-family:var(--serif);font-size:22px;font-weight:600;display:block;
+    font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+  .pc span{font-size:12.5px;color:var(--ink-2)}
+
+  /* Budget strip */
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+  .bcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:16px 18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .bcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px}
+  .bcard.topo::before{background:var(--blue)} .bcard.meio::before{background:var(--magenta)}
+  .bcard.fim::before{background:var(--orange)}
+  .bcard .ph{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+  .bcard.topo .ph{color:var(--blue)} .bcard.meio .ph{color:var(--magenta)} .bcard.fim .ph{color:var(--orange)}
+  .bcard .amt{font-family:var(--serif);font-size:26px;font-weight:600;margin:4px 0 2px;
+    font-variant-numeric:tabular-nums}
+  .bcard .meta{font-size:12.5px;color:var(--ink-3)}
+  .bcard .meta b{color:var(--ink-2);font-weight:600}
+
+  /* Section headers */
+  .sec{margin-top:52px;scroll-margin-top:16px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .sec-n{font-family:var(--mono);font-size:13px;color:var(--ink-3);font-weight:600}
+  .sec h2{font-family:var(--serif);font-weight:600;font-size:clamp(23px,3vw,30px);margin:0;
+    letter-spacing:-.01em}
+  .sec-tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+    padding:4px 10px;border-radius:999px}
+  .t-fin{background:var(--green-soft);color:var(--green)}
+  .t-his{background:var(--magenta-soft);color:var(--magenta)}
+  .t-fun{background:var(--blue-soft);color:var(--blue)}
+  .sec-sub{color:var(--ink-2);margin:6px 0 0;max-width:78ch;font-size:14.5px}
+  .sec-sub code{font-family:var(--mono);font-size:12.5px;background:var(--line-2);
+    padding:1px 6px;border-radius:5px;color:var(--ink)}
+
+  /* Script card */
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    box-shadow:var(--shadow);overflow:hidden;margin-top:20px}
+  .card-head{padding:18px 22px;border-bottom:1px solid var(--line);
+    display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+  .card-id{font-family:var(--mono);font-weight:700;font-size:13px;
+    padding:5px 9px;border-radius:8px;flex:none}
+  .fin .card-id{background:var(--green-soft);color:var(--green)}
+  .his .card-id{background:var(--magenta-soft);color:var(--magenta)}
+  .fun .card-id{background:var(--blue-soft);color:var(--blue)}
+  .card-title{flex:1;min-width:220px}
+  .card-title h3{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 4px;
+    letter-spacing:-.01em}
+  .card-title p{margin:0;color:var(--ink-2);font-size:13.5px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px;align-items:center}
+  .chip{font-size:11px;font-weight:600;letter-spacing:.02em;border-radius:6px;padding:3px 9px;
+    border:1px solid var(--line)}
+  .chip.hook{background:var(--hook-soft);color:var(--hook);border-color:transparent;
+    font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em;font-size:10.5px}
+  .chip.dur{color:var(--ink-3)}
+  .chip.dur b{color:var(--ink-2);font-weight:700;font-variant-numeric:tabular-nums}
+
+  /* Timeline table */
+  .tl-scroll{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;min-width:760px}
+  thead th{text-align:left;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:700;padding:12px 18px;border-bottom:1px solid var(--line);
+    background:var(--line-2)}
+  thead th:first-child{width:120px}
+  thead th.vis{width:25%} thead th.txt{width:23%}
+  tbody td{padding:15px 18px;border-bottom:1px solid var(--line-2);vertical-align:top;font-size:14px}
+  tbody tr:last-child td{border-bottom:none}
+  .time{font-family:var(--mono);font-weight:700;font-size:12.5px;white-space:nowrap;
+    font-variant-numeric:tabular-nums}
+  .time span{display:block;font-family:var(--sans);font-weight:700;font-size:10px;
+    letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-top:4px}
+  .beat0 .time{color:var(--hook)} .beat0 .time span{color:var(--hook)}
+  .vis{color:var(--ink-2);font-size:13px}
+  .txt{font-weight:600;color:var(--ink)}
+  .said{color:var(--ink);font-size:14.5px;line-height:1.54}
+  .said b{font-weight:700}
+  tr.trim td{background:color-mix(in srgb, var(--line-2) 55%, transparent)}
+  .trimtag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--ink-3);border:1px solid var(--line);border-radius:5px;
+    padding:1px 6px;margin-top:6px;white-space:nowrap}
+
+  /* Alt hooks bar */
+  .alts{padding:13px 22px;border-top:1px solid var(--line-2);background:var(--hook-soft);
+    display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}
+  .alts .lb{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--hook);flex:none}
+  .alts ul{margin:0;padding:0;list-style:none;display:grid;gap:5px;flex:1;min-width:240px}
+  .alts li{font-size:13px;color:var(--ink)}
+  .alts li em{font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--hook);
+    text-transform:uppercase;letter-spacing:.04em;margin-right:6px}
+
+  /* CTA split */
+  .cta{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+  .cta .col{padding:16px 22px}
+  .cta .col.meio{border-right:1px solid var(--line);background:var(--magenta-soft)}
+  .cta .col.fim{background:var(--orange-soft)}
+  .cta .lab{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+    display:flex;align-items:center;gap:7px;margin-bottom:7px}
+  .cta .lab::before{content:"";width:7px;height:7px;border-radius:50%}
+  .cta .meio .lab{color:var(--magenta)} .cta .meio .lab::before{background:var(--magenta)}
+  .cta .fim .lab{color:var(--orange)} .cta .fim .lab::before{background:var(--orange)}
+  .cta .col p{margin:0;font-size:14px;color:var(--ink);font-weight:500}
+  .cta .col .dest{font-size:11.5px;color:var(--ink-3);margin-top:6px;display:block}
+  .single .cta{grid-template-columns:1fr}
+  .single .cta .col.fim{border-right:none}
+
+  /* Hook library */
+  .lib{background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    box-shadow:var(--shadow);padding:22px 24px;margin-top:22px}
+  .lib h3{font-family:var(--serif);font-weight:600;font-size:19px;margin:0 0 4px}
+  .lib .sub{color:var(--ink-2);font-size:13.5px;margin:0 0 16px;max-width:70ch}
+  .libgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+  .lb{border:1px solid var(--line);border-radius:11px;padding:12px 14px;background:var(--bg)}
+  .lb .nm{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--hook);font-weight:700;margin-bottom:5px}
+  .lb .pt{font-size:13px;color:var(--ink);font-weight:600;margin-bottom:3px}
+  .lb .ex{font-size:12px;color:var(--ink-3);font-style:italic}
+
+  /* Preview grid */
+  .prev{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px;margin-top:20px}
+  .pcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+    box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .pcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px}
+  .pcard.topo::before{background:var(--blue)} .pcard.meio::before{background:var(--magenta)}
+  .pcard.fim::before{background:var(--orange)}
+  .pcard .pt-tag{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+  .pcard.topo .pt-tag{color:var(--blue)} .pcard.meio .pt-tag{color:var(--magenta)} .pcard.fim .pt-tag{color:var(--orange)}
+  .pcard h4{font-family:var(--serif);font-weight:600;font-size:17px;margin:6px 0 4px}
+  .pcard .qty{font-size:12px;color:var(--ink-3);font-weight:600}
+  .pcard .desc{font-size:13px;color:var(--ink-2);margin:8px 0 10px}
+  .pcard .hk{font-size:12.5px;color:var(--ink);border-top:1px dashed var(--line);padding-top:9px}
+  .pcard .hk em{font-family:var(--mono);font-size:10px;text-transform:uppercase;color:var(--hook);
+    letter-spacing:.05em;display:block;margin-bottom:3px;font-style:normal;font-weight:700}
+
+  /* Note + footer */
+  .note{background:var(--panel);border:1px dashed var(--line);border-radius:14px;
+    padding:18px 22px;margin-top:28px;font-size:13.5px;color:var(--ink-2)}
+  .note h4{margin:0 0 8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:700}
+  .note ul{margin:0;padding-left:18px} .note li{margin:5px 0}
+  .note b{color:var(--ink);font-weight:600}
+  .foot{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);
+    font-size:12.5px;color:var(--ink-3);display:grid;gap:6px}
+  .foot a{color:var(--blue);text-decoration:none} .foot a:hover{text-decoration:underline}
+
+  .tog{position:fixed;top:14px;right:14px;z-index:10;background:var(--panel);
+    border:1px solid var(--line);color:var(--ink-2);border-radius:999px;padding:8px 12px;
+    font-size:12px;font-weight:600;cursor:pointer;box-shadow:var(--shadow);font-family:var(--sans)}
+  .tog:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+  @media (max-width:640px){
+    .princ,.strip{grid-template-columns:1fr}
+    .cta{grid-template-columns:1fr}
+    .cta .col.meio{border-right:none;border-bottom:1px solid var(--line)}
+  }
+</style>
+</head>
+<body>
+<button class="tog" id="tog" aria-label="Alternar tema">Tema</button>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="kicker">MyDose · Ads Q3 <span class="dot"></span> Roteiros short-form · 30–60s <span class="dot"></span> v2 — hooks validados · 22/07/2026</div>
+    <h1>9 roteiros pra gravar, escritos em cima de <em>hooks já validados</em></h1>
+    <p class="lede">Cada roteiro tem <b>30 a 60 segundos</b>, quebrado na minutagem, com o hook dos 0–3s montado sobre um framework testado (o gancho decide o resultado). <b>Falado</b> é o que você lê na câmera; <b>Texto na tela</b> é legível no mudo. Projeções financeiras são a <b>mesma gravação</b> pro meio e pro fim — só troca o CTA. Persona: o profissional de saúde empreendedor — médico, psicólogo, nutri — cansado de depender só da consulta, refém do WhatsApp, sem previsibilidade de faturamento.</p>
+
+    <div class="princ">
+      <div class="pc"><b>0–3s</b><span>Onde vive 80% do resultado. 10–14 palavras, pattern interrupt.</span></div>
+      <div class="pc"><b>65%</b><span>de quem assiste 3s assiste 10s. Passou do gancho, você tem a venda.</span></div>
+      <div class="pc"><b>85%</b><span>assiste no mudo. Legenda na tela em toda cena — não é enfeite.</span></div>
+    </div>
+
+    <div class="strip">
+      <div class="bcard topo"><div class="ph">Topo · 30%</div><div class="amt">R$ 3.000</div><div class="meta"><b>4</b> linhas · <b>12</b> anúncios · 2 públicos</div></div>
+      <div class="bcard meio"><div class="ph">Meio · 30%</div><div class="amt">R$ 3.000</div><div class="meta"><b>3</b> linhas · <b>13</b> anúncios · 3 públicos</div></div>
+      <div class="bcard fim"><div class="ph">Fim · 40%</div><div class="amt">R$ 4.000</div><div class="meta"><b>5</b> linhas · <b>15</b> anúncios · 3 públicos</div></div>
+    </div>
+  </header>
+
+  <!-- ============ PROJEÇÕES FINANCEIRAS ============ -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-n">01</span><h2>Projeções financeiras</h2>
+      <span class="sec-tag t-fin">Meio + Fim · mesma gravação</span>
+    </div>
+    <p class="sec-sub">Tese: o problema não é o preço da consulta — é depender só dela. Precificação → plano de acompanhamento → esteira → faturamento recorrente. Grava uma vez; no <code>meio</code> o CTA leva pro Lab, no <code>fim</code> pro diagnóstico.</p>
+
+    <!-- PF1 -->
+    <article class="card fin">
+      <div class="card-head">
+        <span class="card-id">PF-01</span>
+        <div class="card-title">
+          <h3>O preço da sua hora</h3>
+          <p>Consulta parece boa até você descontar tudo. Gancho: uma conta que dói.</p>
+          <div class="chips"><span class="chip hook">Hook · Pergunta-cliffhanger</span><span class="chip dur">⏱ <b>~55s</b> · corta pra 30s</span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Tempo</th><th class="vis">Visual</th><th class="txt">Texto na tela</th><th>Falado</th></tr></thead>
+        <tbody>
+          <tr class="beat0"><td class="time">0–3s<span>Hook</span></td>
+            <td class="vis">Você olhando pra câmera, sério. Corte seco pra uma calculadora.</td>
+            <td class="txt">Você sabe o preço da sua HORA?</td>
+            <td class="said">Você sabe o preço da sua consulta. Mas <b>já calculou quanto vale a sua hora?</b></td></tr>
+          <tr><td class="time">3–12s<span>Tensão</span></td>
+            <td class="vis">Print de agenda cheia; fim de mês; expressão de "cadê o dinheiro".</td>
+            <td class="txt">250/h e no fim do mês… sumiu</td>
+            <td class="said">Tem gente cobrando 250 reais numa consulta de uma hora, achando que tá indo bem. Aí chega o fim do mês e o dinheiro sumiu. Não é impressão sua.</td></tr>
+          <tr><td class="time">12–30s<span>Virada</span></td>
+            <td class="vis">Números descontando: aluguel, secretária, imposto, software, deslocamento → R$ 250 vira R$ 40.</td>
+            <td class="txt">Sua hora de R$ 250 vale R$ 40</td>
+            <td class="said">Tira o aluguel, a secretária, o imposto, o software, o teu deslocamento, o tempo que você estuda de graça pra cada caso. Aquela hora de 250 virou 40. Você não tem problema de preço — tem <b>problema de modelo</b>: vende hora, e hora tem teto.</td></tr>
+          <tr class="trim"><td class="time">30–48s<span>Prova</span><span class="trimtag">corta p/ 30s</span></td>
+            <td class="vis">Gráfico consulta avulsa (serrote) × plano de acompanhamento (linha subindo e ficando).</td>
+            <td class="txt">Cobre por resultado, não por hora</td>
+            <td class="said">Quem fecha as contas todo mês parou de cobrar por hora e passou a cobrar por resultado. Um <b>plano de acompanhamento</b>: o paciente paga por três, seis meses de evolução — não por 50 minutos. O mesmo paciente virando faturamento recorrente, sem abrir mais espaço na agenda.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos</span><ul>
+        <li><em>Contrarian</em> Cobrar mais caro na consulta não vai fechar as tuas contas. Isso, sim.</li>
+        <li><em>List tease</em> Três custos que comem a tua consulta e você nem coloca na conta.</li>
+      </ul></div>
+      <div class="cta">
+        <div class="col meio"><div class="lab">CTA Meio</div><p>“Eu explico como montar isso no MyDose Lab — de graça. Clica aqui e entra.”</p><span class="dest">→ MyDose Lab · gera público de remarketing</span></div>
+        <div class="col fim"><div class="lab">CTA Fim</div><p>“Clica aqui e faz um diagnóstico com o meu time pra montar o teu primeiro plano.”</p><span class="dest">→ Diagnóstico com o time</span></div>
+      </div>
+    </article>
+
+    <!-- PF2 -->
+    <article class="card fin">
+      <div class="card-head">
+        <span class="card-id">PF-02</span>
+        <div class="card-title">
+          <h3>Atende o mês inteiro e não sobra</h3>
+          <p>O teto da agenda: vender tempo tem limite. A saída é vender pra mesma base.</p>
+          <div class="chips"><span class="chip hook">Hook · Contrarian + Empatia</span><span class="chip dur">⏱ <b>~52s</b> · corta pra 30s</span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Tempo</th><th class="vis">Visual</th><th class="txt">Texto na tela</th><th>Falado</th></tr></thead>
+        <tbody>
+          <tr class="beat0"><td class="time">0–3s<span>Hook</span></td>
+            <td class="vis">Você direto na câmera, agenda lotada de fundo.</td>
+            <td class="txt">Agenda cheia ≠ conta fechada</td>
+            <td class="said">Se você atende o dia inteiro e no fim do mês não sobra nada, <b>o problema não é volume.</b></td></tr>
+          <tr><td class="time">3–12s<span>Tensão</span></td>
+            <td class="vis">Ícone encaixando mais pacientes, sábado marcado, rosto cansado.</td>
+            <td class="txt">Mais horário → mais cansaço, faturamento igual</td>
+            <td class="said">Você já tentou o óbvio: encaixar mais paciente, abrir mais horário, atender no sábado. E adivinha? Cansou mais e faturou quase igual.</td></tr>
+          <tr><td class="time">12–30s<span>Virada</span></td>
+            <td class="vis">Relógio/semana com "40h e acabou"; teto batendo.</td>
+            <td class="txt">Tempo é a única coisa que você não fabrica</td>
+            <td class="said">Isso acontece porque você vende tempo. E tempo é a única coisa que você não consegue fabricar mais — tem 40, 50 horas na semana e acabou. Enquanto teu faturamento depender de você na cadeira, ele tem teto. E o teto é o teu corpo.</td></tr>
+          <tr class="trim"><td class="time">30–48s<span>Prova</span><span class="trimtag">corta p/ 30s</span></td>
+            <td class="vis">Prédio de faturamento acendendo andares: consulta, acompanhamento, protocolo, produto digital.</td>
+            <td class="txt">Mesma base · 4 fontes de faturamento</td>
+            <td class="said">Quem quebrou esse teto não passou a atender mais. Passou a vender pra mesma base outras coisas: acompanhamento, protocolo, plano alimentar, um produto digital. A <b>mesma pessoa</b> que já confia em você comprando três, quatro vezes. Faturamento crescendo sem a agenda crescer junto.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos</span><ul>
+        <li><em>Confissão</em> Vou admitir: já atendi 300 pacientes num mês e quase não sobrou dinheiro.</li>
+        <li><em>Mistake warning</em> O erro que faz você trabalhar mais todo ano e faturar sempre igual.</li>
+      </ul></div>
+      <div class="cta">
+        <div class="col meio"><div class="lab">CTA Meio</div><p>“Eu mostro como montar essas fontes no MyDose Lab. Clica aqui.”</p><span class="dest">→ MyDose Lab · gera público de remarketing</span></div>
+        <div class="col fim"><div class="lab">CTA Fim</div><p>“Clica aqui e faz um diagnóstico com o meu time pra desenhar a tua esteira.”</p><span class="dest">→ Diagnóstico com o time</span></div>
+      </div>
+    </article>
+
+    <!-- PF3 -->
+    <article class="card fin">
+      <div class="card-head">
+        <span class="card-id">PF-03</span>
+        <div class="card-title">
+          <h3>O paciente que some</h3>
+          <p>Recompra baixa = dinheiro na mesa. Reter custa uma fração de captar.</p>
+          <div class="chips"><span class="chip hook">Hook · Mistake warning</span><span class="chip dur">⏱ <b>~50s</b> · corta pra 30s</span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Tempo</th><th class="vis">Visual</th><th class="txt">Texto na tela</th><th>Falado</th></tr></thead>
+        <tbody>
+          <tr class="beat0"><td class="time">0–3s<span>Hook</span></td>
+            <td class="vis">Você falando; corte pra porta giratória com paciente entrando e saindo.</td>
+            <td class="txt">Para de buscar paciente novo</td>
+            <td class="said"><b>Para de gastar dinheiro pra buscar paciente novo.</b> Você tá perdendo os que já pagaram.</td></tr>
+          <tr><td class="time">3–12s<span>Tensão</span></td>
+            <td class="vis">Custo de aquisição na tela: anúncio + tempo + energia; paciente saindo pela porta.</td>
+            <td class="txt">Ele resolveu e nunca mais voltou</td>
+            <td class="said">Pensa em quanto custou trazer o teu último paciente — anúncio, tempo, energia. Ele fez a consulta, você resolveu, e ele sumiu. Nunca mais voltou.</td></tr>
+          <tr><td class="time">12–30s<span>Virada</span></td>
+            <td class="vis">"Você fez a parte cara"; esteira furada com água vazando atrás.</td>
+            <td class="txt">Esteira furada: entra na frente, vaza atrás</td>
+            <td class="said">Você fez a parte mais cara e mais difícil: atrair e ganhar a confiança. E entregou de graça pro esquecimento. Aí recomeça do zero, com outro, todo mês. É uma <b>esteira furada</b> — entra água na frente e vaza atrás.</td></tr>
+          <tr class="trim"><td class="time">30–46s<span>Payoff</span><span class="trimtag">corta p/ 30s</span></td>
+            <td class="vis">Curva de recorrência subindo; paciente voltando e indicando.</td>
+            <td class="txt">Faz o paciente FICAR</td>
+            <td class="said">Quem escala de verdade não corre atrás de mais gente — faz a pessoa ficar. Com acompanhamento estruturado, o paciente volta, evolui, indica. E o faturamento que era "começar do zero todo mês" vira <b>recorrente</b>. Reter custa uma fração de captar. É a conta mais fácil da tua carreira.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos</span><ul>
+        <li><em>Social proof</em> Meus alunos que mais faturam têm menos paciente novo. Esse é o motivo.</li>
+        <li><em>Cliffhanger</em> O paciente mais lucrativo do teu consultório é um que você já perdeu.</li>
+      </ul></div>
+      <div class="cta">
+        <div class="col meio"><div class="lab">CTA Meio</div><p>“No MyDose Lab eu ensino a manter o paciente. Clica aqui e entra.”</p><span class="dest">→ MyDose Lab · gera público de remarketing</span></div>
+        <div class="col fim"><div class="lab">CTA Fim</div><p>“Clica aqui e faz um diagnóstico com o meu time pra ativar a recompra no teu consultório.”</p><span class="dest">→ Diagnóstico com o time</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ HISTÓRIAS ============ -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-n">02</span><h2>Histórias</h2>
+      <span class="sec-tag t-his">Fim · não parece anúncio</span>
+    </div>
+    <p class="sec-sub">Narrativa em primeira pessoa, sem cara de ad. Puxa o profissional pela identidade e só no fim vira convite. CTA pro <code>diagnóstico</code> ou <code>WhatsApp</code>. Sem trilha de anúncio, câmera na mão, fala de conversa.</p>
+
+    <!-- H1 -->
+    <article class="card his single">
+      <div class="card-head">
+        <span class="card-id">HI-01</span>
+        <div class="card-title">
+          <h3>Peter Attia &amp; o “Outlive”</h3>
+          <p>O médico que parou de tratar doença e começou a cuidar antes. Ponte: prevenção = acompanhamento.</p>
+          <div class="chips"><span class="chip hook">Hook · História inacabada + Autoridade</span><span class="chip dur">⏱ <b>~55s</b></span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Tempo</th><th class="vis">Visual</th><th class="txt">Texto na tela</th><th>Falado</th></tr></thead>
+        <tbody>
+          <tr class="beat0"><td class="time">0–3s<span>Hook</span></td>
+            <td class="vis">Você caminhando, tom de conversa. Nada de "anúncio".</td>
+            <td class="txt">Ele mudou a medicina por raiva de uma coisa</td>
+            <td class="said">Um médico cansou de ver gente chegando no consultório <b>já ferrada</b>, tarde demais. O que ele fez mudou a medicina.</td></tr>
+          <tr><td class="time">3–15s<span>Contexto</span></td>
+            <td class="vis">Nome "Peter Attia"; linha do tempo da vida com "a doença aparece" lá no fim.</td>
+            <td class="txt">Peter Attia · autor de “Outlive”</td>
+            <td class="said">O nome dele é Peter Attia. Ele percebeu uma coisa que dói de tão óbvia: quando a doença finalmente aparece no exame, ele já tinha pouquíssimo a fazer. O jogo de verdade tinha sido perdido anos antes, calado.</td></tr>
+          <tr><td class="time">15–35s<span>Virada</span></td>
+            <td class="vis">Capa do "Outlive" num flash; ícones de sono, hábito, movimento; volta em você.</td>
+            <td class="txt">Cuidar ANTES de adoecer</td>
+            <td class="said">Então ele virou a chave. Parou de esperar a doença pra agir e começou a cuidar da pessoa antes — acompanhar hábito, sono, movimento, alimentação, mês a mês. Prevenir em vez de remediar. Virou o livro Outlive e uma forma nova de exercer saúde.</td></tr>
+          <tr><td class="time">35–52s<span>Ponte</span></td>
+            <td class="vis">Você direto na câmera, sério.</td>
+            <td class="txt">Seu consultório atende DEPOIS. Dá pra mudar.</td>
+            <td class="said">Se você é de saúde, já sabe disso na prática: acompanhar o paciente antes vale mais — pra saúde dele e pro teu negócio. O problema é que o teu consultório inteiro tá montado pra atender depois, na consulta pontual. <b>Dá pra mudar isso.</b></td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos</span><ul>
+        <li><em>Myth buster</em> A medicina que te ensinaram age tarde demais. Peter Attia provou isso.</li>
+        <li><em>Cliffhanger</em> O que esse médico descobriu deveria mudar a forma como você atende.</li>
+      </ul></div>
+      <div class="cta">
+        <div class="col fim"><div class="lab">CTA Fim · Diagnóstico ou WhatsApp</div><p>“Clica aqui e faz um diagnóstico com o meu time pra montar esse acompanhamento no teu consultório.”</p><span class="dest">→ No meio de funil, troque o destino pro MyDose Lab</span></div>
+      </div>
+    </article>
+
+    <!-- H2 -->
+    <article class="card his single">
+      <div class="card-head">
+        <span class="card-id">HI-02</span>
+        <div class="card-title">
+          <h3>A nutri com medo de tirar férias</h3>
+          <p>Ganhava bem e ainda assim presa. Faturamento 100% consulta = emprego que ela mesma paga.</p>
+          <div class="chips"><span class="chip hook">Hook · Confissão</span><span class="chip dur">⏱ <b>~52s</b></span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Tempo</th><th class="vis">Visual</th><th class="txt">Texto na tela</th><th>Falado</th></tr></thead>
+        <tbody>
+          <tr class="beat0"><td class="time">0–3s<span>Hook</span></td>
+            <td class="vis">Você contando, close, tom baixo.</td>
+            <td class="txt">“Ganho bem. E tenho medo de parar.”</td>
+            <td class="said">Uma nutricionista me confessou: <b>“eu ganho bem e mesmo assim tenho medo de tirar férias”.</b></td></tr>
+          <tr><td class="time">3–15s<span>Contexto</span></td>
+            <td class="vis">Calendário: uma semana parada = "mês desabou".</td>
+            <td class="txt">Faturamento 100% consulta</td>
+            <td class="said">E ela não tava exagerando. O faturamento dela era cem por cento consulta. Uma semana parada, o mês desabava. Ela tinha construído, sem perceber, o emprego mais inseguro do mundo — um que ela mesma pagava pra ter.</td></tr>
+          <tr><td class="time">15–35s<span>Virada</span></td>
+            <td class="vis">Tela do plano de acompanhamento; paciente num programa de 3 meses.</td>
+            <td class="txt">Vender 3 meses de resultado, não 1 hora</td>
+            <td class="said">O que mudou a vida dela não foi trabalhar mais nem cobrar mais caro na consulta. Foi criar um <b>plano de acompanhamento</b>. Em vez de vender uma hora, passou a vender três meses de resultado. O paciente entra num programa, paga recorrente e evolui de verdade porque é acompanhado — não some depois do primeiro encontro.</td></tr>
+          <tr><td class="time">35–52s<span>Payoff</span></td>
+            <td class="vis">Ela tranquila, faturamento previsível numa semana de folga.</td>
+            <td class="txt">Sabe o faturamento antes do mês começar</td>
+            <td class="said">Hoje ela sabe quanto vai faturar no mês que vem antes dele começar. E tirou férias sem o faturamento cair. Não porque trabalha menos — porque montou <b>um negócio</b>, não um plantão sem fim.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos</span><ul>
+        <li><em>Aspiração</em> Imagina saber quanto você vai faturar mês que vem — antes dele começar.</li>
+        <li><em>Frustração</em> Por que ninguém fala do medo de tirar férias sendo autônomo da saúde?</li>
+      </ul></div>
+      <div class="cta">
+        <div class="col fim"><div class="lab">CTA Fim · Diagnóstico ou WhatsApp</div><p>“Clica aqui e chama meu time no diagnóstico pra montar o teu plano de acompanhamento.”</p><span class="dest">→ No meio de funil, troque o destino pro MyDose Lab</span></div>
+      </div>
+    </article>
+
+    <!-- H3 -->
+    <article class="card his single">
+      <div class="card-head">
+        <span class="card-id">HI-03</span>
+        <div class="card-title">
+          <h3>A agenda cheia que virou armadilha</h3>
+          <p>Encheu a agenda e descobriu que sucesso mal desenhado vira castigo. Escrava do WhatsApp.</p>
+          <div class="chips"><span class="chip hook">Hook · Reviravolta</span><span class="chip dur">⏱ <b>~54s</b></span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Tempo</th><th class="vis">Visual</th><th class="txt">Texto na tela</th><th>Falado</th></tr></thead>
+        <tbody>
+          <tr class="beat0"><td class="time">0–3s<span>Hook</span></td>
+            <td class="vis">Você falando; b-roll de agenda cheia.</td>
+            <td class="txt">O sonho virou a pior armadilha</td>
+            <td class="said">O sonho dela era encher a agenda. Ela encheu. E foi aí que virou a <b>pior armadilha</b> da carreira.</td></tr>
+          <tr><td class="time">3–15s<span>Contexto</span></td>
+            <td class="vis">Celular caótico, "47 mensagens não lidas", relógio 22h.</td>
+            <td class="txt">Escrava do WhatsApp às 22h</td>
+            <td class="said">Agenda lotada, lista de espera, indicação todo dia. Por fora, o sucesso completo. Por dentro: escrava do WhatsApp, respondendo paciente às dez da noite, sem conseguir tirar um único dia sem o telefone explodir.</td></tr>
+          <tr><td class="time">15–35s<span>Virada</span></td>
+            <td class="vis">Jaula com nome bonito; quanto mais entra, mais presa.</td>
+            <td class="txt">Agenda cheia não é liberdade</td>
+            <td class="said">Ela descobriu tarde que agenda cheia não é liberdade — é uma jaula com nome bonito. Quanto mais gente entrava, mais presa ela ficava, porque tudo dependia dela estar lá, o tempo todo. Crescer só significava <b>trabalhar mais</b>.</td></tr>
+          <tr><td class="time">35–54s<span>Payoff</span></td>
+            <td class="vis">De "quantos atendo" pra "quanto cada paciente vale"; sistema fazendo o operacional.</td>
+            <td class="txt">Muda a pergunta, muda o negócio</td>
+            <td class="said">O que destravou foi trocar a pergunta. Saiu de "quantos eu consigo atender" pra "<b>quanto cada paciente vale ao longo do tempo</b>". Acompanhamento, uma esteira de produtos, e um sistema fazendo o operacional no lugar dela. A agenda deixou de ser o teto — virou só uma das fontes.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos</span><ul>
+        <li><em>Contrarian</em> Agenda cheia não é sucesso. Às vezes é a armadilha mais bonita que existe.</li>
+        <li><em>Confissão</em> Ela realizou o sonho de encher a agenda e me disse que se arrependeu.</li>
+      </ul></div>
+      <div class="cta">
+        <div class="col fim"><div class="lab">CTA Fim · Diagnóstico ou WhatsApp</div><p>“Clica aqui e faz um diagnóstico com o meu time pra sair dessa armadilha.”</p><span class="dest">→ No meio de funil, troque o destino pro MyDose Lab</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ FUNCIONALIDADES ============ -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-n">03</span><h2>Funcionalidades</h2>
+      <span class="sec-tag t-fun">Meio · uma por peça</span>
+    </div>
+    <p class="sec-sub">As três forças do produto, uma por vídeo, sempre traduzidas pra resultado — nunca jargão. Um pilar por peça: <b>MyDose Habits</b> (adesão), <b>consulta gravada + IA</b> (tempo), <b>MyDose Scale</b> (esteira). Roda no <code>meio</code> pro Lab; a mesma gravação serve pro <code>fim</code> trocando o CTA.</p>
+
+    <!-- F1 -->
+    <article class="card fun">
+      <div class="card-head">
+        <span class="card-id">FN-01</span>
+        <div class="card-title">
+          <h3>O app no bolso do paciente · MyDose Habits</h3>
+          <p>Plano de acompanhamento que o paciente segue todo dia. Adesão que vira recorrência.</p>
+          <div class="chips"><span class="chip hook">Hook · Aspiração</span><span class="chip dur">⏱ <b>~52s</b> · corta pra 30s</span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Tempo</th><th class="vis">Visual</th><th class="txt">Texto na tela</th><th>Falado</th></tr></thead>
+        <tbody>
+          <tr class="beat0"><td class="time">0–3s<span>Hook</span></td>
+            <td class="vis">Celular com o app abrindo; paciente marca um hábito, aparece "+10 XP".</td>
+            <td class="txt">Seu paciente, todo dia — sem consulta</td>
+            <td class="said">Imagina o teu paciente abrindo o teu app <b>todos os dias</b> — mesmo sem consulta marcada.</td></tr>
+          <tr><td class="time">3–15s<span>Demo</span></td>
+            <td class="vis">Tour rápido: protocolo, registro de refeição, lembrete, conquista comemorada.</td>
+            <td class="txt">Plano de acompanhamento no celular</td>
+            <td class="said">É isso que o MyDose faz. Você monta o plano de acompanhamento uma vez, e o paciente te leva no bolso: registra a refeição, segue o protocolo, recebe o lembrete na hora certa, comemora cada meta com o app.</td></tr>
+          <tr><td class="time">15–35s<span>Demo</span></td>
+            <td class="vis">Painel do profissional com dados do paciente; fim do "vácuo" entre consultas.</td>
+            <td class="txt">Acabou o vácuo entre uma consulta e outra</td>
+            <td class="said">Do teu lado, você vê tudo. Acabou aquele vácuo entre uma consulta e outra, onde o paciente sumia e você não fazia ideia se ele tava seguindo. Agora tem dado, tem contato, tem acompanhamento de verdade — <b>sem você mandar mensagem no WhatsApp um por um</b>.</td></tr>
+          <tr class="trim"><td class="time">35–52s<span>Payoff</span><span class="trimtag">corta p/ 30s</span></td>
+            <td class="vis">Gráfico de adesão subindo forte; paciente voltando e indicando.</td>
+            <td class="txt">Adesão que triplica → faturamento recorrente</td>
+            <td class="said">O resultado é o que todo profissional quer e quase ninguém entrega: <b>adesão</b>. Paciente que engaja, tem resultado, fica e indica. Adesão triplicando e virando faturamento recorrente — porque quem tem resultado, renova.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos</span><ul>
+        <li><em>Cliffhanger</em> O motivo do teu paciente sumir depois da consulta não é ele. É o vácuo.</li>
+        <li><em>Social proof</em> Adesão do paciente subindo até 83%: começa por isto aqui.</li>
+      </ul></div>
+      <div class="cta">
+        <div class="col meio"><div class="lab">CTA Meio</div><p>“Vê o app por dentro no MyDose Lab. Clica aqui e entra.”</p><span class="dest">→ MyDose Lab · gera público de remarketing</span></div>
+        <div class="col fim"><div class="lab">CTA Fim</div><p>“Clica aqui e faz um diagnóstico pra ativar o app com os teus pacientes.”</p><span class="dest">→ Diagnóstico com o time</span></div>
+      </div>
+    </article>
+
+    <!-- F2 -->
+    <article class="card fun">
+      <div class="card-head">
+        <span class="card-id">FN-02</span>
+        <div class="card-title">
+          <h3>Consulta gravada e resumida pela IA</h3>
+          <p>Prontuário pronto sozinho. Menos digitação, mais presença — sem virar fábrica de consultas.</p>
+          <div class="chips"><span class="chip hook">Hook · Aspiração / Tool reveal</span><span class="chip dur">⏱ <b>~50s</b> · corta pra 30s</span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Tempo</th><th class="vis">Visual</th><th class="txt">Texto na tela</th><th>Falado</th></tr></thead>
+        <tbody>
+          <tr class="beat0"><td class="time">0–3s<span>Hook</span></td>
+            <td class="vis">Desktop MyDose; botão de gravar; corte pro Resumo IA se preenchendo sozinho.</td>
+            <td class="txt">Prontuário pronto. Sem digitar uma linha.</td>
+            <td class="said">Imagina terminar a consulta e o prontuário <b>já estar pronto</b>. Sem você digitar uma linha.</td></tr>
+          <tr><td class="time">3–15s<span>Demo</span></td>
+            <td class="vis">Campos preenchendo: queixa, conduta, evolução, organizados no prontuário.</td>
+            <td class="txt">A IA resume: queixa · conduta · evolução</td>
+            <td class="said">No MyDose, a consulta é gravada e a inteligência artificial resume tudo pra você: queixa, conduta, evolução, organizadinho no prontuário. Você termina de atender e o registro já tá lá, esperando só a tua revisão.</td></tr>
+          <tr><td class="time">15–35s<span>Virada</span></td>
+            <td class="vis">Você olhando o paciente nos olhos, não pro teclado; relógio devolvendo horas.</td>
+            <td class="txt">Olha pro paciente, não pro teclado</td>
+            <td class="said">Sabe o que isso muda? Durante a consulta, você olha pro paciente. Não pra tela, correndo pra anotar antes de esquecer. Você fica presente — que é o que faz o paciente confiar e voltar. E ganha de volta aquelas <b>horas que você perdia toda semana</b> arrumando prontuário.</td></tr>
+          <tr class="trim"><td class="time">35–50s<span>Payoff</span><span class="trimtag">corta p/ 30s</span></td>
+            <td class="vis">Agenda com respiro; tecnologia fazendo a parte chata.</td>
+            <td class="txt">Menos burocracia, mais presença, mais tempo</td>
+            <td class="said">É menos burocracia, mais presença, e mais tempo — <b>sem virar uma fábrica de consultas</b> correndo contra o relógio. A tecnologia faz a parte chata pra você fazer a parte que só você faz.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos</span><ul>
+        <li><em>Mistake warning</em> Você perde horas toda semana com uma coisa que a IA já faz sozinha.</li>
+        <li><em>Behind-the-scenes</em> Deixa eu te mostrar como eu fecho um prontuário em segundos.</li>
+      </ul></div>
+      <div class="cta">
+        <div class="col meio"><div class="lab">CTA Meio</div><p>“Vê essa e as outras ferramentas no MyDose Lab. Clica aqui.”</p><span class="dest">→ MyDose Lab · gera público de remarketing</span></div>
+        <div class="col fim"><div class="lab">CTA Fim</div><p>“Clica aqui e faz um diagnóstico pra rodar isso no teu consultório.”</p><span class="dest">→ Diagnóstico com o time</span></div>
+      </div>
+    </article>
+
+    <!-- F3 -->
+    <article class="card fun">
+      <div class="card-head">
+        <span class="card-id">FN-03</span>
+        <div class="card-title">
+          <h3>Vender no automático · MyDose Scale</h3>
+          <p>Esteira que vende pra tua base enquanto você atende. Faturamento fora da consulta.</p>
+          <div class="chips"><span class="chip hook">Hook · Resultado improvável</span><span class="chip dur">⏱ <b>~50s</b> · corta pra 30s</span></div>
+        </div>
+      </div>
+      <div class="tl-scroll"><table>
+        <thead><tr><th>Tempo</th><th class="vis">Visual</th><th class="txt">Texto na tela</th><th>Falado</th></tr></thead>
+        <tbody>
+          <tr class="beat0"><td class="time">0–3s<span>Hook</span></td>
+            <td class="vis">Notificações de venda pipocando (verde/azul/magenta): curso, e-book, consulta.</td>
+            <td class="txt">Você vendeu 3× hoje e nem percebeu</td>
+            <td class="said">Enquanto você atendia hoje, dava pra ter vendido um curso, um e-book e uma consulta. <b>No automático.</b></td></tr>
+          <tr><td class="time">3–15s<span>Demo</span></td>
+            <td class="vis">Ecossistema: página de vendas, checkout, área de membros, e-mail — montando sozinho.</td>
+            <td class="txt">Página · checkout · membros · e-mail, prontos</td>
+            <td class="said">O MyDose te entrega o ecossistema inteiro pronto: página de vendas, checkout, área de membros, e-mail, tudo integrado. Você cria o produto uma vez, publica, e o sistema vende pra tua base enquanto você tá do outro lado, atendendo.</td></tr>
+          <tr><td class="time">15–35s<span>Virada</span></td>
+            <td class="vis">Audiência que já segue você comprando; faturamento subindo fora da agenda.</td>
+            <td class="txt">Seu conhecimento parando de morrer no consultório</td>
+            <td class="said">É o teu conhecimento deixando de morrer dentro do consultório. Aquela audiência que já te segue, que já confia em você, comprando de você mesmo nos dias que você <b>não atende ninguém</b>. Faturamento que não depende de você estar na cadeira.</td></tr>
+          <tr class="trim"><td class="time">35–50s<span>Payoff</span><span class="trimtag">corta p/ 30s</span></td>
+            <td class="vis">Várias fontes saindo da mesma base; profissional virando dono de negócio.</td>
+            <td class="txt">De autônomo a dono de um negócio</td>
+            <td class="said">É assim que o profissional de saúde deixa de ser só autônomo e vira <b>dono de um negócio</b>: várias fontes de faturamento saindo da mesma base, no automático, enquanto a agenda continua rodando.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="alts"><span class="lb">Hooks alternativos</span><ul>
+        <li><em>Aspiração</em> Imagina teu conhecimento vendendo sozinho, enquanto você tá em consulta.</li>
+        <li><em>Contrarian</em> Sua maior fonte de faturamento não devia ser a tua agenda.</li>
+      </ul></div>
+      <div class="cta">
+        <div class="col meio"><div class="lab">CTA Meio</div><p>“Aprende a montar a tua esteira no MyDose Lab. Clica aqui.”</p><span class="dest">→ MyDose Lab · gera público de remarketing</span></div>
+        <div class="col fim"><div class="lab">CTA Fim</div><p>“Clica aqui e faz um diagnóstico com o meu time pra montar a tua esteira.”</p><span class="dest">→ Diagnóstico com o time</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ BIBLIOTECA DE HOOKS ============ -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-n">04</span><h2>Biblioteca de hooks validados</h2>
+    </div>
+    <div class="lib">
+      <p class="sub">Os frameworks que usei acima, com o padrão pra você adaptar em qualquer roteiro novo. Regra: 10–14 palavras, pattern interrupt visual junto, e a legenda na tela batendo com a fala.</p>
+      <div class="libgrid">
+        <div class="lb"><div class="nm">Pergunta-cliffhanger</div><div class="pt">“Você sabe X? Mas já calculou Y?”</div><div class="ex">Abre um loop que só fecha assistindo.</div></div>
+        <div class="lb"><div class="nm">Contrarian</div><div class="pt">“Se você faz X e não dá certo, o problema não é o óbvio.”</div><div class="ex">Contradiz a crença padrão do público.</div></div>
+        <div class="lb"><div class="nm">Mistake warning</div><div class="pt">“Para de fazer X — você tá perdendo Y.”</div><div class="ex">Alerta de erro + perda concreta.</div></div>
+        <div class="lb"><div class="nm">Confissão</div><div class="pt">“Fulano me confessou / vou admitir uma coisa…”</div><div class="ex">Vulnerabilidade real prende atenção.</div></div>
+        <div class="lb"><div class="nm">História inacabada</div><div class="pt">“Ele cansou de X e o que fez mudou tudo.”</div><div class="ex">Promete um final que o vídeo entrega.</div></div>
+        <div class="lb"><div class="nm">Aspiração</div><div class="pt">“Imagina [cenário dos sonhos] acontecendo.”</div><div class="ex">Projeta o depois desejado.</div></div>
+        <div class="lb"><div class="nm">Resultado improvável</div><div class="pt">“Fiz [resultado extremo] em [tempo curto].”</div><div class="ex">Curiosidade pelo mecanismo.</div></div>
+        <div class="lb"><div class="nm">Social proof</div><div class="pt">“Meus [N] alunos que fazem X têm Y.”</div><div class="ex">Prova antes da promessa.</div></div>
+        <div class="lb"><div class="nm">Myth buster</div><div class="pt">“Tudo que te ensinaram sobre X age tarde demais.”</div><div class="ex">Derruba o senso comum.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PREVIEW DAS PRÓXIMAS LINHAS ============ -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-n">05</span><h2>Preview · as próximas 6 linhas</h2>
+    </div>
+    <p class="sec-sub">Briefing + hook de partida das linhas que ainda vou roteirizar por completo. Roteiro cheio na próxima rodada — diz qual você quer priorizar.</p>
+    <div class="prev">
+      <div class="pcard topo"><div class="pt-tag">Topo</div><h4>Cortes do Workshop <span class="qty">· 3x</span></h4><div class="desc">Recortes do conteúdo ao vivo. Prova de valor direta — pega o melhor momento e corta.</div><div class="hk"><em>Hook · Behind-the-scenes</em>“Isso aqui foi ao vivo no workshop — e resume por que consulta não escala.”</div></div>
+      <div class="pcard topo"><div class="pt-tag">Topo</div><h4>Vídeos do Dr. Arthur <span class="qty">· 3x</span></h4><div class="desc">Autoridade médica na câmera. Founder + credibilidade clínica.</div><div class="hk"><em>Hook · Credential lead</em>“Sou médico. Demorei anos pra entender que atender bem não é escalar.”</div></div>
+      <div class="pcard topo"><div class="pt-tag">Topo</div><h4>Ads de convite pro Workshop <span class="qty">· 3x</span></h4><div class="desc">Chamada direta pra inscrição. Data, hora, promessa específica.</div><div class="hk"><em>Hook · How-to + FOMO</em>“Quarta, 19h, ao vivo e de graça: como transformar consulta em consultório escalável.”</div></div>
+      <div class="pcard meio"><div class="pt-tag">Meio</div><h4>Tela dividida tutorial <span class="qty">· 5x</span></h4><div class="desc">Você fala de um lado, a ferramenta rodando do outro. Mostra na prática.</div><div class="hk"><em>Hook · Tool reveal</em>“De um lado eu explico, do outro eu monto o plano ao vivo. Olha a velocidade.”</div></div>
+      <div class="pcard fim"><div class="pt-tag">Fim</div><h4>Prova social <span class="qty">· 3x</span></h4><div class="desc">Cliente real vendendo o MyDose. A validação vem de quem já usa — depoimento autêntico.</div><div class="hk"><em>Hook · Testemunho</em>“Em 30 dias eu fiz minha primeira venda de programa de acompanhamento.” (Dr. Arthur)</div></div>
+      <div class="pcard fim"><div class="pt-tag">Topo · Meio · Fim</div><h4>Estáticos <span class="qty">· briefing</span></h4><div class="desc">Artes de captação, meio e de diagnóstico. Headline forte + subhead traduzindo em resultado.</div><div class="hk"><em>Direção · Callout</em>Headline com a dor (“Sua hora vale menos do que você pensa”) + CTA por fase.</div></div>
+    </div>
+  </section>
+
+  <div class="note">
+    <h4>Direção de gravação — leia antes de rodar</h4>
+    <ul>
+      <li><b>O gancho é 80% do resultado.</b> Grave os 2 hooks alternativos de cada card junto do principal — é barato e multiplica os testes. Se travar nos 3s, o resto não roda.</li>
+      <li><b>Legenda em toda cena.</b> 85% assiste no mudo. A coluna <b>Texto na tela</b> tem que aparecer grande, batendo com a fala.</li>
+      <li><b>Projeções = uma gravação só.</b> Feche a fala até a Prova e grave <b>as duas caudas de CTA</b> (Meio → Lab · Fim → diagnóstico) em sequência, sem trocar cenário. Saem as duas peças de uma vez.</li>
+      <li><b>30 ou 60s?</b> As linhas marcadas <span class="trimtag">corta p/ 30s</span> são o beat de Prova/Payoff — dá pra cortar e fechar em ~30s sem perder o hook nem o CTA. Rode as duas durações como variação.</li>
+      <li><b>Histórias não cheiram a anúncio.</b> Sem trilha de ad, sem legenda gritada. Câmera na mão, fala de conversa, CTA só no fim (pode ser WhatsApp).</li>
+      <li><b>Copy da marca:</b> sempre “faturamento” (nunca “receita” — confunde com receita médica). Sem “ROI garantido” ou “1ª venda em 30 dias” como promessa. Tom de saúde, não de guru.</li>
+      <li><b>Remarketing:</b> quem clicou no Lab (meio) vira público pro diagnóstico (fim). Por isso a mesma linha aparece nas duas fases.</li>
+    </ul>
+  </div>
+
+  <div class="foot">
+    <span>MyDose · Roteiros de Ads Q3 · v2 · 3 projeções · 3 histórias · 3 funcionalidades + preview de 6 linhas</span>
+    <span>Fundamentos de hook baseados em: Adligator · Motion · OpusClip · Vexub (short-form hook frameworks, 2025–2026).</span>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var t=document.getElementById('tog');
+    t.addEventListener('click',function(){
+      var cur=document.documentElement.getAttribute('data-theme');
+      if(!cur){cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}
+      document.documentElement.setAttribute('data-theme',cur==='dark'?'light':'dark');
+    });
+  })();
+</script>
+</body>
+</html>
