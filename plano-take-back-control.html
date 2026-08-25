@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Plano Take Back Control</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Figtree:ital,wght@0,400..800;1,400..800&display=swap">
+<style>
+:root{
+  --bg:#F6F4F2; --card:#FFFFFF; --ink:#1E1D1D; --muted:#6B6862; --line:#E5E1DB;
+  --blue:#415FF5; --magenta:#C64FCA; --orange:#F56442; --green:#63AC39;
+  --navy:#191E47; --navy-ink:#F2F1FA; --navy-muted:#A9ACD1;
+  --soft-blue:#E4E8FE; --soft-pink:#F5E3F6; --soft-peach:#FFEAE5; --soft-green:#DCEDD2;
+  --grad:linear-gradient(100deg,#415FF5,#C64FCA 55%,#F56442);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101226; --card:#1B1E3E; --ink:#EDEDF6; --muted:#9EA1C4; --line:#2B2F58;
+    --blue:#7D93FB; --magenta:#DD7AE0; --orange:#FF8A6E; --green:#8CCB63;
+    --navy:#161A3C; --navy-ink:#F2F1FA; --navy-muted:#A9ACD1;
+    --soft-blue:#232A5C; --soft-pink:#43224A; --soft-peach:#4A2418; --soft-green:#25390F;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101226; --card:#1B1E3E; --ink:#EDEDF6; --muted:#9EA1C4; --line:#2B2F58;
+  --blue:#7D93FB; --magenta:#DD7AE0; --orange:#FF8A6E; --green:#8CCB63;
+  --navy:#161A3C; --navy-ink:#F2F1FA; --navy-muted:#A9ACD1;
+  --soft-blue:#232A5C; --soft-pink:#43224A; --soft-peach:#4A2418; --soft-green:#25390F;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:400 16px/1.62 "Figtree",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* hero */
+.hero{background:var(--navy);color:var(--navy-ink);padding:70px 0 56px;position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:1}
+.hero::after{content:"";position:absolute;inset:auto -80px -120px auto;width:340px;height:340px;border-radius:50%;border:1.5px solid rgba(255,255,255,.10)}
+.hero::before{content:"";position:absolute;top:-90px;left:-60px;width:260px;height:260px;border-radius:50%;border:1.5px solid rgba(255,255,255,.07)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-muted);margin:0 0 18px}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(38px,6.6vw,64px);line-height:1.05;margin:0 0 18px;text-wrap:balance}
+.g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.hero p.sub{font-size:18px;line-height:1.55;max-width:36em;margin:0 0 24px;color:#D8DAF0}
+.tbc{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:20px;color:var(--navy-ink);margin:0}
+.hero .meta{margin-top:30px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;gap:8px 26px;font-size:13px;color:var(--navy-muted)}
+
+/* estrutura */
+main{padding:16px 0 80px}
+section{margin-top:60px}
+.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:22px}
+.sec-n{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:20px;color:var(--muted);min-width:1.4em}
+h2{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(24px,3.4vw,30px);line-height:1.15;margin:0;text-wrap:balance}
+h3{font-size:16px;font-weight:700;margin:28px 0 10px}
+p{max-width:44em;margin:0 0 14px}
+.lead{font-size:17.5px}
+.muted{color:var(--muted)}
+em{font-family:"Fraunces",Georgia,serif;font-style:italic}
+ul,ol{margin:0 0 14px;padding-left:22px;max-width:46em}
+li{margin-bottom:7px}
+li::marker{color:var(--blue);font-weight:700}
+
+/* tabelas */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card);margin:16px 0 6px}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:14px;line-height:1.5}
+th{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);text-align:left;padding:12px 16px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin:18px 0}
+.poster{background:var(--navy);color:var(--navy-ink);border:none}
+.poster h3{margin-top:0;color:var(--navy-ink)}
+.poster p{color:#D8DAF0}
+.quote{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:19px;line-height:1.45;max-width:34em;margin:0}
+.pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:99px}
+.p-blue{background:var(--soft-blue);color:var(--blue)}
+.p-pink{background:var(--soft-pink);color:var(--magenta)}
+.p-peach{background:var(--soft-peach);color:var(--orange)}
+.p-green{background:var(--soft-green);color:var(--green)}
+
+/* debate */
+.debate{border:1.5px dashed var(--magenta);border-radius:14px;padding:20px 24px;margin:20px 0;background:transparent}
+.debate .dt{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--magenta);margin:0 0 10px}
+.debate ul{margin:0;font-size:14.5px}
+.debate li::marker{color:var(--magenta)}
+
+/* golden circle */
+.gc{display:grid;grid-template-columns:minmax(260px,320px) 1fr;gap:34px;align-items:center;margin:20px 0}
+.gc-viz{width:100%;max-width:320px;aspect-ratio:1;position:relative;margin:0 auto}
+.ring{position:absolute;border-radius:50%;display:flex;align-items:flex-start;justify-content:center}
+.ring .rl{font-size:11px;font-weight:800;letter-spacing:.14em;margin-top:10px}
+.r3{inset:0;background:var(--soft-peach);border:2px solid var(--orange)}
+.r3 .rl{color:var(--orange)}
+.r2{inset:17%;background:var(--soft-pink);border:2px solid var(--magenta)}
+.r2 .rl{color:var(--magenta)}
+.r1{inset:35%;background:var(--soft-blue);border:2px solid var(--blue);align-items:center}
+.r1 .rl{color:var(--blue);font-size:13px;margin-top:0}
+.gc-txt .row{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start}
+.gc-txt .k{min-width:56px;font-size:12px;font-weight:800;letter-spacing:.1em;padding-top:3px}
+.gc-txt .k.w{color:var(--blue)} .gc-txt .k.h{color:var(--magenta)} .gc-txt .k.t{color:var(--orange)}
+.gc-txt p{font-size:14.5px;margin:0}
+
+/* venn */
+.venn-wrap{display:grid;grid-template-columns:minmax(260px,340px) 1fr;gap:34px;align-items:center;margin:22px 0}
+.venn{width:100%;max-width:340px;aspect-ratio:1.05;position:relative;margin:0 auto}
+.vc{position:absolute;width:58%;aspect-ratio:1;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;text-align:center;padding:12px;line-height:1.3}
+.v1{left:0;top:0;background:color-mix(in srgb,var(--blue) 20%,transparent);border:1.5px solid var(--blue);align-items:flex-start;padding-top:22px}
+.v2{right:0;top:0;background:color-mix(in srgb,var(--magenta) 18%,transparent);border:1.5px solid var(--magenta);align-items:flex-start;padding-top:22px}
+.v3{left:21%;bottom:0;background:color-mix(in srgb,var(--orange) 18%,transparent);border:1.5px solid var(--orange);align-items:flex-end;padding-bottom:22px}
+.vmid{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);background:var(--navy);color:var(--navy-ink);font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:15px;padding:8px 16px;border-radius:99px;white-space:nowrap;z-index:2}
+.venn-side p{font-size:14.5px}
+.venn-side .who{display:flex;gap:8px;align-items:baseline;margin-bottom:8px;font-size:14px}
+.venn-side .who b{white-space:nowrap}
+
+/* message house */
+.house{margin:22px 0}
+.roof{background:var(--navy);color:var(--navy-ink);text-align:center;padding:20px 18px 14px;clip-path:polygon(50% 0,100% 62%,100% 100%,0 100%,0 62%);font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:clamp(19px,3vw,25px)}
+.beam{background:var(--card);border:1px solid var(--line);border-top:none;text-align:center;padding:14px 18px;font-weight:700;font-size:15.5px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-top:none;background:var(--card)}
+.col{padding:18px;border-right:1px solid var(--line)}
+.col:last-child{border-right:none}
+.col .pill{margin-bottom:10px}
+.col b{display:block;font-size:14.5px;margin-bottom:6px}
+.col p{font-size:13px;margin:0 0 8px;color:var(--muted)}
+.col .feat{font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin-top:4px}
+.base{background:var(--navy);color:var(--navy-muted);text-align:center;padding:11px 18px;font-size:13px;border-radius:0 0 12px 12px}
+.base b{color:var(--navy-ink)}
+
+/* 5 perguntas */
+.q5{counter-reset:q;list-style:none;padding:0;max-width:none;margin:18px 0}
+.q5 li{counter-increment:q;display:flex;gap:16px;align-items:baseline;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 18px;margin-bottom:8px;font-size:15.5px;font-weight:600}
+.q5 li::before{content:counter(q);font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:22px;color:var(--magenta);min-width:.9em;text-align:center}
+
+/* sub-ângulos */
+.angles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0}
+.angle{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;border-top:4px solid var(--blue)}
+.angle:nth-child(2){border-top-color:var(--magenta)}
+.angle:nth-child(3){border-top-color:var(--orange)}
+.angle .an{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:19px;margin:0 0 4px}
+.angle .aw{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.angle p{font-size:14px;margin:0}
+
+/* equação de valor */
+.eq{display:grid;grid-template-columns:1fr;gap:0;margin:22px 0;text-align:center}
+.eq-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.eq-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;flex:1 1 220px;max-width:330px;text-align:left}
+.eq-box .el{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.up .el{color:var(--green)} .dn .el{color:var(--orange)}
+.eq-box p{font-size:13px;margin:0;color:var(--muted)}
+.eq-mid{margin:14px auto;width:min(560px,90%);border-top:2.5px solid var(--ink);position:relative}
+.eq-mid span{position:absolute;left:50%;top:-14px;transform:translateX(-50%);background:var(--bg);padding:0 14px;font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:15px}
+
+/* offer stack */
+.offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin:20px 0}
+.offer{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:0;display:flex;flex-direction:column}
+.offer .oh{padding:20px 24px 16px;border-bottom:1px solid var(--line)}
+.offer.star .oh{background:var(--navy);color:var(--navy-ink);border-bottom:none}
+.offer .on{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:22px;margin:0 0 2px}
+.offer .ow{font-size:13px;color:var(--muted);margin:0}
+.offer.star .ow{color:var(--navy-muted)}
+.offer .price{font-size:13px;margin-top:8px}
+.offer .price b{font-size:17px}
+.stack{list-style:none;padding:10px 0;margin:0;flex:1}
+.stack li{display:flex;gap:12px;padding:10px 24px;margin:0;font-size:14px;align-items:flex-start}
+.stack li::before{content:"✓";color:var(--green);font-weight:800;min-width:14px}
+.stack li.hot{background:linear-gradient(90deg,color-mix(in srgb,var(--blue) 10%,transparent),color-mix(in srgb,var(--magenta) 10%,transparent));font-weight:700}
+.stack li.hot::before{content:"★";color:var(--magenta)}
+.stack li span{display:block;font-weight:400;font-size:12.5px;color:var(--muted)}
+.offer .of{padding:14px 24px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--muted)}
+
+/* matriz de conteúdo */
+.mx{overflow-x:auto;margin:18px 0}
+.mx-grid{display:grid;grid-template-columns:92px repeat(3,minmax(215px,1fr));gap:8px;min-width:780px}
+.mx-h{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:10px 12px;border-radius:10px;text-align:center;align-self:stretch;display:flex;align-items:center;justify-content:center}
+.mx-r{writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 8px;display:flex;align-items:center;justify-content:center}
+.mx-c{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.5}
+.mx-c b{display:block;font-size:12.5px;margin-bottom:6px}
+.mx-c ul{padding-left:16px;margin:0;max-width:none}
+.mx-c li{margin-bottom:5px}
+.mx-c .goal{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px}
+
+/* funil */
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:18px 0}
+.flow .st{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;position:relative}
+.flow .st b{display:block;font-size:14px;margin-bottom:3px}
+.flow .st span{font-size:12.5px;color:var(--muted);line-height:1.4;display:block}
+.flow .st::after{content:"→";position:absolute;right:-11px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700;z-index:1}
+.flow .st:last-child::after{content:none}
+.flow .st.hot{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
+
+.check{list-style:none;padding:0;max-width:none}
+.check li{padding-left:28px;position:relative}
+.check li::before{content:"";position:absolute;left:2px;top:7px;width:13px;height:13px;border:2px solid var(--blue);border-radius:4px}
+
+.footer{border-top:1px solid var(--line);margin-top:70px;padding:26px 0 40px;font-size:13px;color:var(--muted)}
+.footer .tbc{font-size:17px;color:var(--ink);margin-bottom:8px}
+@media (max-width:760px){
+  .gc,.venn-wrap{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr}
+  .col{border-right:none;border-bottom:1px solid var(--line)}
+  .col:last-child{border-bottom:none}
+}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">MyDose · Plano de comunicação &amp; funil comercial · v2 · 2026-08-25</p>
+    <h1>Demita seu <span class="g">marketing.</span></h1>
+    <p class="sub">Uma história só, do primeiro scroll à assinatura: o profissional de saúde é um
+    empreendedor que empreende no escuro — e a MyDose devolve o controle. Este board reúne a fundação
+    (Golden Circle, PUV, StoryBrand), as ofertas irresistíveis e a matriz de conteúdo, para o time
+    discutir e decidir em cima.</p>
+    <p class="tbc">Take back control.</p>
+    <div class="meta">
+      <span>Motion: Sales Led Growth</span>
+      <span>Ciclo-alvo: lead → contrato ≤ 7 dias</span>
+      <span>Blocos tracejados = decisões do time</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section>
+  <div class="sec-head"><span class="sec-n">1</span><h2>Golden Circle — por que a MyDose existe</h2></div>
+  <p class="lead">A comunicação quebrou porque começamos pelo WHAT (a lista de produtos). A regra
+  nova: <strong>toda mensagem começa pelo WHY</strong> e só chega ao WHAT como prova.</p>
+  <div class="gc">
+    <div class="gc-viz">
+      <div class="ring r3"><span class="rl">WHAT</span></div>
+      <div class="ring r2"><span class="rl">HOW</span></div>
+      <div class="ring r1"><span class="rl">WHY</span></div>
+    </div>
+    <div class="gc-txt">
+      <div class="row"><span class="k w">WHY</span><p>São 8,1 bilhões de pessoas para 9 milhões de profissionais de saúde (1:900). Acreditamos que <strong>quem cuida da saúde dos outros não pode ter um negócio doente</strong> — só um profissional no controle do próprio consultório cuida de mais gente, cuidando melhor.</p></div>
+      <div class="row"><span class="k h">HOW</span><p>Devolvendo o <strong>controle</strong> em 3 frentes num painel só — quem chega, quem fica, o negócio — com <strong>IA + um time que faz com você ou por você</strong> (Co-Pilot / Auto-Pilot) e formação (School). Ninguém mais junta software + time + formação com os dados na mão do profissional.</p></div>
+      <div class="row"><span class="k t">WHAT</span><p>A plataforma (Habits · Scale · School), app do paciente, comunidade, WhatsApp, gateway sem porcentagem — nos planos Solo / Co-Pilot / Auto-Pilot.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-n">2</span><h2>Proposta Única de Valor</h2></div>
+  <p><strong>Fórmula XYZ:</strong> Ajudamos <span class="pill p-blue">profissionais de saúde</span> a
+  <span class="pill p-pink">ter o controle do consultório — pacientes, marketing e dinheiro</span> através de
+  <span class="pill p-peach">um painel único com IA e um time que executa junto</span>.</p>
+  <div class="card">
+    <p class="quote" style="font-size:17px">"Para profissionais de saúde que empreendem no escuro, a MyDose é a
+    plataforma de empreendedorismo para a saúde que mostra a jornada inteira do paciente — do anúncio à
+    indicação — num painel só. Diferente de prontuários, agências e gurus, a gente executa com você e os
+    dados são seus."</p>
+  </div>
+  <h3>O diferencial que ninguém copia: a tríade</h3>
+  <div class="venn-wrap">
+    <div class="venn">
+      <div class="vc v1">Software<br>com dados seus</div>
+      <div class="vc v2">Time<br>que executa</div>
+      <div class="vc v3">Formação<br>(School)</div>
+      <div class="vmid">MyDose</div>
+    </div>
+    <div class="venn-side">
+      <p>Cada concorrente tem só um pedaço — e é assim que a gente se separa da prateleira de "prontuário caro":</p>
+      <div class="who"><b style="color:var(--blue)">Prontuário / SaaS:</b><span>software sem time e sem marketing.</span></div>
+      <div class="who"><b style="color:var(--magenta)">Agência:</b><span>time sem dados para o cliente — a caixa-preta.</span></div>
+      <div class="who"><b style="color:var(--orange)">Guru / curso:</b><span>formação sem execução — você assiste e continua sozinho.</span></div>
+      <p style="margin-top:10px"><strong>Só a MyDose entrega os três, com a jornada visível no painel do cliente.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-n">3</span><h2>A casa da mensagem</h2></div>
+  <p>Do slogan à feature, nessa ordem. Features nunca abrem conversa — são prova, em demo.</p>
+  <div class="house">
+    <div class="roof">Take back control.</div>
+    <div class="beam">"O consultório inteiro sob o seu controle: pacientes, marketing e dinheiro num painel só."</div>
+    <div class="cols">
+      <div class="col"><span class="pill p-blue">Quem chega</span><b>Controle da atração</b><p>Sua mensagem, seu alcance, seus leads, sua conversão — dados na sua mão. O anti-caixa-preta.</p><div class="feat">Prova: MyDose Scale — IA de conteúdo, tráfego, WhatsApp, CRM, funil</div></div>
+      <div class="col"><span class="pill p-pink">Quem fica</span><b>Controle do cuidado</b><p>Adesão, vínculo entre consultas, comunidade — o paciente que volta e indica (NPS vira canal de vendas).</p><div class="feat">Prova: MyDose Habits — app do paciente, protocolos, D.O.S.E., prontuário</div></div>
+      <div class="col"><span class="pill p-peach">O negócio</span><b>Controle do dinheiro</b><p>Precificar com segurança, vender sem porcentagem, receber sem gerar link no Pix.</p><div class="feat">Prova: MyDose School + gateway integrado (Asaas)</div></div>
+    </div>
+    <div class="base">Fundação de prova: <b>+1.000 profissionais · 5× mais faturamento · +130 mil pacientes · ★★★★★ · Dr. Arthur</b></div>
+  </div>
+
+  <h3>As 5 Perguntas do Controle <span class="muted" style="font-weight:400">— a anamnese do consultório, em anúncio, LP, e-mail e call</span></h3>
+  <ol class="q5">
+    <li>Qual é a sua mensagem?</li>
+    <li>Quantas pessoas ela alcançou este mês?</li>
+    <li>Quantas viraram leads?</li>
+    <li>Quantos leads viraram pacientes — e quanto custou cada um?</li>
+    <li>Quantos pacientes indicam você?</li>
+  </ol>
+  <p class="quote" style="font-size:17px">"Se você não responde essas 5, quem está no controle do seu consultório não é você."</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-n">4</span><h2>"Demita seu marketing." — o guarda-chuva</h2></div>
+  <p class="lead">"Demita sua agência" só fala com quem TEM agência. O guarda-chuva cobre os
+  <strong>3 estados do mercado</strong> com o mesmo vilão (a caixa-preta) e a mesma solução (controle).
+  Fecho comum: <em>"Demita seu marketing. Assuma o controle dele."</em></p>
+  <div class="angles">
+    <div class="angle"><p class="an">Demita sua agência</p><p class="aw">quem paga agência / social media / tráfego</p><p>"Você paga pra não saber. Relatório de alcance não é paciente." A dor é a fatura mensal sem jornada visível.</p></div>
+    <div class="angle"><p class="an">Demita seu guru</p><p class="aw">quem segue guru e copia formato</p><p>"Guru te dá formato. Dado te dá direção." Mensagem própria + funil próprio — o que funciona no SEU público.</p></div>
+    <div class="angle"><p class="an">Demita o achismo</p><p class="aw">quem faz sozinho — ou não faz nada</p><p>"Você não odeia marketing. Você odeia fazer marketing no escuro." A porta de quem tem medo do tema.</p></div>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Campanha</th><th>Big idea</th><th>Exemplo de hook</th></tr>
+    <tr><td><span class="pill p-blue">A · Demita seu marketing</span></td><td>Marketing é core business; pare de pagar/fazer no escuro (3 sub-ângulos acima)</td><td>"Você paga R$ 3 mil/mês pra agência — e não sabe dizer quantos pacientes ela trouxe."</td></tr>
+    <tr><td><span class="pill p-peach">B · Cadê seus pacientes?</span></td><td>Leads e pacientes somem sem explicação; o painel mostra a jornada inteira</td><td>"Três pacientes te abandonaram este mês. Você sabe em que dia? Em que etapa?"</td></tr>
+    <tr><td><span class="pill p-pink">C · Comunidade</span></td><td>O paciente melhora (e volta, e indica) quando existe vínculo entre as consultas</td><td>"Seu paciente tem 1 hora com você e 720 sem você. A comunidade segura as outras 720."</td></tr>
+  </table></div>
+  <p><strong>Teste A/B/C:</strong> mesma verba, 2 sprints de 2 semanas. Juiz, nessa ordem:
+  <strong>custo por reunião realizada</strong> → show rate → custo por agendamento → CTR.
+  Os 5 roteiros da campanha A (A1–A5, com prova visual 0–3s) e o banco v4 para B e C estão no wiki.</p>
+  <div class="debate">
+    <p class="dt">Para o time discutir</p>
+    <ul>
+      <li>O guarda-chuva vai pro criativo como "Demita seu marketing" ou cada sub-ângulo roda com o próprio título ("Demita sua agência" / "Demita seu guru")?</li>
+      <li>Segmentamos os sub-ângulos por audiência (quem engajou com conteúdo de agência × guru) ou deixamos o criativo se auto-selecionar?</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-n">5</span><h2>Ofertas irresistíveis (Grand Slam Offer)</h2></div>
+  <p class="lead">Framework Hormozi: a oferta fica irresistível quando maximiza a equação de valor —
+  e cada plano com time (Co-Pilot / Auto-Pilot) ganha um empilhamento próprio, casado com o sub-ângulo da campanha.</p>
+
+  <div class="eq">
+    <div class="eq-row">
+      <div class="eq-box up"><div class="el">Resultado dos sonhos ↑</div><p>Não "um software": o consultório no controle — funil visível, agenda previsível, faturamento sem depender da cadeira.</p></div>
+      <div class="eq-box up"><div class="el">Probabilidade percebida ↑</div><p>+1.000 profissionais, Dr. Arthur, diagnóstico antes da venda, time fazendo junto, garantia de 30 dias.</p></div>
+    </div>
+    <div class="eq-mid"><span>valor =</span></div>
+    <div class="eq-row">
+      <div class="eq-box dn"><div class="el">Tempo até o resultado ↓</div><p>No ar em 7 dias; primeira campanha e conteúdo do mês 1 feitos pelo time (Auto-Pilot).</p></div>
+      <div class="eq-box dn"><div class="el">Esforço &amp; sacrifício ↓</div><p>Migração feita por nós, Reunião de Implementação, School — ele não precisa "aprender marketing" antes de começar.</p></div>
+    </div>
+  </div>
+
+  <div class="offers">
+    <div class="offer star">
+      <div class="oh">
+        <p class="on">Demita seu Marketing</p>
+        <p class="ow">Oferta-âncora · Auto-Pilot · para quem paga agência / gestor de tráfego</p>
+        <p class="price"><b>R$ 1.990/mês</b> (anual) — a gente faz por você</p>
+      </div>
+      <ul class="stack">
+        <li>Auto-Pilot completo: time gere conteúdo + ads + funis; plataforma inteira (Habits · Scale · School); painel da jornada</li>
+        <li class="hot">Vale-Rescisão: R$ 2.000 de crédito na contratação<span>"A demissão é por nossa conta" — o que você gastaria para sair da agência, a gente devolve na entrada.</span></li>
+        <li>Primeira campanha no ar em 7 dias + conteúdo do mês 1 produzido pelo time</li>
+        <li>Diagnóstico + BrandScript próprio — a mensagem DELE, não fórmula de guru</li>
+        <li>Migração de dados e ferramentas feita por nós ("mudança sem caixas")</li>
+        <li>30 dias de garantia · sem fidelidade · sem % sobre vendas · LGPD</li>
+      </ul>
+      <div class="of">Ancoragem: agência média custa R$ 1.500–3.000/mês — sem jornada visível. Escassez honesta: X implementações/mês (capacidade real do time). Ponte fixa: <em>"a gente faz por você, mas nunca no escuro — o painel é seu."</em></div>
+    </div>
+    <div class="offer">
+      <div class="oh">
+        <p class="on">Demita o Guru</p>
+        <p class="ow">Oferta-ponte · Co-Pilot · para quem segue guru ou faz sozinho</p>
+        <p class="price"><b>R$ 890/mês</b> (anual) — a gente faz com você</p>
+      </div>
+      <ul class="stack">
+        <li>Co-Pilot: Reunião de Implementação + estrategista em grupo + plataforma inteira</li>
+        <li class="hot">MyDose School inclusa<span>"O curso do guru, incluso — dentro da plataforma que executa." Ancorar contra cursos de R$ 2–5 mil.</span></li>
+        <li>Diagnóstico + as 5 Perguntas respondidas com os dados dele no 1º mês</li>
+        <li>Setup da mensagem própria (BrandScript dele) na implementação</li>
+        <li>30 dias de garantia · sem fidelidade · sem %</li>
+      </ul>
+      <div class="of">⚠ Co-Pilot NÃO cria conteúdo nem gere ads (decisão de produto vigente) — o "com você" é implementação + estratégia + School. Solo Pilot segue como entrada (R$ 390) sem bônus: não há o que demitir.</div>
+    </div>
+  </div>
+
+  <div class="debate">
+    <p class="dt">Para o time decidir — mecânica do Vale-Rescisão</p>
+    <ul>
+      <li><strong>Formato do crédito:</strong> crédito de mídia (recomendado — vira resultado visível no painel dele), desconto na 1ª fatura, ou implementação por nossa conta?</li>
+      <li><strong>Elegibilidade:</strong> exigir comprovação de agência/contrato ativo, ou vale para qualquer contratação do Auto-Pilot?</li>
+      <li><strong>Valor:</strong> R$ 2.000 fixo ou "1ª mensalidade por nossa conta"? (R$ 2.000 ≈ 1 mensalidade — o enquadramento "rescisão" transfere a dor de trocar para a MyDose)</li>
+      <li><strong>Exposição:</strong> aparece no site ou é arma exclusiva da call? (recomendado: <strong>só na call</strong> no início — preserva o preço público e dá bônus de decisão ao vendedor)</li>
+      <li><strong>Escassez:</strong> qual é a capacidade real de implementações/mês? Esse número é a urgência honesta.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-n">6</span><h2>Matriz de conteúdo — funil × pilares</h2></div>
+  <p>Anúncios e conteúdo orgânico saem da mesma matriz. Regra de altura: <strong>topo nunca fala de
+  produto</strong>; meio prova o mecanismo; fundo vende a reunião.</p>
+  <div class="mx"><div class="mx-grid">
+    <div></div>
+    <div class="mx-h" style="background:var(--soft-blue);color:var(--blue)">Quem chega · atração</div>
+    <div class="mx-h" style="background:var(--soft-pink);color:var(--magenta)">Quem fica · adesão</div>
+    <div class="mx-h" style="background:var(--soft-peach);color:var(--orange)">O negócio · dinheiro</div>
+
+    <div class="mx-r">Topo</div>
+    <div class="mx-c"><span class="goal">criar o problema</span><ul>
+      <li>Série <em>"A anamnese do consultório"</em> — as 5 Perguntas em casos reais/anônimos</li>
+      <li><em>"Tradutor de relatório de agência"</em> — react: o que "alcance" vale em pacientes</li>
+      <li>A conta que ninguém fez: "quanto custa um paciente?"</li>
+      <li>Trend de guru × dado (todo mundo postando igual)</li>
+    </ul></div>
+    <div class="mx-c"><span class="goal">criar o problema</span><ul>
+      <li><em>"O dia 3"</em> — o dia exato em que o paciente some</li>
+      <li>Neurociência da adesão (D.O.S.E.) em 30s</li>
+      <li>Histórias de comunidade: o paciente que voltou sozinho</li>
+    </ul></div>
+    <div class="mx-c"><span class="goal">criar o problema</span><ul>
+      <li>Precificação aberta: "quanto cobra um nutri / psicólogo?"</li>
+      <li>A conta da colcha: 14 apps + % de gateway</li>
+      <li>"Consultório cheio, conta apertada" — o vazamento</li>
+    </ul></div>
+
+    <div class="mx-r">Meio</div>
+    <div class="mx-c"><span class="goal">provar + capturar</span><ul>
+      <li><strong>Calculadora "quanto custa sua caixa-preta"</strong></li>
+      <li>Teardown do próprio funil MyDose (dogfooding como meta-conteúdo)</li>
+      <li>Isca: checklist das 5 Perguntas + template de mensagem própria</li>
+    </ul></div>
+    <div class="mx-c"><span class="goal">provar + capturar</span><ul>
+      <li>Demos "dá pra fazer isso?" (tela dividida)</li>
+      <li>Caso Dr. Arthur completo (jornada do herói)</li>
+      <li>Aula ao vivo de quarta + newsletter <em>"Saindo do escuro"</em></li>
+    </ul></div>
+    <div class="mx-c"><span class="goal">provar + capturar</span><ul>
+      <li>Isca: tabela de precificação por área</li>
+      <li>Aula School: "quanto cobrar pelo plano de acompanhamento"</li>
+      <li>Simulador: consulta avulsa × recorrência</li>
+    </ul></div>
+
+    <div class="mx-r">Fundo</div>
+    <div class="mx-c"><span class="goal">converter</span><ul>
+      <li>Anúncios A1–A5 (Demita seu marketing) + banco v4</li>
+      <li>Comparativo honesto: MyDose × agência × prontuário</li>
+      <li><strong>Oferta Vale-Rescisão</strong> — arma da call</li>
+    </ul></div>
+    <div class="mx-c"><span class="goal">converter</span><ul>
+      <li>Depoimentos em vídeo (Dr. Arthur, nutri, psi)</li>
+      <li>QA quebra de objeção ("meus pacientes não usam app")</li>
+      <li>Campanha C (comunidade) como retargeting quente</li>
+    </ul></div>
+    <div class="mx-c"><span class="goal">converter</span><ul>
+      <li>"Faça a conta": R$ 8 mil por fora × Auto-Pilot</li>
+      <li>Sem % sobre vendas — "o que você cobra é 100% seu"</li>
+      <li>Garantias: 30 dias · sem fidelidade</li>
+    </ul></div>
+  </div></div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-n">7</span><h2>O funil comercial</h2></div>
+  <div class="flow">
+    <div class="st"><b>Anúncio / conteúdo</b><span>3 campanhas × 2 destinos (LP × clique-pro-WhatsApp)</span></div>
+    <div class="st"><b>WhatsApp · SDR</b><span>resposta ≤ 5 min · agenda na 1ª conversa (D+1/D+2)</span></div>
+    <div class="st hot"><b>Reunião-Diagnóstico</b><span>o diagnóstico É o produto de amostra</span></div>
+    <div class="st"><b>Venda na call</b><span>oferta empilhada + Vale-Rescisão como bônus de decisão</span></div>
+  </div>
+  <h3>Cadência SDR (T1–T6) e nutrição</h3>
+  <div class="tbl"><table>
+    <tr><th>Toque</th><th>Quando</th><th>Essência</th></tr>
+    <tr><td class="num">T1</td><td class="num">≤ 5 min</td><td>"Hoje, quem cuida do marketing do seu consultório — agência, guru, você, ou ninguém?" (a resposta define o sub-ângulo e a oferta)</td></tr>
+    <tr><td class="num">T2</td><td class="num">+2 h</td><td>As 5 Perguntas em imagem: "seu diagnóstico responde as 5. Amanhã ou quinta?"</td></tr>
+    <tr><td class="num">T3</td><td class="num">D1</td><td>Vídeo 30s do Dr. Arthur + 2 horários concretos</td></tr>
+    <tr><td class="num">T4</td><td class="num">D3</td><td>"Quanto você investiu em marketing nos últimos 3 meses? No diagnóstico a gente calcula quanto disso você enxerga."</td></tr>
+    <tr><td class="num">T5</td><td class="num">D5</td><td>Áudio humano 30s (Carol/SDR) — cuidado, não cobrança</td></tr>
+    <tr><td class="num">T6</td><td class="num">D7</td><td>Break-up: "vou encerrar seu diagnóstico pra liberar a vaga — se fizer sentido depois, me chama."</td></tr>
+  </table></div>
+  <p>Quem não agenda cai nos <strong>7 e-mails "Saindo do escuro"</strong> (raio-X → Dr. Arthur →
+  conta da caixa-preta → mito do guru → comunidade → precificação → convite) e na aula ao vivo de quarta.
+  <strong>Anti no-show:</strong> micro-compromisso (trazer o gasto de marketing dos últimos 3 meses) +
+  vídeo de 60s na confirmação + lembretes 3h/15min + reagendar em 1 toque.</p>
+  <h3>A Reunião-Diagnóstico (45 min)</h3>
+  <ol>
+    <li><strong>Meta-demo (5'):</strong> mostrar no NOSSO painel o caminho exato que ELE fez — anúncio → clique → WhatsApp → esta reunião. "É isso que você vai enxergar dos seus pacientes."</li>
+    <li><strong>Anamnese (10'):</strong> as 5 Perguntas aplicadas nele + o número que ele trouxe</li>
+    <li><strong>Implicação (5'):</strong> o escuro em reais/mês</li>
+    <li><strong>Prescrição (10'):</strong> o funil DELE desenhado no painel; máx. 3 features como prova</li>
+    <li><strong>Oferta (10'):</strong> a escada "quanto a gente faz por você" + stack da seção 5; Vale-Rescisão para quem decide na call</li>
+    <li><strong>Fechamento (5'):</strong> não fechou → proposta de 1 página no WhatsApp + follow D1/D3/D7</li>
+  </ol>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-n">8</span><h2>Métricas e ritual</h2></div>
+  <div class="tbl"><table>
+    <tr><th>Etapa</th><th>Métrica</th><th>Alvo inicial</th></tr>
+    <tr><td>Anúncio</td><td>CTR · custo por lead</td><td>recuperar o patamar pré-troca (resgatar baseline no gerenciador)</td></tr>
+    <tr><td>Lead → agendado</td><td>taxa · tempo da 1ª resposta</td><td class="num">≥ 40% · ≤ 5 min</td></tr>
+    <tr><td>Agendado → realizado</td><td>show rate</td><td class="num">≥ 60%</td></tr>
+    <tr><td>Realizado → fechado</td><td>close rate</td><td class="num">≥ 25%</td></tr>
+    <tr><td>Ciclo</td><td>lead → contrato</td><td class="num">≤ 7 dias</td></tr>
+    <tr><td><b>Norte</b></td><td><b>custo por reunião realizada · CAC</b></td><td>decide o teste A/B/C</td></tr>
+  </table></div>
+  <p><strong>Ritual:</strong> revisão semanal do funil <em>no próprio painel MyDose</em> — a empresa é o
+  case nº 1 da própria mensagem. Antes do sprint 1, registrar os baselines: sem eles o teste não tem juiz.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-n">9</span><h2>Backlog — 2 sprints</h2></div>
+  <h3>Sprint 1 · semanas 1–2</h3>
+  <ul class="check">
+    <li>Validar Golden Circle + BrandScript + guard-rails com o time (este board)</li>
+    <li>Decidir a mecânica do Vale-Rescisão (bloco tracejado da seção 5)</li>
+    <li>Gravar os 5 roteiros da campanha A + escolher 5 do banco v4 para B e C</li>
+    <li>LP de diagnóstico nova (identidade v6 do site)</li>
+    <li>Scripts SDR T1–T6 + qualificação no Pipedrive (a T1 define sub-ângulo e oferta)</li>
+    <li>Resgatar baselines de CTR / custo por lead / custo por reunião</li>
+    <li>Subir o teste A/B/C (3 campanhas × 2 destinos)</li>
+  </ul>
+  <h3>Sprint 2 · semanas 3–4</h3>
+  <ul class="check">
+    <li>E-mails 1–7 no ar (automação)</li>
+    <li>Roteiro da Reunião-Diagnóstico treinado (role-play com o stack de oferta)</li>
+    <li>Calculadora "quanto custa a sua caixa-preta" + iscas da matriz (checklist, tabela de preço)</li>
+    <li>Primeira leva de conteúdo de topo (anamnese do consultório · tradutor de relatório · o dia 3)</li>
+    <li>Ler os resultados do sprint 1 → matar / escalar campanhas → sincronizar o site com a vencedora</li>
+  </ul>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-n">10</span><h2>Guard-rails</h2></div>
+  <ul>
+    <li><strong>"Demita seu marketing" ≠ "faça tudo sozinho".</strong> O vilão é a <em>caixa-preta</em>, não a ajuda. Ponte fixa: "A gente pode até fazer por você. Mas nunca no escuro — o painel é seu."</li>
+    <li><strong>Tom de saúde:</strong> confronto sim, hype não. Sem "ROI garantido", sem "1ª venda em 30 dias".</li>
+    <li>Dinheiro = <strong>faturamento</strong>, nunca "receita". CTA <strong>sem "grátis"</strong> (bônus é "incluso" / "por nossa conta").</li>
+    <li>Escassez sempre real (capacidade de implementação), nunca inventada.</li>
+    <li>Psicólogos: nunca "gravar a sessão" (CFP) — evolução/registro, sigilo, LGPD.</li>
+    <li><strong>Comunidade não morre:</strong> pilar "quem fica" + campanha C do teste.</li>
+    <li><em>Take back control.</em> sempre em inglês, com ponto final.</li>
+  </ul>
+  <div class="card poster" style="margin-top:26px">
+    <p class="quote">"Se a campanha certa vencer, o site conta a mesma história que o anúncio,
+    o SDR faz as mesmas 5 perguntas do e-mail, e a call entrega o que o hook prometeu.
+    Uma história só, do primeiro scroll à assinatura."</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap" style="padding:0">
+    <p class="tbc">Take back control.</p>
+    <p>MyDose · Plano de comunicação e funil comercial · v2 (Golden Circle, PUV, ofertas e matriz de conteúdo) · 2026-08-25.
+    Fundação completa no wiki: <strong>storybrand-mydose</strong>, <strong>ofertas-irresistiveis-mydose</strong> e
+    <strong>plano-comunicacao-take-back-control</strong>.</p>
+  </div>
+</footer>
+</html>
