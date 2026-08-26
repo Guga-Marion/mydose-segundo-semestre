@@ -1,0 +1,1222 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Plataforma de mensagem da MyDose: o consultório é o paciente, o empreendedor da saúde, o credo, o roteiro do manifesto, hooks, léxico e CTAs.">
+<title>O Consultório é o Paciente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Figtree:ital,wght@0,300..800;1,300..700&display=swap">
+
+<style>
+:root{
+  --ground:#F6F4F2; --paper:#FFFFFF; --ink:#1E1D1D; --ink-2:#4A4B56; --mute:#6B6E80;
+  --line:#E1DDD8; --line-2:#CFCAC3;
+  --blue:#415FF5; --magenta:#C64FCA; --orange:#F56442; --green:#4E8C2C; --rust:#8A3A22;
+  --navy:#191E47; --plum:#592C5A;
+  --tint-blue:#EDF0FF; --tint-pink:#FBF0FC; --tint-peach:#FFF1EC; --tint-green:#EFF6E9;
+  --on-deep:#F2F1F6; --on-deep-mute:#9CA0C4; --deep-line:rgba(255,255,255,.16);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --measure:66ch;
+  --shadow:0 1px 2px rgba(25,30,71,.05),0 8px 28px -18px rgba(25,30,71,.28);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#101226; --paper:#1B1E3E; --ink:#EDEDF4; --ink-2:#C3C5DA; --mute:#9195B5;
+    --line:#2C3059; --line-2:#3B4070;
+    --blue:#8699FD; --magenta:#F0B0F2; --orange:#FF9F88; --green:#A5DC85; --rust:#FFB39F;
+    --navy:#0B0D1E; --plum:#3A1C3B;
+    --tint-blue:#1D2350; --tint-pink:#33204A; --tint-peach:#3A2118; --tint-green:#1D2E1C;
+    --on-deep:#F2F1F6; --on-deep-mute:#A7ABD0; --deep-line:rgba(255,255,255,.14);
+    --shadow:0 1px 2px rgba(0,0,0,.35),0 8px 28px -18px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#101226; --paper:#1B1E3E; --ink:#EDEDF4; --ink-2:#C3C5DA; --mute:#9195B5;
+  --line:#2C3059; --line-2:#3B4070;
+  --blue:#8699FD; --magenta:#F0B0F2; --orange:#FF9F88; --green:#A5DC85; --rust:#FFB39F;
+  --navy:#0B0D1E; --plum:#3A1C3B;
+  --tint-blue:#1D2350; --tint-pink:#33204A; --tint-peach:#3A2118; --tint-green:#1D2E1C;
+  --on-deep:#F2F1F6; --on-deep-mute:#A7ABD0; --deep-line:rgba(255,255,255,.14);
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 8px 28px -18px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+p{margin:0}
+h1,h2,h3,h4{margin:0;font-family:var(--serif);font-weight:600;text-wrap:balance;line-height:1.12}
+strong{font-weight:700}
+
+.field{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--mute)}
+.field .n{font-variant-numeric:tabular-nums;color:var(--blue);margin-right:.6em}
+
+.masthead{border-bottom:1px solid var(--line);background:var(--paper)}
+.mast-in{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;padding:16px 0}
+.mast-in .brand{font-family:var(--serif);font-weight:700;font-size:17px;letter-spacing:-.01em}
+.mast-in .brand span{color:var(--blue)}
+.mast-in .field:last-child{margin-left:auto}
+
+.hero{padding:76px 0 60px}
+.hero .kicker{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:22px}
+.hero h1{font-size:clamp(34px,6.1vw,66px);font-weight:500;letter-spacing:-.022em;max-width:19ch}
+.hero h1 .em{font-style:italic;font-weight:600;color:var(--blue)}
+.hero .deck{margin-top:26px;max-width:56ch;font-size:19px;color:var(--ink-2)}
+.ecg{display:block;width:100%;max-width:640px;height:52px;margin-top:36px;overflow:visible}
+.ecg path{fill:none;stroke:var(--blue);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ecg .flat{stroke:var(--line-2)}
+.ecg-draw{stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 2.4s .25s cubic-bezier(.5,.05,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.ecg-draw{animation:none;stroke-dashoffset:0}}
+
+/* índice */
+.toc{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;margin-top:44px}
+.toc ol{margin:14px 0 0;padding:0;list-style:none;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:7px 26px}
+.toc li{font-size:15px}
+.toc a{color:var(--ink-2);text-decoration:none;display:flex;gap:10px;border-bottom:1px solid transparent;padding:1px 0}
+.toc a:hover{color:var(--blue);border-bottom-color:var(--line-2)}
+.toc .tn{color:var(--blue);font-variant-numeric:tabular-nums;font-weight:600;font-size:12.5px;padding-top:2px}
+.toc .fw{font-size:12px;color:var(--mute);letter-spacing:.02em}
+
+section{padding:58px 0;border-top:1px solid var(--line);scroll-margin-top:14px}
+.sec-grid{display:grid;grid-template-columns:150px minmax(0,1fr);gap:34px;align-items:start}
+.rail{position:sticky;top:22px;display:flex;flex-direction:column;gap:8px}
+.rail .rail-t{font-family:var(--serif);font-size:15px;font-weight:600;line-height:1.25}
+.rail .fw{font-size:11.5px;color:var(--mute);letter-spacing:.02em;line-height:1.4;
+  border-top:1px solid var(--line);padding-top:7px;margin-top:2px}
+.col{min-width:0}
+h2{font-size:clamp(25px,3.3vw,34px);letter-spacing:-.018em;max-width:22ch}
+h3{font-size:20px;letter-spacing:-.01em}
+.lead{margin-top:16px;max-width:var(--measure);font-size:18.5px;color:var(--ink-2)}
+.body{margin-top:14px;max-width:var(--measure)}
+.stack{display:flex;flex-direction:column;gap:16px;margin-top:26px}
+.stack-s{display:flex;flex-direction:column;gap:11px;margin-top:18px}
+
+.poster{background:var(--navy);color:var(--on-deep);border-radius:4px;padding:46px 42px;margin-top:28px}
+.poster .field{color:var(--on-deep-mute)}
+.poster .field .n{color:var(--on-deep-mute)}
+.poster .say{font-family:var(--serif);font-weight:400;font-size:clamp(23px,3.2vw,34px);
+  line-height:1.3;letter-spacing:-.015em;margin-top:20px;max-width:26ch}
+.poster .say b{font-weight:600;color:#B7C2FF}
+.poster .note{margin-top:22px;color:var(--on-deep-mute);font-size:15px;max-width:52ch}
+.tbc{font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:clamp(20px,2.6vw,27px);letter-spacing:-.01em}
+
+.copycard{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--blue);
+  border-radius:3px;padding:20px 22px;box-shadow:var(--shadow)}
+.copycard.pink{border-left-color:var(--magenta)}
+.copycard.peach{border-left-color:var(--orange)}
+.copycard .cc-lab{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;margin-bottom:11px}
+.copycard .len{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.copycard .said{font-family:var(--serif);font-size:19px;line-height:1.45;letter-spacing:-.008em}
+.copycard .said.sm{font-size:17px;line-height:1.5}
+.copycard .why{margin-top:11px;font-size:14.5px;color:var(--mute);max-width:60ch}
+
+.beats{display:flex;flex-direction:column;margin-top:26px;border-top:1px solid var(--line)}
+.beat{display:grid;grid-template-columns:52px minmax(0,1.05fr) minmax(0,1fr);gap:20px;
+  padding:17px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.beat .bn{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--blue);font-variant-numeric:tabular-nums}
+.beat .bt{font-weight:600;font-size:16.5px}
+.beat .bt em{display:block;font-style:normal;font-weight:400;color:var(--mute);font-size:14px;margin-top:2px}
+.beat .bd{color:var(--ink-2);font-size:16px}
+
+.levels{display:flex;flex-direction:column;margin-top:26px}
+.lv{display:grid;grid-template-columns:112px minmax(0,1fr);gap:22px;padding:18px 0;
+  border-bottom:1px solid var(--line);align-items:baseline}
+.lv:first-child{border-top:1px solid var(--line)}
+.lv .lvn{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.lv .lvc{font-family:var(--serif);font-size:18.5px;line-height:1.42}
+.lv .lvc small{display:block;font-family:var(--sans);font-size:14.5px;color:var(--mute);margin-top:6px;line-height:1.55}
+
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:24px}
+.pil{background:var(--paper);border:1px solid var(--line);border-radius:3px;padding:20px}
+.pil .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;padding:4px 9px;border-radius:2px;margin-bottom:12px}
+.pil.b .tag{background:var(--tint-blue);color:var(--blue)}
+.pil.p .tag{background:var(--tint-pink);color:var(--magenta)}
+.pil.o .tag{background:var(--tint-peach);color:var(--orange)}
+.pil h4{font-size:18px;letter-spacing:-.01em}
+.pil .pl{margin-top:9px;font-family:var(--serif);font-size:16.5px;line-height:1.45}
+.pil .pp{margin-top:11px;font-size:14.5px;color:var(--mute);padding-top:11px;border-top:1px dashed var(--line-2)}
+
+.hooks{display:flex;flex-direction:column;margin-top:8px;border-top:1px solid var(--line)}
+.hook{display:grid;grid-template-columns:24px minmax(0,1fr);gap:14px;padding:13px 0;
+  border-bottom:1px solid var(--line);align-items:baseline}
+.hook .hn{font-size:12px;font-weight:700;color:var(--mute);font-variant-numeric:tabular-nums}
+.hook .ht{font-family:var(--serif);font-size:17.5px;line-height:1.44}
+.hook .hw{margin-top:5px;font-size:13.5px;color:var(--mute)}
+.stage{display:flex;align-items:baseline;gap:12px;margin-top:32px}
+.stage h3{font-size:17px}
+.stage .sd{font-size:14px;color:var(--mute)}
+
+.lex{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:24px}
+.lexbox{border:1px solid var(--line);border-radius:3px;padding:20px;background:var(--paper)}
+.lexbox.yes{border-color:color-mix(in srgb,var(--green) 40%,var(--line));background:var(--tint-green)}
+.lexbox.no{border-color:color-mix(in srgb,var(--rust) 35%,var(--line));background:var(--tint-peach)}
+.lexbox h4{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.lexbox.yes h4{color:var(--green)}
+.lexbox.no h4{color:var(--rust)}
+.lexbox ul{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.lexbox li{font-size:15.5px;line-height:1.5;padding-left:18px;position:relative}
+.lexbox li::before{position:absolute;left:0;top:0;font-weight:700}
+.lexbox.yes li::before{content:"✓";color:var(--green)}
+.lexbox.no li::before{content:"✕";color:var(--rust)}
+.lexbox li span{display:block;color:var(--mute);font-size:13.5px;margin-top:1px}
+
+.tscroll{overflow-x:auto;margin-top:24px;border:1px solid var(--line);border-radius:3px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:15.5px}
+th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);background:var(--ground)}
+tr:last-child td{border-bottom:none}
+td .cta-txt{font-family:var(--serif);font-size:17px;line-height:1.4}
+td .cta-when{color:var(--mute);font-size:14px}
+.tscroll.script table{min-width:820px;font-size:15px}
+.script .tm{white-space:nowrap;font-weight:700;font-size:13px;color:var(--blue);font-variant-numeric:tabular-nums}
+.script .tm em{display:block;font-style:normal;font-weight:400;color:var(--mute);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.script .scr{color:var(--mute);font-size:14.5px}
+.script .otx{font-family:var(--serif);font-size:15.5px;line-height:1.35}
+.script .vo{font-size:15.5px;line-height:1.55}
+.script tbody tr:nth-child(odd) td{background:color-mix(in srgb,var(--ground) 55%,var(--paper))}
+
+.chan{display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.ch{display:grid;grid-template-columns:132px minmax(0,1fr);gap:20px;background:var(--paper);
+  border:1px solid var(--line);border-radius:3px;padding:18px 20px}
+.ch .cl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);padding-top:3px}
+.ch .cb{font-size:16px;line-height:1.58}
+.ch .cb .q{font-family:var(--serif);font-size:17px;line-height:1.5}
+.ch .cb ul{margin:8px 0 0;padding-left:19px;display:flex;flex-direction:column;gap:5px}
+.ch .cb li{font-size:15.5px}
+
+.swap{display:flex;flex-direction:column;margin-top:24px;border-top:1px solid var(--line)}
+.sw{display:grid;grid-template-columns:minmax(0,1fr) 30px minmax(0,1.15fr);gap:16px;
+  padding:15px 0;border-bottom:1px solid var(--line);align-items:center}
+.sw .old{color:var(--mute);text-decoration:line-through;text-decoration-color:var(--line-2);font-size:16px}
+.sw .arw{color:var(--blue);text-align:center;font-size:15px}
+.sw .new{font-family:var(--serif);font-size:17.5px;line-height:1.42}
+
+.callout{margin-top:26px;border:1px solid var(--line-2);border-radius:3px;padding:18px 20px;background:var(--tint-blue)}
+.callout .co-t{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.callout p{font-size:15.5px;max-width:64ch}
+.callout + .callout{margin-top:14px}
+
+/* credo */
+.credo{background:var(--plum);color:var(--on-deep);border-radius:4px;padding:44px 42px;margin-top:26px}
+.credo .field{color:var(--on-deep-mute)}
+.credo ol{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:13px;counter-reset:c}
+.credo li{font-family:var(--serif);font-size:clamp(18px,2.2vw,22px);line-height:1.34;
+  padding-left:34px;position:relative;counter-increment:c;max-width:34ch}
+.credo li::before{content:counter(c,decimal-leading-zero);position:absolute;left:0;top:4px;
+  font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--on-deep-mute)}
+.credo .tbc{display:block;margin-top:28px;color:var(--on-deep)}
+
+/* 7 peças / forças */
+.cells{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:14px;margin-top:24px}
+.cell{background:var(--paper);border:1px solid var(--line);border-radius:3px;padding:18px}
+.cell .cn{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.cell h4{font-size:17px;letter-spacing:-.01em}
+.cell p{margin-top:8px;font-size:15px;line-height:1.55;color:var(--ink-2)}
+.cell.hot{border-color:color-mix(in srgb,var(--magenta) 42%,var(--line));background:var(--tint-pink)}
+.cell.hot .cn{color:var(--magenta)}
+
+footer{padding:34px 0 60px;color:var(--mute);font-size:14px;border-top:1px solid var(--line);margin-top:44px}
+footer .fl{display:flex;flex-wrap:wrap;gap:8px 22px}
+.closer{background:var(--navy);color:var(--on-deep);border-radius:4px;padding:52px 44px;margin:44px 0 0}
+.closer .field{color:var(--on-deep-mute)}
+.closer h2{font-size:clamp(24px,3.2vw,34px);color:var(--on-deep);margin-top:18px;max-width:24ch;font-weight:500}
+.closer p{margin-top:18px;color:var(--on-deep-mute);max-width:56ch;font-size:16.5px}
+.closer .tbc{color:var(--on-deep);margin-top:30px;display:block}
+
+@media (max-width:860px){
+  .sec-grid{grid-template-columns:1fr;gap:16px}
+  .rail{position:static;flex-direction:row;flex-wrap:wrap;gap:8px 14px;align-items:baseline}
+  .rail .fw{border-top:none;padding-top:0;margin-top:0}
+  .beat{grid-template-columns:34px minmax(0,1fr);gap:8px 14px}
+  .beat .bd{grid-column:2}
+  .lv{grid-template-columns:1fr;gap:6px}
+  .ch{grid-template-columns:1fr;gap:8px}
+  .sw{grid-template-columns:1fr;gap:6px}
+  .sw .arw{text-align:left}
+  .poster,.closer,.credo{padding:34px 24px}
+  .hero{padding:52px 0 40px}
+}
+:where(a,button,summary):focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
+</style>
+
+<div class="masthead">
+  <div class="wrap mast-in">
+    <p class="brand">my<span>dose</span></p>
+    <p class="field">Plataforma de mensagem · v5</p>
+    <p class="field">2026-08-26 · substitui "Demita seu marketing"</p>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">A ideia grande</p>
+    <h1>Seu consultório é o único paciente que <span class="em">você nunca examinou.</span></h1>
+    <p class="deck">Você estudou dez anos para examinar, prescrever e acompanhar. Aplica esse método
+    em todo mundo que senta na sua frente — menos no negócio que sustenta você. A MyDose faz com o
+    seu consultório exatamente o que você faz com um paciente.</p>
+    <svg class="ecg" viewBox="0 0 640 52" role="img" aria-label="Linha que sai de reta e vira batimento">
+      <path class="flat" d="M0 26 H236"></path>
+      <path class="ecg-draw" d="M236 26 h22 l10 -3 l9 6 l12 -22 l13 40 l12 -21 l10 0 l9 -4 l8 4 h36 l10 -3 l9 6 l12 -22 l13 40 l12 -21 l10 0 l9 -4 l8 4 H640"></path>
+    </svg>
+
+    <nav class="toc" aria-label="Índice">
+      <p class="field">O prontuário completo</p>
+      <ol>
+        <li><a href="#s01"><span class="tn">01</span><span>Queixa principal <span class="fw">· por que a v2 não sustenta</span></span></a></li>
+        <li><a href="#s02"><span class="tn">02</span><span>Diagnóstico <span class="fw">· o insight e a frase</span></span></a></li>
+        <li><a href="#s03"><span class="tn">03</span><span>O vilão <span class="fw">· os pagãos</span></span></a></li>
+        <li><a href="#s04"><span class="tn">04</span><span>A identidade <span class="fw">· empreendedor da saúde · a permissão</span></span></a></li>
+        <li><a href="#s05"><span class="tn">05</span><span>A categoria <span class="fw">· Play Bigger · autopilot</span></span></a></li>
+        <li><a href="#s06"><span class="tn">06</span><span>A história <span class="fw">· jornada do herói · SB7</span></span></a></li>
+        <li><a href="#s07"><span class="tn">07</span><span>O movimento <span class="fw">· Primal Branding</span></span></a></li>
+        <li><a href="#s08"><span class="tn">08</span><span>O manifesto <span class="fw">· texto + roteiro de gravação</span></span></a></li>
+        <li><a href="#s09"><span class="tn">09</span><span>A casa da mensagem <span class="fw">· do slogan à feature</span></span></a></li>
+        <li><a href="#s10"><span class="tn">10</span><span>Níveis de consciência <span class="fw">· Schwartz</span></span></a></li>
+        <li><a href="#s11"><span class="tn">11</span><span>Pitch de elevador <span class="fw">· 7s · 20s · 60s</span></span></a></li>
+        <li><a href="#s12"><span class="tn">12</span><span>21 hooks <span class="fw">· topo · meio · fundo</span></span></a></li>
+        <li><a href="#s13"><span class="tn">13</span><span>Forças do progresso <span class="fw">· JTBD · objeções</span></span></a></li>
+        <li><a href="#s14"><span class="tn">14</span><span>Léxico e tom de voz <span class="fw">· palavras sagradas</span></span></a></li>
+        <li><a href="#s15"><span class="tn">15</span><span>CTAs <span class="fw">· um por intenção</span></span></a></li>
+        <li><a href="#s16"><span class="tn">16</span><span>Canal a canal <span class="fw">· copiar e colar</span></span></a></li>
+        <li><a href="#s17"><span class="tn">17</span><span>O que muda <span class="fw">· no que já existe</span></span></a></li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section id="s01">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">01</span>Queixa principal</p>
+      <p class="rail-t">Por que a mensagem atual não sustenta</p>
+    </div>
+    <div class="col">
+      <h2>O que está travando</h2>
+      <p class="lead">"Demita seu marketing" é uma boa <em>campanha</em>. Não é uma boa <em>marca</em>.
+      Três motivos, e nenhum deles é o texto — é a arquitetura.</p>
+
+      <div class="stack-s">
+        <p class="body"><strong>1 · Fala com a minoria.</strong> "Demitir" pressupõe que existe alguém
+        contratado. A maior parte do mercado não tem agência nenhuma: faz sozinho, no intervalo entre
+        consultas, ou não faz. Para esse profissional a frase não tem endereço.</p>
+        <p class="body"><strong>2 · Coloca a marca numa briga, não numa identidade.</strong> O herói sai
+        da história como alguém que <em>demite</em> — um ato de raiva, que dura um dia. Ninguém constrói
+        identidade em cima de uma demissão. Constrói em cima do que passa a ser.</p>
+        <p class="body"><strong>3 · "Empreender no escuro" nomeia a ausência, não a transformação.</strong>
+        Escuro é abstrato e ninguém se reconhece nele — nenhum profissional acorda pensando "eu empreendo
+        no escuro". Ele acorda pensando "não sei por que a agenda desandou este mês".</p>
+      </div>
+
+      <div class="callout">
+        <p class="co-t">O que a mensagem nova precisa fazer</p>
+        <p>Dizer, em uma frase, quem ele é (não o que ele não tem), com uma promessa que o mercado
+        inteiro não consiga repetir — e que já explique <em>como</em> funciona, para o lead chegar na
+        reunião com urgência e vocabulário.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s02">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">02</span>Diagnóstico</p>
+      <p class="rail-t">O insight que vira a marca</p>
+    </div>
+    <div class="col">
+      <h2>Ele já tem o método. Nunca aplicou em si.</h2>
+      <p class="lead">Todo profissional de saúde domina o mesmo protocolo: <strong>examina, prescreve,
+      acompanha, mede — e ajusta.</strong> É a coisa mais bem treinada da vida dele. E é exatamente o
+      que falta no consultório dele.</p>
+
+      <p class="body">Isso muda tudo na comunicação. Você para de dizer que ele é ruim de marketing —
+      o que ele já sabe, tem vergonha e detesta ouvir — e passa a dizer que ele é <em>excelente naquilo
+      que o negócio dele precisa</em>, só que nunca virou o instrumento para dentro. É a mesma pessoa,
+      o mesmo método, um paciente novo: <strong>o consultório</strong>.</p>
+
+      <p class="body">É respeitoso, é lisonjeiro e é verdadeiro — os três de uma vez. E carrega a
+      urgência que faltava: um profissional aceita adiar "fazer marketing" por dois anos. Ele não aceita
+      adiar um <strong>diagnóstico</strong>. Adiar exame é a única coisa que ele passa a carreira inteira
+      dizendo aos pacientes para não fazer.</p>
+
+      <div class="poster">
+        <p class="field">A frase · proposta de valor em uma sentença</p>
+        <p class="say">A MyDose trata o seu consultório como você trata um paciente:
+        <b>examina, prescreve e acompanha</b> — até atrair, cuidar e receber virarem um sistema
+        só, no seu painel.</p>
+        <p class="note">Uma frase, três verbos que ele já usa, um resultado que ele já entende.
+        Não tem uma palavra de tecnologia nela — e mesmo assim descreve o produto inteiro:
+        Diagnóstico, Scale, Habits, School e o painel.</p>
+      </div>
+
+      <div class="stack">
+        <div class="copycard">
+          <div class="cc-lab"><span class="len">Versão curta · hero, capa, anúncio</span></div>
+          <p class="said">Seu consultório também merece um diagnóstico.</p>
+          <p class="why">Sete palavras. Funciona como manchete de anúncio, headline de LP e legenda de
+          post sem precisar de contexto nenhum.</p>
+        </div>
+        <div class="copycard">
+          <div class="cc-lab"><span class="len">Versão de confronto · para parar o scroll</span></div>
+          <p class="said">Seu consultório é o único paciente que você nunca examinou.</p>
+          <p class="why">A versão que gera o "peraí". É a que vai para o hero da LP nova e para o 0–3s
+          dos criativos.</p>
+        </div>
+        <div class="copycard">
+          <div class="cc-lab"><span class="len">Versão de identidade · bio, institucional, deck</span></div>
+          <p class="said">Trate seu consultório como você trata um paciente.</p>
+          <p class="why">Imperativa e portátil. Cabe em bio de Instagram, assinatura de e-mail e slide
+          de abertura, sem virar promessa comercial.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s03">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">03</span>O vilão</p>
+      <p class="rail-t">Trocar "caixa-preta" por "achismo"</p>
+      <p class="fw">Primal Branding · os pagãos</p>
+    </div>
+    <div class="col">
+      <h2>O achismo — a única palavra que esse público odeia de verdade</h2>
+      <p class="lead">"Caixa-preta" é vocabulário de agência. Quem sente essa dor é quem já contratou
+      uma. <strong>Achismo</strong> é vocabulário clínico: é contra ele que a formação inteira desse
+      profissional foi construída.</p>
+
+      <p class="body">Ele passou uma década aprendendo a não prescrever no achismo, a não fechar
+      diagnóstico sem exame, a não confiar em impressão. Chamar o problema pelo nome que a profissão
+      dele já condena não é retórica — é usar o valor mais forte que ele tem contra o comportamento
+      que está quebrando o negócio dele. E não acusa ninguém: não é culpa dele, é que <em>ninguém
+      nunca pediu o exame</em>.</p>
+
+      <div class="cells">
+        <div class="cell hot">
+          <p class="cn">Pagão nº 1 · principal</p>
+          <h4>O achismo</h4>
+          <p>Decidir sem exame. Vale para preço, para conteúdo, para verba de mídia e para o motivo
+          de o paciente ter sumido.</p>
+        </div>
+        <div class="cell">
+          <p class="cn">Pagão nº 2 · herdado</p>
+          <h4>O modelo 1:1</h4>
+          <p>A "fábrica de consultas": faturar só quando a agenda enche. Vilão histórico da marca,
+          continua válido — é o teto que o exame revela.</p>
+        </div>
+        <div class="cell">
+          <p class="cn">Pagão nº 3 · herdado</p>
+          <h4>A colcha de 14 apps</h4>
+          <p>Ferramentas que não conversam e ficam com os dados dele. É o motivo material de não
+          existir laudo nenhum.</p>
+        </div>
+      </div>
+
+      <div class="poster">
+        <p class="field">A frase do vilão</p>
+        <p class="say">Você não aceita achismo em <b>paciente nenhum</b>. Só no seu próprio negócio.</p>
+        <p class="note">Guard-rail: o vilão é o comportamento, nunca a pessoa. Não atacamos a agência,
+        o guru ou concorrente pelo nome — atacamos o modelo. E nunca "pedir ajuda": a MyDose vende
+        Auto-Pilot, ou seja, vende ajuda. Ponte fixa: <em>"A gente pode fazer por você. Nunca sem você
+        enxergar — o painel é seu."</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s04">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">04</span>A identidade</p>
+      <p class="rail-t">O empreendedor da saúde</p>
+      <p class="fw">A tese moral · Before &amp; After Grid</p>
+    </div>
+    <div class="col">
+      <h2>Ele tem todos os problemas de um empresário. E se apresenta como autônomo.</h2>
+      <p class="lead">A linha já existe nos nossos decks e é a melhor coisa escrita sobre a MyDose:
+      <strong>"Você é um empreendedor da saúde, não um autônomo."</strong> Ela nunca foi promovida a
+      espinha da comunicação — e é ela que fecha a história, porque é a única que dá <em>permissão</em>.</p>
+
+      <p class="body"><strong>Quem é o empreendedor da saúde.</strong> Quem cuida de pessoas e precisa
+      crescer. Ele define preço, paga aluguel e folha, contrata, demite, gerencia caixa, responde por
+      imposto, decide onde investir e onde cortar. A lista inteira de um empresário. Só que ele se
+      chama de autônomo.</p>
+
+      <p class="body">E esse desencontro é o que trava tudo. <strong>Quem se chama de autônomo não se
+      dá o direito de decidir como empresário:</strong> não faz plano de crescimento, não separa o
+      dinheiro do consultório do dinheiro da casa, não contrata antes de estar afogado, não investe
+      em atração, não cobra o que vale. Ele carrega o peso sem exercer o poder — e isso não é falta
+      de competência, é falta de licença. Ninguém nunca deu.</p>
+
+      <div class="tscroll">
+        <table>
+          <thead>
+            <tr><th>O que ele já carrega</th><th>O que ele não se permite</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Folha, aluguel, imposto, software, secretária</td><td>Fazer um plano de crescimento com meta e prazo</td></tr>
+            <tr><td>A decisão de preço — e o medo dela toda vez</td><td>Reajustar, empacotar, cobrar por resultado</td></tr>
+            <tr><td>O risco de um mês fraco caindo só no bolso dele</td><td>Separar o caixa da empresa do dinheiro da casa</td></tr>
+            <tr><td>A responsabilidade sobre a equipe e o atendimento</td><td>Contratar antes de estar afogado</td></tr>
+            <tr><td>A conta de atrair paciente — que ele paga de um jeito ou de outro</td><td>Investir em atração como investimento, e medir</td></tr>
+            <tr><td>O teto da própria agenda, todo mês</td><td>Construir faturamento que não dependa da cadeira</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="poster">
+        <p class="field">A tese moral · por que essa identidade importa</p>
+        <p class="say">O empreendedor da saúde é o único cujo sucesso, <b>por definição</b>, deixa o
+        mundo melhor.</p>
+        <p class="note">Quando uma fintech cresce, alguém ganha dinheiro. Quando um consultório
+        cresce, mais gente é cuidada — melhor e por mais tempo. São 8,1 bilhões de pessoas para 9
+        milhões de profissionais: um pra novecentos. <strong>Se ele não crescer, a conta da saúde não
+        fecha.</strong> Crescer, aqui, não é ambição. É consequência de saúde pública.</p>
+      </div>
+
+      <p class="body" style="margin-top:26px"><strong>É daqui que sai a permissão.</strong> O bloqueio
+      desse mercado não é técnico, é moral: falar de dinheiro parece trair o juramento. Enquanto a
+      comunicação só entregar método, ela esbarra nessa culpa. Por isso toda peça precisa dar licença
+      antes de dar ferramenta.</p>
+
+      <div class="poster" style="background:var(--plum)">
+        <p class="field">A frase da permissão</p>
+        <p class="say">Crescer não é trair o juramento. É <b>cumpri-lo em escala.</b></p>
+        <p class="note">Par obrigatório com a ideia-mãe: o exame dá o método, a permissão dá a
+        coragem. Sem ela, o profissional entende o diagnóstico e mesmo assim não age.</p>
+      </div>
+
+      <p class="body" style="margin-top:26px">Autônomo e empreendedor não se separam por faturamento
+      nem por CNPJ. Separam-se por uma coisa só: <strong>o autônomo vende a própria hora; o
+      empreendedor constrói um sistema que funciona quando ele não está na cadeira.</strong> E o
+      primeiro ato de todo empreendedor é o que esse público nunca fez — olhar para o próprio negócio
+      com o mesmo rigor com que olha para um paciente. Por isso as duas ideias são a mesma:
+      <em>examinar o consultório é o rito de passagem de autônomo para empreendedor da saúde.</em></p>
+
+      <div class="tscroll">
+        <table>
+          <thead>
+            <tr><th>Dimensão</th><th>Autônomo · hoje</th><th>Empreendedor da saúde · depois</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>O que ele <strong>tem</strong></td><td>Agenda cheia e conta apertada. 14 apps que não conversam.</td><td>Um sistema e um painel. Uma assinatura no lugar de catorze.</td></tr>
+            <tr><td>O que ele <strong>sente</strong></td><td>Refém da própria agenda e culpado por querer ganhar mais.</td><td>No controle, e em paz com o dinheiro. Decide com número na mão.</td></tr>
+            <tr><td>Um <strong>dia comum</strong></td><td>Apaga incêndio no WhatsApp entre consultas.</td><td>Olha o painel de manhã e escolhe onde mexer.</td></tr>
+            <tr><td>Seu <strong>status</strong></td><td>"O doutor que atende bem."</td><td>Referência da área — com um negócio que sustenta isso.</td></tr>
+            <tr><td>O que ele <strong>acredita</strong></td><td>Crescer é abrir mais horário. E querer crescer é meio feio.</td><td>Hora tem teto, sistema não. E crescer é cuidar de mais gente.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <p class="co-t">Como usar</p>
+        <p>Essa grade é a fábrica de copy da marca: <strong>toda peça de topo mora na coluna da
+        esquerda, todo CTA promete a coluna da direita</strong> — e a linha do meio ("sente") é onde
+        entra a permissão. Quando um criativo não couber em nenhuma das duas colunas, ele não é MyDose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s05">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">05</span>A categoria</p>
+      <p class="rail-t">Sair da prateleira de prontuário</p>
+      <p class="fw">Category design · tese autopilot</p>
+    </div>
+    <div class="col">
+      <h2>Você não perde para um prontuário mais barato. Perde para a prateleira errada.</h2>
+      <p class="lead">O sintoma relatado — "somos lidos como prontuário caro" — não é problema de preço
+      nem de copy de produto. É <strong>problema de categoria</strong>. Enquanto a MyDose for comparada
+      a software de saúde, a conversa vai ser sobre mensalidade. Categoria não se disputa: se nomeia.</p>
+
+      <p class="body">A categoria já está escrita no nosso próprio planejamento estratégico —
+      <strong>plataforma de empreendedorismo da saúde</strong> — e a tese que a sustenta é a virada de
+      <em>copilot</em> para <em>autopilot</em>: parar de vender uma ferramenta que ele tem que saber usar
+      e passar a entregar o trabalho pronto. A ideia-mãe é o que finalmente torna isso dizível numa
+      frase: prontuário registra o que já aconteceu; a gente cuida do que ainda vai acontecer.</p>
+
+      <div class="swap">
+        <div class="sw"><p class="old">Software para saúde</p><p class="arw">→</p><p class="new">Plataforma de empreendedorismo da saúde</p></div>
+        <div class="sw"><p class="old">Ferramenta que você aprende a usar</p><p class="arw">→</p><p class="new">Trabalho pronto — copilot vira autopilot</p></div>
+        <div class="sw"><p class="old">Lista de funcionalidades</p><p class="arw">→</p><p class="new">Um exame, uma prescrição, um acompanhamento</p></div>
+        <div class="sw"><p class="old">Mensalidade comparada a prontuário</p><p class="arw">→</p><p class="new">Comparada a agência + curso + 14 apps</p></div>
+      </div>
+
+      <div class="callout">
+        <p class="co-t">A resposta pronta quando comparam com prontuário</p>
+        <p>"Prontuário guarda o que já aconteceu com o paciente. A gente cuida do que ainda vai
+        acontecer — se ele volta, se ele adere, se ele indica e quanto isso entra no seu mês. São
+        coisas diferentes; a gente inclusive tem prontuário dentro."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s06">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">06</span>A história</p>
+      <p class="rail-t">Jornada do herói, batida a batida</p>
+      <p class="fw">StoryBrand SB7</p>
+    </div>
+    <div class="col">
+      <h2>A história do MyDose em 8 batidas</h2>
+      <p class="lead">O herói é ele. A MyDose é o guia — quem entrega o instrumento, nunca quem salva.
+      Essa sequência é a mesma em anúncio de 30 segundos, e-mail de 5 linhas e reunião de 45 minutos:
+      só muda quanto tempo cada batida ganha.</p>
+
+      <div class="beats">
+        <div class="beat"><p class="bn">01</p><p class="bt">O mundo comum<em>Quem ele era</em></p><p class="bd">Dez anos estudando para cuidar de gente. A parte difícil, ele já venceu.</p></div>
+        <div class="beat"><p class="bn">02</p><p class="bt">O chamado<em>O que aconteceu sem ele perceber</em></p><p class="bd">Abriu o consultório e virou dono de empresa da noite pro dia — sem nunca ter tido uma aula de empresa.</p></div>
+        <div class="beat"><p class="bn">03</p><p class="bt">A recusa<em>O medo</em></p><p class="bd">"Marketing não é minha praia." Então terceiriza, copia o formato do guru da vez, ou simplesmente não olha.</p></div>
+        <div class="beat"><p class="bn">04</p><p class="bt">O guia<em>Onde a MyDose entra</em></p><p class="bd">"Você não precisa virar marketeiro. Você precisa fazer com o consultório o que já faz com paciente."</p></div>
+        <div class="beat"><p class="bn">05</p><p class="bt">A travessia<em>O primeiro passo, e o primeiro resultado</em></p><p class="bd">A Reunião-Diagnóstico. Ele sai da primeira conversa enxergando o próprio funil — antes de assinar qualquer coisa.</p></div>
+        <div class="beat"><p class="bn">06</p><p class="bt">A prescrição<em>O plano</em></p><p class="bd">No ar em 7 dias: quem chega, quem fica e o dinheiro no mesmo sistema. Ele escolhe quanto a gente faz junto.</p></div>
+        <div class="beat"><p class="bn">07</p><p class="bt">O acompanhamento<em>A recompensa</em></p><p class="bd">O painel: a jornada inteira do paciente, do primeiro anúncio à indicação. Nada acontece que ele não veja.</p></div>
+        <div class="beat"><p class="bn">08</p><p class="bt">A volta<em>A transformação</em></p><p class="bd">Ele deixa de ser autônomo e vira empreendedor da saúde — e cuida de mais gente, cuidando melhor.</p></div>
+      </div>
+
+      <div class="callout">
+        <p class="co-t">O resultado imediato, sem violar os vetos</p>
+        <p>A promessa de "resultado na hora" mora na batida 05: <strong>o diagnóstico é o primeiro
+        resultado</strong> — ele sai da primeira conversa vendo números do próprio negócio que não
+        tinha antes. Isso a gente entrega com 100% de certeza. Venda nenhuma é prometida em prazo
+        nenhum: continuam valendo os vetos de "ROI garantido" e "primeira venda em 30 dias".</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s07">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">07</span>O movimento</p>
+      <p class="rail-t">As 7 peças que transformam marca em movimento</p>
+      <p class="fw">Primal Branding · Patrick Hanlon</p>
+    </div>
+    <div class="col">
+      <h2>Marca vira movimento quando as 7 peças existem</h2>
+      <p class="lead">Esse é o framework que faltava para a mensagem "envolver mais" — e a MyDose já
+      tinha seis das sete peças espalhadas em documentos diferentes. Aqui elas ficam juntas e
+      atualizadas com a ideia-mãe. A peça central é o <strong>credo</strong>: é ele que o time repete,
+      que o cliente adota e que vira o manifesto gravado.</p>
+
+      <div class="cells">
+        <div class="cell">
+          <p class="cn">Peça 01</p>
+          <h4>História de criação</h4>
+          <p>Nasceu de dentro do consultório: o Guga viveu o burnout e foi paciente; o Dr. Arthur via
+          paciente sumir depois da segunda consulta. R$ 0 → R$ 1M em 9 meses, bootstrap.</p>
+        </div>
+        <div class="cell hot">
+          <p class="cn">Peça 02 · central</p>
+          <h4>O credo</h4>
+          <p>As dez crenças abaixo. Vive na bio, no manifesto do site, na abertura da aula de quarta,
+          no onboarding e no primeiro slide de qualquer deck.</p>
+        </div>
+        <div class="cell">
+          <p class="cn">Peça 03</p>
+          <h4>Ícones</h4>
+          <p>O wordmark e o azulejo da forma-base. <em>Take back control.</em> em Americana itálico.
+          O painel da jornada. E o ícone novo da campanha: <strong>o estetoscópio virado para a tela
+          do computador.</strong></p>
+        </div>
+        <div class="cell">
+          <p class="cn">Peça 04</p>
+          <h4>Rituais</h4>
+          <p>A aula ao vivo de quarta, 19h. A Reunião-Diagnóstico. A anamnese das 5 perguntas. Os 7
+          dias de implementação. E o hábito que a gente quer criar: <strong>abrir o painel na segunda
+          de manhã.</strong></p>
+        </div>
+        <div class="cell">
+          <p class="cn">Peça 05</p>
+          <h4>Palavras sagradas</h4>
+          <p>O léxico clínico (diagnóstico, anamnese, prescrição, acompanhamento, alta) + adesão,
+          escala, tempo, D.O.S.E., empreendedor da saúde. Lista completa na seção 14.</p>
+        </div>
+        <div class="cell">
+          <p class="cn">Peça 06</p>
+          <h4>Os pagãos</h4>
+          <p>O achismo, o modelo 1:1 e a colcha de 14 apps. Sempre o modelo, nunca a marca ou a pessoa
+          — ver seção 03.</p>
+        </div>
+        <div class="cell">
+          <p class="cn">Peça 07</p>
+          <h4>Os líderes</h4>
+          <p>Guga × Dr. Arthur: o empreendedor que viveu a dor e o médico cientista. A marca tem rosto
+          e história — é isso que separa a MyDose de um SaaS anônimo.</p>
+        </div>
+      </div>
+
+      <div class="credo">
+        <p class="field">Peça 02 · o credo · o que a MyDose acredita</p>
+        <ol>
+          <li>Quem cuida da saúde dos outros não pode ter um negócio doente.</li>
+          <li>Saúde é hábito, não consulta avulsa.</li>
+          <li>Você não é autônomo. Você é um empreendedor da saúde.</li>
+          <li>Nenhum negócio se trata no achismo — nem o seu.</li>
+          <li>Crescer não é trair o juramento. É cumpri-lo em escala.</li>
+          <li>Adesão não se cobra: se cria, com vínculo.</li>
+          <li>Hora tem teto. Sistema não.</li>
+          <li>A IA é sua funcionária, não sua concorrente.</li>
+          <li>Autoridade clínica com tecnologia vale mais que audiência sem ciência.</li>
+          <li>Cuidar de mais gente, cuidando melhor.</li>
+        </ol>
+        <span class="tbc">Take back control.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s08">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">08</span>O manifesto</p>
+      <p class="rail-t">Texto e roteiro de gravação</p>
+      <p class="fw">75s · corta pra 30s</p>
+    </div>
+    <div class="col">
+      <h2>O manifesto, para gravar</h2>
+      <p class="lead">O credo em forma de filme. Formato igual ao dos 9 roteiros de ads que o time já
+      grava — <strong>tempo · cena · texto na tela · falado</strong> — porque 85% assiste no mudo e a
+      legenda não é enfeite. VO do Guga ou do Dr. Arthur; a peça de retargeting quente e de abertura
+      de qualquer palco.</p>
+
+      <div class="tscroll script">
+        <table>
+          <thead>
+            <tr><th>Tempo</th><th>Cena</th><th>Texto na tela</th><th>Falado</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tm">0–5s<em>Hook</em></td>
+              <td class="scr">Close no estetoscópio saindo do pescoço e sendo apoiado na mesa, ao lado do teclado.</td>
+              <td class="otx">Você examina todo mundo.</td>
+              <td class="vo">"Você examina trinta pessoas por semana."</td>
+            </tr>
+            <tr>
+              <td class="tm">5–12s<em>Tensão</em></td>
+              <td class="scr">Fim do dia, consultório vazio, luz baixa. Ela olha a agenda na tela.</td>
+              <td class="otx">Menos um.</td>
+              <td class="vo">"Mas tem um paciente que nunca sentou nessa cadeira. Um que você nunca examinou."</td>
+            </tr>
+            <tr>
+              <td class="tm">12–20s<em>Revelação</em></td>
+              <td class="scr">A câmera fecha na tela do computador: agenda, WhatsApp, planilha, boleto.</td>
+              <td class="otx">Esse aqui.</td>
+              <td class="vo">"Esse aqui. O seu consultório."</td>
+            </tr>
+            <tr>
+              <td class="tm">20–32s<em>Sintomas</em></td>
+              <td class="scr">Cortes rápidos: pilha de apps abertos, boleto, mensagem não respondida, cadeira vazia de paciente que faltou.</td>
+              <td class="otx">14 apps. Nenhum laudo.</td>
+              <td class="vo">"Ele tem sintoma. Agenda que oscila, paciente que some no dia três, dinheiro que entra e não fica. E ninguém nunca pediu um exame."</td>
+            </tr>
+            <tr>
+              <td class="tm">32–45s<em>Virada</em></td>
+              <td class="scr">Ela gira a cadeira e encara a tela como quem examina. O painel MyDose abrindo.</td>
+              <td class="otx">A anamnese do consultório</td>
+              <td class="vo">"Você não aceita achismo em paciente nenhum. Só no seu próprio negócio. E a boa notícia é que você já tem o método: examinar, prescrever, acompanhar."</td>
+            </tr>
+            <tr>
+              <td class="tm">45–58s<em>Mecanismo</em></td>
+              <td class="scr">Painel ao vivo: de onde veio o paciente, onde ele parou, quanto entrou. Notificação "+R$ 15 mil".</td>
+              <td class="otx">O mesmo método. Virado pra dentro.</td>
+              <td class="vo">"É isso que a MyDose faz com o seu negócio. A gente examina, prescreve e acompanha — atrair, cuidar e receber num sistema só."</td>
+            </tr>
+            <tr>
+              <td class="tm">58–68s<em>Identidade</em></td>
+              <td class="scr">Ela atendendo de novo, leve. Paciente sorrindo. Luz alta.</td>
+              <td class="otx">Empreendedor da saúde.</td>
+              <td class="vo">"Porque você não é autônomo. Você é um empreendedor da saúde. E empreendedor não decide no escuro — decide com exame na mão."</td>
+            </tr>
+            <tr>
+              <td class="tm">68–75s<em>Assinatura</em></td>
+              <td class="scr">Card navy, azulejo, wordmark. Sem locução no último segundo.</td>
+              <td class="otx">Take back control.</td>
+              <td class="vo">"Cuidar de mais gente, cuidando melhor. <em>Take back control.</em>"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="stack-s">
+        <p class="body"><strong>Hooks alternativos (grave os três na mesma diária, trocando só os 0–3s):</strong></p>
+      </div>
+      <div class="hooks">
+        <div class="hook"><p class="hn">A</p><div><p class="ht">"Quando foi a última vez que você examinou o seu consultório?"</p><p class="hw">Pergunta-cliffhanger — o padrão de maior retenção do banco atual.</p></div></div>
+        <div class="hook"><p class="hn">B</p><div><p class="ht">"Agenda cheia não é sinal de saúde. Às vezes é sintoma."</p><p class="hw">Contrarian — melhor gancho para público frio, sem produto.</p></div></div>
+        <div class="hook"><p class="hn">C</p><div><p class="ht">"Você está tratando o seu negócio de um jeito que jamais trataria um paciente."</p><p class="hw">Mistake warning — o mais provocativo; usar em retargeting.</p></div></div>
+      </div>
+
+      <div class="callout">
+        <p class="co-t">Notas de produção</p>
+        <p>Corte de 30s: pula 20–32s e 58–68s, mantém hook, virada e assinatura. Legenda grande em
+        toda cena. Nenhum plano com paciente identificável sem autorização; se a cena for de psicologia,
+        <strong>nunca sugerir sessão gravada</strong> — mostrar registro de evolução, nunca a sessão.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s09">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">09</span>Estrutura</p>
+      <p class="rail-t">Do slogan até a feature</p>
+    </div>
+    <div class="col">
+      <h2>A casa da mensagem</h2>
+      <p class="lead">Nessa ordem, sempre. Feature nunca abre conversa — feature é prova, e prova só
+      aparece depois que a pessoa já quer acreditar.</p>
+
+      <div class="levels">
+        <div class="lv"><p class="lvn">Nível 0 · Assinatura</p><p class="lvc"><span class="tbc">Take back control.</span><small>Fixa, em inglês, com ponto final. Fecha peça, nunca abre.</small></p></div>
+        <div class="lv"><p class="lvn">Nível 1 · A frase</p><p class="lvc">Trate seu consultório como você trata um paciente.<small>A ideia-mãe. Toda peça precisa caber embaixo dela.</small></p></div>
+        <div class="lv"><p class="lvn">Nível 2 · A identidade</p><p class="lvc">Você não é autônomo. Você é um empreendedor da saúde.<small>O prêmio da história — o que ele passa a ser.</small></p></div>
+        <div class="lv"><p class="lvn">Nível 3 · A promessa</p><p class="lvc">A gente examina, prescreve e acompanha o seu consultório — atrair, cuidar e receber num sistema só.<small>O que a empresa faz, em linguagem de resultado.</small></p></div>
+        <div class="lv"><p class="lvn">Nível 4 · Os 3 controles</p><p class="lvc">Quem chega · Quem fica · O negócio<small>Os pilares abaixo. Nunca abrir por nome de produto.</small></p></div>
+        <div class="lv"><p class="lvn">Nível 5 · Prova</p><p class="lvc">Habits · Scale · School · painel · app do paciente<small>Só em demo, expansão ou tabela. Nunca em manchete.</small></p></div>
+      </div>
+
+      <div class="pillars">
+        <div class="pil b">
+          <span class="tag">Quem chega</span>
+          <h4>Controle da atração</h4>
+          <p class="pl">"Você sabe de onde veio cada paciente que sentou na sua cadeira este mês?"</p>
+          <p class="pp">Prova: MyDose Scale — conteúdo com IA, anúncios, WhatsApp, funil.</p>
+        </div>
+        <div class="pil p">
+          <span class="tag">Quem fica</span>
+          <h4>Controle do cuidado</h4>
+          <p class="pl">"Seu paciente tem 1 hora com você e 720 sem você. Quem cuida das outras 720?"</p>
+          <p class="pp">Prova: MyDose Habits — app do paciente, protocolos, comunidade, D.O.S.E.</p>
+        </div>
+        <div class="pil o">
+          <span class="tag">O negócio</span>
+          <h4>Controle do dinheiro</h4>
+          <p class="pl">"Você prescreve com segurança. Precifica com a mesma?"</p>
+          <p class="pp">Prova: MyDose School + pagamento integrado, sem porcentagem sobre as suas vendas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s10">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">10</span>Cobertura</p>
+      <p class="rail-t">Uma mensagem por nível de consciência</p>
+      <p class="fw">Eugene Schwartz · Breakthrough Advertising</p>
+    </div>
+    <div class="col">
+      <h2>Por que a mensagem "não aparece pra todo mundo"</h2>
+      <p class="lead">Porque uma frase só fala com um nível de consciência por vez. O mercado tem cinco,
+      e a campanha atual só endereça dois. Esta é a tabela que resolve isso — e é a mais operacional do
+      documento: <strong>toda peça nova precisa declarar para qual nível ela foi escrita.</strong></p>
+
+      <div class="beats">
+        <div class="beat"><p class="bn">01</p><p class="bt">Inconsciente<em>não sabe que tem um problema</em></p><p class="bd">"Agenda cheia não é sinal de saúde. Às vezes é sintoma." <br><span style="color:var(--mute);font-size:14.5px">Conteúdo e topo puro. Zero produto, zero CTA de venda.</span></p></div>
+        <div class="beat"><p class="bn">02</p><p class="bt">Consciente do problema<em>sente a dor, não sabe nomear</em></p><p class="bd">"Seu consultório é o único paciente que você nunca examinou." <br><span style="color:var(--mute);font-size:14.5px">A ideia-mãe. É aqui que ela trabalha melhor — e é o maior pedaço do mercado.</span></p></div>
+        <div class="beat"><p class="bn">03</p><p class="bt">Consciente da solução<em>sabe que precisa medir</em></p><p class="bd">"Existe exame pra negócio. Chama anamnese do consultório — são 5 perguntas." <br><span style="color:var(--mute);font-size:14.5px">Iscas: checklist das 5 perguntas, calculadora, aula de quarta.</span></p></div>
+        <div class="beat"><p class="bn">04</p><p class="bt">Consciente do produto<em>conhece a MyDose, compara</em></p><p class="bd">"A MyDose examina, prescreve e acompanha — num painel só. No ar em 7 dias." <br><span style="color:var(--mute);font-size:14.5px">LP, demo, comparativo honesto com agência e prontuário.</span></p></div>
+        <div class="beat"><p class="bn">05</p><p class="bt">Muito consciente<em>só falta decidir</em></p><p class="bd">"45 minutos e você sai com o diagnóstico. Sem fidelidade, sem porcentagem, 30 dias de garantia." <br><span style="color:var(--mute);font-size:14.5px">Oferta, preço, Vale-Rescisão, bônus de decisão na call.</span></p></div>
+      </div>
+
+      <div class="callout">
+        <p class="co-t">O diagnóstico do problema relatado</p>
+        <p>"Demita seu marketing" é uma mensagem de <strong>nível 3–4</strong>: só funciona para quem já
+        nomeou o problema e já contratou alguém. Por isso ela não aparece para todo mundo — não é
+        alcance, é endereçamento. A ideia-mãe entra no nível 2, onde vive a maior parte do mercado, e a
+        escada acima leva a pessoa até a venda sem trocar de história.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s11">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">11</span>Posologia</p>
+      <p class="rail-t">Pitch de elevador · três durações</p>
+    </div>
+    <div class="col">
+      <h2>Falado, do jeito que sai da boca</h2>
+      <p class="lead">Três versões, para decorar. Vendedor, SDR, founder e parceiro usam as mesmas —
+      é assim que a mensagem fica igual em todo lugar.</p>
+
+      <div class="stack">
+        <div class="copycard">
+          <div class="cc-lab"><span class="len">7 segundos · quando perguntam "o que vocês fazem?"</span></div>
+          <p class="said">"A gente examina, prescreve e acompanha o consultório do profissional de saúde —
+          do primeiro anúncio até a indicação, num painel só."</p>
+        </div>
+        <div class="copycard pink">
+          <div class="cc-lab"><span class="len">20 segundos · rede, evento, DM</span></div>
+          <p class="said sm">"Sabe o método que você usa com paciente — examina, prescreve, acompanha,
+          mede e ajusta? O seu consultório nunca passou por isso. A MyDose aplica o seu próprio método
+          no seu negócio: a gente faz o diagnóstico, põe no ar em 7 dias o sistema que atrai, cuida e
+          cobra, e você acompanha a jornada inteira do paciente num painel. <em>Take back control.</em>"</p>
+        </div>
+        <div class="copycard peach">
+          <div class="cc-lab"><span class="len">60 segundos · abertura de reunião e de pitch</span></div>
+          <p class="said sm">"São 8,1 bilhões de pessoas para 9 milhões de profissionais de saúde. Um pra
+          novecentos. Só que quem cuida da saúde dos outros normalmente tem um negócio doente: estudou dez
+          anos pra cuidar de gente e zero pra atrair, precificar e reter.
+          <br><br>
+          O engraçado é que ele já tem o método — examina, prescreve, acompanha. Ele só nunca virou o
+          instrumento pra dentro. A MyDose faz isso: examina o consultório, prescreve o sistema e
+          acompanha o resultado. Na prática são três controles num painel só — quem chega, quem fica e o
+          dinheiro — com IA e um time que faz com você ou por você.
+          <br><br>
+          O que a gente vende, no fundo, é uma troca de identidade: ele para de ser autônomo, que vende
+          hora, e vira empreendedor da saúde, que tem sistema. E esse é o único tipo de empreendedor
+          cujo sucesso, por definição, deixa o mundo melhor — quando o consultório dele cresce, mais
+          gente é cuidada. Começa por uma consulta com o consultório
+          dele. Quarenta e cinco minutos, e ele sai com o diagnóstico na mão. <em>Take back control.</em>"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s12">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">12</span>Prescrição</p>
+      <p class="rail-t">Hooks prontos, por estágio</p>
+    </div>
+    <div class="col">
+      <h2>21 hooks para usar amanhã</h2>
+      <p class="lead">Topo cria o problema e nunca cita produto. Meio prova o mecanismo. Fundo vende.
+      Todos saem da mesma ideia-mãe — é isso que faz a campanha inteira soar como uma marca só.</p>
+
+      <div class="stage"><h3>Topo</h3><p class="sd">romper o feed · criar o problema · zero produto</p></div>
+      <div class="hooks">
+        <div class="hook"><p class="hn">01</p><div><p class="ht">"Você examina 30 pacientes por semana. Quando foi a última vez que examinou o seu consultório?"</p></div></div>
+        <div class="hook"><p class="hn">02</p><div><p class="ht">"Se um paciente chegasse com os sintomas do seu negócio, você já teria pedido exame."</p></div></div>
+        <div class="hook"><p class="hn">03</p><div><p class="ht">"Você não prescreveria no achismo. Mas está administrando no achismo."</p></div></div>
+        <div class="hook"><p class="hn">04</p><div><p class="ht">"Agenda cheia não é sinal de saúde. Às vezes é sintoma."</p></div></div>
+        <div class="hook"><p class="hn">05</p><div><p class="ht">"'Alcance.' 'Engajamento.' 'Impressões.' Isso é hemograma sem laudo."</p><p class="hw">Reaproveita o relatório de agência como prova visual nos 0–3s.</p></div></div>
+        <div class="hook"><p class="hn">06</p><div><p class="ht">"Ninguém te ensinou a empreender. Mas te ensinaram a diagnosticar — e é a mesma coisa."</p></div></div>
+        <div class="hook"><p class="hn">07</p><div><p class="ht">"Você sabe o nome de todos os seus pacientes e o nome de nenhum dos seus leads."</p></div></div>
+        <div class="hook"><p class="hn">08</p><div><p class="ht">"O paciente sumiu no dia 3. Você descobriu no dia 30."</p></div></div>
+        <div class="hook"><p class="hn">09</p><div><p class="ht">"Você abriu o consultório pra ter liberdade. Hoje ele abre quando você abre."</p></div></div>
+      </div>
+
+      <div class="stage"><h3>Meio</h3><p class="sd">provar o mecanismo · capturar contato</p></div>
+      <div class="hooks">
+        <div class="hook"><p class="hn">10</p><div><p class="ht">"A anamnese do seu consultório tem 5 perguntas. Se você não responde as 5, quem está no controle não é você."</p><p class="hw">O dispositivo das 5 Perguntas continua vivo — agora com nome clínico.</p></div></div>
+        <div class="hook"><p class="hn">11</p><div><p class="ht">"Quanto custa um paciente novo pra você? Se você hesitou, achei o exame que falta."</p></div></div>
+        <div class="hook"><p class="hn">12</p><div><p class="ht">"Três pacientes te abandonaram este mês. Em que dia? Em que etapa?"</p></div></div>
+        <div class="hook"><p class="hn">13</p><div><p class="ht">"Agência entrega relatório. A gente entrega prontuário — do paciente e do negócio."</p></div></div>
+        <div class="hook"><p class="hn">14</p><div><p class="ht">"Guru te dá formato. Exame te dá direção."</p><p class="hw">Evolução da linha antiga ("dado te dá direção") — "exame" mantém o vocabulário clínico.</p></div></div>
+        <div class="hook"><p class="hn">15</p><div><p class="ht">"Seu paciente tem 1 hora com você e 720 sem você. O que cuida dele nas outras 720?"</p></div></div>
+        <div class="hook"><p class="hn">16</p><div><p class="ht">"Hora tem teto. Sistema não. É por isso que o seu problema não é preço — é modelo."</p></div></div>
+      </div>
+
+      <div class="stage"><h3>Fundo</h3><p class="sd">converter em reunião · vender na call</p></div>
+      <div class="hooks">
+        <div class="hook"><p class="hn">17</p><div><p class="ht">"Uma consulta com o seu consultório. 45 minutos, e você sai com o diagnóstico na mão."</p><p class="hw">A oferta da reunião, no vocabulário dele. É o melhor CTA que a gente tem.</p></div></div>
+        <div class="hook"><p class="hn">18</p><div><p class="ht">"No ar em 7 dias: atrair, cuidar e receber no mesmo lugar."</p></div></div>
+        <div class="hook"><p class="hn">19</p><div><p class="ht">"A gente pode fazer por você. Nunca sem você enxergar — o painel é seu."</p><p class="hw">Ponte obrigatória sempre que a peça falar em terceirizar. Protege o Auto-Pilot.</p></div></div>
+        <div class="hook"><p class="hn">20</p><div><p class="ht">"Você paga R$ 3 mil por mês e não sabe quantos pacientes vieram. Isso não é investimento — é sintoma."</p><p class="hw">Herdeiro direto de "Demita sua agência", agora subordinado à ideia-mãe.</p></div></div>
+        <div class="hook"><p class="hn">21</p><div><p class="ht">"Sem fidelidade, sem porcentagem sobre as suas vendas, 30 dias de garantia. O risco é nosso."</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s13">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">13</span>Contraindicações</p>
+      <p class="rail-t">O que empurra, o que puxa e o que trava</p>
+      <p class="fw">Forças do progresso · JTBD</p>
+    </div>
+    <div class="col">
+      <h2>Toda troca tem quatro forças. A campanha só mexe em duas.</h2>
+      <p class="lead">Uma pessoa só troca de sistema quando <strong>empurra + puxa</strong> superam
+      <strong>ansiedade + hábito</strong>. Essa é a explicação mais honesta do "lead chega sem urgência":
+      a comunicação estava criando puxa (funcionalidades bonitas) sem empurra (dor nomeada) e sem
+      desarmar nada.</p>
+
+      <div class="cells">
+        <div class="cell">
+          <p class="cn">Força 1 · empurra</p>
+          <h4>A dor que empurra</h4>
+          <p>Mês fraco sem explicação. O paciente que sumiu. A fatura da agência sem resposta. O teto
+          da agenda batendo.<br><strong>Quem cria isso: os hooks de topo e o manifesto.</strong></p>
+        </div>
+        <div class="cell">
+          <p class="cn">Força 2 · puxa</p>
+          <h4>A atração do novo</h4>
+          <p>Ver a jornada inteira num painel. Deixar de ser autônomo. Faturar sem abrir horário.
+          <br><strong>Quem cria isso: a demo, o caso do Dr. Arthur, o painel na tela.</strong></p>
+        </div>
+        <div class="cell hot">
+          <p class="cn">Força 3 · ansiedade</p>
+          <h4>O medo do novo</h4>
+          <p>"Não tenho tempo de aprender." "Meu paciente não usa app." "E se eu perder meus dados?"
+          "E se eu não souber vender?"<br><strong>Quem mata: migração feita por nós, School, 7 dias,
+          garantia de 30 dias, sem fidelidade.</strong></p>
+        </div>
+        <div class="cell hot">
+          <p class="cn">Força 4 · hábito</p>
+          <h4>O apego ao velho</h4>
+          <p>A planilha que ele domina. O prontuário atual. O WhatsApp pessoal. O jeito que sempre
+          funcionou.<br><strong>Quem mata: "mudança sem caixas" — a gente migra, e no dia 7 está no
+          ar.</strong></p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p class="co-t">A regra de divisão de trabalho</p>
+        <p><strong>Mídia e conteúdo criam empurra e puxa. A call mata ansiedade e hábito.</strong>
+        Anúncio que tenta responder objeção queima verba; call que fica criando dor irrita quem já
+        veio convencido. Se o lead chega sem urgência, o problema é a força 1 — não o vendedor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s14">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">14</span>Vocabulário</p>
+      <p class="rail-t">Palavras sagradas e tom de voz</p>
+    </div>
+    <div class="col">
+      <h2>As palavras que a MyDose usa — e as que não usa</h2>
+      <p class="lead">Um vocabulário fixo é o que faz cinco pessoas diferentes soarem como uma empresa
+      só. Estas listas valem para anúncio, site, WhatsApp, e-mail, deck e call.</p>
+
+      <div class="lex">
+        <div class="lexbox yes">
+          <h4>Sempre</h4>
+          <ul>
+            <li><b>Diagnóstico</b><span>o nome da reunião e do primeiro entregável</span></li>
+            <li><b>Anamnese do consultório</b><span>as 5 Perguntas do Controle</span></li>
+            <li><b>Prescrição</b><span>o plano de 7 dias, nunca "implantação"</span></li>
+            <li><b>Acompanhamento</b><span>o painel, nunca "dashboard"</span></li>
+            <li><b>Prontuário do negócio</b><span>o painel, versão figurada</span></li>
+            <li><b>Sintoma · exame · laudo · alta</b><span>o campo semântico inteiro é nosso</span></li>
+            <li><b>Empreendedor da saúde</b><span>a identidade — nunca "autônomo" para o cliente</span></li>
+            <li><b>Adesão · escala · tempo</b><span>os 3 benefícios herdados, ainda válidos</span></li>
+            <li><b>A jornada do paciente</b><span>"do primeiro anúncio à indicação"</span></li>
+            <li><b>Quem chega · quem fica · o negócio</b><span>os 3 controles, nessa ordem</span></li>
+            <li><b>Faturamento</b><span>dinheiro é sempre faturamento</span></li>
+            <li><b>Take back control.</b><span>em inglês, com ponto, no fecho</span></li>
+          </ul>
+        </div>
+        <div class="lexbox no">
+          <h4>Nunca</h4>
+          <ul>
+            <li><b>Receita</b><span>confunde com receita médica — use faturamento</span></li>
+            <li><b>CRM, funil, tráfego, lead, dashboard, stack</b><span>jargão de software; só na tabela e na demo</span></li>
+            <li><b>ROI garantido · 1ª venda em 30 dias · cura</b><span>vetos vigentes</span></li>
+            <li><b>"Grátis" em CTA</b><span>o diagnóstico não é isca, é entrega</span></li>
+            <li><b>"Sem entender de tecnologia"</b><span>infantiliza quem lê um exame</span></li>
+            <li><b>Squad</b><span>é "executivo de estratégia", compartilhado ou dedicado</span></li>
+            <li><b>"Gravar a sessão"</b><span>vedado para psicólogos (CFP) — fale em evolução e registro</span></li>
+            <li><b>"Você é ruim de marketing"</b><span>em qualquer forma — o problema é o exame que faltou</span></li>
+            <li><b>Concorrente pelo nome</b><span>ataca-se o modelo, nunca a marca ou a pessoa</span></li>
+            <li><b>Escuro · caixa-preta como abertura</b><span>metáfora de apoio, nunca manchete</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="margin-top:38px">Tom de voz — Guga × Dr. Arthur</h3>
+      <p class="body">A marca fala como a mistura dos dois fundadores: o empreendedor inquieto que viveu
+      a dor e o médico sereno que ancora em ciência. <strong>Provocador e leve, científico e humano</strong>
+      — e a ideia-mãe pede uma dose a mais de Dr. Arthur do que a campanha anterior: quem confronta com
+      método soa como colega, quem confronta sem método soa como guru.</p>
+
+      <div class="cells">
+        <div class="cell"><p class="cn">Traço 01</p><h4>Inquieto</h4><p>Sempre apontando o próximo passo. Frases curtas, verbos no imperativo.</p></div>
+        <div class="cell"><p class="cn">Traço 02</p><h4>Leve</h4><p>Humor do dia a dia do consultório. Nunca deboche de quem está travado.</p></div>
+        <div class="cell"><p class="cn">Traço 03</p><h4>Provocador</h4><p>Confronta o modelo — com empatia, nunca com arrogância. O alvo é o achismo, não a pessoa.</p></div>
+        <div class="cell"><p class="cn">Traço 04</p><h4>Científico</h4><p>Ancora em número e mecanismo. Fala de dinheiro sem vergonha e sem promessa mágica.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s15">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">15</span>Conduta</p>
+      <p class="rail-t">Chamadas para ação</p>
+    </div>
+    <div class="col">
+      <h2>CTAs — um por intenção</h2>
+      <p class="lead">O CTA principal não muda: "Quero meu diagnóstico" agora é literal, não metafórico
+      — é a palavra da profissão dele, e é exatamente o que ele recebe.</p>
+
+      <div class="tscroll">
+        <table>
+          <thead>
+            <tr><th>Tipo</th><th>Texto exato</th><th>Onde e quando</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Principal</td><td><p class="cta-txt">Quero meu diagnóstico</p></td><td><p class="cta-when">Todo botão de fundo de funil: LP, site, anúncio, e-mail. Sem "grátis", sem variação.</p></td></tr>
+            <tr><td>Principal · variação longa</td><td><p class="cta-txt">Marcar a consulta do meu consultório</p></td><td><p class="cta-when">Quando o botão tem espaço e a peça já falou de método clínico. Usa a metáfora inteira.</p></td></tr>
+            <tr><td>Secundário</td><td><p class="cta-txt">Falar com a Carol</p></td><td><p class="cta-when">WhatsApp: FAB, nav e segundo botão do hero. Para quem quer gente antes de agenda.</p></td></tr>
+            <tr><td>Transicional · isca</td><td><p class="cta-txt">Fazer a anamnese do meu consultório</p></td><td><p class="cta-when">As 5 Perguntas em checklist interativo. Nível 3 de consciência, captura contato.</p></td></tr>
+            <tr><td>Transicional · conta</td><td><p class="cta-txt">Calcular o custo do achismo</p></td><td><p class="cta-when">A calculadora do backlog, renomeada — era "custo da sua caixa-preta".</p></td></tr>
+            <tr><td>Transicional · ritual</td><td><p class="cta-txt">Entrar na aula de quarta</p></td><td><p class="cta-when">Porta alternativa para lead frio e para quem não fechou na call.</p></td></tr>
+            <tr><td>Fecho de peça</td><td><p class="cta-txt"><em>Take back control.</em></p></td><td><p class="cta-when">Assinatura, nunca botão. Fecha vídeo, card navy, e-mail e slide.</p></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s16">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">16</span>Aplicação</p>
+      <p class="rail-t">A mesma mensagem, canal a canal</p>
+    </div>
+    <div class="col">
+      <h2>Pronto para copiar e colar</h2>
+
+      <div class="chan">
+        <div class="ch">
+          <p class="cl">Bio · Instagram</p>
+          <div class="cb"><p class="q">Empreendedorismo da saúde.<br>Seu consultório também merece um diagnóstico. ↓</p></div>
+        </div>
+        <div class="ch">
+          <p class="cl">Hero · LP nova</p>
+          <div class="cb"><p class="q">H1: <strong>Seu consultório é o único paciente que você nunca examinou.</strong><br>
+          Sub: A MyDose examina, prescreve e acompanha o seu negócio — atrair, cuidar e receber num painel só.<br>
+          CTA: Quero meu diagnóstico</p></div>
+        </div>
+        <div class="ch">
+          <p class="cl">Anúncio · 30s</p>
+          <div class="cb">
+            <ul>
+              <li><strong>0–3s prova visual:</strong> estetoscópio encostado na tela do computador do consultório.</li>
+              <li><strong>Hook falado:</strong> "Você examina 30 pacientes por semana. Quando examinou o seu consultório?"</li>
+              <li><strong>3–8s mecanismo:</strong> "A gente faz com o seu negócio o que você faz com paciente: examina, prescreve e acompanha."</li>
+              <li><strong>8–20s demo:</strong> três cortes no painel — de onde veio o paciente, onde ele parou, quanto entrou.</li>
+              <li><strong>20–30s lógica + card navy:</strong> "45 minutos e você sai com o diagnóstico." · <em>Take back control.</em></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ch">
+          <p class="cl">WhatsApp · T1 da SDR</p>
+          <div class="cb"><p class="q">"Oi, [nome]! Aqui é a Carol, da MyDose. Antes de marcar, uma pergunta
+          só: hoje, quem cuida do marketing do seu consultório — uma agência, um guru, você mesmo, ou
+          ninguém? Pergunto porque o diagnóstico muda bastante em cada caso."</p></div>
+        </div>
+        <div class="ch">
+          <p class="cl">Abertura da call</p>
+          <div class="cb"><p class="q">"Antes de eu te mostrar qualquer coisa: você chegou aqui por um
+          anúncio nosso. Deixa eu te mostrar no nosso painel o caminho exato que você fez — anúncio,
+          clique, WhatsApp, esta reunião. É isso que você vai passar a enxergar dos seus pacientes."</p></div>
+        </div>
+        <div class="ch">
+          <p class="cl">Abertura da aula de quarta</p>
+          <div class="cb"><p class="q">"Boa noite. Antes de qualquer slide, o que a gente acredita aqui:
+          quem cuida da saúde dos outros não pode ter um negócio doente. Hoje a gente vai fazer a
+          anamnese do seu consultório — cinco perguntas. Anota as suas respostas, porque no fim da aula
+          elas viram um plano."</p></div>
+        </div>
+        <div class="ch">
+          <p class="cl">Assuntos de e-mail</p>
+          <div class="cb">
+            <ul>
+              <li>O único paciente que você nunca examinou</li>
+              <li>5 perguntas sobre o seu consultório</li>
+              <li>Quanto custa um paciente novo pra você?</li>
+              <li>O dia 3</li>
+              <li>Você não prescreveria assim</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s17">
+  <div class="wrap sec-grid">
+    <div class="rail">
+      <p class="field"><span class="n">17</span>Evolução</p>
+      <p class="rail-t">O que muda no que já existe</p>
+    </div>
+    <div class="col">
+      <h2>Nada é jogado fora — tudo desce um nível</h2>
+      <p class="lead">"Demita seu marketing" não morre: vira <strong>campanha de fundo de funil</strong>
+      (nível 3–4 de consciência) para quem tem agência, embaixo da ideia-mãe. O Vale-Rescisão de
+      R$ 2.000 continua igual e fica ainda mais coerente — é a prescrição depois do exame, não um grito
+      no feed.</p>
+
+      <div class="swap">
+        <div class="sw"><p class="old">Demita seu marketing.</p><p class="arw">→</p><p class="new">Trate seu consultório como você trata um paciente.</p></div>
+        <div class="sw"><p class="old">O profissional empreende no escuro.</p><p class="arw">→</p><p class="new">O consultório é o único paciente que ele nunca examinou.</p></div>
+        <div class="sw"><p class="old">Vilão: a caixa-preta.</p><p class="arw">→</p><p class="new">Vilão: o achismo (com o modelo 1:1 e a colcha de apps ao lado)</p></div>
+        <div class="sw"><p class="old">"Empreendedor da saúde" como frase de deck</p><p class="arw">→</p><p class="new">Promovida a nível 2 da casa da mensagem — é o prêmio da história</p></div>
+        <div class="sw"><p class="old">Credo espalhado em 3 documentos</p><p class="arw">→</p><p class="new">Um credo de 9 linhas + roteiro de gravação do manifesto</p></div>
+        <div class="sw"><p class="old">As 5 Perguntas do Controle</p><p class="arw">→</p><p class="new">A anamnese do consultório (as mesmas 5 perguntas, nome novo)</p></div>
+        <div class="sw"><p class="old">Calculadora "custo da sua caixa-preta"</p><p class="arw">→</p><p class="new">Calculadora "quanto custa o achismo"</p></div>
+        <div class="sw"><p class="old">Take back control.</p><p class="arw">→</p><p class="new">Mantida, intocada — a assinatura não muda</p></div>
+      </div>
+
+      <div class="callout">
+        <p class="co-t">Impacto operacional</p>
+        <p>O teste A/B/C do plano continua de pé com a mesma verba e o mesmo juiz (custo por reunião
+        realizada). Muda só o conteúdo da campanha A: em vez de "Demita seu marketing", ela roda a
+        ideia-mãe. As campanhas B ("Cadê seus pacientes?") e C (Comunidade) já são, na prática, os
+        pilares "quem chega" e "quem fica" — ganham a nova moldura sem refazer criativo.</p>
+      </div>
+      <div class="callout">
+        <p class="co-t">Produção nova que este documento gera</p>
+        <p>1 · o filme do manifesto (75s + corte de 30s + 3 aberturas alternativas). 2 · uma peça por
+        nível de consciência, para fechar o buraco do nível 1. 3 · o H1 da LP de diagnóstico e do hero
+        da home v6. 4 · o credo na bio, na abertura da aula de quarta e no primeiro slide dos decks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="closer">
+    <p class="field">O manifesto, em quatro linhas</p>
+    <h2>Você não abriu um consultório para virar empresário. Mas virou.</h2>
+    <p>E ninguém te deu o instrumento — nem a permissão. A boa notícia é que o instrumento você já
+    tem: é o mesmo que você usa todo dia, com todo mundo que senta na sua frente. A MyDose só vira ele
+    para dentro. A permissão é esta: crescer não é trair o juramento, é cumpri-lo em escala. Você é o
+    único tipo de empreendedor cujo sucesso, por definição, deixa o mundo melhor — porque quando o seu
+    consultório cresce, mais gente é cuidada. Você não é autônomo. Você é um empreendedor da saúde.</p>
+    <span class="tbc">Take back control.</span>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap fl">
+    <span>MyDose · Plataforma de mensagem v5 · 2026-08-26</span>
+    <span>Sucede o board "Demita seu marketing" (v2, 2026-08-25)</span>
+    <span>Frameworks: StoryBrand SB7 · Golden Circle · Primal Branding · Schwartz · JTBD · Category design · Hormozi</span>
+  </div>
+</footer>
+</html>
