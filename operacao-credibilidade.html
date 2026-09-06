@@ -1,0 +1,860 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Operação Credibilidade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F6F4F2; --card:#FFFFFF; --ink:#1E1D1D; --muted:#6E6A66; --line:#E3DED8; --soft:#EFEBE6;
+  --navy:#191E47; --navy-ink:#F3F1EE; --plum:#592C5A;
+  --blue:#415FF5; --magenta:#C64FCA; --orange:#F56442; --green:#63AC39; --rust:#5E1F10;
+  --blue-pale:#D6DDFF; --pink-pale:#F5E3F6; --peach-pale:#FFEAE5; --green-pale:#DCEDD2;
+  --c1:#415FF5; --c2:#F56442; --c3:#C64FCA; --grid:#E3DED8;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif; --sans:"Figtree","Segoe UI",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101226; --card:#1B1E3E; --ink:#F3F1EE; --muted:#A9ABC6; --line:#2C3058; --soft:#22264A;
+    --navy:#0B0D1C; --navy-ink:#F3F1EE; --plum:#3E1D40;
+    --blue-pale:#232A5E; --pink-pale:#3A1F3C; --peach-pale:#3F211A; --green-pale:#1F3316;
+    --c1:#5C76FF; --c2:#E55D36; --c3:#CC5CD0; --grid:#2C3058;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101226; --card:#1B1E3E; --ink:#F3F1EE; --muted:#A9ABC6; --line:#2C3058; --soft:#22264A;
+  --navy:#0B0D1C; --navy-ink:#F3F1EE; --plum:#3E1D40;
+  --blue-pale:#232A5E; --pink-pale:#3A1F3C; --peach-pale:#3F211A; --green-pale:#1F3316;
+  --c1:#5C76FF; --c2:#E55D36; --c3:#CC5CD0; --grid:#2C3058;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--blue)}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.12;margin:0;text-wrap:balance}
+h1{font-size:clamp(38px,6vw,68px);letter-spacing:-.01em}
+h2{font-size:clamp(28px,3.4vw,40px);margin:0 0 14px}
+h3{font-size:22px;margin:30px 0 10px}
+h4{font-size:17px;font-family:var(--sans);font-weight:700;margin:22px 0 8px}
+p{margin:0 0 14px;max-width:68ch}
+em.sig{font-family:var(--serif);font-style:italic;font-weight:400}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:10px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.grad{background:linear-gradient(90deg,var(--blue),var(--magenta),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+
+/* cover */
+.cover{background:var(--navy);color:var(--navy-ink);padding:64px 0 48px;position:relative;overflow:hidden}
+.cover .wrap{position:relative;z-index:1}
+.cover .eyebrow{color:#B9BEE6}
+.cover p{color:#C9CCE8;font-size:18px;max-width:62ch}
+.cover .meta{display:flex;flex-wrap:wrap;gap:26px;margin-top:34px;font-size:13px;color:#B9BEE6}
+.cover .meta b{display:block;color:#fff;font-size:15px;font-weight:600}
+.stripes{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 44px,rgba(255,255,255,.035) 44px 46px);mask-image:linear-gradient(135deg,transparent 40%,#000 100%);-webkit-mask-image:linear-gradient(135deg,transparent 40%,#000 100%)}
+.spark{position:absolute;right:-40px;top:-40px;width:260px;opacity:.16}
+.bignums{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:1px solid var(--line);margin-top:-1px}
+.bignums>div{background:var(--card);padding:22px 22px 18px}
+.bignums .v{font-family:var(--serif);font-size:38px;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums;line-height:1}
+.bignums .l{font-size:13px;color:var(--muted);margin-top:8px}
+
+/* layout */
+.doc{display:grid;grid-template-columns:230px 1fr;gap:56px;padding:56px 0 90px}
+.toc{position:sticky;top:24px;align-self:start;font-size:13.5px}
+.toc a{display:block;color:var(--muted);text-decoration:none;padding:6px 0;border-left:2px solid var(--line);padding-left:14px}
+.toc a:hover,.toc a.on{color:var(--ink);border-color:var(--blue)}
+.toc .eyebrow{margin-bottom:8px}
+section{scroll-margin-top:24px;padding:0 0 64px;border-bottom:1px solid var(--line);margin-bottom:64px}
+section:last-of-type{border-bottom:0}
+.lead{font-size:19px;line-height:1.5;max-width:64ch}
+.lead strong{font-weight:600}
+
+/* components */
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.callout{border-left:3px solid var(--blue);background:var(--blue-pale);padding:16px 20px;border-radius:0 12px 12px 0;margin:22px 0}
+.callout.warn{border-color:var(--orange);background:var(--peach-pale)}
+.callout.pink{border-color:var(--magenta);background:var(--pink-pale)}
+.callout.green{border-color:var(--green);background:var(--green-pale)}
+.callout p:last-child{margin:0}
+.quote{font-family:var(--serif);font-size:20px;font-style:italic;font-weight:400;line-height:1.4;margin:0 0 6px}
+.quote+.who{font-size:13px;color:var(--muted);margin:0 0 18px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--soft)}
+tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td b{font-weight:600}
+.tot td{font-weight:700;background:var(--soft)}
+.pill{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:3px 9px;border-radius:999px;background:var(--soft);color:var(--ink)}
+.pill.b{background:var(--blue-pale)} .pill.o{background:var(--peach-pale)} .pill.m{background:var(--pink-pale)} .pill.g{background:var(--green-pale)}
+ul,ol{padding-left:22px;margin:0 0 14px;max-width:70ch}
+li{margin:0 0 7px}
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0}
+.steps .k{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--blue);line-height:1}
+.steps b{display:block;margin-bottom:4px}
+.month{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);margin:0 0 20px}
+.month header{padding:18px 24px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;color:#fff}
+.month header h3{margin:0;color:#fff;font-size:24px}
+.month header .t{font-family:var(--serif);font-size:30px;font-weight:600;font-variant-numeric:tabular-nums}
+.month .body{padding:20px 24px;display:grid;grid-template-columns:1.4fr 1fr;gap:26px}
+.m1 header{background:var(--blue)} .m2 header{background:var(--magenta)} .m3 header{background:var(--orange)} .m4 header{background:var(--plum)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px;margin:0}
+.kv dt{color:var(--muted)} .kv dd{margin:0;font-variant-numeric:tabular-nums}
+.hooks{display:grid;gap:10px}
+.hook{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15px}
+.hook .t{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:4px}
+.hook q{font-family:var(--serif);font-size:17px;quotes:"“" "”"}
+.house{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.house>div{display:grid;grid-template-columns:150px 1fr;border-bottom:1px solid var(--line);background:var(--card)}
+.house>div:last-child{border-bottom:0}
+.house .lv{padding:14px 16px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted);background:var(--soft)}
+.house .tx{padding:14px 18px;font-size:15.5px}
+.house .tx.big{font-family:var(--serif);font-size:22px}
+.check{list-style:none;padding:0}
+.check li{padding-left:28px;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border:1.5px solid var(--muted);border-radius:4px}
+.fig{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px 12px;margin:18px 0}
+.fig .ft{font-weight:600;margin:0 0 2px}
+.fig .fs{font-size:13px;color:var(--muted);margin:0 0 10px}
+.fig svg{width:100%;height:auto;display:block;overflow:visible}
+.fig .lg{display:flex;gap:16px;font-size:12.5px;color:var(--muted);margin-top:8px;flex-wrap:wrap}
+.fig .lg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12.5px;padding:6px 9px;border-radius:6px;opacity:0;transition:opacity .12s;z-index:9;white-space:nowrap}
+.cta-nav{position:fixed;right:18px;bottom:18px;z-index:5;display:flex;gap:8px}
+.cta-nav button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;font:600 13px var(--sans);cursor:pointer}
+.cta-nav button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.foot{padding:40px 0 70px;color:var(--muted);font-size:13px}
+.foot .sig{font-family:var(--serif);font-style:italic;font-size:28px;color:var(--ink);margin-bottom:10px}
+.note{font-size:13px;color:var(--muted)}
+@media (max-width:1040px){.doc{grid-template-columns:1fr;gap:0}.toc{display:none}.bignums{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){.grid2,.grid3,.month .body{grid-template-columns:1fr}.cover{padding:48px 0 36px}.wrap{padding:0 18px}h3{font-size:20px}}
+@media print{.toc,.cta-nav{display:none}.doc{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head><body><div class="tip" id="tip"></div>
+
+<header class="cover">
+  <div class="stripes"></div>
+  <svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" d="M50 0c4 28 22 46 50 50-28 4-46 22-50 50-4-28-22-46-50-50C28 46 46 28 50 0z"/></svg>
+  <div class="wrap">
+    <div class="eyebrow">MyDose · Plano de marketing e vendas · Setembro a dezembro de 2026</div>
+    <h1>Operação <em class="sig">Credibilidade</em></h1>
+    <p style="margin-top:18px">Quatro meses, uma mensagem, um produto-herói e uma oferta empilhada para faturar <strong style="color:#fff">R$ 750 mil</strong> em contratos anuais antecipados, investindo entre R$ 8 e 10 mil por mês em mídia. Construído a partir da conversa de 2026-09-04 com o John, dos dados reais do Pipedrive e dos frameworks de mensagem já consolidados no wiki da MyDose.</p>
+    <div class="meta">
+      <div><b>Meta acumulada</b>R$ 150k · 180k · 220k · 200k</div>
+      <div><b>Ticket-alvo</b>R$ 8–12 mil / ano (≈ R$ 1 mil / mês)</div>
+      <div><b>Mídia</b>R$ 8–10 mil / mês</div>
+      <div><b>Norte</b>Fechar 2026 com lucro e mensagem validada</div>
+      <div><b>Versão</b>1.0 · 2026-09-06</div>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+  <div class="bignums">
+    <div><div class="v">R$ 750k</div><div class="l">Faturamento-alvo em 4 meses (TCV antecipado)</div></div>
+    <div><div class="v">75</div><div class="l">Contratos novos a TCV médio de R$ 10 mil</div></div>
+    <div><div class="v">300</div><div class="l">Reuniões-diagnóstico realizadas (25% de fechamento)</div></div>
+    <div><div class="v">R$ 36k</div><div class="l">Investimento total em mídia (R$ 9 mil/mês)</div></div>
+  </div>
+</div>
+
+<div class="wrap doc">
+  <nav class="toc" aria-label="Sumário">
+    <div class="eyebrow">Sumário</div>
+    <a href="#s1">01 · Sumário executivo</a>
+    <a href="#s2">02 · Onde estamos de verdade</a>
+    <a href="#s3">03 · O que o John disse</a>
+    <a href="#s4">04 · A decisão estratégica</a>
+    <a href="#s5">05 · A mensagem</a>
+    <a href="#s6">06 · A oferta</a>
+    <a href="#s7">07 · A matemática do funil</a>
+    <a href="#s8">08 · Plano mês a mês</a>
+    <a href="#s9">09 · Motor de mídia e criativos</a>
+    <a href="#s10">10 · Máquina comercial</a>
+    <a href="#s11">11 · Governança, riscos e decisões</a>
+    <a href="#s12">Anexo · Banco de copy</a>
+  </nav>
+
+  <main>
+
+  <!-- 01 -->
+  <section id="s1">
+    <div class="eyebrow">01</div>
+    <h2>Sumário executivo</h2>
+    <p class="lead">A MyDose não tem um problema de produto. Tem um problema de <strong>mensagem e de topo de funil</strong>. As vendas caíram de R$ 163 mil em março para R$ 39 mil em agosto enquanto o produto ganhava 14 funcionalidades. O plano corrige isso com uma escolha, não com mais coisas.</p>
+    <div class="grid2" style="margin-top:22px">
+      <div class="card">
+        <h4 style="margin-top:0">A tese em uma frase</h4>
+        <p>Vender <strong>uma coisa só</strong>: a máquina de conteúdo e captação de pacientes mais segura da saúde, com um time ao lado. Entregar o resto (app do paciente, prontuário com IA, gravação de consulta, School, comunidade) como <strong>bônus empilhado na reunião</strong>, não como manchete.</p>
+        <p style="margin:0">Segurança e parceria são o argumento. Credibilidade, autoridade e liberdade são o prêmio. Dinheiro é consequência e nunca abre a conversa.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">Os quatro movimentos</h4>
+        <ol style="margin:0">
+          <li><strong>Reposicionar</strong> em 14 dias: mensagem, página, 30 criativos, roteiro da call.</li>
+          <li><strong>Reacender o funil</strong>: mídia de conversão direta + lançamento pago mensal + resgate de 134 contas inativas e canceladas.</li>
+          <li><strong>Empilhar a oferta</strong> a R$ 990/mês (anual) com estrategista quinzenal e revisão de compliance.</li>
+          <li><strong>Operar por número</strong>: custo por reunião realizada como métrica-norte, ritual semanal, corte rápido do que não funciona.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:22px">
+      <p><strong>Por que R$ 750 mil é factível.</strong> Em janeiro–março de 2026 a MyDose fechou R$ 130k, R$ 141k e R$ 163k por mês com 11 a 18 contratos, ticket médio de R$ 10,1 mil. O time comercial já fez 75 reuniões novas por mês. O plano pede 15, 18, 22 e 20 contratos por mês, ou seja, voltar ao patamar de março com uma mensagem melhor e uma oferta mais empilhada.</p>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section id="s2">
+    <div class="eyebrow">02</div>
+    <h2>Onde estamos de verdade</h2>
+    <p class="lead">Os números abaixo vêm do pipeline de vendas do Pipedrive (negócios ganhos por mês de fechamento) lidos em 2026-09-06. Eles são a linha de base do plano.</p>
+
+    <div class="fig">
+      <p class="ft">Faturamento fechado por mês (TCV) e a meta de setembro a dezembro</p>
+      <p class="fs">Pipeline de vendas · valores em R$ mil · barras = fechado; barras vazadas = meta</p>
+      <svg id="chBook" viewBox="0 0 900 300" role="img" aria-label="Faturamento fechado por mês de setembro de 2025 a agosto de 2026 e meta de setembro a dezembro de 2026"></svg>
+      <div class="lg"><span><i style="background:var(--c1)"></i>Fechado (Pipedrive)</span><span><i style="background:transparent;border:2px dashed var(--c2)"></i>Meta do plano</span></div>
+    </div>
+
+    <div class="grid3">
+      <div class="card"><div class="eyebrow">Sintoma 1</div><b>O topo secou.</b><p style="margin:8px 0 0;font-size:14.5px">Negócios novos no pipeline de vendas por mês: 75 em janeiro, 64 em março, 41 em junho, <strong>17 em agosto</strong>. Menos reunião, menos venda. Não é conversão, é volume.</p></div>
+      <div class="card"><div class="eyebrow">Sintoma 2</div><b>O lead esfria em silêncio.</b><p style="margin:8px 0 0;font-size:14.5px">Dos 500 negócios perdidos mais recentes, <strong>40% "pararam de responder"</strong>, 17% "timing", 13% "sem interesse". Preço e orçamento juntos são só 9%. Falta urgência e falta um motivo para continuar a conversa.</p></div>
+      <div class="card"><div class="eyebrow">Sintoma 3</div><b>A base vaza.</b><p style="margin:8px 0 0;font-size:14.5px">No pipeline de sucesso do cliente há 63 contas canceladas, 17 travadas, 13 em reembolso e 14 em stand-by, contra ~65 ativas. O plano de negócios de abril já apontava churn de 3,3%/mês. Cada venda nova precisa vir com adoção.</p></div>
+    </div>
+
+    <h3>Linha de base comercial (2026)</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Mês</th><th class="n">Contratos</th><th class="n">TCV fechado</th><th class="n">Ticket mediano</th><th class="n">Negócios novos</th><th class="n">Perdidos</th><th class="n">Taxa de ganho</th></tr></thead>
+      <tbody>
+        <tr><td>Janeiro</td><td class="n">11</td><td class="n">R$ 130.380</td><td class="n">R$ 14.004</td><td class="n">75</td><td class="n">46</td><td class="n">19%</td></tr>
+        <tr><td>Fevereiro</td><td class="n">13</td><td class="n">R$ 141.080</td><td class="n">R$ 9.240</td><td class="n">76</td><td class="n">57</td><td class="n">19%</td></tr>
+        <tr><td>Março</td><td class="n">18</td><td class="n">R$ 162.840</td><td class="n">R$ 6.468</td><td class="n">64</td><td class="n">61</td><td class="n">23%</td></tr>
+        <tr><td>Abril</td><td class="n">12</td><td class="n">R$ 98.142</td><td class="n">R$ 8.160</td><td class="n">48</td><td class="n">31</td><td class="n">28%</td></tr>
+        <tr><td>Maio</td><td class="n">10</td><td class="n">R$ 94.800</td><td class="n">R$ 9.240</td><td class="n">43</td><td class="n">31</td><td class="n">24%</td></tr>
+        <tr><td>Junho</td><td class="n">6</td><td class="n">R$ 84.876</td><td class="n">R$ 17.640</td><td class="n">41</td><td class="n">31</td><td class="n">16%</td></tr>
+        <tr><td>Julho</td><td class="n">7</td><td class="n">R$ 67.806</td><td class="n">R$ 9.240</td><td class="n">49</td><td class="n">48</td><td class="n">13%</td></tr>
+        <tr><td>Agosto</td><td class="n">4</td><td class="n">R$ 39.120</td><td class="n">R$ 5.820</td><td class="n">17</td><td class="n">30</td><td class="n">12%</td></tr>
+        <tr class="tot"><td>Jan–Ago</td><td class="n">81</td><td class="n">R$ 819.044</td><td class="n">R$ 9.240 (média R$ 10.112)</td><td class="n">413</td><td class="n">335</td><td class="n">20%</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note" style="margin-top:10px">Taxa de ganho = contratos ÷ (contratos + perdidos no mês). Os três tickets mais frequentes em 2026 foram R$ 5.640, R$ 9.240 e R$ 17.640, que correspondem a planos anuais de R$ 470, R$ 770 e R$ 1.470 por mês. O plano da RD de crescer para R$ 330–400 mil/mês no segundo semestre pressupunha R$ 24–30 mil de mídia e 25 vendas/mês; a realidade é R$ 8–10 mil de mídia, e o plano abaixo é dimensionado para ela.</p>
+
+    <div class="callout warn">
+      <p><strong>Leitura.</strong> O funil está com a fábrica parada, não com a máquina quebrada. Quando houve volume (jan–mar), a MyDose converteu 19–23% e faturou R$ 130–163 mil. Setembro precisa devolver volume ao topo com uma mensagem que crie urgência, e a cadência precisa impedir que 40% dos leads evaporem sem resposta.</p>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section id="s3">
+    <div class="eyebrow">03</div>
+    <h2>O que o John disse</h2>
+    <p class="lead">Conversa de 46 minutos em Florianópolis, 2026-09-04. O John viu o produto reconstruído com as 14 funcionalidades e devolveu uma direção clara. Abaixo, os conselhos na ordem de peso, com as frases dele.</p>
+
+    <ol class="steps" style="margin-top:20px">
+      <li><span class="k">1</span><div><b>Não entre no jogo de software de gestão.</b>"Você não pode entrar na brisa de querer ser só o software de gestão, porque isso já tem e tem ticket de R$ 49. Qualquer um faz 45 funcionalidades amanhã com o Claude." A vantagem da MyDose é o time: marketing, performance, growth e experiência do usuário. "Vocês estão productizing yourselves."</div></li>
+      <li><span class="k">2</span><div><b>O micro-nicho é produção criativa com validação e segurança.</b>"Máquina de produção de conteúdo criativo, com validação e segurança, para profissionais da saúde, que vai gerar credibilidade." Produzir <em>e</em> distribuir. Isso é o que os modelos genéricos vão demorar a fazer sozinhos.</div></li>
+      <li><span class="k">3</span><div><b>Vá pela segurança, não pela fama.</b>"O maior medo do profissional de saúde é ser achado charlatão. Ele bota segurança acima de tudo." A frase que ele escreveu: <em>"a única máquina de geração de conteúdo que passa nas regras de compliance dos conselhos federais e regionais, para profissionais de saúde que se importam com a sua credibilidade e autoridade."</em> Com modelos que buscam evidência em PubMed e Nature para embasar o conteúdo.</div></li>
+      <li><span class="k">4</span><div><b>Parceria é o que justifica R$ 1 mil por mês.</b>"Ele não quer fazer sozinho. Por isso se justifica o ticket de mais de mil reais." Estrategista quinzenal que faz o assessment, monta o plano e treina o modelo. Âncora: "uma agência ruim custa R$ 3 mil; você paga R$ 1 mil e gasta 10 minutos por dia."</div></li>
+      <li><span class="k">5</span><div><b>Uma mensagem só. O resto é bônus.</b>"Se você comunicar duas coisas, é um caos de mensagem." Comunicar atração e captação; na call, empilhar Habits, prontuário, gravação e School como bônus, do jeito que o produteiro empilha oferta: valor primeiro, oferta, bônus, escassez.</div></li>
+      <li><span class="k">6</span><div><b>Double down no Scale. Habits fica vivo, mas para de receber investimento.</b>"Você não precisa matar a feature. Deixa quem usa usando. Mas o double down de marketing e de roadmap tem que estar aqui, para você ser o melhor do mundo nessa porra."</div></li>
+      <li><span class="k">7</span><div><b>Lançamento pago como porta de entrada.</b>"Eu acredito muito em lançamento pago para você." Evento ao vivo a R$ 19: "vamos construir do zero a estratégia de conteúdo de um nutricionista em 40 minutos", em slides, com um case real, e só depois a oferta. O primeiro tem que ser ao vivo.</div></li>
+      <li><span class="k">8</span><div><b>O momento de dor decide quem compra o quê.</b>Citou o neuropsicólogo Emmanuel Aragão: "não é a gente que pensa o pensamento; é o pensamento que pensa a gente". A necessidade que está gritando é a que compra. Quem procura prontuário não é o mesmo momento de quem procura paciente; falar com os dois ao mesmo tempo não fala com nenhum.</div></li>
+      <li><span class="k">9</span><div><b>Encurte o tempo até o valor.</b>"O time to value tem que ser dia zero." Em vendas consultivas o cliente aceita esperar porque vê um projeto, mas um mês até a primeira venda é longo demais. Primeiro conteúdo publicado na primeira semana.</div></li>
+      <li><span class="k">10</span><div><b>Global é outro jogo: freemium, créditos vendidos como vídeos, três faixas.</b>Para fora do Brasil, produto de entrada por conta própria, oferta em entregáveis ("até 10 vídeos por mês") e não em créditos, no máximo três opções, desconto progressivo e "fale com vendas" no topo. <strong>Não misturar com o Brasil agora.</strong></div></li>
+    </ol>
+
+    <div class="callout pink">
+      <p><strong>O que o John validou do produto.</strong> "Tá muito bom o seu produto." Elogiou o chat com os agentes (editor de vídeo, roteirista que embasa com artigo científico), o comando por áudio, a integração com a Business Manager da Meta (públicos prontos, orçamento na campanha) e o conteúdo caindo direto no fluxo de WhatsApp. Esse é o demo da call: do áudio ao post publicado ao lead no WhatsApp.</p>
+    </div>
+
+    <h3>O que adotamos, o que adaptamos</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Conselho</th><th>Decisão neste plano</th></tr></thead>
+      <tbody>
+        <tr><td>Uma mensagem, Scale como herói</td><td><b>Adotado.</b> Toda a mídia de set–dez fala de conteúdo, captação e segurança. Habits, prontuário e School não aparecem em anúncio.</td></tr>
+        <tr><td>Segurança acima de credibilidade</td><td><b>Adotado com um ajuste.</b> Segurança é o argumento racional (abre a mensagem); credibilidade e autoridade são o prêmio emocional (fecham). O profissional é avesso a "ganhar dinheiro", então dinheiro nunca abre.</td></tr>
+        <tr><td>Parar de investir no Habits</td><td><b>Adaptado.</b> Habits continua como bônus e como âncora de adesão e comunidade (o diferencial que teve melhor CTR historicamente). Sem roadmap novo até janeiro; sem mídia.</td></tr>
+        <tr><td>Lançamento pago</td><td><b>Adotado.</b> Um evento pago por mês, por persona (nutricionista em setembro, médico em outubro, psicólogo em novembro), como segunda fonte de reuniões.</td></tr>
+        <tr><td>Global / PLG / freemium</td><td><b>Adiado para 2027.</b> Fora do escopo de caixa deste plano. O Brasil valida a mensagem, que depois vira o criativo global.</td></tr>
+        <tr><td>Ticket R$ 1 mil/mês com estrategista</td><td><b>Adotado.</b> Plano-herói a R$ 990/mês anual, com estrategista quinzenal em grupo pequeno e revisão de compliance. Ver seção 06.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 04 -->
+  <section id="s4">
+    <div class="eyebrow">04</div>
+    <h2>A decisão estratégica</h2>
+    <p class="lead">Três escolhas que o resto do documento obedece. Se alguma delas mudar, o plano muda inteiro.</p>
+
+    <div class="grid3" style="margin-top:20px">
+      <div class="card"><div class="eyebrow">Escolha 1 · Categoria</div><b>Não somos software de gestão. Somos a máquina de conteúdo e captação mais segura da saúde.</b><p style="margin:8px 0 0;font-size:14.5px">Prontuário, agenda e gravação já existem a R$ 49. Conteúdo com evidência científica, revisado contra as normas dos conselhos, distribuído em anúncio e convertido no WhatsApp: isso ninguém entrega junto, e é onde o time da MyDose é melhor do que qualquer concorrente.</p></div>
+      <div class="card"><div class="eyebrow">Escolha 2 · Motion</div><b>Sales Led Growth no Brasil, com o lançamento pago alimentando a reunião.</b><p style="margin:8px 0 0;font-size:14.5px">Ticket de R$ 10–12 mil pede uma conversa. Anúncio e evento existem para gerar a Reunião-Diagnóstico; a reunião existe para vender na hora. Nada de freemium no Brasil neste ciclo.</p></div>
+      <div class="card"><div class="eyebrow">Escolha 3 · Oferta</div><b>Um plano-herói a R$ 990/mês, empilhado. Solo Pilot como down-sell, Auto-Pilot como upsell.</b><p style="margin:8px 0 0;font-size:14.5px">O vendedor apresenta um caminho, não uma tabela. Quem não pode paga R$ 390 e entra na escada; quem quer o time inteiro paga R$ 1.990.</p></div>
+    </div>
+
+    <h3>Como isso conversa com o que já existia</h3>
+    <p>O wiki já tinha uma ideia-mãe ("o consultório é o paciente", vilão = achismo) e uma identidade ("empreendedor da saúde", com a permissão "crescer não é trair o juramento"). Nada disso morre. O que muda é a <strong>porta de entrada</strong>: a ideia-mãe continua sendo o ritual da call e o nome do CTA (Quero meu diagnóstico); a identidade continua sendo o prêmio; mas a manchete de mídia passa a ser <strong>segurança para aparecer</strong>. É a mensagem de nível 2 de consciência (Schwartz): o profissional sabe que precisa aparecer, sabe que colegas piores aparecem, e não faz porque tem medo de errar em público e diante do conselho.</p>
+    <div class="house">
+      <div><div class="lv">Assinatura</div><div class="tx big"><em class="sig">Take back control.</em> <span class="note">(sempre em inglês, nunca botão)</span></div></div>
+      <div><div class="lv">Manchete de mídia</div><div class="tx big">Apareça com segurança. Cresça com credibilidade.</div></div>
+      <div><div class="lv">A promessa</div><div class="tx">A MyDose cria, revisa e distribui o seu conteúdo com evidência científica e dentro das normas do seu conselho, e transforma quem te assiste em paciente pelo WhatsApp. Com um estrategista ao seu lado.</div></div>
+      <div><div class="lv">O prêmio</div><div class="tx">Ser reconhecido como referência, ter uma comunidade que confia em você e uma agenda que não depende de você estar nela.</div></div>
+      <div><div class="lv">O ritual</div><div class="tx">A Reunião-Diagnóstico: examinamos o seu consultório como você examina um paciente.</div></div>
+      <div><div class="lv">A prova</div><div class="tx">Habits, prontuário com IA, gravação, School, comunidade, painel. Só na demo e na tabela. Nunca na abertura.</div></div>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section id="s5">
+    <div class="eyebrow">05</div>
+    <h2>A mensagem</h2>
+    <p class="lead">Escrita para quem estudou dez anos para cuidar de gente e sente vergonha de "fazer marketing". A mensagem não pede que ele vire vendedor; dá a ele um jeito seguro de ser visto como o profissional que já é.</p>
+
+    <h3>Proposta única de valor</h3>
+    <div class="callout">
+      <p class="quote">"A única máquina de conteúdo e captação de pacientes feita para passar nas normas do seu conselho, com evidência científica e um time ao seu lado, para profissionais de saúde que não abrem mão da própria credibilidade."</p>
+      <p style="margin:0" class="note">Positioning statement: para profissionais de saúde que sabem que precisam aparecer mas têm medo de errar em público, a MyDose é a plataforma de conteúdo e captação que cria com evidência, revisa contra as normas do conselho e converte no WhatsApp. Diferente de agências, gurus e ferramentas de IA genéricas, a gente coloca a sua credibilidade na frente do alcance, e faz junto.</p>
+    </div>
+
+    <h3>A lógica psicológica (por que essa mensagem e não outra)</h3>
+    <div class="grid2">
+      <div class="card">
+        <h4 style="margin-top:0">O lado racional: segurança</h4>
+        <ul style="margin:0;font-size:14.5px">
+          <li>Medo número um: ser visto como charlatão ou ser notificado pelo conselho (CFM, CRP, CFN, CREFITO).</li>
+          <li>Medo número dois: publicar algo errado, sem base, e perder respeito dos pares.</li>
+          <li>Resposta: conteúdo com evidência (PubMed, Nature, diretrizes), revisão de compliance, modelos treinados com os melhores da área, LGPD e sigilo.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">O lado emocional: identidade</h4>
+        <ul style="margin:0;font-size:14.5px">
+          <li>Quer ser visto como inovador, referência, alguém que faz diferente.</li>
+          <li>Quer comunidade, não audiência: gente que confia e volta.</li>
+          <li>Quer liberdade: uma agenda que não depende de ele estar na cadeira.</li>
+          <li>Não quer "ficar rico". Quer estar em paz com o dinheiro. A permissão do manifesto continua valendo: crescer é cumprir o juramento em escala.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Os três controles, reescritos para esta campanha</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Pilar</th><th>Abertura (o que dói)</th><th>Promessa</th><th>Produto por trás</th></tr></thead>
+      <tbody>
+        <tr><td><b>Aparecer com segurança</b></td><td>"Tem profissional pior que você bombando na internet. A diferença não é competência. É que ele publica e você trava."</td><td>Conteúdo criado, revisado e distribuído toda semana, dentro das normas.</td><td>MyDose Scale (IA de conteúdo + compliance + ads + WhatsApp)</td></tr>
+        <tr><td><b>Transformar audiência em comunidade</b></td><td>"Seguidor não é paciente. Comunidade é."</td><td>Quem te assiste entra na sua comunidade, adere ao seu método e volta.</td><td>MyDose Habits (app do paciente, protocolos, gamificação D.O.S.E.)</td></tr>
+        <tr><td><b>Ter uma agenda que não depende de você</b></td><td>"Você prescreve com segurança. Precifica com a mesma?"</td><td>Planos, programas e produtos vendidos no automático, sem % sobre a venda.</td><td>MyDose School + checkout (Asaas)</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Léxico desta campanha</h3>
+    <div class="grid2">
+      <div class="card"><h4 style="margin-top:0">Sempre</h4><p style="margin:0;font-size:14.5px">segurança · dentro das normas do seu conselho · evidência científica · credibilidade · autoridade · referência · comunidade (nunca "audiência" como prêmio) · liberdade de agenda · faturamento · empreendedor da saúde · diagnóstico do consultório · estrategista ao seu lado · "a gente faz com você" · <em class="sig">Take back control.</em></p></div>
+      <div class="card"><h4 style="margin-top:0">Nunca</h4><p style="margin:0;font-size:14.5px">receita (para dinheiro) · fique rico / ganhe dinheiro como abertura · ROI garantido · primeira venda em 30 dias · grátis em CTA · CRM, funil, tráfego, lead como abertura · squad · "gravar a sessão" (psicólogos, CFP) · "você é ruim de marketing" · citar concorrente pelo nome · 14 funcionalidades (a lista foi o que quebrou a mensagem).</p></div>
+    </div>
+
+    <h3>Hooks por persona (0–3 segundos)</h3>
+    <div class="hooks">
+      <div class="hook"><div class="t">Geral · reframe</div><q>Você não tem medo de aparecer. Você tem medo de aparecer errado. Existe um jeito de aparecer certo.</q></div>
+      <div class="hook"><div class="t">Geral · confronto com método</div><q>Tem gente com metade da sua formação e o dobro da sua audiência. Não é injustiça. É que ela publica toda semana e você trava.</q></div>
+      <div class="hook"><div class="t">Médico · segurança</div><q>Dá para publicar todo dia sem risco com o CFM? Dá. Cada post nasce de um artigo e passa por revisão de compliance antes de ir ao ar.</q></div>
+      <div class="hook"><div class="t">Nutricionista · comunidade</div><q>Seu paciente tem uma hora com você e 720 sem você. Quem cuida das outras 720 é a sua comunidade.</q></div>
+      <div class="hook"><div class="t">Psicólogo · ética</div><q>Conteúdo ético não precisa ser invisível. Roteiro com base científica, dentro do código do CFP, pronto para você gravar em dez minutos.</q></div>
+      <div class="hook"><div class="t">Geral · liberdade</div><q>Médico bom não é o que atende mais. É o que precisa atender menos.</q></div>
+      <div class="hook"><div class="t">Geral · parceria</div><q>Uma agência ruim custa R$ 3 mil por mês e não sabe o que é um conselho de classe. Você paga um terço, gasta dez minutos por dia e tem um estrategista da saúde do seu lado.</q></div>
+    </div>
+
+    <h3>Manifesto curto (abertura do evento e do vídeo de marca, 45 s)</h3>
+    <div class="card" style="font-family:var(--serif);font-size:19px;line-height:1.45">
+      <p>Você estudou dez anos para cuidar de gente.<br>Ninguém te ensinou a ser visto.</p>
+      <p>Então você olha o feed e vê gente com metade da sua formação falando com o dobro do seu público. E pensa: não vou me expor, não vou virar influenciador, não vou correr risco com o conselho.</p>
+      <p>A gente concorda com você. Por isso construiu o contrário de um guru: uma máquina de conteúdo que começa na evidência, passa pelas normas do seu conselho e termina num paciente no seu WhatsApp. Com gente da saúde do seu lado.</p>
+      <p style="margin:0">Aparecer com segurança não é vaidade. É cuidar de mais gente, cuidando melhor.<br><em class="sig">Take back control.</em></p>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section id="s6">
+    <div class="eyebrow">06</div>
+    <h2>A oferta</h2>
+    <p class="lead">Um plano-herói apresentado como caminho, empilhado do jeito que o John descreveu: valor primeiro, oferta, bônus nomeados com preço de referência, garantia, escassez real.</p>
+
+    <div class="grid3" style="margin-top:20px">
+      <div class="card" style="border-color:var(--line)">
+        <div class="eyebrow">Down-sell</div>
+        <h3 style="margin:0 0 6px">Solo Pilot</h3>
+        <div style="font-family:var(--serif);font-size:30px;font-weight:600">R$ 390<span class="note">/mês · anual</span></div>
+        <p class="note" style="margin:6px 0 10px">TCV R$ 4.680 · você toca, com IA e School</p>
+        <ul style="font-size:14px;margin:0"><li>Plataforma inteira (Scale + Habits + School)</li><li>Até 50 pacientes ativos</li><li>Suporte por chat</li><li>Sem estrategista, sem revisão humana</li></ul>
+      </div>
+      <div class="card" style="border:2px solid var(--blue);box-shadow:0 0 0 4px var(--blue-pale)">
+        <div class="eyebrow" style="color:var(--blue)">Herói · o que a mídia vende</div>
+        <h3 style="margin:0 0 6px">Co-Pilot Credibilidade</h3>
+        <div style="font-family:var(--serif);font-size:30px;font-weight:600">R$ 990<span class="note">/mês · anual</span></div>
+        <p class="note" style="margin:6px 0 10px">TCV R$ 11.880 · semestral R$ 1.090 · trimestral R$ 1.290 · a gente faz com você</p>
+        <ul style="font-size:14px;margin:0">
+          <li><b>Máquina de conteúdo</b> com evidência científica (roteiros, posts, vídeos editados, e-book)</li>
+          <li><b>Revisão de compliance</b> mensal do que vai ao ar (checklist do conselho da área)</li>
+          <li><b>Estrategista quinzenal</b> em grupo pequeno: assessment, plano, treino do seu modelo</li>
+          <li><b>Distribuição</b>: anúncios montados por nós na sua conta + WhatsApp que converte</li>
+          <li>Reunião de Implementação, no ar em 7 dias</li>
+          <li>Até 250 pacientes ativos · suporte em grupo de WhatsApp</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Upsell</div>
+        <h3 style="margin:0 0 6px">Auto-Pilot</h3>
+        <div style="font-family:var(--serif);font-size:30px;font-weight:600">R$ 1.990<span class="note">/mês · anual</span></div>
+        <p class="note" style="margin:6px 0 10px">TCV R$ 23.880 · a gente faz por você</p>
+        <ul style="font-size:14px;margin:0"><li>Time cria o conteúdo e gere os anúncios</li><li>Estrategista dedicado</li><li>Pacientes ilimitados · suporte dedicado</li><li>Para quem já tem demanda e quer capturar melhor (o cliente de ticket alto que o John descreveu)</li></ul>
+      </div>
+    </div>
+
+    <div class="callout warn" style="margin-top:22px">
+      <p><strong>Mudança em relação ao site atual.</strong> O Co-Pilot de hoje custa R$ 890 e não inclui criação de conteúdo nem anúncios. O plano-herói sobe R$ 100 e ganha exatamente o que a mensagem promete (conteúdo com evidência, revisão de compliance, anúncios montados). É isso que faz o TCV médio ficar em R$ 10 mil com mix 25% Solo, 60% Co-Pilot, 15% Auto-Pilot. Decisão do Guga: aprovar o preço e o escopo antes do dia 15.</p>
+    </div>
+
+    <h3>O empilhamento na reunião (roteiro de oferta)</h3>
+    <ol>
+      <li><strong>Valor entregue antes de vender:</strong> o diagnóstico do consultório dele, com os números que ele trouxe, e um roteiro de conteúdo já gerado com o nome dele durante a call.</li>
+      <li><strong>A oferta:</strong> "o Co-Pilot Credibilidade é conteúdo com evidência, revisão de compliance, estrategista e distribuição. Uma agência cobra R$ 3 mil e não entende de conselho. Aqui é R$ 990 por mês, no anual."</li>
+      <li><strong>Os bônus, nomeados um a um com valor de referência:</strong> app do paciente com a sua marca (R$ 4.800/ano em ferramenta avulsa) · prontuário e gravação de consulta com resumo por IA (R$ 2.400/ano) · MyDose School completa (curso de R$ 2–5 mil) · comunidade e checkout sem porcentagem · migração feita por nós.</li>
+      <li><strong>Garantias:</strong> 30 dias · sem fidelidade-armadilha · sigilo, ética e LGPD · sem % sobre as suas vendas.</li>
+      <li><strong>Escassez honesta:</strong> vagas de implementação por mês (a capacidade real do time, número a fixar: sugestão 20). Bônus de decisão na call: Reunião de Implementação prioritária em 7 dias.</li>
+    </ol>
+    <p class="note">Sem "ROI garantido" e sem "primeira venda em 30 dias": os vetos continuam. O resultado imediato vendido é o próprio diagnóstico e o primeiro conteúdo no ar na primeira semana.</p>
+  </section>
+
+  <!-- 07 -->
+  <section id="s7">
+    <div class="eyebrow">07</div>
+    <h2>A matemática do funil</h2>
+    <p class="lead">Da meta para trás, com as taxas-alvo já fixadas no plano de comunicação (lead→agendado 40%, show 65%, fechamento 25%) e o TCV médio observado em 2026.</p>
+
+    <div class="tablewrap" style="margin-top:20px"><table>
+      <thead><tr><th>Etapa</th><th class="n">Setembro</th><th class="n">Outubro</th><th class="n">Novembro</th><th class="n">Dezembro</th><th class="n">Total</th></tr></thead>
+      <tbody>
+        <tr><td><b>Meta de faturamento (TCV)</b></td><td class="n">R$ 150.000</td><td class="n">R$ 180.000</td><td class="n">R$ 220.000</td><td class="n">R$ 200.000</td><td class="n"><b>R$ 750.000</b></td></tr>
+        <tr><td>Contratos (TCV médio R$ 10 mil)</td><td class="n">15</td><td class="n">18</td><td class="n">22</td><td class="n">20</td><td class="n">75</td></tr>
+        <tr><td>Reuniões realizadas (fechamento 25%)</td><td class="n">60</td><td class="n">72</td><td class="n">88</td><td class="n">80</td><td class="n">300</td></tr>
+        <tr><td>Reuniões agendadas (show 65%)</td><td class="n">92</td><td class="n">111</td><td class="n">135</td><td class="n">123</td><td class="n">461</td></tr>
+        <tr><td>Leads qualificados (agendamento 40%)</td><td class="n">231</td><td class="n">277</td><td class="n">339</td><td class="n">308</td><td class="n">1.155</td></tr>
+        <tr class="tot"><td>Mídia</td><td class="n">R$ 8.000</td><td class="n">R$ 9.000</td><td class="n">R$ 10.000</td><td class="n">R$ 9.000</td><td class="n">R$ 36.000</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>De onde vêm os 1.155 leads</h3>
+    <div class="fig">
+      <p class="ft">Fontes de lead por mês</p>
+      <p class="fs">Estimativa do plano · leads qualificados (nome + WhatsApp + profissão)</p>
+      <svg id="chSrc" viewBox="0 0 900 260" role="img" aria-label="Leads por fonte e por mês: mídia paga, lançamento pago, base e indicação, orgânico e parcerias"></svg>
+      <div class="lg"><span><i style="background:var(--c1)"></i>Mídia paga (CTD + página)</span><span><i style="background:var(--c2)"></i>Lançamento pago</span><span><i style="background:var(--c3)"></i>Base, resgate e indicação</span><span><i style="background:var(--muted)"></i>Orgânico e parcerias</span></div>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h4 style="margin-top:0">Mídia paga · ~45%</h4>
+        <p style="font-size:14.5px;margin:0">R$ 8–10 mil a um custo por lead de R$ 60–75 em clique-para-WhatsApp (mais caro e mais qualificado que os R$ 29 do plano antigo) rendem 120–160 leads/mês. Esse é o piso: o canal que a MyDose sabe operar.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">Lançamento pago · ~20%</h4>
+        <p style="font-size:14.5px;margin:0">Um evento por mês a R$ 19. Meta de 150–250 ingressos (parte da mídia vai para ele), 60% de presença, 40% dos presentes pedem diagnóstico: 40–60 leads quentes, com fechamento acima da média.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">Base, resgate e indicação · ~25%</h4>
+        <p style="font-size:14.5px;margin:0">134 contas canceladas ou travadas + ~65 ativas. Campanha de resgate com a oferta nova ("o que mudou desde que você saiu") e programa de indicação: 1 mês por nossa conta para cada colega que fecha. 50–80 conversas/mês.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">Orgânico e parcerias · ~10%</h4>
+        <p style="font-size:14.5px;margin:0">Cortes dos eventos e dos anúncios no Instagram e no YouTube, aula de quarta, Vida Leve, 3–5 creators da saúde com cupom. 20–40 leads/mês.</p>
+      </div>
+    </div>
+
+    <h3>Capacidade e caixa</h3>
+    <div class="grid2">
+      <div class="card">
+        <h4 style="margin-top:0">O gargalo é o SDR, não a mídia</h4>
+        <p style="font-size:14.5px">O Guga estimou 80–100 reuniões/mês com o time atual. O plano pede 92 a 135 agendadas. Novembro exige um reforço: um SDR adicional ou o Guga e o Gardel assumindo 15 calls/semana cada. Regra de ouro herdada do plano de comunicação: primeira resposta em ≤ 5 minutos.</p>
+        <p class="note" style="margin:0">Implementações: 15–22 novos por mês a 6 h cada no Co-Pilot = 90–130 h/mês. Cabe em 1 pessoa de CX dedicada mais o estrategista em grupo.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">A conta do lucro</h4>
+        <dl class="kv">
+          <dt>Custo fixo</dt><dd>R$ 80.000/mês</dd>
+          <dt>Mídia</dt><dd>R$ 9.000/mês (média)</dd>
+          <dt>Ponto de equilíbrio</dt><dd>R$ 89.000 de caixa/mês ≈ 9 contratos anuais</dd>
+          <dt>Caixa no plano (4 meses)</dt><dd>R$ 750.000 − R$ 356.000 = <b>R$ 394.000</b></dd>
+        </dl>
+        <p class="note" style="margin:10px 0 0">Vale se o contrato entra antecipado (Pix ou cartão à vista). Parcelamento no cartão precisa de antecipação de recebíveis; a taxa entra no custo. Setembro com R$ 150k já fica acima do piso de R$ 120k da missão Runway.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 -->
+  <section id="s8">
+    <div class="eyebrow">08</div>
+    <h2>Plano mês a mês</h2>
+    <p class="lead">Cada mês tem um tema, um evento pago, um resultado e um critério de corte. O que não bate número em duas semanas sai.</p>
+
+    <div class="month m1" style="margin-top:20px">
+      <header><h3>Setembro · Reposicionar e reacender</h3><div class="t">R$ 150 mil · 15 contratos</div></header>
+      <div class="body">
+        <div>
+          <h4 style="margin-top:0">Semanas 1–2 (até 20/09)</h4>
+          <ul style="font-size:14.5px">
+            <li>Aprovar mensagem, oferta e preço do Co-Pilot Credibilidade (decisão do Guga).</li>
+            <li>Página de diagnóstico nova com a manchete "Apareça com segurança" e o fluxo clique-para-WhatsApp; plugar o CRM nos formulários (pendência antiga).</li>
+            <li>Gravar 30 criativos: 10 hooks × 3 personas, formatos UGC de jaleco, tela dividida "dá pra fazer isso?", screen-record do áudio virando post.</li>
+            <li>Subir 3 campanhas (segurança / comunidade / liberdade), R$ 8 mil, dois destinos por campanha (WhatsApp × página).</li>
+            <li>Cadência SDR T1–T6 no ar; roteiro da call com o empilhamento; treino em role-play.</li>
+            <li>Resgate: mensagem pessoal do Guga para as 134 contas inativas com a oferta nova.</li>
+          </ul>
+          <h4>Semanas 3–4</h4>
+          <ul style="font-size:14.5px;margin:0">
+            <li><b>Lançamento pago #1 (24/09, quarta 19h):</b> "A estratégia de conteúdo de uma nutricionista, do zero, em 40 minutos" com case real. Ingresso R$ 19. Oferta ao final com bônus de decisão até domingo.</li>
+            <li>Leitura do sprint: manter a campanha com menor custo por reunião realizada; cortar a pior.</li>
+          </ul>
+        </div>
+        <div>
+          <dl class="kv"><dt>Mídia</dt><dd>R$ 8.000 (R$ 5.500 conversão · R$ 2.500 evento)</dd><dt>Leads</dt><dd>231</dd><dt>Reuniões realizadas</dt><dd>60</dd><dt>Evento</dt><dd>150 ingressos · 90 presentes</dd><dt>Resgate</dt><dd>134 contatos · 20 conversas · 4 retornos</dd></dl>
+          <div class="callout green" style="margin:16px 0 0"><p><strong>Critério de sucesso:</strong> custo por reunião realizada ≤ R$ 150 e ≥ 12 contratos até 30/09. Abaixo disso, outubro dobra o peso do lançamento e do resgate em vez de mídia fria.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="month m2">
+      <header><h3>Outubro · Escalar o que funcionou</h3><div class="t">R$ 180 mil · 18 contratos</div></header>
+      <div class="body">
+        <div>
+          <ul style="font-size:14.5px;margin:0">
+            <li>Escalar a campanha vencedora para 60% da verba; as outras viram remarketing.</li>
+            <li>Segunda leva de 20 criativos a partir dos cortes do evento #1 e dos primeiros depoimentos da oferta nova (conteúdo publicado na primeira semana = prova filmável).</li>
+            <li><b>Lançamento pago #2 (22/10):</b> médicos. "Como publicar todo dia sem risco com o CFM: o protocolo de conteúdo de um endocrinologista." Case: um dos clientes de R$ 17.640 (Dr. Milver, Dr. Igor, Dr. Munir).</li>
+            <li>Programa de indicação no ar dentro do app e na comunidade: "traga um colega, um mês por nossa conta para os dois".</li>
+            <li>Creators: 3 profissionais-clientes com cupom rastreável e conteúdo feito na própria máquina ("eu criei isso com a MyDose").</li>
+            <li>Upsell na base: 5 contas de Co-Pilot com melhor resultado recebem proposta de Auto-Pilot.</li>
+          </ul>
+        </div>
+        <div>
+          <dl class="kv"><dt>Mídia</dt><dd>R$ 9.000</dd><dt>Leads</dt><dd>277</dd><dt>Reuniões realizadas</dt><dd>72</dd><dt>Evento</dt><dd>200 ingressos</dd><dt>Indicação</dt><dd>10 leads</dd><dt>Upsell</dt><dd>2 × R$ 12 mil de diferença</dd></dl>
+          <div class="callout green" style="margin:16px 0 0"><p><strong>Critério de sucesso:</strong> 18 contratos e show rate ≥ 65%. Se o show ficar abaixo de 55%, entra o micro-compromisso obrigatório antes da call (trazer 1 número).</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="month m3">
+      <header><h3>Novembro · O pico</h3><div class="t">R$ 220 mil · 22 contratos</div></header>
+      <div class="body">
+        <div>
+          <ul style="font-size:14.5px;margin:0">
+            <li>Mês de maior verba e maior volume. Reforço de SDR (ou 30 calls/semana dos fundadores) desde 01/11.</li>
+            <li><b>Semana do Empreendedor da Saúde (17–19/11):</b> três noites ao vivo, uma por persona (nutri, médico, psicólogo), ingresso único R$ 29, com o manifesto como abertura. É o lançamento #3, em formato maior, com a oferta valendo até 23/11.</li>
+            <li>Oferta de fim de ano para quem fecha no anual em novembro: trava de preço de 2026 até dezembro de 2027 (a tabela sobe em janeiro). Escassez honesta, não desconto.</li>
+            <li>Clinics: 2 propostas sob medida para clínicas que apareceram no funil (ticket R$ 24–60 mil), sem mídia própria.</li>
+            <li>Segunda rodada de resgate: quem não respondeu em setembro recebe o case do evento.</li>
+          </ul>
+        </div>
+        <div>
+          <dl class="kv"><dt>Mídia</dt><dd>R$ 10.000 (R$ 4.000 na Semana)</dd><dt>Leads</dt><dd>339</dd><dt>Reuniões realizadas</dt><dd>88</dd><dt>Semana</dt><dd>400 ingressos · 60 diagnósticos</dd><dt>Clinics</dt><dd>1 fechamento = R$ 24–60 mil</dd></dl>
+          <div class="callout green" style="margin:16px 0 0"><p><strong>Critério de sucesso:</strong> R$ 220 mil, com ao menos R$ 40 mil vindos de evento + indicação (prova de que o motor não depende só de mídia).</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="month m4">
+      <header><h3>Dezembro · Fechar o ano com lucro</h3><div class="t">R$ 200 mil · 20 contratos</div></header>
+      <div class="body">
+        <div>
+          <ul style="font-size:14.5px;margin:0">
+            <li>"Dezembro esquece" vale para lançamento, não para renovação. Foco em fechar até 18/12; a última semana é só entrega.</li>
+            <li>Campanha "Comece 2027 no ar": quem fecha em dezembro entra em janeiro com conteúdo publicado e comunidade aberta. É a mesma oferta, com a implementação agendada para a primeira semana de janeiro.</li>
+            <li>Renovações antecipadas da base de janeiro–março de 2026 (11 + 13 + 18 contratos vencendo no primeiro trimestre): proposta de renovação anual em dezembro com trava de preço. Meta: 10 renovações × R$ 10 mil.</li>
+            <li>Sem evento pago novo: reprise gravada da Semana como isca, com CTA para o diagnóstico.</li>
+            <li>Fechar o relatório do ciclo: mensagem validada, custo por reunião, taxa de fechamento por persona, e a tabela de 2027.</li>
+          </ul>
+        </div>
+        <div>
+          <dl class="kv"><dt>Mídia</dt><dd>R$ 9.000 (metade em remarketing)</dd><dt>Leads</dt><dd>308</dd><dt>Reuniões realizadas</dt><dd>80</dd><dt>Novos</dt><dd>R$ 100–120 mil</dd><dt>Renovações</dt><dd>R$ 80–100 mil</dd></dl>
+          <div class="callout green" style="margin:16px 0 0"><p><strong>Critério de sucesso:</strong> R$ 200 mil somando novos e renovações antecipadas; ciclo fechado com lucro operacional acumulado ≥ R$ 350 mil no quadrimestre.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 -->
+  <section id="s9">
+    <div class="eyebrow">09</div>
+    <h2>Motor de mídia e criativos</h2>
+    <p class="lead">R$ 8–10 mil não compram alcance. Compram reuniões. Toda a verba vai para fundo de funil e para encher o evento; o topo é feito de orgânico e dos cortes do que já foi gravado.</p>
+
+    <div class="fig">
+      <p class="ft">Alocação da verba mensal</p>
+      <p class="fs">Média de R$ 9 mil/mês · Meta e Instagram; YouTube só em remarketing</p>
+      <svg id="chBud" viewBox="0 0 900 150" role="img" aria-label="Alocação da verba: conversão direta 55%, evento pago 25%, remarketing 15%, teste 5%"></svg>
+    </div>
+
+    <div class="tablewrap"><table>
+      <thead><tr><th>Bloco</th><th class="n">Verba</th><th>Objetivo</th><th>Formato</th><th>Métrica de corte</th></tr></thead>
+      <tbody>
+        <tr><td><b>Conversão direta</b> <span class="pill b">55%</span></td><td class="n">R$ 4.950</td><td>Reunião-diagnóstico via clique-para-WhatsApp (e página como B)</td><td>UGC de jaleco · tela dividida "dá pra fazer isso?" · screen-record áudio→post→lead</td><td>Custo por reunião realizada ≤ R$ 150</td></tr>
+        <tr><td><b>Evento pago</b> <span class="pill o">25%</span></td><td class="n">R$ 2.250</td><td>Ingressos a R$ 19 para o lançamento do mês</td><td>Convite do Guga/Dr. Arthur em 30 s + prova do case</td><td>Custo por ingresso ≤ R$ 15 (o ingresso paga a mídia)</td></tr>
+        <tr><td><b>Remarketing</b> <span class="pill m">15%</span></td><td class="n">R$ 1.350</td><td>Quem clicou e não agendou; quem viu o evento e não pediu diagnóstico</td><td>Manifesto 45 s · depoimento · quebra de objeção em QA</td><td>Custo por reunião ≤ R$ 100</td></tr>
+        <tr><td><b>Teste</b> <span class="pill g">5%</span></td><td class="n">R$ 450</td><td>1 hook novo por semana</td><td>Só o gancho muda; corpo igual</td><td>CTR e custo por lead vs. controle</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>As dez ideias-semente da campanha (30 criativos = 10 × 3 personas)</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>#</th><th>Criativo</th><th>Prova visual 0–3 s</th><th>Mecanismo 3–8 s</th><th>Payoff</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><b>Aparecer errado × aparecer certo</b></td><td>Split: post genérico de guru × post com o artigo citado no canto</td><td>"Cada post nasce de um artigo e passa por revisão de compliance."</td><td>"Aparecer com segurança. Quero meu diagnóstico."</td></tr>
+        <tr><td>2</td><td><b>Do áudio ao post</b></td><td>Screen-record: profissional manda áudio de 20 s no app</td><td>A IA devolve roteiro, legenda e vídeo editado</td><td>"Dez minutos por dia. O resto a máquina faz."</td></tr>
+        <tr><td>3</td><td><b>Metade da formação, dobro da audiência</b></td><td>Feed com 4 perfis fazendo o mesmo trend</td><td>"Ela publica toda semana. Você trava. A diferença não é competência."</td><td>"Existe um jeito de publicar sem risco."</td></tr>
+        <tr><td>4</td><td><b>Dá pra fazer isso? (médico)</b></td><td>Pergunta à esquerda; app à direita gera roteiro com referência PubMed</td><td>"Roteiro com evidência, dentro das normas do CFM."</td><td>"Dá. E ainda vira paciente no WhatsApp."</td></tr>
+        <tr><td>5</td><td><b>Seguidor não é paciente</b></td><td>Contador de seguidores × agenda vazia</td><td>"Audiência vira comunidade. Comunidade vira agenda."</td><td>"Do post ao paciente, no mesmo sistema."</td></tr>
+        <tr><td>6</td><td><b>A agência que não sabe o que é conselho</b></td><td>Comprovante Pix de R$ 3.000 "AGÊNCIA"</td><td>"Você paga R$ 3 mil para alguém que nunca leu o código de ética da sua área."</td><td>"Um terço do preço, com gente da saúde do lado."</td></tr>
+        <tr><td>7</td><td><b>Depoimento com case</b></td><td>Cliente real (médico de R$ 17.640) falando à câmera</td><td>"Em 30 dias publiquei mais do que no ano inteiro, e sem medo."</td><td>"Faça seu diagnóstico."</td></tr>
+        <tr><td>8</td><td><b>Enquanto você atende</b></td><td>Split: consulta × notificações "+R$ 15 mil, 4 planos vendidos"</td><td>"A comunidade vende o plano enquanto você cuida de gente."</td><td>"Atender menos. Cuidar de mais gente."</td></tr>
+        <tr><td>9</td><td><b>Ética não é invisível (psi)</b></td><td>Tela do CFP × roteiro aprovado</td><td>"Conteúdo dentro do código, com base científica, em 10 minutos."</td><td>"Apareça sem abrir mão da ética."</td></tr>
+        <tr><td>10</td><td><b>Manifesto</b></td><td>Estetoscópio, feed, painel; VO do Guga</td><td>o texto da seção 05</td><td><em class="sig">Take back control.</em></td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">Regra dos hooks (guia de retenção de julho): prova antes de explicação, mecanismo em uma frase, funciona sem áudio, uma ideia por peça, 25–40 s. Os 3 primeiros segundos mudam por persona; o corpo é o mesmo.</p>
+  </section>
+
+  <!-- 10 -->
+  <section id="s10">
+    <div class="eyebrow">10</div>
+    <h2>Máquina comercial</h2>
+    <p class="lead">Quatro peças: a cadência que impede o lead de sumir, o evento pago que aquece, a reunião que vende e o resgate que reaproveita o que já foi pago para conquistar.</p>
+
+    <h3>1 · Cadência de WhatsApp (SDR)</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Toque</th><th>Quando</th><th>Mensagem (essência)</th></tr></thead>
+      <tbody>
+        <tr><td>T1</td><td>≤ 5 min</td><td>"Oi, [nome]. Vi que você quer aparecer com mais segurança. Me conta: hoje quem cuida do seu conteúdo, você, agência, ou ninguém?" + agenda na primeira conversa, só D+1/D+2.</td></tr>
+        <tr><td>T2</td><td>+2 h</td><td>Envia um roteiro de post gerado com a área dela: "olha o que a máquina fez para uma [profissão] em 40 segundos. No diagnóstico a gente faz com o seu consultório."</td></tr>
+        <tr><td>T3</td><td>D+1</td><td>Case em vídeo de 30 s (mesma profissão) + dois horários concretos.</td></tr>
+        <tr><td>T4</td><td>D+3</td><td>A anamnese do consultório: 5 perguntas em imagem. "Quantas pessoas viram você este mês? Quantas viraram pacientes?"</td></tr>
+        <tr><td>T5</td><td>D+5</td><td>Áudio humano de 30 s, tom de colega, não de cobrança.</td></tr>
+        <tr><td>T6</td><td>D+7</td><td>Break-up: "vou liberar a sua vaga de diagnóstico; se fizer sentido depois, me chama." + convite para o evento do mês.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note" style="margin-top:8px">Qualificação em 4 perguntas gravadas no Pipedrive: profissão · como faz conteúdo hoje · quanto investe/mês · principal trava (aparecer, adesão, preço, tempo). Vira o roteiro da call. Micro-compromisso anti no-show: "traz um número: quanto você gastou com marketing e ferramentas nos últimos 3 meses".</p>
+
+    <h3>2 · O lançamento pago (roteiro de 60 minutos)</h3>
+    <ol>
+      <li><strong>0–5 min · Manifesto</strong> e a permissão: crescer é cumprir o juramento em escala.</li>
+      <li><strong>5–15 · O problema com método:</strong> por que profissional bom trava (medo do conselho, medo de errar em público, falta de tempo). O credo de 10 linhas.</li>
+      <li><strong>15–45 · Construção ao vivo:</strong> a estratégia de conteúdo de uma nutricionista (ou médico, ou psicólogo) do zero: posicionamento, 3 pilares de conteúdo, calendário de 4 semanas, o checklist de compliance da área, o fluxo do post ao WhatsApp. Em slides, não no produto.</li>
+      <li><strong>45–50 · O case:</strong> cliente real que aplicou isso por 3–6 meses; números de comunidade, agenda e faturamento.</li>
+      <li><strong>50–60 · A oferta empilhada</strong> (seção 06) com bônus de decisão válido até domingo e link para o diagnóstico. Quem paga o ingresso já demonstrou intenção; a conversão-alvo é 40% em diagnóstico e 30% desses em contrato.</li>
+    </ol>
+
+    <h3>3 · A Reunião-Diagnóstico (45 min)</h3>
+    <ol>
+      <li><strong>Abertura meta-demo (5 min):</strong> "você chegou por um anúncio nosso; deixa eu te mostrar no nosso painel o caminho exato que você fez até aqui. É isso que você vai enxergar dos seus pacientes."</li>
+      <li><strong>Anamnese (10 min):</strong> as 5 perguntas + o número que ele trouxe.</li>
+      <li><strong>Prova ao vivo (10 min):</strong> um áudio dele vira roteiro com referência científica e legenda, no produto, na hora. Máximo três telas.</li>
+      <li><strong>Prescrição (10 min):</strong> o plano de conteúdo dele para 30 dias e o desenho do funil no painel.</li>
+      <li><strong>Oferta e fechamento (10 min):</strong> empilhamento, garantias, bônus de decisão. Não fechou: proposta de 1 página no WhatsApp, follow D1/D3/D7, convite ao evento.</li>
+    </ol>
+
+    <h3>4 · Resgate e indicação</h3>
+    <div class="grid2">
+      <div class="card"><h4 style="margin-top:0">Resgate (134 contas)</h4><p style="font-size:14.5px;margin:0">Mensagem pessoal do Guga, não automação: "você saiu quando a MyDose era um software. Hoje é um time que cria e revisa o seu conteúdo. Posso te mostrar em 20 minutos?" Segmentar: cancelados por preço recebem Solo; por "não usei" recebem Co-Pilot com implementação por nossa conta. Meta: 20 conversas e 4 retornos por mês.</p></div>
+      <div class="card"><h4 style="margin-top:0">Indicação (base ativa)</h4><p style="font-size:14.5px;margin:0">Dentro do app e na comunidade: "traga um colega e os dois ganham um mês por nossa conta". Sem dinheiro, sem cupom em público. O profissional indica porque fica bem indicar, não pela recompensa. Meta: 10 leads/mês a partir de outubro.</p></div>
+    </div>
+  </section>
+
+  <!-- 11 -->
+  <section id="s11">
+    <div class="eyebrow">11</div>
+    <h2>Governança, riscos e decisões</h2>
+
+    <h3>Painel semanal (segunda, 9h, 30 minutos)</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Métrica</th><th class="n">Alvo</th><th>Ação se ficar abaixo</th></tr></thead>
+      <tbody>
+        <tr><td><b>Custo por reunião realizada</b> (norte)</td><td class="n">≤ R$ 150</td><td>Trocar hook, não o corpo; mover verba para evento e remarketing</td></tr>
+        <tr><td>Leads qualificados / semana</td><td class="n">58–85</td><td>Subir verba só se o custo por reunião estiver no alvo</td></tr>
+        <tr><td>Tempo até a primeira resposta</td><td class="n">≤ 5 min</td><td>Automação de T1 + alerta no celular do SDR</td></tr>
+        <tr><td>Lead → agendado</td><td class="n">≥ 40%</td><td>Revisar T1/T2; oferecer o evento como porta alternativa</td></tr>
+        <tr><td>Show rate</td><td class="n">≥ 65%</td><td>Micro-compromisso obrigatório; confirmação D-1 em vídeo</td></tr>
+        <tr><td>Fechamento na call</td><td class="n">≥ 25%</td><td>Role-play do empilhamento; revisar bônus de decisão</td></tr>
+        <tr><td>TCV médio</td><td class="n">≥ R$ 10 mil</td><td>Se cair abaixo de R$ 8 mil, Solo está canibalizando: tirar Solo da call, deixar só como saída</td></tr>
+        <tr><td>Primeiro conteúdo no ar</td><td class="n">≤ 7 dias após o contrato</td><td>É a métrica anti-churn; CX reporta toda semana</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Riscos e mitigações</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Risco</th><th>Sinal</th><th>Mitigação</th></tr></thead>
+      <tbody>
+        <tr><td>A mensagem de segurança não cria urgência</td><td>CTR bom, reunião cara (custo &gt; R$ 200)</td><td>Campanha B (comunidade) e C (liberdade) já rodam em paralelo; a vencedora assume em outubro</td></tr>
+        <tr><td>Capacidade de SDR estoura em novembro</td><td>Tempo de resposta &gt; 15 min</td><td>Reforço contratado até 20/10 ou fundadores nas calls</td></tr>
+        <tr><td>Prometer compliance e não ter o processo</td><td>Cliente pergunta "quem revisa?"</td><td>Checklist por conselho escrito com o Dr. Arthur antes do dia 20/09; revisão mensal em lote; nunca prometer "aprovado pelo conselho"</td></tr>
+        <tr><td>Caixa: contratos parcelados</td><td>TCV alto, caixa baixo</td><td>Pix/à vista com bônus; antecipação de recebíveis já contratada</td></tr>
+        <tr><td>Churn dos novos por falta de adoção</td><td>Sem conteúdo publicado em 7 dias</td><td>Implementação em 7 dias como bônus de decisão; estrategista quinzenal desde a semana 1</td></tr>
+        <tr><td>Dispersão: PLG global, Clinics, novas features</td><td>Time discutindo roadmap em vez de reunião</td><td>Filtro da missão Runway: entra caixa em ≤ 90 dias? Se não, janeiro</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Decisões do Guga até 15/09</h3>
+    <ul class="check">
+      <li>Aprovar a manchete "Apareça com segurança. Cresça com credibilidade." como mensagem única de set–dez.</li>
+      <li>Aprovar o Co-Pilot Credibilidade a R$ 990/mês (anual) com conteúdo + compliance + estrategista + anúncios montados. Ou manter R$ 890 e reduzir o escopo.</li>
+      <li>Fixar a capacidade real de implementações por mês (a escassez honesta).</li>
+      <li>Quem revisa compliance: Dr. Arthur + checklist por conselho, ou parceiro externo.</li>
+      <li>Número real da Carol no site e na página de diagnóstico (ainda placeholder).</li>
+      <li>Datas dos eventos: 24/09, 22/10 e 17–19/11.</li>
+      <li>Reforço de SDR para novembro: contratar ou assumir calls.</li>
+    </ul>
+
+    <h3>Os primeiros 14 dias</h3>
+    <ol class="steps">
+      <li><span class="k">D1</span><div><b>Mensagem e oferta aprovadas.</b> Este documento vira o briefing do time.</div></li>
+      <li><span class="k">D3</span><div><b>Página e WhatsApp.</b> LP de diagnóstico com a manchete nova, CTD, CRM plugado, número da Carol.</div></li>
+      <li><span class="k">D5</span><div><b>Roteiros e gravação.</b> 30 criativos gravados em uma diária (Guga, Dr. Arthur, 2 clientes).</div></li>
+      <li><span class="k">D7</span><div><b>Campanhas no ar.</b> 3 campanhas × 2 destinos. Cadência T1–T6 e role-play da call feitos.</div></li>
+      <li><span class="k">D8</span><div><b>Resgate.</b> 134 mensagens pessoais enviadas ao longo de 5 dias.</div></li>
+      <li><span class="k">D10</span><div><b>Evento anunciado.</b> Página do lançamento #1, ingressos a R$ 19, verba de evento ligada.</div></li>
+      <li><span class="k">D14</span><div><b>Primeira leitura.</b> Custo por reunião por campanha; corte da pior; ajuste de hooks.</div></li>
+    </ol>
+  </section>
+
+  <!-- ANEXO -->
+  <section id="s12">
+    <div class="eyebrow">Anexo</div>
+    <h2>Banco de copy</h2>
+
+    <h3>Página de diagnóstico (estrutura)</h3>
+    <ol>
+      <li><b>Hero:</b> "Apareça com segurança. Cresça com credibilidade." Sub: "Conteúdo com evidência científica, revisado contra as normas do seu conselho e distribuído até virar paciente no seu WhatsApp. Com um estrategista da saúde ao seu lado." CTA: Quero meu diagnóstico.</li>
+      <li><b>Agitação:</b> "Tem profissional com metade da sua formação e o dobro da sua audiência. Não é injustiça, é sistema." + a anamnese do consultório (5 perguntas).</li>
+      <li><b>Mecanismo em 3 passos:</b> a IA cria com evidência → a revisão de compliance libera → a distribuição transforma em paciente.</li>
+      <li><b>Prova:</b> +1.000 profissionais · +130 mil pacientes · depoimentos por persona.</li>
+      <li><b>Os 3 controles</b> (seção 05) com "+" expansível onde as funcionalidades aparecem como prova.</li>
+      <li><b>Garantias:</b> 30 dias · sem fidelidade · ética, sigilo e LGPD · sem % sobre as suas vendas.</li>
+      <li><b>FAQ anti-objeção:</b> "isso não fere o conselho?" · "não tenho tempo" · "meus pacientes não usam app" · "já tenho agência" · "e se eu não gostar?"</li>
+      <li><b>Fecho navy:</b> <em class="sig">Take back control.</em></li>
+    </ol>
+
+    <h3>Sequência de e-mail (7 toques, D0–D14) "Aparecer com segurança"</h3>
+    <ol>
+      <li>O checklist do conselho: o que pode e o que não pode no conteúdo da sua área (valor puro).</li>
+      <li>A história do Dr. Arthur: de refém da agenda a referência.</li>
+      <li>A conta da agência: R$ 3 mil por mês para quem nunca leu o seu código de ética.</li>
+      <li>Por que copiar guru não gera paciente (mensagem própria com evidência própria).</li>
+      <li>Quem fica: comunidade, adesão e a agenda que não depende de você.</li>
+      <li>Quanto cobrar: precificação com segurança (School).</li>
+      <li>Convite direto: diagnóstico ou o evento do mês.</li>
+    </ol>
+
+    <h3>Convite do evento (30 s, Guga à câmera)</h3>
+    <p style="font-family:var(--serif);font-size:18px;line-height:1.45">"Quarta, às sete da noite, eu vou construir do zero a estratégia de conteúdo de uma nutricionista. Ao vivo, em quarenta minutos: o que publicar, como embasar, como ficar dentro das normas do conselho e como isso vira paciente no WhatsApp. Custa dezenove reais para garantir que só vem quem vai aplicar. Vaga limitada. Link na bio."</p>
+
+    <h3>Mensagem de resgate (Guga, pessoal)</h3>
+    <p style="font-family:var(--serif);font-size:18px;line-height:1.45">"[Nome], aqui é o Guga da MyDose. Você saiu numa época em que a gente era um software. Hoje a gente cria, revisa e distribui o seu conteúdo com um estrategista do lado, dentro das normas do seu conselho. Não quero te vender nada por mensagem. Quero te mostrar em vinte minutos o que mudou e ouvir por que não deu certo da primeira vez. Topa?"</p>
+  </section>
+
+  </main>
+</div>
+
+<div class="wrap foot">
+  <div class="sig">Take back control.</div>
+  Fontes: transcrição da conversa com o John (2026-09-04, 46 min) · Pipedrive (pipelines de vendas e de sucesso do cliente, leitura de 2026-09-06) · plano de negócios e de growth H2/2026 (hub mydose-segundo-semestre) · StoryBrand, casa da mensagem v4 e ofertas irresistíveis (wiki MyDose) · guia de hooks e retenção (julho/2026) · missão Runway set/2026 → jul/2027. Números de meta são premissas do plano, não previsões.
+</div>
+
+<div class="cta-nav"><button id="themeBtn" type="button" aria-label="Alternar tema">Tema</button><button type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">Topo</button></div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  try{var t=localStorage.getItem('oc-theme');if(t)root.setAttribute('data-theme',t);}catch(e){}
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    var dark=cur?cur==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var n=dark?'light':'dark'; root.setAttribute('data-theme',n);
+    try{localStorage.setItem('oc-theme',n);}catch(e){}
+    draw();
+  });
+  var tip=document.getElementById('tip');
+  function show(e,txt){tip.textContent=txt;tip.style.opacity=1;tip.style.left=(e.clientX+12)+'px';tip.style.top=(e.clientY-30)+'px';}
+  function hide(){tip.style.opacity=0;}
+  function css(v){return getComputedStyle(root).getPropertyValue(v).trim();}
+  function el(n,a){var e=document.createElementNS('http://www.w3.org/2000/svg',n);for(var k in a)e.setAttribute(k,a[k]);return e;}
+  function fmt(v){return 'R$ '+Math.round(v).toLocaleString('pt-BR');}
+
+  function draw(){
+    var ink=css('--ink'),muted=css('--muted'),grid=css('--grid'),c1=css('--c1'),c2=css('--c2'),c3=css('--c3');
+    // chart 1: bookings
+    var s=document.getElementById('chBook'); s.innerHTML='';
+    var labels=['set/25','out','nov','dez','jan/26','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+    var real=[29802,99535,69552,54295,130380,141080,162840,98142,94800,84876,67806,39120];
+    var meta=[150000,180000,220000,200000];
+    var W=900,H=300,L=52,R=10,T=18,B=40,max=240000,n=16,bw=(W-L-R)/n;
+    var y=function(v){return T+(H-T-B)*(1-v/max);};
+    [0,60000,120000,180000,240000].forEach(function(v){
+      s.appendChild(el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:grid,'stroke-width':1}));
+      var t=el('text',{x:L-8,y:y(v)+4,'text-anchor':'end','font-size':11,fill:muted,'font-family':'Figtree, sans-serif'});t.textContent=(v/1000)+'k';s.appendChild(t);
+    });
+    for(var i=0;i<n;i++){
+      var x=L+i*bw+bw*.18,w=bw*.64,v=i<12?real[i]:meta[i-12];
+      var r=el('rect',{x:x,y:y(v),width:w,height:Math.max(0,y(0)-y(v)),rx:3,fill:i<12?c1:'transparent',stroke:i<12?'none':c2,'stroke-width':i<12?0:2,'stroke-dasharray':i<12?'':'5 4'});
+      (function(v,lab,isMeta){r.addEventListener('mousemove',function(e){show(e,lab+': '+fmt(v)+(isMeta?' (meta)':''));});r.addEventListener('mouseleave',hide);})(v,labels[i],i>=12);
+      s.appendChild(r);
+      if(i===6||i===11||i>=12){var vt=el('text',{x:x+w/2,y:y(v)-6,'text-anchor':'middle','font-size':11,fill:ink,'font-family':'Figtree, sans-serif','font-weight':600});vt.textContent=Math.round(v/1000)+'k';s.appendChild(vt);}
+      var lt=el('text',{x:x+w/2,y:H-B+18,'text-anchor':'middle','font-size':11,fill:muted,'font-family':'Figtree, sans-serif'});lt.textContent=labels[i];s.appendChild(lt);
+    }
+    s.appendChild(el('line',{x1:L,x2:W-R,y1:y(0),y2:y(0),stroke:muted,'stroke-width':1}));
+    var sep=L+12*bw; s.appendChild(el('line',{x1:sep,x2:sep,y1:T,y2:y(0),stroke:muted,'stroke-width':1,'stroke-dasharray':'3 4'}));
+    var st=el('text',{x:sep+6,y:T+10,'font-size':11,fill:muted,'font-family':'Figtree, sans-serif'});st.textContent='plano →';s.appendChild(st);
+
+    // chart 2: sources stacked
+    var g=document.getElementById('chSrc'); g.innerHTML='';
+    var months=['Setembro','Outubro','Novembro','Dezembro'];
+    var src=[[110,45,55,21],[125,55,70,27],[150,70,85,34],[140,50,80,38]];
+    var names=['Mídia paga','Lançamento pago','Base, resgate e indicação','Orgânico e parcerias'];
+    var cols=[c1,c2,c3,muted];
+    var W2=900,H2=260,L2=52,T2=14,B2=36,max2=360,bw2=(W2-L2-R)/4;
+    var y2=function(v){return T2+(H2-T2-B2)*(1-v/max2);};
+    [0,90,180,270,360].forEach(function(v){g.appendChild(el('line',{x1:L2,x2:W2-R,y1:y2(v),y2:y2(v),stroke:grid}));var t=el('text',{x:L2-8,y:y2(v)+4,'text-anchor':'end','font-size':11,fill:muted,'font-family':'Figtree, sans-serif'});t.textContent=v;g.appendChild(t);});
+    src.forEach(function(arr,i){
+      var x=L2+i*bw2+bw2*.22,w=bw2*.56,acc=0,tot=arr.reduce(function(a,b){return a+b;},0);
+      arr.forEach(function(v,j){
+        var yt=y2(acc+v),yb=y2(acc);
+        var r=el('rect',{x:x,y:yt+1,width:w,height:Math.max(0,yb-yt-2),rx:2,fill:cols[j]});
+        (function(v,j){r.addEventListener('mousemove',function(e){show(e,names[j]+': '+v+' leads');});r.addEventListener('mouseleave',hide);})(v,j);
+        g.appendChild(r); acc+=v;
+      });
+      var tt=el('text',{x:x+w/2,y:y2(tot)-6,'text-anchor':'middle','font-size':12,fill:ink,'font-weight':600,'font-family':'Figtree, sans-serif'});tt.textContent=tot;g.appendChild(tt);
+      var lt=el('text',{x:x+w/2,y:H2-B2+18,'text-anchor':'middle','font-size':12,fill:muted,'font-family':'Figtree, sans-serif'});lt.textContent=months[i];g.appendChild(lt);
+    });
+    g.appendChild(el('line',{x1:L2,x2:W2-R,y1:y2(0),y2:y2(0),stroke:muted}));
+
+    // chart 3: budget bar
+    var b=document.getElementById('chBud'); b.innerHTML='';
+    var parts=[['Conversão direta',55,c1],['Evento pago',25,c2],['Remarketing',15,c3],['Teste',5,muted]];
+    var x0=10,total=880,acc=0;
+    parts.forEach(function(p){
+      var w=total*p[1]/100;
+      var r=el('rect',{x:x0+acc+1,y:30,width:w-2,height:54,rx:6,fill:p[2]});
+      (function(p){r.addEventListener('mousemove',function(e){show(e,p[0]+': '+p[1]+'% · '+fmt(9000*p[1]/100)+'/mês');});r.addEventListener('mouseleave',hide);})(p);
+      b.appendChild(r);
+      var t=el('text',{x:x0+acc+w/2,y:110,'text-anchor':'middle','font-size':12,fill:ink,'font-family':'Figtree, sans-serif','font-weight':600});t.textContent=p[0];b.appendChild(t);
+      var t2=el('text',{x:x0+acc+w/2,y:128,'text-anchor':'middle','font-size':12,fill:muted,'font-family':'Figtree, sans-serif'});t2.textContent=p[1]+'% · '+fmt(9000*p[1]/100);b.appendChild(t2);
+      acc+=w;
+    });
+  }
+  draw();
+  if(window.matchMedia){window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);}
+
+  // toc highlight
+  var links=[].slice.call(document.querySelectorAll('.toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  function onS(){var i=0,y=window.scrollY+120;secs.forEach(function(s,k){if(s&&s.offsetTop<=y)i=k;});links.forEach(function(a,k){a.classList.toggle('on',k===i);});}
+  window.addEventListener('scroll',onS,{passive:true});onS();
+})();
+</script>
+</body></html>
