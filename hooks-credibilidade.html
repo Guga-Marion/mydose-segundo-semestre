@@ -1,0 +1,443 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Hooks da Credibilidade</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#F6F4F2; --surface:#FFFFFF; --surface-2:#EFEBE6; --ink:#1B1830; --ink-2:#4A4560; --muted:#7A7489;
+  --line:#E2DCD5; --navy:#16224A; --plum:#4A2A5E; --coral:#D9433E; --coral-bg:#FBECEA; --ok:#1F7A5A; --ok-bg:#E6F3EC;
+  --amber-bg:#FFF3D6; --amber:#8A5A00;
+  --g1:#2D5BFF; --g2:#C2338F; --g3:#FF7A1A;
+  --chip:#EDE7F3; --chip-ink:#4A2A5E;
+  --tc:#16224A; --tc-bg:#EDE9F5;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1530; --surface:#171E3C; --surface-2:#1F2748; --ink:#F1EEFA; --ink-2:#C9C4DA; --muted:#9A94B0;
+    --line:#2B3358; --navy:#DCE2FF; --plum:#D9C8EA; --coral:#FF7A73; --coral-bg:#3A1F24; --ok:#7BD9B0; --ok-bg:#16332A;
+    --amber-bg:#3B2E10; --amber:#FFD27A; --chip:#2A2450; --chip-ink:#D9C8EA; --tc:#DCE2FF; --tc-bg:#232B52;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1530; --surface:#171E3C; --surface-2:#1F2748; --ink:#F1EEFA; --ink-2:#C9C4DA; --muted:#9A94B0;
+  --line:#2B3358; --navy:#DCE2FF; --plum:#D9C8EA; --coral:#FF7A73; --coral-bg:#3A1F24; --ok:#7BD9B0; --ok-bg:#16332A;
+  --amber-bg:#3B2E10; --amber:#FFD27A; --chip:#2A2450; --chip-ink:#D9C8EA; --tc:#DCE2FF; --tc-bg:#232B52;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding:40px 24px 96px}
+h1,h2,h3{font-family:"Fraunces","Iowan Old Style",Georgia,serif;font-weight:500;line-height:1.1;text-wrap:balance;margin:0}
+h1{font-size:clamp(40px,6vw,64px);font-style:italic;letter-spacing:-.01em}
+h2{font-size:30px;margin:0 0 6px}
+h3{font-size:20px;font-style:italic}
+.grad{background:linear-gradient(90deg,var(--g1),var(--g2),var(--g3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.lead{font-size:18px;color:var(--ink-2);max-width:66ch;margin:16px 0 0}
+p{max-width:70ch}
+header{padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:40px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:20px;font-size:13px;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:600}
+section{margin:0 0 56px}
+.sec-head{margin-bottom:18px}
+.sec-head p{color:var(--ink-2);margin:6px 0 0}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+th{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:12px 12px;border-bottom:1px solid var(--line);background:var(--surface-2);white-space:nowrap}
+td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.n{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums;color:var(--muted);width:1%}
+.chip{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--chip);color:var(--chip-ink);white-space:nowrap}
+.chip.medo{background:#E4EAFF;color:#1F3BAA}
+.chip.inveja{background:#E6F3EC;color:#1F7A5A}
+.chip.preguica{background:#FFF3D6;color:#8A5A00}
+.chip.vaidade{background:#F6E5F0;color:#8E2367}
+.chip.ira{background:#FBECEA;color:#B0302B}
+.chip.seg{background:#E6F0F5;color:#1E4D66}
+.chip.prova{background:#EDE7F3;color:#4A2A5E}
+.chip.obj{background:#EEEDEA;color:#4A4560}
+:root[data-theme="dark"] .chip, :root:not([data-theme="light"]) .chip{filter:none}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .chip{background:var(--chip);color:var(--chip-ink)} }
+:root[data-theme="dark"] .chip{background:var(--chip);color:var(--chip-ink)}
+.argument{display:grid;grid-template-columns:44px 1fr;gap:0 16px;counter-reset:a}
+.argument .row{display:contents}
+.argument .k{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:28px;color:var(--plum);line-height:1;padding-top:14px;border-top:1px solid var(--line)}
+.argument .v{padding:14px 0 16px;border-top:1px solid var(--line)}
+.argument .v b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.argument .v p{margin:0}
+.order{margin-top:20px;padding:16px 20px;background:var(--surface-2);border-radius:8px;font-size:15px;color:var(--ink-2)}
+.order b{color:var(--ink)}
+.frame{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.frame .mv{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 14px 16px;display:flex;flex-direction:column;gap:6px}
+.frame .tc{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--tc);background:var(--tc-bg);padding:2px 6px;border-radius:4px;align-self:flex-start;font-variant-numeric:tabular-nums}
+.frame .name{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:22px;color:var(--navy)}
+.frame .what{font-size:13.5px;color:var(--ink-2)}
+.frame .rule{font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:6px;margin-top:auto}
+@media (max-width:820px){.frame{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.frame{grid-template-columns:1fr}}
+.first{margin-top:14px;padding:14px 18px;border-left:3px solid var(--g2);background:var(--surface);border-radius:0 8px 8px 0;font-size:15px}
+.first b{font-weight:600}
+.script{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-bottom:22px;overflow:hidden}
+.script .top{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;padding:16px 20px 12px;border-bottom:1px solid var(--line)}
+.script .num{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.script h3{font-size:24px;color:var(--navy);flex:1 1 auto}
+.script .tags{display:flex;flex-wrap:wrap;gap:6px;font-size:12.5px;color:var(--muted)}
+.script .tags span.t{padding:3px 0}
+.script .hook{padding:14px 20px;background:var(--surface-2);font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:20px;line-height:1.3;color:var(--ink)}
+.script .hook small{display:block;font-family:"Plus Jakarta Sans",sans-serif;font-style:normal;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.beats{display:grid;grid-template-columns:78px 110px 1.1fr 1fr 1.5fr;font-size:13.5px}
+.beats .h{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line)}
+.beats .c{padding:11px 12px;border-bottom:1px solid var(--line)}
+.beats .c:nth-last-child(-n+5){border-bottom:0}
+.beats .tc{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--tc);font-variant-numeric:tabular-nums}
+.beats .mv{font-weight:600;color:var(--plum);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.beats .tela{font-weight:600;color:var(--ink)}
+.beats .fala{color:var(--ink-2)}
+@media (max-width:760px){
+  .beats{grid-template-columns:1fr}
+  .beats .h{display:none}
+  .beats .c{border-bottom:0;padding:4px 16px}
+  .beats .c.tc{padding-top:14px;border-top:1px solid var(--line)}
+  .beats .c.fala{padding-bottom:14px}
+  .beats .c.cena::before{content:"Cena · ";color:var(--muted);font-weight:600}
+  .beats .c.tela::before{content:"Tela · ";color:var(--muted);font-weight:600}
+  .beats .c.fala::before{content:"Falado · ";color:var(--muted);font-weight:600}
+}
+.alt{padding:12px 20px 14px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2)}
+.alt b{color:var(--muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:4px}
+.alt em{font-family:"Fraunces",Georgia,serif;font-size:15.5px;color:var(--ink)}
+.note{padding:10px 20px 14px;font-size:13px;color:var(--amber);background:var(--amber-bg)}
+.copy{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.copy .box{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px}
+.copy .box b{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.copy .box p{margin:0;font-size:15px}
+.copy .box.wide{grid-column:1/-1}
+@media (max-width:640px){.copy{grid-template-columns:1fr}}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rules .box{border-radius:8px;padding:16px 18px}
+.rules .yes{background:var(--ok-bg);color:var(--ok)}
+.rules .no{background:var(--coral-bg);color:var(--coral)}
+.rules b{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.rules ul{margin:0;padding-left:18px;font-size:14.5px;line-height:1.6}
+@media (max-width:640px){.rules{grid-template-columns:1fr}}
+.warn{margin-top:16px;border:1px solid var(--line);border-left:3px solid var(--coral);border-radius:0 8px 8px 0;padding:14px 18px;background:var(--surface)}
+.warn b{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+.warn ol{margin:0;padding-left:20px;font-size:14.5px}
+.warn li{margin-bottom:6px}
+.check{columns:2;column-gap:28px;font-size:14.5px;padding-left:18px;margin:0}
+.check li{break-inside:avoid;margin-bottom:6px}
+@media (max-width:640px){.check{columns:1}}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.kpi .k{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.kpi .k b{display:block;font-family:"Fraunces",Georgia,serif;font-size:26px;font-weight:500;color:var(--navy);font-variant-numeric:tabular-nums}
+.kpi .k span{font-size:12.5px;color:var(--muted)}
+@media (max-width:640px){.kpi{grid-template-columns:1fr 1fr}}
+.sig{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:22px;color:var(--navy)}
+.foot{font-size:12.5px;color:var(--muted);margin-top:8px}
+</style>
+</head><body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">MyDose Scale · Operação Credibilidade · set–dez 2026</div>
+  <h1>Hooks da <span class="grad">Credibilidade</span></h1>
+  <p class="lead">Doze anúncios em vídeo para gravar hoje. Cada um abre pelo maior medo do profissional de saúde, nomeia o inimigo comum e termina na porta: <b>Quero meu diagnóstico</b>.</p>
+  <div class="meta">
+    <span><b>Produto-herói</b> MyDose Scale</span>
+    <span><b>Destino</b> WhatsApp da Carol → Reunião-Diagnóstico</span>
+    <span><b>Duração</b> 30–40 s (corte de 15 s para remarketing)</span>
+    <span><b>Métrica-norte</b> custo por reunião realizada ≤ R$ 150</span>
+    <span><b>Versão</b> 2026-09-09</span>
+  </div>
+</header>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">1 · O argumento</div><h2>Cinco linhas que todo anúncio obedece</h2></div>
+  <div class="argument">
+    <div class="row"><div class="k">I</div><div class="v"><b>O medo</b><p>Ele não posta por falta de tempo. Não posta por medo de parecer charlatão. A credibilidade é o ativo mais caro que ele tem e ele não arrisca.</p></div></div>
+    <div class="row"><div class="k">II</div><div class="v"><b>O inimigo comum</b><p>O "creator de jaleco": sabe menos, promete mais e cresce todo dia enquanto ele fica calado. Atacamos o modelo, nunca uma pessoa ou marca.</p></div></div>
+    <div class="row"><div class="k">III</div><div class="v"><b>A virada</b><p>O medo dele é a prova de que ele é exatamente quem deveria estar aparecendo. O pecado vira credencial.</p></div></div>
+    <div class="row"><div class="k">IV</div><div class="v"><b>A máquina</b><p>MyDose Scale: construída depois de ouvir mais de 1.000 profissionais de saúde. Escreve a partir de evidência científica (Nature, PubMed, Neuroscience Journal) e dentro das normas do conselho dele. Ele fala 40 segundos; a máquina escreve, cita a fonte e distribui.</p></div></div>
+    <div class="row"><div class="k">V</div><div class="v"><b>A permissão e a porta</b><p>"Aparecer com evidência não é se vender. É cumprir o juramento em escala." Depois disso, só uma porta: Quero meu diagnóstico.</p></div></div>
+  </div>
+  <div class="order"><b>Ordem psicológica fixa:</b> segurança (racional) abre → credibilidade, autoridade e comunidade (emocional) fecham → dinheiro é consequência e nunca abre. <b>Why</b> = autoridade · <b>How</b> = conteúdo com evidência · <b>What</b> = o agente de IA. O What nunca abre o vídeo.</div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">2 · Os pecados como alavancas</div><h2>O que ele sente e o que o anúncio faz com isso</h2><p>Nunca dizemos o pecado em voz alta. O anúncio reconhece o sentimento e devolve uma licença.</p></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Alavanca</th><th>O que ele sente (nunca dizemos)</th><th>O que o anúncio faz</th><th>Hooks</th></tr></thead>
+    <tbody>
+      <tr><td><span class="chip medo">Medo</span> <span style="color:var(--muted);font-size:12px">a porta</span></td><td>"Se eu postar, vão achar que virei coach."</td><td>Nomeia o medo, valida e transforma em credencial.</td><td>2 · 5</td></tr>
+      <tr><td><span class="chip inveja">Inveja</span></td><td>"O cara que estudou um fim de semana tem 80 mil seguidores."</td><td>Cria o inimigo comum; devolve a inveja como injustiça a corrigir.</td><td>1</td></tr>
+      <tr><td><span class="chip preguica">Preguiça</span></td><td>"Não vou virar editor de vídeo."</td><td>Mostra o mecanismo: áudio de 40 s vira post com referência.</td><td>3</td></tr>
+      <tr><td><span class="chip vaidade">Vaidade</span></td><td>"Quero ser reconhecido pelo que sei."</td><td>Dá licença: referência não é vaidade, é responsabilidade.</td><td>4</td></tr>
+      <tr><td><span class="chip ira">Ira</span></td><td>"Todo dia um charlatão leva um paciente meu."</td><td>Canaliza: o antídoto não é denúncia, é ele aparecendo.</td><td>8</td></tr>
+      <tr><td><span class="chip seg">Segurança</span></td><td>"Não sei o que posso dizer sem me expor."</td><td>Mostra a fonte e a norma no post; segurança é o argumento racional.</td><td>6 · 10 · 12</td></tr>
+      <tr><td><span class="chip prova">Prova</span></td><td>"Quem são vocês pra falar isso?"</td><td>+1.000 profissionais ouvidos, fontes científicas nomeadas.</td><td>7 · 9</td></tr>
+      <tr><td><span class="chip obj">Ganância</span></td><td>"Quero faturar mais."</td><td>Só no fecho, nunca no hook. Dinheiro não abre.</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">3 · Framework do roteiro</div><h2>Cinco movimentos em 30–40 segundos</h2><p>Prova antes de explicação. Uma ideia por vídeo. Tem que funcionar sem áudio até o segundo 8.</p></div>
+  <div class="frame">
+    <div class="mv"><span class="tc">0–3 s</span><div class="name">Espelho</div><div class="what">Prova visual + avatar. Ele se reconhece no primeiro frame.</div><div class="rule">Texto na tela com no máximo 6 palavras. Sem "nesse vídeo eu vou".</div></div>
+    <div class="mv"><span class="tc">3–8 s</span><div class="name">Inimigo</div><div class="what">Nomeia o charlatão, o modelo que cresce sem ciência.</div><div class="rule">O modelo, nunca a pessoa nem a marca.</div></div>
+    <div class="mv"><span class="tc">8–15 s</span><div class="name">Virada</div><div class="what">O pecado vira credencial: "seu medo é o sinal de que…"</div><div class="rule">Uma frase verdadeira. Sem "mas antes".</div></div>
+    <div class="mv"><span class="tc">15–28 s</span><div class="name">Máquina</div><div class="what">Tela do Scale: áudio → roteiro com referência → dentro das normas. +1.000.</div><div class="rule">IA é o mecanismo, não a promessa.</div></div>
+    <div class="mv"><span class="tc">28–38 s</span><div class="name">Permissão + Porta</div><div class="what">Frase de licença e o CTA: Quero meu diagnóstico.</div><div class="rule">Sem "grátis". Sem ROI. Sem "1ª venda em 30 dias".</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">4 · A tabela</div><h2>Os doze hooks</h2><p>Estruturas do guia de retenção: E1 dor + contraste · E2 resultado + como foi feito · E3 crença comum + erro oculto · E4 antes e depois.</p></div>
+  <div class="tbl"><table>
+    <thead><tr><th>#</th><th>Nome</th><th>Alavanca</th><th>Persona</th><th>Estr.</th><th>Hook falado (0–3 s)</th><th>Texto na tela</th><th>Formato</th></tr></thead>
+    <tbody>
+      <tr><td class="n">01</td><td><b>O curso de fim de semana</b></td><td><span class="chip inveja">Inveja</span></td><td>médico · nutri</td><td>E3</td><td>"Você estudou dez anos. Quem te passou no Instagram fez um curso de fim de semana."</td><td>10 ANOS × 1 FIM DE SEMANA</td><td>UGC jaleco + b-roll</td></tr>
+      <tr><td class="n">02</td><td><b>Aquele cara</b></td><td><span class="chip medo">Medo</span></td><td>geral</td><td>E1</td><td>"Sabe por que você não posta? Não é falta de tempo. É medo de parecer aquele cara."</td><td>Você não posta por medo.</td><td>UGC + screen-record</td></tr>
+      <tr><td class="n">03</td><td><b>O áudio de 40 segundos</b></td><td><span class="chip preguica">Preguiça</span></td><td>nutri</td><td>E2</td><td>"Esse post saiu de um áudio de 40 segundos. Com a referência do artigo no rodapé."</td><td>40 s de áudio → post com fonte</td><td>Screen-record celular</td></tr>
+      <tr><td class="n">04</td><td><b>Referência não é vaidade</b></td><td><span class="chip vaidade">Vaidade</span></td><td>geral</td><td>manifesto</td><td>"Querer ser reconhecido pelo que você sabe não é vaidade."</td><td>REFERÊNCIA ≠ VAIDADE</td><td>Manifesto (Guga / Dr. Arthur)</td></tr>
+      <tr><td class="n">05</td><td><b>Quatro vídeos antes de você</b></td><td><span class="chip medo">Medo de perda</span></td><td>médico</td><td>E1</td><td>"Antes de marcar com você, seu paciente já viu quatro vídeos de alguém que não sabe metade do que você sabe."</td><td>Ele chega com a opinião de outro.</td><td>UGC + tela dividida</td></tr>
+      <tr><td class="n">06</td><td><b>Dá pra postar isso?</b></td><td><span class="chip seg">Segurança</span></td><td>geral</td><td>E4</td><td>"Isso aqui te coloca em risco. Isso aqui te traz paciente."</td><td>RISCO × PACIENTE</td><td>Tela dividida</td></tr>
+      <tr><td class="n">07</td><td><b>Mil profissionais, um medo</b></td><td><span class="chip prova">Prova</span></td><td>geral</td><td>E2</td><td>"A gente ouviu mais de mil profissionais de saúde antes de construir isso. Todos tinham o mesmo medo."</td><td>+1.000 profissionais. 1 medo.</td><td>Talking-head fundador</td></tr>
+      <tr><td class="n">08</td><td><b>Um paciente por dia</b></td><td><span class="chip ira">Ira</span></td><td>geral</td><td>E1</td><td>"Todo dia um charlatão ganha um paciente que deveria ser seu. E ele nem sabe que está errado."</td><td>E ele nem sabe que está errado.</td><td>UGC + motion</td></tr>
+      <tr><td class="n">09</td><td><b>Os 300 certos</b></td><td><span class="chip prova">Comunidade</span></td><td>psi · nutri</td><td>E3</td><td>"Você não precisa de cem mil seguidores. Precisa que os trezentos certos te vejam como referência."</td><td>100.000 × 300</td><td>Motion + tela</td></tr>
+      <tr><td class="n">10</td><td><b>O que sobra pro psicólogo</b></td><td><span class="chip seg">Segurança</span></td><td>psicólogo</td><td>E3</td><td>"Psicólogo não pode prometer resultado, não pode expor caso, não pode anunciar preço no post. Então o que sobra?"</td><td>O que sobra?</td><td>UGC consultório</td></tr>
+      <tr><td class="n">11</td><td><b>Vou parecer igual a todo mundo?</b></td><td><span class="chip obj">Objeção</span></td><td>geral</td><td>QA</td><td>"Se eu usar IA no conteúdo, vou ficar igual a todo mundo?"</td><td>IA = genérico?</td><td>Edição QA</td></tr>
+      <tr><td class="n">12</td><td><b>E se o conselho me chamar?</b></td><td><span class="chip obj">Objeção</span></td><td>geral</td><td>QA</td><td>"E se o conselho me chamar por causa de um post?"</td><td>E se o conselho chamar?</td><td>Edição QA</td></tr>
+    </tbody>
+  </table></div>
+  <div class="first"><b>Grave primeiro (semana 1, persona nutri):</b> 02 · 03 · 06 · 07 · 08. São os cinco com a prova visual mais forte nos três primeiros segundos e cobrem medo, preguiça, segurança, prova e ira. Cada um com os dois hooks alternativos na mesma diária: 15 vídeos saem de uma manhã de gravação.</div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">5 · Roteiros de gravação</div><h2>Tempo · cena · texto na tela · falado</h2><p>Fale como quem conversa com um colega, não como quem apresenta. Onde diz "Tela do Scale", grave a tela real do produto: áudio entrando, roteiro saindo com a referência, aviso de normas.</p></div>
+
+  <article class="script">
+    <div class="top"><span class="num">01</span><h3>O curso de fim de semana</h3><div class="tags"><span class="chip inveja">Inveja</span><span class="t">médico · nutri</span><span class="t">E3</span><span class="t">UGC jaleco + b-roll</span></div></div>
+    <div class="hook"><small>Hook</small>"Você estudou dez anos. Quem te passou no Instagram fez um curso de fim de semana."</div>
+    <div class="beats">
+      <div class="h">Tempo</div><div class="h">Movimento</div><div class="h">Cena</div><div class="h">Texto na tela</div><div class="h">Falado</div>
+      <div class="c tc">0–3 s</div><div class="c mv">Espelho</div><div class="c cena">Você à câmera, consultório, jaleco. Corte seco, sem intro.</div><div class="c tela">10 ANOS × 1 FIM DE SEMANA</div><div class="c fala">Você estudou dez anos. Quem te passou no Instagram fez um curso de fim de semana.</div>
+      <div class="c tc">3–8 s</div><div class="c mv">Inimigo</div><div class="c cena">B-roll: feed rolando, vídeos de promessa desfocados. Sem rosto, sem marca.</div><div class="c tela">Ele não é melhor. Ele só aparece.</div><div class="c fala">Ele não sabe mais que você. Ele só aparece. E aparece sem ciência.</div>
+      <div class="c tc">8–15 s</div><div class="c mv">Virada</div><div class="c cena">Volta pra você, mais perto.</div><div class="c tela">Você tem o que ele não tem.</div><div class="c fala">Você ficou calado justamente porque leva a sério. E é isso que o paciente precisava ver.</div>
+      <div class="c tc">15–28 s</div><div class="c mv">Máquina</div><div class="c cena">Tela do Scale: áudio entra, roteiro sai com referência (Nature / PubMed), aviso de normas do conselho.</div><div class="c tela">Cada post nasce de um artigo.</div><div class="c fala">A gente construiu uma máquina que faz você aparecer com a ciência que ele não tem. Cada post nasce de um artigo, sai com a referência e dentro das normas do seu conselho.</div>
+      <div class="c tc">28–38 s</div><div class="c mv">Permissão + Porta</div><div class="c cena">Close. Card final navy com o CTA.</div><div class="c tela">Quero meu diagnóstico</div><div class="c fala">Não é vaidade. É devolver o paciente pra quem sabe cuidar dele. Toca no botão e pede o seu diagnóstico.</div>
+    </div>
+    <div class="alt"><b>Hooks alternativos (mesma diária)</b><em>"O cara com mais seguidores que você fez um curso de fim de semana."</em> · <em>"Dez anos de faculdade perdendo pra um fim de semana de curso."</em></div>
+  </article>
+
+  <article class="script">
+    <div class="top"><span class="num">02</span><h3>Aquele cara</h3><div class="tags"><span class="chip medo">Medo</span><span class="t">geral</span><span class="t">E1</span><span class="t">UGC + screen-record</span></div></div>
+    <div class="hook"><small>Hook</small>"Sabe por que você não posta? Não é falta de tempo. É medo de parecer aquele cara."</div>
+    <div class="beats">
+      <div class="h">Tempo</div><div class="h">Movimento</div><div class="h">Cena</div><div class="h">Texto na tela</div><div class="h">Falado</div>
+      <div class="c tc">0–3 s</div><div class="c mv">Espelho</div><div class="c cena">Celular na mão: post escrito, dedo parado sobre "Publicar". Não publica.</div><div class="c tela">Você não posta por medo.</div><div class="c fala">Sabe por que você não posta? Não é falta de tempo. É medo de parecer aquele cara.</div>
+      <div class="c tc">3–8 s</div><div class="c mv">Inimigo</div><div class="c cena">B-roll: silhueta genérica de jaleco, promessa milagrosa riscada em coral.</div><div class="c tela">"Aquele cara"</div><div class="c fala">Aquele que promete cura em trinta dias, vende protocolo no story e nunca leu um artigo.</div>
+      <div class="c tc">8–15 s</div><div class="c mv">Virada</div><div class="c cena">Você à câmera.</div><div class="c tela">Seu medo é a sua credencial.</div><div class="c fala">E esse medo é o sinal de que você é exatamente quem deveria estar postando.</div>
+      <div class="c tc">15–28 s</div><div class="c mv">Máquina</div><div class="c cena">Screen-record: grava áudio de 40 s → Scale gera roteiro com referência → selo "dentro das normas do seu conselho".</div><div class="c tela">Áudio → post com fonte</div><div class="c fala">Por isso a gente construiu a máquina de conteúdo mais segura da saúde: você fala o que sabe, ela escreve com evidência, cita a fonte e mantém dentro das normas do seu conselho.</div>
+      <div class="c tc">28–38 s</div><div class="c mv">Permissão + Porta</div><div class="c cena">Close. Card CTA.</div><div class="c tela">Quero meu diagnóstico</div><div class="c fala">Aparecer com evidência não é se vender. É cumprir o juramento em escala. Pede o seu diagnóstico.</div>
+    </div>
+    <div class="alt"><b>Hooks alternativos</b><em>"Você já escreveu o post. Só não apertou publicar. Eu sei por quê."</em> · <em>"Tem um post no seu rascunho há três semanas."</em></div>
+  </article>
+
+  <article class="script">
+    <div class="top"><span class="num">03</span><h3>O áudio de 40 segundos</h3><div class="tags"><span class="chip preguica">Preguiça</span><span class="t">nutri</span><span class="t">E2</span><span class="t">Screen-record celular</span></div></div>
+    <div class="hook"><small>Hook</small>"Esse post saiu de um áudio de 40 segundos. Com a referência do artigo no rodapé."</div>
+    <div class="beats">
+      <div class="h">Tempo</div><div class="h">Movimento</div><div class="h">Cena</div><div class="h">Texto na tela</div><div class="h">Falado</div>
+      <div class="c tc">0–3 s</div><div class="c mv">Espelho</div><div class="c cena">Post pronto na tela (carrossel com "Fonte: Nature, 2025" no rodapé). Dedo desliza os slides.</div><div class="c tela">40 s de áudio → post com fonte</div><div class="c fala">Esse post saiu de um áudio de quarenta segundos. Com a referência do artigo no rodapé.</div>
+      <div class="c tc">3–8 s</div><div class="c mv">Inimigo</div><div class="c cena">Rewind: você gravando o áudio no celular, entre uma consulta e outra.</div><div class="c tela">Sem editor. Sem roteirista.</div><div class="c fala">Você não vai virar editor de vídeo, nem roteirista, nem social media. E não precisa.</div>
+      <div class="c tc">8–15 s</div><div class="c mv">Virada</div><div class="c cena">Tela do Scale: transcrição do áudio → agente busca a evidência → roteiro.</div><div class="c tela">O que você já sabe, com fonte.</div><div class="c fala">Você fala o que já sabe. A máquina busca a evidência, escreve no seu tom e mostra de onde veio.</div>
+      <div class="c tc">15–28 s</div><div class="c mv">Máquina</div><div class="c cena">Tela: o mesmo áudio vira carrossel, reel e story. Botão de impulsionar na conta dela.</div><div class="c tela">1 áudio = 3 posts</div><div class="c fala">Do mesmo áudio saem carrossel, reel e story, dentro das normas do seu conselho, e o anúncio já sobe da sua conta.</div>
+      <div class="c tc">28–38 s</div><div class="c mv">Permissão + Porta</div><div class="c cena">Close. Card CTA.</div><div class="c tela">Quero meu diagnóstico</div><div class="c fala">Seu tempo é pra paciente. O conteúdo é pra máquina. Pede o seu diagnóstico e vê isso rodando com o seu nome.</div>
+    </div>
+    <div class="alt"><b>Hooks alternativos</b><em>"Quarenta segundos de áudio. Uma semana de conteúdo. Com fonte."</em> · <em>"Eu não editei nada disso."</em></div>
+  </article>
+
+  <article class="script">
+    <div class="top"><span class="num">04</span><h3>Referência não é vaidade</h3><div class="tags"><span class="chip vaidade">Vaidade</span><span class="t">geral</span><span class="t">manifesto</span><span class="t">Guga ou Dr. Arthur · fundo navy</span></div></div>
+    <div class="hook"><small>Hook</small>"Querer ser reconhecido pelo que você sabe não é vaidade."</div>
+    <div class="beats">
+      <div class="h">Tempo</div><div class="h">Movimento</div><div class="h">Cena</div><div class="h">Texto na tela</div><div class="h">Falado</div>
+      <div class="c tc">0–3 s</div><div class="c mv">Espelho</div><div class="c cena">Close, fundo navy, câmera parada. Tom de conversa, não de palestra.</div><div class="c tela">REFERÊNCIA ≠ VAIDADE</div><div class="c fala">Querer ser reconhecido pelo que você sabe não é vaidade.</div>
+      <div class="c tc">3–8 s</div><div class="c mv">Inimigo</div><div class="c cena">B-roll: feed de promessas, sem rosto.</div><div class="c tela">Vaidade é aparecer sem ter o que dizer.</div><div class="c fala">Vaidade é aparecer sem ter o que dizer. Você tem dez anos de coisa pra dizer e fica calado, enquanto quem não tem fala todo dia.</div>
+      <div class="c tc">8–15 s</div><div class="c mv">Virada</div><div class="c cena">Volta ao rosto.</div><div class="c tela">Ser referência é responsabilidade.</div><div class="c fala">Ser referência é responsabilidade. Quando você aparece com ciência, o paciente aprende a desconfiar do resto.</div>
+      <div class="c tc">15–28 s</div><div class="c mv">Máquina</div><div class="c cena">Tela do Scale em b-roll lento: artigo → post com o nome do profissional.</div><div class="c tela">Evidência em cada post.</div><div class="c fala">A gente construiu a máquina pra isso: cada conteúdo nasce de artigo, sai com a fonte e dentro das normas do seu conselho. Com o seu nome, no seu tom.</div>
+      <div class="c tc">28–38 s</div><div class="c mv">Permissão + Porta</div><div class="c cena">Card final.</div><div class="c tela">Quero meu diagnóstico · Take back control.</div><div class="c fala">Crescer não é trair o juramento. É cumpri-lo em escala. Pede o seu diagnóstico.</div>
+    </div>
+    <div class="alt"><b>Hooks alternativos</b><em>"Autoridade clínica com tecnologia vale mais que audiência sem ciência."</em> · <em>"Você não é vaidoso. Você é a referência que ainda não apareceu."</em></div>
+  </article>
+
+  <article class="script">
+    <div class="top"><span class="num">05</span><h3>Quatro vídeos antes de você</h3><div class="tags"><span class="chip medo">Medo de perda</span><span class="t">médico</span><span class="t">E1</span><span class="t">UGC + tela dividida</span></div></div>
+    <div class="hook"><small>Hook</small>"Antes de marcar com você, seu paciente já viu quatro vídeos de alguém que não sabe metade do que você sabe."</div>
+    <div class="beats">
+      <div class="h">Tempo</div><div class="h">Movimento</div><div class="h">Cena</div><div class="h">Texto na tela</div><div class="h">Falado</div>
+      <div class="c tc">0–3 s</div><div class="c mv">Espelho</div><div class="c cena">Tela dividida: paciente no sofá rolando o feed | cadeira vazia do consultório.</div><div class="c tela">Ele chega com a opinião de outro.</div><div class="c fala">Antes de marcar com você, seu paciente já viu quatro vídeos de alguém que não sabe metade do que você sabe.</div>
+      <div class="c tc">3–8 s</div><div class="c mv">Inimigo</div><div class="c cena">Consulta: paciente mostrando o celular pro médico.</div><div class="c tela">"Doutor, eu vi que…"</div><div class="c fala">Ele chega com a opinião de outro. E você gasta metade da consulta desmontando.</div>
+      <div class="c tc">8–15 s</div><div class="c mv">Virada</div><div class="c cena">Você à câmera.</div><div class="c tela">E se o vídeo fosse o seu?</div><div class="c fala">E se o vídeo que ele viu antes fosse o seu?</div>
+      <div class="c tc">15–28 s</div><div class="c mv">Máquina</div><div class="c cena">Tela: áudio → post com referência → anúncio impulsionado para o bairro / cidade.</div><div class="c tela">Com evidência. Dentro das normas.</div><div class="c fala">Com evidência, dentro das normas do seu conselho, aparecendo pra quem mora perto de você. Você fala; a máquina escreve, cita e distribui.</div>
+      <div class="c tc">28–38 s</div><div class="c mv">Permissão + Porta</div><div class="c cena">Close. Card CTA.</div><div class="c tela">Quero meu diagnóstico</div><div class="c fala">O paciente vai assistir alguém antes da consulta. Que seja você. Pede o seu diagnóstico.</div>
+    </div>
+    <div class="alt"><b>Hooks alternativos</b><em>"Seu paciente já foi 'consultado' no Instagram antes de chegar em você."</em> · <em>"Quatro vídeos. Nenhum seu."</em></div>
+  </article>
+
+  <article class="script">
+    <div class="top"><span class="num">06</span><h3>Dá pra postar isso?</h3><div class="tags"><span class="chip seg">Segurança</span><span class="t">geral</span><span class="t">E4</span><span class="t">Tela dividida</span></div></div>
+    <div class="hook"><small>Hook</small>"Isso aqui te coloca em risco. Isso aqui te traz paciente."</div>
+    <div class="beats">
+      <div class="h">Tempo</div><div class="h">Movimento</div><div class="h">Cena</div><div class="h">Texto na tela</div><div class="h">Falado</div>
+      <div class="c tc">0–3 s</div><div class="c mv">Espelho</div><div class="c cena">Esquerda: post "Emagreça 10 kg em 30 dias sem dieta", riscado em coral. Direita: post "O que a evidência diz sobre jejum", com fonte no rodapé.</div><div class="c tela">RISCO × PACIENTE</div><div class="c fala">Isso aqui te coloca em risco. Isso aqui te traz paciente.</div>
+      <div class="c tc">3–8 s</div><div class="c mv">Inimigo</div><div class="c cena">Zoom na esquerda: promessa, sem fonte, sem registro profissional.</div><div class="c tela">Mesmo assunto.</div><div class="c fala">Mesmo assunto. A diferença não é o tema.</div>
+      <div class="c tc">8–15 s</div><div class="c mv">Virada</div><div class="c cena">Zoom na direita: referência, linguagem permitida.</div><div class="c tela">A diferença é a fonte.</div><div class="c fala">É a fonte, e o que a norma do seu conselho permite dizer.</div>
+      <div class="c tc">15–28 s</div><div class="c mv">Máquina</div><div class="c cena">Tela do Scale gerando o post da direita. Aviso: "revisar: promessa de resultado".</div><div class="c tela">A máquina gera o da direita.</div><div class="c fala">O MyDose Scale gera o da direita: escreve a partir do artigo, mostra a fonte e sinaliza o que sai da norma antes de você publicar.</div>
+      <div class="c tc">28–38 s</div><div class="c mv">Permissão + Porta</div><div class="c cena">Card CTA.</div><div class="c tela">Quero meu diagnóstico</div><div class="c fala">Aparecer com segurança é a única forma de aparecer que vale a sua credibilidade. Pede o seu diagnóstico.</div>
+    </div>
+    <div class="alt"><b>Hooks alternativos</b><em>"Qual desses dois você postaria?"</em> · <em>"Um desses dois posts dá processo."</em> (mais agressivo, testar por último)</div>
+    <div class="note">"Sinaliza o que sai da norma antes de você publicar" depende da aprovação do Co-Pilot Credibilidade com revisão de compliance (decisão até 15/09). Se não aprovar, trocar por "e mostra a fonte em cada post".</div>
+  </article>
+
+  <article class="script">
+    <div class="top"><span class="num">07</span><h3>Mil profissionais, um medo</h3><div class="tags"><span class="chip prova">Prova</span><span class="t">geral</span><span class="t">E2</span><span class="t">Talking-head fundador</span></div></div>
+    <div class="hook"><small>Hook</small>"A gente ouviu mais de mil profissionais de saúde antes de construir isso. Todos tinham o mesmo medo."</div>
+    <div class="beats">
+      <div class="h">Tempo</div><div class="h">Movimento</div><div class="h">Cena</div><div class="h">Texto na tela</div><div class="h">Falado</div>
+      <div class="c tc">0–3 s</div><div class="c mv">Espelho</div><div class="c cena">Guga à câmera; "+1.000" grande atrás, na identidade.</div><div class="c tela">+1.000 profissionais. 1 medo.</div><div class="c fala">A gente ouviu mais de mil profissionais de saúde antes de construir isso. Todos tinham o mesmo medo.</div>
+      <div class="c tc">3–8 s</div><div class="c mv">Inimigo</div><div class="c cena">Cortes rápidos: cards com frases reais de clientes (sem nome) ou áudios com autorização.</div><div class="c tela">"Vão achar que virei coach."</div><div class="c fala">Não era falta de paciente. Era medo de aparecer e parecer charlatão.</div>
+      <div class="c tc">8–15 s</div><div class="c mv">Virada</div><div class="c cena">Guga.</div><div class="c tela">Então a gente construiu pra isso.</div><div class="c fala">Então a gente não construiu mais um software. Construiu uma máquina que só escreve com evidência.</div>
+      <div class="c tc">15–28 s</div><div class="c mv">Máquina</div><div class="c cena">Tela: fontes (Nature, PubMed, Neuroscience Journal) → roteiro → selo de normas do conselho.</div><div class="c tela">Nature · PubMed · normas do conselho</div><div class="c fala">Artigos da Nature, do PubMed, do Neuroscience Journal. Cada post sai com a referência e dentro das normas do seu conselho. Você fala; ela escreve no seu tom.</div>
+      <div class="c tc">28–38 s</div><div class="c mv">Permissão + Porta</div><div class="c cena">Card CTA.</div><div class="c tela">Quero meu diagnóstico</div><div class="c fala">Se o seu medo é o mesmo dos mil, a máquina foi feita pra você. Pede o seu diagnóstico.</div>
+    </div>
+    <div class="alt"><b>Hooks alternativos</b><em>"Mil profissionais de saúde, uma frase: 'tenho medo de parecer charlatão'."</em> · <em>"A gente não perguntou o que eles queriam. Perguntou do que tinham medo."</em></div>
+    <div class="note">Se for citar volume de artigos ("X milhões"), usar só o número real indexado pelo produto. Sem número confirmado, ficar nas fontes nomeadas.</div>
+  </article>
+
+  <article class="script">
+    <div class="top"><span class="num">08</span><h3>Um paciente por dia</h3><div class="tags"><span class="chip ira">Ira</span><span class="t">geral</span><span class="t">E1</span><span class="t">UGC + motion</span></div></div>
+    <div class="hook"><small>Hook</small>"Todo dia um charlatão ganha um paciente que deveria ser seu. E ele nem sabe que está errado."</div>
+    <div class="beats">
+      <div class="h">Tempo</div><div class="h">Movimento</div><div class="h">Cena</div><div class="h">Texto na tela</div><div class="h">Falado</div>
+      <div class="c tc">0–3 s</div><div class="c mv">Espelho</div><div class="c cena">Motion: contador "+1 paciente" pulando para um perfil genérico de guru. Sem rosto.</div><div class="c tela">E ele nem sabe que está errado.</div><div class="c fala">Todo dia um charlatão ganha um paciente que deveria ser seu. E ele nem sabe que está errado.</div>
+      <div class="c tc">3–8 s</div><div class="c mv">Inimigo</div><div class="c cena">Você à câmera.</div><div class="c tela">Denunciar não resolve.</div><div class="c fala">Denunciar não resolve. Reclamar no grupo dos colegas não resolve.</div>
+      <div class="c tc">8–15 s</div><div class="c mv">Virada</div><div class="c cena">Você, mais perto.</div><div class="c tela">O que resolve é você aparecer.</div><div class="c fala">O que resolve é você aparecendo com o que ele não tem: fonte.</div>
+      <div class="c tc">15–28 s</div><div class="c mv">Máquina</div><div class="c cena">Tela do Scale: áudio → post com referência → anúncio no ar na conta dele.</div><div class="c tela">Você fala. A máquina cita.</div><div class="c fala">Você fala quarenta segundos; a máquina escreve com evidência, cita o artigo, mantém dentro das normas do seu conselho e coloca no ar.</div>
+      <div class="c tc">28–38 s</div><div class="c mv">Permissão + Porta</div><div class="c cena">Card CTA.</div><div class="c tela">Quero meu diagnóstico</div><div class="c fala">O antídoto pro charlatão não é a denúncia. É você. Pede o seu diagnóstico.</div>
+    </div>
+    <div class="alt"><b>Hooks alternativos</b><em>"Enquanto você não posta, o charlatão atende."</em> · <em>"Ele promete a cura. Você tem a evidência. Adivinha quem está no feed."</em></div>
+  </article>
+
+  <article class="script">
+    <div class="top"><span class="num">09</span><h3>Os 300 certos</h3><div class="tags"><span class="chip prova">Comunidade</span><span class="t">psi · nutri</span><span class="t">E3</span><span class="t">Motion + tela</span></div></div>
+    <div class="hook"><small>Hook</small>"Você não precisa de cem mil seguidores. Precisa que os trezentos certos te vejam como referência."</div>
+    <div class="beats">
+      <div class="h">Tempo</div><div class="h">Movimento</div><div class="h">Cena</div><div class="h">Texto na tela</div><div class="h">Falado</div>
+      <div class="c tc">0–3 s</div><div class="c mv">Espelho</div><div class="c cena">Motion: "100.000" derrete e vira "300".</div><div class="c tela">100.000 × 300</div><div class="c fala">Você não precisa de cem mil seguidores. Precisa que os trezentos certos te vejam como referência.</div>
+      <div class="c tc">3–8 s</div><div class="c mv">Inimigo</div><div class="c cena">Feed de números vazios: views, likes, nenhum agendamento.</div><div class="c tela">Audiência ≠ agenda</div><div class="c fala">Cem mil seguidores é audiência. Trezentas pessoas que confiam no que você diz é agenda cheia.</div>
+      <div class="c tc">8–15 s</div><div class="c mv">Virada</div><div class="c cena">Você à câmera.</div><div class="c tela">Confiança se constrói com fonte.</div><div class="c fala">E confiança não se constrói com dancinha. Se constrói com fonte.</div>
+      <div class="c tc">15–28 s</div><div class="c mv">Máquina</div><div class="c cena">Tela: post com referência; público do anúncio marcado no mapa, raio de 2 km.</div><div class="c tela">Pra quem mora perto. Com fonte.</div><div class="c fala">A máquina escreve com evidência, dentro das normas do seu conselho, e mostra pra quem mora perto de você. Comunidade, não audiência.</div>
+      <div class="c tc">28–38 s</div><div class="c mv">Permissão + Porta</div><div class="c cena">Card CTA.</div><div class="c tela">Quero meu diagnóstico</div><div class="c fala">Os trezentos certos estão a dois quilômetros do seu consultório. Pede o seu diagnóstico.</div>
+    </div>
+    <div class="alt"><b>Hooks alternativos</b><em>"Seguidor não senta na cadeira. Paciente senta."</em> · <em>"Você não precisa viralizar. Precisa ser encontrado."</em></div>
+  </article>
+
+  <article class="script">
+    <div class="top"><span class="num">10</span><h3>O que sobra pro psicólogo</h3><div class="tags"><span class="chip seg">Segurança</span><span class="t">psicólogo</span><span class="t">E3</span><span class="t">UGC consultório</span></div></div>
+    <div class="hook"><small>Hook</small>"Psicólogo não pode prometer resultado, não pode expor caso, não pode anunciar preço no post. Então o que sobra?"</div>
+    <div class="beats">
+      <div class="h">Tempo</div><div class="h">Movimento</div><div class="h">Cena</div><div class="h">Texto na tela</div><div class="h">Falado</div>
+      <div class="c tc">0–3 s</div><div class="c mv">Espelho</div><div class="c cena">Você no consultório. Lista aparece e vai sendo riscada a cada "não pode".</div><div class="c tela">Não pode. Não pode. Não pode.</div><div class="c fala">Psicólogo não pode prometer resultado. Não pode expor caso. Não pode anunciar preço no post. Então o que sobra?</div>
+      <div class="c tc">3–8 s</div><div class="c mv">Virada</div><div class="c cena">Você, pausa curta.</div><div class="c tela">Sobra o que você sabe.</div><div class="c fala">Sobra o que você sabe. E é exatamente isso que ninguém está postando com fonte.</div>
+      <div class="c tc">8–15 s</div><div class="c mv">Inimigo</div><div class="c cena">B-roll: feed de "dicas de ansiedade" sem fonte, sem rosto.</div><div class="c tela">Todo mundo fala. Ninguém cita.</div><div class="c fala">Todo mundo fala de ansiedade no feed. Quase ninguém cita de onde tirou.</div>
+      <div class="c tc">15–28 s</div><div class="c mv">Máquina</div><div class="c cena">Tela do Scale: artigo → post; selo "dentro das normas do seu conselho".</div><div class="c tela">Evidência, dentro do código de ética.</div><div class="c fala">A máquina escreve a partir do artigo, no seu tom, dentro das normas do seu conselho, e mostra a fonte. Sem promessa. Sem caso. Só ciência.</div>
+      <div class="c tc">28–38 s</div><div class="c mv">Permissão + Porta</div><div class="c cena">Card CTA.</div><div class="c tela">Quero meu diagnóstico</div><div class="c fala">Aparecer com ciência é o único jeito seguro de aparecer. Pede o seu diagnóstico.</div>
+    </div>
+    <div class="alt"><b>Hooks alternativos</b><em>"Você conhece o código de ética melhor do que qualquer agência. É por isso que não posta."</em> · <em>"O que um psicólogo pode postar? Mais do que você imagina, se tiver fonte."</em></div>
+    <div class="note">Regra CFP: nunca "gravar a sessão", nunca depoimento de paciente, nunca cena que sugira caso real.</div>
+  </article>
+
+  <article class="script">
+    <div class="top"><span class="num">11</span><h3>Vou parecer igual a todo mundo?</h3><div class="tags"><span class="chip obj">Objeção</span><span class="t">geral</span><span class="t">QA</span><span class="t">Edição pergunta-resposta</span></div></div>
+    <div class="hook"><small>Hook</small>"Se eu usar IA no conteúdo, vou ficar igual a todo mundo?"</div>
+    <div class="beats">
+      <div class="h">Tempo</div><div class="h">Movimento</div><div class="h">Cena</div><div class="h">Texto na tela</div><div class="h">Falado</div>
+      <div class="c tc">0–3 s</div><div class="c mv">Espelho</div><div class="c cena">Card com a pergunta na tela; você lê como se fosse um DM recebido.</div><div class="c tela">"Se eu usar IA, vou ficar igual a todo mundo?"</div><div class="c fala">Se eu usar IA no conteúdo, vou ficar igual a todo mundo?</div>
+      <div class="c tc">3–8 s</div><div class="c mv">Inimigo</div><div class="c cena">Você à câmera.</div><div class="c tela">Genérico é quem copia guru.</div><div class="c fala">Genérico é quem copia formato de guru. Não é quem usa ferramenta.</div>
+      <div class="c tc">8–15 s</div><div class="c mv">Virada</div><div class="c cena">Tela: agente configurado com os protocolos e o tom de voz do profissional.</div><div class="c tela">Treinada com os seus protocolos.</div><div class="c fala">Aqui a máquina escreve a partir dos seus protocolos e do seu jeito de falar.</div>
+      <div class="c tc">15–28 s</div><div class="c mv">Máquina</div><div class="c cena">Tela: post final com referência e o nome dele.</div><div class="c tela">Sua opinião, com referência.</div><div class="c fala">O que sai é a sua opinião, com referência científica e dentro das normas do seu conselho. Quem lê reconhece você.</div>
+      <div class="c tc">28–38 s</div><div class="c mv">Permissão + Porta</div><div class="c cena">Card CTA.</div><div class="c tela">Quero meu diagnóstico</div><div class="c fala">A IA é sua funcionária, não sua concorrente. Pede o seu diagnóstico.</div>
+    </div>
+    <div class="alt"><b>Hook alternativo</b><em>"Pergunta que mais recebo: 'IA não vai me deixar genérico?'"</em></div>
+  </article>
+
+  <article class="script">
+    <div class="top"><span class="num">12</span><h3>E se o conselho me chamar?</h3><div class="tags"><span class="chip obj">Objeção</span><span class="t">geral</span><span class="t">QA</span><span class="t">Edição pergunta-resposta</span></div></div>
+    <div class="hook"><small>Hook</small>"E se o conselho me chamar por causa de um post?"</div>
+    <div class="beats">
+      <div class="h">Tempo</div><div class="h">Movimento</div><div class="h">Cena</div><div class="h">Texto na tela</div><div class="h">Falado</div>
+      <div class="c tc">0–3 s</div><div class="c mv">Espelho</div><div class="c cena">Card com a pergunta.</div><div class="c tela">"E se o conselho me chamar?"</div><div class="c fala">E se o conselho me chamar por causa de um post?</div>
+      <div class="c tc">3–8 s</div><div class="c mv">Inimigo</div><div class="c cena">Você, sério, sem sorrir.</div><div class="c tela">Ninguém pode prometer isso.</div><div class="c fala">Ninguém pode te prometer que o conselho nunca vai te chamar. Quem promete isso é o charlatão.</div>
+      <div class="c tc">8–15 s</div><div class="c mv">Virada</div><div class="c cena">Você.</div><div class="c tela">O que a gente faz é diferente.</div><div class="c fala">O que a gente faz é diferente: cada conteúdo nasce de evidência e é escrito dentro das normas do seu conselho.</div>
+      <div class="c tc">15–28 s</div><div class="c mv">Máquina</div><div class="c cena">Tela: referência no post; aviso de linguagem fora da norma.</div><div class="c tela">Você publica sabendo o que diz. E por quê.</div><div class="c fala">Você publica sabendo o que está dizendo, de onde veio, e com a fonte pra mostrar. Isso é o que protege a sua credibilidade.</div>
+      <div class="c tc">28–38 s</div><div class="c mv">Permissão + Porta</div><div class="c cena">Card CTA.</div><div class="c tela">Quero meu diagnóstico</div><div class="c fala">Segurança não é não aparecer. É aparecer com fonte. Pede o seu diagnóstico.</div>
+    </div>
+    <div class="alt"><b>Hook alternativo</b><em>"A pergunta certa não é 'e se o conselho me chamar'. É 'o que eu respondo quando chamar'."</em></div>
+    <div class="note">Nunca dizer "aprovado pelo conselho" nem "você nunca vai ser chamado". Sempre "dentro das normas do seu conselho".</div>
+  </article>
+</section>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">6 · Copy do anúncio</div><h2>Texto que acompanha o vídeo</h2><p>Serve para qualquer um dos doze. Trocar só a primeira frase pelo hook do vídeo quando fizer sentido.</p></div>
+  <div class="copy">
+    <div class="box"><b>Texto primário · curto</b><p>Você não posta por medo de parecer charlatão. A gente construiu a máquina de conteúdo mais segura da saúde exatamente por isso. Evidência em cada post, dentro das normas do seu conselho. → Quero meu diagnóstico</p></div>
+    <div class="box"><b>Texto primário · médio</b><p>Você estudou dez anos e fica calado enquanto quem fez um curso de fim de semana fala todo dia. Não é falta de tempo. É medo de parecer aquele cara. O MyDose Scale foi construído depois de ouvir mais de 1.000 profissionais de saúde: você fala 40 segundos, ele escreve com evidência científica, cita a fonte e mantém tudo dentro das normas do seu conselho. Aparecer com evidência não é se vender. É cumprir o juramento em escala. → Quero meu diagnóstico</p></div>
+    <div class="box"><b>Headline</b><p>Apareça com segurança. Cresça com credibilidade.</p></div>
+    <div class="box"><b>Descrição</b><p>MyDose Scale · conteúdo com evidência científica, no seu nome.</p></div>
+    <div class="box wide"><b>Primeira mensagem no WhatsApp (CTD)</b><p>Oi! Vi que você pediu o diagnóstico do seu consultório. Sou a Carol, da MyDose. Antes de marcar, me conta: qual é a sua especialidade e o que hoje te trava mais na hora de postar: tempo, não saber o que pode dizer, ou medo de parecer "aquele cara"?</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">7 · Regras de ouro</div><h2>O que entra e o que nunca entra</h2></div>
+  <div class="rules">
+    <div class="box yes"><b>Sempre</b><ul><li>segurança · dentro das normas do seu conselho</li><li>evidência científica · referência · fonte</li><li>comunidade (nunca "audiência" como prêmio)</li><li>estrategista ao seu lado · a gente faz com você</li><li>faturamento (nunca "receita")</li><li>empreendedor da saúde · <i>Take back control.</i></li><li>o inimigo é o modelo: charlatão, creator sem ciência</li></ul></div>
+    <div class="box no"><b>Nunca</b><ul><li>"aprovado pelo conselho" · "você nunca será chamado"</li><li>"grátis" em CTA · ROI garantido · "1ª venda em 30 dias"</li><li>"14 funcionalidades" · IA como promessa (IA é o mecanismo)</li><li>"você é ruim de marketing"</li><li>citar concorrente, guru ou pessoa pelo nome</li><li>"gravar a sessão" · depoimento de paciente (psicólogos)</li><li>dinheiro abrindo o vídeo</li></ul></div>
+  </div>
+  <div class="warn"><b>Confirmar antes de subir</b><ol>
+    <li><b>"X milhões de artigos":</b> o número não existe ainda. Usar o volume real indexado pelo produto ou só as fontes nomeadas (Nature, PubMed, Neuroscience Journal).</li>
+    <li><b>"Revisa / sinaliza antes de publicar"</b> (hooks 06 e 12) depende de aprovar o Co-Pilot Credibilidade com revisão de compliance até 15/09. Sem isso, o texto vira "mostra a fonte em cada post".</li>
+    <li><b>Número da Carol</b> no clique-para-WhatsApp ainda é placeholder.</li>
+  </ol></div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">8 · Plano de teste</div><h2>Como saber qual hook venceu</h2><p>Semana 1: cinco hooks × persona nutri, com o lançamento de 24/09 como destino secundário. R$ 150 por criativo antes de decidir; corte em 48 horas. Vencedor ganha as três personas e 60% da verba em outubro.</p></div>
+  <div class="kpi">
+    <div class="k"><b>≥ 30%</b><span>hook rate (3 s ÷ impressões)</span></div>
+    <div class="k"><b>≥ 25%</b><span>hold rate aos 15 s</span></div>
+    <div class="k"><b>R$ 60–75</b><span>custo por lead (WhatsApp)</span></div>
+    <div class="k"><b>≤ R$ 150</b><span>custo por reunião realizada</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><div class="eyebrow">9 · Antes de apertar REC</div><h2>Checklist de gravação</h2></div>
+  <ol class="check">
+    <li>Primeiro frame mostra dor, contraste ou objeto real. Sem logo abrindo.</li>
+    <li>Em 2 segundos está claro pra quem é, sem "se você é nutricionista".</li>
+    <li>Uma ideia central por vídeo. Um pecado por vídeo.</li>
+    <li>Mecanismo em uma frase: áudio → post com fonte → dentro das normas.</li>
+    <li>Prova antes de explicação. Tela real do produto, não mockup.</li>
+    <li>Funciona sem áudio até o segundo 8 (texto na tela).</li>
+    <li>Os dois hooks alternativos gravados na mesma tomada.</li>
+    <li>Payoff resolve a pergunta do começo. CTA prolonga o valor.</li>
+    <li>Nenhum rosto, marca ou nome de concorrente na cena do inimigo.</li>
+    <li>Card final: "Quero meu diagnóstico" + <i>Take back control.</i></li>
+  </ol>
+</section>
+
+<div class="sig">Take back control.</div>
+<div class="foot">Fontes: call com o John (2026-09-04) · Operação Credibilidade set–dez/2026 · Guia de hooks e retenção (jul/2026) · casa da mensagem v6.</div>
+</div>
+
+</body></html>
