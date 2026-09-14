@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 60 1600 340" preserveAspectRatio="xMidYMin slice">
+<defs><filter id="cloud" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="12"/></filter></defs>
+<g filter="url(#cloud)">
+<g fill="#F6F4F2" opacity=".95"><ellipse cx="230" cy="200" rx="220" ry="36"/><ellipse cx="320" cy="176" rx="130" ry="46"/><ellipse cx="150" cy="186" rx="90" ry="30"/></g>
+<g fill="#F5E3F6" opacity=".9"><ellipse cx="1340" cy="150" rx="240" ry="34"/><ellipse cx="1260" cy="126" rx="120" ry="42"/></g>
+<g fill="#F6F4F2" opacity=".85"><ellipse cx="740" cy="330" rx="330" ry="30"/><ellipse cx="850" cy="312" rx="150" ry="36"/><ellipse cx="620" cy="318" rx="110" ry="26"/></g>
+</g></svg>
