@@ -54,13 +54,14 @@ footer{max-width:1240px;margin:0 auto;padding:0 20px 40px;color:#6A6F8F;font-siz
     <span>Botão do Meta: <b>Saiba mais</b> / <b>Learn more</b></span>
     <span>Vídeos sem música: aplicar áudio da biblioteca do Meta</span>
     <span><a href="COPY-META-ADS.md">Guia completo (textos e teste)</a></span>
+    <span><a href="https://github.com/Guga-Marion/mydose-segundo-semestre/releases/tag/anuncios-video-ai-2026-10-08">Todos os arquivos (GitHub)</a></span>
   </div>
 </div>
 <div class="barra"><div class="in">
   <div class="seg" id="lang"><button data-v="pt" class="on">Português</button><button data-v="en">English</button></div>
   <div class="seg" id="fmt"><button data-v="9x16" class="on">Story 9:16</button><button data-v="4x5">Feed 4:5</button></div>
   <div class="seg" id="tipo"><button data-v="todos" class="on">Todos</button><button data-v="video">Vídeos</button><button data-v="estatico">Estáticos</button></div>
-  <a class="zip" id="zip" href="dose-anuncios-video-ai-pt.zip" download>⬇ Baixar tudo (ZIP)</a>
+  <a class="zip" id="zip" href="https://github.com/Guga-Marion/mydose-segundo-semestre/releases/download/anuncios-video-ai-2026-10-08/dose-anuncios-video-ai-pt.zip">⬇ Baixar tudo (ZIP)</a>
 </div></div>
 <main>
   <section id="sv"><h2>Vídeos</h2><div class="grade" id="v"></div></section>
@@ -70,23 +71,24 @@ footer{max-width:1240px;margin:0 auto;padding:0 20px 40px;color:#6A6F8F;font-siz
 <script>
 const V = { v1: 'antes-depois', v2: 'horas-vs-segundos', v3: 'base-cientifica', v4: 'estilos', v5: 'toque-aqui', v6: 'pare-de-rolar', v7: 'arraste-antes-depois', v8: 'veja-o-que-acontece' };
 const S = { s1: 'antes-depois', s2: 'promessa', s3: 'base-cientifica', s4: 'editando-as-23h', s5: 'autopilot', s6: 'estilos', s7: 'toque-aqui', s8: 'pare', s9: 'arraste-antes-depois', s10: 'veja-o-que-acontece', s11: 'horas-vs-segundos', s12: 'muro-da-ciencia', s13: 'sua-vez', s14: 'grave-a-ia-faz-o-resto' };
+const REL = 'https://github.com/Guga-Marion/mydose-segundo-semestre/releases/download/anuncios-video-ai-2026-10-08/';
 let l = 'pt', f = '9x16', tipo = 'todos', COPY = {};
 const esc = x => String(x || '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
 function card(base, nome, video) {
-  const c = COPY[base] || {}, arq = `${l}/${video ? 'video' : 'estatico'}/${nome}.${video ? 'mp4' : 'png'}`;
-  const prev = video ? `<video src="${arq}" poster="${l}/video/${nome}.jpg" muted loop playsinline preload="none" controls></video>` : `<img src="${l}/estatico/${nome}.jpg" loading="lazy" alt="">`;
+  const c = COPY[base] || {}, arq = REL + `${nome}.${video ? 'mp4' : 'png'}`;
+  const prev = video ? `<video src="${l}/video/${nome}.prev.mp4" poster="${l}/video/${nome}.jpg" muted loop playsinline preload="none" controls></video>` : `<img src="${l}/estatico/${nome}.jpg" loading="lazy" alt="">`;
   const txt = `${c.texto || ''}\n\nTítulo: ${c.titulo || ''}\nDescrição: ${c.desc || ''}`;
   return `<div class="card"><div class="midia">${prev}</div><div class="corpo">
     <div class="ang">${esc(c.angulo)}</div><div class="nome">${nome}</div>
     <div class="copy">${esc(c.texto)}<br><br><b>Título:</b> ${esc(c.titulo)}<br><b>Descrição:</b> ${esc(c.desc)}</div>
-    <div class="acoes"><a class="btn prim" href="${arq}" download>⬇ Baixar ${video ? 'MP4' : 'PNG'}</a><button class="btn" data-copy="${encodeURIComponent(txt)}">Copiar texto</button><button class="btn" data-copy="${encodeURIComponent(nome)}">utm_content</button></div>
+    <div class="acoes"><a class="btn prim" href="${arq}">⬇ Baixar ${video ? 'MP4' : 'PNG'}</a><button class="btn" data-copy="${encodeURIComponent(txt)}">Copiar texto</button><button class="btn" data-copy="${encodeURIComponent(nome)}">utm_content</button></div>
   </div></div>`;
 }
 function pinta() {
   document.getElementById('v').innerHTML = Object.entries(V).map(([k, n]) => card(`${l}-${k}-${n}`, `${l}-${k}-${n}-${f}`, true)).join('');
   document.getElementById('s').innerHTML = Object.entries(S).map(([k, n]) => card(`${l}-${k}-${n}`, `${l}-${k}-${n}-${f}`, false)).join('');
   document.getElementById('sv').hidden = tipo === 'estatico'; document.getElementById('ss').hidden = tipo === 'video';
-  document.getElementById('zip').href = `dose-anuncios-video-ai-${l}.zip`;
+  document.getElementById('zip').href = REL + `dose-anuncios-video-ai-${l}.zip`;
   document.getElementById('zip').textContent = `⬇ Baixar tudo em ${l === 'pt' ? 'português' : 'inglês'} (ZIP)`;
   // vídeo só toca quando aparece
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.preload = 'auto'; e.target.play().catch(() => {}); } else e.target.pause(); }), { threshold: .4 });
