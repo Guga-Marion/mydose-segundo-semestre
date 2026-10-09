@@ -41,11 +41,31 @@ h2{font:700 13px Figtree;letter-spacing:.14em;text-transform:uppercase;color:var
 .btn{flex:1;display:inline-flex;justify-content:center;align-items:center;gap:6px;min-height:42px;padding:0 12px;border-radius:12px;font:700 13.5px Figtree;cursor:pointer;text-decoration:none;border:1px solid var(--line);background:#fff;color:var(--navy)}
 .btn.prim{background:var(--navy);color:#fff;border-color:var(--navy)}
 .ok{color:#2F7D1B}
+/* abas (09/10) */
+.abas{max-width:1240px;margin:0 auto;padding:16px 16px 0;display:flex;gap:6px;flex-wrap:wrap}
+.abas button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 14px;font:700 14px Figtree;color:var(--navy);cursor:pointer}
+.abas button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.abas button .novo{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:999px;background:var(--g);color:#fff;font-size:11px;letter-spacing:.06em;text-transform:uppercase;vertical-align:2px}
+.leg{font-size:13px;color:#4A4F72;background:var(--creme);border-radius:10px;padding:10px;white-space:pre-wrap;overflow-wrap:anywhere;max-height:260px;overflow:auto}
+[hidden]{display:none!important}
 footer{max-width:1240px;margin:0 auto;padding:0 20px 40px;color:#6A6F8F;font-size:13px}
 </style>
 </head>
 <body>
-<div class="topo">
+<nav class="abas" id="abas"><button data-v="ads" class="on">Anúncios (Meta Ads)</button><button data-v="org">Orgânico <span class="novo">novo</span></button></nav>
+<div class="topo" id="topo-org" hidden>
+  <h1>Posts <em>orgânicos</em> do /video-ai</h1>
+  <p class="lead">Os mesmos 44 criativos, na versão para post <b>orgânico</b> do Instagram (sem anúncio): 8 vídeos e 14 estáticos por idioma, em <b>Reels/Stories 9:16</b> (1080×1920) e <b>Feed 4:5</b> (1080×1350). No lugar do botão, o CTA é <b>“Comente DOSE 👇”</b> / <b>“Comment DOSE 👇”</b>, com “e receba o link no direct · ou link na bio”. Cada card traz a legenda pronta para colar, com o botão de copiar.</p>
+  <div class="info">
+    <span>Ligar a automação: comentário <b>DOSE</b> → link no direct (ManyChat ou similar)</span>
+    <span>Link: <code>https://scale.mydoseapp.com/video-ai/?utm_source=instagram&amp;utm_medium=organic&amp;utm_campaign=video-ai&amp;utm_content=&lt;nome-do-arquivo&gt;</code></span>
+    <span>Mesmo link na bio</span>
+    <span>Vídeos sem música: escolher um áudio em alta no Instagram</span>
+    <span><a href="organico/LEGENDAS-ORGANICO.md">Todas as legendas</a></span>
+    <span><a href="https://github.com/Guga-Marion/mydose-segundo-semestre/releases/tag/anuncios-video-ai-organico-2026-10-09">Todos os arquivos (GitHub)</a></span>
+  </div>
+</div>
+<div class="topo" id="topo-ads">
   <h1>Anúncios do <em>/video-ai</em></h1>
   <p class="lead">44 criativos para o Meta Ads (22 em português, 22 em inglês): 8 vídeos e 14 estáticos por idioma, cada um em <b>Story/Reels 9:16</b> (1080×1920) e <b>Feed 4:5</b> (1080×1350). Os botões baixam o arquivo original, em qualidade máxima. Cada card traz o texto principal, o título e a descrição para colar no Gerenciador.</p>
   <div class="info">
@@ -72,7 +92,17 @@ footer{max-width:1240px;margin:0 auto;padding:0 20px 40px;color:#6A6F8F;font-siz
 const V = { v1: 'antes-depois', v2: 'horas-vs-segundos', v3: 'base-cientifica', v4: 'estilos', v5: 'toque-aqui', v6: 'pare-de-rolar', v7: 'arraste-antes-depois', v8: 'veja-o-que-acontece' };
 const S = { s1: 'antes-depois', s2: 'promessa', s3: 'base-cientifica', s4: 'editando-as-23h', s5: 'autopilot', s6: 'estilos', s7: 'toque-aqui', s8: 'pare', s9: 'arraste-antes-depois', s10: 'veja-o-que-acontece', s11: 'horas-vs-segundos', s12: 'muro-da-ciencia', s13: 'sua-vez', s14: 'grave-a-ia-faz-o-resto' };
 const REL = 'https://github.com/Guga-Marion/mydose-segundo-semestre/releases/download/anuncios-video-ai-2026-10-08/';
-let l = 'pt', f = '9x16', tipo = 'todos', COPY = {};
+const REL_ORG = 'https://github.com/Guga-Marion/mydose-segundo-semestre/releases/download/anuncios-video-ai-organico-2026-10-09/';
+let l = 'pt', f = '9x16', tipo = 'todos', COPY = {}, LEG = null, aba = location.hash === '#organico' ? 'org' : 'ads';
+function cardOrg(base, nome, video) {
+  const c = (LEG || {})[base] || {}, arq = REL_ORG + `${nome}.${video ? 'mp4' : 'png'}`, pre = `organico/${l}/${video ? 'video' : 'estatico'}/${nome}`;
+  const prev = video ? `<video src="${pre}.prev.mp4" poster="${pre}.jpg" muted loop playsinline preload="none" controls></video>` : `<img src="${pre}.jpg" loading="lazy" alt="">`;
+  return `<div class="card"><div class="midia">${prev}</div><div class="corpo">
+    <div class="ang">${esc(c.angulo)}</div><div class="nome">${nome}</div>
+    <div class="leg">${esc(c.legenda)}</div>
+    <div class="acoes"><a class="btn prim" href="${arq}">⬇ Baixar ${video ? 'MP4' : 'PNG'}</a><button class="btn" data-copy="${encodeURIComponent(c.legenda || '')}">Copiar legenda</button></div>
+  </div></div>`;
+}
 const esc = x => String(x || '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
 function card(base, nome, video) {
   const c = COPY[base] || {}, arq = REL + `${nome}.${video ? 'mp4' : 'png'}`;
@@ -85,10 +115,13 @@ function card(base, nome, video) {
   </div></div>`;
 }
 function pinta() {
-  document.getElementById('v').innerHTML = Object.entries(V).map(([k, n]) => card(`${l}-${k}-${n}`, `${l}-${k}-${n}-${f}`, true)).join('');
-  document.getElementById('s').innerHTML = Object.entries(S).map(([k, n]) => card(`${l}-${k}-${n}`, `${l}-${k}-${n}-${f}`, false)).join('');
+  const org = aba === 'org', cf = org ? cardOrg : card;
+  document.getElementById('topo-ads').hidden = org; document.getElementById('topo-org').hidden = !org;
+  document.querySelectorAll('#abas button').forEach(b => b.classList.toggle('on', b.dataset.v === aba));
+  document.getElementById('v').innerHTML = Object.entries(V).map(([k, n]) => cf(`${l}-${k}-${n}`, `${l}-${k}-${n}-${f}`, true)).join('');
+  document.getElementById('s').innerHTML = Object.entries(S).map(([k, n]) => cf(`${l}-${k}-${n}`, `${l}-${k}-${n}-${f}`, false)).join('');
   document.getElementById('sv').hidden = tipo === 'estatico'; document.getElementById('ss').hidden = tipo === 'video';
-  document.getElementById('zip').href = REL + `dose-anuncios-video-ai-${l}.zip`;
+  document.getElementById('zip').href = org ? REL_ORG + `dose-organico-video-ai-${l}.zip` : REL + `dose-anuncios-video-ai-${l}.zip`;
   document.getElementById('zip').textContent = `⬇ Baixar tudo em ${l === 'pt' ? 'português' : 'inglês'} (ZIP)`;
   // vídeo só toca quando aparece
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.preload = 'auto'; e.target.play().catch(() => {}); } else e.target.pause(); }), { threshold: .4 });
@@ -98,6 +131,9 @@ function seg(id, set) { document.querySelectorAll(`#${id} button`).forEach(b => 
 seg('lang', v => l = v); seg('fmt', v => f = v); seg('tipo', v => tipo = v);
 document.addEventListener('click', e => { const b = e.target.closest('[data-copy]'); if (!b) return;
   navigator.clipboard.writeText(decodeURIComponent(b.dataset.copy)).then(() => { const t = b.textContent; b.textContent = 'Copiado ✓'; b.classList.add('ok'); setTimeout(() => { b.textContent = t; b.classList.remove('ok'); }, 1400); }); });
+document.querySelectorAll('#abas button').forEach(b => b.onclick = () => { aba = b.dataset.v; history.replaceState(null, '', aba === 'org' ? '#organico' : location.pathname); pinta(); if (aba === 'org' && !LEG) carregaLeg(); });
+function carregaLeg() { LEG = {}; fetch('organico/legendas.json').then(r => r.json()).then(j => { LEG = j; pinta(); }).catch(() => {}); }
+if (aba === 'org') carregaLeg();
 fetch('copy.json').then(r => r.json()).then(j => { COPY = j; pinta(); }).catch(pinta);
 </script>
 </body>
